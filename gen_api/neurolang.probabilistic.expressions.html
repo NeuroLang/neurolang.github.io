@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.probabilistic.expressions module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.probabilistic.probabilistic_ra_utils module" href="neurolang.probabilistic.probabilistic_ra_utils.html" />
+    <link rel="prev" title="neurolang.probabilistic.expression_processing module" href="neurolang.probabilistic.expression_processing.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.expressions module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.expressions module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.probabilistic.expressions">
+<span id="neurolang-probabilistic-expressions-module"></span><h1>neurolang.probabilistic.expressions module<a class="headerlink" href="#module-neurolang.probabilistic.expressions" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.Condition">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Condition</code><span class="sig-paren">(</span><em class="sig-param">conditioned</em>, <em class="sig-param">conditioning</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator" title="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Condition.apply" title="neurolang.probabilistic.expressions.Condition.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Condition.type" title="neurolang.probabilistic.expressions.Condition.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Condition.unapply" title="neurolang.probabilistic.expressions.Condition.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Condition.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Condition.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Condition.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Condition.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.Condition.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Condition.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.Grounding">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Grounding</code><span class="sig-paren">(</span><em class="sig-param">expression</em>, <em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Grounding.apply" title="neurolang.probabilistic.expressions.Grounding.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Grounding.type" title="neurolang.probabilistic.expressions.Grounding.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.Grounding.unapply" title="neurolang.probabilistic.expressions.Grounding.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Grounding.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Grounding.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Grounding.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Grounding.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.Grounding.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.Grounding.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticBinaryLogicOperator</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.html#neurolang.logic.BinaryLogicOperator" title="neurolang.logic.BinaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.BinaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.apply" title="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.type" title="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.unapply" title="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticChoiceGrounding</code><span class="sig-paren">(</span><em class="sig-param">expression</em>, <em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.expressions.Grounding" title="neurolang.probabilistic.expressions.Grounding"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.expressions.Grounding</span></code></a></p>
+<p>Class used to differentiate the grounding of a probabilistic
+choice from the grounding of other choices.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.apply" title="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.type" title="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.unapply" title="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticPredicate</code><span class="sig-paren">(</span><em class="sig-param">probability</em>, <em class="sig-param">body</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.apply" title="neurolang.probabilistic.expressions.ProbabilisticPredicate.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.type" title="neurolang.probabilistic.expressions.ProbabilisticPredicate.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.unapply" title="neurolang.probabilistic.expressions.ProbabilisticPredicate.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticQuery</code><span class="sig-paren">(</span><em class="sig-param">functor</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs=None</em>, <em class="sig-param">validate_arguments=False</em>, <em class="sig-param">verify_type=True</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expressions.html#neurolang.expressions.FunctionApplication" title="neurolang.expressions.FunctionApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.FunctionApplication</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>function</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.apply" title="neurolang.probabilistic.expressions.ProbabilisticQuery.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.type" title="neurolang.probabilistic.expressions.ProbabilisticQuery.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.unapply" title="neurolang.probabilistic.expressions.ProbabilisticQuery.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.function">
+<em class="property">property </em><code class="sig-name descname">function</code><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.expressions.ProbabilisticQuery.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.expressions.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.exceptions module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.logic package" href="neurolang.logic.html" />
+    <link rel="prev" title="neurolang.expression_walker module" href="neurolang.expression_walker.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.exceptions module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.exceptions module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.exceptions">
+<span id="neurolang-exceptions-module"></span><h1>neurolang.exceptions module<a class="headerlink" href="#module-neurolang.exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenBuiltinError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenBuiltinError</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.ForbiddenExpressionError" title="neurolang.exceptions.ForbiddenExpressionError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.ForbiddenExpressionError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenBuiltinError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenBuiltinError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenDisjunctionError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenDisjunctionError</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.ForbiddenExpressionError" title="neurolang.exceptions.ForbiddenExpressionError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.ForbiddenExpressionError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenDisjunctionError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenDisjunctionError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenExistentialError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenExistentialError</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.ForbiddenExpressionError" title="neurolang.exceptions.ForbiddenExpressionError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.ForbiddenExpressionError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenExistentialError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenExistentialError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenExpressionError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenExpressionError</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenExpressionError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenExpressionError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenRecursivityError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenRecursivityError</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.UnsupportedProgramError" title="neurolang.exceptions.UnsupportedProgramError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.UnsupportedProgramError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenRecursivityError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenRecursivityError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ForbiddenUnstratifiedAggregation">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ForbiddenUnstratifiedAggregation</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.UnsupportedProgramError" title="neurolang.exceptions.UnsupportedProgramError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.UnsupportedProgramError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ForbiddenUnstratifiedAggregation.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ForbiddenUnstratifiedAggregation.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.NeuroLangException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">NeuroLangException</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Base class for NeuroLang Exceptions</p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.NeuroLangException.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.NeuroLangException.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.NeuroLangFrontendException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">NeuroLangFrontendException</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.NeuroLangFrontendException.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.NeuroLangFrontendException.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.NeuroLangNotImplementedError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">NeuroLangNotImplementedError</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.NeuroLangNotImplementedError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.NeuroLangNotImplementedError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.ProtectedKeywordError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">ProtectedKeywordError</code><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.ProtectedKeywordError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.ProtectedKeywordError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.RelationalAlgebraError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">RelationalAlgebraError</code><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.RelationalAlgebraError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.RelationalAlgebraError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.RelationalAlgebraNotImplementedError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">RelationalAlgebraNotImplementedError</code><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.RelationalAlgebraError" title="neurolang.exceptions.RelationalAlgebraError"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.RelationalAlgebraError</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.RelationalAlgebraNotImplementedError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.RelationalAlgebraNotImplementedError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.RuleNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">RuleNotFoundError</code><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.RuleNotFoundError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.RuleNotFoundError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.SymbolNotFoundError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">SymbolNotFoundError</code><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.SymbolNotFoundError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.SymbolNotFoundError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.UnexpectedExpressionError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">UnexpectedExpressionError</code><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.UnexpectedExpressionError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.UnexpectedExpressionError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.UnsupportedProgramError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">UnsupportedProgramError</code><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.UnsupportedProgramError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.UnsupportedProgramError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.exceptions.UnsupportedQueryError">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.exceptions.</code><code class="sig-name descname">UnsupportedQueryError</code><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.exceptions.UnsupportedQueryError.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.exceptions.UnsupportedQueryError.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.exceptions.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

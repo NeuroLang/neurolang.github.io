@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Loading and Querying the Destrieux et al. Atlas &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NeuroLang Datalog Example based on the Destrieux Atlas and Neurosynth" href="ex.html" />
+    <link rel="prev" title="Examples of the NeuroLang language environment." href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Loading and Querying the Destrieux et al. Atlas</a><ul>
+<li><a class="reference internal" href="#load-the-destrieux-example-from-nilearn-as-a-fact-list">Load the Destrieux example from nilearn as a fact list</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Loading and Querying the Destrieux et al. Atlas</a><ul>
+<li><a class="reference internal" href="#load-the-destrieux-example-from-nilearn-as-a-fact-list">Load the Destrieux example from nilearn as a fact list</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-load-destrieux-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="loading-and-querying-the-destrieux-et-al-atlas">
+<span id="sphx-glr-auto-examples-plot-load-destrieux-py"></span><h1>Loading and Querying the Destrieux et al. Atlas<a class="headerlink" href="#loading-and-querying-the-destrieux-et-al-atlas" title="Permalink to this headline">¶</a></h1>
+<p>Uploading the Destrieux regions NeuroLang and
+executing a simple query.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nilearn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">neurolang.frontend</span> <span class="kn">import</span> <span class="n">NeurolangPDL</span><span class="p">,</span> <span class="n">ExplicitVBR</span>
+
+
+<span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/sklearn/utils/deprecation.py:144: FutureWarning: The sklearn.utils.testing module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.utils. Anything that cannot be imported from sklearn.utils is now part of the private API.
+  warnings.warn(message, FutureWarning)
+&lt;frozen importlib._bootstrap&gt;:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/sklearn/utils/deprecation.py:144: FutureWarning: The sklearn.datasets.base module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.datasets. Anything that cannot be imported from sklearn.datasets is now part of the private API.
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+<div class="section" id="load-the-destrieux-example-from-nilearn-as-a-fact-list">
+<h2>Load the Destrieux example from nilearn as a fact list<a class="headerlink" href="#load-the-destrieux-example-from-nilearn-as-a-fact-list" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_destrieux</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">atlas_destrieux</span><span class="p">[</span><span class="s1">&#39;maps&#39;</span><span class="p">])</span>
+<span class="n">image_data</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+  output = genfromtxt(fname, **kwargs)
+/Users/dwasserm/sources/NeuroLang/examples/plot_load_destrieux.py:29: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  image_data = image.get_data()
+</pre></div>
+</div>
+<p>Load the regions into Voxel-style regions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">region_table</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">atlas_destrieux</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">voxels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">((</span><span class="n">image_data</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">voxels</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">ExplicitVBR</span><span class="p">(</span>
+            <span class="n">voxels</span><span class="p">,</span>
+            <span class="n">image</span><span class="o">.</span><span class="n">affine</span><span class="p">,</span> <span class="n">image_dim</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">)</span>
+    <span class="n">region_table</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)),</span> <span class="n">r</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Initialise the atlas to the Neurolang Engine
+add two symbols to split left and right structures
+in the Destrieux atlas and add the atlas.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+
+
+<span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="k">def</span> <span class="nf">lh</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;L &#39;</span><span class="p">)</span>
+
+
+<span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="k">def</span> <span class="nf">rh</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;R &#39;</span><span class="p">)</span>
+
+
+<span class="n">destrieux</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">region_table</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;destrieux&#39;</span><span class="p">)</span>
+
+
+<span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">superior_sts_l</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="p">(</span><span class="s1">&#39;L S_temporal_sup&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">superior_sts_l</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="p">(</span><span class="s1">&#39;L S_central&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">central_l</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">anatomical_superior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">superior_sts_l</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">anatomical_anterior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">central_l</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">lh</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">superior_sts_l</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">r</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">title</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_001.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_001.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_002.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_002.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_003.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_003.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_004.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_004.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_005.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_005.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_006.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_006.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_007.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_007.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_008.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_008.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_009.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_009.png" />
+</li>
+<li><img alt="../_images/sphx_glr_plot_load_destrieux_010.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_010.png" />
+</li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>L G_and_S_cingul-Mid-Ant
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/nilearn/_utils/niimg.py:116: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  dtype = _get_target_dtype(niimg.get_data().dtype, dtype)
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/nilearn/plotting/img_plotting.py:325: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  data = anat_img.get_data()
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/scipy/ndimage/measurements.py:305: DeprecationWarning: In future, it will be an error for &#39;np.bool_&#39; scalars to be interpreted as an index
+  return _nd_image.find_objects(input, max_label)
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/nilearn/plotting/displays.py:600: DeprecationWarning: Using or importing the ABCs from &#39;collections&#39; instead of from &#39;collections.abc&#39; is deprecated since Python 3.3, and in 3.9 it will stop working
+  if isinstance(axes, collections.Sequence):
+/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/nilearn/image/resampling.py:665: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+
+* deprecated from version: 3.0
+* Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
+  data = img.get_data()
+L G_front_middle
+L S_front_inf
+L S_front_sup
+L S_precentral-inf-part
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.865 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-load-destrieux-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/be61c5e353b65f90eaca2eed0f20b117/plot_load_destrieux.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/d0330ba729c79e96cf91d1712f06a326/plot_load_destrieux.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_load_destrieux.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/auto_examples/plot_load_destrieux.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

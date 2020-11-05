@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.datalog.chase.general module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.datalog.chase.mgu module" href="neurolang.datalog.chase.mgu.html" />
+    <link rel="prev" title="neurolang.datalog.chase package" href="neurolang.datalog.chase.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.general module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.general module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.datalog.chase.general">
+<span id="neurolang-datalog-chase-general-module"></span><h1>neurolang.datalog.chase.general module<a class="headerlink" href="#module-neurolang.datalog.chase.general" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">ChaseGeneral</code><span class="sig-paren">(</span><em class="sig-param">datalog_program</em>, <em class="sig-param">rules=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Chase implementation using the naive resolution algorithm.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_chase_solution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_chase_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_nodes_from_rules</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>chase_step</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compose_all_subtitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compose_substitutions_ignoring_conflicts</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compose_substitutions_no_conflict</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compute_instance_update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compute_new_tuple_and_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compute_result_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eliminate_already_computed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_builtins_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_rule_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extract_variable_arguments</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_args_to_project</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>infer_iterable_subtype</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_containment_of_symbol_in_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_equality_between_constant_and_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_builtin_substitution_containment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution_equality</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.aggregate_tuple_type_into_row_type">
+<code class="sig-name descname">aggregate_tuple_type_into_row_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row_type</em>, <em class="sig-param">tuple_type</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.aggregate_tuple_type_into_row_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.build_chase_solution">
+<code class="sig-name descname">build_chase_solution</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.build_chase_solution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.build_chase_tree">
+<code class="sig-name descname">build_chase_tree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">chase_set=&lt;function ChaseGeneral.chase_step at 0x7fd82987c280&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.build_chase_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.build_nodes_from_rules">
+<code class="sig-name descname">build_nodes_from_rules</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">node</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.build_nodes_from_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.chase_step">
+<code class="sig-name descname">chase_step</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance</em>, <em class="sig-param">rule</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.chase_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compose_all_subtitutions">
+<em class="property">static </em><code class="sig-name descname">compose_all_subtitutions</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compose_all_subtitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compose_substitutions_ignoring_conflicts">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_ignoring_conflicts</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compose_substitutions_ignoring_conflicts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compose_substitutions_no_conflict">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_no_conflict</code><span class="sig-paren">(</span><em class="sig-param">substitutions</em>, <em class="sig-param">new_substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compose_substitutions_no_conflict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compute_instance_update">
+<code class="sig-name descname">compute_instance_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">new_tuples</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compute_instance_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compute_new_tuple_and_type">
+<code class="sig-name descname">compute_new_tuple_and_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compute_new_tuple_and_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.compute_result_set">
+<code class="sig-name descname">compute_result_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitutions</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.compute_result_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.eliminate_already_computed">
+<code class="sig-name descname">eliminate_already_computed</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">consequent</em>, <em class="sig-param">instance</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.evaluate_builtins">
+<code class="sig-name descname">evaluate_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.evaluate_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.evaluate_builtins_predicates">
+<code class="sig-name descname">evaluate_builtins_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicates_to_evaluate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.evaluate_builtins_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.extract_rule_predicates">
+<code class="sig-name descname">extract_rule_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.extract_rule_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.extract_variable_arguments">
+<em class="property">static </em><code class="sig-name descname">extract_variable_arguments</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.extract_variable_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.get_args_to_project">
+<code class="sig-name descname">get_args_to_project</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">builtin_predicates_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.get_args_to_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.infer_iterable_subtype">
+<em class="property">static </em><code class="sig-name descname">infer_iterable_subtype</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.infer_iterable_subtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.is_containment_of_symbol_in_constant">
+<em class="property">static </em><code class="sig-name descname">is_containment_of_symbol_in_constant</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.is_containment_of_symbol_in_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.is_equality_between_constant_and_symbol">
+<em class="property">static </em><code class="sig-name descname">is_equality_between_constant_and_symbol</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.is_equality_between_constant_and_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution">
+<code class="sig-name descname">unify_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution_containment">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_containment</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution_containment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution_equality">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_equality</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseGeneral.unify_builtin_substitution_equality" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.general.ChaseNaive">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">ChaseNaive</code><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNaive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Chase implementation using the naive algorithm.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 63%" />
+<col style="width: 37%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>execute_chase</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseNaive.execute_chase">
+<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNaive.execute_chase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.general.ChaseNode">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">ChaseNode</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">children</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>children</strong></dt><dd><p>Alias for field number 1</p>
+</dd>
+<dt><strong>instance</strong></dt><dd><p>Alias for field number 0</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.chase.general.ChaseNode.count" title="neurolang.datalog.chase.general.ChaseNode.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(self, value, /)</p></td>
+<td><p>Return number of occurrences of value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.chase.general.ChaseNode.index" title="neurolang.datalog.chase.general.ChaseNode.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(self, value[, start, stop])</p></td>
+<td><p>Return first index of value.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="neurolang.datalog.chase.general.ChaseNode.children">
+<code class="sig-name descname">children</code><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNode.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseNode.count">
+<code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNode.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of occurrences of value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseNode.index">
+<code class="sig-name descname">index</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">value</em>, <em class="sig-param">start=0</em>, <em class="sig-param">stop=9223372036854775807</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNode.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return first index of value.</p>
+<p>Raises ValueError if the value is not present.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.datalog.chase.general.ChaseNode.instance">
+<code class="sig-name descname">instance</code><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNode.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.general.ChaseNonRecursive">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">ChaseNonRecursive</code><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNonRecursive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Chase class for non-recursive programs.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>execute_chase</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseNonRecursive.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNonRecursive.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseNonRecursive.execute_chase">
+<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseNonRecursive.execute_chase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.general.ChaseSemiNaive">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">ChaseSemiNaive</code><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseSemiNaive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Chase implementation using the semi-naive algorithm.
+This algorithm will not work if there are non-linear rules.</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>execute_chase</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>per_rule_update</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseSemiNaive.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseSemiNaive.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseSemiNaive.execute_chase">
+<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseSemiNaive.execute_chase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.ChaseSemiNaive.per_rule_update">
+<code class="sig-name descname">per_rule_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.ChaseSemiNaive.per_rule_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.datalog.chase.general.NeuroLangNonLinearProgramException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">NeuroLangNonLinearProgramException</code><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangNonLinearProgramException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.exceptions.html#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.datalog.chase.general.NeuroLangNonLinearProgramException.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangNonLinearProgramException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.NeuroLangNonLinearProgramException.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangNonLinearProgramException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.datalog.chase.general.</code><code class="sig-name descname">NeuroLangProgramHasLoopsException</code><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.exceptions.html#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.general.NeuroLangProgramHasLoopsException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.datalog.chase.general.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

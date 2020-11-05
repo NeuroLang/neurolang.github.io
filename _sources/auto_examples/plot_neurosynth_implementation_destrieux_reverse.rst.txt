@@ -1,0 +1,385 @@
+.. only:: html
+
+    .. note::
+        :class: sphx-glr-download-link-note
+
+        Click :ref:`here <sphx_glr_download_auto_examples_plot_neurosynth_implementation_destrieux_reverse.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_auto_examples_plot_neurosynth_implementation_destrieux_reverse.py:
+
+
+NeuroLang Example Reverse Inference in NeuroSynth
+=================================================
+
+
+.. code-block:: default
+
+
+    import logging
+    from typing import Iterable
+    import sys
+    import warnings
+
+    from neurolang import frontend as fe
+    import nibabel as nib
+    from nilearn import datasets, image
+    import numpy as np
+    import pandas as pd
+
+    logger = logging.getLogger('neurolang.probabilistic')
+    logger.setLevel(logging.INFO)
+    logger.addHandler(logging.StreamHandler(sys.stderr))
+    warnings.filterwarnings("ignore")
+
+
+
+
+
+
+
+
+
+Data preparation
+----------------
+
+Load the MNI template and resample it to 4mm voxels
+
+
+.. code-block:: default
+
+
+    mni_t1 = nib.load(datasets.fetch_icbm152_2009()['t1'])
+    mni_t1_4mm = image.resample_img(mni_t1, np.eye(3) * 4)
+
+
+
+
+
+
+
+
+
+Load Destrieux's atlas
+
+
+.. code-block:: default
+
+    destrieux_dataset = datasets.fetch_atlas_destrieux_2009()
+    destrieux = nib.load(destrieux_dataset['maps'])
+    destrieux_resampled = image.resample_img(
+        destrieux, mni_t1_4mm.affine, interpolation='nearest'
+    )
+    destrieux_resampled_data = np.asanyarray(
+        destrieux_resampled.dataobj, dtype=np.int32
+    )
+    destrieux_voxels_ijk = destrieux_resampled_data.nonzero()
+    destrieux_voxels_value = destrieux_resampled_data[destrieux_voxels_ijk]
+    destrieux_table = pd.DataFrame(
+        np.transpose(destrieux_voxels_ijk), columns=['i', 'j', 'k']
+    )
+    destrieux_table['label'] = destrieux_voxels_value
+
+    destrieux_label_names = []
+    for label_number, name in destrieux_dataset['labels']:
+        if label_number == 0:
+            continue
+        name = name.decode()
+        name = name.replace('-', '_').replace(' ', '_')
+        destrieux_label_names.append((name.lower(), label_number))
+
+
+
+
+
+
+
+
+
+Load the NeuroSynth database
+
+
+.. code-block:: default
+
+
+    ns_database_fn, ns_features_fn = datasets.utils._fetch_files(
+        datasets.utils._get_dataset_dir('neurosynth'),
+        [
+            (
+                'database.txt',
+                'https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz',
+                {'uncompress': True}
+            ),
+            (
+                'features.txt',
+                'https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz',
+                {'uncompress': True}
+            ),
+        ]
+    )
+
+    ns_database = pd.read_csv(ns_database_fn, sep=f'\t')
+    ijk_positions = (
+        np.round(nib.affines.apply_affine(
+            np.linalg.inv(mni_t1_4mm.affine),
+            ns_database[['x', 'y', 'z']].values.astype(float)
+        )).astype(int)
+    )
+    ns_database['i'] = ijk_positions[:, 0]
+    ns_database['j'] = ijk_positions[:, 1]
+    ns_database['k'] = ijk_positions[:, 2]
+
+    ns_features = pd.read_csv(ns_features_fn, sep=f'\t')
+    ns_docs = ns_features[['pmid']].drop_duplicates()
+    ns_terms = (
+        pd.melt(
+                ns_features,
+                var_name='term', id_vars='pmid', value_name='TfIdf'
+           )
+        .query('TfIdf > 1e-3')[['pmid', 'term']]
+    )
+
+
+
+
+
+
+
+
+
+Probabilistic Logic Programming in NeuroLang
+--------------------------------------------
+
+
+.. code-block:: default
+
+
+    nl = fe.NeurolangPDL()
+
+
+
+
+
+
+
+
+
+Loading the database
+
+
+.. code-block:: default
+
+
+    activations = nl.add_tuple_set(ns_database.values, name='activations')
+    terms = nl.add_tuple_set(ns_terms.values, name='terms')
+    docs = nl.add_uniform_probabilistic_choice_over_set(
+            ns_docs.values, name='docs'
+    )
+    destrieux_image = nl.add_tuple_set(
+        destrieux_table.values,
+        name='destrieux_image'
+    )
+    destrieux_labels = nl.add_tuple_set(
+        destrieux_label_names, name='destrieux_labels'
+    )
+
+    for set_symbol in (
+        'activations', 'terms', 'docs', 'destrieux_image', 'destrieux_labels'
+    ):
+        print(f"#{set_symbol}: {len(nl.symbols[set_symbol].value)}")
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    #activations: 507891
+    #terms: 1049299
+    #docs: 14371
+    #destrieux_image: 11973
+    #destrieux_labels: 150
+
+
+
+
+Adding new aggregation function to build a region overlay
+
+
+.. code-block:: default
+
+    @nl.add_symbol
+    def agg_sum(i: Iterable) -> float:
+        return np.sum(i)
+
+
+
+
+
+
+
+
+Probabilistic program and querying
+
+
+.. code-block:: default
+
+
+
+    with nl.scope as e:
+        e.destrieux_voxel_names[e.i, e.j, e.k, e.region_name] = (
+            e.destrieux_labels(e.region_name, e.region_label) &
+            e.destrieux_image(e.i, e.j, e.k, e.region_label)
+        )
+
+        e.vox_term_prob[e.i, e.j, e.k, e.t, e.PROB[e.i, e.j, e.k, e.t]] = (
+            e.activations[
+                e.d, ..., ..., ..., ..., 'MNI', ..., ..., ..., ...,
+                ..., ..., ..., e.i, e.j, e.k
+            ] &
+            e.destrieux_voxel_names(e.i, e.j, e.k, 'l_g_front_inf_opercular') &
+            e.terms[e.d, e.t] &
+            e.docs[e.d]
+        )
+
+        e.vox_prob[e.i, e.j, e.k, e.PROB[e.i, e.j, e.k]] = (
+            e.activations[
+                e.d, ..., ..., ..., ..., 'MNI', ..., ..., ..., ...,
+                ..., ..., ..., e.i, e.j, e.k
+            ] &
+            e.destrieux_voxel_names(e.i, e.j, e.k, 'l_g_front_inf_opercular') &
+            e.terms[e.d, e.t] &
+            e.docs[e.d]
+        )
+
+        e.term_cond_act_prob[e.t, agg_sum(e.p)] = (
+            e.vox_term_prob[e.i, e.j, e.k, e.t, e.num_prob] &
+            e.vox_prob[e.i, e.j, e.k, e.denom_prob]
+            & (e.p == (e.num_prob / e.denom_prob))
+        )
+
+        res = nl.query((e.t, e.p), e.term_cond_act_prob(e.t, e.p))
+
+
+
+
+
+
+
+
+Results
+--------------------------------------------
+
+Probability of a term appearing on a study conditioned if a voxel in the left
+frontal opercular gyrus is active in the study.
+
+
+.. code-block:: default
+
+    print(
+        res
+        .as_pandas_dataframe()
+        .sort_values(res.columns[-1], ascending=False)
+        .head(50)
+    )
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+                            t         p
+    1692             magnetic  0.645413
+    2504            resonance  0.640687
+    1693   magnetic resonance  0.637191
+    1217  functional magnetic  0.612178
+    1192              frontal  0.610578
+    2921                 task  0.597016
+    2941             temporal  0.515367
+    3082                using  0.509170
+    1466             inferior  0.493017
+    1290                gyrus  0.461986
+    1925              network  0.422874
+    2084             parietal  0.409889
+    195              anterior  0.392688
+    2865              suggest  0.391807
+    2258           prefrontal  0.379502
+    1554             involved  0.372889
+    1317              healthy  0.371357
+    593               control  0.362273
+    1467     inferior frontal  0.350581
+    2215            posterior  0.346248
+    2935                tasks  0.318456
+    2876             superior  0.314547
+    1863                motor  0.311171
+    2520             response  0.301271
+    422             cingulate  0.295916
+    449             cognitive  0.293997
+    2308            processes  0.291502
+    1197        frontal gyrus  0.291486
+    2259    prefrontal cortex  0.274180
+    1776               memory  0.272752
+    1276              greater  0.265299
+    2138          performance  0.264112
+    2800              stimuli  0.258908
+    1478          information  0.255854
+    2560                 role  0.254039
+    670              cortical  0.253621
+    2525            responses  0.252105
+    1281                group  0.251055
+    928               effects  0.249814
+    1631                level  0.245679
+    1029             evidence  0.244335
+    3144               visual  0.242659
+    1495               insula  0.237182
+    1929             networks  0.226674
+    1353               higher  0.216151
+    1592             language  0.213101
+    2277             previous  0.212663
+    1372                human  0.211822
+    2126             patterns  0.211476
+    307            behavioral  0.202423
+
+
+
+
+
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 2 minutes  2.624 seconds)
+
+
+.. _sphx_glr_download_auto_examples_plot_neurosynth_implementation_destrieux_reverse.py:
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-python
+
+     :download:`Download Python source code: plot_neurosynth_implementation_destrieux_reverse.py <plot_neurosynth_implementation_destrieux_reverse.py>`
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+     :download:`Download Jupyter notebook: plot_neurosynth_implementation_destrieux_reverse.ipynb <plot_neurosynth_implementation_destrieux_reverse.ipynb>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

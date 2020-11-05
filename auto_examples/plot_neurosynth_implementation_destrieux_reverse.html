@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>NeuroLang Example Reverse Inference in NeuroSynth &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Guide" href="../api.html" />
+    <link rel="prev" title="NeuroLang Example based Implementing a NeuroSynth Query" href="plot_neurosynth_implementation_natural_syntax.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">NeuroLang Example Reverse Inference in NeuroSynth</a><ul>
+<li><a class="reference internal" href="#data-preparation">Data preparation</a></li>
+<li><a class="reference internal" href="#probabilistic-logic-programming-in-neurolang">Probabilistic Logic Programming in NeuroLang</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">NeuroLang Example Reverse Inference in NeuroSynth</a><ul>
+<li><a class="reference internal" href="#data-preparation">Data preparation</a></li>
+<li><a class="reference internal" href="#probabilistic-logic-programming-in-neurolang">Probabilistic Logic Programming in NeuroLang</a></li>
+<li><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-neurosynth-implementation-destrieux-reverse-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="neurolang-example-reverse-inference-in-neurosynth">
+<span id="sphx-glr-auto-examples-plot-neurosynth-implementation-destrieux-reverse-py"></span><h1>NeuroLang Example Reverse Inference in NeuroSynth<a class="headerlink" href="#neurolang-example-reverse-inference-in-neurosynth" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">from</span> <span class="nn">neurolang</span> <span class="kn">import</span> <span class="n">frontend</span> <span class="k">as</span> <span class="n">fe</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">image</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;neurolang.probabilistic&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">))</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="data-preparation">
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
+<p>Load the MNI template and resample it to 4mm voxels</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mni_t1</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_icbm152_2009</span><span class="p">()[</span><span class="s1">&#39;t1&#39;</span><span class="p">])</span>
+<span class="n">mni_t1_4mm</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">resample_img</span><span class="p">(</span><span class="n">mni_t1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Load Destrieux’s atlas</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">destrieux_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
+<span class="n">destrieux</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">destrieux_dataset</span><span class="p">[</span><span class="s1">&#39;maps&#39;</span><span class="p">])</span>
+<span class="n">destrieux_resampled</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">resample_img</span><span class="p">(</span>
+    <span class="n">destrieux</span><span class="p">,</span> <span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">affine</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span>
+<span class="p">)</span>
+<span class="n">destrieux_resampled_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span>
+    <span class="n">destrieux_resampled</span><span class="o">.</span><span class="n">dataobj</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span>
+<span class="p">)</span>
+<span class="n">destrieux_voxels_ijk</span> <span class="o">=</span> <span class="n">destrieux_resampled_data</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()</span>
+<span class="n">destrieux_voxels_value</span> <span class="o">=</span> <span class="n">destrieux_resampled_data</span><span class="p">[</span><span class="n">destrieux_voxels_ijk</span><span class="p">]</span>
+<span class="n">destrieux_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">destrieux_voxels_ijk</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">destrieux_table</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">destrieux_voxels_value</span>
+
+<span class="n">destrieux_label_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">label_number</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">destrieux_dataset</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">label_number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="n">destrieux_label_names</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">label_number</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Load the NeuroSynth database</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ns_database_fn</span><span class="p">,</span> <span class="n">ns_features_fn</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_fetch_files</span><span class="p">(</span>
+    <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_get_dataset_dir</span><span class="p">(</span><span class="s1">&#39;neurosynth&#39;</span><span class="p">),</span>
+    <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="s1">&#39;database.txt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz&#39;</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;uncompress&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+        <span class="p">),</span>
+        <span class="p">(</span>
+            <span class="s1">&#39;features.txt&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz&#39;</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;uncompress&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">ns_database</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ns_database_fn</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ijk_positions</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">nib</span><span class="o">.</span><span class="n">affines</span><span class="o">.</span><span class="n">apply_affine</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">affine</span><span class="p">),</span>
+        <span class="n">ns_database</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">ns_database</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">ns_database</span><span class="p">[</span><span class="s1">&#39;j&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">ns_database</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">ns_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ns_features_fn</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ns_docs</span> <span class="o">=</span> <span class="n">ns_features</span><span class="p">[[</span><span class="s1">&#39;pmid&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">ns_terms</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+            <span class="n">ns_features</span><span class="p">,</span>
+            <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;term&#39;</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;pmid&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;TfIdf&#39;</span>
+       <span class="p">)</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;TfIdf &gt; 1e-3&#39;</span><span class="p">)[[</span><span class="s1">&#39;pmid&#39;</span><span class="p">,</span> <span class="s1">&#39;term&#39;</span><span class="p">]]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="probabilistic-logic-programming-in-neurolang">
+<h2>Probabilistic Logic Programming in NeuroLang<a class="headerlink" href="#probabilistic-logic-programming-in-neurolang" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">fe</span><span class="o">.</span><span class="n">NeurolangPDL</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Loading the database</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">activations</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_database</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;activations&#39;</span><span class="p">)</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_terms</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;terms&#39;</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
+        <span class="n">ns_docs</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;docs&#39;</span>
+<span class="p">)</span>
+<span class="n">destrieux_image</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+    <span class="n">destrieux_table</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;destrieux_image&#39;</span>
+<span class="p">)</span>
+<span class="n">destrieux_labels</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+    <span class="n">destrieux_label_names</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;destrieux_labels&#39;</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">set_symbol</span> <span class="ow">in</span> <span class="p">(</span>
+    <span class="s1">&#39;activations&#39;</span><span class="p">,</span> <span class="s1">&#39;terms&#39;</span><span class="p">,</span> <span class="s1">&#39;docs&#39;</span><span class="p">,</span> <span class="s1">&#39;destrieux_image&#39;</span><span class="p">,</span> <span class="s1">&#39;destrieux_labels&#39;</span>
+<span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;#</span><span class="si">{</span><span class="n">set_symbol</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="n">set_symbol</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#activations: 507891
+#terms: 1049299
+#docs: 14371
+#destrieux_image: 11973
+#destrieux_labels: 150
+</pre></div>
+</div>
+<p>Adding new aggregation function to build a region overlay</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="k">def</span> <span class="nf">agg_sum</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Probabilistic program and querying</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">destrieux_voxel_names</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux_labels</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region_name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region_label</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux_image</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region_label</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">vox_term_prob</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">PROB</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">activations</span><span class="p">[</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;MNI&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span>
+            <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span>
+        <span class="p">]</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux_voxel_names</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;l_g_front_inf_opercular&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">terms</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">]</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">docs</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">vox_prob</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">PROB</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">activations</span><span class="p">[</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;MNI&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span>
+            <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span>
+        <span class="p">]</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">destrieux_voxel_names</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="s1">&#39;l_g_front_inf_opercular&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">terms</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">]</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">docs</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">term_cond_act_prob</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">agg_sum</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">vox_term_prob</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">num_prob</span><span class="p">]</span> <span class="o">&amp;</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">vox_prob</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">denom_prob</span><span class="p">]</span>
+        <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">p</span> <span class="o">==</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">num_prob</span> <span class="o">/</span> <span class="n">e</span><span class="o">.</span><span class="n">denom_prob</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">term_cond_act_prob</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<p>Probability of a term appearing on a study conditioned if a voxel in the left
+frontal opercular gyrus is active in the study.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">res</span>
+    <span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>                        t         p
+1692             magnetic  0.645413
+2504            resonance  0.640687
+1693   magnetic resonance  0.637191
+1217  functional magnetic  0.612178
+1192              frontal  0.610578
+2921                 task  0.597016
+2941             temporal  0.515367
+3082                using  0.509170
+1466             inferior  0.493017
+1290                gyrus  0.461986
+1925              network  0.422874
+2084             parietal  0.409889
+195              anterior  0.392688
+2865              suggest  0.391807
+2258           prefrontal  0.379502
+1554             involved  0.372889
+1317              healthy  0.371357
+593               control  0.362273
+1467     inferior frontal  0.350581
+2215            posterior  0.346248
+2935                tasks  0.318456
+2876             superior  0.314547
+1863                motor  0.311171
+2520             response  0.301271
+422             cingulate  0.295916
+449             cognitive  0.293997
+2308            processes  0.291502
+1197        frontal gyrus  0.291486
+2259    prefrontal cortex  0.274180
+1776               memory  0.272752
+1276              greater  0.265299
+2138          performance  0.264112
+2800              stimuli  0.258908
+1478          information  0.255854
+2560                 role  0.254039
+670              cortical  0.253621
+2525            responses  0.252105
+1281                group  0.251055
+928               effects  0.249814
+1631                level  0.245679
+1029             evidence  0.244335
+3144               visual  0.242659
+1495               insula  0.237182
+1929             networks  0.226674
+1353               higher  0.216151
+1592             language  0.213101
+2277             previous  0.212663
+1372                human  0.211822
+2126             patterns  0.211476
+307            behavioral  0.202423
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  2.624 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-neurosynth-implementation-destrieux-reverse-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/e6b29b620d534f77d4972543e2f94357/plot_neurosynth_implementation_destrieux_reverse.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_neurosynth_implementation_destrieux_reverse.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/eaef37b35274286c3c82d518012a51ed/plot_neurosynth_implementation_destrieux_reverse.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_neurosynth_implementation_destrieux_reverse.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/auto_examples/plot_neurosynth_implementation_destrieux_reverse.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
