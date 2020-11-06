@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.solver module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.solver module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.solver module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.solver">
+<span id="neurolang-solver-module"></span><h1>neurolang.solver module<a class="headerlink" href="#module-neurolang.solver" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="neurolang.solver.BooleanOperationsSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">BooleanOperationsSolver</code><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver.patterns" title="neurolang.solver.BooleanOperationsSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver.match" title="neurolang.solver.BooleanOperationsSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver.pattern_match" title="neurolang.solver.BooleanOperationsSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver.type" title="neurolang.solver.BooleanOperationsSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_and</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_and_l</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_and_r</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_inversion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_or</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_or_l</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_or_r</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver.pattern_match" title="neurolang.solver.BooleanOperationsSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and">
+<code class="sig-name descname">rewrite_boolean_and</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and_l">
+<code class="sig-name descname">rewrite_boolean_and_l</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and_l" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and_r">
+<code class="sig-name descname">rewrite_boolean_and_r</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_and_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_inversion">
+<code class="sig-name descname">rewrite_boolean_inversion</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_inversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or">
+<code class="sig-name descname">rewrite_boolean_or</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or_l">
+<code class="sig-name descname">rewrite_boolean_or_l</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or_l" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or_r">
+<code class="sig-name descname">rewrite_boolean_or_r</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.rewrite_boolean_or_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.solver.BooleanOperationsSolver.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanOperationsSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.solver.BooleanRewriteSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">BooleanRewriteSolver</code><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.patterns" title="neurolang.solver.BooleanRewriteSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.match" title="neurolang.solver.BooleanRewriteSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.partial_binary_evaluation" title="neurolang.solver.BooleanRewriteSolver.partial_binary_evaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_binary_evaluation</span></code></a>(self, expression)</p></td>
+<td><p>Partially evaluate a binary AND or OR operator with non-constant arguments by giving priority to the evaluation of the first argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.pattern_match" title="neurolang.solver.BooleanRewriteSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.type" title="neurolang.solver.BooleanRewriteSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>bring_constants_up_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>cast_binary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cast_unary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>conjunction_composition_dual</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>conjunction_definition_dual</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>conjunction_distribution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>dual_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>neg_disj_to_conj</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>simplify_double_inversion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.bring_constants_up_left">
+<code class="sig-name descname">bring_constants_up_left</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.bring_constants_up_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.cast_binary">
+<code class="sig-name descname">cast_binary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.cast_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.cast_unary">
+<code class="sig-name descname">cast_unary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.cast_unary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.conjunction_composition_dual">
+<code class="sig-name descname">conjunction_composition_dual</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.conjunction_composition_dual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.conjunction_definition_dual">
+<code class="sig-name descname">conjunction_definition_dual</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.conjunction_definition_dual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.conjunction_distribution">
+<code class="sig-name descname">conjunction_distribution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.conjunction_distribution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.dual_operator">
+<code class="sig-name descname">dual_operator</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.dual_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.neg_disj_to_conj">
+<code class="sig-name descname">neg_disj_to_conj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.neg_disj_to_conj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.partial_binary_evaluation">
+<code class="sig-name descname">partial_binary_evaluation</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.partial_binary_evaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partially evaluate a binary AND or OR operator with
+non-constant arguments by giving priority to the evaluation of
+the first argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">FunctionApplication</span></dt><dd><p>A OR or AND binary operator application.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>FunctionApplication</dt><dd><p>Same expression passed as parameter where the first
+argument was walked on and the second argument was
+potentially walked on if the walk on the first argument
+did not modify its expression.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver.pattern_match" title="neurolang.solver.BooleanRewriteSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.simplify_double_inversion">
+<code class="sig-name descname">simplify_double_inversion</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.simplify_double_inversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.solver.BooleanRewriteSolver.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.BooleanRewriteSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.solver.FirstOrderLogicSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">FirstOrderLogicSolver</code><span class="sig-paren">(</span><em class="sig-param">symbol_table=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver" title="neurolang.solver.BooleanRewriteSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.BooleanRewriteSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver" title="neurolang.solver.BooleanOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.BooleanOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.GenericSolver" title="neurolang.solver.GenericSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.GenericSolver</span></code></a></p>
+<p>WIP non-recursive first order logic query solver.
+For now predicates work only on constants on the symbols table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>included_functions</strong></dt><dd></dd>
+<dt><a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.patterns" title="neurolang.solver.FirstOrderLogicSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+<dt><strong>plural_type_name</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.match" title="neurolang.solver.FirstOrderLogicSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.partial_binary_evaluation" title="neurolang.solver.FirstOrderLogicSolver.partial_binary_evaluation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partial_binary_evaluation</span></code></a>(self, expression)</p></td>
+<td><p>Partially evaluate a binary AND or OR operator with non-constant arguments by giving priority to the evaluation of the first argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match" title="neurolang.solver.FirstOrderLogicSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.quantifier_head_symbols_and_adom" title="neurolang.solver.FirstOrderLogicSolver.quantifier_head_symbols_and_adom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantifier_head_symbols_and_adom</span></code></a>(self, head)</p></td>
+<td><p>Returns an ordered dictionary with the symbols of the quantifier head as keys and the active domain for each symbol as value.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>bring_constants_up_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cast_binary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>cast_unary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>conjunction_composition_dual</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>conjunction_definition_dual</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>conjunction_distribution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>dual_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>eval_lambda</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_function_infer_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>existential_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>neg_disj_to_conj</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>new_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pop_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>query_resolution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_and</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_and_l</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_and_r</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_inversion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_or</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rewrite_boolean_or_l</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rewrite_boolean_or_r</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>set_symbol_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>simplify_double_inversion</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>statement</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>symbol_from_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>universal_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.add_functions_to_symbol_table">
+<code class="sig-name descname">add_functions_to_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.add_functions_to_symbol_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.bring_constants_up_left">
+<code class="sig-name descname">bring_constants_up_left</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.bring_constants_up_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.cast_binary">
+<code class="sig-name descname">cast_binary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.cast_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.cast_unary">
+<code class="sig-name descname">cast_unary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.cast_unary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.conjunction_composition_dual">
+<code class="sig-name descname">conjunction_composition_dual</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.conjunction_composition_dual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.conjunction_definition_dual">
+<code class="sig-name descname">conjunction_definition_dual</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.conjunction_definition_dual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.conjunction_distribution">
+<code class="sig-name descname">conjunction_distribution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.conjunction_distribution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.dual_operator">
+<code class="sig-name descname">dual_operator</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.dual_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.eval_lambda">
+<code class="sig-name descname">eval_lambda</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.eval_lambda" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.evaluate_function">
+<code class="sig-name descname">evaluate_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.evaluate_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.evaluate_function_infer_type">
+<code class="sig-name descname">evaluate_function_infer_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.evaluate_function_infer_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.evaluate_projection">
+<code class="sig-name descname">evaluate_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.evaluate_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.existential_predicate">
+<code class="sig-name descname">existential_predicate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.existential_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.included_functions">
+<em class="property">property </em><code class="sig-name descname">included_functions</code><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.included_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.neg_disj_to_conj">
+<code class="sig-name descname">neg_disj_to_conj</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.neg_disj_to_conj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.new_set">
+<em class="property">static </em><code class="sig-name descname">new_set</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.new_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.partial_binary_evaluation">
+<code class="sig-name descname">partial_binary_evaluation</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.partial_binary_evaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partially evaluate a binary AND or OR operator with
+non-constant arguments by giving priority to the evaluation of
+the first argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">FunctionApplication</span></dt><dd><p>A OR or AND binary operator application.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>FunctionApplication</dt><dd><p>Same expression passed as parameter where the first
+argument was walked on and the second argument was
+potentially walked on if the walk on the first argument
+did not modify its expression.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.solver.FirstOrderLogicSolver.pattern_match" title="neurolang.solver.FirstOrderLogicSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.plural_type_name">
+<em class="property">property </em><code class="sig-name descname">plural_type_name</code><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.plural_type_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.pop_scope">
+<code class="sig-name descname">pop_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.pop_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.process_expression">
+<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.process_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.process_iterable_argument">
+<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.push_scope">
+<code class="sig-name descname">push_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.push_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.quantifier_head_symbols_and_adom">
+<code class="sig-name descname">quantifier_head_symbols_and_adom</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">head</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.quantifier_head_symbols_and_adom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an ordered dictionary with the symbols of the quantifier head
+as keys and the active domain for each symbol as value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.query_resolution">
+<code class="sig-name descname">query_resolution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.query_resolution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and">
+<code class="sig-name descname">rewrite_boolean_and</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and_l">
+<code class="sig-name descname">rewrite_boolean_and_l</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and_l" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and_r">
+<code class="sig-name descname">rewrite_boolean_and_r</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_and_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_inversion">
+<code class="sig-name descname">rewrite_boolean_inversion</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_inversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or">
+<code class="sig-name descname">rewrite_boolean_or</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or_l">
+<code class="sig-name descname">rewrite_boolean_or_l</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or_l" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or_r">
+<code class="sig-name descname">rewrite_boolean_or_r</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.rewrite_boolean_or_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.set_symbol_table">
+<code class="sig-name descname">set_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol_table</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.set_symbol_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.simplify_double_inversion">
+<code class="sig-name descname">simplify_double_inversion</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.simplify_double_inversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.statement">
+<code class="sig-name descname">statement</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">statement</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.statement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.symbol_from_table">
+<code class="sig-name descname">symbol_from_table</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.symbol_from_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.solver.FirstOrderLogicSolver.type">
+<code class="sig-name descname">type</code><em class="property"> = ~UndeterminedType</em><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.universal_predicate">
+<code class="sig-name descname">universal_predicate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.universal_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.FirstOrderLogicSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.solver.GenericSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">GenericSolver</code><span class="sig-paren">(</span><em class="sig-param">symbol_table=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionBasicEvaluator" title="neurolang.expression_walker.ExpressionBasicEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></a>, <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.TypedSymbolTableEvaluator" title="neurolang.expression_walker.TypedSymbolTableEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.TypedSymbolTableEvaluator</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>included_functions</strong></dt><dd></dd>
+<dt><a class="reference internal" href="#neurolang.solver.GenericSolver.patterns" title="neurolang.solver.GenericSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+<dt><strong>plural_type_name</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.GenericSolver.match" title="neurolang.solver.GenericSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.GenericSolver.pattern_match" title="neurolang.solver.GenericSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.GenericSolver.type" title="neurolang.solver.GenericSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eval_lambda</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_function_infer_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pop_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>set_symbol_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>statement</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>symbol_from_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.add_functions_to_symbol_table">
+<code class="sig-name descname">add_functions_to_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.add_functions_to_symbol_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.eval_lambda">
+<code class="sig-name descname">eval_lambda</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.eval_lambda" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.evaluate_function">
+<code class="sig-name descname">evaluate_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.evaluate_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.evaluate_function_infer_type">
+<code class="sig-name descname">evaluate_function_infer_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.evaluate_function_infer_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.evaluate_projection">
+<code class="sig-name descname">evaluate_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.evaluate_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.included_functions">
+<em class="property">property </em><code class="sig-name descname">included_functions</code><a class="headerlink" href="#neurolang.solver.GenericSolver.included_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.solver.GenericSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.solver.GenericSolver.pattern_match" title="neurolang.solver.GenericSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.plural_type_name">
+<em class="property">property </em><code class="sig-name descname">plural_type_name</code><a class="headerlink" href="#neurolang.solver.GenericSolver.plural_type_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.pop_scope">
+<code class="sig-name descname">pop_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.pop_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.process_expression">
+<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.process_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.process_iterable_argument">
+<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.push_scope">
+<code class="sig-name descname">push_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.push_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.set_symbol_table">
+<code class="sig-name descname">set_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol_table</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.set_symbol_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.statement">
+<code class="sig-name descname">statement</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">statement</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.statement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.symbol_from_table">
+<code class="sig-name descname">symbol_from_table</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.symbol_from_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.solver.GenericSolver.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.solver.GenericSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.GenericSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="neurolang.solver.NeuroLangPredicateException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">NeuroLangPredicateException</code><a class="headerlink" href="#neurolang.solver.NeuroLangPredicateException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.exceptions.html#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dl class="attribute">
+<dt id="neurolang.solver.NeuroLangPredicateException.args">
+<code class="sig-name descname">args</code><a class="headerlink" href="#neurolang.solver.NeuroLangPredicateException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NeuroLangPredicateException.with_traceback">
+<code class="sig-name descname">with_traceback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NeuroLangPredicateException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.solver.NumericOperationsSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.solver.</code><code class="sig-name descname">NumericOperationsSolver</code><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.solver.NumericOperationsSolver.patterns" title="neurolang.solver.NumericOperationsSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.solver.NumericOperationsSolver.match" title="neurolang.solver.NumericOperationsSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.solver.NumericOperationsSolver.pattern_match" title="neurolang.solver.NumericOperationsSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast_binary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>cast_unary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.cast_binary">
+<code class="sig-name descname">cast_binary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.cast_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.cast_unary">
+<code class="sig-name descname">cast_unary</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.cast_unary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.solver.NumericOperationsSolver.pattern_match" title="neurolang.solver.NumericOperationsSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.solver.NumericOperationsSolver.type">
+<code class="sig-name descname">type</code><em class="property"> = ~T</em><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.solver.NumericOperationsSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.solver.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

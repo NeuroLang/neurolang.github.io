@@ -1,0 +1,259 @@
+.. only:: html
+
+    .. note::
+        :class: sphx-glr-download-link-note
+
+        Click :ref:`here <sphx_glr_download_auto_examples_plot_neurosynth_implementation.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_auto_examples_plot_neurosynth_implementation.py:
+
+
+NeuroLang Example based Implementing a NeuroSynth Query
+====================================================
+
+
+.. code-block:: default
+
+
+
+    from nilearn import datasets, image, plotting
+    import pandas as pd
+    from neurolang import frontend as fe
+    from neurolang.frontend import probabilistic_frontend as pfe
+    from typing import Iterable
+    import nibabel as nib
+    import numpy as np
+
+
+
+
+
+
+
+
+
+Data preparation
+----------------
+
+Load the MNI atlas and resample it to 4mm voxels
+
+
+.. code-block:: default
+
+
+    mni_t1 = nib.load(datasets.fetch_icbm152_2009()['t1'])
+    mni_t1_4mm = image.resample_img(mni_t1, np.eye(3) * 4)
+
+
+
+
+
+
+
+
+Load the NeuroSynth database
+
+
+.. code-block:: default
+
+
+    ns_database_fn, ns_features_fn = datasets.utils._fetch_files(
+        'neurolang',
+        [
+            (
+                'database.txt',
+                'https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz',
+                {'uncompress': True}
+            ),
+            (
+                'features.txt',
+                'https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz',
+                {'uncompress': True}
+            ),
+        ]
+    )
+
+    ns_database = pd.read_csv(ns_database_fn, sep=f'\t')
+    ijk_positions = (
+        np.round(nib.affines.apply_affine(
+            np.linalg.inv(mni_t1_4mm.affine),
+            ns_database[['x', 'y', 'z']].values.astype(float)
+        )).astype(int)
+    )
+    ns_database['i'] = ijk_positions[:, 0]
+    ns_database['j'] = ijk_positions[:, 1]
+    ns_database['k'] = ijk_positions[:, 2]
+
+    ns_features = pd.read_csv(ns_features_fn, sep=f'\t')
+    ns_docs = ns_features[['pmid']].drop_duplicates()
+    ns_terms = (
+        pd.melt(
+                ns_features,
+                var_name='term', id_vars='pmid', value_name='TfIdf'
+           )
+        .query('TfIdf > 1e-3')[['pmid', 'term']]
+    )
+    ns_terms.to_csv('term_documents.csv')
+    (
+        ns_database
+        [["x", "y", "z", "i", "j", "k", "id"]]
+        .rename(columns={'id': 'pmid'})
+        .to_csv("document_activations.csv")
+    )
+
+
+
+
+
+
+
+
+
+Probabilistic Logic Programming in NeuroLang
+--------------------------------------------
+
+
+.. code-block:: default
+
+
+    nl = pfe.ProbabilisticFrontend()
+
+
+
+
+
+
+
+
+
+Adding new aggregation function to build a region overlay
+
+
+.. code-block:: default
+
+    @nl.add_symbol
+    def agg_create_region_overlay(
+        i: Iterable, j: Iterable, k: Iterable, p: Iterable
+    ) -> fe.ExplicitVBR:
+        voxels = np.c_[i, j, k]
+        return fe.ExplicitVBROverlay(
+            voxels, mni_t1_4mm.affine, p,
+            image_dim=mni_t1_4mm.shape
+        )
+
+
+
+
+
+
+
+
+
+Loading the database
+
+
+.. code-block:: default
+
+
+    activations = nl.add_tuple_set(ns_database.values, name='activations')
+    terms = nl.add_tuple_set(ns_terms.values, name='terms')
+    docs = nl.add_uniform_probabilistic_choice_over_set(
+            ns_docs.values, name='docs'
+    )
+
+
+
+
+
+
+
+
+
+Probabilistic program and querying
+
+
+.. code-block:: default
+
+
+    with nl.scope as e:
+        e.vox_activation[e.i, e.j, e.k, e.d] = e.activations[
+            e.d, ..., ..., ..., ..., "MNI", ..., ..., ..., ..., ..., ..., ...,
+            e.i, e.j, e.k,
+        ]
+        e.probmap[e.i, e.j, e.k, e.PROB[e.i, e.j, e.k]] = (
+            e.vox_activation[e.i, e.j, e.k, e.d]
+        ) // e.terms[e.d, "auditory"]
+        e.img[e.agg_create_region_overlay[e.i, e.j, e.k, e.p]] = e.probmap[
+            e.i, e.j, e.k, e.p
+        ]
+        img_query = nl.query((e.x,), e.img(e.x))
+
+
+
+
+
+
+
+
+
+Plotting results
+--------------------------------------------
+
+
+.. code-block:: default
+
+
+    result_image = (
+        img_query
+        .fetch_one()
+        [0]
+        .spatial_image()
+    )
+    img = result_image.get_fdata()
+    plot = plotting.plot_stat_map(
+        result_image, threshold=np.percentile(img[img > 0], 95)
+    )
+    plotting.show()
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_neurosynth_implementation_001.png
+    :class: sphx-glr-single-img
+
+
+
+
+
+
+.. rst-class:: sphx-glr-timing
+
+   **Total running time of the script:** ( 0 minutes  19.139 seconds)
+
+
+.. _sphx_glr_download_auto_examples_plot_neurosynth_implementation.py:
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-python
+
+     :download:`Download Python source code: plot_neurosynth_implementation.py <plot_neurosynth_implementation.py>`
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+     :download:`Download Jupyter notebook: plot_neurosynth_implementation.ipynb <plot_neurosynth_implementation.ipynb>`
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

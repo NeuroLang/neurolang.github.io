@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.probabilistic.dichotomy_theorem_based_solver module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.probabilistic.distributions module" href="neurolang.probabilistic.distributions.html" />
+    <link rel="prev" title="neurolang.probabilistic.cplogic.testing module" href="neurolang.probabilistic.cplogic.testing.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.dichotomy_theorem_based_solver module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.dichotomy_theorem_based_solver module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.probabilistic.dichotomy_theorem_based_solver">
+<span id="neurolang-probabilistic-dichotomy-theorem-based-solver-module"></span><h1>neurolang.probabilistic.dichotomy_theorem_based_solver module<a class="headerlink" href="#module-neurolang.probabilistic.dichotomy_theorem_based_solver" title="Permalink to this headline">¶</a></h1>
+<p>Implentation of probabilistic query resolution for
+hierarchical queries [^1]. Using this we apply the small dichotomy
+theorem [^1, ^2]:
+Let Q be a conjunctive query without self-joins or a non-repeating relational
+algebra expression. Then:
+* If Q is hierarchical, then P(Q) is in polynomial time, and can be computed
+using only the lifted inference rules for join, negation, union, and
+existential quantifier.</p>
+<ul class="simple">
+<li><p>If Q is not hierarchical, then P(Q) is #P-hard in the size of the database.</p></li>
+</ul>
+<p>[^1]: Robert Fink and Dan Olteanu. A dichotomy for non-repeating queries with
+negation in probabilistic databases. In Proceedings of the 33rd ACM
+SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems, PODS ’14,
+pages 144–155, New York, NY, USA, 2014. ACM.</p>
+<p>[^2]: Nilesh N. Dalvi and Dan Suciu. Efficient query evaluation on
+probabilistic databases. VLDB J., 16(4):523–544, 2007.</p>
+<dl class="class">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">ProbSemiringSolver</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.relational_algebra_provenance.html#neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver" title="neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.patterns" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rap_not_implemented" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rap_not_implemented"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rap_not_implemented</span></code></a>(self, ra_operation)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.type" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>arithmetic_string_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>concatenate_constant_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>deterministic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eliminate_superfluous_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extended_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>name_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>natural_join_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>probabilistic_choice_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>probabilistic_fact_set_invalid</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>projection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>projection_rap_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>prov_arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_difference</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rename_column_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rename_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.arithmetic_string_expression">
+<code class="sig-name descname">arithmetic_string_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.arithmetic_string_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.concatenate_constant_column">
+<code class="sig-name descname">concatenate_constant_column</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">concat_op</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.concatenate_constant_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.deterministic_fact_set">
+<code class="sig-name descname">deterministic_fact_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deterministic_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.deterministic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.eliminate_superfluous_projection">
+<code class="sig-name descname">eliminate_superfluous_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.eliminate_superfluous_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.extended_projection">
+<code class="sig-name descname">extended_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">proj_op</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.extended_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.name_columns_rap">
+<code class="sig-name descname">name_columns_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.name_columns_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.natural_join_rap">
+<code class="sig-name descname">natural_join_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.natural_join_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_choice_set">
+<code class="sig-name descname">probabilistic_choice_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">prob_choice_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_choice_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_fact_set">
+<code class="sig-name descname">probabilistic_fact_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">prob_fact_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_fact_set_invalid">
+<code class="sig-name descname">probabilistic_fact_set_invalid</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">prob_fact_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.probabilistic_fact_set_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.process_expression">
+<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.process_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.process_iterable_argument">
+<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.projection_rap">
+<code class="sig-name descname">projection_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.projection_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.projection_rap_columnint">
+<code class="sig-name descname">projection_rap_columnint</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.projection_rap_columnint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.prov_arithmetic_operation">
+<code class="sig-name descname">prov_arithmetic_operation</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arithmetic_op</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.prov_arithmetic_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_constant">
+<code class="sig-name descname">ra_constant</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_difference">
+<code class="sig-name descname">ra_difference</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">difference</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_difference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_equijoin">
+<code class="sig-name descname">ra_equijoin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">equijoin</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_equijoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_intersection">
+<code class="sig-name descname">ra_intersection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">intersection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_intersection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_name_columns">
+<code class="sig-name descname">ra_name_columns</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name_columns</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_name_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_naturaljoin">
+<code class="sig-name descname">ra_naturaljoin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">naturaljoin</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_product">
+<code class="sig-name descname">ra_product</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">product</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_product" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_projection">
+<code class="sig-name descname">ra_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_rename_column">
+<code class="sig-name descname">ra_rename_column</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rename_column</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_rename_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_rename_columns">
+<code class="sig-name descname">ra_rename_columns</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rename_columns</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_rename_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_symbol">
+<code class="sig-name descname">ra_symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_union">
+<code class="sig-name descname">ra_union</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">union</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.ra_union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rap_not_implemented">
+<code class="sig-name descname">rap_not_implemented</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ra_operation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rap_not_implemented" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rename_column_rap">
+<code class="sig-name descname">rename_column_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rename_column_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rename_columns_rap">
+<code class="sig-name descname">rename_columns_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.rename_columns_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_between_columns">
+<code class="sig-name descname">selection_between_columns</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_between_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_by_constant">
+<code class="sig-name descname">selection_by_constant</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_by_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_general_selection_by_constant">
+<code class="sig-name descname">selection_general_selection_by_constant</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_general_selection_by_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap">
+<code class="sig-name descname">selection_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap_eq_columnint">
+<code class="sig-name descname">selection_rap_eq_columnint</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap_eq_columnint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap_eq_columnint_columnint">
+<code class="sig-name descname">selection_rap_eq_columnint_columnint</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">selection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.selection_rap_eq_columnint_columnint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.set_destroy">
+<code class="sig-name descname">set_destroy</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">destroy</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.set_destroy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.union_rap">
+<code class="sig-name descname">union_rap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">union</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.union_rap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.ProbSemiringSolver.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">RAQueryOptimiser</code><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.relational_algebra.html#neurolang.relational_algebra.EliminateTrivialProjections" title="neurolang.relational_algebra.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.html#neurolang.relational_algebra.RelationalAlgebraPushInSelections" title="neurolang.relational_algebra.RelationalAlgebraPushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.RelationalAlgebraPushInSelections</span></code></a>, <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.patterns" title="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.type" title="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>eliminate_trivial_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_in_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_in_right</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.eliminate_trivial_projection">
+<code class="sig-name descname">eliminate_trivial_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.eliminate_trivial_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match" title="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.process_expression">
+<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.process_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.process_iterable_argument">
+<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_left">
+<code class="sig-name descname">push_selection_in_left</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_projection">
+<code class="sig-name descname">push_selection_in_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_right">
+<code class="sig-name descname">push_selection_in_right</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.push_selection_in_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.RAQueryOptimiser.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.extract_atom_sets_and_detect_self_joins">
+<code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">extract_atom_sets_and_detect_self_joins</code><span class="sig-paren">(</span><em class="sig-param">query</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.extract_atom_sets_and_detect_self_joins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.is_hierarchical_without_self_joins">
+<code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">is_hierarchical_without_self_joins</code><span class="sig-paren">(</span><em class="sig-param">query</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.is_hierarchical_without_self_joins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Let Q be first-order formula. For each variable x denote at(x) the
+set of atoms that contain the variable x. We say that Q is hierarchical
+if forall x, y one of the following holds:
+at(x) ⊆ at(y) or at(x) ⊇ at(y) or at(x) ∩ at(y) = ∅.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.solve_marg_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">solve_marg_query</code><span class="sig-paren">(</span><em class="sig-param">rule</em>, <em class="sig-param">cpl</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.solve_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a MARG query on a CP-Logic program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>Consequent must be of type <cite>Condition</cite>.
+MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</dd>
+<dt><strong>cpl_program</strong><span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="neurolang.probabilistic.dichotomy_theorem_based_solver.solve_succ_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.dichotomy_theorem_based_solver.</code><code class="sig-name descname">solve_succ_query</code><span class="sig-paren">(</span><em class="sig-param">query</em>, <em class="sig-param">cpl_program</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.dichotomy_theorem_based_solver.solve_succ_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a SUCC query on a CP-Logic program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>SUCC query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</dd>
+<dt><strong>cpl_program</strong><span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.dichotomy_theorem_based_solver.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

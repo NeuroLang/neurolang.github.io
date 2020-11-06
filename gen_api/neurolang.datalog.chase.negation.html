@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.datalog.chase.negation module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.datalog.chase.relational_algebra module" href="neurolang.datalog.chase.relational_algebra.html" />
+    <link rel="prev" title="neurolang.datalog.chase.mgu module" href="neurolang.datalog.chase.mgu.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.datalog.chase.negation">
+<span id="neurolang-datalog-chase-negation-module"></span><h1>neurolang.datalog.chase.negation module<a class="headerlink" href="#module-neurolang.datalog.chase.negation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.negation.</code><code class="sig-name descname">DatalogChaseNegation</code><span class="sig-paren">(</span><em class="sig-param">datalog_program</em>, <em class="sig-param">rules=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral" title="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.DatalogChaseNegationGeneral</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin" title="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_chase_solution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_chase_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_nodes_from_rules</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>chase_step</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>check_non_linear</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compose_all_subtitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compose_substitutions_ignoring_conflicts</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compose_substitutions_no_conflict</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compute_instance_update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compute_new_tuple_and_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compute_result_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eliminate_already_computed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_builtins_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_negative_builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>execute_chase</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extract_rule_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_variable_arguments</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_args_to_project</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>infer_iterable_subtype</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_containment_of_symbol_in_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_equality_between_constant_and_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>obtain_negative_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>obtain_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>per_rule_update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_builtin_substitution_containment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution_equality</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_negative_builtin_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_negative_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_substitution</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.aggregate_tuple_type_into_row_type">
+<code class="sig-name descname">aggregate_tuple_type_into_row_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row_type</em>, <em class="sig-param">tuple_type</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.aggregate_tuple_type_into_row_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.build_chase_solution">
+<code class="sig-name descname">build_chase_solution</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.build_chase_solution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.build_chase_tree">
+<code class="sig-name descname">build_chase_tree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">chase_set=&lt;function ChaseGeneral.chase_step at 0x7f99a9333ee0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.build_chase_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.build_nodes_from_rules">
+<code class="sig-name descname">build_nodes_from_rules</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">node</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.build_nodes_from_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.chase_step">
+<code class="sig-name descname">chase_step</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance</em>, <em class="sig-param">rule</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.chase_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.check_non_linear">
+<code class="sig-name descname">check_non_linear</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">head_functor</em>, <em class="sig-param">functor</em>, <em class="sig-param">recursive_calls</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.check_non_linear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compose_all_subtitutions">
+<em class="property">static </em><code class="sig-name descname">compose_all_subtitutions</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compose_all_subtitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compose_substitutions_ignoring_conflicts">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_ignoring_conflicts</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compose_substitutions_ignoring_conflicts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compose_substitutions_no_conflict">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_no_conflict</code><span class="sig-paren">(</span><em class="sig-param">substitutions</em>, <em class="sig-param">new_substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compose_substitutions_no_conflict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compute_instance_update">
+<code class="sig-name descname">compute_instance_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">new_tuples</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compute_instance_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compute_new_tuple_and_type">
+<code class="sig-name descname">compute_new_tuple_and_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compute_new_tuple_and_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.compute_result_set">
+<code class="sig-name descname">compute_result_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitutions</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.compute_result_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.eliminate_already_computed">
+<code class="sig-name descname">eliminate_already_computed</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">consequent</em>, <em class="sig-param">instance</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_builtins">
+<code class="sig-name descname">evaluate_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_builtins_predicates">
+<code class="sig-name descname">evaluate_builtins_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicates_to_evaluate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_builtins_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_negative_builtins">
+<code class="sig-name descname">evaluate_negative_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.evaluate_negative_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.execute_chase">
+<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.execute_chase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.extract_rule_predicates">
+<code class="sig-name descname">extract_rule_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.extract_rule_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.extract_variable_arguments">
+<em class="property">static </em><code class="sig-name descname">extract_variable_arguments</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.extract_variable_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.get_args_to_project">
+<code class="sig-name descname">get_args_to_project</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">builtin_predicates_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.get_args_to_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.infer_iterable_subtype">
+<em class="property">static </em><code class="sig-name descname">infer_iterable_subtype</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.infer_iterable_subtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.is_containment_of_symbol_in_constant">
+<em class="property">static </em><code class="sig-name descname">is_containment_of_symbol_in_constant</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.is_containment_of_symbol_in_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.is_equality_between_constant_and_symbol">
+<em class="property">static </em><code class="sig-name descname">is_equality_between_constant_and_symbol</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.is_equality_between_constant_and_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.obtain_negative_substitutions">
+<em class="property">static </em><code class="sig-name descname">obtain_negative_substitutions</code><span class="sig-paren">(</span><em class="sig-param">args_to_project</em>, <em class="sig-param">negative_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.obtain_negative_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.obtain_substitutions">
+<em class="property">static </em><code class="sig-name descname">obtain_substitutions</code><span class="sig-paren">(</span><em class="sig-param">args_to_project</em>, <em class="sig-param">rule_predicates_iterator</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.obtain_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.per_rule_update">
+<code class="sig-name descname">per_rule_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.per_rule_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution">
+<code class="sig-name descname">unify_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution_containment">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_containment</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution_containment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution_equality">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_equality</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_builtin_substitution_equality" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_negative_builtin_substitution">
+<code class="sig-name descname">unify_negative_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_negative_builtin_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_negative_substitution">
+<em class="property">static </em><code class="sig-name descname">unify_negative_substitution</code><span class="sig-paren">(</span><em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">representation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_negative_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegation.unify_substitution">
+<em class="property">static </em><code class="sig-name descname">unify_substitution</code><span class="sig-paren">(</span><em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">representation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation.unify_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.negation.</code><code class="sig-name descname">DatalogChaseNegationGeneral</code><span class="sig-paren">(</span><em class="sig-param">datalog_program</em>, <em class="sig-param">rules=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseGeneral" title="neurolang.datalog.chase.general.ChaseGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseGeneral</span></code></a>, <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseSemiNaive" title="neurolang.datalog.chase.general.ChaseSemiNaive"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseSemiNaive</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints" title="neurolang.datalog.chase.negation.NegativeFactConstraints"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.NegativeFactConstraints</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_chase_solution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_chase_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_nodes_from_rules</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>chase_step</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>check_non_linear</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compose_all_subtitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compose_substitutions_ignoring_conflicts</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compose_substitutions_no_conflict</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compute_instance_update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>compute_new_tuple_and_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>compute_result_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eliminate_already_computed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_builtins_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_negative_builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>execute_chase</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extract_rule_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_variable_arguments</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_args_to_project</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>infer_iterable_subtype</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_containment_of_symbol_in_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_equality_between_constant_and_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>per_rule_update</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_builtin_substitution_containment</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_builtin_substitution_equality</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_negative_builtin_substitution</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.aggregate_tuple_type_into_row_type">
+<code class="sig-name descname">aggregate_tuple_type_into_row_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row_type</em>, <em class="sig-param">tuple_type</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.aggregate_tuple_type_into_row_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_chase_solution">
+<code class="sig-name descname">build_chase_solution</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_chase_solution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_chase_tree">
+<code class="sig-name descname">build_chase_tree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">chase_set=&lt;function ChaseGeneral.chase_step at 0x7f99a9333ee0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_chase_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_nodes_from_rules">
+<code class="sig-name descname">build_nodes_from_rules</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">node</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.build_nodes_from_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.chase_step">
+<code class="sig-name descname">chase_step</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance</em>, <em class="sig-param">rule</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.chase_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_non_linear">
+<code class="sig-name descname">check_non_linear</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">head_functor</em>, <em class="sig-param">functor</em>, <em class="sig-param">recursive_calls</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_non_linear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_all_subtitutions">
+<em class="property">static </em><code class="sig-name descname">compose_all_subtitutions</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_all_subtitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_substitutions_ignoring_conflicts">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_ignoring_conflicts</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_substitutions_ignoring_conflicts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_substitutions_no_conflict">
+<em class="property">static </em><code class="sig-name descname">compose_substitutions_no_conflict</code><span class="sig-paren">(</span><em class="sig-param">substitutions</em>, <em class="sig-param">new_substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compose_substitutions_no_conflict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_instance_update">
+<code class="sig-name descname">compute_instance_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">new_tuples</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_instance_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_new_tuple_and_type">
+<code class="sig-name descname">compute_new_tuple_and_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_new_tuple_and_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_result_set">
+<code class="sig-name descname">compute_result_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitutions</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.compute_result_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.eliminate_already_computed">
+<code class="sig-name descname">eliminate_already_computed</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">consequent</em>, <em class="sig-param">instance</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_builtins">
+<code class="sig-name descname">evaluate_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_builtins_predicates">
+<code class="sig-name descname">evaluate_builtins_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicates_to_evaluate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_builtins_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_negative_builtins">
+<code class="sig-name descname">evaluate_negative_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_negative_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.execute_chase">
+<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.execute_chase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_rule_predicates">
+<code class="sig-name descname">extract_rule_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_rule_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_variable_arguments">
+<em class="property">static </em><code class="sig-name descname">extract_variable_arguments</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_variable_arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.get_args_to_project">
+<code class="sig-name descname">get_args_to_project</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">builtin_predicates_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.get_args_to_project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.infer_iterable_subtype">
+<em class="property">static </em><code class="sig-name descname">infer_iterable_subtype</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.infer_iterable_subtype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.is_containment_of_symbol_in_constant">
+<em class="property">static </em><code class="sig-name descname">is_containment_of_symbol_in_constant</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.is_containment_of_symbol_in_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.is_equality_between_constant_and_symbol">
+<em class="property">static </em><code class="sig-name descname">is_equality_between_constant_and_symbol</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.is_equality_between_constant_and_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.per_rule_update">
+<code class="sig-name descname">per_rule_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.per_rule_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution">
+<code class="sig-name descname">unify_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution_containment">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_containment</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution_containment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution_equality">
+<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_equality</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_builtin_substitution_equality" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_negative_builtin_substitution">
+<code class="sig-name descname">unify_negative_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_negative_builtin_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.negation.</code><code class="sig-name descname">DatalogChaseNegationMGUMixin</code><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.mgu.html#neurolang.datalog.chase.mgu.ChaseMGUMixin" title="neurolang.datalog.chase.mgu.ChaseMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.mgu.ChaseMGUMixin</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 77%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>obtain_negative_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>obtain_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>unify_negative_substitution</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unify_substitution</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_negative_substitutions">
+<em class="property">static </em><code class="sig-name descname">obtain_negative_substitutions</code><span class="sig-paren">(</span><em class="sig-param">args_to_project</em>, <em class="sig-param">negative_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_negative_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_substitutions">
+<em class="property">static </em><code class="sig-name descname">obtain_substitutions</code><span class="sig-paren">(</span><em class="sig-param">args_to_project</em>, <em class="sig-param">rule_predicates_iterator</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_negative_substitution">
+<em class="property">static </em><code class="sig-name descname">unify_negative_substitution</code><span class="sig-paren">(</span><em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">representation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_negative_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_substitution">
+<em class="property">static </em><code class="sig-name descname">unify_substitution</code><span class="sig-paren">(</span><em class="sig-param">predicate</em>, <em class="sig-param">substitution</em>, <em class="sig-param">representation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_substitution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.negation.</code><code class="sig-name descname">DatalogChaseNegationRelationalAlgebraMixin</code><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.relational_algebra.html#neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin" title="neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 82%" />
+<col style="width: 18%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>compute_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>obtain_negative_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>obtain_substitutions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>translate_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>translate_predicate_process_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>translate_predicate_process_argument_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>translate_to_ra_plus</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.compute_substitutions">
+<code class="sig-name descname">compute_substitutions</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">result</em>, <em class="sig-param">projected_var_names</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.compute_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions">
+<code class="sig-name descname">obtain_negative_substitutions</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">args_to_project</em>, <em class="sig-param">rule_predicates_iterator</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_substitutions">
+<code class="sig-name descname">obtain_substitutions</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">args_to_project</em>, <em class="sig-param">rule_predicates_iterator</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate">
+<code class="sig-name descname">translate_predicate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pred_ra</em>, <em class="sig-param">column</em>, <em class="sig-param">args_to_project</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate_process_argument">
+<code class="sig-name descname">translate_predicate_process_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em>, <em class="sig-param">local_selections</em>, <em class="sig-param">local_column</em>, <em class="sig-param">global_column</em>, <em class="sig-param">args_to_project</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate_process_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate_process_argument_symbol">
+<code class="sig-name descname">translate_predicate_process_argument_symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em>, <em class="sig-param">global_column</em>, <em class="sig-param">args_to_project</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_predicate_process_argument_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_to_ra_plus">
+<code class="sig-name descname">translate_to_ra_plus</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">args_to_project</em>, <em class="sig-param">rule_predicates_iterator</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.translate_to_ra_plus" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.datalog.chase.negation.NegativeFactConstraints">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.chase.negation.</code><code class="sig-name descname">NegativeFactConstraints</code><a class="headerlink" href="#neurolang.datalog.chase.negation.NegativeFactConstraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.datalog.chase.negation.NegativeFactConstraints.check_constraints">
+<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.NegativeFactConstraints.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.datalog.chase.negation.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

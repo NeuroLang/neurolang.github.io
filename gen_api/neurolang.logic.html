@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>neurolang.logic package &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.logic.expression_processing module" href="neurolang.logic.expression_processing.html" />
+    <link rel="prev" title="neurolang.exceptions module" href="neurolang.exceptions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.logic package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.logic package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.logic">
+<span id="neurolang-logic-package"></span><h1>neurolang.logic package<a class="headerlink" href="#module-neurolang.logic" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="neurolang.logic.BinaryLogicOperator">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">BinaryLogicOperator</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.BinaryLogicOperator.apply" title="neurolang.logic.BinaryLogicOperator.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.BinaryLogicOperator.type" title="neurolang.logic.BinaryLogicOperator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.BinaryLogicOperator.unapply" title="neurolang.logic.BinaryLogicOperator.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.BinaryLogicOperator.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.BinaryLogicOperator.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.BinaryLogicOperator.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.BinaryLogicOperator.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.BinaryLogicOperator.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.BinaryLogicOperator.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.BinaryLogicOperator.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Conjunction">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Conjunction</code><span class="sig-paren">(</span><em class="sig-param">formulas</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.NaryLogicOperator" title="neurolang.logic.NaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.NaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Conjunction.apply" title="neurolang.logic.Conjunction.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Conjunction.type" title="neurolang.logic.Conjunction.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Conjunction.unapply" title="neurolang.logic.Conjunction.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Conjunction.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Conjunction.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Conjunction.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Conjunction.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Conjunction.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Conjunction.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Conjunction.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Conjunction.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Disjunction">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Disjunction</code><span class="sig-paren">(</span><em class="sig-param">formulas</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.NaryLogicOperator" title="neurolang.logic.NaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.NaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Disjunction.apply" title="neurolang.logic.Disjunction.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Disjunction.type" title="neurolang.logic.Disjunction.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Disjunction.unapply" title="neurolang.logic.Disjunction.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Disjunction.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Disjunction.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Disjunction.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Disjunction.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Disjunction.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Disjunction.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Disjunction.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Disjunction.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.ExistentialPredicate">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">ExistentialPredicate</code><span class="sig-paren">(</span><em class="sig-param">head</em>, <em class="sig-param">body</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.Quantifier" title="neurolang.logic.Quantifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Quantifier</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.ExistentialPredicate.apply" title="neurolang.logic.ExistentialPredicate.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.ExistentialPredicate.type" title="neurolang.logic.ExistentialPredicate.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.ExistentialPredicate.unapply" title="neurolang.logic.ExistentialPredicate.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.ExistentialPredicate.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.ExistentialPredicate.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.ExistentialPredicate.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.ExistentialPredicate.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.ExistentialPredicate.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.ExistentialPredicate.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.ExistentialPredicate.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Implication">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Implication</code><span class="sig-paren">(</span><em class="sig-param">consequent</em>, <em class="sig-param">antecedent</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<p>Expression of the form <cite>P(x) ← Q(x)</cite></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Implication.apply" title="neurolang.logic.Implication.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Implication.type" title="neurolang.logic.Implication.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Implication.unapply" title="neurolang.logic.Implication.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Implication.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Implication.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Implication.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Implication.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Implication.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Implication.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Implication.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Implication.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.LogicOperator">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">LogicOperator</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.LogicOperator.apply" title="neurolang.logic.LogicOperator.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.LogicOperator.type" title="neurolang.logic.LogicOperator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.LogicOperator.unapply" title="neurolang.logic.LogicOperator.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.LogicOperator.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.LogicOperator.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.LogicOperator.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.LogicOperator.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.LogicOperator.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.LogicOperator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.LogicOperator.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.LogicOperator.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.NaryLogicOperator">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">NaryLogicOperator</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.NaryLogicOperator.apply" title="neurolang.logic.NaryLogicOperator.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.NaryLogicOperator.type" title="neurolang.logic.NaryLogicOperator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.NaryLogicOperator.unapply" title="neurolang.logic.NaryLogicOperator.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.NaryLogicOperator.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.NaryLogicOperator.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.NaryLogicOperator.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.NaryLogicOperator.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.NaryLogicOperator.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.NaryLogicOperator.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.NaryLogicOperator.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Negation">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Negation</code><span class="sig-paren">(</span><em class="sig-param">formula</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.UnaryLogicOperator" title="neurolang.logic.UnaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.UnaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Negation.apply" title="neurolang.logic.Negation.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Negation.type" title="neurolang.logic.Negation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Negation.unapply" title="neurolang.logic.Negation.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Negation.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Negation.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Negation.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Negation.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Negation.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Negation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Negation.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Negation.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Predicate">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Predicate</code><span class="sig-paren">(</span><em class="sig-param">functor</em>, <em class="sig-param">args</em>, <em class="sig-param">kwargs=None</em>, <em class="sig-param">validate_arguments=False</em>, <em class="sig-param">verify_type=True</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expressions.html#neurolang.expressions.FunctionApplication" title="neurolang.expressions.FunctionApplication"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.FunctionApplication</span></code></a>, <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>function</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Predicate.apply" title="neurolang.logic.Predicate.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Predicate.type" title="neurolang.logic.Predicate.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Predicate.unapply" title="neurolang.logic.Predicate.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Predicate.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Predicate.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Predicate.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Predicate.function">
+<em class="property">property </em><code class="sig-name descname">function</code><a class="headerlink" href="#neurolang.logic.Predicate.function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Predicate.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Predicate.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Predicate.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Predicate.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Predicate.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Quantifier">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Quantifier</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Quantifier.apply" title="neurolang.logic.Quantifier.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Quantifier.type" title="neurolang.logic.Quantifier.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Quantifier.unapply" title="neurolang.logic.Quantifier.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Quantifier.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Quantifier.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Quantifier.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Quantifier.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Quantifier.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Quantifier.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Quantifier.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Quantifier.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.UnaryLogicOperator">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">UnaryLogicOperator</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.LogicOperator" title="neurolang.logic.LogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.UnaryLogicOperator.apply" title="neurolang.logic.UnaryLogicOperator.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.UnaryLogicOperator.type" title="neurolang.logic.UnaryLogicOperator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.UnaryLogicOperator.unapply" title="neurolang.logic.UnaryLogicOperator.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.UnaryLogicOperator.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UnaryLogicOperator.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UnaryLogicOperator.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UnaryLogicOperator.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.UnaryLogicOperator.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UnaryLogicOperator.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UnaryLogicOperator.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.Union">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">Union</code><span class="sig-paren">(</span><em class="sig-param">formulas</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.NaryLogicOperator" title="neurolang.logic.NaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.NaryLogicOperator</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Union.apply" title="neurolang.logic.Union.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.Union.type" title="neurolang.logic.Union.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.Union.unapply" title="neurolang.logic.Union.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.Union.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Union.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Union.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Union.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.Union.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.Union.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.Union.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.Union.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.logic.UniversalPredicate">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.</code><code class="sig-name descname">UniversalPredicate</code><span class="sig-paren">(</span><em class="sig-param">head</em>, <em class="sig-param">body</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.Quantifier" title="neurolang.logic.Quantifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Quantifier</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.UniversalPredicate.apply" title="neurolang.logic.UniversalPredicate.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.UniversalPredicate.type" title="neurolang.logic.UniversalPredicate.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.logic.UniversalPredicate.unapply" title="neurolang.logic.UniversalPredicate.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.logic.UniversalPredicate.apply">
+<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a new expression using a tuple of its parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UniversalPredicate.cast">
+<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UniversalPredicate.change_type">
+<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate.change_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UniversalPredicate.get_wrapped_attribute">
+<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.logic.UniversalPredicate.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.UniversalPredicate.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.logic.UniversalPredicate.unapply">
+<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.UniversalPredicate.unapply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tuple of parameters used to build the expression.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.expression_processing.html">neurolang.logic.expression_processing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.horn_clauses.html">neurolang.logic.horn_clauses module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.transformations.html">neurolang.logic.transformations module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.unification.html">neurolang.logic.unification module</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.logic.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
