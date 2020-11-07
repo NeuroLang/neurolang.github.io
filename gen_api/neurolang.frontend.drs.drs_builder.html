@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>neurolang.frontend.drs.drs_builder module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.frontend.drs.drs_builder module &#8212; neurolang 0.1a1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -38,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b></b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -121,9 +122,9 @@
       
   <div class="section" id="module-neurolang.frontend.drs.drs_builder">
 <span id="neurolang-frontend-drs-drs-builder-module"></span><h1>neurolang.frontend.drs.drs_builder module<a class="headerlink" href="#module-neurolang.frontend.drs.drs_builder" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.frontend.drs.drs_builder.DRS">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">DRS</code><span class="sig-paren">(</span><em class="sig-param">referents</em>, <em class="sig-param">expressions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">DRS</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Expression</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -132,16 +133,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(self, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.apply" title="neurolang.frontend.drs.drs_builder.DRS.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(\*args)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
 <td><p>Builds a new expression using a tuple of its parameters</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.type" title="neurolang.frontend.drs.drs_builder.DRS.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.type" title="neurolang.frontend.drs.drs_builder.DRS.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.unapply" title="neurolang.frontend.drs.drs_builder.DRS.unapply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
 <td><p>Returns a tuple of parameters used to build the expression.</p></td>
 </tr>
 </tbody>
@@ -163,48 +164,21 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS.apply">
-<em class="property">classmethod </em><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.apply" title="Permalink to this definition">¶</a></dt>
-<dd><p>Builds a new expression using a tuple of its parameters</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS.cast">
-<code class="sig-name descname">cast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.cast" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS.change_type">
-<code class="sig-name descname">change_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">type_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.change_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS.get_wrapped_attribute">
-<code class="sig-name descname">get_wrapped_attribute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">attr</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.get_wrapped_attribute" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="neurolang.frontend.drs.drs_builder.DRS.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS.unapply">
-<code class="sig-name descname">unapply</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS.unapply" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a tuple of parameters used to build the expression.</p>
 </dd></dl>
 
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.frontend.drs.drs_builder.DRS2FOL">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">DRS2FOL</code><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.patterns" title="neurolang.frontend.drs.drs_builder.DRS2FOL.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -216,13 +190,13 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.match" title="neurolang.frontend.drs.drs_builder.DRS2FOL.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match" title="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type" title="neurolang.frontend.drs.drs_builder.DRS2FOL.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type" title="neurolang.frontend.drs.drs_builder.DRS2FOL.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -265,122 +239,36 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.drs">
-<code class="sig-name descname">drs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">drs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.drs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">drs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.drs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.implication">
-<code class="sig-name descname">implication</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">impl</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.implication" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">impl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.implication" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match" title="neurolang.frontend.drs.drs_builder.DRS2FOL.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.unary_conjunction">
-<code class="sig-name descname">unary_conjunction</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">conj</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.unary_conjunction" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRS2FOL.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unary_conjunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.unary_conjunction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">DRSBuilder</code><span class="sig-paren">(</span><em class="sig-param">grammar</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">DRSBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grammar</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.patterns" title="neurolang.frontend.drs.drs_builder.DRSBuilder.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -392,13 +280,13 @@ instance to be executed upon pattern and match being <code class="docutils liter
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.match" title="neurolang.frontend.drs.drs_builder.DRSBuilder.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match" title="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type" title="neurolang.frontend.drs.drs_builder.DRSBuilder.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type" title="neurolang.frontend.drs.drs_builder.DRSBuilder.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -477,177 +365,91 @@ instance to be executed upon pattern and match being <code class="docutils liter
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.comma_and">
-<code class="sig-name descname">comma_and</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.comma_and" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">comma_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.comma_and" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.conditional">
-<code class="sig-name descname">conditional</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.conditional" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">conditional</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.conditional" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.float_drs">
-<code class="sig-name descname">float_drs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fa</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.float_drs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">float_drs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fa</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.float_drs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.implication">
-<code class="sig-name descname">implication</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">impl</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.implication" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">impl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.implication" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.indefinite_noun_phrase">
-<code class="sig-name descname">indefinite_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">np</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.indefinite_noun_phrase" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">indefinite_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.indefinite_noun_phrase" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.join_drs">
-<code class="sig-name descname">join_drs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">drs</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.join_drs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">join_drs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.join_drs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.lit_noun_phrase">
-<code class="sig-name descname">lit_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">np</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.lit_noun_phrase" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lit_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.lit_noun_phrase" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match" title="neurolang.frontend.drs.drs_builder.DRSBuilder.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.predicate">
-<code class="sig-name descname">predicate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.predicate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.predicate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.proper_names">
-<code class="sig-name descname">proper_names</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">np</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.proper_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">proper_names</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.proper_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.quoted_predicate">
-<code class="sig-name descname">quoted_predicate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.quoted_predicate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quoted_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.quoted_predicate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.sentence_list">
-<code class="sig-name descname">sentence_list</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sl</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.sentence_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sentence_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.sentence_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.simple_and">
-<code class="sig-name descname">simple_and</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.simple_and" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">simple_and</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.simple_and" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.single_sentence_list">
-<code class="sig-name descname">single_sentence_list</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sl</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.single_sentence_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">single_sentence_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.single_sentence_list" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.var_apposition">
-<code class="sig-name descname">var_apposition</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">np</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_apposition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">var_apposition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_apposition" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.var_noun_phrase">
-<code class="sig-name descname">var_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">np</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_noun_phrase" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.drs.drs_builder.DRSBuilder.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">var_noun_phrase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">np</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_noun_phrase" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.frontend.drs.drs_builder.indent">
-<code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">indent</code><span class="sig-paren">(</span><em class="sig-param">s</em>, <em class="sig-param">tab='    '</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.indent" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.frontend.drs.drs_builder.</code><code class="sig-name descname">indent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">tab</span><span class="o">=</span><span class="default_value">'    '</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.indent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -671,8 +473,8 @@ instance to be executed upon pattern and match being <code class="docutils liter
       
     </p>
     <p>
-        &copy; Copyright 2017, Demian Wassermann.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
     </p>
   </div>
 </footer>

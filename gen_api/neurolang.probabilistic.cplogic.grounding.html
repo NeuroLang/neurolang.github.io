@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>neurolang.probabilistic.cplogic.grounding module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.probabilistic.cplogic.grounding module &#8212; neurolang 0.1a1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -16,8 +17,6 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="neurolang.probabilistic.cplogic.noisy_or_probability_provenance module" href="neurolang.probabilistic.cplogic.noisy_or_probability_provenance.html" />
-    <link rel="prev" title="neurolang.probabilistic.cplogic.gm_provenance_solver module" href="neurolang.probabilistic.cplogic.gm_provenance_solver.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -40,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b></b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -58,10 +57,10 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
 </ul>
@@ -123,9 +122,9 @@
       
   <div class="section" id="module-neurolang.probabilistic.cplogic.grounding">
 <span id="neurolang-probabilistic-cplogic-grounding-module"></span><h1>neurolang.probabilistic.cplogic.grounding module<a class="headerlink" href="#module-neurolang.probabilistic.cplogic.grounding" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.grounding.Chase">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">Chase</code><span class="sig-paren">(</span><em class="sig-param">datalog_program</em>, <em class="sig-param">rules=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">Chase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datalog_program</span></em>, <em class="sig-param"><span class="n">rules</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseNaive" title="neurolang.datalog.chase.general.ChaseNaive"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseNaive</span></code></a>, <a class="reference internal" href="neurolang.datalog.chase.relational_algebra.html#neurolang.datalog.chase.relational_algebra.ChaseNamedRelationalAlgebraMixin" title="neurolang.datalog.chase.relational_algebra.ChaseNamedRelationalAlgebraMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.relational_algebra.ChaseNamedRelationalAlgebraMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseGeneral" title="neurolang.datalog.chase.general.ChaseGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseGeneral</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
@@ -226,167 +225,17 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.aggregate_tuple_type_into_row_type">
-<code class="sig-name descname">aggregate_tuple_type_into_row_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">row_type</em>, <em class="sig-param">tuple_type</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.aggregate_tuple_type_into_row_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.build_chase_solution">
-<code class="sig-name descname">build_chase_solution</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.build_chase_solution" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.build_chase_tree">
-<code class="sig-name descname">build_chase_tree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">chase_set=&lt;function ChaseGeneral.chase_step at 0x7f99a9333ee0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.build_chase_tree" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.build_nodes_from_rules">
-<code class="sig-name descname">build_nodes_from_rules</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">node</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.build_nodes_from_rules" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.chase_step">
-<code class="sig-name descname">chase_step</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance</em>, <em class="sig-param">rule</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.chase_step" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.check_constraints">
-<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">instance_update</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.check_constraints" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compose_all_subtitutions">
-<em class="property">static </em><code class="sig-name descname">compose_all_subtitutions</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compose_all_subtitutions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compose_substitutions_ignoring_conflicts">
-<em class="property">static </em><code class="sig-name descname">compose_substitutions_ignoring_conflicts</code><span class="sig-paren">(</span><em class="sig-param">new_substitutions</em>, <em class="sig-param">subs_keys</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compose_substitutions_ignoring_conflicts" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compose_substitutions_no_conflict">
-<em class="property">static </em><code class="sig-name descname">compose_substitutions_no_conflict</code><span class="sig-paren">(</span><em class="sig-param">substitutions</em>, <em class="sig-param">new_substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compose_substitutions_no_conflict" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compute_instance_update">
-<code class="sig-name descname">compute_instance_update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">new_tuples</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compute_instance_update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compute_new_tuple_and_type">
-<code class="sig-name descname">compute_new_tuple_and_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compute_new_tuple_and_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.compute_result_set">
-<code class="sig-name descname">compute_result_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">substitutions</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.compute_result_set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.eliminate_already_computed">
-<code class="sig-name descname">eliminate_already_computed</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">consequent</em>, <em class="sig-param">instance</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.evaluate_builtins">
-<code class="sig-name descname">evaluate_builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">builtin_predicates</em>, <em class="sig-param">substitutions</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.evaluate_builtins" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.evaluate_builtins_predicates">
-<code class="sig-name descname">evaluate_builtins_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicates_to_evaluate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.evaluate_builtins_predicates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.execute_chase">
-<code class="sig-name descname">execute_chase</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rules</em>, <em class="sig-param">instance_update</em>, <em class="sig-param">instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.execute_chase" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.extract_rule_predicates">
-<code class="sig-name descname">extract_rule_predicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.extract_rule_predicates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.extract_variable_arguments">
-<em class="property">static </em><code class="sig-name descname">extract_variable_arguments</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.extract_variable_arguments" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.get_args_to_project">
-<code class="sig-name descname">get_args_to_project</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">builtin_predicates_</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.get_args_to_project" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.infer_iterable_subtype">
-<em class="property">static </em><code class="sig-name descname">infer_iterable_subtype</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.infer_iterable_subtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.is_containment_of_symbol_in_constant">
-<em class="property">static </em><code class="sig-name descname">is_containment_of_symbol_in_constant</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.is_containment_of_symbol_in_constant" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.is_equality_between_constant_and_symbol">
-<em class="property">static </em><code class="sig-name descname">is_equality_between_constant_and_symbol</code><span class="sig-paren">(</span><em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.is_equality_between_constant_and_symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.obtain_substitutions">
-<code class="sig-name descname">obtain_substitutions</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule_predicates_iterator</em>, <em class="sig-param">instance</em>, <em class="sig-param">restriction_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.obtain_substitutions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.rewrite_antecedent_equalities">
-<code class="sig-name descname">rewrite_antecedent_equalities</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.rewrite_antecedent_equalities" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.rewrite_constants_in_consequent">
-<code class="sig-name descname">rewrite_constants_in_consequent</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.rewrite_constants_in_consequent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.rewrite_rule_consequent_constants_to_equalities">
-<em class="property">static </em><code class="sig-name descname">rewrite_rule_consequent_constants_to_equalities</code><span class="sig-paren">(</span><em class="sig-param">rule</em>, <em class="sig-param">new_args</em>, <em class="sig-param">new_equalities</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.rewrite_rule_consequent_constants_to_equalities" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.translate_conjunction_to_named_ra">
-<code class="sig-name descname">translate_conjunction_to_named_ra</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">conjunction</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.translate_conjunction_to_named_ra" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution">
-<code class="sig-name descname">unify_builtin_substitution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em>, <em class="sig-param">substitution</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution_containment">
-<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_containment</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution_containment" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution_equality">
-<em class="property">static </em><code class="sig-name descname">unify_builtin_substitution_equality</code><span class="sig-paren">(</span><em class="sig-param">evaluated_predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Chase.unify_builtin_substitution_equality" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.grounding.Datalog">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">Datalog</code><span class="sig-paren">(</span><em class="sig-param">symbol_table=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.TranslateToLogic" title="neurolang.logic.expression_processing.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.TranslateToLogic</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionBasicEvaluator" title="neurolang.expression_walker.ExpressionBasicEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></a></p>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">Datalog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol_table</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.TranslateToLogic" title="neurolang.logic.expression_processing.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.TranslateToLogic</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_functions</strong></dt><dd></dd>
-<dt><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.patterns" title="neurolang.probabilistic.cplogic.grounding.Datalog.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -398,16 +247,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.infer_iterable_type" title="neurolang.probabilistic.cplogic.grounding.Datalog.infer_iterable_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code></a>(iterable)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
 <td><p>Infer the type of iterable elements without modifying the iterable.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.match" title="neurolang.probabilistic.cplogic.grounding.Datalog.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match" title="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.type" title="neurolang.probabilistic.cplogic.grounding.Datalog.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.type" title="neurolang.probabilistic.cplogic.grounding.Datalog.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -504,304 +353,86 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.add_extensional_predicate_from_tuples">
-<code class="sig-name descname">add_extensional_predicate_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em>, <em class="sig-param">type_=&lt;class 'neurolang.type_system.Unknown'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.add_extensional_predicate_from_tuples" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.add_functions_to_symbol_table">
-<code class="sig-name descname">add_functions_to_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.add_functions_to_symbol_table" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.build_conjunction">
-<code class="sig-name descname">build_conjunction</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">conjunction</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.build_conjunction" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.build_disjunction">
-<code class="sig-name descname">build_disjunction</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">disjunction</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.build_disjunction" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.build_negation">
-<code class="sig-name descname">build_negation</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">inversion</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.build_negation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.builtins">
-<code class="sig-name descname">builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.builtins" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.eval_lambda">
-<code class="sig-name descname">eval_lambda</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.eval_lambda" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_function">
-<code class="sig-name descname">evaluate_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_function" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_function_infer_type">
-<code class="sig-name descname">evaluate_function_infer_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_function_infer_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_projection">
-<code class="sig-name descname">evaluate_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.evaluate_projection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.extensional_database">
-<code class="sig-name descname">extensional_database</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.extensional_database" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.fact">
-<code class="sig-name descname">fact</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.fact" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.function_equals">
-<code class="sig-name descname">function_equals</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">a: Any</em>, <em class="sig-param">b: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.function_equals" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.included_functions">
-<em class="property">property </em><code class="sig-name descname">included_functions</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.included_functions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.infer_iterable_type">
-<em class="property">static </em><code class="sig-name descname">infer_iterable_type</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.infer_iterable_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Infer the type of iterable elements
-without modifying the iterable.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>iterable</strong><span class="classifier">Iterable</span></dt><dd><p>iterable from which to infer
-element’s type</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>type, iterable</dt><dd><p>the inferred type and the iterable.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.intensional_database">
-<code class="sig-name descname">intensional_database</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.intensional_database" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.new_set">
-<em class="property">static </em><code class="sig-name descname">new_set</code><span class="sig-paren">(</span><em class="sig-param">iterable=None</em>, <em class="sig-param">row_type=None</em>, <em class="sig-param">verify_row_type=False</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.new_set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match" title="neurolang.probabilistic.cplogic.grounding.Datalog.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.pop_scope">
-<code class="sig-name descname">pop_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.pop_scope" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.predicate_terms">
-<code class="sig-name descname">predicate_terms</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.predicate_terms" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="neurolang.probabilistic.cplogic.grounding.Datalog.protected_keywords">
 <code class="sig-name descname">protected_keywords</code><em class="property"> = {}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.push_scope">
-<code class="sig-name descname">push_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.push_scope" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.statement_intensional">
-<code class="sig-name descname">statement_intensional</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.statement_intensional" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.symbol">
-<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.translate_logic_operator">
-<code class="sig-name descname">translate_logic_operator</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.translate_logic_operator" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="neurolang.probabilistic.cplogic.grounding.Datalog.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.probabilistic.cplogic.grounding.Datalog.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.Datalog.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_extensional_grounding">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_extensional_grounding</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">tuple_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_extensional_grounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_extensional_grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">tuple_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_extensional_grounding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_grounding">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_grounding</code><span class="sig-paren">(</span><em class="sig-param">cpl_program</em>, <em class="sig-param">dl_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_grounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cpl_program</span></em>, <em class="sig-param"><span class="n">dl_instance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_grounding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_pchoice_grounding">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_pchoice_grounding</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_pchoice_grounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_pchoice_grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_pchoice_grounding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_pfact_grounding_from_set">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_pfact_grounding_from_set</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_pfact_grounding_from_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_pfact_grounding_from_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_pfact_grounding_from_set" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_probabilistic_grounding">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_probabilistic_grounding</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">relation</em>, <em class="sig-param">grounding_cls</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_probabilistic_grounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_probabilistic_grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">relation</span></em>, <em class="sig-param"><span class="n">grounding_cls</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_probabilistic_grounding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.build_rule_grounding">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_rule_grounding</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">st_item</em>, <em class="sig-param">tuple_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_rule_grounding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">build_rule_grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">st_item</span></em>, <em class="sig-param"><span class="n">tuple_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.build_rule_grounding" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.cplogic_to_datalog">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">cplogic_to_datalog</code><span class="sig-paren">(</span><em class="sig-param">cpl_program</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.cplogic_to_datalog" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">cplogic_to_datalog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cpl_program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.cplogic_to_datalog" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.get_grounding_dependencies">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_dependencies</code><span class="sig-paren">(</span><em class="sig-param">grounding</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_dependencies" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_dependencies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grounding</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_dependencies" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.get_grounding_pred_symb">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_pred_symb</code><span class="sig-paren">(</span><em class="sig-param">grounded_exp</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_pred_symb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_pred_symb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grounded_exp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_pred_symb" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.get_grounding_predicate">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_predicate</code><span class="sig-paren">(</span><em class="sig-param">grounded_exp</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_predicate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">get_grounding_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grounded_exp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.get_grounding_predicate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.ground_cplogic_program">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">ground_cplogic_program</code><span class="sig-paren">(</span><em class="sig-param">cpl_program</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.ground_cplogic_program" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">ground_cplogic_program</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cpl_program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.ground_cplogic_program" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.remove_probability_column">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">remove_probability_column</code><span class="sig-paren">(</span><em class="sig-param">relation</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.remove_probability_column" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">remove_probability_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.remove_probability_column" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.topological_sort_groundings">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">topological_sort_groundings</code><span class="sig-paren">(</span><em class="sig-param">groundings</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.topological_sort_groundings" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">topological_sort_groundings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groundings</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.topological_sort_groundings" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.probabilistic.cplogic.grounding.topological_sort_groundings_util">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">topological_sort_groundings_util</code><span class="sig-paren">(</span><em class="sig-param">pred_symb</em>, <em class="sig-param">dependencies</em>, <em class="sig-param">visited</em>, <em class="sig-param">result</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.topological_sort_groundings_util" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.grounding.</code><code class="sig-name descname">topological_sort_groundings_util</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pred_symb</span></em>, <em class="sig-param"><span class="n">dependencies</span></em>, <em class="sig-param"><span class="n">visited</span></em>, <em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.grounding.topological_sort_groundings_util" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -825,8 +456,8 @@ instance to be executed upon pattern and match being <code class="docutils liter
       
     </p>
     <p>
-        &copy; Copyright 2017, Demian Wassermann.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
     </p>
   </div>
 </footer>
