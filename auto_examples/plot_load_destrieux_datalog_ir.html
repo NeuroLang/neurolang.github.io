@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1.dev459+gfc921e8 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -17,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="NeuroLang Example based Implementing a NeuroSynth Query" href="plot_neurosynth_implementation.html" />
-    <link rel="prev" title="NeuroLang Datalog Example based on the Destrieux Atlas and Neurosynth" href="ex.html" />
+    <link rel="prev" title="Examples of the NeuroLang language environment." href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -154,6 +155,11 @@ executing some simple queries.</p>
 <span class="kn">from</span> <span class="nn">neurolang.datalog.expressions</span> <span class="kn">import</span> <span class="n">Fact</span><span class="p">,</span> <span class="n">Implication</span><span class="p">,</span> <span class="n">TranslateToLogic</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/importlib/_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+  return f(*args, **kwds)
+</pre></div>
+</div>
 <p>Set up IR shortcuts</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C_</span> <span class="o">=</span> <span class="n">expressions</span><span class="o">.</span><span class="n">Constant</span>
 <span class="n">S_</span> <span class="o">=</span> <span class="n">expressions</span><span class="o">.</span><span class="n">Symbol</span>
@@ -171,9 +177,15 @@ executing some simple queries.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/numpy/lib/npyio.py:2372: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset created in /home/circleci/nilearn_data/destrieux_2009
+
+Downloading data from https://www.nitrc.org/frs/download.php/7739/destrieux2009.tgz ...
+
+Downloaded 167791 of 167791 bytes (100.0%,    0.0s remaining) ...done. (1 seconds, 0 min)
+Extracting data from /home/circleci/nilearn_data/destrieux_2009/942c6b3a7dffa09bfce32de953622ba3/destrieux2009.tgz..... done.
+/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
   output = genfromtxt(fname, **kwargs)
-/Users/dwasserm/sources/NeuroLang/examples/plot_load_destrieux_datalog_ir.py:39: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
+/home/circleci/repo/examples/plot_load_destrieux_datalog_ir.py:39: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
 
 * deprecated from version: 3.0
 * Will raise &lt;class &#39;nibabel.deprecator.ExpiredDeprecationError&#39;&gt; as of version: 5.0
@@ -199,9 +211,9 @@ executing some simple queries.</p>
 <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">region_dict</span><span class="p">[</span><span class="s1">&#39;L S_temporal_sup&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">())</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_001.png" />
+<img alt="plot load destrieux datalog ir" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7fe900869eb0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7fb4d667aa90&gt;
 </pre></div>
 </div>
 <p>Make the fact list</p>
@@ -283,115 +295,113 @@ and plotting the first element of the result</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_002.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_002.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_002.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_003.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_003.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_003.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_004.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_004.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_004.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_005.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_005.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_005.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_006.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_006.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_006.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_007.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_007.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_007.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_008.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_008.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_008.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_009.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_009.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_009.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_010.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_010.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_010.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_011.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_011.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_011.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_012.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_012.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_012.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_013.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_013.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_013.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_014.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_014.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_014.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_015.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_015.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_015.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_016.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_016.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_016.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_017.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_017.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_017.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_018.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_018.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_018.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_019.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_019.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_019.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_020.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_020.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_020.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_021.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_021.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_021.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_022.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_022.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_022.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_023.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_023.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_023.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_024.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_024.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_024.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_025.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_025.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_025.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_026.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_026.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_026.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_027.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_027.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_027.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_028.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_028.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_028.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_029.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_029.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_029.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_030.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_030.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_030.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_031.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_031.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_031.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_032.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_032.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_032.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_033.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_033.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_033.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_034.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_034.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_034.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_035.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_035.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_035.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_036.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_036.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_036.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_037.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_037.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_037.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_038.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_038.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_038.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_039.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_039.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_039.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_040.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_040.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_040.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_041.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_041.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_041.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_042.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_042.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_042.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_043.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_043.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_043.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_044.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_044.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_044.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_045.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_045.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_045.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_046.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_046.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_046.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_047.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_047.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_047.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_048.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_048.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_048.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_049.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_049.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_049.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_050.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_050.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_050.png" />
 </li>
-<li><img alt="../_images/sphx_glr_plot_load_destrieux_datalog_ir_051.png" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_051.png" />
+<li><img alt="plot load destrieux datalog ir" class="sphx-glr-multi-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_051.png" />
 </li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/Users/dwasserm/sources/NeuroLang/examples/plot_load_destrieux_datalog_ir.py:139: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/examples/plot_load_destrieux_datalog_ir.py:139: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
   plt.figure()
-/Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/nilearn/plotting/displays.py:590: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
-  figure = plt.figure(figure, figsize=figsize,
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.954 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  40.229 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-load-destrieux-datalog-ir-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/a87ca17791f020cb5d8277d3955aecea/plot_load_destrieux_datalog_ir.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux_datalog_ir.py</span></code></a></p>
@@ -424,7 +434,7 @@ and plotting the first element of the result</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
     </p>
   </div>
 </footer>
