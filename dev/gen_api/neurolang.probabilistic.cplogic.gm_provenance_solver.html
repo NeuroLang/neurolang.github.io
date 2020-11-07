@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.probabilistic.cplogic.gm_provenance_solver module &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.gm_provenance_solver module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.gm_provenance_solver module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.probabilistic.cplogic.gm_provenance_solver">
+<span id="neurolang-probabilistic-cplogic-gm-provenance-solver-module"></span><h1>neurolang.probabilistic.cplogic.gm_provenance_solver module<a class="headerlink" href="#module-neurolang.probabilistic.cplogic.gm_provenance_solver" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">CPLogicGraphicalModelProvenanceSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graphical_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<p>Solver that constructs an RAP expression that calculates probabilities
+of sets of random variables in a graphical model.</p>
+<p>Walking a probability calculation operation will result in the
+creation of an expression with nested provenance operations on
+provenance relations.</p>
+<p>To calculate the actual probabilities, one must walk the resulting
+expression using a provenance solver of her choice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.and_truth_conditional_probability" title="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.and_truth_conditional_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">and_truth_conditional_probability</span></code></a>(operation)</p></td>
+<td><p>Construct the provenance expression that calculates the truth conditional probabilities of an AND random variable in the graphical model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.bernoulli_probability" title="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.bernoulli_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bernoulli_probability</span></code></a>(operation)</p></td>
+<td><p>Construct the provenance algebra set that represents the truth probabilities of a set of independent Bernoulli-distributed random variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_probability" title="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nary_choice_probability</span></code></a>(operation)</p></td>
+<td><p>Construct the provenance relation that represents the truth probability of a specific value of a n-ary choice random variable in the graphical model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.single_node_truth_probability" title="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.single_node_truth_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">single_node_truth_probability</span></code></a>(operation)</p></td>
+<td><p>Calculate the marginal truth probability of any node representing a set of boolean random variables.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 84%" />
+<col style="width: 16%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>nary_choice_result</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nary_choice_result_truth_conditional_probability</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>node_always_true</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.and_truth_conditional_probability">
+<code class="sig-name descname">and_truth_conditional_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.and_truth_conditional_probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct the provenance expression that calculates
+the truth conditional probabilities of an AND random
+variable in the graphical model.</p>
+<p>Given an implication rule of the form</p>
+<blockquote>
+<div><p>Z(x, y)  &lt;-  Q(x, y), P(x, y)</p>
+</div></blockquote>
+<p>The AND conditional probability distribution is obtained by
+applying a provenance natural join to the parent value
+relations</p>
+<blockquote>
+<div><blockquote>
+<div><p>Q(x, y)        P(x, y)         Z(x, y)</p>
+</div></blockquote>
+<p>_p_ | x | y     _p_ | x | y     _p_ | x | y
+====|===|===    ============    ====|===|===
+1.0 | a | a     1.0 | a | a     1.0 | a | a
+0.0 | a | b     1.0 | b | b</p>
+</div></blockquote>
+<p>where the probabilities in the provenance column _p_ always
+are 1.0 or 0.0 because this is a deterministic CPD and all
+random variables that play a role here are boolean.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.bernoulli_probability">
+<code class="sig-name descname">bernoulli_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.bernoulli_probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct the provenance algebra set that represents
+the truth probabilities of a set of independent
+Bernoulli-distributed random variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_probability">
+<code class="sig-name descname">nary_choice_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct the provenance relation that represents the truth
+probability of a specific value of a n-ary choice random
+variable in the graphical model.</p>
+<p>Let the probabilistic choice for predicate symbol P be</p>
+<blockquote>
+<div><p>P_i : p_1  v  …  v  P_n : p_n  :-  T</p>
+</div></blockquote>
+<p>where P_i = P(a_i1, …, a_im) and a_i1, …, a_im are
+constant terms.</p>
+<p>The distribution of the choice variable associated with this
+probabilistic choice is represented by the relation</p>
+<blockquote>
+<div><p>_p_ | x_1  | … | x_m
+====|======|=====|=====
+p_1 | a_11 | … | a_1m
+… | …  | … | …
+p_n | a_n1 | … | a_nm</p>
+</div></blockquote>
+<p>Given a specific value of the choice variable</p>
+<blockquote>
+<div><blockquote>
+<div><p>x_1  | … | x_m</p>
+</div></blockquote>
+<dl class="simple">
+<dt>======|=====|=====</dt><dd><p>a_i1 | … | a_im</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>this function returns the provenance relation</p>
+<blockquote>
+<div><p>_p_ | x_1  | … | x_m
+====|======|=====|=====
+p_i | a_i1 | … | a_im</p>
+</div></blockquote>
+<p>representing that Pr[ c_P = i ] = p_i.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_result">
+<code class="sig-name descname">nary_choice_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nv</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_result_truth_conditional_probability">
+<code class="sig-name descname">nary_choice_result_truth_conditional_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.nary_choice_result_truth_conditional_probability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.node_always_true">
+<code class="sig-name descname">node_always_true</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nv</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.node_always_true" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.single_node_truth_probability">
+<code class="sig-name descname">single_node_truth_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">operation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.single_node_truth_probability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the marginal truth probability of any node
+representing a set of boolean random variables.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.CPLogicGraphicalModelProvenanceSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">NodeValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">ProbabilityOperation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p>Operation representing a probability calculation on multiple sets
+of random variables (possibly with conditioning random variables).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>valued_node</strong><span class="classifier">tuple of (PlateNode, Constant) tuples</span></dt><dd><p>Plate nodes containing the random variables whose probability
+is calculated for specific values. If TRUE is
+given, it is seen as all the random variables being True.</p>
+</dd>
+<dt><strong>condition_valued_nodes</strong><span class="classifier">tuple of (PlateNode, Constant) tuples</span></dt><dd><p>Plate nodes containing the random variables conditioning the
+evaluated probabilities and their values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">ProvenanceExpressionTransformer</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.ra_operation">
+<code class="sig-name descname">ra_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.ra_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">SelectionOutPusher</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin" title="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin</span></code></a>, <a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer" title="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>nested_same_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nested_selections_not_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nested_tuple_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>njoin_left_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>njoin_right_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>swap_rename_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union_of_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>union_of_selection_not_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusher.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">SelectionOutPusherMixin</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>nested_same_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nested_selections_not_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nested_tuple_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>njoin_left_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>njoin_right_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>swap_rename_selection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>union_of_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union_of_selection_not_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_same_selection">
+<code class="sig-name descname">nested_same_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_same_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_selections_not_same_tuple_symbol">
+<code class="sig-name descname">nested_selections_not_same_tuple_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_selections_not_same_tuple_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_tuple_selection">
+<code class="sig-name descname">nested_tuple_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.nested_tuple_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.njoin_left_selection">
+<code class="sig-name descname">njoin_left_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">njoin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.njoin_left_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.njoin_right_selection">
+<code class="sig-name descname">njoin_right_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">njoin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.njoin_right_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.selection_in_projection">
+<code class="sig-name descname">selection_in_projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.selection_in_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.swap_rename_selection">
+<code class="sig-name descname">swap_rename_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.swap_rename_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.union_of_projection">
+<code class="sig-name descname">union_of_projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">union</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.union_of_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.union_of_selection_not_same_tuple_symbol">
+<code class="sig-name descname">union_of_selection_not_same_tuple_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.SelectionOutPusherMixin.union_of_selection_not_same_tuple_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleEqualSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Symbol</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>fresh</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">UnionOverTuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.RelationalAlgebraOperation</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">UnionRemover</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin" title="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin</span></code></a>, <a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer" title="neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.gm_provenance_solver.ProvenanceExpressionTransformer</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>union_of_selection_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemover.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">UnionRemoverMixin</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.type" title="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union_of_selection_same_tuple_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.union_of_selection_same_tuple_symbol">
+<code class="sig-name descname">union_of_selection_same_tuple_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">union</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionRemoverMixin.union_of_selection_same_tuple_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.add_query_to_program">
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">add_query_to_program</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.add_query_to_program" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.make_conjunction_rule">
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">make_conjunction_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conjunction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.make_conjunction_rule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ra_binary_to_nary">
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">ra_binary_to_nary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">op</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ra_binary_to_nary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.solve_marg_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">solve_marg_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em>, <em class="sig-param"><span class="n">evidence</span></em>, <em class="sig-param"><span class="n">cpl_program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.solve_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.solve_succ_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">solve_succ_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em>, <em class="sig-param"><span class="n">cpl_program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.solve_succ_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the solution of a SUCC query on a CP-Logic program.</p>
+<p>The SUCC query must take the form</p>
+<blockquote>
+<div><p>SUCC[ P(x) ]</p>
+</div></blockquote>
+<p>where</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>P(x) is a positive literal</p></li>
+<li><p>P is any (probabilistic, intensional, extensional)
+predicate symbol</p></li>
+<li><p>x is a universally-quantified variable</p></li>
+</ul>
+</div></blockquote>
+<p>TODO: add support for SUCC[ P(a) ] where a is a constant term.</p>
+<p>Solving a SUCC query is a multi-step process:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>First, the program is grounded. That is because the
+algorithm used to convert it to a graphical model in
+the next step only works on grounded CP-Logic programs.
+A grounding of a program is an ExpressionBlock where
+each expression is a Grounding expression. Each of this
+Grounding contains both the grounded expression itself
+and a relation representing all the replacements of the
+variables in the grounded expression. This way, we can
+represent many rules of the program using relations.</p></li>
+<li><p>Then, a graphical model representation of that grounded
+program is constructed, using the algorithm detailed in <span id="id1">[Rc8709c4d3831-1]</span>.
+In the resulting graphical model, each ground atom in the
+grounded program is associated with a random variable.
+The random variables are represented using relations for
+compactness and make it possible to leverage relational
+algebra operations to solve queries on the graphical model,
+as is detailed in the next step. The links between the
+random variables of the graphical model anad their CPDs are
+determined by the structure of the initial program. A view
+of the initial grounded expressions is maintained because it
+is necessary for solving queries.</p></li>
+<li><p>Finally, the query is solved from the joint probability
+distribution defined by the graphical model. Only the parts
+of the graphical model necessary to solve the query are
+calculated. The solver generates a provenance relational
+expression that is left un-evaluated (lazy calculation) and
+that is solved only at the end. This separation between the
+representation of the operations necessary to solve the query
+and the actual resolution makes it possible to choose between
+multiple solvers.</p></li>
+</ol>
+</div></blockquote>
+<p>CP-Logic Theories by Leveraging Bayesian Network Learning Techniques,”
+n.d., 30.</p>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.cplogic.gm_provenance_solver.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

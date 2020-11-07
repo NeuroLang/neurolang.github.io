@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.frontend.probabilistic_frontend module &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.frontend.probabilistic_frontend module</a><ul>
+<li><a class="reference internal" href="#probabilistic-frontend">Probabilistic Frontend</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.frontend.probabilistic_frontend module</a><ul>
+<li><a class="reference internal" href="#probabilistic-frontend">Probabilistic Frontend</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.frontend.probabilistic_frontend">
+<span id="neurolang-frontend-probabilistic-frontend-module"></span><h1>neurolang.frontend.probabilistic_frontend module<a class="headerlink" href="#module-neurolang.frontend.probabilistic_frontend" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="probabilistic-frontend">
+<h2>Probabilistic Frontend<a class="headerlink" href="#probabilistic-frontend" title="Permalink to this headline">¶</a></h2>
+<p>Complements QueryBuilderDatalog class with probabilistic capabilities
+1- add extensional probabilistic facts and choices
+2- sove probabilistic queries</p>
+<dl class="py class">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">NeurolangPDL</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solver: Callable = &lt;function solve_succ_query&gt;</em>, <em class="sig-param">probabilistic_marg_solver: Callable = &lt;function solve_marg_query&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog</span></code></a></p>
+<p>Complements QueryBuilderDatalog class with probabilistic capabilities
+1- add extensional probabilistic facts and choices
+2- sove probabilistic queries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.current_program" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.current_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_program</span></code></a></dt><dd><p>Returns the list of Front End Expressions that have</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">environment</span></code></dt><dd><p>Dynamic context that can be used to create symbols to write a Datalog program.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">functions</span></code></dt><dd><p>Returns the list of symbols corresponding to callables</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">region_names</span></code></dt><dd><p>Returns the list of symbol names with Region type</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">region_set_names</span></code></dt><dd><p>Returns the list of symbol names with set_type</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">scope</span></code></dt><dd><p>Dynamic context that can be used to create symbols to write a Datalog program.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbol_table</span></code></dt><dd><p>Projector to the program_ir’s symbol_table</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbols</span></code></dt><dd><p>Iterator through the symbol’s names</p>
+</dd>
+<dt><a class="reference external" href="https://docs.python.org/3/library/types.html#module-types" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">types</span></code></a></dt><dd><p>Returns a list of the types of the symbols currently</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_atlas_set</span></code>(name, atlas_labels, spatial_image)</p></td>
+<td><p>Creates an atlas set: 1- for each region specified by a label and name in atlas_labels, creates associated ExplicitVBR and symbols Tuple[region_name: str, Region] 2- groups regions in an AbstractSet[Tuple[str, Region]] symbol with specified name</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_constraint</span></code>(antecedent, consequent)</p></td>
+<td><p>Creates an right implication of the consequent by the antecedent and adds the rule to the current program:     antecedent -&gt; consequent</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_choice_from_tuples" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_choice_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code></a>(iterable)</p></td>
+<td><p>Add probabilistic choice from tuples whose first element contains the probability label attached to that tuple.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_facts_from_tuples" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_facts_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code></a>(iterable)</p></td>
+<td><p>Add probabilistic facts from tuples whose first element contains the probability label attached to that tuple.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_region</span></code>(region[, name])</p></td>
+<td><p>Adds region fe.Symbol to symbol_table</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_region_set</span></code>(region_set[, name])</p></td>
+<td><p>Creates an AbstractSet fe.Symbol containing the elements specified in the iterable with a List[Tuple[Region]] format</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_symbol</span></code>(value[, name])</p></td>
+<td><p>Creates a symbol with given value and adds it to the current symbol_table.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_tuple_set</span></code>(iterable[, type_, name])</p></td>
+<td><p>Creates an AbstractSet fe.Symbol containing the elements specified in the iterable with a List[Tuple[Any, …]] format (see examples).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_uniform_probabilistic_choice_over_set</span></code></a>(…)</p></td>
+<td><p>Add uniform probabilistic choice over values in the iterable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_region</span></code>(spatial_image[, label, …])</p></td>
+<td><p>Creates an ExplicitVBR out of the voxels of a dense spatial_image with specified label</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_symbol</span></code>(name)</p></td>
+<td><p>Deletes the symbol with parameter name from the symbol_table</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute_datalog_program</span></code>(code)</p></td>
+<td><p>Execute a Datalog program in classical syntax</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute_nat_datalog_program</span></code>(code)</p></td>
+<td><p>Execute a natural language Datalog program in classical syntax</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_symbol</span></code>(symbol_name)</p></td>
+<td><p>Retrieves symbol via its name, either providing a fe.Expression with the correct name or the name itself</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_reported_activations</span></code>([name])</p></td>
+<td><p>Load all activations reported in the Neurosynth database in the form of a set of (study id, voxel id) pairs.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_study_ids</span></code>([name])</p></td>
+<td><p>Load all study ids (PMIDs) that are part of the Neurosynth database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_study_tfidf_feature_for_terms</span></code>(terms)</p></td>
+<td><p>Load TF-IDF features measured in each study within the Neurosynth database for the given terms.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_term_study_associations</span></code>([…])</p></td>
+<td><p>Load all term-to-study associations in the Neurosynth database based on a hard thresholding of the TF-IDF features measured from the abstracts of the studies.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_term_study_ids</span></code>(term[, name, …])</p></td>
+<td><p>Load study ids (PMIDs) of studies in the Neurosynth database that are related to a given term based on a hard thresholding of TF-IDF features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.load_ontology" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.load_ontology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_ontology</span></code></a>(paths[, load_format])</p></td>
+<td><p>Loads and parses ontology stored at the specified paths, and store them into attributes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_implicit_regions_explicit</span></code>(affine, dim)</p></td>
+<td><p>Raises NotImplementedError for now</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_region_symbol</span></code>([name])</p></td>
+<td><p>Returns symbol with type Region</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_symbol</span></code>([type_, name])</p></td>
+<td><p>Creates a symbol and associated expression, optionally specifying it’s type and/or name</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">predicate_parameter_names</span></code>(predicate_name)</p></td>
+<td><p>Get the names of the parameters for the given predicate</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code>(*args)</p></td>
+<td><p>Performs an inferential query on the database.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_program</span></code>()</p></td>
+<td><p>Clears current symbol table</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.solve_all" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL.solve_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_all</span></code></a>()</p></td>
+<td><p>Returns a dictionary of “predicate_name”: “Content” for all elements in the solution of the Datalog program.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sphere</span></code>(center, radius[, name])</p></td>
+<td><p>Creates a Region symbol associated with the spherical volume described by its center and volume</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_choice_from_tuples">
+<code class="sig-name descname">add_probabilistic_choice_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">iterable: Iterable[Tuple[Any, ...]], type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;, name: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_choice_from_tuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add probabilistic choice from tuples whose first element
+contains the probability label attached to that tuple.
+In the tuple (p, a, b, …), p is the float probability
+of tuple (a, b, …) to be True and all remaining tuples to
+be False in any possible world.</p>
+<p>Note that, contrary to a list of probabilistic facts, this represents
+a choice among possible values for the predicate, meaning that tuples
+in the set are mutually exclusive.
+See example for details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>iterable</strong><span class="classifier">Iterable[Tuple[Any, …]]</span></dt><dd><p>the first float number represents the probability
+of the tuple constituted of the remaining elements
+Note that the float probabilities must sum to 1.</p>
+</dd>
+<dt><strong>type_</strong><span class="classifier">Type, optional</span></dt><dd><p>type for resulting AbstractSet if None will be inferred
+from the data, by default ir.Unknown</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">Optional[str], optional</span></dt><dd><p>name for the resulting fe.Symbol, if None
+will be fresh, by default None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fe.Symbol</dt><dd><p>see description</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>DistributionDoesNotSumToOneError</dt><dd><p>if float probabilities do not sum to 1.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_facts_from_tuples">
+<code class="sig-name descname">add_probabilistic_facts_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">iterable: Iterable[Tuple[Any, ...]], type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;, name: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_facts_from_tuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add probabilistic facts from tuples whose first element
+contains the probability label attached to that tuple.
+In the tuple (p, a, b, …), p is the float probability
+of tuple (a, b, …) to be True in any possible world.</p>
+<p>Note that each tuple from the iterable is independant
+from the others, meaning that multiple tuples can be True
+in the same possible world, contrary to a probabilistic choice.
+See example for details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>iterable</strong><span class="classifier">Iterable[Tuple[Any, …]]</span></dt><dd><p>the first float number represents the probability
+of the tuple constituted of the remaining elements</p>
+</dd>
+<dt><strong>type_</strong><span class="classifier">Type, optional</span></dt><dd><p>type for resulting AbstractSet if None will be inferred
+from the data, by default ir.Unknown</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">Optional[str], optional</span></dt><dd><p>name for the resulting fe.Symbol, if None
+will be fresh, by default None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fe.Symbol</dt><dd><p>see description</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set">
+<code class="sig-name descname">add_uniform_probabilistic_choice_over_set</code><span class="sig-paren">(</span><em class="sig-param">iterable: Iterable[Tuple[Any, ...]], type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;, name: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add uniform probabilistic choice over values in the iterable.</p>
+<p>Every tuple in the iterable will be assigned the same probability to
+be True, with all remaning tuples False, in any possible world.</p>
+<p>Note that, contrary to a list of probabilistic facts, this represents
+a choice among possible values for the predicate, meaning that tuples
+in the set are mutually exclusive.</p>
+<p>See example for details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>iterable</strong><span class="classifier">Iterable[Tuple[Any, …]]</span></dt><dd><p>typically List[Tuple[Any, …]], other types of Iterable
+will be cast as lists</p>
+</dd>
+<dt><strong>type_</strong><span class="classifier">Type, optional</span></dt><dd><p>type for resulting AbstractSet if None will be inferred
+from the data, by default ir.Unknown</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">Optional[str], optional</span></dt><dd><p>name for the resulting fe.Symbol, if None
+will be fresh, by default None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fe.Symbol</dt><dd><p>see description</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.current_program">
+<em class="property">property </em><code class="sig-name descname">current_program</code><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.current_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of Front End Expressions that have
+currently been declared in the program, or through
+the program’s constraints</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>List[fe.Expression]</dt><dd><p>see description</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.load_ontology">
+<code class="sig-name descname">load_ontology</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paths</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">load_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'xml'</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.load_ontology" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads and parses ontology stored at the specified paths, and
+store them into attributes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>paths</strong><span class="classifier">typing.Union[str, List[str]]</span></dt><dd><p>where the ontology files are stored</p>
+</dd>
+<dt><strong>load_format</strong><span class="classifier">typing.Union[str, List[str]], optional</span></dt><dd><p>storage format, by default “xml”</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL.solve_all">
+<code class="sig-name descname">solve_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet">neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet</a><span class="p">]</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL.solve_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of “predicate_name”: “Content”
+for all elements in the solution of the Datalog program.
+Typically, probabilities are abstracted and processed similar
+to symbols, though of different nature (see examples)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Dict[str, NamedRelationalAlgebraFrozenSet]</dt><dd><p>extensional and intentional facts that have been derived
+through the current program, optionally with probabilities</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.frontend.probabilistic_frontend.ProbabilisticFrontend">
+<code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">ProbabilisticFrontend</code><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.ProbabilisticFrontend" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.probabilistic_frontend.NeurolangPDL</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">RegionFrontendCPLogicSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.probabilistic.cplogic.program.html#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="neurolang.datalog.aggregation.TranslateToLogicWithAggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.TranslateToLogicWithAggregation</span></code></a>, <a class="reference internal" href="neurolang.region_solver.html#neurolang.region_solver.RegionSolver" title="neurolang.region_solver.RegionSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.region_solver.RegionSolver</span></code></a>, <a class="reference internal" href="neurolang.probabilistic.cplogic.program.html#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="neurolang.datalog.aggregation.DatalogWithAggregationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.DatalogWithAggregationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.constraints_representation.html#neurolang.datalog.constraints_representation.DatalogConstraintsProgram" title="neurolang.datalog.constraints_representation.DatalogConstraintsProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.constraints_representation.DatalogConstraintsProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>included_functions</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+<dt><strong>pchoice_pred_symbs</strong></dt><dd></dd>
+<dt><strong>pfact_pred_symbs</strong></dt><dd></dd>
+<dt><strong>predicate_symbols</strong></dt><dd></dd>
+<dt><strong>probabilistic_predicate_symbols</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code>(symbol, …)</p></td>
+<td><p>Add a probabilistic choice from a predicate symbol and a set of tuples where the first element is the probability label attached to a head predicate and the other elements are the constant terms of the head predicate.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code>(symbol, …)</p></td>
+<td><p>Add probabilistic facts from tuples whose first element contains the probability label attached to that tuple.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
+<td><p>Infer the type of iterable elements without modifying the iterable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pchoice_pred_symb_set_symb</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfact_pred_symb_set_symb</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_choices</span></code>()</p></td>
+<td><p>Return probabilistic choices of the symbol table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code>()</p></td>
+<td><p>Return probabilistic facts of the symbol table.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 86%" />
+<col style="width: 14%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>add_logic_constraint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>add_nary_constraint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_conjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_conjunction_from_expression_block</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_disjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>build_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>builtins</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>conditional_query</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>constraints</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eval_lambda</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>evaluate_function_infer_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>evaluate_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extensional_database</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>fact</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_anatomical_anterior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_anatomical_inferior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_anatomical_posterior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_anatomical_superior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_anterior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_equals</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_inferior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_left_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_overlapping</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_posterior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_regexp</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_region_union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>function_right_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_superior_of</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>intensional_database</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>marg_implication</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>new_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pop_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>predicate_terms</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_fact</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_scope</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>statement_intensional</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>statement_intensional_aggregation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>transform_function_application_consequent_to_aggregation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>translate_logic_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>translate_true_implication</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>union_with_probabilistic_facts</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>within_language_marg_query</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>within_language_prob_query</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>within_language_succ_queries</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>within_language_succ_query</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_anterior_of">
+<code class="sig-name descname">function_anatomical_anterior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_anterior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_inferior_of">
+<code class="sig-name descname">function_anatomical_inferior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_inferior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_posterior_of">
+<code class="sig-name descname">function_anatomical_posterior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_posterior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_superior_of">
+<code class="sig-name descname">function_anatomical_superior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_superior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anterior_of">
+<code class="sig-name descname">function_anterior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anterior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_inferior_of">
+<code class="sig-name descname">function_inferior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_inferior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_left_of">
+<code class="sig-name descname">function_left_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_left_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_overlapping">
+<code class="sig-name descname">function_overlapping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_overlapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_posterior_of">
+<code class="sig-name descname">function_posterior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_posterior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_right_of">
+<code class="sig-name descname">function_right_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_right_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_superior_of">
+<code class="sig-name descname">function_superior_of</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region">neurolang.regions.Region</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_superior_of" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.protected_keywords">
+<code class="sig-name descname">protected_keywords</code><em class="property"> = {'PROB', '__constraints__', '__pchoice_pred_symb_set_symb__'}</em><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.type">
+<code class="sig-name descname">type</code><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="neurolang.regions.html#neurolang.regions.Region" title="neurolang.regions.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.Region</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.frontend.probabilistic_frontend.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

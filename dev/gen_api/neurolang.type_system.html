@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.type_system package &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.type_system package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.type_system package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.type_system">
+<span id="neurolang-type-system-package"></span><h1>neurolang.type_system package<a class="headerlink" href="#module-neurolang.type_system" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of the type system based on Siek and Vachharajani,
+“Gradual Typing with Unification-based Inference”, DLS 2008.</p>
+<dl class="py exception">
+<dt id="neurolang.type_system.NeuroLangTypeException">
+<em class="property">exception </em><code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">NeuroLangTypeException</code><a class="headerlink" href="#neurolang.type_system.NeuroLangTypeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.type_system.Unknown">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">Unknown</code><a class="headerlink" href="#neurolang.type_system.Unknown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing._Final</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing._Immutable</span></code></p>
+<p>Special type indicating an unknown type.</p>
+<ul class="simple">
+<li><p>Unknown is compatible with every type.</p></li>
+<li><p>Unknown is less informative than all types.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.get_args">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">get_args</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.get_generic_type">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">get_generic_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">typ</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_generic_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.infer_type">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">infer_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">deep</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">recursive_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.infer_type_builtins">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">infer_type_builtins</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">builtin</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.infer_type_iterables">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">infer_type_iterables</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">deep=True</em>, <em class="sig-param">recursive_callback=&lt;function infer_type&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_iterables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.infer_type_mapping">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">infer_type_mapping</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">deep=True</em>, <em class="sig-param">recursive_callback=&lt;function infer_type&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_mapping" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_consistent">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_consistent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type1</span></em>, <em class="sig-param"><span class="n">type2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_consistent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_leq_informative">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_leq_informative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_leq_informative_parameterized_right">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_leq_informative_parameterized_right</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_parameterized_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_leq_informative_union">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_leq_informative_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">right</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_parameterized">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_parameterized</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parameterized" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_parametrical">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_parametrical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parametrical" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.is_type">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">is_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.replace_type_variable">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">replace_type_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_</span></em>, <em class="sig-param"><span class="n">type_hint</span></em>, <em class="sig-param"><span class="n">type_var</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.replace_type_variable_fix_python36_37">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">replace_type_variable_fix_python36_37</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_hint</span></em>, <em class="sig-param"><span class="n">origin</span></em>, <em class="sig-param"><span class="n">new_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable_fix_python36_37" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.typing_callable_from_annotated_function">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">typing_callable_from_annotated_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.typing_callable_from_annotated_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get typing.Callable type representing the annotated function type.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.type_system.unify_types">
+<code class="sig-prename descclassname">neurolang.type_system.</code><code class="sig-name descname">unify_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em>, <em class="sig-param"><span class="n">t2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.unify_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.type_system.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

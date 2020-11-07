@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.regions module &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.regions module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.regions module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.regions">
+<span id="neurolang-regions-module"></span><h1>neurolang.regions module<a class="headerlink" href="#module-neurolang.regions" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="neurolang.regions.ExplicitVBR">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">ExplicitVBR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">voxels</span></em>, <em class="sig-param"><span class="n">affine_matrix</span></em>, <em class="sig-param"><span class="n">image_dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prebuild_tree</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>aabb_tree</strong></dt><dd></dd>
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.ExplicitVBR.to_ijk" title="neurolang.regions.ExplicitVBR.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.regions.ExplicitVBR.to_xyz" title="neurolang.regions.ExplicitVBR.to_xyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code></a>([affine])</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>generate_bounding_box</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>spatial_image</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.aabb_tree">
+<em class="property">property </em><code class="sig-name descname">aabb_tree</code><a class="headerlink" href="#neurolang.regions.ExplicitVBR.aabb_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.bounding_box">
+<em class="property">property </em><code class="sig-name descname">bounding_box</code><a class="headerlink" href="#neurolang.regions.ExplicitVBR.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.build_tree">
+<code class="sig-name descname">build_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR.build_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.generate_bounding_box">
+<code class="sig-name descname">generate_bounding_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">voxels_ijk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR.generate_bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.spatial_image">
+<code class="sig-name descname">spatial_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR.spatial_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBR.to_xyz">
+<code class="sig-name descname">to_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR.to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return world coordinates of the region
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.ExplicitVBROverlay">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">ExplicitVBROverlay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">voxels</span></em>, <em class="sig-param"><span class="n">affine_matrix</span></em>, <em class="sig-param"><span class="n">overlay</span></em>, <em class="sig-param"><span class="n">image_dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prebuild_tree</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBROverlay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ExplicitVBR" title="neurolang.regions.ExplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ExplicitVBR</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>aabb_tree</strong></dt><dd></dd>
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code>([affine])</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>generate_bounding_box</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>spatial_image</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.ExplicitVBROverlay.spatial_image">
+<code class="sig-name descname">spatial_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">background_value</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBROverlay.spatial_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.ImplicitVBR">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">ImplicitVBR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb</span></em>, <em class="sig-param"><span class="n">ub</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ImplicitVBR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.ImplicitVBR.to_ijk" title="neurolang.regions.ImplicitVBR.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.regions.ImplicitVBR.to_xyz" title="neurolang.regions.ImplicitVBR.to_xyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code></a>(affine)</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.ImplicitVBR.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ImplicitVBR.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.ImplicitVBR.to_xyz">
+<code class="sig-name descname">to_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ImplicitVBR.to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return world coordinates of the region
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.PlanarVolume">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">PlanarVolume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">origin</span></em>, <em class="sig-param"><span class="n">vector</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PlanarVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ImplicitVBR</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.PlanarVolume.to_ijk" title="neurolang.regions.PlanarVolume.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code>(affine)</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>project_point_to_plane</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.PlanarVolume.bounding_box">
+<em class="property">property </em><code class="sig-name descname">bounding_box</code><a class="headerlink" href="#neurolang.regions.PlanarVolume.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PlanarVolume.project_point_to_plane">
+<code class="sig-name descname">project_point_to_plane</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PlanarVolume.project_point_to_plane" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PlanarVolume.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PlanarVolume.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.PointSet">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">PointSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points_ijk</span></em>, <em class="sig-param"><span class="n">affine_matrix</span></em>, <em class="sig-param"><span class="n">image_dim</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prebuild_tree</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>aabb_tree</strong></dt><dd></dd>
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.PointSet.to_ijk" title="neurolang.regions.PointSet.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.regions.PointSet.to_xyz" title="neurolang.regions.PointSet.to_xyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code></a>([affine])</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>generate_bounding_box</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>spatial_image</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.aabb_tree">
+<em class="property">property </em><code class="sig-name descname">aabb_tree</code><a class="headerlink" href="#neurolang.regions.PointSet.aabb_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.bounding_box">
+<em class="property">property </em><code class="sig-name descname">bounding_box</code><a class="headerlink" href="#neurolang.regions.PointSet.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.build_tree">
+<code class="sig-name descname">build_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet.build_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.generate_bounding_box">
+<code class="sig-name descname">generate_bounding_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points_ijk</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet.generate_bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.spatial_image">
+<code class="sig-name descname">spatial_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet.spatial_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.PointSet.to_xyz">
+<code class="sig-name descname">to_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet.to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return world coordinates of the region
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.Region">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">Region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb</span></em>, <em class="sig-param"><span class="n">ub</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 74%" />
+<col style="width: 26%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.Region.bounding_box">
+<em class="property">property </em><code class="sig-name descname">bounding_box</code><a class="headerlink" href="#neurolang.regions.Region.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.Region.center">
+<em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#neurolang.regions.Region.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.Region.from_spatial_image_label">
+<em class="property">static </em><code class="sig-name descname">from_spatial_image_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">spatial_image</span></em>, <em class="sig-param"><span class="n">label</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.Region.from_spatial_image_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.Region.width">
+<em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#neurolang.regions.Region.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.SphericalVolume">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">SphericalVolume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.SphericalVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ImplicitVBR</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>radius</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.SphericalVolume.to_ijk" title="neurolang.regions.SphericalVolume.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code>(affine)</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.SphericalVolume.bounding_box">
+<em class="property">property </em><code class="sig-name descname">bounding_box</code><a class="headerlink" href="#neurolang.regions.SphericalVolume.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.SphericalVolume.center">
+<em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#neurolang.regions.SphericalVolume.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.SphericalVolume.radius">
+<em class="property">property </em><code class="sig-name descname">radius</code><a class="headerlink" href="#neurolang.regions.SphericalVolume.radius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.SphericalVolume.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.SphericalVolume.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.regions.VolumetricBrainRegion">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">VolumetricBrainRegion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb</span></em>, <em class="sig-param"><span class="n">ub</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.Region" title="neurolang.regions.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.Region</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>bounding_box</strong></dt><dd></dd>
+<dt><strong>center</strong></dt><dd></dd>
+<dt><strong>width</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion.to_ijk" title="neurolang.regions.VolumetricBrainRegion.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
+<td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion.to_xyz" title="neurolang.regions.VolumetricBrainRegion.to_xyz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xyz</span></code></a>(affine)</p></td>
+<td><p>return world coordinates of the region corresponding to the affine matrix transform</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 24%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_empty_bounding_boxes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_explicit_vbr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>to_ijk_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>to_xyz_set</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.remove_empty_bounding_boxes">
+<code class="sig-name descname">remove_empty_bounding_boxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.remove_empty_bounding_boxes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.to_explicit_vbr">
+<code class="sig-name descname">to_explicit_vbr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em>, <em class="sig-param"><span class="n">image_shape</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.to_explicit_vbr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.to_ijk">
+<code class="sig-name descname">to_ijk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.to_ijk" title="Permalink to this definition">¶</a></dt>
+<dd><p>return ijk voxels coordinates
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.to_ijk_set">
+<code class="sig-name descname">to_ijk_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.to_ijk_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.to_xyz">
+<code class="sig-name descname">to_xyz</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.to_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>return world coordinates of the region
+corresponding to the affine matrix transform</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.regions.VolumetricBrainRegion.to_xyz_set">
+<code class="sig-name descname">to_xyz_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">affine</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion.to_xyz_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.regions.region_difference">
+<code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">region_difference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_set</span></em>, <em class="sig-param"><span class="n">affine</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.region_difference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.regions.region_intersection">
+<code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">region_intersection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_set</span></em>, <em class="sig-param"><span class="n">affine</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.region_intersection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.regions.region_set_from_masked_data">
+<code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">region_set_from_masked_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">affine</span></em>, <em class="sig-param"><span class="n">dim</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.region_set_from_masked_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.regions.region_union">
+<code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">region_union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_set</span></em>, <em class="sig-param"><span class="n">affine</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.region_union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.regions.take_principal_regions">
+<code class="sig-prename descclassname">neurolang.regions.</code><code class="sig-name descname">take_principal_regions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_set</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.take_principal_regions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.regions.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

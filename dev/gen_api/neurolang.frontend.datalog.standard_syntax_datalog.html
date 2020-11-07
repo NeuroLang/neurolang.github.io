@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.frontend.datalog.standard_syntax_datalog module &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.frontend.datalog.standard_syntax_datalog module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.frontend.datalog.standard_syntax_datalog module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.frontend.datalog.standard_syntax_datalog">
+<span id="neurolang-frontend-datalog-standard-syntax-datalog-module"></span><h1>neurolang.frontend.datalog.standard_syntax_datalog module<a class="headerlink" href="#module-neurolang.frontend.datalog.standard_syntax_datalog" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.standard_syntax_datalog.</code><code class="sig-name descname">DatalogSemantics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">locals</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">globals</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 74%" />
+<col style="width: 26%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>arguments</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>body</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>comparison</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>constant_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>constraint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>expressions</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ext_identifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>fact</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>factor</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>float</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>function_application</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>head_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>identifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>integer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>negated_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rule</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>start</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>term</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>text</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.argument">
+<code class="sig-name descname">argument</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.arguments">
+<code class="sig-name descname">arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.arguments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.arithmetic_operation">
+<code class="sig-name descname">arithmetic_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.arithmetic_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.body">
+<code class="sig-name descname">body</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.comparison">
+<code class="sig-name descname">comparison</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.comparison" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.constant_predicate">
+<code class="sig-name descname">constant_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.constant_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.constraint">
+<code class="sig-name descname">constraint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.constraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.expressions">
+<code class="sig-name descname">expressions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.expressions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.ext_identifier">
+<code class="sig-name descname">ext_identifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.ext_identifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.fact">
+<code class="sig-name descname">fact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.fact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.factor">
+<code class="sig-name descname">factor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.factor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.float">
+<code class="sig-name descname">float</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.float" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.function_application">
+<code class="sig-name descname">function_application</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.function_application" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.head_predicate">
+<code class="sig-name descname">head_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.head_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.identifier">
+<code class="sig-name descname">identifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.identifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.integer">
+<code class="sig-name descname">integer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.integer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.negated_predicate">
+<code class="sig-name descname">negated_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.negated_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.predicate">
+<code class="sig-name descname">predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.probabilistic_expression">
+<code class="sig-name descname">probabilistic_expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.probabilistic_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.rule">
+<code class="sig-name descname">rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.rule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.term">
+<code class="sig-name descname">term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.term" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.text">
+<code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.DatalogSemantics.text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.standard_syntax_datalog.</code><code class="sig-name descname">ExternalSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Symbol</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol.type" title="neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>fresh</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.ExternalSymbol.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.frontend.datalog.standard_syntax_datalog.parser">
+<code class="sig-prename descclassname">neurolang.frontend.datalog.standard_syntax_datalog.</code><code class="sig-name descname">parser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">locals</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">globals</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax_datalog.parser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.frontend.datalog.standard_syntax_datalog.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

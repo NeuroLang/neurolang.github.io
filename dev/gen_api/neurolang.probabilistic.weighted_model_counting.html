@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.probabilistic.weighted_model_counting module &#8212; neurolang 0.1.dev467+gab5ad56 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../examples/index.html">Gallery</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="module-neurolang.probabilistic.weighted_model_counting">
+<span id="neurolang-probabilistic-weighted-model-counting-module"></span><h1>neurolang.probabilistic.weighted_model_counting module<a class="headerlink" href="#module-neurolang.probabilistic.weighted_model_counting" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of the weighted model counting approach through knowledge
+compilation.</p>
+<dl class="py class">
+<dt id="neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">RAQueryOptimiser</code><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.RelationalAlgebraPushInSelections</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type" title="neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_in_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_in_right</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">SDDWMCSemiRingSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rap_not_implemented</span></code>(ra_operation)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type" title="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>arithmetic_string_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>concatenate_constant_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>deterministic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eliminate_superfluous_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extended_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>generate_sdd_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_new_bernoulli_variable</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>name_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>natural_join_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>probabilistic_choice_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>probabilistic_fact_set_invalid</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>projection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>projection_rap_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>prov_arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_difference</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rename_column_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rename_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>wmc_weights</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.deterministic_fact_set">
+<code class="sig-name descname">deterministic_fact_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deterministic_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.deterministic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.eliminate_superfluous_projection">
+<code class="sig-name descname">eliminate_superfluous_projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.eliminate_superfluous_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.generate_sdd_expression">
+<code class="sig-name descname">generate_sdd_expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adjusted_probability</span></em>, <em class="sig-param"><span class="n">tag_expressions</span></em>, <em class="sig-param"><span class="n">previous_expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.generate_sdd_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.get_new_bernoulli_variable">
+<code class="sig-name descname">get_new_bernoulli_variable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">probability</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.get_new_bernoulli_variable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_choice_set">
+<code class="sig-name descname">probabilistic_choice_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_fact_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_choice_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set">
+<code class="sig-name descname">probabilistic_fact_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_fact_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set_invalid">
+<code class="sig-name descname">probabilistic_fact_set_invalid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_fact_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.wmc_weights">
+<code class="sig-name descname">wmc_weights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.wmc_weights" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">SemiRingRAPToSDD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">var_count</span></em>, <em class="sig-param"><span class="n">symbols_to_literals</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type" title="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>add</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>eq</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>expression_block</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>mul</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>neg</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>or_</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.eq">
+<code class="sig-name descname">eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.eq" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.expression_block">
+<code class="sig-name descname">expression_block</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.expression_block" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.mul">
+<code class="sig-name descname">mul</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.neg">
+<code class="sig-name descname">neg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.neg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.or_">
+<code class="sig-name descname">or_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.or_" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">WMCSemiRingSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rap_not_implemented</span></code>(ra_operation)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type" title="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>arithmetic_string_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>concatenate_constant_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>deterministic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extended_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>name_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>natural_join_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_choice_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>probabilistic_fact_set</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>probabilistic_fact_set_invalid</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>projection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>projection_rap_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>prov_arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_difference</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>rename_column_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rename_columns_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>union_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.deterministic_fact_set">
+<code class="sig-name descname">deterministic_fact_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deterministic_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.deterministic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_choice_set">
+<code class="sig-name descname">probabilistic_choice_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_choice_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_choice_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set">
+<code class="sig-name descname">probabilistic_fact_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_fact_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set_invalid">
+<code class="sig-name descname">probabilistic_fact_set_invalid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_fact_set</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.build_global_sdd_model_rows">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">build_global_sdd_model_rows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solver</span></em>, <em class="sig-param"><span class="n">literal_probabilities</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.build_global_sdd_model_rows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.generate_probability_table">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">generate_probability_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solver</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.generate_probability_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.generate_weights">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">generate_weights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol_probs</span></em>, <em class="sig-param"><span class="n">literals_to_symbols</span></em>, <em class="sig-param"><span class="n">extras</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.generate_weights" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.model_count_and_per_row_probability">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">model_count_and_per_row_probability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">solver</span></em>, <em class="sig-param"><span class="n">initial_var_count</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.model_count_and_per_row_probability" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.perform_wmc">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">perform_wmc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solver</span></em>, <em class="sig-param"><span class="n">sdd_compiler</span></em>, <em class="sig-param"><span class="n">sdd_program</span></em>, <em class="sig-param"><span class="n">prob_set_program</span></em>, <em class="sig-param"><span class="n">prob_set_result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.perform_wmc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.prepare_initial_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">prepare_initial_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.prepare_initial_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.sdd_compilation">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">sdd_compilation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_set_result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.sdd_compilation_and_wmc">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">sdd_compilation_and_wmc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prob_set_result</span></em>, <em class="sig-param"><span class="n">solver</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation_and_wmc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.sdd_solver_global_model">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">sdd_solver_global_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solver</span></em>, <em class="sig-param"><span class="n">set_probabilities</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_global_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.sdd_solver_per_individual_row">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">sdd_solver_per_individual_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solver</span></em>, <em class="sig-param"><span class="n">set_probabilities</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_per_individual_row" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.solve_marg_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">solve_marg_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule</span></em>, <em class="sig-param"><span class="n">cpl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.solve_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a MARG query on a CP-Logic program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>Consequent must be of type <cite>Condition</cite>.
+MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</dd>
+<dt><strong>cpl_program</strong><span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.solve_succ_query">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">solve_succ_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em>, <em class="sig-param"><span class="n">cpl_program</span></em>, <em class="sig-param"><span class="n">per_row_model</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the solution of a SUCC query on a CP-Logic program.</p>
+<p>The SUCC query must take the form</p>
+<blockquote>
+<div><p>SUCC[ P(x) ]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.solve_succ_query_boolean_diagram">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">solve_succ_query_boolean_diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em>, <em class="sig-param"><span class="n">cpl_program</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_boolean_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the solution of a SUCC query on a CP-Logic program.</p>
+<p>The SUCC query must take the form</p>
+<blockquote>
+<div><p>SUCC[ P(x) ]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.probabilistic.weighted_model_counting.solve_succ_query_sdd_direct">
+<code class="sig-prename descclassname">neurolang.probabilistic.weighted_model_counting.</code><code class="sig-name descname">solve_succ_query_sdd_direct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query_predicate</span></em>, <em class="sig-param"><span class="n">cpl_program</span></em>, <em class="sig-param"><span class="n">per_row_model</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_sdd_direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the solution of a SUCC query on a CP-Logic program.</p>
+<p>The SUCC query must take the form</p>
+<blockquote>
+<div><p>SUCC[ P(x) ]</p>
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.weighted_model_counting.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
