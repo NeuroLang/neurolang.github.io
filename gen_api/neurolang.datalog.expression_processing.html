@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a1 documentation</title>
+    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a3.dev0+g4718786.d20201110 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -340,22 +340,25 @@ union of conjunctive queries (UCQ)</p>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>query_predicate</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>query_predicate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -363,6 +366,11 @@ union of conjunctive queries (UCQ)</p>
 <dl class="py method">
 <dt id="neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.conjunction">
 <code class="sig-name descname">conjunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.conjunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation">
+<code class="sig-name descname">negation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -969,6 +977,28 @@ is not a constant or an extensiona/intensional predicate.</p>
 <dt id="neurolang.datalog.expression_processing.enforce_conjunctive_antecedent">
 <code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">enforce_conjunctive_antecedent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.enforce_conjunctive_antecedent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.datalog.expression_processing.extract_logic_atoms">
+<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">extract_logic_atoms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.extract_logic_atoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract atoms from expression
+knowing that it’s in Datalog format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">Expression</span></dt><dd><p>expression to extract atoms from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderedSet</dt><dd><p>set of all predicates in the atoms in lexicographical
+order.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="neurolang.datalog.expression_processing.extract_logic_free_variables">

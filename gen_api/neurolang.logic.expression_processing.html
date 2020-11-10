@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.logic.expression_processing module &#8212; neurolang 0.1a1 documentation</title>
+    <title>neurolang.logic.expression_processing module &#8212; neurolang 0.1a3.dev0+g4718786.d20201110 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -158,22 +158,28 @@
 <col style="width: 20%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>binary</strong></p></td>
+<tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>extract_variables_fa</strong></p></td>
+<tr class="row-even"><td><p><strong>disjunction</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>extract_variables_q</strong></p></td>
+<tr class="row-odd"><td><p><strong>extract_variables_fa</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>extract_variables_s</strong></p></td>
+<tr class="row-even"><td><p><strong>extract_variables_q</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>extract_variables_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>extract_variables_s</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>n_ary</strong></p></td>
+<tr class="row-even"><td><p><strong>extract_variables_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>logic_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
@@ -188,10 +194,13 @@
 <tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>unary</strong></p></td>
+<tr class="row-odd"><td><p><strong>quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -219,6 +228,108 @@
 <dl class="py attribute">
 <dt id="neurolang.logic.expression_processing.ExtractFreeVariablesWalker.type">
 <code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.logic.expression_processing.ExtractLogicAtoms">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.logic.expression_processing.</code><code class="sig-name descname">ExtractLogicAtoms</code><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.type" title="neurolang.logic.expression_processing.ExtractLogicAtoms.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>disjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_predicates_fa</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>logic_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.ExtractLogicAtoms.constant">
+<code class="sig-name descname">constant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.ExtractLogicAtoms.extract_predicates_fa">
+<code class="sig-name descname">extract_predicates_fa</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.extract_predicates_fa" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.ExtractLogicAtoms.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.logic.expression_processing.ExtractLogicAtoms.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -259,37 +370,43 @@
 <col style="width: 20%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>binary</strong></p></td>
+<tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>extract_predicates_fa</strong></p></td>
+<tr class="row-odd"><td><p><strong>disjunction</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>n_ary</strong></p></td>
+<tr class="row-even"><td><p><strong>extract_predicates_fa</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>logic_operator</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>quantifier</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>unary</strong></p></td>
+<tr class="row-odd"><td><p><strong>union</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
@@ -576,10 +693,16 @@
 <col style="width: 20%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>binary</strong></p></td>
+<tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>n_ary</strong></p></td>
+<tr class="row-even"><td><p><strong>disjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>logic_operator</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
@@ -594,22 +717,40 @@
 <tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>unary</strong></p></td>
+<tr class="row-odd"><td><p><strong>quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.binary">
-<code class="sig-name descname">binary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.binary" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.conjunction">
+<code class="sig-name descname">conjunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.conjunction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.n_ary">
-<code class="sig-name descname">n_ary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.n_ary" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.disjunction">
+<code class="sig-name descname">disjunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.disjunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.logic_operator">
+<code class="sig-name descname">logic_operator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.logic_operator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.negation">
+<code class="sig-name descname">negation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.negation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.quantifier">
+<code class="sig-name descname">quantifier</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.quantifier" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -618,10 +759,32 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.unary">
-<code class="sig-name descname">unary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.unary" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.union">
+<code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.union" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.logic.expression_processing.extract_logic_atoms">
+<code class="sig-prename descclassname">neurolang.logic.expression_processing.</code><code class="sig-name descname">extract_logic_atoms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.extract_logic_atoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract atoms from expression
+knowing that it’s in logic format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">Expression</span></dt><dd><p>expression to extract predicates from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>OrderedSet</dt><dd><p>set of all atoms in the expression in lexicographical
+order.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -647,7 +810,9 @@
 <dt id="neurolang.logic.expression_processing.extract_logic_predicates">
 <code class="sig-prename descclassname">neurolang.logic.expression_processing.</code><code class="sig-name descname">extract_logic_predicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.extract_logic_predicates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract predicates from expression
-knowing that it’s in logic format</p>
+knowing that it’s in logic format, if
+predicates are negated then (not predicate)
+will be the result.ormat</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
