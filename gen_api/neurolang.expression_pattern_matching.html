@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.expression_pattern_matching &#8212; neurolang 0.1a5.dev0+g24f5360.d20201113 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>neurolang.expression_pattern_matching module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -17,8 +16,8 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="neurolang.expression_walker" href="neurolang.expression_walker.html" />
-    <link rel="prev" title="neurolang.expressions" href="neurolang.expressions.html" />
+    <link rel="next" title="neurolang.expression_walker module" href="neurolang.expression_walker.html" />
+    <link rel="prev" title="neurolang.expressions module" href="neurolang.expressions.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -41,14 +40,15 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
                 <li><a href="../tutorial.html">Tutorial</a></li>
-                <li><a href="../examples/index.html">Gallery</a></li>
+                <li><a href="../auto_examples/index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -63,7 +63,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
 </ul>
 </ul>
@@ -78,7 +77,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.expression_pattern_matching</a></li>
+<li><a class="reference internal" href="#">neurolang.expression_pattern_matching module</a></li>
 </ul>
 </ul>
 </li>
@@ -108,7 +107,7 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.expression_pattern_matching</a></li>
+<li><a class="reference internal" href="#">neurolang.expression_pattern_matching module</a></li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,61 +122,147 @@
     <div class="body col-md-9 content" role="main">
       
   <div class="section" id="module-neurolang.expression_pattern_matching">
-<span id="neurolang-expression-pattern-matching"></span><h1>neurolang.expression_pattern_matching<a class="headerlink" href="#module-neurolang.expression_pattern_matching" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-expression-pattern-matching-module"></span><h1>neurolang.expression_pattern_matching module<a class="headerlink" href="#module-neurolang.expression_pattern_matching" title="Permalink to this headline">¶</a></h1>
 <p>Module implementing expression pattern matching.</p>
-<p class="rubric">Functions</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_entry_point_match</span></code>(pattern[, guard])</p></td>
-<td><p>Decorate by adding patterns to a <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternMatcher</span></code> class.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_match</span></code>(pattern[, guard])</p></td>
-<td><p>Decorate by adding patterns to a <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternMatcher</span></code> class.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">signature</span></code>(cls)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Classes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>(pattern, guard, action)</p></td>
-<td><p><dl class="field-list simple">
+<dl class="function">
+<dt id="neurolang.expression_pattern_matching.add_match">
+<code class="sig-prename descclassname">neurolang.expression_pattern_matching.</code><code class="sig-name descname">add_match</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">guard=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.add_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorate by adding patterns to a <a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher" title="neurolang.expression_pattern_matching.PatternMatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">PatternMatcher</span></code></a> class.</p>
+<p>Should be used as
+<cite>&#64;add_match(PATTERN, GUARD)</cite> to turn the decorated method, receiving
+an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> into a matching case. See
+<a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match" title="neurolang.expression_pattern_matching.PatternMatcher.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match()</span></code></a> for more details on patterns.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_pattern_matching.</code><code class="sig-name descname">PatternMatcher</code><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Class for expression pattern matching.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><p></p></dd>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.patterns" title="neurolang.expression_pattern_matching.PatternMatcher.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
 </dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">PatternMatcher</span></code>()</p></td>
-<td><p>Class for expression pattern matching.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">PatternMatchingMetaClass</span></code>(name, bases, classdict)</p></td>
-<td><p><p class="rubric">Methods</p>
-</p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Exceptions</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuroLangPatternMatchingNoMatch</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.match" title="neurolang.expression_pattern_matching.PatternMatcher.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match" title="neurolang.expression_pattern_matching.PatternMatcher.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.type" title="neurolang.expression_pattern_matching.PatternMatcher.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.expression_pattern_matching.PatternMatcher.pattern_match" title="neurolang.expression_pattern_matching.PatternMatcher.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.expression_pattern_matching.PatternMatcher.type">
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_pattern_matching.PatternMatcher.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -200,7 +285,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>

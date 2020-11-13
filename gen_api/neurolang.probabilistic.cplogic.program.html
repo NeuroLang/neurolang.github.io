@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1a5.dev0+g24f5360.d20201113 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -17,6 +16,8 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.probabilistic.cplogic.testing module" href="neurolang.probabilistic.cplogic.testing.html" />
+    <link rel="prev" title="neurolang.probabilistic.cplogic.problog_solver module" href="neurolang.probabilistic.cplogic.problog_solver.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -39,14 +40,15 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
                 <li><a href="../tutorial.html">Tutorial</a></li>
-                <li><a href="../examples/index.html">Gallery</a></li>
+                <li><a href="../auto_examples/index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -57,11 +59,10 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
 </ul>
 </ul>
@@ -122,10 +123,10 @@
       
   <div class="section" id="module-neurolang.probabilistic.cplogic.program">
 <span id="neurolang-probabilistic-cplogic-program-module"></span><h1>neurolang.probabilistic.cplogic.program module<a class="headerlink" href="#module-neurolang.probabilistic.cplogic.program" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
+<dl class="class">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">CPLogicMixin</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
 <p>Datalog extended with probabilistic facts semantics from ProbLog.</p>
 <p>It adds a probabilistic database which is a set of probabilistic facts.</p>
 <p>Probabilistic facts are stored in the symbol table of the program such that
@@ -134,7 +135,7 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.patterns" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 <dt><strong>pchoice_pred_symbs</strong></dt><dd></dd>
 <dt><strong>pfact_pred_symbs</strong></dt><dd></dd>
@@ -150,31 +151,31 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code></a>(symbol, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code></a>(self, …)</p></td>
 <td><p>Add a probabilistic choice from a predicate symbol and a set of tuples where the first element is the probability label attached to a head predicate and the other elements are the constant terms of the head predicate.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code></a>(symbol, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code></a>(self, …)</p></td>
 <td><p>Add probabilistic facts from tuples whose first element contains the probability label attached to that tuple.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.match" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pchoice_pred_symb_set_symb</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pchoice_pred_symb_set_symb</span></code></a>(\*args, \*\*kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfact_pred_symb_set_symb</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfact_pred_symb_set_symb</span></code></a>(\*args, \*\*kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_choices</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_choices</span></code></a>(self)</p></td>
 <td><p>Return probabilistic choices of the symbol table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code></a>(self)</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -223,9 +224,9 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples">
-<code class="sig-name descname">add_probabilistic_choice_from_tuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">iterable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_probabilistic_choice_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a probabilistic choice from a predicate symbol and a set of
 tuples where the first element is the probability label
 attached to a head predicate and the other elements are the
@@ -244,9 +245,9 @@ constant terms of the head predicate.</p>
 <p>to the program.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples">
-<code class="sig-name descname">add_probabilistic_facts_from_tuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">iterable</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_probabilistic_facts_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add probabilistic facts from tuples whose first element
 contains the probability label attached to that tuple.</p>
 <p class="rubric">Examples</p>
@@ -264,104 +265,180 @@ P(b) : 0.8  &lt;-  T</p>
 <p>to the program.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.extensional_database">
-<code class="sig-name descname">extensional_database</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.extensional_database" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">extensional_database</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.extensional_database" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.marg_implication">
-<code class="sig-name descname">marg_implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.marg_implication" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">marg_implication</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.marg_implication" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb">
-<code class="sig-name descname">pchoice_pred_symb_set_symb</code><em class="property"> = S{__pchoice_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pchoice_pred_symb_set_symb</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = S{__pchoice_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symbs">
 <em class="property">property </em><code class="sig-name descname">pchoice_pred_symbs</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symbs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb">
-<code class="sig-name descname">pfact_pred_symb_set_symb</code><em class="property"> = S{__pfact_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pfact_pred_symb_set_symb</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = S{__pfact_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symbs">
 <em class="property">property </em><code class="sig-name descname">pfact_pred_symbs</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symbs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.predicate_symbols">
 <em class="property">property </em><code class="sig-name descname">predicate_symbols</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.predicate_symbols" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices">
-<code class="sig-name descname">probabilistic_choices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">probabilistic_choices</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return probabilistic choices of the symbol table.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_fact">
-<code class="sig-name descname">probabilistic_fact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_fact" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">probabilistic_fact</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_fact" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts">
-<code class="sig-name descname">probabilistic_facts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">probabilistic_facts</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return probabilistic facts of the symbol table.</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_predicate_symbols">
 <em class="property">property </em><code class="sig-name descname">probabilistic_predicate_symbols</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_predicate_symbols" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.protected_keywords">
 <code class="sig-name descname">protected_keywords</code><em class="property"> = {'PROB'}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.union_with_probabilistic_facts">
-<code class="sig-name descname">union_with_probabilistic_facts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.union_with_probabilistic_facts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">union_with_probabilistic_facts</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.union_with_probabilistic_facts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_marg_query">
-<code class="sig-name descname">within_language_marg_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_marg_query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">within_language_marg_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_marg_query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_queries">
-<code class="sig-name descname">within_language_succ_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_queries" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">within_language_succ_queries</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_queries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_query">
-<code class="sig-name descname">within_language_succ_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">within_language_succ_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">CPLogicProgram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol_table</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">CPLogicProgram</code><span class="sig-paren">(</span><em class="sig-param">symbol_table=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_functions</strong></dt><dd></dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.patterns" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 <dt><strong>pchoice_pred_symbs</strong></dt><dd></dd>
 <dt><strong>pfact_pred_symbs</strong></dt><dd></dd>
@@ -377,34 +454,34 @@ P(b) : 0.8  &lt;-  T</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code>(symbol, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_choice_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_choice_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code></a>(self, …)</p></td>
 <td><p>Add a probabilistic choice from a predicate symbol and a set of tuples where the first element is the probability label attached to a head predicate and the other elements are the constant terms of the head predicate.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code>(symbol, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_facts_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_facts_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code></a>(self, …)</p></td>
 <td><p>Add probabilistic facts from tuples whose first element contains the probability label attached to that tuple.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.infer_iterable_type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.infer_iterable_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code></a>(iterable)</p></td>
 <td><p>Infer the type of iterable elements without modifying the iterable.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.match" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pchoice_pred_symb_set_symb</span></code></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pchoice_pred_symb_set_symb</span></code></a>(\*args, \*\*kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfact_pred_symb_set_symb</span></code></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symb_set_symb" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symb_set_symb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pfact_pred_symb_set_symb</span></code></a>(\*args, \*\*kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_choices</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_choices" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_choices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_choices</span></code></a>(self)</p></td>
 <td><p>Return probabilistic choices of the symbol table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_facts" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_facts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code></a>(self)</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -495,26 +572,317 @@ P(b) : 0.8  &lt;-  T</p>
 </tr>
 </tbody>
 </table>
-<dl class="py attribute">
-<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords">
-<code class="sig-name descname">protected_keywords</code><em class="property"> = {'PROB'}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_extensional_predicate_from_tuples">
+<code class="sig-name descname">add_extensional_predicate_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em>, <em class="sig-param">type_=&lt;class 'neurolang.type_system.Unknown'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_extensional_predicate_from_tuples" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_functions_to_symbol_table">
+<code class="sig-name descname">add_functions_to_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_functions_to_symbol_table" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_choice_from_tuples">
+<code class="sig-name descname">add_probabilistic_choice_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_choice_from_tuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a probabilistic choice from a predicate symbol and a set of
+tuples where the first element is the probability label
+attached to a head predicate and the other elements are the
+constant terms of the head predicate.</p>
+<p class="rubric">Examples</p>
+<p>The following</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuples</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">program</span><span class="o">.</span><span class="n">add_probabilistic_choice_from_tuples</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">tuples</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>adds the probabilistic choice</p>
+<blockquote>
+<div><p>P(a) : 0.2  v  P(b) : 0.8  &lt;-  T</p>
+</div></blockquote>
+<p>to the program.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_facts_from_tuples">
+<code class="sig-name descname">add_probabilistic_facts_from_tuples</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em>, <em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.add_probabilistic_facts_from_tuples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add probabilistic facts from tuples whose first element
+contains the probability label attached to that tuple.</p>
+<p class="rubric">Examples</p>
+<p>The following</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">P</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuples</span> <span class="o">=</span> <span class="p">{(</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">program</span><span class="o">.</span><span class="n">add_probabilistic_facts_from_tuples</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">tuples</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>adds the probabilistic facts</p>
+<blockquote>
+<div><p>P(a) : 0.9  &lt;-  T
+P(b) : 0.8  &lt;-  T</p>
+</div></blockquote>
+<p>to the program.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.builtins">
+<code class="sig-name descname">builtins</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.builtins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.extensional_database">
+<code class="sig-name descname">extensional_database</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.extensional_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.fact">
+<code class="sig-name descname">fact</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.fact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.function_equals">
+<code class="sig-name descname">function_equals</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">a: Any</em>, <em class="sig-param">b: Any</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.function_equals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.included_functions">
+<em class="property">property </em><code class="sig-name descname">included_functions</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.included_functions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.infer_iterable_type">
+<em class="property">static </em><code class="sig-name descname">infer_iterable_type</code><span class="sig-paren">(</span><em class="sig-param">iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.infer_iterable_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Infer the type of iterable elements
+without modifying the iterable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>iterable</strong><span class="classifier">Iterable</span></dt><dd><p>iterable from which to infer
+element’s type</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>type, iterable</dt><dd><p>the inferred type and the iterable.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.intensional_database">
+<code class="sig-name descname">intensional_database</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.intensional_database" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.marg_implication">
+<code class="sig-name descname">marg_implication</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.marg_implication" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.new_set">
+<em class="property">static </em><code class="sig-name descname">new_set</code><span class="sig-paren">(</span><em class="sig-param">iterable=None</em>, <em class="sig-param">row_type=None</em>, <em class="sig-param">verify_row_type=False</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.new_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symb_set_symb">
+<code class="sig-name descname">pchoice_pred_symb_set_symb</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = S{__pchoice_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symbs">
+<em class="property">property </em><code class="sig-name descname">pchoice_pred_symbs</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pchoice_pred_symbs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symb_set_symb">
+<code class="sig-name descname">pfact_pred_symb_set_symb</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = S{__pfact_pred_symb_set_symb__: Unknown}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symb_set_symb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symbs">
+<em class="property">property </em><code class="sig-name descname">pfact_pred_symbs</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pfact_pred_symbs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.pop_scope">
+<code class="sig-name descname">pop_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.pop_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.predicate_symbols">
+<em class="property">property </em><code class="sig-name descname">predicate_symbols</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.predicate_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.predicate_terms">
+<code class="sig-name descname">predicate_terms</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">predicate</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.predicate_terms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_choices">
+<code class="sig-name descname">probabilistic_choices</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_choices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return probabilistic choices of the symbol table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_fact">
+<code class="sig-name descname">probabilistic_fact</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_fact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_facts">
+<code class="sig-name descname">probabilistic_facts</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_facts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return probabilistic facts of the symbol table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_predicate_symbols">
+<em class="property">property </em><code class="sig-name descname">probabilistic_predicate_symbols</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.probabilistic_predicate_symbols" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.process_expression">
+<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.process_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.process_iterable_argument">
+<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords">
+<code class="sig-name descname">protected_keywords</code><em class="property"> = {'PROB', '__pchoice_pred_symb_set_symb__'}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.push_scope">
+<code class="sig-name descname">push_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.push_scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.statement_intensional">
+<code class="sig-name descname">statement_intensional</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.statement_intensional" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.symbol">
+<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.union_with_probabilistic_facts">
+<code class="sig-name descname">union_with_probabilistic_facts</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">code</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.union_with_probabilistic_facts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_marg_query">
+<code class="sig-name descname">within_language_marg_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_succ_queries">
+<code class="sig-name descname">within_language_succ_queries</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_succ_queries" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_succ_query">
+<code class="sig-name descname">within_language_succ_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.within_language_succ_query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="class">
 <dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">TranslateProbabilisticQueryMixin</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.expression_walker.html#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<dt><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.patterns" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -526,13 +894,13 @@ P(b) : 0.8  &lt;-  T</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.match" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -566,26 +934,102 @@ P(b) : 0.8  &lt;-  T</p>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.conditional_query">
-<code class="sig-name descname">conditional_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.conditional_query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">conditional_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.conditional_query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
+<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
+specified by the first satisfied triplet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match">
+<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+<p>Patterns are of the following form:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
+a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
+<span class="pre">Pattern_N)</span></code> matches if
+<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
+<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
+construction parameters of the instance on the types given as
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
+<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
+<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression">
+<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression_parameters">
+<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression_tuple">
+<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_tuple">
+<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.patterns">
+<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
+construction parameters and the type can be replaced
+by an ellipsis <cite>…</cite> to signal a wildcard. See
+<a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
+to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
+instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
 <dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py method">
+<dl class="method">
+<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.walk">
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.within_language_prob_query">
-<code class="sig-name descname">within_language_prob_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.within_language_prob_query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">within_language_prob_query</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">implication</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.within_language_prob_query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
+<dl class="function">
 <dt id="neurolang.probabilistic.cplogic.program.is_within_language_prob_query_wannabe">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">is_within_language_prob_query_wannabe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.is_within_language_prob_query_wannabe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">is_within_language_prob_query_wannabe</code><span class="sig-paren">(</span><em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.is_within_language_prob_query_wannabe" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -610,7 +1054,7 @@ P(b) : 0.8  &lt;-  T</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>
