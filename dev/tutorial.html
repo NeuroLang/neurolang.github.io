@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Started with NeuroLang &#8212; neurolang 0.1a5.dev5+g313b284.d20201115 documentation</title>
+    <title>Get Started with NeuroLang &#8212; neurolang 0.1a5.dev6+gbbd13fa documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Examples of the NeuroLang language environment." href="auto_examples/index.html" />
-    <link rel="prev" title="Welcome to neurolang’s documentation!" href="index.html" />
+    <link rel="prev" title="Welcome to Neurolang’s documentation!" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -48,7 +48,8 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="#">Tutorial</a></li>
-                <li><a href="examples/index.html">Gallery</a></li>
+                <li><a href="auto_examples/index.html">Gallery</a></li>
+                <li><a href="authors.html">Authors</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -63,7 +64,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html#indices-and-tables">Indices and tables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
 </ul>
 </ul>
@@ -79,7 +79,10 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Get Started with NeuroLang</a><ul>
-<li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a></li>
+<li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a><ul>
+<li><a class="reference internal" href="#disjunctions-in-logic-programming">Disjunctions in Logic Programming</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -112,7 +115,10 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Get Started with NeuroLang</a><ul>
-<li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a></li>
+<li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a><ul>
+<li><a class="reference internal" href="#disjunctions-in-logic-programming">Disjunctions in Logic Programming</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -133,19 +139,61 @@
 <div class="section" id="first-steps-with-neurolang">
 <h2>First Steps With NeuroLang<a class="headerlink" href="#first-steps-with-neurolang" title="Permalink to this headline">¶</a></h2>
 <p>NeuroLang is a unifying formalism to perform complex queries and explorations using heterogeneous data sources like tabular data,
-volumetric images, and ontologies. To perform this in sound manner, NeuroLang is a probabilistic logic programming language based on Datalog <a class="reference internal" href="#abiteboul1995" id="id1"><span>[abiteboul1995]</span></a>, <a class="reference internal" href="#maier2018" id="id2"><span>[maier2018]</span></a>. A simple example can be produced by analysing the NeuroSynth database, to find all article titles which have the word “pain” in the abstract. For this, we start by importing the NeuroLang deterministic solver:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">neurolang.frontend</span> <span class="kn">import</span> <span class="n">NeurolangDL</span>
-<span class="go">&gt;&gt;&gt;</span>
+volumetric images, and ontologies. To perform this in sound manner, NeuroLang is a probabilistic logic programming language based on Datalog <a class="reference internal" href="#abiteboul1995" id="id1"><span>[abiteboul1995]</span></a>, <a class="reference internal" href="#maier2018" id="id2"><span>[maier2018]</span></a>.</p>
+<p>The whole idea of logic programming is to be able to make assertions of the style:</p>
+<blockquote>
+<div><p>region x is a left hemisphere gyrus <strong>if</strong> the label of x in Destrieux et al’s atlas starts with “L G”.</p>
+</div></blockquote>
+<p>which can be formalised in first order logic as</p>
+<div class="math">
+<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l) \operatorname{region}(x) \wedge \operatorname{destrieux\_label}(l, x) \wedge \operatorname{startswith}('L\, G', l)</span></p>
+</div><p>which, if we assume that <span class="math">x</span> being on Destrieux et al’s atlas means that <span class="math">x</span> is already a region, can be shortened as</p>
+<div class="math">
+<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l)  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
+</div><p>Finally, for notation convenience, we will drop the quantifiers, assuming that all variable on the left of the arrow (such as <span class="math">x</span>) is universally quantified, and all variable appearing only on the right of the arrow (such as <span class="math">l</span>) will be existentially quantified <a class="reference internal" href="#maier2018" id="id3"><span>[maier2018]</span></a>. This leads to the expression</p>
+<div class="math">
+<p><span class="math">\operatorname{left\_hemisphere\_gyrus}(x) \leftarrow  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
+</div><p>which we formalise in python as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux_atlas</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;L G&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>the full example is in our gallery in <a class="reference internal" href="auto_examples/plot_load_destrieux_left_hemisphere_gyri.html#sphx-glr-auto-examples-plot-load-destrieux-left-hemisphere-gyri-py"><span class="std std-ref">Loading and Querying the Destrieux et al. Atlas’ Left Hemisphere</span></a>.</p>
+<div class="section" id="disjunctions-in-logic-programming">
+<h3>Disjunctions in Logic Programming<a class="headerlink" href="#disjunctions-in-logic-programming" title="Permalink to this headline">¶</a></h3>
+<p>Disjunctions in logic programming merit are a very specific case. For instance, let’s say that all the regions in the left hemisphere’s cortex are either a sulcus or gyrus, or more specifically</p>
+<blockquote>
+<div><p>x is a left hemisphere region <strong>if</strong> x is left sulcus <strong>or</strong> x is left gyrus</p>
+</div></blockquote>
+<p>which in first order logic can be formalised as</p>
+<div class="math">
+<p><span class="math">(\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x) \vee \operatorname{left\_hemisphere\_gyrus}(x)</span></p>
+</div><p>alternatively, this can be written as a set of two propositions</p>
+<div class="math">
+<p><span class="math">\begin{cases}
+ (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x)\\
+ (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow  \operatorname{left\_hemisphere\_gyrus}(x)
+\end{cases}</span></p>
+</div><p>which we formalise in Neurlang in the classical logical programming syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or in a less verbose manner:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">|</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="citation">
 <dt class="label" id="abiteboul1995"><span class="brackets"><a class="fn-backref" href="#id1">abiteboul1995</a></span></dt>
 <dd><p>Abiteboul, S., Hull, R. &amp; Vianu, V. Foundations of databases. (Addison Wesley, 1995).</p>
 </dd>
-<dt class="label" id="maier2018"><span class="brackets"><a class="fn-backref" href="#id2">maier2018</a></span></dt>
+<dt class="label" id="maier2018"><span class="brackets">maier2018</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
 <dd><p>Maier, D., Tekle, K. T., Kifer, M. &amp; Warren, D. S. Datalog: concepts, history, and outlook. in Declarative Logic Programming (eds. Kifer, M. &amp; Liu, Y. A.) 3–100 (Association for Computing Machinery and Morgan &amp; Claypool, 2018). doi:10.1145/3191315.3191317.</p>
 </dd>
 </dl>
+</div>
 </div>
 </div>
 
@@ -169,7 +217,7 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>

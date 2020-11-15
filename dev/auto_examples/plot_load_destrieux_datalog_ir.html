@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1a5.dev5+g313b284.d20201115 documentation</title>
+    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1a5.dev6+gbbd13fa documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -48,7 +48,8 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="../tutorial.html">Tutorial</a></li>
-                <li><a href="../examples/index.html">Gallery</a></li>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -63,7 +64,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api.html#indices-and-tables">Indices and tables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
 </ul>
 </ul>
@@ -155,11 +155,6 @@ executing some simple queries.</p>
 <span class="kn">from</span> <span class="nn">neurolang.datalog.expressions</span> <span class="kn">import</span> <span class="n">Fact</span><span class="p">,</span> <span class="n">Implication</span><span class="p">,</span> <span class="n">TranslateToLogic</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/importlib/_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
-  return f(*args, **kwds)
-</pre></div>
-</div>
 <p>Set up IR shortcuts</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C_</span> <span class="o">=</span> <span class="n">expressions</span><span class="o">.</span><span class="n">Constant</span>
 <span class="n">S_</span> <span class="o">=</span> <span class="n">expressions</span><span class="o">.</span><span class="n">Symbol</span>
@@ -177,13 +172,7 @@ executing some simple queries.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset created in /home/circleci/nilearn_data/destrieux_2009
-
-Downloading data from https://www.nitrc.org/frs/download.php/7739/destrieux2009.tgz ...
-
-Downloaded 167791 of 167791 bytes (100.0%,    0.0s remaining) ...done. (1 seconds, 0 min)
-Extracting data from /home/circleci/nilearn_data/destrieux_2009/942c6b3a7dffa09bfce32de953622ba3/destrieux2009.tgz..... done.
-/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
   output = genfromtxt(fname, **kwargs)
 /home/circleci/repo/examples/plot_load_destrieux_datalog_ir.py:39: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
 
@@ -213,7 +202,7 @@ Extracting data from /home/circleci/nilearn_data/destrieux_2009/942c6b3a7dffa09b
 </div>
 <img alt="plot load destrieux datalog ir" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7f33c975bfd0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7ff619989dd0&gt;
 </pre></div>
 </div>
 <p>Make the fact list</p>
@@ -401,7 +390,7 @@ and plotting the first element of the result</p>
   plt.figure()
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  41.896 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.409 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-load-destrieux-datalog-ir-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/a87ca17791f020cb5d8277d3955aecea/plot_load_destrieux_datalog_ir.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux_datalog_ir.py</span></code></a></p>
@@ -434,7 +423,7 @@ and plotting the first element of the result</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>
