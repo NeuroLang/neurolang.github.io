@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a5.dev6+gbbd13fa documentation</title>
+    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -59,6 +59,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
@@ -330,8 +331,14 @@ Capabilities to declare, manage and manipulate symbols.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set" title="neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_tuple_set</span></code></a>(iterable[, type_, name])</p></td>
 <td><p>Creates an AbstractSet fe.Symbol containing the elements specified in the iterable with a List[Tuple[Any, …]] format (see examples).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol" title="neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_symbol</span></code></a>(name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.all" title="neurolang.frontend.query_resolution.QueryBuilderBase.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a>(quantified_variable, body)</p></td>
+<td><p>Universal predicate on the body.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol" title="neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_symbol</span></code></a>(name)</p></td>
 <td><p>Deletes the symbol with parameter name from the symbol_table</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.exists" title="neurolang.frontend.query_resolution.QueryBuilderBase.exists"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exists</span></code></a>(quantified_variable, body)</p></td>
+<td><p>Existential predicate on the body.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.get_symbol" title="neurolang.frontend.query_resolution.QueryBuilderBase.get_symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_symbol</span></code></a>(symbol_name)</p></td>
 <td><p>Retrieves symbol via its name, either providing a fe.Expression with the correct name or the name itself</p></td>
@@ -407,6 +414,31 @@ will be inferred from the first element, by default Unknown</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="neurolang.frontend.query_resolution.QueryBuilderBase.all">
+<code class="sig-name descname">all</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantified_variable</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a></span></em>, <em class="sig-param"><span class="n">body</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.All" title="neurolang.frontend.query_resolution_expressions.All">neurolang.frontend.query_resolution_expressions.All</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Universal predicate on the body. The predicate
+will be cosidered satisfied if all instances of
+<cite>quantified_variable</cite> satify <cite>body</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>quantified_variable</strong><span class="classifier">fe.Symbol</span></dt><dd><p>universally-quantified variable</p>
+</dd>
+<dt><strong>body: fe.Expression</strong></dt><dd><p>first order logic proposition which to be
+satisfied by the universal quatifier.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fe.All</dt><dd><p>representation of the universal predicate.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol">
 <code class="sig-name descname">del_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes the symbol with parameter name
@@ -438,6 +470,31 @@ when exiting the environment context</p>
 <dt class="field-odd">Yields</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>QuerySymbolsProxy</dt><dd><p>in dynamic mode, can be used to create symbols on-the-fly</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.query_resolution.QueryBuilderBase.exists">
+<code class="sig-name descname">exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quantified_variable</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a></span></em>, <em class="sig-param"><span class="n">body</span><span class="p">:</span> <span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Exists" title="neurolang.frontend.query_resolution_expressions.Exists">neurolang.frontend.query_resolution_expressions.Exists</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Existential predicate on the body. The predicate
+will be cosidered satisfied if any instance of
+<cite>quantified_variable</cite> satifies <cite>body</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>quantified_variable</strong><span class="classifier">fe.Symbol</span></dt><dd><p>existentially-quantified variable</p>
+</dd>
+<dt><strong>body: fe.Expression</strong></dt><dd><p>first order logic proposition which to be
+satisfied by the existential quatifier.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fe.Exists</dt><dd><p>representation of the existential predicate.</p>
 </dd>
 </dl>
 </dd>

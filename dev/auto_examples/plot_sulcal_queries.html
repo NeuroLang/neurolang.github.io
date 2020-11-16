@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulcal Identification Query Example in Neurolang &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User Guide" href="../api.html" />
+    <link rel="prev" title="NeuroLang Example based Implementing a NeuroSynth Query" href="plot_neurosynth_implementation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Sulcal Identification Query Example in Neurolang</a><ul>
+<li><a class="reference internal" href="#initialise-the-neurolang-deterministic-environment">Initialise the Neurolang deterministic environment</a></li>
+<li><a class="reference internal" href="#example-1-characterise-some-of-the-sulci">Example 1: Characterise Some of the Sulci</a></li>
+<li><a class="reference internal" href="#example-2-query-the-precentral-sulcus">Example 2: Query the Precentral Sulcus</a></li>
+<li><a class="reference internal" href="#example-3-query-the-superior-frontal-sulcus">Example 3: Query the Superior Frontal Sulcus</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Sulcal Identification Query Example in Neurolang</a><ul>
+<li><a class="reference internal" href="#initialise-the-neurolang-deterministic-environment">Initialise the Neurolang deterministic environment</a></li>
+<li><a class="reference internal" href="#example-1-characterise-some-of-the-sulci">Example 1: Characterise Some of the Sulci</a></li>
+<li><a class="reference internal" href="#example-2-query-the-precentral-sulcus">Example 2: Query the Precentral Sulcus</a></li>
+<li><a class="reference internal" href="#example-3-query-the-superior-frontal-sulcus">Example 3: Query the Superior Frontal Sulcus</a></li>
+</ul>
+</li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-sulcal-queries-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="sulcal-identification-query-example-in-neurolang">
+<span id="sphx-glr-auto-examples-plot-sulcal-queries-py"></span><h1>Sulcal Identification Query Example in Neurolang<a class="headerlink" href="#sulcal-identification-query-example-in-neurolang" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="initialise-the-neurolang-deterministic-environment">
+<h2>Initialise the Neurolang deterministic environment<a class="headerlink" href="#initialise-the-neurolang-deterministic-environment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">plotting</span>
+
+<span class="kn">from</span> <span class="nn">neurolang</span> <span class="kn">import</span> <span class="n">ExplicitVBR</span><span class="p">,</span> <span class="n">NeurolangDL</span>
+</pre></div>
+</div>
+<p>Initialise the NeuroLang probabilistic engine.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangDL</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Load the Destrieux example from nilearn as a fact list</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_destrieux</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
+<span class="n">atlas_labels</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">atlas_destrieux</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+
+<span class="n">nl</span><span class="o">.</span><span class="n">add_atlas_set</span><span class="p">(</span><span class="s2">&quot;destrieux&quot;</span><span class="p">,</span> <span class="n">atlas_labels</span><span class="p">,</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">atlas_destrieux</span><span class="p">[</span><span class="s2">&quot;maps&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+  output = genfromtxt(fname, **kwargs)
+
+destrieux: typing.AbstractSet[typing.Tuple[str, neurolang.regions.ExplicitVBR]] = (&#39;Background&#39;, Region(VBR= affine:[[   2.    0.    0.  -76.]
+ [   0.    2.    0. -109.]
+ [   0.    0.    2.  -64.]
+ [   0.    0.    0.    1.]], voxels:[[ 0  0  0]
+ [ 0  0  1]
+ [ 0  0  2]
+ ...
+ [75 92 73]
+ [75 92 74]
+ [75 92 75]])) ...
+</pre></div>
+</div>
+<p>Add utility functions, one for the prefix of the region’s name
+one to determine the principal direction of the region.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="k">def</span> <span class="nf">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Describe the prefix of string `s`.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    prefix : str</span>
+<span class="sd">        prefix to query.</span>
+<span class="sd">    s : str</span>
+<span class="sd">        string to check whether its</span>
+<span class="sd">        prefixed by `s`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        whether `s` is prefixed by</span>
+<span class="sd">        `prefix`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
+
+
+<span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="k">def</span> <span class="nf">principal_direction</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">ExplicitVBR</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Describe the principal direction of</span>
+<span class="sd">    the extension of a volumetric region.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s : ExplicitVBR</span>
+<span class="sd">        region to analyse the principal</span>
+<span class="sd">        direction of its extension.</span>
+<span class="sd">    direction : str</span>
+<span class="sd">        principal directions, one of</span>
+<span class="sd">        `LR`, `AP`, `SI`, for the directions</span>
+<span class="sd">        left-right, anterio-posterior, and</span>
+<span class="sd">        superior inferior respectively.</span>
+<span class="sd">    eps : float, optional</span>
+<span class="sd">        minimum difference on between</span>
+<span class="sd">        directional standard deviations,</span>
+<span class="sd">        by default 1e-6.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        wether the principal variance of</span>
+<span class="sd">        `s` is `direction`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Assuming RAS coding os the xyz space.</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LR&quot;</span><span class="p">,</span> <span class="s2">&quot;AP&quot;</span><span class="p">,</span> <span class="s2">&quot;SI&quot;</span><span class="p">]</span>
+
+    <span class="n">s_xyz</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">to_xyz</span><span class="p">()</span>
+    <span class="n">cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">s_xyz</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">evals</span><span class="p">,</span> <span class="n">evecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">evals</span><span class="p">))</span>
+    <span class="n">abs_max_evec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">evecs</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
+    <span class="n">sort_dir</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">abs_max_evec</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">abs_max_evec</span><span class="p">[</span><span class="n">sort_dir</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">abs_max_evec</span><span class="p">[</span><span class="n">sort_dir</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span> <span class="o">&lt;</span> <span class="n">eps</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">main_dir</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">sort_dir</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="n">main_dir</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">direction</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">main_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-1-characterise-some-of-the-sulci">
+<h2>Example 1: Characterise Some of the Sulci<a class="headerlink" href="#example-1-characterise-some-of-the-sulci" title="Permalink to this headline">¶</a></h2>
+<p>In this example we characterise:</p>
+<ul class="simple">
+<li><p>left hemisphere primary sulci, by name</p></li>
+<li><p>left frontal lobe sulcus as those</p>
+<ul>
+<li><p>anterior to Destrieux’s left central sulcus</p></li>
+<li><p>superior to Destrieux’s left anterio-vertical section
+of the lateral fissure.</p></li>
+</ul>
+</li>
+</ul>
+<p>These will be present in all further programs.
+There are no executed queries in this section, just
+declared ones.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_sulcus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span>
+    <span class="p">)</span> <span class="o">&amp;</span> <span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;L S&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">left_primary_sulcus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L S_central&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L Lat_Fis-post&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L S_pericallosal&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L S_parieto_occipital&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L S_calcarine&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L Lat_Fis-ant-Vertical&quot;</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;L Lat_Fis-ant-Horizont&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">left_sulcus</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">anatomical_anterior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;L S_central&quot;</span><span class="p">])</span>
+        <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">anatomical_superior_of</span><span class="p">(</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;L Lat_Fis-ant-Vertical&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-query-the-precentral-sulcus">
+<h2>Example 2: Query the Precentral Sulcus<a class="headerlink" href="#example-2-query-the-precentral-sulcus" title="Permalink to this headline">¶</a></h2>
+<p>this query and all defined will not be in the program
+after the <cite>with</cite> context finishes. But the results
+remain. We identify the precentral sulcus (PC) as:</p>
+<ul class="simple">
+<li><p>belongs to the left frontal lobe</p></li>
+<li><p>its principal direction is along the superior-inferior
+axis.</p></li>
+<li><p>no other sulcus satisfying the same conditions is
+anterior to the PC.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">named_sulcus</span><span class="p">[</span><span class="s2">&quot;L precentral sulcus&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">principal_direction</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="s2">&quot;SI&quot;</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="n">nl</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span> <span class="o">!=</span> <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">anatomical_posterior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">named_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+    <span class="n">subplots</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span>
+        <span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">subplots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span>
+        <span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">subplots</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot sulcal queries" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sulcal_queries_001.png" />
+</div>
+<div class="section" id="example-3-query-the-superior-frontal-sulcus">
+<h2>Example 3: Query the Superior Frontal Sulcus<a class="headerlink" href="#example-3-query-the-superior-frontal-sulcus" title="Permalink to this headline">¶</a></h2>
+<p>this query and all defined will not be in the program
+after the <cite>with</cite> context finishes. But the results
+remain.
+In this query we express that the superior frontal sulcus (SFS)
+as a sulcus which:</p>
+<ul class="simple">
+<li><p>belongs to the left frontal lobe</p></li>
+<li><p>its principal direction is along the anterior-posterior
+axis.</p></li>
+<li><p>no other sulcus satisfying the same conditions is
+superior to the SFS.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">named_sulcus</span><span class="p">[</span><span class="s2">&quot;L superior frontal sulcus&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">principal_direction</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="s2">&quot;AP&quot;</span><span class="p">)</span>
+        <span class="o">&amp;</span> <span class="o">~</span><span class="n">nl</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span> <span class="o">!=</span> <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">anatomical_superior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">named_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+    <span class="n">subplots</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span>
+        <span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">subplots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span>
+        <span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">subplots</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<img alt="plot sulcal queries" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sulcal_queries_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/ma/core.py:2832: UserWarning: Warning: converting a masked element to nan.
+  order=order, subok=True, ndmin=ndmin)
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.368 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-sulcal-queries-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/dd9b7c027b1df0b4a2d3fba1892c35c0/plot_sulcal_queries.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sulcal_queries.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/01c5dd5a4a208313ea064adb60acfa58/plot_sulcal_queries.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sulcal_queries.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/auto_examples/plot_sulcal_queries.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
