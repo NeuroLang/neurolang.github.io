@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>neurolang.expression_walker module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.expression_walker &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -16,8 +17,8 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="neurolang.exceptions module" href="neurolang.exceptions.html" />
-    <link rel="prev" title="neurolang.expression_pattern_matching module" href="neurolang.expression_pattern_matching.html" />
+    <link rel="next" title="neurolang.exceptions" href="neurolang.exceptions.html" />
+    <link rel="prev" title="neurolang.expression_pattern_matching" href="neurolang.expression_pattern_matching.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,6 +61,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">User Guide</a></li>
@@ -77,7 +79,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.expression_walker module</a></li>
+<li><a class="reference internal" href="#">neurolang.expression_walker</a></li>
 </ul>
 </ul>
 </li>
@@ -107,7 +109,7 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.expression_walker module</a></li>
+<li><a class="reference internal" href="#">neurolang.expression_walker</a></li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -122,1516 +124,106 @@
     <div class="body col-md-9 content" role="main">
       
   <div class="section" id="module-neurolang.expression_walker">
-<span id="neurolang-expression-walker-module"></span><h1>neurolang.expression_walker module<a class="headerlink" href="#module-neurolang.expression_walker" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="neurolang.expression_walker.expression_iterator">
-<code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">expression_iterator</code><span class="sig-paren">(</span><em class="sig-param">expression</em>, <em class="sig-param">include_level=False</em>, <em class="sig-param">dfs=True</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.expression_iterator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Iterate traversing expression tree.</p>
-<p>Iterates over elements <cite>(parameter_name, parameter_object)</cite> when
-<cite>include_level</cite> is <cite>False</cite>.</p>
-<p>If <cite>include_level</cite> is <cite>True</cite> then the iterated elements are
-<cite>(parameter_name, parameter_object, depth_level)</cite>.</p>
-<p>If <cite>dfs</cite> is true the iteration is in DFS order else is in BFS.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.PatternWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">PatternWalker</code><a class="headerlink" href="#neurolang.expression_walker.PatternWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.expression_pattern_matching.html#neurolang.expression_pattern_matching.PatternMatcher" title="neurolang.expression_pattern_matching.PatternMatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_pattern_matching.PatternMatcher</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.PatternWalker.patterns" title="neurolang.expression_walker.PatternWalker.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
+<span id="neurolang-expression-walker"></span><h1>neurolang.expression_walker<a class="headerlink" href="#module-neurolang.expression_walker" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.PatternWalker.match" title="neurolang.expression_walker.PatternWalker.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">expression_iterator</span></code>(expression[, …])</p></td>
+<td><p>Iterate traversing expression tree.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.PatternWalker.pattern_match" title="neurolang.expression_walker.PatternWalker.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">expression_iterator_constant</span></code>(current_element)</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.PatternWalker.type" title="neurolang.expression_walker.PatternWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fix_children_order</span></code>(dfs, expression, children)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.PatternWalker.pattern_match" title="neurolang.expression_walker.PatternWalker.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.PatternWalker.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.PatternWalker.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.PatternWalker.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">EntryPointPatternWalker</code><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
-<p>Pattern walker with an entrypoint. All walks must start from the
-entry point pattern. This is useful to enforce agreement with a global
-grammatical and syntactical construction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.EntryPointPatternWalker.patterns" title="neurolang.expression_walker.EntryPointPatternWalker.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
+<p class="rubric">Classes</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.EntryPointPatternWalker.match" title="neurolang.expression_walker.EntryPointPatternWalker.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChainedWalker</span></code>(*walkers)</p></td>
+<td><p><p class="rubric">Methods</p>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match" title="neurolang.expression_walker.EntryPointPatternWalker.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">EntryPointPatternWalker</span></code>(*args, **kwargs)</p></td>
+<td><p>Pattern walker with an entrypoint.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.EntryPointPatternWalker.type" title="neurolang.expression_walker.EntryPointPatternWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.EntryPointPatternWalker.pattern_match" title="neurolang.expression_walker.EntryPointPatternWalker.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.EntryPointPatternWalker.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.EntryPointPatternWalker.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.IdentityWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">IdentityWalker</code><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
-<p>Walks through expresssions without doing
-a thing.</p>
-<dl class="field-list simple">
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExpressionBasicEvaluator</span></code>()</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.IdentityWalker.patterns" title="neurolang.expression_walker.IdentityWalker.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.IdentityWalker.match" title="neurolang.expression_walker.IdentityWalker.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.IdentityWalker.pattern_match" title="neurolang.expression_walker.IdentityWalker.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExpressionWalker</span></code>()</p></td>
+<td><p>Walks through an expression and each of its arguments</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.IdentityWalker.type" title="neurolang.expression_walker.IdentityWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">FunctionApplicationToPythonLambda</span></code>()</p></td>
+<td><p>Convert a <cite>FunctionApplication</cite> expression with constant functor into a python <cite>lambda</cite> expression where the symbols are the parameters.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">IdentityWalker</span></code>()</p></td>
+<td><p>Walks through expresssions without doing a thing.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.IdentityWalker.pattern_match" title="neurolang.expression_walker.IdentityWalker.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.IdentityWalker.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.IdentityWalker.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.IdentityWalker.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.ExpressionWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">ExpressionWalker</code><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.PatternWalker" title="neurolang.expression_walker.PatternWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></a></p>
-<p>Walks through an expression and each of its arguments</p>
-<dl class="field-list simple">
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">PatternWalker</span></code>()</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker.patterns" title="neurolang.expression_walker.ExpressionWalker.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker.match" title="neurolang.expression_walker.ExpressionWalker.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker.pattern_match" title="neurolang.expression_walker.ExpressionWalker.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker.type" title="neurolang.expression_walker.ExpressionWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker.pattern_match" title="neurolang.expression_walker.ExpressionWalker.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.ExpressionWalker.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionWalker.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionWalker.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">ReplaceSymbolWalker</code><span class="sig-paren">(</span><em class="sig-param">symbol_replacements</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
-<dl class="field-list simple">
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplaceExpressionWalker</span></code>(symbol_replacements)</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolWalker.patterns" title="neurolang.expression_walker.ReplaceSymbolWalker.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolWalker.match" title="neurolang.expression_walker.ReplaceSymbolWalker.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match" title="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolWalker.type" title="neurolang.expression_walker.ReplaceSymbolWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>replace_free_variable</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolWalker.pattern_match" title="neurolang.expression_walker.ReplaceSymbolWalker.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.replace_free_variable">
-<code class="sig-name descname">replace_free_variable</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.replace_free_variable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolWalker.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolWalker.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">ReplaceSymbolsByConstants</code><span class="sig-paren">(</span><em class="sig-param">symbol_table</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
-<dl class="field-list simple">
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplaceExpressionsByValues</span></code>(symbol_table)</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.patterns" title="neurolang.expression_walker.ReplaceSymbolsByConstants.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.match" title="neurolang.expression_walker.ReplaceSymbolsByConstants.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match" title="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.type" title="neurolang.expression_walker.ReplaceSymbolsByConstants.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>constant_abstract_set</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>constant_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.constant_abstract_set">
-<code class="sig-name descname">constant_abstract_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant_abstract_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.constant_abstract_set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.constant_tuple">
-<code class="sig-name descname">constant_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant_tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.constant_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match" title="neurolang.expression_walker.ReplaceSymbolsByConstants.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.symbol">
-<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceSymbolsByConstants.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceSymbolsByConstants.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">ReplaceExpressionsByValues</code><span class="sig-paren">(</span><em class="sig-param">symbol_table</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
-<dl class="field-list simple">
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplaceSymbolWalker</span></code>(symbol_replacements)</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.ReplaceExpressionsByValues.patterns" title="neurolang.expression_walker.ReplaceExpressionsByValues.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceExpressionsByValues.match" title="neurolang.expression_walker.ReplaceExpressionsByValues.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match" title="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ReplaceExpressionsByValues.type" title="neurolang.expression_walker.ReplaceExpressionsByValues.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>constant_abstract_set</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>constant_iterable</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>constant_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.constant">
-<code class="sig-name descname">constant</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.constant" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.constant_abstract_set">
-<code class="sig-name descname">constant_abstract_set</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant_abstract_set</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.constant_abstract_set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.constant_iterable">
-<code class="sig-name descname">constant_iterable</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant_iterable</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.constant_iterable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.constant_tuple">
-<code class="sig-name descname">constant_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">constant_tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.constant_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match" title="neurolang.expression_walker.ReplaceExpressionsByValues.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.symbol">
-<code class="sig-name descname">symbol</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ReplaceExpressionsByValues.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ReplaceExpressionsByValues.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">TypedSymbolTableEvaluator</code><span class="sig-paren">(</span><em class="sig-param">symbol_table=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.expressions.html#neurolang.expressions.TypedSymbolTableMixin" title="neurolang.expressions.TypedSymbolTableMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.TypedSymbolTableMixin</span></code></a>, <a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
-<dl class="field-list simple">
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplaceSymbolsByConstants</span></code>(symbol_table)</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>included_functions</strong></dt><dd></dd>
-<dt><a class="reference internal" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.patterns" title="neurolang.expression_walker.TypedSymbolTableEvaluator.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.match" title="neurolang.expression_walker.TypedSymbolTableEvaluator.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match" title="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.type" title="neurolang.expression_walker.TypedSymbolTableEvaluator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pop_scope</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>push_scope</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>statement</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>symbol_from_table</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.add_functions_to_symbol_table">
-<code class="sig-name descname">add_functions_to_symbol_table</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.add_functions_to_symbol_table" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.included_functions">
-<em class="property">property </em><code class="sig-name descname">included_functions</code><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.included_functions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match" title="neurolang.expression_walker.TypedSymbolTableEvaluator.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.pop_scope">
-<code class="sig-name descname">pop_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.pop_scope" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.push_scope">
-<code class="sig-name descname">push_scope</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.push_scope" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.statement">
-<code class="sig-name descname">statement</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">statement</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.statement" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.symbol_from_table">
-<code class="sig-name descname">symbol_from_table</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.symbol_from_table" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.TypedSymbolTableEvaluator.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.TypedSymbolTableEvaluator.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">ExpressionBasicEvaluator</code><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.expression_walker.ExpressionWalker" title="neurolang.expression_walker.ExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></a></p>
-<dl class="field-list simple">
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResolveSymbolMixin</span></code>()</p></td>
+<td><p><dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.expression_walker.ExpressionBasicEvaluator.patterns" title="neurolang.expression_walker.ExpressionBasicEvaluator.patterns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></a></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
+<dd class="field-odd"><p></p></dd>
 </dl>
-</dd>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TypedSymbolTableEvaluator</span></code>([symbol_table])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><p></p></dd>
 </dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionBasicEvaluator.match" title="neurolang.expression_walker.ExpressionBasicEvaluator.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match" title="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code></a>(self, pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.expression_walker.ExpressionBasicEvaluator.type" title="neurolang.expression_walker.ExpressionBasicEvaluator.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>(\*args, \*\*kwds)</p></td>
-<td><p></p></td>
+</p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>eval_lambda</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>evaluate_function</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>evaluate_function_infer_type</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>evaluate_projection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.eval_lambda">
-<code class="sig-name descname">eval_lambda</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.eval_lambda" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_function">
-<code class="sig-name descname">evaluate_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function_application</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_function" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_function_infer_type">
-<code class="sig-name descname">evaluate_function_infer_type</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">functor</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_function_infer_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_projection">
-<code class="sig-name descname">evaluate_projection</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">projection</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.evaluate_projection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p>
-<p>Goes through the triplets in in <code class="docutils literal notranslate"><span class="pre">patterns</span></code> and calls the action
-specified by the first satisfied triplet.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match">
-<code class="sig-name descname">pattern_match</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
-<p>Patterns are of the following form:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">...</span></code> matches everything.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> class matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class for any <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T]</span></code> matches if <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
-instance of the given class with <code class="docutils literal notranslate"><span class="pre">expression.type</span></code>
-a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> <code class="docutils literal notranslate"><span class="pre">[T](Pattern_0,</span> <span class="pre">Pattern_1,</span> <span class="pre">.....,</span>
-<span class="pre">Pattern_N)</span></code> matches if
-<code class="docutils literal notranslate"><span class="pre">expression</span></code> is instance of the given class with
-<code class="docutils literal notranslate"><span class="pre">expression.type</span></code> a subtype of <code class="docutils literal notranslate"><span class="pre">T</span></code> and recursively matches the
-construction parameters of the instance on the types given as
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(Pattern_0,</span> <span class="pre">.....,</span> <span class="pre">Pattern_N)</span></code> matches when expression is a
-<code class="docutils literal notranslate"><span class="pre">tuple</span></code> of length <cite>N + 1</cite> where <code class="docutils literal notranslate"><span class="pre">expression[0]</span></code> matches
-<code class="docutils literal notranslate"><span class="pre">Pattern_0</span></code>, <code class="docutils literal notranslate"><span class="pre">expression[1]</span></code> matches <code class="docutils literal notranslate"><span class="pre">Pattern_1</span></code>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">instance</span></code> an instance of a python class not subclassing
-<code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> matches when
-<code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">==</span> <span class="pre">expression</span></code></p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression">
-<code class="sig-name descname">pattern_match_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression_parameters">
-<code class="sig-name descname">pattern_match_expression_parameters</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression_tuple">
-<code class="sig-name descname">pattern_match_expression_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em>, <em class="sig-param">pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_expression_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_tuple">
-<code class="sig-name descname">pattern_match_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pattern</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.patterns">
-<em class="property">property </em><code class="sig-name descname">patterns</code><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.patterns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pattern</span></code>: is an Expression class, or instance where
-construction parameters and the type can be replaced
-by an ellipsis <cite>…</cite> to signal a wildcard. See
-<a class="reference internal" href="#neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match" title="neurolang.expression_walker.ExpressionBasicEvaluator.pattern_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pattern_match()</span></code></a> for more details.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">guard</span></code>: is a function mapping an <cite>Expression</cite> instance
-to a boolean or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">action</span></code>: is the method receiving the matching <code class="docutils literal notranslate"><span class="pre">expression</span></code>
-instance to be executed upon pattern and match being <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-</ul>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.process_expression">
-<code class="sig-name descname">process_expression</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.process_expression" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.process_iterable_argument">
-<code class="sig-name descname">process_iterable_argument</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.process_iterable_argument" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.type">
-<code class="sig-name descname">type</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.expression_walker.ExpressionBasicEvaluator.walk">
-<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.ExpressionBasicEvaluator.walk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="neurolang.expression_walker.add_match">
-<code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">add_match</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">guard=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.add_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorate by adding patterns to a <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternMatcher</span></code> class.</p>
-<p>Should be used as
-<cite>&#64;add_match(PATTERN, GUARD)</cite> to turn the decorated method, receiving
-an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> into a matching case. See
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match()</span></code> for more details on patterns.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="neurolang.expression_walker.add_entry_point_match">
-<code class="sig-prename descclassname">neurolang.expression_walker.</code><code class="sig-name descname">add_entry_point_match</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">guard=None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.expression_walker.add_entry_point_match" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decorate by adding patterns to a <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternMatcher</span></code> class.</p>
-<p>Should be used as
-<cite>&#64;add_match(PATTERN, GUARD)</cite> to turn the decorated method, receiving
-an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code> into a matching case. See
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match()</span></code> for more details on patterns.</p>
-<p>Additionally, this decorator sets the entry point which should be the
-first match for specific walkers.</p>
-</dd></dl>
-
 </div>
 
 
@@ -1654,7 +246,7 @@ first match for specific walkers.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>

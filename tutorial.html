@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Get Started with NeuroLang &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Started with NeuroLang &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
@@ -17,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Examples of the NeuroLang language environment." href="auto_examples/index.html" />
-    <link rel="prev" title="Welcome to Neurolang’s documentation!" href="index.html" />
+    <link rel="prev" title="Installing Neurolang" href="install.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="index.html"><span><img src="_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,6 +61,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing Neurolang</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">User Guide</a></li>
@@ -80,6 +82,7 @@
 <li><a class="reference internal" href="#">Get Started with NeuroLang</a><ul>
 <li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a><ul>
 <li><a class="reference internal" href="#disjunctions-in-logic-programming">Disjunctions in Logic Programming</a></li>
+<li><a class="reference internal" href="#aggregations">Aggregations</a></li>
 </ul>
 </li>
 </ul>
@@ -116,6 +119,7 @@
 <li><a class="reference internal" href="#">Get Started with NeuroLang</a><ul>
 <li><a class="reference internal" href="#first-steps-with-neurolang">First Steps With NeuroLang</a><ul>
 <li><a class="reference internal" href="#disjunctions-in-logic-programming">Disjunctions in Logic Programming</a></li>
+<li><a class="reference internal" href="#aggregations">Aggregations</a></li>
 </ul>
 </li>
 </ul>
@@ -145,19 +149,20 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 </div></blockquote>
 <p>which can be formalised in first order logic as</p>
 <div class="math">
-<p><img src="_images/math/4b1288b631ae709b9fe325211da2844c7d480c8f.png" alt="(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l) \operatorname{region}(x) \wedge \operatorname{destrieux\_label}(l, x) \wedge \operatorname{startswith}('L\, G', l)"/></p>
-</div><p>which, if we assume that <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/> being on Destrieux et al’s atlas means that <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/> is already a region, can be shortened as</p>
+<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l) \operatorname{region}(x) \wedge \operatorname{destrieux\_label}(l, x) \wedge \operatorname{startswith}('L\, G', l)</span></p>
+</div><p>which, if we assume that <span class="math">x</span> being on Destrieux et al’s atlas means that <span class="math">x</span> is already a region, can be shortened as</p>
 <div class="math">
-<p><img src="_images/math/2715db7327f3983751a3854dbc82a507f219be92.png" alt="(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l)  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)"/></p>
-</div><p>Finally, for notation convenience, we will drop the quantifiers, assuming that all variable on the left of the arrow (such as <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/>) is universally quantified, and all variable appearing only on the right of the arrow (such as <img class="math" src="_images/math/470aa65888a2971c9346e573f12b37ea406b8ec9.png" alt="l"/>) will be existentially quantified <a class="reference internal" href="#maier2018" id="id3"><span>[maier2018]</span></a>. This leads to the expression</p>
+<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l)  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
+</div><p>Finally, for notation convenience, we will drop the quantifiers, assuming that all variable on the left of the arrow (such as <span class="math">x</span>) is universally quantified, and all variable appearing only on the right of the arrow (such as <span class="math">l</span>) will be existentially quantified <a class="reference internal" href="#maier2018" id="id3"><span>[maier2018]</span></a>. This leads to the expression</p>
 <div class="math">
-<p><img src="_images/math/7d2e8a7a314c8cda391ad3c0550236a73a510039.png" alt="\operatorname{left\_hemisphere\_gyrus}(x) \leftarrow  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)"/></p>
+<p><span class="math">\operatorname{left\_hemisphere\_gyrus}(x) \leftarrow  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
 </div><p>which we formalise in python as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux_atlas</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;L G&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>the full example is in our gallery in <a class="reference internal" href="auto_examples/plot_load_destrieux_left_hemisphere_gyri.html#sphx-glr-auto-examples-plot-load-destrieux-left-hemisphere-gyri-py"><span class="std std-ref">Loading and Querying the Destrieux et al. Atlas’ Left Hemisphere</span></a>.</p>
+<p>Negation can also be used in Neurolang. For instance</p>
 <div class="section" id="disjunctions-in-logic-programming">
 <h3>Disjunctions in Logic Programming<a class="headerlink" href="#disjunctions-in-logic-programming" title="Permalink to this headline">¶</a></h3>
 <p>Disjunctions in logic programming merit are a very specific case. For instance, let’s say that all the regions in the left hemisphere’s cortex are either a sulcus or gyrus, or more specifically</p>
@@ -166,13 +171,13 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 </div></blockquote>
 <p>which in first order logic can be formalised as</p>
 <div class="math">
-<p><img src="_images/math/71472ea96073bba1dd615e4305368f1b53e5b5c3.png" alt="(\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x) \vee \operatorname{left\_hemisphere\_gyrus}(x)"/></p>
+<p><span class="math">(\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x) \vee \operatorname{left\_hemisphere\_gyrus}(x)</span></p>
 </div><p>alternatively, this can be written as a set of two propositions</p>
 <div class="math">
-<p><img src="_images/math/d8652f1db37a1dbf23c1c6fea3f9a8e152d719c8.png" alt="\begin{cases}
+<p><span class="math">\begin{cases}
  (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x)\\
  (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow  \operatorname{left\_hemisphere\_gyrus}(x)
-\end{cases}"/></p>
+\end{cases}</span></p>
 </div><p>which we formalise in Neurlang in the classical logical programming syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -181,7 +186,21 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 </div>
 <p>or in a less verbose manner:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">|</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">|</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aggregations">
+<h3>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">¶</a></h3>
+<p>Aggregations combine information from a set of tuples. A good example of an aggregation is the maximum. As a mathematical definition we could define an aggregation as</p>
+<div class="math">
+<p><span class="math">\begin{split}
+(\forall country)\operatorname{max\_population\_per\_country}\left(country, max(\{pop: (\exists province)\operatorname{population\_per\_country\_province}(country, province, pop)\})\right) \leftarrow \\
+(\exists province)(\exists pop)\operatorname{population\_per\_country\_province}(country, province, pop)
+\end{split}</span></p>
+</div><p>which in neurolang is expressed as</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">max_population_per_country</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">pop</span><span class="p">)]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">population_per_country_province</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">province</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">pop</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="citation">
@@ -216,7 +235,7 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>

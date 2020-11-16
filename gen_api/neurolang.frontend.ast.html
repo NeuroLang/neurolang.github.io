@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>neurolang.frontend.ast module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.frontend.ast module &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -38,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -58,6 +59,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
@@ -127,9 +129,9 @@ for text-parsed language code
 <p>1- defines an AST node
 2- defines an AST walker, able to go through
 an AST to convert it to some other representation</p>
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.frontend.ast.ASTNode">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.ast.</code><code class="sig-name descname">ASTNode</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">children</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.ast.</code><code class="sig-name descname">ASTNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">children</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 <p>Class representing a Node in an
 Abstract Syntax Tree</p>
@@ -140,110 +142,44 @@ Abstract Syntax Tree</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.clear" title="neurolang.frontend.ast.ASTNode.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.copy" title="neurolang.frontend.ast.ASTNode.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.fromkeys" title="neurolang.frontend.ast.ASTNode.fromkeys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromkeys</span></code></a>(iterable[, value])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromkeys</span></code>(iterable[, value])</p></td>
 <td><p>Create a new dictionary with keys from iterable and values set to value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.get" title="neurolang.frontend.ast.ASTNode.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(self, key[, default])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code>(key[, default])</p></td>
 <td><p>Return the value for key if key is in the dictionary, else default.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.items" title="neurolang.frontend.ast.ASTNode.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.keys" title="neurolang.frontend.ast.ASTNode.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.pop" title="neurolang.frontend.ast.ASTNode.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code>(k[,d])</p></td>
 <td><p>If key is not found, d is returned if given, otherwise KeyError is raised</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.popitem" title="neurolang.frontend.ast.ASTNode.popitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code></a>(self, /)</p></td>
-<td><p>Remove and return a (key, value) pair as a 2-tuple.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">popitem</span></code>()</p></td>
+<td><p>2-tuple; but raise KeyError if D is empty.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.setdefault" title="neurolang.frontend.ast.ASTNode.setdefault"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setdefault</span></code></a>(self, key[, default])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setdefault</span></code>(key[, default])</p></td>
 <td><p>Insert key with a value of default if key is not in the dictionary.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.update" title="neurolang.frontend.ast.ASTNode.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code>([E, ]**F)</p></td>
 <td><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v In either case, this is followed by: for k in F:  D[k] = F[k]</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTNode.values" title="neurolang.frontend.ast.ASTNode.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code>()</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.clear" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.copy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.fromkeys">
-<code class="sig-name descname">fromkeys</code><span class="sig-paren">(</span><em class="sig-param">iterable</em>, <em class="sig-param">value=None</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.fromkeys" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new dictionary with keys from iterable and values set to value.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key</em>, <em class="sig-param">default=None</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the value for key if key is in the dictionary, else default.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.items">
-<code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.items" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.keys">
-<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.keys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.pop">
-<code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>If key is not found, d is returned if given, otherwise KeyError is raised</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.popitem">
-<code class="sig-name descname">popitem</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.popitem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove and return a (key, value) pair as a 2-tuple.</p>
-<p>Pairs are returned in LIFO (last-in, first-out) order.
-Raises KeyError if the dict is empty.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.setdefault">
-<code class="sig-name descname">setdefault</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key</em>, <em class="sig-param">default=None</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.setdefault" title="Permalink to this definition">¶</a></dt>
-<dd><p>Insert key with a value of default if key is not in the dictionary.</p>
-<p>Return the value for key if key is in the dictionary, else default.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
-If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
-In either case, this is followed by: for k in F:  D[k] = F[k]</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="neurolang.frontend.ast.ASTNode.values">
-<code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode.values" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.frontend.ast.ASTWalker">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.ast.</code><code class="sig-name descname">ASTWalker</code><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
@@ -257,14 +193,14 @@ the corresponding Neurolang intermediate representation</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="neurolang.frontend.ast.ASTWalker.evaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code></a>(self, ast, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="neurolang.frontend.ast.ASTWalker.evaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code></a>(ast)</p></td>
 <td><p>Converts input to intermediate representation: - if input is an ASTNode, calls -if it exists- the class method corresponding to the node type (methods are declared in child class) - if input is a list of ASTNode, recursively calls itself on every node - else, simply passes ast through</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.frontend.ast.ASTWalker.evaluate">
-<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param">self, ast: Union[neurolang.frontend.ast.ASTNode, List[neurolang.frontend.ast.ASTNode], Any]</em><span class="sig-paren">)</span> &#x2192; Union[neurolang.expressions.Expression, List[neurolang.expressions.Expression], Any]<a class="headerlink" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode">neurolang.frontend.ast.ASTNode</a><span class="p">, </span>List<span class="p">[</span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode">neurolang.frontend.ast.ASTNode</a><span class="p">]</span><span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>neurolang.expressions.Expression<span class="p">, </span>List<span class="p">[</span>neurolang.expressions.Expression<span class="p">]</span><span class="p">, </span>Any<span class="p">]</span><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts input to intermediate representation:
 - if input is an ASTNode, calls -if it exists- the class method
 corresponding to the node type (methods are declared
@@ -312,7 +248,7 @@ on every node
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>

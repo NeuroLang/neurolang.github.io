@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>neurolang.perior_tree module &#8212; neurolang 0.1.dev445+g118bfa5.d20201104 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.perior_tree module &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
@@ -38,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -58,6 +59,7 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
@@ -121,9 +123,9 @@
       
   <div class="section" id="module-neurolang.perior_tree">
 <span id="neurolang-perior-tree-module"></span><h1>neurolang.perior_tree module<a class="headerlink" href="#module-neurolang.perior_tree" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.perior_tree.Boundary">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">Boundary</code><span class="sig-paren">(</span><em class="sig-param">lb</em>, <em class="sig-param">ub</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">Boundary</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb</span></em>, <em class="sig-param"><span class="n">ub</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.perior_tree.BoundedAABB</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -186,111 +188,21 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Boundary.adjust_direction">
-<code class="sig-name descname">adjust_direction</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.adjust_direction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.adjust_direction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Boundary.adjust_position">
-<code class="sig-name descname">adjust_position</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point</em><span class="sig-paren">)</span> &#x2192; Tuple<a class="headerlink" href="#neurolang.perior_tree.Boundary.adjust_position" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.adjust_to_bound">
-<code class="sig-name descname">adjust_to_bound</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#neurolang.perior_tree.Boundary.adjust_to_bound" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.cardinal_tiles">
-<code class="sig-name descname">cardinal_tiles</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; &lt;built-in function array&gt;<a class="headerlink" href="#neurolang.perior_tree.Boundary.cardinal_tiles" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.center">
-<em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.center" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.contains">
-<code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.contains" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.contains_tuple">
-<code class="sig-name descname">contains_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point: tuple</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.perior_tree.Boundary.contains_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.dim">
-<em class="property">property </em><code class="sig-name descname">dim</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.dim" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.direction_matrix">
-<code class="sig-name descname">direction_matrix</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other: 'BoundedAABB'</em><span class="sig-paren">)</span> &#x2192; numpy.matrix<a class="headerlink" href="#neurolang.perior_tree.Boundary.direction_matrix" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.expand">
-<code class="sig-name descname">expand</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.expand" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.expand_object">
-<code class="sig-name descname">expand_object</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">another_box: 'BoundedAABB'</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.expand_object" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.expand_tuple">
-<code class="sig-name descname">expand_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point: tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.expand_tuple" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.intersects">
-<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other: 'BoundedAABB'</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.perior_tree.Boundary.intersects" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.lb">
-<em class="property">property </em><code class="sig-name descname">lb</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.lb" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.limits">
-<em class="property">property </em><code class="sig-name descname">limits</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.limits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.overlaps">
-<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.overlaps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.ub">
-<em class="property">property </em><code class="sig-name descname">ub</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.ub" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.union">
-<code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Boundary.union" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.volume">
-<em class="property">property </em><code class="sig-name descname">volume</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.volume" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.Boundary.width">
-<em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#neurolang.perior_tree.Boundary.width" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span></em><span class="sig-paren">)</span> &#x2192; Tuple<a class="headerlink" href="#neurolang.perior_tree.Boundary.adjust_position" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.perior_tree.BoundedAABB">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">BoundedAABB</code><span class="sig-paren">(</span><em class="sig-param">lb: tuple</em>, <em class="sig-param">ub: tuple</em>, <em class="sig-param">bounded_area: neurolang.perior_tree.Boundary</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">BoundedAABB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lb</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></span></em>, <em class="sig-param"><span class="n">ub</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></span></em>, <em class="sig-param"><span class="n">bounded_area</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.Boundary" title="neurolang.perior_tree.Boundary">neurolang.perior_tree.Boundary</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.aabb_tree.html#neurolang.aabb_tree.AABB" title="neurolang.aabb_tree.AABB"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.aabb_tree.AABB</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -347,101 +259,71 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.adjust_to_bound">
-<code class="sig-name descname">adjust_to_bound</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.adjust_to_bound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_to_bound</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.adjust_to_bound" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.cardinal_tiles">
-<code class="sig-name descname">cardinal_tiles</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; &lt;built-in function array&gt;<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.cardinal_tiles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">cardinal_tiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; numpy.array<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.cardinal_tiles" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.center">
 <em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.center" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.contains">
-<code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.contains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.contains" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.contains_tuple">
-<code class="sig-name descname">contains_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point: tuple</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.contains_tuple" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">contains_tuple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.contains_tuple" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.dim">
-<em class="property">property </em><code class="sig-name descname">dim</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.dim" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.direction_matrix">
-<code class="sig-name descname">direction_matrix</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other: 'BoundedAABB'</em><span class="sig-paren">)</span> &#x2192; numpy.matrix<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.direction_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">direction_matrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em><span class="sig-paren">)</span> &#x2192; numpy.matrix<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.direction_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.expand">
-<code class="sig-name descname">expand</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">expand</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.expand_object">
-<code class="sig-name descname">expand_object</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">another_box: 'BoundedAABB'</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand_object" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">expand_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">another_box</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand_object" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.expand_tuple">
-<code class="sig-name descname">expand_tuple</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">point: tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand_tuple" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">expand_tuple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)">tuple</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.expand_tuple" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.intersects">
-<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other: 'BoundedAABB'</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.intersects" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">intersects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.intersects" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.lb">
-<em class="property">property </em><code class="sig-name descname">lb</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.lb" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.limits">
-<em class="property">property </em><code class="sig-name descname">limits</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.limits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.overlaps">
-<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.overlaps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.ub">
-<em class="property">property </em><code class="sig-name descname">ub</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.ub" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="neurolang.perior_tree.BoundedAABB.union">
-<code class="sig-name descname">union</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.union" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.volume">
 <em class="property">property </em><code class="sig-name descname">volume</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.volume" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.BoundedAABB.width">
 <em class="property">property </em><code class="sig-name descname">width</code><a class="headerlink" href="#neurolang.perior_tree.BoundedAABB.width" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.perior_tree.Node">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param">box: neurolang.perior_tree.BoundedAABB</em>, <em class="sig-param">parent: Union[None</em>, <em class="sig-param">Node] = None</em>, <em class="sig-param">left: Union[None</em>, <em class="sig-param">Node] = None</em>, <em class="sig-param">right: Union[None</em>, <em class="sig-param">Node] = None</em>, <em class="sig-param">height: int = 0</em>, <em class="sig-param">region_ids: Set[int] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Node" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em>, <em class="sig-param"><span class="n">parent</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><span class="p">, </span><a class="reference internal" href="#neurolang.perior_tree.Node" title="neurolang.perior_tree.Node">Node</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">left</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><span class="p">, </span><a class="reference internal" href="#neurolang.perior_tree.Node" title="neurolang.perior_tree.Node">Node</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">right</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><span class="p">, </span><a class="reference internal" href="#neurolang.perior_tree.Node" title="neurolang.perior_tree.Node">Node</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="n">region_ids</span><span class="p">:</span> <span class="n">Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.Node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -450,14 +332,14 @@
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Node.is_leaf">
 <em class="property">property </em><code class="sig-name descname">is_leaf</code><a class="headerlink" href="#neurolang.perior_tree.Node.is_leaf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="neurolang.perior_tree.Tree">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">Tree</code><a class="headerlink" href="#neurolang.perior_tree.Tree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
@@ -482,31 +364,31 @@
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Tree.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">box: neurolang.perior_tree.BoundedAABB</em>, <em class="sig-param">region_ids: Set[int] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#neurolang.perior_tree.Tree.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em>, <em class="sig-param"><span class="n">region_ids</span><span class="p">:</span> <span class="n">Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="headerlink" href="#neurolang.perior_tree.Tree.add" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Tree.expand_region_box">
-<code class="sig-name descname">expand_region_box</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">region_id: int</em>, <em class="sig-param">added_box: neurolang.perior_tree.BoundedAABB</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#neurolang.perior_tree.Tree.expand_region_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">expand_region_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em>, <em class="sig-param"><span class="n">added_box</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="headerlink" href="#neurolang.perior_tree.Tree.expand_region_box" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Tree.query_regions_axdir">
-<code class="sig-name descname">query_regions_axdir</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">region_id: int</em>, <em class="sig-param">axis: int</em>, <em class="sig-param">direction: int</em><span class="sig-paren">)</span> &#x2192; Set[int]<a class="headerlink" href="#neurolang.perior_tree.Tree.query_regions_axdir" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_regions_axdir</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region_id</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em>, <em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em>, <em class="sig-param"><span class="n">direction</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a></span></em><span class="sig-paren">)</span> &#x2192; Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><a class="headerlink" href="#neurolang.perior_tree.Tree.query_regions_axdir" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="neurolang.perior_tree.Tree.query_regions_contained_in_box">
-<code class="sig-name descname">query_regions_contained_in_box</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">box: neurolang.perior_tree.BoundedAABB</em><span class="sig-paren">)</span> &#x2192; Set[int]<a class="headerlink" href="#neurolang.perior_tree.Tree.query_regions_contained_in_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">query_regions_contained_in_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">box</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#neurolang.perior_tree.BoundedAABB" title="neurolang.perior_tree.BoundedAABB">neurolang.perior_tree.BoundedAABB</a></span></em><span class="sig-paren">)</span> &#x2192; Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><a class="headerlink" href="#neurolang.perior_tree.Tree.query_regions_contained_in_box" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="neurolang.perior_tree.methdispatch">
-<code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">methdispatch</code><span class="sig-paren">(</span><em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.methdispatch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">neurolang.perior_tree.</code><code class="sig-name descname">methdispatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.perior_tree.methdispatch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -531,7 +413,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
     </p>
   </div>
 </footer>

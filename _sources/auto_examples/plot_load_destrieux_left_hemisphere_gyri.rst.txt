@@ -36,7 +36,8 @@ executing a simple query.
 
  .. code-block:: none
 
-    <frozen importlib._bootstrap>:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+    /usr/local/lib/python3.7/importlib/_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+      return f(*args, **kwds)
 
 
 
@@ -83,7 +84,13 @@ Load the Destrieux example from nilearn as a fact list
 
  .. code-block:: none
 
-    /Users/dwasserm/anaconda/envs/root3.8-neurosynth/lib/python3.8/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
+
+    Dataset created in /home/circleci/nilearn_data/destrieux_2009
+
+    Downloading data from https://www.nitrc.org/frs/download.php/11942/destrieux2009.tgz ...
+     ...done. (1 seconds, 0 min)
+    Extracting data from /home/circleci/nilearn_data/destrieux_2009/b945227ebaa37d6b6e05e49490010f9c/destrieux2009.tgz..... done.
+    /home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
       output = genfromtxt(fname, **kwargs)
 
     destrieux_atlas: typing.AbstractSet[typing.Tuple[str, neurolang.regions.ExplicitVBR]] = ('Background', Region(VBR= affine:[[   2.    0.    0.  -76.]
@@ -158,6 +165,7 @@ Visualise results
 
 
 .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_left_hemisphere_gyri_001.png
+    :alt: plot load destrieux left hemisphere gyri
     :class: sphx-glr-single-img
 
 
@@ -167,7 +175,7 @@ Visualise results
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  30.622 seconds)
+   **Total running time of the script:** ( 0 minutes  42.165 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_load_destrieux_left_hemisphere_gyri.py:
