@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Started with NeuroLang &#8212; neurolang 0.1a5.dev7+g7ea5b76 documentation</title>
+    <title>Get Started with NeuroLang &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
@@ -41,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="index.html"><span><img src="_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -149,13 +149,13 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 </div></blockquote>
 <p>which can be formalised in first order logic as</p>
 <div class="math">
-<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l) \operatorname{region}(x) \wedge \operatorname{destrieux\_label}(l, x) \wedge \operatorname{startswith}('L\, G', l)</span></p>
-</div><p>which, if we assume that <span class="math">x</span> being on Destrieux et al’s atlas means that <span class="math">x</span> is already a region, can be shortened as</p>
+<p><img src="_images/math/4b1288b631ae709b9fe325211da2844c7d480c8f.png" alt="(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l) \operatorname{region}(x) \wedge \operatorname{destrieux\_label}(l, x) \wedge \operatorname{startswith}('L\, G', l)"/></p>
+</div><p>which, if we assume that <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/> being on Destrieux et al’s atlas means that <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/> is already a region, can be shortened as</p>
 <div class="math">
-<p><span class="math">(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l)  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
-</div><p>Finally, for notation convenience, we will drop the quantifiers, assuming that all variable on the left of the arrow (such as <span class="math">x</span>) is universally quantified, and all variable appearing only on the right of the arrow (such as <span class="math">l</span>) will be existentially quantified <a class="reference internal" href="#maier2018" id="id3"><span>[maier2018]</span></a>. This leads to the expression</p>
+<p><img src="_images/math/2715db7327f3983751a3854dbc82a507f219be92.png" alt="(\forall x) \operatorname{left\_hemisphere\_gyrus}(x) \leftarrow (\exists l)  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)"/></p>
+</div><p>Finally, for notation convenience, we will drop the quantifiers, assuming that all variable on the left of the arrow (such as <img class="math" src="_images/math/888f7c323ac0341871e867220ae2d76467d74d6e.png" alt="x"/>) is universally quantified, and all variable appearing only on the right of the arrow (such as <img class="math" src="_images/math/470aa65888a2971c9346e573f12b37ea406b8ec9.png" alt="l"/>) will be existentially quantified <a class="reference internal" href="#maier2018" id="id3"><span>[maier2018]</span></a>. This leads to the expression</p>
 <div class="math">
-<p><span class="math">\operatorname{left\_hemisphere\_gyrus}(x) \leftarrow  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)</span></p>
+<p><img src="_images/math/7d2e8a7a314c8cda391ad3c0550236a73a510039.png" alt="\operatorname{left\_hemisphere\_gyrus}(x) \leftarrow  \operatorname{destrieux\_atlas}(l, x) \wedge \operatorname{startswith}('L\,G', l)"/></p>
 </div><p>which we formalise in python as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_gyrus</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">destrieux_atlas</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;L G&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
@@ -171,13 +171,13 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 </div></blockquote>
 <p>which in first order logic can be formalised as</p>
 <div class="math">
-<p><span class="math">(\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x) \vee \operatorname{left\_hemisphere\_gyrus}(x)</span></p>
+<p><img src="_images/math/71472ea96073bba1dd615e4305368f1b53e5b5c3.png" alt="(\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x) \vee \operatorname{left\_hemisphere\_gyrus}(x)"/></p>
 </div><p>alternatively, this can be written as a set of two propositions</p>
 <div class="math">
-<p><span class="math">\begin{cases}
+<p><img src="_images/math/d8652f1db37a1dbf23c1c6fea3f9a8e152d719c8.png" alt="\begin{cases}
  (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow \operatorname{left\_hemisphere\_sulcus}(x)\\
  (\forall x)\operatorname{left\_hemisphere\_region}(x) \leftarrow  \operatorname{left\_hemisphere\_gyrus}(x)
-\end{cases}</span></p>
+\end{cases}"/></p>
 </div><p>which we formalise in Neurlang in the classical logical programming syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_region</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">left_hemisphere_sulcus</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -194,10 +194,10 @@ volumetric images, and ontologies. To perform this in sound manner, NeuroLang is
 <h3>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">¶</a></h3>
 <p>Aggregations combine information from a set of tuples. A good example of an aggregation is the maximum. As a mathematical definition we could define an aggregation as</p>
 <div class="math">
-<p><span class="math">\begin{split}
+<p><img src="_images/math/41af3589048fba0ce69f2a47c7adfbca7d3d2a0c.png" alt="\begin{split}
 (\forall country)\operatorname{max\_population\_per\_country}\left(country, max(\{pop: (\exists province)\operatorname{population\_per\_country\_province}(country, province, pop)\})\right) \leftarrow \\
 (\exists province)(\exists pop)\operatorname{population\_per\_country\_province}(country, province, pop)
-\end{split}</span></p>
+\end{split}"/></p>
 </div><p>which in neurolang is expressed as</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">max_population_per_country</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">pop</span><span class="p">)]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">population_per_country_province</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">country</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">province</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">pop</span><span class="p">)</span>
