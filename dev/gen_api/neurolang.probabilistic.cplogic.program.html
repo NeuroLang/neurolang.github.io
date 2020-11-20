@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1a8.dev8+g5ac692c documentation</title>
+    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1a8.dev9+g519a15a documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -175,7 +175,10 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code></a>()</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code></a>(implication)</p></td>
+<td><p>Construct probabilistic facts from deterministic queries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -216,7 +219,7 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 <tr class="row-even"><td><p><strong>within_language_marg_query</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>within_language_succ_queries</strong></p></td>
+<tr class="row-odd"><td><p><strong>within_language_prob_queries</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>within_language_succ_query</strong></p></td>
@@ -327,6 +330,24 @@ P(b) : 0.8  &lt;-  T</p>
 <code class="sig-name descname">protected_keywords</code><em class="property"> = {'PROB'}</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact">
+<code class="sig-name descname">query_based_probabilistic_fact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct probabilistic facts from deterministic queries.</p>
+<p>This extends the syntax with rules such as</p>
+<blockquote>
+<div><p>P(x) : f(x) :- Q(x)</p>
+</div></blockquote>
+<p>where x is a set of variables, f(x) is an arithmetic expression
+yielding a probability between [0, 1] that may use built-ins, and where
+Q(x) is a conjunction of predicates.</p>
+<p>Only deterministic antecedents are allowed. Declarativity makes it
+impossible to enforce that at declaration time. Thus, if a query-based
+probabilistic fact has a dependency on a probabilistic predicate, this
+will be discovered at query-resolution time, after the program has been
+fully declared.</p>
+</dd></dl>
+
 <dl class="py attribute">
 <dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.type">
 <code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="Permalink to this definition">¶</a></dt>
@@ -343,8 +364,8 @@ P(b) : 0.8  &lt;-  T</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_queries">
-<code class="sig-name descname">within_language_succ_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_queries" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_prob_queries">
+<code class="sig-name descname">within_language_prob_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_prob_queries" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -405,7 +426,10 @@ P(b) : 0.8  &lt;-  T</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code>()</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code>(implication)</p></td>
+<td><p>Construct probabilistic facts from deterministic queries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -488,7 +512,7 @@ P(b) : 0.8  &lt;-  T</p>
 <tr class="row-even"><td><p><strong>within_language_marg_query</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>within_language_succ_queries</strong></p></td>
+<tr class="row-odd"><td><p><strong>within_language_prob_queries</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>within_language_succ_query</strong></p></td>
@@ -507,87 +531,6 @@ P(b) : 0.8  &lt;-  T</p>
 <dd></dd></dl>
 
 </dd></dl>
-
-<dl class="py class">
-<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">TranslateProbabilisticQueryMixin</code><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>conditional_query</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>within_language_prob_query</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.conditional_query">
-<code class="sig-name descname">conditional_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.conditional_query" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.within_language_prob_query">
-<code class="sig-name descname">within_language_prob_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin.within_language_prob_query" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="neurolang.probabilistic.cplogic.program.is_within_language_prob_query_wannabe">
-<code class="sig-prename descclassname">neurolang.probabilistic.cplogic.program.</code><code class="sig-name descname">is_within_language_prob_query_wannabe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.is_within_language_prob_query_wannabe" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 
