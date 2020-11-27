@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeuroLang Example based Implementing a NeuroSynth Query &#8212; neurolang 0.1a8.dev13+ge687b86 documentation</title>
+    <title>NeuroLang Example based Implementing a NeuroSynth Query &#8212; neurolang 0.1a8.dev14+ga35cad8 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -82,7 +82,6 @@
 <li><a class="reference internal" href="#">NeuroLang Example based Implementing a NeuroSynth Query</a><ul>
 <li><a class="reference internal" href="#data-preparation">Data preparation</a></li>
 <li><a class="reference internal" href="#probabilistic-logic-programming-in-neurolang">Probabilistic Logic Programming in NeuroLang</a></li>
-<li><a class="reference internal" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
 </ul>
@@ -117,7 +116,6 @@
 <li><a class="reference internal" href="#">NeuroLang Example based Implementing a NeuroSynth Query</a><ul>
 <li><a class="reference internal" href="#data-preparation">Data preparation</a></li>
 <li><a class="reference internal" href="#probabilistic-logic-programming-in-neurolang">Probabilistic Logic Programming in NeuroLang</a></li>
-<li><a class="reference internal" href="#plotting-results">Plotting results</a></li>
 </ul>
 </li>
 </ul>
@@ -160,7 +158,7 @@
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset created in /home/circleci/nilearn_data/icbm152_2009
 
 Downloading data from https://osf.io/7pj92/download ...
- ...done. (1 seconds, 0 min)
+ ...done. (2 seconds, 0 min)
 Extracting data from /home/circleci/nilearn_data/icbm152_2009/774f5ced148e2fb443738680ac9b85a9/download..... done.
 </pre></div>
 </div>
@@ -207,7 +205,7 @@ Extracting data from /home/circleci/nilearn_data/icbm152_2009/774f5ced148e2fb443
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz ...
- ...done. (1 seconds, 0 min)
+ ...done. (0 seconds, 0 min)
 Extracting data from neurolang/ba5a937c77504ec8c350332a54a58f7c/current_data.tar.gz..... done.
 </pre></div>
 </div>
@@ -229,16 +227,13 @@ Extracting data from neurolang/ba5a937c77504ec8c350332a54a58f7c/current_data.tar
 </pre></div>
 </div>
 <p>Loading the database</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">activations</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_database</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;activations&quot;</span><span class="p">)</span>
-<span class="n">terms</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_terms</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;terms&quot;</span><span class="p">)</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
-    <span class="n">ns_docs</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span>
-<span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">activations</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_database</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;activations&quot;</span><span class="p">)</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_terms</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;terms&quot;</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span><span class="n">ns_docs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Probabilistic program and querying</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">e</span><span class="o">.</span><span class="n">vox_activation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">activations</span><span class="p">[</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">vox_activation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">activations</span><span class="p">(</span>
         <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span>
         <span class="o">...</span><span class="p">,</span>
         <span class="o">...</span><span class="p">,</span>
@@ -255,19 +250,23 @@ Extracting data from neurolang/ba5a937c77504ec8c350332a54a58f7c/current_data.tar
         <span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span>
         <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span>
         <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span>
-    <span class="p">]</span>
+    <span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">docs</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">term_present</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">terms</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">docs</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="n">e</span><span class="o">.</span><span class="n">marg_term</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">PROB</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">term_present</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
     <span class="n">e</span><span class="o">.</span><span class="n">probmap</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">PROB</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">e</span><span class="o">.</span><span class="n">vox_activation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">//</span> <span class="n">e</span><span class="o">.</span><span class="n">terms</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="s2">&quot;auditory&quot;</span><span class="p">]</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">vox_activation</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+    <span class="p">)</span> <span class="o">//</span> <span class="n">e</span><span class="o">.</span><span class="n">term_present</span><span class="p">(</span><span class="s2">&quot;auditory&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">d</span><span class="p">)</span>
+
     <span class="n">e</span><span class="o">.</span><span class="n">img</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">agg_create_region_overlay</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">]]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">probmap</span><span class="p">[</span>
         <span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span>
     <span class="p">]</span>
+
+    <span class="n">marg_term</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">marg_term</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">p</span><span class="p">))</span>
     <span class="n">img_query</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,),</span> <span class="n">e</span><span class="o">.</span><span class="n">img</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="plotting-results">
-<h2>Plotting results<a class="headerlink" href="#plotting-results" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result_image</span> <span class="o">=</span> <span class="n">img_query</span><span class="o">.</span><span class="n">fetch_one</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">()</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">result_image</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
 <span class="n">plot</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">plot_stat_map</span><span class="p">(</span>
@@ -277,7 +276,7 @@ Extracting data from neurolang/ba5a937c77504ec8c350332a54a58f7c/current_data.tar
 </pre></div>
 </div>
 <img alt="plot neurosynth implementation" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_neurosynth_implementation_001.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  55.032 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  4.684 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-neurosynth-implementation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/733a5c7f76bb887e873a5401d64fa7b6/plot_neurosynth_implementation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_neurosynth_implementation.py</span></code></a></p>
