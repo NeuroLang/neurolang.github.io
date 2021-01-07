@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -198,104 +198,6 @@ Datalog programs.</p>
 <dl class="py attribute">
 <dt id="neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.type">
 <code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">ExtractVariableEqualities</code><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-<dt><strong>substitutions</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.type" title="neurolang.datalog.expression_processing.ExtractVariableEqualities.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 81%" />
-<col style="width: 19%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>conjunction_with_variable_equality</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>variable_equality_between_variables</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>variable_equality_with_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>variable_equality_with_constant_reversed</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.conjunction_with_variable_equality">
-<code class="sig-name descname">conjunction_with_variable_equality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conjunction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.conjunction_with_variable_equality" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.substitutions">
-<em class="property">property </em><code class="sig-name descname">substitutions</code><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.substitutions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_between_variables">
-<code class="sig-name descname">variable_equality_between_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function_application</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_between_variables" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_with_constant">
-<code class="sig-name descname">variable_equality_with_constant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function_application</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_with_constant" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_with_constant_reversed">
-<code class="sig-name descname">variable_equality_with_constant_reversed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">function_application</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.ExtractVariableEqualities.variable_equality_with_constant_reversed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -793,7 +695,19 @@ P(x, y), _f_ = x</cite>, where <cite>_f_</cite> is a fresh variable.</p>
 <col style="width: 19%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>extract_and_unify_var_eqs_in_implication</strong></p></td>
+<tr class="row-odd"><td><p><strong>add_equality_with_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>add_equality_with_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_substitutions_from_equalities</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_and_unify_var_eqs_in_implication</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extract_variable_equalities</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
@@ -814,7 +728,10 @@ P(x, y), _f_ = x</cite>, where <cite>_f_</cite> is a fresh variable.</p>
 <tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>unsupported_unification_for_aggregation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -862,7 +779,19 @@ P(x, y), _f_ = x</cite>, where <cite>_f_</cite> is a fresh variable.</p>
 <col style="width: 19%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>extract_and_unify_var_eqs_in_implication</strong></p></td>
+<tr class="row-odd"><td><p><strong>add_equality_with_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>add_equality_with_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>build_substitutions_from_equalities</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extract_and_unify_var_eqs_in_implication</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>extract_variable_equalities</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
@@ -877,19 +806,47 @@ P(x, y), _f_ = x</cite>, where <cite>_f_</cite> is a fresh variable.</p>
 <tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>unsupported_unification_for_aggregation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
+<dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_constant">
+<em class="property">static </em><code class="sig-name descname">add_equality_with_constant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eq_sets</span></em>, <em class="sig-param"><span class="n">symb</span></em>, <em class="sig-param"><span class="n">const</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_symbol">
+<em class="property">static </em><code class="sig-name descname">add_equality_with_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eq_sets</span></em>, <em class="sig-param"><span class="n">first</span></em>, <em class="sig-param"><span class="n">second</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.build_substitutions_from_equalities">
+<em class="property">static </em><code class="sig-name descname">build_substitutions_from_equalities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eq_sets</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.build_substitutions_from_equalities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication">
 <code class="sig-name descname">extract_and_unify_var_eqs_in_implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_variable_equalities">
+<em class="property">static </em><code class="sig-name descname">extract_variable_equalities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_variable_equalities" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.type">
 <code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.unsupported_unification_for_aggregation">
+<code class="sig-name descname">unsupported_unification_for_aggregation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule_with_aggregation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.unsupported_unification_for_aggregation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1073,6 +1030,16 @@ antecedent.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt id="neurolang.datalog.expression_processing.is_aggregation_predicate">
+<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_aggregation_predicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">predicate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_aggregation_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="neurolang.datalog.expression_processing.is_aggregation_rule">
+<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_aggregation_rule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_aggregation_rule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt id="neurolang.datalog.expression_processing.is_conjunctive_expression">
 <code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_conjunctive_expression</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_conjunctive_expression" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1080,11 +1047,6 @@ antecedent.</p>
 <dl class="py function">
 <dt id="neurolang.datalog.expression_processing.is_conjunctive_expression_with_nested_predicates">
 <code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_conjunctive_expression_with_nested_predicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_conjunctive_expression_with_nested_predicates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="neurolang.datalog.expression_processing.is_equality_between_symbol_and_symbol_or_constant">
-<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_equality_between_symbol_and_symbol_or_constant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formula</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_equality_between_symbol_and_symbol_or_constant" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1124,8 +1086,8 @@ antecedent.</p>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.datalog.expression_processing.iter_disjunction_or_implication_rules">
-<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">iter_disjunction_or_implication_rules</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication_or_disjunction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.iter_disjunction_or_implication_rules" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.datalog.expression_processing.is_variable_equality">
+<code class="sig-prename descclassname">neurolang.datalog.expression_processing.</code><code class="sig-name descname">is_variable_equality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">formula</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expression_processing.is_variable_equality" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1233,7 +1195,7 @@ will be in the last strata.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

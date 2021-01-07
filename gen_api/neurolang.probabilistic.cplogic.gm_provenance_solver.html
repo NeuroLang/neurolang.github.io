@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.probabilistic.cplogic.gm_provenance_solver module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.probabilistic.cplogic.gm_provenance_solver module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -310,7 +310,7 @@ representing a set of boolean random variables.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">NodeValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">NodeValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.NodeValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -359,7 +359,7 @@ representing a set of boolean random variables.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">ProbabilityOperation</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">ProbabilityOperation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">valued_node</span></em>, <em class="sig-param"><span class="n">condition_valued_nodes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.ProbabilityOperation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p>Operation representing a probability calculation on multiple sets
 of random variables (possibly with conditioning random variables).</p>
@@ -719,7 +719,7 @@ evaluated probabilities and their values.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleEqualSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleEqualSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">columns</span></em>, <em class="sig-param"><span class="n">tuple_symbol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleEqualSymbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -768,7 +768,7 @@ evaluated probabilities and their values.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">TupleSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.TupleSymbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Symbol</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -820,7 +820,7 @@ evaluated probabilities and their values.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">UnionOverTuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.cplogic.gm_provenance_solver.</code><code class="sig-name descname">UnionOverTuples</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relation</span></em>, <em class="sig-param"><span class="n">tuple_symbol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.gm_provenance_solver.UnionOverTuples" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.RelationalAlgebraOperation</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -1109,7 +1109,7 @@ n.d., 30.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

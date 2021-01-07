@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.NeurolangPDL &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.NeurolangPDL &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="neurolang.expressions" href="neurolang.expressions.html" />
@@ -41,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -127,7 +127,7 @@
 <h1>neurolang.NeurolangPDL<a class="headerlink" href="#neurolang-neurolangpdl" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="neurolang.NeurolangPDL">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.</code><code class="sig-name descname">NeurolangPDL</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solver: Callable = &lt;function solve_succ_query&gt;</em>, <em class="sig-param">probabilistic_marg_solver: Callable = &lt;function solve_marg_query&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.NeurolangPDL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.</code><code class="sig-name descname">NeurolangPDL</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solvers: Tuple[Callable] = (&lt;function solve_succ_query&gt;</em>, <em class="sig-param">&lt;function solve_succ_query_sdd_direct&gt;)</em>, <em class="sig-param">probabilistic_marg_solvers: Tuple[Callable] = (&lt;function solve_marg_query&gt;</em>, <em class="sig-param">&lt;function solve_marg_query&gt;)</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.NeurolangPDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Complements QueryBuilderDatalog class with probabilistic capabilities
 1- add extensional probabilistic facts and choices
 2- sove probabilistic queries</p>
@@ -256,21 +256,26 @@
 </table>
 <dl class="py method">
 <dt id="neurolang.NeurolangPDL.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solver: Callable = &lt;function solve_succ_query&gt;</em>, <em class="sig-param">probabilistic_marg_solver: Callable = &lt;function solve_marg_query&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL">neurolang.frontend.probabilistic_frontend.NeurolangPDL</a><a class="headerlink" href="#neurolang.NeurolangPDL.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solvers: Tuple[Callable] = (&lt;function solve_succ_query&gt;</em>, <em class="sig-param">&lt;function solve_succ_query_sdd_direct&gt;)</em>, <em class="sig-param">probabilistic_marg_solvers: Tuple[Callable] = (&lt;function solve_marg_query&gt;</em>, <em class="sig-param">&lt;function solve_marg_query&gt;)</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL">neurolang.frontend.probabilistic_frontend.NeurolangPDL</a><a class="headerlink" href="#neurolang.NeurolangPDL.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query builder with probabilistic capabilities</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>chase_class</strong><span class="classifier">Type[Chase], optional</span></dt><dd><p>used to compute deterministic solutions, by default Chase</p>
 </dd>
-<dt><strong>probabilistic_solver</strong><span class="classifier">Callable, optional</span></dt><dd><p>used to compute probabilistic solutions,
-by default lifted_solve_succ_query</p>
+<dt><strong>probabilistic_solvers</strong><span class="classifier">Tuple[Callable], optional</span></dt><dd><p>used to compute probabilistic solutions,
+the order of the elements indicates the priority
+of usage of the solver.
+by default (lifted_solve_succ_query, wmc_solve_succ_query)</p>
+</dd>
+<dt><strong>probabilistic_marg_solvers</strong><span class="classifier">Tuple[Callable], optional</span></dt><dd><p>used to compute probabilistic solutions,
+by default (lifted_solve_marg_query, wmc_solve_marg_query)</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>ProbabilisticFrontend</dt><dd><p>see description</p>
+<dt>NeurolangPDL</dt><dd><p>see description</p>
 </dd>
 </dl>
 </dd>
@@ -439,7 +444,7 @@ by default lifted_solve_succ_query</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

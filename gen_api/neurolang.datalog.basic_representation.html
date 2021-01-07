@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.datalog.basic_representation module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.datalog.basic_representation module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -329,7 +329,7 @@ element’s type</p>
 
 <dl class="py class">
 <dt id="neurolang.datalog.basic_representation.Fact">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Fact</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Fact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">consequent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Implication</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -390,7 +390,7 @@ element’s type</p>
 
 <dl class="py class">
 <dt id="neurolang.datalog.basic_representation.Implication">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Implication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">consequent</span></em>, <em class="sig-param"><span class="n">antecedent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
 <p>Expression of the form <cite>P(x) ← Q(x)</cite></p>
 <p class="rubric">Methods</p>
@@ -440,7 +440,7 @@ element’s type</p>
 
 <dl class="py class">
 <dt id="neurolang.datalog.basic_representation.NullConstant">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">NullConstant</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">NullConstant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">auto_infer_type</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verify_type</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Constant</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -489,7 +489,7 @@ element’s type</p>
 
 <dl class="py class">
 <dt id="neurolang.datalog.basic_representation.Undefined">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Undefined</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.basic_representation.</code><code class="sig-name descname">Undefined</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">auto_infer_type</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verify_type</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Constant</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -679,7 +679,7 @@ element’s type</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

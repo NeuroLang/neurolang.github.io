@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.datalog.intermediate_sugar module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.frontend.datalog.intermediate_sugar module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -126,7 +126,7 @@
 <p>Set of syntactic sugar processors at the intermediate level.</p>
 <dl class="py class">
 <dt id="neurolang.frontend.datalog.intermediate_sugar.Column">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">Column</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.Column" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">Column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">set_symbol</span></em>, <em class="sig-param"><span class="n">column_position</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.Column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -345,7 +345,7 @@ or <cite>getattr(P, s)[c]</cite>.</p>
 
 <dl class="py class">
 <dt id="neurolang.frontend.datalog.intermediate_sugar.SelectByFirstColumn">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">SelectByFirstColumn</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.SelectByFirstColumn" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">SelectByFirstColumn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">set_symbol</span></em>, <em class="sig-param"><span class="n">selector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.SelectByFirstColumn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -566,6 +566,160 @@ in the head to having equalities in the body.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">TranslateProbabilisticQueryMixin</code><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.type" title="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>conditional_query</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>within_language_prob_query</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.conditional_query">
+<code class="sig-name descname">conditional_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.conditional_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.within_language_prob_query">
+<code class="sig-name descname">within_language_prob_query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">implication</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin.within_language_prob_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin">
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">TranslateQueryBasedProbabilisticFactMixin</code><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<p>Translate an expression of the form</p>
+<blockquote>
+<div><p>(P &#64; y)(x) :- Q(x)</p>
+</div></blockquote>
+<p>to its equivalent query-based probabilistic fact</p>
+<blockquote>
+<div><p>P(x) : y :- Q(x)</p>
+</div></blockquote>
+<p>This is useful when the rule was defined at the frontend level using the
+sugar syntax <cite>(P &#64; y)[x] = Q[x]</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.type" title="neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>query_based_probfact_wannabe</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe">
+<code class="sig-name descname">query_based_probfact_wannabe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">impl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.type">
+<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="neurolang.frontend.datalog.intermediate_sugar.TranslateSSugarToSelectByColumn">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.intermediate_sugar.</code><code class="sig-name descname">TranslateSSugarToSelectByColumn</code><a class="headerlink" href="#neurolang.frontend.datalog.intermediate_sugar.TranslateSSugarToSelectByColumn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
@@ -768,7 +922,7 @@ where first argument is the sugared element.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

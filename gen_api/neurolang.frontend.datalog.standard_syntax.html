@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.datalog.standard_syntax module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.frontend.datalog.standard_syntax module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -149,58 +149,61 @@
 <tr class="row-odd"><td><p><strong>comparison</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>constant_predicate</strong></p></td>
+<tr class="row-even"><td><p><strong>condition</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>constraint</strong></p></td>
+<tr class="row-odd"><td><p><strong>constant_predicate</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>expressions</strong></p></td>
+<tr class="row-even"><td><p><strong>constraint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ext_identifier</strong></p></td>
+<tr class="row-odd"><td><p><strong>expressions</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>fact</strong></p></td>
+<tr class="row-even"><td><p><strong>ext_identifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>factor</strong></p></td>
+<tr class="row-odd"><td><p><strong>fact</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>float</strong></p></td>
+<tr class="row-even"><td><p><strong>factor</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>function_application</strong></p></td>
+<tr class="row-odd"><td><p><strong>float</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>head_predicate</strong></p></td>
+<tr class="row-even"><td><p><strong>function_application</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>identifier</strong></p></td>
+<tr class="row-odd"><td><p><strong>head_predicate</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>integer</strong></p></td>
+<tr class="row-even"><td><p><strong>identifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>negated_predicate</strong></p></td>
+<tr class="row-odd"><td><p><strong>integer</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>predicate</strong></p></td>
+<tr class="row-even"><td><p><strong>negated_predicate</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>probabilistic_expression</strong></p></td>
+<tr class="row-odd"><td><p><strong>predicate</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rule</strong></p></td>
+<tr class="row-even"><td><p><strong>probabilistic_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>start</strong></p></td>
+<tr class="row-odd"><td><p><strong>rule</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>term</strong></p></td>
+<tr class="row-even"><td><p><strong>start</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>text</strong></p></td>
+<tr class="row-odd"><td><p><strong>term</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>text</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -228,6 +231,11 @@
 <dl class="py method">
 <dt id="neurolang.frontend.datalog.standard_syntax.DatalogSemantics.comparison">
 <code class="sig-name descname">comparison</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax.DatalogSemantics.comparison" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="neurolang.frontend.datalog.standard_syntax.DatalogSemantics.condition">
+<code class="sig-name descname">condition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax.DatalogSemantics.condition" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -324,7 +332,7 @@
 
 <dl class="py class">
 <dt id="neurolang.frontend.datalog.standard_syntax.ExternalSymbol">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.standard_syntax.</code><code class="sig-name descname">ExternalSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax.ExternalSymbol" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.datalog.standard_syntax.</code><code class="sig-name descname">ExternalSymbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.standard_syntax.ExternalSymbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Symbol</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -401,7 +409,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

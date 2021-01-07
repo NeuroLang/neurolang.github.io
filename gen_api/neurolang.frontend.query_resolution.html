@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -350,7 +350,7 @@ Capabilities to declare, manage and manipulate symbols.</p>
 </table>
 <dl class="py method">
 <dt id="neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol">
-<code class="sig-name descname">add_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a><span class="p">, </span>neurolang.expressions.Constant<span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a><span class="p">, </span>neurolang.expressions.Constant<span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a symbol with given value and adds it to the
 current symbol_table.
 Can typicaly be used to decorate callables, or add an
@@ -376,7 +376,7 @@ will be cast as an ir.Constant</p>
 
 <dl class="py method">
 <dt id="neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set">
-<code class="sig-name descname">add_tuple_set</code><span class="sig-paren">(</span><em class="sig-param">iterable: Union[Iterable, Iterable[Tuple[Any, ...]]], type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;, name: str = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_tuple_set</code><span class="sig-paren">(</span><em class="sig-param">iterable: Union[Iterable, Iterable[Tuple[Any, ...]]], type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;, name: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates an AbstractSet fe.Symbol containing the elements specified in
 the iterable with a List[Tuple[Any, …]] format (see examples).
 Typically used to create extensional facts from existing databases</p>
@@ -545,7 +545,7 @@ expression’s name is used as the name</p>
 
 <dl class="py method">
 <dt id="neurolang.frontend.query_resolution.QueryBuilderBase.new_symbol">
-<code class="sig-name descname">new_symbol</code><span class="sig-paren">(</span><em class="sig-param">type_: Union[Any, Tuple[Any, ...], List[Any]] = &lt;class 'neurolang.type_system.Unknown'&gt;, name: str = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.new_symbol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">new_symbol</code><span class="sig-paren">(</span><em class="sig-param">type_: Union[Any, Tuple[Any, ...], List[Any]] = &lt;class 'neurolang.type_system.Unknown'&gt;, name: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.new_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a symbol and associated expression, optionally
 specifying it’s type and/or name</p>
 <dl class="field-list simple">
@@ -881,7 +881,7 @@ by default None</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>

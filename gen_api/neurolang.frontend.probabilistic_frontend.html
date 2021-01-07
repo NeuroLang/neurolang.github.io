@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.probabilistic_frontend module &#8212; neurolang 0.1a7.dev2+gbc6cce1 documentation</title>
+    <title>neurolang.frontend.probabilistic_frontend module &#8212; neurolang 0.1a10 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -136,7 +136,7 @@
 2- sove probabilistic queries</p>
 <dl class="py class">
 <dt id="neurolang.frontend.probabilistic_frontend.NeurolangPDL">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">NeurolangPDL</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solver: Callable = &lt;function solve_succ_query&gt;</em>, <em class="sig-param">probabilistic_marg_solver: Callable = &lt;function solve_marg_query&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">NeurolangPDL</code><span class="sig-paren">(</span><em class="sig-param">chase_class: Type[neurolang.datalog.aggregation.Chase] = &lt;class 'neurolang.datalog.aggregation.Chase'&gt;</em>, <em class="sig-param">probabilistic_solvers: Tuple[Callable] = (&lt;function solve_succ_query&gt;</em>, <em class="sig-param">&lt;function solve_succ_query_sdd_direct&gt;)</em>, <em class="sig-param">probabilistic_marg_solvers: Tuple[Callable] = (&lt;function solve_marg_query&gt;</em>, <em class="sig-param">&lt;function solve_marg_query&gt;)</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog</span></code></a></p>
 <p>Complements QueryBuilderDatalog class with probabilistic capabilities
 1- add extensional probabilistic facts and choices
@@ -426,16 +426,10 @@ through the current program, optionally with probabilities</p>
 
 </dd></dl>
 
-<dl class="py attribute">
-<dt id="neurolang.frontend.probabilistic_frontend.ProbabilisticFrontend">
-<code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">ProbabilisticFrontend</code><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.ProbabilisticFrontend" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.probabilistic_frontend.NeurolangPDL</span></code></a></p>
-</dd></dl>
-
 <dl class="py class">
 <dt id="neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.probabilistic_frontend.</code><code class="sig-name descname">RegionFrontendCPLogicSolver</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.probabilistic.cplogic.program.html#neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin" title="neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.TranslateProbabilisticQueryMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="neurolang.datalog.aggregation.TranslateToLogicWithAggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.TranslateToLogicWithAggregation</span></code></a>, <a class="reference internal" href="neurolang.frontend.datalog.syntax_preprocessing.html#neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin" title="neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin</span></code></a>, <a class="reference internal" href="neurolang.region_solver.html#neurolang.region_solver.RegionSolver" title="neurolang.region_solver.RegionSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.region_solver.RegionSolver</span></code></a>, <a class="reference internal" href="neurolang.probabilistic.cplogic.program.html#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="neurolang.datalog.aggregation.DatalogWithAggregationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.DatalogWithAggregationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.negation.html#neurolang.datalog.negation.DatalogProgramNegationMixin" title="neurolang.datalog.negation.DatalogProgramNegationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.negation.DatalogProgramNegationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.constraints_representation.html#neurolang.datalog.constraints_representation.DatalogConstraintsProgram" title="neurolang.datalog.constraints_representation.DatalogConstraintsProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.constraints_representation.DatalogConstraintsProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.datalog.intermediate_sugar.html#neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin" title="neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.datalog.intermediate_sugar.TranslateProbabilisticQueryMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="neurolang.datalog.aggregation.TranslateToLogicWithAggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.TranslateToLogicWithAggregation</span></code></a>, <a class="reference internal" href="neurolang.frontend.datalog.intermediate_sugar.html#neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin" title="neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.datalog.intermediate_sugar.TranslateQueryBasedProbabilisticFactMixin</span></code></a>, <a class="reference internal" href="neurolang.probabilistic.query_resolution.html#neurolang.probabilistic.query_resolution.QueryBasedProbFactToDetRule" title="neurolang.probabilistic.query_resolution.QueryBasedProbFactToDetRule"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.query_resolution.QueryBasedProbFactToDetRule</span></code></a>, <a class="reference internal" href="neurolang.frontend.datalog.syntax_preprocessing.html#neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin" title="neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin</span></code></a>, <a class="reference internal" href="neurolang.region_solver.html#neurolang.region_solver.RegionSolver" title="neurolang.region_solver.RegionSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.region_solver.RegionSolver</span></code></a>, <a class="reference internal" href="neurolang.probabilistic.cplogic.program.html#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.aggregation.html#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="neurolang.datalog.aggregation.DatalogWithAggregationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.aggregation.DatalogWithAggregationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.negation.html#neurolang.datalog.negation.DatalogProgramNegationMixin" title="neurolang.datalog.negation.DatalogProgramNegationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.negation.DatalogProgramNegationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.constraints_representation.html#neurolang.datalog.constraints_representation.DatalogConstraintsProgram" title="neurolang.datalog.constraints_representation.DatalogConstraintsProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.constraints_representation.DatalogConstraintsProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -482,6 +476,9 @@ through the current program, optionally with probabilities</p>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code>()</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code>(implication)</p></td>
+<td><p>Construct probabilistic facts from deterministic queries.</p></td>
 </tr>
 </tbody>
 </table>
@@ -629,6 +626,12 @@ through the current program, optionally with probabilities</p>
 <tr class="row-even"><td><p><strong>push_scope</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-odd"><td><p><strong>query_based_probafact</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>query_based_probfact_wannabe</strong></p></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p><strong>statement_intensional</strong></p></td>
 <td></td>
 </tr>
@@ -659,19 +662,22 @@ through the current program, optionally with probabilities</p>
 <tr class="row-even"><td><p><strong>union_with_probabilistic_facts</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>union_with_query_based_pfact</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>within_language_marg_query</strong></p></td>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>within_language_marg_query</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>within_language_prob_queries</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>within_language_prob_query</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>within_language_succ_queries</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>within_language_succ_query</strong></p></td>
+<tr class="row-even"><td><p><strong>within_language_succ_query</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -767,7 +773,7 @@ through the current program, optionally with probabilities</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>
