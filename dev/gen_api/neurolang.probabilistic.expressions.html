@@ -4,17 +4,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.probabilistic.expressions module &#8212; neurolang 0.1a8.dev17+gbc6acb7 documentation</title>
+    <title>neurolang.probabilistic.expressions module &#8212; neurolang 0.1a8.dev18+g8fbab9f documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -125,7 +125,7 @@
 <span id="neurolang-probabilistic-expressions-module"></span><h1>neurolang.probabilistic.expressions module<a class="headerlink" href="#module-neurolang.probabilistic.expressions" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="neurolang.probabilistic.expressions.Condition">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Condition</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Condition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conditioned</span></em>, <em class="sig-param"><span class="n">conditioning</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Condition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator" title="neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.expressions.ProbabilisticBinaryLogicOperator</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -174,7 +174,7 @@
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.expressions.Grounding">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">Grounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em>, <em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.Grounding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -272,7 +272,7 @@
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticChoiceGrounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticChoiceGrounding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em>, <em class="sig-param"><span class="n">relation</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticChoiceGrounding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.expressions.Grounding" title="neurolang.probabilistic.expressions.Grounding"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.expressions.Grounding</span></code></a></p>
 <p>Class used to differentiate the grounding of a probabilistic
 choice from the grounding of other choices.</p>
@@ -323,7 +323,7 @@ choice from the grounding of other choices.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.expressions.ProbabilisticPredicate">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticPredicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticPredicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">probability</span></em>, <em class="sig-param"><span class="n">body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticPredicate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -390,7 +390,7 @@ choice from the grounding of other choices.</p>
 
 <dl class="py class">
 <dt id="neurolang.probabilistic.expressions.ProbabilisticQuery">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticQuery</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">neurolang.probabilistic.expressions.</code><code class="sig-name descname">ProbabilisticQuery</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">functor</span></em>, <em class="sig-param"><span class="n">args</span></em>, <em class="sig-param"><span class="n">kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validate_arguments</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verify_type</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expressions.ProbabilisticQuery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.FunctionApplication</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -466,7 +466,7 @@ choice from the grounding of other choices.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
     </p>
   </div>
 </footer>
