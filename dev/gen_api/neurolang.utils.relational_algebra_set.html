@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.utils.relational_algebra_set package &#8212; neurolang 0.1a11.dev2+gc247e4d documentation</title>
+    <title>neurolang.utils.relational_algebra_set package &#8212; neurolang 0.1a11.dev3+gcf3a4d6 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -151,6 +151,15 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection" title="neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code></a>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="docutils align-default">
@@ -213,25 +222,16 @@
 <tr class="row-even"><td><p><strong>naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>projection_to_unnamed</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>projection_to_unnamed</strong></p></td>
+<tr class="row-even"><td><p><strong>rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rename_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rename_columns</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>selection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>selection_columns</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>to_unnamed</strong></p></td>
+<tr class="row-even"><td><p><strong>to_unnamed</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -304,7 +304,27 @@
 <dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection">
 <code class="sig-name descname">projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Projects the set on the given list of columns.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
+<span class="go">        [(i % 2, i, i * 2) for i in range(5)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span>
+<span class="go">   0  1  2</span>
+<span class="go">0  0  0  0</span>
+<span class="go">1  1  1  2</span>
+<span class="go">2  0  2  4</span>
+<span class="go">3  1  3  6</span>
+<span class="go">4  0  4  8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span><span class="o">.</span><span class="n">projection</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">   0</span>
+<span class="go">0  0</span>
+<span class="go">1  1</span>
+<span class="go">2  2</span>
+<span class="go">3  3</span>
+<span class="go">4  4</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection_to_unnamed">
@@ -523,6 +543,8 @@
 <dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet">
 <em class="property">class </em><code class="sig-prename descclassname">neurolang.utils.relational_algebra_set.</code><code class="sig-name descname">RelationalAlgebraFrozenSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iterable</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet</span></code></a></p>
+<p>RelationalAlgebraFrozenSet implementation using in-memory pandas.DataFrame
+as container for the elements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -540,6 +562,15 @@
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection" title="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code></a>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection" title="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code></a>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns" title="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code></a>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
 </tr>
 </tbody>
 </table>
@@ -589,15 +620,6 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>itervalues</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>projection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>selection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>selection_columns</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -663,16 +685,6 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_dee">
-<code class="sig-name descname">is_dee</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_dee" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_dum">
-<code class="sig-name descname">is_dum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_dum" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_empty">
 <code class="sig-name descname">is_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -685,17 +697,83 @@
 <dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection">
 <code class="sig-name descname">projection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Projects the set on the given list of columns.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
+<span class="go">        [(i % 2, i, i * 2) for i in range(5)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span>
+<span class="go">   0  1  2</span>
+<span class="go">0  0  0  0</span>
+<span class="go">1  1  1  2</span>
+<span class="go">2  0  2  4</span>
+<span class="go">3  1  3  6</span>
+<span class="go">4  0  4  8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span><span class="o">.</span><span class="n">projection</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">   0</span>
+<span class="go">0  0</span>
+<span class="go">1  1</span>
+<span class="go">2  2</span>
+<span class="go">3  3</span>
+<span class="go">4  4</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection">
-<code class="sig-name descname">selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">select_criteria</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">select_criteria</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>Callable<span class="p">, </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>Callable<span class="p">]</span><span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the elements based on the given selet_criteria.
+The select_criteria may be a callable function, a string expression
+or a Dict of columns -&gt; value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>select_criteria</strong><span class="classifier">Union[Callable, RelationalAlgebraStringExpression,</span></dt><dd></dd>
+<dt><strong>Dict[int, Union[int, Callable]]]</strong></dt><dd><p>selection criteria</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>RelationalAlgebraFrozenSet</dt><dd><p>A RelationalAlgebraFrozenSet with elements matching the criteria.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns">
-<code class="sig-name descname">selection_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">select_criteria</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">selection_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">select_criteria</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select the elements where column pairs indicated as key, value
+items of the select_criteria are equal.
+The select_criteria must be a Dict of Int -&gt; Int.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>select_criteria</strong><span class="classifier">Dict [Int, Int]</span></dt><dd><p>selection criteria</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>RelationalAlgebraFrozenSet</dt><dd><p>A RelationalAlgebraFrozenSet with elements matching the criteria.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Select the elements where col0 == col1 and col1 == col2
+&gt;&gt;&gt; ras = RelationalAlgebraFrozenSet(</p>
+<blockquote>
+<div><p>[(i % 2, i, i * 2) for i in range(5)])</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span><span class="o">.</span><span class="n">selection_columns</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="go">   0  1  2</span>
+<span class="go">0  0  0  0</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 
@@ -733,8 +811,17 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code>()</p></td>
 <td><p>Return the popped value.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code>(value)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code>(value)</p></td>
 <td><p>Remove an element.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
 </tr>
 </tbody>
 </table>
@@ -784,15 +871,6 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>itervalues</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>projection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>selection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>selection_columns</strong></p></td>
 <td></td>
 </tr>
 </tbody>

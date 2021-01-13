@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.datalog.wrapped_collections module &#8212; neurolang 0.1a11.dev2+gc247e4d documentation</title>
+    <title>neurolang.datalog.wrapped_collections module &#8212; neurolang 0.1a11.dev3+gcf3a4d6 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -146,6 +146,15 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="docutils align-default">
@@ -211,31 +220,22 @@
 <tr class="row-odd"><td><p><strong>naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>projection</strong></p></td>
+<tr class="row-even"><td><p><strong>projection_to_unnamed</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>projection_to_unnamed</strong></p></td>
+<tr class="row-odd"><td><p><strong>rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rename_column</strong></p></td>
+<tr class="row-even"><td><p><strong>rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rename_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>to_unnamed</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection</strong></p></td>
+<tr class="row-even"><td><p><strong>unwrap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_columns</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>to_unnamed</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>unwrap</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>unwrapped_iter</strong></p></td>
+<tr class="row-odd"><td><p><strong>unwrapped_iter</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -303,6 +303,15 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="docutils align-default">
@@ -356,19 +365,10 @@
 <tr class="row-odd"><td><p><strong>itervalues</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>projection</strong></p></td>
+<tr class="row-even"><td><p><strong>unwrap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>selection_columns</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>unwrap</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>unwrapped_iter</strong></p></td>
+<tr class="row-odd"><td><p><strong>unwrapped_iter</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -437,8 +437,17 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code>()</p></td>
 <td><p>Return the popped value.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code>(value)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">projection</span></code>(*columns)</p></td>
+<td><p>Projects the set on the given list of columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code>(value)</p></td>
 <td><p>Remove an element.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection</span></code>(select_criteria)</p></td>
+<td><p>Select the elements based on the given selet_criteria.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">selection_columns</span></code>(select_criteria)</p></td>
+<td><p>Select the elements where column pairs indicated as key, value items of the select_criteria are equal.</p></td>
 </tr>
 </tbody>
 </table>
@@ -499,19 +508,10 @@
 <tr class="row-odd"><td><p><strong>itervalues</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>projection</strong></p></td>
+<tr class="row-even"><td><p><strong>unwrap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>selection_columns</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>unwrap</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>unwrapped_iter</strong></p></td>
+<tr class="row-odd"><td><p><strong>unwrapped_iter</strong></p></td>
 <td></td>
 </tr>
 </tbody>
