@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a11.dev4+gbc2790f documentation</title>
+    <title>neurolang.frontend.query_resolution module &#8212; neurolang 0.1a11.dev5+g1c1d006 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -325,7 +325,7 @@ Capabilities to declare, manage and manipulate symbols.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_symbol</span></code></a>(value[, name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_symbol</span></code></a>(value[, name, type_])</p></td>
 <td><p>Creates a symbol with given value and adds it to the current symbol_table.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set" title="neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_tuple_set</span></code></a>(iterable[, type_, name])</p></td>
@@ -350,7 +350,7 @@ Capabilities to declare, manage and manipulate symbols.</p>
 </table>
 <dl class="py method">
 <dt id="neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol">
-<code class="sig-name descname">add_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression">neurolang.frontend.query_resolution_expressions.Expression</a><span class="p">, </span>neurolang.expressions.Constant<span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_symbol</code><span class="sig-paren">(</span><em class="sig-param">value: Union[neurolang.frontend.query_resolution_expressions.Expression, neurolang.expressions.Constant, Any], name: Optional[str] = None, type_: Type = &lt;class 'neurolang.type_system.Unknown'&gt;</em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol">neurolang.frontend.query_resolution_expressions.Symbol</a><a class="headerlink" href="#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a symbol with given value and adds it to the
 current symbol_table.
 Can typicaly be used to decorate callables, or add an
@@ -881,7 +881,7 @@ by default None</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>
