@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.datalog.aggregation module &#8212; neurolang 0.1a11.dev11+ge52f099 documentation</title>
+    <title>neurolang.datalog.aggregation module &#8212; neurolang 0.1a11.dev12+g66771bd documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -136,47 +136,19 @@ FNT in Databases. 5, 105–195 (2012).</p>
 </dd>
 </dl>
 <dl class="py class">
-<dt id="neurolang.datalog.aggregation.Chase">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.aggregation.</code><code class="sig-name descname">Chase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datalog_program</span></em>, <em class="sig-param"><span class="n">rules</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.Chase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.Chase</span></code></p>
+<dt id="neurolang.datalog.aggregation.ChaseAggregationMixin">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></code><code class="sig-name descname"><span class="pre">ChaseAggregationMixin</span></code><a class="headerlink" href="#neurolang.datalog.aggregation.ChaseAggregationMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Aggregation Chase Mixin to add support for aggregation to a Chase
+class. Can be used with StratifiedChase.</p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 84%" />
-<col style="width: 16%" />
+<col style="width: 75%" />
+<col style="width: 25%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>build_chase_solution</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>build_chase_tree</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>build_nodes_from_rules</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>chase_step</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>check_constraints</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>compose_all_subtitutions</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>compose_substitutions_ignoring_conflicts</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>compose_substitutions_no_conflict</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>compute_instance_update</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>compute_new_tuple_and_type</strong></p></td>
+<tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>compute_result_set</strong></p></td>
@@ -185,87 +157,28 @@ FNT in Databases. 5, 105–195 (2012).</p>
 <tr class="row-odd"><td><p><strong>eliminate_already_computed</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>evaluate_builtins</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>evaluate_builtins_predicates</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>execute_chase</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>extract_rule_predicates</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>extract_variable_arguments</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>get_args_to_project</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>infer_iterable_subtype</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>is_containment_of_symbol_in_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>is_equality_between_constant_and_symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>obtain_substitutions</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>per_rule_update</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>rewrite_antecedent_equalities</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>rewrite_constants_in_consequent</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>rewrite_rule_consequent_constants_to_equalities</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>translate_conjunction_to_named_ra</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>unify_builtin_substitution</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>unify_builtin_substitution_containment</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>unify_builtin_substitution_equality</strong></p></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="neurolang.datalog.aggregation.Chase.build_chase_solution">
-<code class="sig-name descname">build_chase_solution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.Chase.build_chase_solution" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.datalog.aggregation.ChaseAggregationMixin.check_constraints">
+<code class="sig-name descname"><span class="pre">check_constraints</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_update</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.ChaseAggregationMixin.check_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.aggregation.Chase.check_constraints">
-<code class="sig-name descname">check_constraints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">instance_update</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.Chase.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.datalog.aggregation.ChaseAggregationMixin.compute_result_set">
+<code class="sig-name descname"><span class="pre">compute_result_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitutions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restriction_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.ChaseAggregationMixin.compute_result_set" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.aggregation.Chase.compute_result_set">
-<code class="sig-name descname">compute_result_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule</span></em>, <em class="sig-param"><span class="n">substitutions</span></em>, <em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">restriction_instance</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.Chase.compute_result_set" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.datalog.aggregation.Chase.eliminate_already_computed">
-<code class="sig-name descname">eliminate_already_computed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">consequent</span></em>, <em class="sig-param"><span class="n">instance</span></em>, <em class="sig-param"><span class="n">substitutions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.Chase.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
+<dt id="neurolang.datalog.aggregation.ChaseAggregationMixin.eliminate_already_computed">
+<code class="sig-name descname"><span class="pre">eliminate_already_computed</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitutions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.ChaseAggregationMixin.eliminate_already_computed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="neurolang.datalog.aggregation.DatalogWithAggregationMixin">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.aggregation.</code><code class="sig-name descname">DatalogWithAggregationMixin</code><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></code><code class="sig-name descname"><span class="pre">DatalogWithAggregationMixin</span></code><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -321,19 +234,19 @@ FNT in Databases. 5, 105–195 (2012).</p>
 </table>
 <dl class="py method">
 <dt id="neurolang.datalog.aggregation.DatalogWithAggregationMixin.statement_intensional_aggregation">
-<code class="sig-name descname">statement_intensional_aggregation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin.statement_intensional_aggregation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">statement_intensional_aggregation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin.statement_intensional_aggregation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="neurolang.datalog.aggregation.DatalogWithAggregationMixin.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="neurolang.datalog.aggregation.TranslateToLogicWithAggregation">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.datalog.aggregation.</code><code class="sig-name descname">TranslateToLogicWithAggregation</code><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></code><code class="sig-name descname"><span class="pre">TranslateToLogicWithAggregation</span></code><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.TranslateToLogic" title="neurolang.datalog.expressions.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.expressions.TranslateToLogic</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -407,12 +320,12 @@ FNT in Databases. 5, 105–195 (2012).</p>
 </table>
 <dl class="py method">
 <dt id="neurolang.datalog.aggregation.TranslateToLogicWithAggregation.transform_function_application_consequent_to_aggregation">
-<code class="sig-name descname">transform_function_application_consequent_to_aggregation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation.transform_function_application_consequent_to_aggregation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">transform_function_application_consequent_to_aggregation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation.transform_function_application_consequent_to_aggregation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="neurolang.datalog.aggregation.TranslateToLogicWithAggregation.type">
-<code class="sig-name descname">type</code><em class="property"> = typing.Any</em><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -439,7 +352,7 @@ FNT in Databases. 5, 105–195 (2012).</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>

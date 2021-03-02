@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.ast module &#8212; neurolang 0.1a11.dev11+ge52f099 documentation</title>
+    <title>neurolang.frontend.ast module &#8212; neurolang 0.1a11.dev12+g66771bd documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -131,7 +131,7 @@ for text-parsed language code
 an AST to convert it to some other representation</p>
 <dl class="py class">
 <dt id="neurolang.frontend.ast.ASTNode">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.ast.</code><code class="sig-name descname">ASTNode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">children</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.frontend.ast.</span></code><code class="sig-name descname"><span class="pre">ASTNode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.ast.ASTNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 <p>Class representing a Node in an
 Abstract Syntax Tree</p>
@@ -181,7 +181,7 @@ Abstract Syntax Tree</p>
 
 <dl class="py class">
 <dt id="neurolang.frontend.ast.ASTWalker">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.ast.</code><code class="sig-name descname">ASTWalker</code><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.frontend.ast.</span></code><code class="sig-name descname"><span class="pre">ASTWalker</span></code><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Base class for Abstract Syntax Tree walkers.
 Walke through an AST translating nodes to
@@ -200,7 +200,7 @@ the corresponding Neurolang intermediate representation</p>
 </table>
 <dl class="py method">
 <dt id="neurolang.frontend.ast.ASTWalker.evaluate">
-<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ast</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode">neurolang.frontend.ast.ASTNode</a><span class="p">, </span>List<span class="p">[</span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode">neurolang.frontend.ast.ASTNode</a><span class="p">]</span><span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>neurolang.expressions.Expression<span class="p">, </span>List<span class="p">[</span>neurolang.expressions.Expression<span class="p">]</span><span class="p">, </span>Any<span class="p">]</span><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">evaluate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode"><span class="pre">neurolang.frontend.ast.ASTNode</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#neurolang.frontend.ast.ASTNode" title="neurolang.frontend.ast.ASTNode"><span class="pre">neurolang.frontend.ast.ASTNode</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">neurolang.expressions.Expression</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">neurolang.expressions.Expression</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#neurolang.frontend.ast.ASTWalker.evaluate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts input to intermediate representation:
 - if input is an ASTNode, calls -if it exists- the class method
 corresponding to the node type (methods are declared
@@ -248,7 +248,7 @@ on every node
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.1.<br/>
     </p>
   </div>
 </footer>
