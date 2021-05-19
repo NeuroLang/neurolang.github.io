@@ -3,16 +3,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>neurolang.probabilistic.ppdl module &#8212; neurolang 0.1a11.dev14+gfc09370 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.probabilistic.ppdl module &#8212; neurolang 0.1a11.dev17+g8d1964a documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -122,16 +121,17 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <section id="module-neurolang.probabilistic.ppdl">
+  <div class="section" id="module-neurolang.probabilistic.ppdl">
 <span id="neurolang-probabilistic-ppdl-module"></span><h1>neurolang.probabilistic.ppdl module<a class="headerlink" href="#module-neurolang.probabilistic.ppdl" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="neurolang.probabilistic.ppdl.PPDL">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">PPDL</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDL">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">PPDL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.ppdl.PPDLMixin" title="neurolang.probabilistic.ppdl.PPDLMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.ppdl.PPDLMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
 <p>Class implementing a Probabilistic Programming DataLog (PPDL) program</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -161,14 +161,14 @@
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
+<col style="width: 85%" />
+<col style="width: 15%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
+<tr class="row-even"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>builtins</strong></p></td>
@@ -231,20 +231,20 @@
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.probabilistic.ppdl.PPDL.protected_keywords">
-<code class="sig-name descname"><span class="pre">protected_keywords</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDL.protected_keywords">
+<span class="sig-name descname"><span class="pre">protected_keywords</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="neurolang.probabilistic.ppdl.PPDL.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDL.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDL.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.probabilistic.ppdl.PPDLDeltaSymbol">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">PPDLDeltaSymbol</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_terms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaSymbol" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLDeltaSymbol">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">PPDLDeltaSymbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_terms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaSymbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Symbol</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -288,15 +288,15 @@
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.probabilistic.ppdl.PPDLDeltaSymbol.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaSymbol.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLDeltaSymbol.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaSymbol.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.probabilistic.ppdl.PPDLDeltaTerm">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">PPDLDeltaTerm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">functor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_arguments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaTerm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLDeltaTerm">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">PPDLDeltaTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">functor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_arguments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaTerm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.FunctionApplication</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -344,15 +344,15 @@
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.probabilistic.ppdl.PPDLDeltaTerm.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaTerm.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLDeltaTerm.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLDeltaTerm.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.probabilistic.ppdl.PPDLMixin">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">PPDLMixin</span></code><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLMixin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">PPDLMixin</span></span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -407,33 +407,33 @@
 </tbody>
 </table>
 <dl class="py method">
-<dt id="neurolang.probabilistic.ppdl.PPDLMixin.ppdl_rule">
-<code class="sig-name descname"><span class="pre">ppdl_rule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin.ppdl_rule" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLMixin.ppdl_rule">
+<span class="sig-name descname"><span class="pre">ppdl_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin.ppdl_rule" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="neurolang.probabilistic.ppdl.PPDLMixin.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.PPDLMixin.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.ppdl.PPDLMixin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.probabilistic.ppdl.get_dterm">
-<code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">get_dterm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.get_dterm" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.get_dterm">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">get_dterm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.get_dterm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.probabilistic.ppdl.get_dterm_index">
-<code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">get_dterm_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.get_dterm_index" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.get_dterm_index">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">get_dterm_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.get_dterm_index" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.probabilistic.ppdl.is_ppdl_rule">
-<code class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></code><code class="sig-name descname"><span class="pre">is_ppdl_rule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.is_ppdl_rule" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.ppdl.is_ppdl_rule">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.ppdl.</span></span><span class="sig-name descname"><span class="pre">is_ppdl_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.ppdl.is_ppdl_rule" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
+</div>
 
 
     </div>
@@ -455,7 +455,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.1.<br/>
     </p>
   </div>
 </footer>

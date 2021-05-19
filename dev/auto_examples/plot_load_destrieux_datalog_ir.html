@@ -3,16 +3,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1a11.dev14+gfc09370 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datalog Intermediate Representation Example based on the Destrieux Atlas &#8212; neurolang 0.1a11.dev17+g8d1964a documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -141,7 +140,7 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-load-destrieux-datalog-ir-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<section class="sphx-glr-example-title" id="datalog-intermediate-representation-example-based-on-the-destrieux-atlas">
+<div class="sphx-glr-example-title section" id="datalog-intermediate-representation-example-based-on-the-destrieux-atlas">
 <span id="sphx-glr-auto-examples-plot-load-destrieux-datalog-ir-py"></span><h1>Datalog Intermediate Representation Example based on the Destrieux Atlas<a class="headerlink" href="#datalog-intermediate-representation-example-based-on-the-destrieux-atlas" title="Permalink to this headline">¶</a></h1>
 <p>Uploading the Destrieux left sulci into NeuroLang and
 executing some simple queries.</p>
@@ -166,7 +165,7 @@ executing some simple queries.</p>
 <span class="n">Eb_</span> <span class="o">=</span> <span class="n">expressions</span><span class="o">.</span><span class="n">ExpressionBlock</span>
 </pre></div>
 </div>
-<section id="load-the-destrieux-example-from-nilearn-as-a-fact-list">
+<div class="section" id="load-the-destrieux-example-from-nilearn-as-a-fact-list">
 <h2>Load the Destrieux example from nilearn as a fact list<a class="headerlink" href="#load-the-destrieux-example-from-nilearn-as-a-fact-list" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_destrieux</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
 
@@ -205,7 +204,7 @@ executing some simple queries.</p>
 </div>
 <img alt="plot load destrieux datalog ir" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_load_destrieux_datalog_ir_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7f2a492cd3d0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nilearn.plotting.displays.OrthoSlicer object at 0x7f6e1e049a10&gt;
 </pre></div>
 </div>
 <p>Make the fact list</p>
@@ -219,8 +218,8 @@ executing some simple queries.</p>
 <span class="p">]</span>
 </pre></div>
 </div>
-</section>
-<section id="set-the-datalog-interpreter-with-region-managing-builtins-and-adding-lh-lr">
+</div>
+<div class="section" id="set-the-datalog-interpreter-with-region-managing-builtins-and-adding-lh-lr">
 <h2>Set the datalog interpreter with Region-managing builtins and adding lh, lr<a class="headerlink" href="#set-the-datalog-interpreter-with-region-managing-builtins-and-adding-lh-lr" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Datalog</span><span class="p">(</span>
     <span class="n">region_solver</span><span class="o">.</span><span class="n">RegionSolver</span><span class="p">,</span>
@@ -235,8 +234,8 @@ executing some simple queries.</p>
         <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;R &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="construct-a-query">
+</div>
+<div class="section" id="construct-a-query">
 <h2>Construct a query<a class="headerlink" href="#construct-a-query" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>superior_sts_l(name, r) :- destrieux(‘L S_temporal_sup’, superior_sts_l),</dt><dd><p>anatomical_superior_of(r, superior_sts_l),
@@ -268,8 +267,8 @@ lh(name), destrieux(name, r)</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Implication{λ{S{superior_sts_l: Unknown}: Unknown}(S{name: Unknown}, S{r: Unknown}) ← λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{S{Destrieux: Unknown}: Unknown}(C{&#39;L S_temporal_sup&#39;: str}, S{region_l_sts: Unknown}), λ{S{anatomical_superior_of: Unknown}: Unknown}(S{r: Unknown}, S{region_l_sts: Unknown})), λ{S{lh: Unknown}: Unknown}(S{name: Unknown})), λ{S{Destrieux: Unknown}: Unknown}(S{name: Unknown}, S{r: Unknown}))}
 </pre></div>
 </div>
-</section>
-<section id="interpreting-and-running-the-query">
+</div>
+<div class="section" id="interpreting-and-running-the-query">
 <h2>Interpreting and running the query<a class="headerlink" href="#interpreting-and-running-the-query" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dl</span> <span class="o">=</span> <span class="n">Datalog</span><span class="p">()</span>
 <span class="n">dl</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">datalog_program</span><span class="p">)</span>
@@ -393,7 +392,7 @@ and plotting the first element of the result</p>
   plt.figure()
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  8.993 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  6.639 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-load-destrieux-datalog-ir-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/a87ca17791f020cb5d8277d3955aecea/plot_load_destrieux_datalog_ir.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux_datalog_ir.py</span></code></a></p>
@@ -403,8 +402,8 @@ and plotting the first element of the result</p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
     </div>
@@ -426,7 +425,7 @@ and plotting the first element of the result</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.1.<br/>
     </p>
   </div>
 </footer>

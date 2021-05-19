@@ -3,16 +3,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>neurolang.datalog.basic_representation module &#8212; neurolang 0.1a11.dev14+gfc09370 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.datalog.basic_representation module &#8212; neurolang 0.1a11.dev17+g8d1964a documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -122,7 +121,7 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <section id="module-neurolang.datalog.basic_representation">
+  <div class="section" id="module-neurolang.datalog.basic_representation">
 <span id="neurolang-datalog-basic-representation-module"></span><h1>neurolang.datalog.basic_representation module<a class="headerlink" href="#module-neurolang.datalog.basic_representation" title="Permalink to this headline">¶</a></h1>
 <p>Compiler for the intermediate representation of a Datalog program.
 The <a class="reference internal" href="#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogProgram</span></code></a> class processes the
@@ -130,8 +129,8 @@ intermediate representation of a program and extracts
 the extensional, intensional, and builtin
 sets.</p>
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">DatalogProgram</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">DatalogProgram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.TypedSymbolTableMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
 <p>Implementation of Datalog grammar in terms of
 Intermediate Representations. No query resolution implemented.
@@ -155,6 +154,7 @@ The type of the symbol <cite>Q</cite> in the symbol_table will be
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -184,14 +184,14 @@ The type of the symbol <cite>Q</cite> in the symbol_table will be
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
+<col style="width: 85%" />
+<col style="width: 15%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>add_functions_to_symbol_table</strong></p></td>
+<tr class="row-even"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>builtins</strong></p></td>
@@ -245,33 +245,33 @@ The type of the symbol <cite>Q</cite> in the symbol_table will be
 </tbody>
 </table>
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.add_extensional_predicate_from_tuples">
-<code class="sig-name descname"><span class="pre">add_extensional_predicate_from_tuples</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">symbol</span></em>, <em class="sig-param"><span class="pre">iterable</span></em>, <em class="sig-param"><span class="pre">type_=&lt;class</span> <span class="pre">'neurolang.type_system.Unknown'&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.add_extensional_predicate_from_tuples" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.add_extensional_predicate_from_tuples">
+<span class="sig-name descname"><span class="pre">add_extensional_predicate_from_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">symbol</span></em>, <em class="sig-param"><span class="pre">iterable</span></em>, <em class="sig-param"><span class="pre">type_=&lt;class</span> <span class="pre">'neurolang.type_system.Unknown'&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.add_extensional_predicate_from_tuples" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.builtins">
-<code class="sig-name descname"><span class="pre">builtins</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.builtins" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.builtins">
+<span class="sig-name descname"><span class="pre">builtins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.builtins" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.extensional_database">
-<code class="sig-name descname"><span class="pre">extensional_database</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.extensional_database" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.extensional_database">
+<span class="sig-name descname"><span class="pre">extensional_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.extensional_database" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.fact">
-<code class="sig-name descname"><span class="pre">fact</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.fact" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.fact">
+<span class="sig-name descname"><span class="pre">fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.fact" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.function_equals">
-<code class="sig-name descname"><span class="pre">function_equals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.function_equals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.function_equals">
+<span class="sig-name descname"><span class="pre">function_equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><span class="pre">bool</span></a><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.function_equals" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.infer_iterable_type">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">infer_iterable_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.infer_iterable_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.infer_iterable_type">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">infer_iterable_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.infer_iterable_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infer the type of iterable elements
 without modifying the iterable.</p>
 <dl class="field-list simple">
@@ -292,46 +292,46 @@ element’s type</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.intensional_database">
-<code class="sig-name descname"><span class="pre">intensional_database</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.intensional_database" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.intensional_database">
+<span class="sig-name descname"><span class="pre">intensional_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.intensional_database" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.new_set">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">new_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_row_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.new_set" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.new_set">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">new_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_row_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.new_set" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.predicate_terms">
-<code class="sig-name descname"><span class="pre">predicate_terms</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.predicate_terms" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.predicate_terms">
+<span class="sig-name descname"><span class="pre">predicate_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.predicate_terms" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.protected_keywords">
-<code class="sig-name descname"><span class="pre">protected_keywords</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.protected_keywords">
+<span class="sig-name descname"><span class="pre">protected_keywords</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.statement_intensional">
-<code class="sig-name descname"><span class="pre">statement_intensional</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.statement_intensional" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.statement_intensional">
+<span class="sig-name descname"><span class="pre">statement_intensional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.statement_intensional" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.symbol">
-<code class="sig-name descname"><span class="pre">symbol</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.symbol" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.DatalogProgram.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.DatalogProgram.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.DatalogProgram.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.Fact">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">Fact</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Implication</span></code></p>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Fact">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">Fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Implication</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -377,21 +377,21 @@ element’s type</p>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="neurolang.datalog.basic_representation.Fact.fact">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">fact</span></code><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact.fact" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Fact.fact">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">fact</span></span><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact.fact" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.Fact.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Fact.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Fact.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.Implication">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">Implication</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Implication">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">Implication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
 <p>Expression of the form <cite>P(x) ← Q(x)</cite></p>
 <p class="rubric">Methods</p>
@@ -433,15 +433,15 @@ element’s type</p>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.Implication.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Implication.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Implication.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.NullConstant">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">NullConstant</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_infer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.NullConstant">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">NullConstant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_infer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Constant</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -482,15 +482,15 @@ element’s type</p>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.NullConstant.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.NullConstant.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.NullConstant.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.Undefined">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">Undefined</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_infer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Undefined">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">Undefined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_infer_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Constant</span></code></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
@@ -531,21 +531,21 @@ element’s type</p>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="neurolang.datalog.basic_representation.Undefined.type">
-<code class="sig-name descname"><span class="pre">type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined.type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.Undefined.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.basic_representation.Undefined.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.UnionOfConjunctiveQueries">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">UnionOfConjunctiveQueries</span></code><a class="headerlink" href="#neurolang.datalog.basic_representation.UnionOfConjunctiveQueries" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.UnionOfConjunctiveQueries">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">UnionOfConjunctiveQueries</span></span><a class="headerlink" href="#neurolang.datalog.basic_representation.UnionOfConjunctiveQueries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></code><code class="sig-name descname"><span class="pre">WrappedRelationalAlgebraSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">iterable=None</span></em>, <em class="sig-param"><span class="pre">row_type=&lt;class</span> <span class="pre">'neurolang.type_system.Unknown'&gt;</span></em>, <em class="sig-param"><span class="pre">verify_row_type=True</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.basic_representation.</span></span><span class="sig-name descname"><span class="pre">WrappedRelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">iterable=None</span></em>, <em class="sig-param"><span class="pre">row_type=&lt;class</span> <span class="pre">'neurolang.type_system.Unknown'&gt;</span></em>, <em class="sig-param"><span class="pre">verify_row_type=True</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.datalog.wrapped_collections.html#neurolang.datalog.wrapped_collections.WrappedRelationalAlgebraSetMixin" title="neurolang.datalog.wrapped_collections.WrappedRelationalAlgebraSetMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.wrapped_collections.WrappedRelationalAlgebraSetMixin</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -652,13 +652,13 @@ element’s type</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet.unwrap">
-<code class="sig-name descname"><span class="pre">unwrap</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet.unwrap" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet.unwrap">
+<span class="sig-name descname"><span class="pre">unwrap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.basic_representation.WrappedRelationalAlgebraSet.unwrap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
+</div>
 
 
     </div>
@@ -680,7 +680,7 @@ element’s type</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.1.<br/>
     </p>
   </div>
 </footer>

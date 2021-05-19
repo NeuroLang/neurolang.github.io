@@ -3,16 +3,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
-    <title>neurolang.type_system package &#8212; neurolang 0.1a11.dev14+gfc09370 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurolang.type_system package &#8212; neurolang 0.1a11.dev17+g8d1964a documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -128,19 +127,19 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <section id="module-neurolang.type_system">
+  <div class="section" id="module-neurolang.type_system">
 <span id="neurolang-type-system-package"></span><h1>neurolang.type_system package<a class="headerlink" href="#module-neurolang.type_system" title="Permalink to this headline">¶</a></h1>
 <p>Implementation of the type system based on Siek and Vachharajani,
 “Gradual Typing with Unification-based Inference”, DLS 2008.</p>
 <dl class="py exception">
-<dt id="neurolang.type_system.NeuroLangTypeException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">NeuroLangTypeException</span></code><a class="headerlink" href="#neurolang.type_system.NeuroLangTypeException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></p>
+<dt class="sig sig-object py" id="neurolang.type_system.NeuroLangTypeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">NeuroLangTypeException</span></span><a class="headerlink" href="#neurolang.type_system.NeuroLangTypeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.type_system.Unknown">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">Unknown</span></code><a class="headerlink" href="#neurolang.type_system.Unknown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.Unknown">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">Unknown</span></span><a class="headerlink" href="#neurolang.type_system.Unknown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_Final</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">_Immutable</span></code></p>
 <p>Special type indicating an unknown type.</p>
 <ul class="simple">
@@ -150,97 +149,97 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.get_args">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">get_args</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_args" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.get_args">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">get_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.get_generic_type">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">get_generic_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_generic_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.get_generic_type">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">get_generic_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.get_generic_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.infer_type">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">infer_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.infer_type">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">infer_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.infer_type_builtins">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">infer_type_builtins</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builtin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_builtins" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.infer_type_builtins">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">infer_type_builtins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">builtin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_builtins" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.infer_type_iterables">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">infer_type_iterables</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">deep=True</span></em>, <em class="sig-param"><span class="pre">recursive_callback=&lt;function</span> <span class="pre">infer_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_iterables" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.infer_type_iterables">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">infer_type_iterables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">deep=True</span></em>, <em class="sig-param"><span class="pre">recursive_callback=&lt;function</span> <span class="pre">infer_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_iterables" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.infer_type_mapping">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">infer_type_mapping</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">deep=True</span></em>, <em class="sig-param"><span class="pre">recursive_callback=&lt;function</span> <span class="pre">infer_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_mapping" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.infer_type_mapping">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">infer_type_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value</span></em>, <em class="sig-param"><span class="pre">deep=True</span></em>, <em class="sig-param"><span class="pre">recursive_callback=&lt;function</span> <span class="pre">infer_type&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.infer_type_mapping" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_consistent">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_consistent</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_consistent" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_consistent">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_consistent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_consistent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_leq_informative">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_leq_informative</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_leq_informative">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_leq_informative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_leq_informative_parameterized_right">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_leq_informative_parameterized_right</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_parameterized_right" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_leq_informative_parameterized_right">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_leq_informative_parameterized_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_parameterized_right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_leq_informative_union">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_leq_informative_union</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_union" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_leq_informative_union">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_leq_informative_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_leq_informative_union" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_parameterized">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_parameterized</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parameterized" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_parameterized">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_parameterized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parameterized" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_parametrical">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_parametrical</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parametrical" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_parametrical">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_parametrical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_parametrical" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.is_type">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">is_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_type" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.is_type">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">is_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.is_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.replace_type_variable">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">replace_type_variable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_hint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.replace_type_variable">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">replace_type_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_hint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.replace_type_variable_fix_python36_37">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">replace_type_variable_fix_python36_37</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_hint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable_fix_python36_37" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.replace_type_variable_fix_python36_37">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">replace_type_variable_fix_python36_37</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_hint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.replace_type_variable_fix_python36_37" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.typing_callable_from_annotated_function">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">typing_callable_from_annotated_function</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.typing_callable_from_annotated_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.typing_callable_from_annotated_function">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">typing_callable_from_annotated_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.typing_callable_from_annotated_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get typing.Callable type representing the annotated function type.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="neurolang.type_system.unify_types">
-<code class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></code><code class="sig-name descname"><span class="pre">unify_types</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.unify_types" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.type_system.unify_types">
+<span class="sig-prename descclassname"><span class="pre">neurolang.type_system.</span></span><span class="sig-name descname"><span class="pre">unify_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.type_system.unify_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<section id="subpackages">
+<div class="section" id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
     </div>
@@ -262,7 +261,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.1.<br/>
     </p>
   </div>
 </footer>
