@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.query_resolution module &#8212; neurolang 0.1a11.dev22+g674fd10 documentation</title>
+    <title>neurolang.probabilistic.query_resolution module &#8212; neurolang 0.1a11.dev23+g535679f documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -217,6 +217,30 @@ her program.</p>
 <dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.compute_probabilistic_solution">
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">compute_probabilistic_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">det_edb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfact_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pchoice_edb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob_idb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">succ_prob_solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marg_prob_solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_qbased_pfact_tuple_unicity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.compute_probabilistic_solution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.lift_solve_marg_query">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">lift_solve_marg_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">succ_solver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.lift_solve_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a MARG query on a CP-Logic program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>Consequent must be of type <cite>Condition</cite>.
+MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</dd>
+<dt><strong>cpl_program</strong><span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>neurolang.probabilistic.transforms module &#8212; neurolang 0.1a11.dev23+g535679f documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../auto_examples/index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="module-neurolang.probabilistic.transforms">
+<span id="neurolang-probabilistic-transforms-module"></span><h1>neurolang.probabilistic.transforms module<a class="headerlink" href="#module-neurolang.probabilistic.transforms" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.add_existentials_except">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">add_existentials_except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.add_existentials_except" title="Permalink to this definition">¶</a></dt>
+<dd><p>Existentially-quantify each free variable in query
+except for those in variables</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">LogicExpression</span></dt><dd><p>logic expression to add the existential quantifiers to.</p>
+</dd>
+<dt><strong>variables</strong><span class="classifier">Iterable of Symbol</span></dt><dd><p>variables to exclude from existential quantification.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>logic expression with existentially-quantified variables
+added.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_rule_to_ucq">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_rule_to_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">implication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_rule_to_ucq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert datalog rule to logic UCQ.
+A UCQ is defined by a logic expression in
+where the only quantifier is existential.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">Implication</span></dt><dd><p>Datalog rule.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>UCQ with the same ground set as the
+input datalog rule.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_cnf_ucq">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_cnf_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_cnf_ucq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert logic UCQ to
+conjunctive normal from (CNF).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>equivalent UCQ in CNF form.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_dnf_ucq">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_dnf_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_dnf_ucq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert logic UCQ to
+disjunctive normal from (DNF).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>expression</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>equivalent UCQ in DNF form.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimise_formulas_containment">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimise_formulas_containment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">containment_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimise_formulas_containment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_component_conjunction">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conjunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_conjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a conjunction of queries Q1 ∧ … ∧ Qn
+remove each query Qi such that exists Qj and
+Qj → Qi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>conjunction</strong><span class="classifier">Conjunction</span></dt><dd><p>conjunction of logical formulas to minimise.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Conjunction</dt><dd><p>minimised conjunction.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_component_disjunction">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disjunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_disjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a conjunction of queries Q1  ∨ … ∨ Qn
+remove each query Qi such that exists Qj and
+Qi → Qj.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>conjunction</strong><span class="classifier">Conjunction</span></dt><dd><p>conjunction of logical formulas to minimise.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Conjunction</dt><dd><p>minimised conjunction.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_ucq_in_cnf">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_ucq_in_cnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_ucq_in_cnf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert UCQ to CNF form
+and minimise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">LogicExpression.</span></dt><dd><p>query in UCQ semantics.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>minimised query in UCQ semantics.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_ucq_in_dnf">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_ucq_in_dnf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_ucq_in_dnf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert UCQ to DNF form
+and minimise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">LogicExpression.</span></dt><dd><p>query in UCQ semantics.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>minimised query in UCQ semantics.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.unify_existential_variables">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">unify_existential_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.unify_existential_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduce the number of existentially-quantified variables.
+Specifically if query is an UCQ and can be rewritten in DNF such that
+Q = ∃x.Q1 ∨ ∃y.Q2 and x in Q1 unifies with y in
+Q2, then Q is transformed to Q = ∃f.(Q1[f/x] ∨ Q2[f/y])
+where f is possibly a fresh variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ expression to unify existential variables if possible.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>LogicExpression</dt><dd><p>logic expression with existential variables unifies</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.transforms.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

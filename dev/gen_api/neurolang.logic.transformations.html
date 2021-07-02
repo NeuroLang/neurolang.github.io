@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.logic.transformations module &#8212; neurolang 0.1a11.dev22+g674fd10 documentation</title>
+    <title>neurolang.logic.transformations module &#8212; neurolang 0.1a11.dev23+g535679f documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -471,28 +471,22 @@
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -535,6 +529,108 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DesambiguateQuantifiedVariables.union">
 <span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DesambiguateQuantifiedVariables.union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DistributeConjunctions</span></span><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.DistributeConjunctions.type" title="neurolang.logic.transformations.DistributeConjunctions.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>distribute</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rotate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions.distribute">
+<span class="sig-name descname"><span class="pre">distribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions.distribute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions.rotate">
+<span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions.rotate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions.split">
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions.split" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -599,28 +695,22 @@
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -838,28 +928,22 @@
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -972,6 +1056,142 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeConjunction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">GuaranteeConjunction</span></span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeConjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.IdentityWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.GuaranteeConjunction.type" title="neurolang.logic.transformations.GuaranteeConjunction.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>guarantee_conjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeConjunction.guarantee_conjunction">
+<span class="sig-name descname"><span class="pre">guarantee_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeConjunction.guarantee_conjunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeConjunction.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeConjunction.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeDisjunction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">GuaranteeDisjunction</span></span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeDisjunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.IdentityWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.GuaranteeDisjunction.type" title="neurolang.logic.transformations.GuaranteeDisjunction.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>guarantee_conjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeDisjunction.guarantee_conjunction">
+<span class="sig-name descname"><span class="pre">guarantee_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeDisjunction.guarantee_conjunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeDisjunction.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeDisjunction.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">LogicExpressionWalker</span></span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
@@ -1022,28 +1242,22 @@
 <tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1054,23 +1268,18 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_conjunction">
-<span class="sig-name descname"><span class="pre">walk_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_conjunction" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_constant">
 <span class="sig-name descname"><span class="pre">walk_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_constant" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_disjunction">
-<span class="sig-name descname"><span class="pre">walk_disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_disjunction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_function">
+<span class="sig-name descname"><span class="pre">walk_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_function" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_function">
-<span class="sig-name descname"><span class="pre">walk_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_function" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_nary">
+<span class="sig-name descname"><span class="pre">walk_nary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_nary" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1088,9 +1297,90 @@
 <span class="sig-name descname"><span class="pre">walk_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.MakeExistentialsImplicit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MakeExistentialsImplicit</span></span><a class="headerlink" href="#neurolang.logic.transformations.MakeExistentialsImplicit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.MakeExistentialsImplicit.type" title="neurolang.logic.transformations.MakeExistentialsImplicit.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>existential</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="py method">
-<dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker.walk_union">
-<span class="sig-name descname"><span class="pre">walk_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker.walk_union" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.logic.transformations.MakeExistentialsImplicit.existential">
+<span class="sig-name descname"><span class="pre">existential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MakeExistentialsImplicit.existential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.MakeExistentialsImplicit.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.MakeExistentialsImplicit.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1163,28 +1453,22 @@ Assumes that there are no implications in the expression.</p>
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1287,28 +1571,22 @@ and the variables of the quantifiers are not repeated.</p>
 <tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1336,6 +1614,202 @@ and the variables of the quantifiers are not repeated.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveQuantifiersUp.type">
 <span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.MoveQuantifiersUp.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">PushExistentialsDown</span></span><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.PushExistentialsDown.type" title="neurolang.logic.transformations.PushExistentialsDown.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>nested_existential</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_existential_down</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_existential_down_disjunction</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown.nested_existential">
+<span class="sig-name descname"><span class="pre">nested_existential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown.nested_existential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown.push_existential_down">
+<span class="sig-name descname"><span class="pre">push_existential_down</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown.push_existential_down" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown.push_existential_down_disjunction">
+<span class="sig-name descname"><span class="pre">push_existential_down_disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown.push_existential_down_disjunction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveTrivialOperations">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveTrivialOperations</span></span><a class="headerlink" href="#neurolang.logic.transformations.RemoveTrivialOperations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.logic.transformations.RemoveTrivialOperations.type" title="neurolang.logic.transformations.RemoveTrivialOperations.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>implication</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>remove_single</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveTrivialOperations.implication">
+<span class="sig-name descname"><span class="pre">implication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveTrivialOperations.implication" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveTrivialOperations.remove_single">
+<span class="sig-name descname"><span class="pre">remove_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveTrivialOperations.remove_single" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveTrivialOperations.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.logic.transformations.RemoveTrivialOperations.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1396,28 +1870,22 @@ using existential quantifiers.</p>
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_conjunction</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_disjunction</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_union</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1630,6 +2098,11 @@ using existential quantifiers.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.convert_to_pnf_with_cnf_matrix">
 <span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">convert_to_pnf_with_cnf_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.convert_to_pnf_with_cnf_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.logic.transformations.convert_to_pnf_with_dnf_matrix">
+<span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">convert_to_pnf_with_dnf_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.convert_to_pnf_with_dnf_matrix" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>

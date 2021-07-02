@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.weighted_model_counting module &#8212; neurolang 0.1a11.dev22+g674fd10 documentation</title>
+    <title>neurolang.probabilistic.weighted_model_counting module &#8212; neurolang 0.1a11.dev23+g535679f documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -204,7 +204,7 @@ compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.weighted_model_counting.</span></span><span class="sig-name descname"><span class="pre">SDDWMCSemiRingSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.ProvenanceExtendedProjectionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -309,79 +309,82 @@ compilation.</p>
 <tr class="row-odd"><td><p><strong>prov_arithmetic_operation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>prov_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_difference</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_difference</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rename_column_rap</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rename_columns_rap</strong></p></td>
+<tr class="row-even"><td><p><strong>rename_column_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>rename_columns_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>union_rap</strong></p></td>
+<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>union_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>wmc_weights</strong></p></td>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>wmc_weights</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -552,7 +555,7 @@ compilation.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.weighted_model_counting.</span></span><span class="sig-name descname"><span class="pre">WMCSemiRingSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.ProvenanceExtendedProjectionMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra_provenance.RelationalAlgebraProvenanceExpressionSemringSolver</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -648,76 +651,79 @@ compilation.</p>
 <tr class="row-even"><td><p><strong>prov_arithmetic_operation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>prov_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_difference</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_difference</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rename_column_rap</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rename_columns_rap</strong></p></td>
+<tr class="row-odd"><td><p><strong>rename_column_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>rename_columns_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>union_rap</strong></p></td>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>union_rap</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
