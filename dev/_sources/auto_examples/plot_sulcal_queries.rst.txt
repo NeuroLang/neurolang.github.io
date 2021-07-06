@@ -214,18 +214,18 @@ declared ones.
 
 
     with nl.environment as e:
-        e.left_sulcus[e.name, e.region] = e.destrieux(
-            e.name, e.region
-        ) & startswith("L S", e.name)
+        e.left_sulcus[e.name_, e.region] = e.destrieux(
+            e.name_, e.region
+        ) & startswith("L S", e.name_)
 
-        e.left_primary_sulcus[e.name, e.region] = e.destrieux(e.name, e.region) & (
-            (e.name == "L S_central")
-            | (e.name == "L Lat_Fis-post")
-            | (e.name == "L S_pericallosal")
-            | (e.name == "L S_parieto_occipital")
-            | (e.name == "L S_calcarine")
-            | (e.name == "L Lat_Fis-ant-Vertical")
-            | (e.name == "L Lat_Fis-ant-Horizont")
+        e.left_primary_sulcus[e.name_, e.region] = e.destrieux(e.name_, e.region) & (
+            (e.name_ == "L S_central")
+            | (e.name_ == "L Lat_Fis-post")
+            | (e.name_ == "L S_pericallosal")
+            | (e.name_ == "L S_parieto_occipital")
+            | (e.name_ == "L S_calcarine")
+            | (e.name_ == "L Lat_Fis-ant-Vertical")
+            | (e.name_ == "L Lat_Fis-ant-Horizont")
         )
         e.left_frontal_lobe_sulcus[e.region] = (
             e.left_sulcus(..., e.region)
@@ -275,7 +275,7 @@ remain. We identify the precentral sulcus (PC) as:
             )
         )
 
-        res = nl.query((e.name, e.region), e.named_sulcus(e.name, e.region))
+        res = nl.query((e.name_, e.region), e.named_sulcus(e.name_, e.region))
 
     for name, region in res:
         subplots = plt.subplots(nrows=2, ncols=1, figsize=(10, 5))[1]
@@ -331,7 +331,7 @@ as a sulcus which:
             )
         )
 
-        res = nl.query((e.name, e.region), e.named_sulcus(e.name, e.region))
+        res = nl.query((e.name_, e.region), e.named_sulcus(e.name_, e.region))
 
     for name, region in res:
         subplots = plt.subplots(nrows=2, ncols=1, figsize=(10, 5))[1]
@@ -364,7 +364,7 @@ as a sulcus which:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.014 seconds)
+   **Total running time of the script:** ( 0 minutes  13.636 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_sulcal_queries.py:
