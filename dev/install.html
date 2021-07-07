@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Installing Neurolang &#8212; neurolang 0.1a11.dev27+g7d215d7 documentation</title>
+    <title>Installing Neurolang &#8212; neurolang 0.1a11.dev28+ge950951 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
@@ -100,6 +100,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#to-install-the-development-version">To Install the development version</a></li>
+<li><a class="reference internal" href="#installing-alternative-backends-for-neurolang">Installing alternative backends for Neurolang</a></li>
 </ul>
 </li>
 </ul>
@@ -151,6 +152,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#to-install-the-development-version">To Install the development version</a></li>
+<li><a class="reference internal" href="#installing-alternative-backends-for-neurolang">Installing alternative backends for Neurolang</a></li>
 </ul>
 </li>
 </ul>
@@ -325,6 +327,58 @@ type in the following line:</strong></p>
 </div>
 </div>
 <p>If no error occurs, you have installed neurolang correctly.</p>
+</section>
+<section id="installing-alternative-backends-for-neurolang">
+<h2>Installing alternative backends for Neurolang<a class="headerlink" href="#installing-alternative-backends-for-neurolang" title="Permalink to this headline">¶</a></h2>
+<p>By default, Neurolang uses the pandas library to manage its data.
+It is however possible to use an alternative backend which relies
+on <a class="reference external" href="https://github.com/NeuroLang/dask-sql">dask-sql</a>.</p>
+<p>Using the dask-sql backend allows Neurolang to benefit from some
+query optimizations based on SQL syntax, as well as parallelism in
+computation by using dask instead of pandas. In other words, using
+the dask-sql backend might help improve the performance of specific
+queries which are slow to resolve with the default installation of
+Neurolang. It is not however guaranteed to be faster, as query
+optimizations are very case specific…</p>
+<p>To install Neurolang with the dask-sql backend, <strong>it is required to
+first install a version of the maven library along with a running
+java installation with version &gt;= 8</strong> (dask-sql needs Java for
+parsing the SQL queries). There are two ways to install maven along
+with java:</p>
+<p>On a linux machine, run the following command in your shell terminal:</p>
+<div class="code docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">maven</span>
+</pre></div>
+</div>
+</div>
+<p>Or, if you’re using conda to manage your python environments, you can
+run the following command in your active python environment:</p>
+<div class="code docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">maven</span>
+</pre></div>
+</div>
+</div>
+<p>Once you’ve setup your machine with a working version of java and maven,
+you can install Neurolang with the dask-sql backend by running the
+following command in your active python environment from a local copy of
+the Neurolang repository:</p>
+<div class="code docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="o">--</span><span class="n">user</span> <span class="n">neurolang</span><span class="p">[</span><span class="n">dask</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, to enable the dask-sql backend for Neurolang, you can either
+edit Neurolang’s configuration file located in your python environment
+path under <cite>config/config.ini</cite>, or you can call</p>
+<div class="code docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurolang.config</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="n">config</span><span class="o">.</span><span class="n">set_query_backend</span><span class="p">(</span><span class="s2">&quot;dask&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>from your python shell.</p>
+<p><strong>Note</strong>: you need to call the <cite>set_query_backend</cite> method at the top
+of your script, before you import other modules from Neurolang.</p>
 </section>
 </section>
 
