@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; neurolang 0.1a11.dev35+ge7d4537 documentation</title>
+    <title>Index &#8212; neurolang 0.1a11.dev36+gfd5827c documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
@@ -177,6 +177,10 @@
         <li><a href="gen_api/neurolang.regions.html#neurolang.regions.PointSet.aabb_tree">(neurolang.regions.PointSet property)</a>
 </li>
       </ul></li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FONegELogicExpression.abort_implication">abort_implication() (neurolang.logic.transformations.FONegELogicExpression method)</a>
+</li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FONegELogicExpression.abort_universal_predicate">abort_universal_predicate() (neurolang.logic.transformations.FONegELogicExpression method)</a>
+</li>
       <li><a href="gen_api/neurolang.aabb_tree.html#neurolang.aabb_tree.Tree.add">add() (neurolang.aabb_tree.Tree method)</a>
 
       <ul>
@@ -275,10 +279,10 @@
 </li>
       <li><a href="gen_api/neurolang.perior_tree.html#neurolang.perior_tree.BoundedAABB.adjust_to_bound">adjust_to_bound() (neurolang.perior_tree.BoundedAABB method)</a>
 </li>
-      <li><a href="gen_api/neurolang.datalog.magic_sets.html#neurolang.datalog.magic_sets.adorn_antecedent">adorn_antecedent() (in module neurolang.datalog.magic_sets)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="gen_api/neurolang.datalog.magic_sets.html#neurolang.datalog.magic_sets.adorn_antecedent">adorn_antecedent() (in module neurolang.datalog.magic_sets)</a>
+</li>
       <li><a href="gen_api/neurolang.datalog.magic_sets.html#neurolang.datalog.magic_sets.adorn_code">adorn_code() (in module neurolang.datalog.magic_sets)</a>
 </li>
       <li><a href="gen_api/neurolang.datalog.magic_sets.html#neurolang.datalog.magic_sets.adorn_predicate">adorn_predicate() (in module neurolang.datalog.magic_sets)</a>
@@ -809,7 +813,7 @@
 </li>
       <li><a href="gen_api/neurolang.solver.html#neurolang.solver.BooleanRewriteSolver.conjunction_distribution">conjunction_distribution() (neurolang.solver.BooleanRewriteSolver method)</a>
 </li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp.conjunction_with_quantifiers">conjunction_with_quantifiers() (neurolang.logic.transformations.MoveQuantifiersUp method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FactorQuantifiersMixin.conjunction_with_quantifiers">conjunction_with_quantifiers() (neurolang.logic.transformations.FactorQuantifiersMixin method)</a>
 </li>
       <li><a href="gen_api/neurolang.probabilistic.expression_processing.html#neurolang.probabilistic.expression_processing.const_or_symb_as_python_type">const_or_symb_as_python_type() (in module neurolang.probabilistic.expression_processing)</a>
 </li>
@@ -1087,7 +1091,7 @@
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.UsedQuantifiers.disjunction">(neurolang.logic.transformations.UsedQuantifiers method)</a>
 </li>
       </ul></li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp.disjunction_with_quantifiers">disjunction_with_quantifiers() (neurolang.logic.transformations.MoveQuantifiersUp method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FactorQuantifiersMixin.disjunction_with_quantifiers">disjunction_with_quantifiers() (neurolang.logic.transformations.FactorQuantifiersMixin method)</a>
 </li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.DistributeConjunctions.distribute">distribute() (neurolang.logic.transformations.DistributeConjunctions method)</a>
 
@@ -1477,6 +1481,8 @@
 </li>
       <li><a href="gen_api/neurolang.datalog.ontologies_rewriter.html#neurolang.datalog.ontologies_rewriter.OntologyRewriter.factorization_step">factorization_step() (neurolang.datalog.ontologies_rewriter.OntologyRewriter method)</a>
 </li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FactorQuantifiersMixin">FactorQuantifiersMixin (class in neurolang.logic.transformations)</a>
+</li>
       <li><a href="gen_api/neurolang.frontend.drs.english_grammar.html#neurolang.frontend.drs.english_grammar.gen.female">female (neurolang.frontend.drs.english_grammar.gen attribute)</a>
 </li>
       <li><a href="gen_api/neurolang.utils.html#neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one">fetch_one() (neurolang.utils.NamedRelationalAlgebraFrozenSet method)</a>
@@ -1515,12 +1521,14 @@
 </li>
       <li><a href="gen_api/neurolang.logic.horn_clauses.html#neurolang.logic.horn_clauses.fol_query_to_datalog_program">fol_query_to_datalog_program() (in module neurolang.logic.horn_clauses)</a>
 </li>
-      <li><a href="gen_api/neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.forall">forall() (neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FONegELogicExpression">FONegELogicExpression (class in neurolang.logic.transformations)</a>
 </li>
-      <li><a href="gen_api/neurolang.probabilistic.exceptions.html#neurolang.probabilistic.exceptions.ForbiddenConditionalQueryNonConjunctive">ForbiddenConditionalQueryNonConjunctive</a>
+      <li><a href="gen_api/neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.forall">forall() (neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="gen_api/neurolang.probabilistic.exceptions.html#neurolang.probabilistic.exceptions.ForbiddenConditionalQueryNonConjunctive">ForbiddenConditionalQueryNonConjunctive</a>
+</li>
       <li><a href="gen_api/neurolang.probabilistic.exceptions.html#neurolang.probabilistic.exceptions.ForbiddenConditionalQueryNoProb">ForbiddenConditionalQueryNoProb</a>
 </li>
       <li><a href="gen_api/neurolang.probabilistic.cplogic.html#neurolang.probabilistic.cplogic.fresh_name_relation">fresh_name_relation() (in module neurolang.probabilistic.cplogic)</a>
@@ -2306,9 +2314,15 @@
 </li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms">MoveNegationsToAtoms (class in neurolang.logic.transformations)</a>
 </li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsInFONegE">MoveNegationsToAtomsInFONegE (class in neurolang.logic.transformations)</a>
+</li>
       <li><a href="gen_api/neurolang.logic.horn_clauses.html#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers">MoveNegationsToAtomsOrExistentialQuantifiers (class in neurolang.logic.horn_clauses)</a>
 </li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin">MoveNegationsToAtomsSimpleOperationsMixin (class in neurolang.logic.transformations)</a>
+</li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp">MoveQuantifiersUp (class in neurolang.logic.transformations)</a>
+</li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUpFONegE">MoveQuantifiersUpFONegE (class in neurolang.logic.transformations)</a>
 </li>
       <li><a href="gen_api/neurolang.probabilistic.weighted_model_counting.html#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.mul">mul() (neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD method)</a>
 </li>
@@ -2360,9 +2374,9 @@
 </li>
       <li><a href="gen_api/neurolang.logic.horn_clauses.html#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_atom">negated_atom() (neurolang.logic.horn_clauses.ConvertSRNFToHornClause method)</a>
 </li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms.negated_conjunction">negated_conjunction() (neurolang.logic.transformations.MoveNegationsToAtoms method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin.negated_conjunction">negated_conjunction() (neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin method)</a>
 </li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms.negated_disjunction">negated_disjunction() (neurolang.logic.transformations.MoveNegationsToAtoms method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin.negated_disjunction">negated_disjunction() (neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin method)</a>
 </li>
       <li><a href="gen_api/neurolang.logic.horn_clauses.html#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_existential">negated_existential() (neurolang.logic.horn_clauses.ConvertSRNFToHornClause method)</a>
 
@@ -2374,13 +2388,15 @@
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp.negated_existential">(neurolang.logic.transformations.MoveQuantifiersUp method)</a>
 </li>
       </ul></li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms.negated_negation">negated_negation() (neurolang.logic.transformations.MoveNegationsToAtoms method)</a>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin.negated_negation">negated_negation() (neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin method)</a>
 </li>
       <li><a href="gen_api/neurolang.frontend.datalog.standard_syntax.html#neurolang.frontend.datalog.standard_syntax.DatalogSemantics.negated_predicate">negated_predicate() (neurolang.frontend.datalog.standard_syntax.DatalogSemantics method)</a>
 </li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms.negated_universal">negated_universal() (neurolang.logic.transformations.MoveNegationsToAtoms method)</a>
 
       <ul>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsInFONegE.negated_universal">(neurolang.logic.transformations.MoveNegationsToAtomsInFONegE method)</a>
+</li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp.negated_universal">(neurolang.logic.transformations.MoveQuantifiersUp method)</a>
 </li>
       </ul></li>
@@ -3670,6 +3686,8 @@
 </li>
       <li><a href="gen_api/neurolang.datalog.expression_processing.html#neurolang.datalog.expression_processing.remove_conjunction_duplicates">remove_conjunction_duplicates() (in module neurolang.datalog.expression_processing)</a>
 </li>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.RemoveTrivialOperations.remove_double_negation">remove_double_negation() (neurolang.logic.transformations.RemoveTrivialOperations method)</a>
+</li>
       <li><a href="gen_api/neurolang.regions.html#neurolang.regions.VolumetricBrainRegion.remove_empty_bounding_boxes">remove_empty_bounding_boxes() (neurolang.regions.VolumetricBrainRegion method)</a>
 </li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.EliminateImplications.remove_implication">remove_implication() (neurolang.logic.transformations.EliminateImplications method)</a>
@@ -3682,10 +3700,10 @@
 </li>
       <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.RemoveTrivialOperations">RemoveTrivialOperations (class in neurolang.logic.transformations)</a>
 </li>
-      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.RemoveUniversalPredicates">RemoveUniversalPredicates (class in neurolang.logic.transformations)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.RemoveUniversalPredicates">RemoveUniversalPredicates (class in neurolang.logic.transformations)</a>
+</li>
       <li><a href="gen_api/neurolang.utils.html#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column">rename_column() (neurolang.utils.NamedRelationalAlgebraFrozenSet method)</a>
 
       <ul>
@@ -4389,6 +4407,10 @@
 </li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.ExtractFOLFreeVariables.type">(neurolang.logic.transformations.ExtractFOLFreeVariables attribute)</a>
 </li>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FactorQuantifiersMixin.type">(neurolang.logic.transformations.FactorQuantifiersMixin attribute)</a>
+</li>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.FONegELogicExpression.type">(neurolang.logic.transformations.FONegELogicExpression attribute)</a>
+</li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.GuaranteeConjunction.type">(neurolang.logic.transformations.GuaranteeConjunction attribute)</a>
 </li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.GuaranteeDisjunction.type">(neurolang.logic.transformations.GuaranteeDisjunction attribute)</a>
@@ -4399,7 +4421,13 @@
 </li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms.type">(neurolang.logic.transformations.MoveNegationsToAtoms attribute)</a>
 </li>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsInFONegE.type">(neurolang.logic.transformations.MoveNegationsToAtomsInFONegE attribute)</a>
+</li>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin.type">(neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin attribute)</a>
+</li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUp.type">(neurolang.logic.transformations.MoveQuantifiersUp attribute)</a>
+</li>
+        <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.MoveQuantifiersUpFONegE.type">(neurolang.logic.transformations.MoveQuantifiersUpFONegE attribute)</a>
 </li>
         <li><a href="gen_api/neurolang.logic.transformations.html#neurolang.logic.transformations.PushExistentialsDown.type">(neurolang.logic.transformations.PushExistentialsDown attribute)</a>
 </li>
