@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.shattering module &#8212; neurolang 0.1a11.dev36+gfd5827c documentation</title>
+    <title>neurolang.probabilistic.shattering module &#8212; neurolang 0.1a11.dev37+g766db39 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -125,237 +125,6 @@
   <section id="module-neurolang.probabilistic.shattering">
 <span id="neurolang-probabilistic-shattering-module"></span><h1>neurolang.probabilistic.shattering module<a class="headerlink" href="#module-neurolang.probabilistic.shattering" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.EasyProbfactShatterer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">EasyProbfactShatterer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.EasyProbfactShatterer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger" title="neurolang.probabilistic.shattering.QueryEasyShatteringTagger"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.shattering.QueryEasyShatteringTagger</span></code></a>, <a class="reference internal" href="#neurolang.probabilistic.shattering.EasyQueryShatterer" title="neurolang.probabilistic.shattering.EasyQueryShatterer"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.shattering.EasyQueryShatterer</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.shattering.EasyProbfactShatterer.type" title="neurolang.probabilistic.shattering.EasyProbfactShatterer.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>cache_non_constant_args</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>easy_shatter_probfact</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>shatter_probfact_predicates</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.EasyProbfactShatterer.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.shattering.EasyProbfactShatterer.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.EasyQueryShatterer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">EasyQueryShatterer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.EasyQueryShatterer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.shattering.EasyQueryShatterer.type" title="neurolang.probabilistic.shattering.EasyQueryShatterer.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>easy_shatter_probfact</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.EasyQueryShatterer.easy_shatter_probfact">
-<span class="sig-name descname"><span class="pre">easy_shatter_probfact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shatter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.EasyQueryShatterer.easy_shatter_probfact" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.EasyQueryShatterer.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.shattering.EasyQueryShatterer.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.QueryEasyShatteringTagger">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">QueryEasyShatteringTagger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
-<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
-<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger.type" title="neurolang.probabilistic.shattering.QueryEasyShatteringTagger.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>cache_non_constant_args</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>shatter_probfact_predicates</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.QueryEasyShatteringTagger.cache_non_constant_args">
-<span class="sig-name descname"><span class="pre">cache_non_constant_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger.cache_non_constant_args" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.QueryEasyShatteringTagger.shatter_probfact_predicates">
-<span class="sig-name descname"><span class="pre">shatter_probfact_predicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger.shatter_probfact_predicates" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.QueryEasyShatteringTagger.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.shattering.QueryEasyShatteringTagger.type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatter">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">Shatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">functor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_arguments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.FunctionApplication</span></code></p>
@@ -407,6 +176,96 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatter.type">
 <span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatter.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatterer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">Shatterer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatterer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.shattering.Shatterer.type" title="neurolang.probabilistic.shattering.Shatterer.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cache_non_constant_args</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>easy_shatter_probfact</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>shatter_probfact_predicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatterer.cache_non_constant_args">
+<span class="sig-name descname"><span class="pre">cache_non_constant_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatterer.cache_non_constant_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatterer.easy_shatter_probfact">
+<span class="sig-name descname"><span class="pre">easy_shatter_probfact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shatter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatterer.easy_shatter_probfact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatterer.shatter_probfact_predicates">
+<span class="sig-name descname"><span class="pre">shatter_probfact_predicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_application</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatterer.shatter_probfact_predicates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.probabilistic.shattering.Shatterer.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.probabilistic.shattering.Shatterer.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
