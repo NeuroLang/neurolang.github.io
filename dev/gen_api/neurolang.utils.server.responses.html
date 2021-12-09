@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.utils.server.responses module &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
+    <title>neurolang.utils.server.responses module &#8212; neurolang 0.1a11.dev80+g497d3d2 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -367,6 +367,29 @@ the tornado application as a JSON serialized string.</p>
 <dd class="field-even"><dl class="simple">
 <dt>Dict</dt><dd><p>a dict containing the base64 encoded image, as well as min and max
 values, and a hash of the image.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.server.responses.serialize_mplt_thumbnails">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">serialize_mplt_thumbnails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">matplotlib.figure.Figure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.serialize_mplt_thumbnails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize a figure by creating a base64 encoded thumbnail.
+This is used only to display the figure as a thumbnail in the list of
+results. The full size figure will be displayed when the user clicks on
+the thumbnail. See <cite>app.MpltFigureHandler</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>figure</strong><span class="classifier">matplotlib.figure.Figure</span></dt><dd><p>the figure to serialize</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>base64 encoded thumbnail of the figure</p>
 </dd>
 </dl>
 </dd>
