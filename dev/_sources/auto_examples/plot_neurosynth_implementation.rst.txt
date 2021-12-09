@@ -21,18 +21,25 @@
 NeuroLang Example based Implementing a NeuroSynth Query
 ====================================================
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-18
+.. GENERATED FROM PYTHON SOURCE LINES 9-25
 
 .. code-block:: default
 
+    import warnings
+
+    warnings.filterwarnings("ignore")
+
+    from pathlib import Path
     from typing import Iterable
 
-    import nibabel as nib
+    import nibabel
+    import nilearn.datasets
+    import nilearn.image
+    import nilearn.plotting
     import numpy as np
     import pandas as pd
-    from nilearn import datasets, image, plotting
-
     from neurolang import ExplicitVBROverlay, NeurolangPDL
+    from neurolang.frontend.neurosynth_utils import get_ns_mni_peaks_reported
 
 
 
@@ -41,22 +48,38 @@ NeuroLang Example based Implementing a NeuroSynth Query
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-21
+.. GENERATED FROM PYTHON SOURCE LINES 26-28
 
 Data preparation
 ----------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-24
+.. GENERATED FROM PYTHON SOURCE LINES 28-31
+
+.. code-block:: default
+
+
+    data_dir = Path.home() / "neurolang_data"
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 Load the MNI atlas and resample it to 4mm voxels
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. GENERATED FROM PYTHON SOURCE LINES 33-39
 
 .. code-block:: default
 
 
-    mni_t1 = nib.load(datasets.fetch_icbm152_2009()["t1"])
-    mni_t1_4mm = image.resample_img(mni_t1, np.eye(3) * 4)
+    mni_t1 = nibabel.load(
+        nilearn.datasets.fetch_icbm152_2009(data_dir=str(data_dir / "icbm"))["t1"]
+    )
+    mni_t1_4mm = nilearn.image.resample_img(mni_t1, np.eye(3) * 4)
 
 
 
@@ -69,87 +92,21 @@ Load the MNI atlas and resample it to 4mm voxels
  .. code-block:: none
 
 
-    Dataset created in /home/circleci/nilearn_data/icbm152_2009
+    Dataset created in /home/circleci/neurolang_data/icbm/icbm152_2009
 
     Downloading data from https://osf.io/7pj92/download ...
-    Downloaded 5005312 of 63027871 bytes (7.9%,   12.1s remaining)    Downloaded 10756096 of 63027871 bytes (17.1%,   10.2s remaining)    Downloaded 17031168 of 63027871 bytes (27.0%,    8.5s remaining)    Downloaded 23568384 of 63027871 bytes (37.4%,    6.9s remaining)    Downloaded 29843456 of 63027871 bytes (47.3%,    5.7s remaining)    Downloaded 37691392 of 63027871 bytes (59.8%,    4.1s remaining)    Downloaded 50495488 of 63027871 bytes (80.1%,    1.8s remaining)    Downloaded 54943744 of 63027871 bytes (87.2%,    1.2s remaining)    Downloaded 60432384 of 63027871 bytes (95.9%,    0.4s remaining) ...done. (11 seconds, 0 min)
-    Extracting data from /home/circleci/nilearn_data/icbm152_2009/774f5ced148e2fb443738680ac9b85a9/download..... done.
+     ...done. (2 seconds, 0 min)
+    Extracting data from /home/circleci/neurolang_data/icbm/icbm152_2009/774f5ced148e2fb443738680ac9b85a9/download..... done.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
-
-Load the NeuroSynth database
-
-.. GENERATED FROM PYTHON SOURCE LINES 30-71
-
-.. code-block:: default
-
-
-    ns_database_fn, ns_features_fn = datasets.utils._fetch_files(
-        "neurolang",
-        [
-            (
-                "database.txt",
-                "https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz",
-                {"uncompress": True},
-            ),
-            (
-                "features.txt",
-                "https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz",
-                {"uncompress": True},
-            ),
-        ],
-    )
-
-    ns_database = pd.read_csv(ns_database_fn, sep="\t")
-    ijk_positions = np.round(
-        nib.affines.apply_affine(
-            np.linalg.inv(mni_t1_4mm.affine),
-            ns_database[["x", "y", "z"]].values.astype(float),
-        )
-    ).astype(int)
-    ns_database["i"] = ijk_positions[:, 0]
-    ns_database["j"] = ijk_positions[:, 1]
-    ns_database["k"] = ijk_positions[:, 2]
-
-    ns_features = pd.read_csv(ns_features_fn, sep="\t")
-    ns_docs = ns_features[["pmid"]].drop_duplicates()
-    ns_terms = pd.melt(
-        ns_features, var_name="term", id_vars="pmid", value_name="TfIdf"
-    ).query("TfIdf > 1e-3")[["pmid", "term"]]
-    ns_terms.to_csv("term_documents.csv")
-    (
-        ns_database[["x", "y", "z", "i", "j", "k", "id"]]
-        .rename(columns={"id": "pmid"})
-        .to_csv("document_activations.csv")
-    )
-
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/current_data.tar.gz ...
-     ...done. (0 seconds, 0 min)
-    Extracting data from neurolang/ba5a937c77504ec8c350332a54a58f7c/current_data.tar.gz..... done.
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 40-42
 
 Probabilistic Logic Programming in NeuroLang
 --------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-78
+.. GENERATED FROM PYTHON SOURCE LINES 42-46
 
 .. code-block:: default
 
@@ -164,21 +121,23 @@ Probabilistic Logic Programming in NeuroLang
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-80
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Adding new aggregation function to build a region overlay
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-90
+.. GENERATED FROM PYTHON SOURCE LINES 48-60
 
 .. code-block:: default
+
+
 
     @nl.add_symbol
     def agg_create_region_overlay(
         i: Iterable, j: Iterable, k: Iterable, p: Iterable
     ) -> ExplicitVBROverlay:
-        voxels = np.c_[i, j, k]
+        mni_coords = np.c_[i, j, k]
         return ExplicitVBROverlay(
-            voxels, mni_t1_4mm.affine, p, image_dim=mni_t1_4mm.shape
+            mni_coords, mni_t1_4mm.affine, p, image_dim=mni_t1_4mm.shape
         )
 
 
@@ -189,70 +148,85 @@ Adding new aggregation function to build a region overlay
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-92
+.. GENERATED FROM PYTHON SOURCE LINES 61-62
 
-Loading the database
+Load the NeuroSynth database
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-98
+.. GENERATED FROM PYTHON SOURCE LINES 62-85
 
 .. code-block:: default
 
 
-    activations = nl.add_tuple_set(ns_database, name="activations")
-    terms = nl.add_tuple_set(ns_terms, name="terms")
-    docs = nl.add_uniform_probabilistic_choice_over_set(ns_docs, name="docs")
+    peak_data = get_ns_mni_peaks_reported(data_dir)
+    ijk_positions = np.round(
+        nibabel.affines.apply_affine(
+            np.linalg.inv(mni_t1_4mm.affine),
+            peak_data[["x", "y", "z"]].values.astype(float),
+        )
+    ).astype(int)
+    peak_data["i"] = ijk_positions[:, 0]
+    peak_data["j"] = ijk_positions[:, 1]
+    peak_data["k"] = ijk_positions[:, 2]
+    peak_data = peak_data[["i", "j", "k", "id"]]
+
+    nl.add_tuple_set(peak_data, name="PeakReported")
+    study_ids = nl.load_neurosynth_study_ids(data_dir, "Study")
+    nl.add_uniform_probabilistic_choice_over_set(
+        study_ids.value, name="SelectedStudy"
+    )
+    nl.load_neurosynth_term_study_associations(
+        data_dir, "TermInStudyTFIDF", tfidf_threshold=1e-3
+    )
 
 
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_coordinates.tsv.gz ...
+     ...done. (1 seconds, 0 min)
+    Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_metadata.tsv.gz ...
+     ...done. (0 seconds, 0 min)
+    Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_vocab-terms_source-abstract_type-tfidf_features.npz ...
+     ...done. (1 seconds, 0 min)
+    Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_vocab-terms_vocabulary.txt ...
+     ...done. (0 seconds, 0 min)
+
+    TermInStudyTFIDF: typing.AbstractSet[typing.Tuple[str, str, float]] = (9862924, '001', 0.0553942161114) ...
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-101
+.. GENERATED FROM PYTHON SOURCE LINES 86-88
 
 ##############################################################################
  Probabilistic program and querying
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-137
+.. GENERATED FROM PYTHON SOURCE LINES 88-106
 
 .. code-block:: default
 
 
     with nl.scope as e:
-        e.vox_activation[e.i, e.j, e.k, e.d] = e.activations(
-            e.d,
-            ...,
-            ...,
-            ...,
-            ...,
-            "MNI",
-            ...,
-            ...,
-            ...,
-            ...,
-            ...,
-            ...,
-            ...,
-            e.i,
-            e.j,
-            e.k,
-        ) & e.docs(e.d)
+        e.Activation[e.i, e.j, e.k] = e.PeakReported(
+            e.i, e.j, e.k, e.s
+        ) & e.SelectedStudy(e.s)
+        e.TermAssociation[e.t] = e.SelectedStudy(e.s) & e.TermInStudyTFIDF(
+            e.s, e.t, ...
+        )
+        e.ActivationGivenTerm[e.i, e.j, e.k, e.PROB[e.i, e.j, e.k]] = e.Activation(
+            e.i, e.j, e.k
+        ) // e.TermAssociation("auditory")
+        e.ActivationGivenTermImage[
+            agg_create_region_overlay(e.i, e.j, e.k, e.p)
+        ] = e.ActivationGivenTerm(e.i, e.j, e.k, e.p)
 
-        e.term_present[e.t, e.d] = e.terms(e.d, e.t) & e.docs(e.d)
-
-        e.marg_term[e.t, e.PROB(e.t)] = e.term_present[e.t, e.d]
-        e.probmap[e.i, e.j, e.k, e.PROB[e.i, e.j, e.k]] = (
-            e.vox_activation(e.i, e.j, e.k, e.d)
-        ) // e.term_present("auditory", e.d)
-
-        e.img[e.agg_create_region_overlay[e.i, e.j, e.k, e.p]] = e.probmap[
-            e.i, e.j, e.k, e.p
-        ]
-
-        marg_term = nl.query((e.t, e.p), e.marg_term(e.t, e.p))
-        img_query = nl.query((e.x,), e.img(e.x))
+        img_query = nl.query((e.x,), e.ActivationGivenTermImage(e.x))
 
 
 
@@ -262,29 +236,30 @@ Loading the database
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-141
+.. GENERATED FROM PYTHON SOURCE LINES 107-110
 
 ##############################################################################
  Plotting results
  --------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-148
+.. GENERATED FROM PYTHON SOURCE LINES 110-117
 
 .. code-block:: default
 
 
     result_image = img_query.fetch_one()[0].spatial_image()
     img = result_image.get_fdata()
-    plot = plotting.plot_stat_map(
+    plot = nilearn.plotting.plot_stat_map(
         result_image, threshold=np.percentile(img[img > 0], 95)
     )
-    plotting.show()
+    nilearn.plotting.show()
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_neurosynth_implementation_001.png
-    :alt: plot neurosynth implementation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/images/sphx_glr_plot_neurosynth_implementation_001.png
+   :alt: plot neurosynth implementation
+   :srcset: /auto_examples/images/sphx_glr_plot_neurosynth_implementation_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -293,7 +268,7 @@ Loading the database
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  40.872 seconds)
+   **Total running time of the script:** ( 0 minutes  14.246 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_neurosynth_implementation.py:

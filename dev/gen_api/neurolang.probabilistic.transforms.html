@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.transforms module &#8212; neurolang 0.1a11.dev45+g6894890 documentation</title>
+    <title>neurolang.probabilistic.transforms module &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -22,9 +22,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -215,12 +215,12 @@ disjunctive normal from (DNF).</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimise_formulas_containment">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimise_formulas_containment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">containment_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimise_formulas_containment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimise_formulas_containment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">containment_op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimise_formulas_containment" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_component_conjunction">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conjunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_conjunction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conjunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_conjunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a conjunction of queries Q1 ∧ … ∧ Qn
 remove each query Qi such that exists Qj and
 Qj → Qi.</p>
@@ -228,6 +228,8 @@ Qj → Qi.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>conjunction</strong><span class="classifier">Conjunction</span></dt><dd><p>conjunction of logical formulas to minimise.</p>
+</dd>
+<dt><strong>head_vars: set</strong></dt><dd><p>variables to be considered as constants</p>
 </dd>
 </dl>
 </dd>
@@ -242,7 +244,7 @@ Qj → Qi.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.transforms.minimize_component_disjunction">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disjunction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_disjunction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">minimize_component_disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disjunction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.minimize_component_disjunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a disjunction of queries Q1  ∨ … ∨ Qn
 remove each query Qi such that exists Qj and
 Qi → Qj.</p>
@@ -250,6 +252,8 @@ Qi → Qj.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>disjunction</strong><span class="classifier">Disjunction</span></dt><dd><p>Disjunction of logical formulas to minimise.</p>
+</dd>
+<dt><strong>head_vars: set</strong></dt><dd><p>variables to be considered as constants</p>
 </dd>
 </dl>
 </dd>
@@ -305,6 +309,28 @@ and minimise.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.split_positive_negative_formulas">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">split_positive_negative_formulas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nary_logic_operation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.split_positive_negative_formulas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split formulas of the n_ary_logic operation in those
+containing a negated predicate and those not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nary_logic_operation</strong><span class="classifier">NAryLogicOperation</span></dt><dd><p>Operation whose formulas are going to be split</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>positive, negative</dt><dd><p>two Iterable[Union[LogicOperation, FunctionApplication]] objects
+containing the positive and negative formulas</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.transforms.unify_existential_variables">
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">unify_existential_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.unify_existential_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduce the number of existentially-quantified variables.
@@ -350,7 +376,7 @@ where f is possibly a fresh variable.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
     </p>
   </div>
 </footer>

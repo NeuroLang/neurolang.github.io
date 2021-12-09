@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sulcal Identification Query Example in Neurolang &#8212; neurolang 0.1a11.dev45+g6894890 documentation</title>
+    <title>Sulcal Identification Query Example in Neurolang &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -24,9 +24,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -145,7 +145,11 @@ to download the full example code</p>
 <span id="sphx-glr-auto-examples-plot-sulcal-queries-py"></span><h1>Sulcal Identification Query Example in Neurolang<a class="headerlink" href="#sulcal-identification-query-example-in-neurolang" title="Permalink to this headline">¶</a></h1>
 <section id="initialise-the-neurolang-deterministic-environment">
 <h2>Initialise the Neurolang deterministic environment<a class="headerlink" href="#initialise-the-neurolang-deterministic-environment" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">plotting</span>
@@ -169,10 +173,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2407: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-  output = genfromtxt(fname, **kwargs)
-
-destrieux: typing.AbstractSet[typing.Tuple[str, neurolang.regions.ExplicitVBR]] = (&#39;Background&#39;, Region(VBR= affine:[[   2.    0.    0.  -76.]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>destrieux: typing.AbstractSet[typing.Tuple[str, neurolang.regions.ExplicitVBR]] = (&#39;Background&#39;, Region(VBR= affine:[[   2.    0.    0.  -76.]
  [   0.    2.    0. -109.]
  [   0.    0.    2.  -64.]
  [   0.    0.    0.    1.]], voxels:[[ 0  0  0]
@@ -326,8 +327,7 @@ anterior to the PC.</p></li>
     <span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot sulcal queries" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sulcal_queries_001.png" />
-</section>
+<img src="../_images/sphx_glr_plot_sulcal_queries_001.png" srcset="../_images/sphx_glr_plot_sulcal_queries_001.png" alt="plot sulcal queries" class = "sphx-glr-single-img"/></section>
 <section id="example-3-query-the-superior-frontal-sulcus">
 <h2>Example 3: Query the Superior Frontal Sulcus<a class="headerlink" href="#example-3-query-the-superior-frontal-sulcus" title="Permalink to this headline">¶</a></h2>
 <p>this query and all defined will not be in the program
@@ -366,13 +366,7 @@ superior to the SFS.</p></li>
     <span class="p">)</span>
 </pre></div>
 </div>
-<img alt="plot sulcal queries" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_sulcal_queries_002.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/repo/venv/lib/python3.7/site-packages/numpy/ma/core.py:2830: UserWarning: Warning: converting a masked element to nan.
-  order=order, subok=True, ndmin=ndmin)
-</pre></div>
-</div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.112 seconds)</p>
+<img src="../_images/sphx_glr_plot_sulcal_queries_002.png" srcset="../_images/sphx_glr_plot_sulcal_queries_002.png" alt="plot sulcal queries" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.513 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-sulcal-queries-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/dd9b7c027b1df0b4a2d3fba1892c35c0/plot_sulcal_queries.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sulcal_queries.py</span></code></a></p>
@@ -405,7 +399,7 @@ superior to the SFS.</p></li>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
     </p>
   </div>
 </footer>

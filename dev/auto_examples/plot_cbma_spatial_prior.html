@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Example where a spatial prior is defined based on the distance between voxels and foci in a coordinate-based meta-analysis database &#8212; neurolang 0.1a11.dev45+g6894890 documentation</title>
+    <title>Example where a spatial prior is defined based on the distance between voxels and foci in a coordinate-based meta-analysis database &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -24,9 +24,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -135,27 +135,34 @@ to download the full example code</p>
 whether that particular study reports a focus (peak activation) near the voxel.
 The probability is defined based on how far from the focus that voxel happens
 to be.</p>
-<img alt="plot cbma spatial prior" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_cbma_spatial_prior_001.png" />
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+<img src="../_images/sphx_glr_plot_cbma_spatial_prior_001.png" srcset="../_images/sphx_glr_plot_cbma_spatial_prior_001.png" alt="plot cbma spatial prior" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span>
 
 <span class="kn">import</span> <span class="nn">nibabel</span>
 <span class="kn">import</span> <span class="nn">nilearn.datasets</span>
 <span class="kn">import</span> <span class="nn">nilearn.image</span>
 <span class="kn">import</span> <span class="nn">nilearn.plotting</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
 <span class="kn">from</span> <span class="nn">neurolang.frontend</span> <span class="kn">import</span> <span class="n">ExplicitVBR</span><span class="p">,</span> <span class="n">ExplicitVBROverlay</span><span class="p">,</span> <span class="n">NeurolangPDL</span>
+<span class="kn">from</span> <span class="nn">neurolang.frontend.neurosynth_utils</span> <span class="kn">import</span> <span class="n">get_ns_mni_peaks_reported</span>
 
 <span class="c1"># ##############################################################################</span>
 <span class="c1"># Data preparation</span>
 <span class="c1"># ----------------</span>
 
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;neurolang_data&quot;</span>
+
 <span class="c1"># ##############################################################################</span>
 <span class="c1"># Load the MNI atlas and resample it to 4mm voxels</span>
 
-<span class="n">mni_t1</span> <span class="o">=</span> <span class="n">nibabel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_icbm152_2009</span><span class="p">()[</span><span class="s2">&quot;t1&quot;</span><span class="p">])</span>
-<span class="n">mni_t1_4mm</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">resample_img</span><span class="p">(</span><span class="n">mni_t1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mni_t1</span> <span class="o">=</span> <span class="n">nibabel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+    <span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_icbm152_2009</span><span class="p">(</span><span class="n">data_dir</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">/</span> <span class="s2">&quot;icbm&quot;</span><span class="p">))[</span><span class="s2">&quot;t1&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">mni_t1_2mm</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">resample_img</span><span class="p">(</span><span class="n">mni_t1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># ##############################################################################</span>
 <span class="c1"># Probabilistic Logic Programming in NeuroLang</span>
@@ -175,7 +182,7 @@ to be.</p>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExplicitVBR</span><span class="p">:</span>
     <span class="n">voxels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">ExplicitVBROverlay</span><span class="p">(</span>
-        <span class="n">voxels</span><span class="p">,</span> <span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">affine</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">image_dim</span><span class="o">=</span><span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">voxels</span><span class="p">,</span> <span class="n">mni_t1_2mm</span><span class="o">.</span><span class="n">affine</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">image_dim</span><span class="o">=</span><span class="n">mni_t1_2mm</span><span class="o">.</span><span class="n">shape</span>
     <span class="p">)</span>
 
 
@@ -183,51 +190,30 @@ to be.</p>
 <span class="c1"># Loading the database</span>
 <span class="c1"># ----------------------------------</span>
 
-<span class="n">ns_database_fn</span><span class="p">,</span> <span class="n">ns_features_fn</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">_fetch_files</span><span class="p">(</span>
-    <span class="s2">&quot;neurolang&quot;</span><span class="p">,</span>
-    <span class="p">[</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;database.txt&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;https://github.com/neurosynth/neurosynth-data&quot;</span>
-            <span class="s2">&quot;/raw/master/current_data.tar.gz&quot;</span><span class="p">,</span>
-            <span class="p">{</span><span class="s2">&quot;uncompress&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="p">),</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;features.txt&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;https://github.com/neurosynth/neurosynth-data&quot;</span>
-            <span class="s2">&quot;/raw/master/current_data.tar.gz&quot;</span><span class="p">,</span>
-            <span class="p">{</span><span class="s2">&quot;uncompress&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-        <span class="p">),</span>
-    <span class="p">],</span>
-<span class="p">)</span>
-
-<span class="n">ns_database</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ns_database_fn</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">peak_data</span> <span class="o">=</span> <span class="n">get_ns_mni_peaks_reported</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 <span class="n">ijk_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
     <span class="n">nibabel</span><span class="o">.</span><span class="n">affines</span><span class="o">.</span><span class="n">apply_affine</span><span class="p">(</span>
-        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">affine</span><span class="p">),</span>
-        <span class="n">ns_database</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">mni_t1_2mm</span><span class="o">.</span><span class="n">affine</span><span class="p">),</span>
+        <span class="n">peak_data</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span>
     <span class="p">)</span>
 <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">ns_database</span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">ns_database</span><span class="p">[</span><span class="s2">&quot;j&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">ns_database</span><span class="p">[</span><span class="s2">&quot;k&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">ns_database</span> <span class="o">=</span> <span class="n">ns_database</span><span class="p">[[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">]]</span>
+<span class="n">peak_data</span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">peak_data</span><span class="p">[</span><span class="s2">&quot;j&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">peak_data</span><span class="p">[</span><span class="s2">&quot;k&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ijk_positions</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">peak_data</span> <span class="o">=</span> <span class="n">peak_data</span><span class="p">[[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">]]</span>
 
-<span class="n">ns_features</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ns_features_fn</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">ns_docs</span> <span class="o">=</span> <span class="n">ns_features</span><span class="p">[[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
-<span class="n">ns_terms</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-    <span class="n">ns_features</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;term&quot;</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;pmid&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;TfIdf&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;TfIdf &gt; 1e-3&quot;</span><span class="p">)[[</span><span class="s2">&quot;term&quot;</span><span class="p">,</span> <span class="s2">&quot;pmid&quot;</span><span class="p">]]</span>
-
-<span class="n">TermInStudy</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_terms</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;TermInStudy&quot;</span><span class="p">)</span>
-<span class="n">FocusReported</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">ns_database</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FocusReported&quot;</span><span class="p">)</span>
-<span class="n">SelectedStudy</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
-    <span class="n">ns_docs</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SelectedStudy&quot;</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">peak_data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;FocusReported&quot;</span><span class="p">)</span>
+<span class="n">study_ids</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">load_neurosynth_study_ids</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s2">&quot;Study&quot;</span><span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
+    <span class="n">study_ids</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;SelectedStudy&quot;</span>
+<span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">load_neurosynth_term_study_associations</span><span class="p">(</span>
+    <span class="n">data_dir</span><span class="p">,</span> <span class="s2">&quot;TermInStudyTFIDF&quot;</span><span class="p">,</span> <span class="n">tfidf_threshold</span><span class="o">=</span><span class="mf">1e-3</span>
 <span class="p">)</span>
 <span class="n">Voxel</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span>
         <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
-            <span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">mni_t1_4mm</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">mni_t1_2mm</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -240,7 +226,6 @@ to be.</p>
 <span class="c1"># Probabilistic program and querying</span>
 <span class="c1"># ----------------------------------</span>
 
-<span class="n">nl</span><span class="o">.</span><span class="n">add_symbol</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;exp&quot;</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">])</span>
 
 <span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">VoxelReported</span> <span class="o">@</span> <span class="n">e</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">e</span><span class="o">.</span><span class="n">d</span> <span class="o">/</span> <span class="mf">5.0</span><span class="p">)))[</span><span class="n">e</span><span class="o">.</span><span class="n">i1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
@@ -249,7 +234,9 @@ to be.</p>
         <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">d</span> <span class="o">==</span> <span class="n">e</span><span class="o">.</span><span class="n">EUCLIDEAN</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">i1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k1</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">i2</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j2</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k2</span><span class="p">))</span>
         <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">d</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="n">e</span><span class="o">.</span><span class="n">TermAssociation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">SelectedStudy</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">TermInStudy</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">TermAssociation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">e</span><span class="o">.</span><span class="n">SelectedStudy</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">TermInStudyTFIDF</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="p">)</span>
     <span class="n">e</span><span class="o">.</span><span class="n">Activation</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">e</span><span class="o">.</span><span class="n">SelectedStudy</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">VoxelReported</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">j</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">k</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">s</span><span class="p">]</span>
     <span class="p">)</span>
@@ -273,7 +260,7 @@ to be.</p>
 <span class="n">nilearn</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.278 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.251 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-cbma-spatial-prior-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/a4ff908e94c4a2df665538f58967c726/plot_cbma_spatial_prior.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_cbma_spatial_prior.py</span></code></a></p>
@@ -305,7 +292,7 @@ to be.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
     </p>
   </div>
 </footer>

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.datalog.negation module &#8212; neurolang 0.1a11.dev45+g6894890 documentation</title>
+    <title>neurolang.datalog.negation module &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -22,9 +22,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -126,7 +126,7 @@
 <span id="neurolang-datalog-negation-module"></span><h1>neurolang.datalog.negation module<a class="headerlink" href="#module-neurolang.datalog.negation" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.DatalogProgramNegation">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogProgramNegation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogProgramNegation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.negation.DatalogProgramNegationMixin" title="neurolang.datalog.negation.DatalogProgramNegationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.negation.DatalogProgramNegationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
@@ -145,17 +145,23 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_equals</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
 <td><p>Infer the type of iterable elements without modifying the iterable.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.negation.DatalogProgramNegation.type" title="neurolang.datalog.negation.DatalogProgramNegation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.negation.DatalogProgramNegation.type" title="neurolang.datalog.negation.DatalogProgramNegation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">union_of_cq</span></code>(expression)</p></td>
+<td><p>This pattern is here to avoid processing the full program when one rule is rewritten.</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,68 +186,71 @@
 <tr class="row-odd"><td><p><strong>fact</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>function_equals</strong></p></td>
+<tr class="row-even"><td><p><strong>intensional_database</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>intensional_database</strong></p></td>
+<tr class="row-odd"><td><p><strong>negation_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>negation_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>negative_fact</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>negative_fact</strong></p></td>
+<tr class="row-odd"><td><p><strong>new_set</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>new_set</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pop_scope</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pop_scope</strong></p></td>
+<tr class="row-odd"><td><p><strong>predicate_terms</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>predicate_terms</strong></p></td>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_scope</strong></p></td>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>statement_intensional</strong></p></td>
+<tr class="row-even"><td><p><strong>push_scope</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>statement_intensional</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.DatalogProgramNegation.protected_keywords">
-<span class="sig-name descname"><span class="pre">protected_keywords</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation.protected_keywords" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">protected_keywords</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.DatalogProgramNegation.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegation.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.DatalogProgramNegationMixin">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogProgramNegationMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegationMixin" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogProgramNegationMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegationMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
 <p>Datalog solver that implements negation. Adds the possibility of
 inverted terms when checking that expressions are in conjunctive
@@ -321,14 +330,14 @@ normal form.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.DatalogProgramNegationMixin.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegationMixin.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.DatalogProgramNegationMixin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.NegativeFact">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">NegativeFact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.negation.</span></span><span class="sig-name descname"><span class="pre">NegativeFact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Implication</span></code></a></p>
 <p>This class defines negative facts. They are composed of an inverted
 antecedent and False in the consequent. It is not necessary that the
@@ -380,12 +389,12 @@ initialization parameter is inverted.</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.NegativeFact.fact">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">fact</span></span><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact.fact" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fact</span></span><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact.fact" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.negation.NegativeFact.type">
-<span class="sig-name descname"><span class="pre">type</span></span><em class="property"> <span class="pre">=</span> <span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.datalog.negation.NegativeFact.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -417,7 +426,7 @@ initialization parameter is inverted.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
     </p>
   </div>
 </footer>

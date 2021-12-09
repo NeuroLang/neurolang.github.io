@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>neurolang.relational_algebra.relational_algebra module &#8212; neurolang 0.1a11.dev79+gd837cd9 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../auto_examples/index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="module-neurolang.relational_algebra.relational_algebra">
+<span id="neurolang-relational-algebra-relational-algebra-module"></span><h1>neurolang.relational_algebra.relational_algebra module<a class="headerlink" href="#module-neurolang.relational_algebra.relational_algebra" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">BinaryRelationalAlgebraOperation</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Column">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ColumnInt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ColumnInt</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ColumnInt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.Column</span></code></a></p>
+<p>Refer to a relational algebra set’s column by its index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">denominator</span></code></dt><dd><p>the denominator of a rational number in lowest terms</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">imag</span></code></dt><dd><p>the imaginary part of a complex number</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">numerator</span></code></dt><dd><p>the numerator of a rational number in lowest terms</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">real</span></code></dt><dd><p>the real part of a complex number</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bit_length</span></code>(/)</p></td>
+<td><p>Number of bits necessary to represent self in binary.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">conjugate</span></code></p></td>
+<td><p>Returns self, the complex conjugate of any int.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_bytes</span></code>(/, bytes, byteorder, *[, signed])</p></td>
+<td><p>Return the integer represented by the given array of bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_bytes</span></code>(/, length, byteorder, *[, signed])</p></td>
+<td><p>Return an array of bytes representing an integer.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ColumnStr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ColumnStr</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ColumnStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.Column</span></code></a></p>
+<p>Refer to a named relational algebra set’s column by its name.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">capitalize</span></code>(/)</p></td>
+<td><p>Return a capitalized version of the string.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">casefold</span></code>(/)</p></td>
+<td><p>Return a version of the string suitable for caseless comparisons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code>(width[, fillchar])</p></td>
+<td><p>Return a centered string of length width.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>(sub[, start[, end]])</p></td>
+<td><p>Return the number of non-overlapping occurrences of substring sub in string S[start:end].</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode</span></code>(/[, encoding, errors])</p></td>
+<td><p>Encode the string using the codec registered for encoding.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">endswith</span></code>(suffix[, start[, end]])</p></td>
+<td><p>Return True if S ends with the specified suffix, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">expandtabs</span></code>(/[, tabsize])</p></td>
+<td><p>Return a copy where all tab characters are expanded using spaces.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code>(sub[, start[, end]])</p></td>
+<td><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">format</span></code>(*args, **kwargs)</p></td>
+<td><p>Return a formatted version of S, using substitutions from args and kwargs.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_map</span></code>(mapping)</p></td>
+<td><p>Return a formatted version of S, using substitutions from mapping.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code>(sub[, start[, end]])</p></td>
+<td><p>Return the lowest index in S where substring sub is found,  such that sub is contained within S[start:end].</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code>(/)</p></td>
+<td><p>Return True if the string is an alpha-numeric string, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalpha</span></code>(/)</p></td>
+<td><p>Return True if the string is an alphabetic string, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isascii</span></code>(/)</p></td>
+<td><p>Return True if all characters in the string are ASCII, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdecimal</span></code>(/)</p></td>
+<td><p>Return True if the string is a decimal string, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdigit</span></code>(/)</p></td>
+<td><p>Return True if the string is a digit string, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isidentifier</span></code>(/)</p></td>
+<td><p>Return True if the string is a valid Python identifier, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">islower</span></code>(/)</p></td>
+<td><p>Return True if the string is a lowercase string, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnumeric</span></code>(/)</p></td>
+<td><p>Return True if the string is a numeric string, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isprintable</span></code>(/)</p></td>
+<td><p>Return True if the string is printable, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isspace</span></code>(/)</p></td>
+<td><p>Return True if the string is a whitespace string, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">istitle</span></code>(/)</p></td>
+<td><p>Return True if the string is a title-cased string, False otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isupper</span></code>(/)</p></td>
+<td><p>Return True if the string is an uppercase string, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code>(iterable, /)</p></td>
+<td><p>Concatenate any number of strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ljust</span></code>(width[, fillchar])</p></td>
+<td><p>Return a left-justified string of length width.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower</span></code>(/)</p></td>
+<td><p>Return a copy of the string converted to lowercase.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lstrip</span></code>([chars])</p></td>
+<td><p>Return a copy of the string with leading whitespace removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maketrans</span></code>(x[, y, z])</p></td>
+<td><p>Return a translation table usable for str.translate().</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code>(sep, /)</p></td>
+<td><p>Partition the string into three parts using the given separator.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code>(old, new[, count])</p></td>
+<td><p>Return a copy with all occurrences of substring old replaced by new.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code>(sub[, start[, end]])</p></td>
+<td><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rindex</span></code>(sub[, start[, end]])</p></td>
+<td><p>Return the highest index in S where substring sub is found, such that sub is contained within S[start:end].</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rjust</span></code>(width[, fillchar])</p></td>
+<td><p>Return a right-justified string of length width.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpartition</span></code>(sep, /)</p></td>
+<td><p>Partition the string into three parts using the given separator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit</span></code>(/[, sep, maxsplit])</p></td>
+<td><p>Return a list of the words in the string, using sep as the delimiter string.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rstrip</span></code>([chars])</p></td>
+<td><p>Return a copy of the string with trailing whitespace removed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code>(/[, sep, maxsplit])</p></td>
+<td><p>Return a list of the words in the string, using sep as the delimiter string.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">splitlines</span></code>(/[, keepends])</p></td>
+<td><p>Return a list of the lines in the string, breaking at line boundaries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">startswith</span></code>(prefix[, start[, end]])</p></td>
+<td><p>Return True if S starts with the specified prefix, False otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip</span></code>([chars])</p></td>
+<td><p>Return a copy of the string with leading and trailing whitespace removed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapcase</span></code>(/)</p></td>
+<td><p>Convert uppercase characters to lowercase and lowercase characters to uppercase.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code>(/)</p></td>
+<td><p>Return a version of the string where each word is titlecased.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code>(table, /)</p></td>
+<td><p>Replace each character in the string using the given translation table.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper</span></code>(/)</p></td>
+<td><p>Return a copy of the string converted to uppercase.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">zfill</span></code>(width, /)</p></td>
+<td><p>Pad a numeric string with zeros on the left, to fill a field of the given width.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ConcatenateConstantColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p>Add a column with a repeated constant value to a relation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>relation</strong><span class="classifier">Constant[RelationalAlgebraSet]</span></dt><dd><p>Relation to which the column will be added.</p>
+</dd>
+<dt><strong>column_name</strong><span class="classifier">Constant[ColumnStr] or Symbol[ColumnStr]</span></dt><dd><p>Name of the newly added column.</p>
+</dd>
+<dt><strong>column_value</strong><span class="classifier">Constant</span></dt><dd><p>Constant value repeated in the new column.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type" title="neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Destroy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_column</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p>Operation to map a column of a collection of elements into
+a new column with all collections concatenated</p>
+<p class="rubric">Notes</p>
+<p>The concept of set destruction is formally defined in chapter 20
+of <a class="reference internal" href="#r23110cb11f3a-1" id="id1">[1]</a>.</p>
+<dl class="citation">
+<dt class="label" id="r23110cb11f3a-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Abiteboul, S., Hull, R. &amp; Vianu, V. “Foundations of databases”. (
+Addison Wesley, 1995).</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>relation</strong><span class="classifier">Expression[AbstractSet]</span></dt><dd><p>Relation on which the projections are applied.</p>
+</dd>
+<dt><strong>src_column</strong><span class="classifier">Constant[ColumnStr]</span></dt><dd><p>Column to destroy in the operation.</p>
+</dd>
+<dt><strong>dst_column</strong><span class="classifier">Constant[ColumnStr]</span></dt><dd><p>Column to map onto the new set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Destroy.type" title="neurolang.relational_algebra.relational_algebra.Destroy.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Destroy.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Destroy.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Difference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Difference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Difference.type" title="neurolang.relational_algebra.relational_algebra.Difference.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Difference.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Difference.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.EquiJoin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">EquiJoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.EquiJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.EquiJoin.type" title="neurolang.relational_algebra.relational_algebra.EquiJoin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.EquiJoin.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.EquiJoin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ExtendedProjection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ExtendedProjection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></code></a></p>
+<p>General operation defining string-based relational algebra projections
+allowing flexible computations on a relation’s columns.</p>
+<p class="rubric">Notes</p>
+<p>The concept of extended projection is formally defined in section 5.2.5
+of <a class="reference internal" href="#r249225d65f38-1" id="id2">[1]</a>.</p>
+<dl class="citation">
+<dt class="label" id="r249225d65f38-1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Garcia-Molina, Hector, Jeffrey D. Ullman, and Jennifer Widom.
+“Database systems: the complete book.” (2009).</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>relation</strong><span class="classifier">Expression[AbstractSet]</span></dt><dd><p>Relation on which the projections are applied.</p>
+</dd>
+<dt><strong>projection_list</strong><span class="classifier">Tuple[FunctionApplicationListMember]</span></dt><dd><p>List of projections to apply.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.type" title="neurolang.relational_algebra.relational_algebra.ExtendedProjection.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ExtendedProjection.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ExtendedProjection.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">FunctionApplicationListMember</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun_exp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_column</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p>Representation of a function application to a column. Can be used to
+represent either the application of an extended projection, or the
+application of an aggregate function, to a column.</p>
+<p class="rubric">Notes</p>
+<p>In the case of an extended projection operation, as described in <a class="reference internal" href="#rf087fbbc51c2-1" id="id3">[1]</a>,
+a function application list member can either be</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>a single attribute (column) name in the relation, resulting in a
+normal non-extended projection,</p></li>
+<li><p>an expression <cite>x -&gt; y</cite> where <cite>x</cite> and <cite>y</cite> are both attribute (column)
+names, <cite>x</cite> effectively being rename as <cite>y</cite>,</p></li>
+<li><p>or an expression <cite>E -&gt; z</cite> where <cite>E</cite> is an expression involving
+attributes of the relation, arithmetic operators, and string
+operators, and <cite>z</cite> is a new name for the attribute that results from
+the calculation implied by <cite>E</cite>. For example, <cite>a + b -&gt; x</cite> represents
+the sum of the attributes <cite>a</cite> and <cite>b</cite>, renamed <cite>x</cite>.</p></li>
+</ul>
+</div></blockquote>
+<dl class="citation">
+<dt class="label" id="rf087fbbc51c2-1"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>Garcia-Molina, Hector, Jeffrey D. Ullman, and Jennifer Widom.
+“Database systems: the complete book.” (2009).</p>
+</dd>
+</dl>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>fun_exp</strong><span class="classifier"><cite>Union[Constant[str], FunctionApplication]</cite></span></dt><dd><p>Constant string representation of an extended projection operation,
+or <cite>FunctionApplication</cite> representation of an aggregate function.</p>
+</dd>
+<dt><strong>dst_column</strong><span class="classifier"><cite>Constant[ColumnStr]</cite> or <cite>Symbol[ColumnStr]</cite></span></dt><dd><p>Constant column string of the destination column.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type" title="neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.GroupByAggregation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">GroupByAggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groupby</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_functions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></code></a></p>
+<p>General representation of a groupby operation with aggregate functions.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl>
+<dt><strong>relation</strong><span class="classifier">Expression[AbstractSet]</span></dt><dd><p>Relation on which the groupby is applied.</p>
+</dd>
+<dt><strong>groupby</strong><span class="classifier"><cite>Tuple[Union[Constant[ColumnStr], Symbol[ColumnStr]]]</cite></span></dt><dd><p>The list of columns on which to group.</p>
+</dd>
+<dt><strong>aggregate_functions</strong><span class="classifier">Tuple[FunctionApplicationListMember]</span></dt><dd><p>List of aggregate functions to apply.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.type" title="neurolang.relational_algebra.relational_algebra.GroupByAggregation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.GroupByAggregation.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.GroupByAggregation.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Intersection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Intersection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Intersection.type" title="neurolang.relational_algebra.relational_algebra.Intersection.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Intersection.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Intersection.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.LeftNaturalJoin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">LeftNaturalJoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type" title="neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">NAryRelationalAlgebraOperation</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type" title="neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NameColumns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">NameColumns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NameColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p>Give names to the columns of a relational algebra set.</p>
+<p>All columns must be named at once. Each column name must either be a
+<cite>Constant[ColumnStr]</cite> or a <cite>Symbol[ColumnStr]</cite> pointing to a symbolic
+column name resolved when the expression is compiled.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns.type" title="neurolang.relational_algebra.relational_algebra.NameColumns.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NameColumns.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NameColumns.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NameColumns.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NameColumns.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NaturalJoin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">NaturalJoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin.type" title="neurolang.relational_algebra.relational_algebra.NaturalJoin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.NaturalJoin.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Product">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Product" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Product.type" title="neurolang.relational_algebra.relational_algebra.Product.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Product.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Product.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Projection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Projection.type" title="neurolang.relational_algebra.relational_algebra.Projection.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Projection.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Projection.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraOperation</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Definition</span></code></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<p>Mixing that walks through relational algebra expressions and
+executes the operations.</p>
+<p>Relations are expected to be represented
+as objects with the same interface as <code class="xref py py-obj docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>aggregate</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>arithmetic_string_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>concatenate_constant_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>extended_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>prov_arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_difference</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>replace_null</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.aggregate">
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agg_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.arithmetic_string_expression">
+<span class="sig-name descname"><span class="pre">arithmetic_string_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.arithmetic_string_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.concatenate_constant_column">
+<span class="sig-name descname"><span class="pre">concatenate_constant_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">concat_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.concatenate_constant_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.extended_projection">
+<span class="sig-name descname"><span class="pre">extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proj_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.extended_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.prov_arithmetic_operation">
+<span class="sig-name descname"><span class="pre">prov_arithmetic_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arithmetic_op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.prov_arithmetic_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_constant">
+<span class="sig-name descname"><span class="pre">ra_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_difference">
+<span class="sig-name descname"><span class="pre">ra_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">difference</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_difference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin">
+<span class="sig-name descname"><span class="pre">ra_equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equijoin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_intersection">
+<span class="sig-name descname"><span class="pre">ra_intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intersection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_intersection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_left_naturaljoin">
+<span class="sig-name descname"><span class="pre">ra_left_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">naturaljoin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_left_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_name_columns">
+<span class="sig-name descname"><span class="pre">ra_name_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_name_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_naturaljoin">
+<span class="sig-name descname"><span class="pre">ra_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">naturaljoin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_product">
+<span class="sig-name descname"><span class="pre">ra_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_product" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_projection">
+<span class="sig-name descname"><span class="pre">ra_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_column">
+<span class="sig-name descname"><span class="pre">ra_rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rename_column</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_columns">
+<span class="sig-name descname"><span class="pre">ra_rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rename_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_symbol">
+<span class="sig-name descname"><span class="pre">ra_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_union">
+<span class="sig-name descname"><span class="pre">ra_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">union</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.replace_null">
+<span class="sig-name descname"><span class="pre">replace_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.replace_null" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_between_columns">
+<span class="sig-name descname"><span class="pre">selection_between_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_between_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_by_constant">
+<span class="sig-name descname"><span class="pre">selection_by_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_by_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_general_selection_by_constant">
+<span class="sig-name descname"><span class="pre">selection_general_selection_by_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_general_selection_by_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.set_destroy">
+<span class="sig-name descname"><span class="pre">set_destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destroy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.set_destroy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">RenameColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.type" title="neurolang.relational_algebra.relational_algebra.RenameColumn.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumn.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumn.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">RenameColumns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p>Convenient operation for renaming multiple columns at the same time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>relation</strong><span class="classifier">NamedRelationalAlgebraFrozenSet</span></dt><dd><p>The relation whose columns shall be renamed.</p>
+</dd>
+<dt><strong>renames</strong><span class="classifier">tuple of pairs of Constant[ColumnStr] or Symbol[ColumnStr]</span></dt><dd><p>The renamings that should happen, represented as tuples (src, dst).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.type" title="neurolang.relational_algebra.relational_algebra.RenameColumns.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumns.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RenameColumns.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ReplaceConstantColumnStrBySymbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type" title="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>column_str</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str">
+<span class="sig-name descname"><span class="pre">column_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceNull">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ReplaceNull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull.type" title="neurolang.relational_algebra.relational_algebra.ReplaceNull.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceNull.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Selection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Selection.type" title="neurolang.relational_algebra.relational_algebra.Selection.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Selection.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Selection.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">StringArithmeticWalker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<p>Walker translating an Expression with basic arithmetic operations on a
+relation’s columns to its equivalent string representation.</p>
+<p>The expression can refer to the names a relation’s columns or to the
+length of an other constant relation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type" title="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>arithmetic_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>negative_value</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>operation_sum</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_constant_column_str</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_constant_float</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>process_constant_int</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>process_constant_str</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>translatable_numpy_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.arithmetic_operation">
+<span class="sig-name descname"><span class="pre">arithmetic_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.arithmetic_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.negative_value">
+<span class="sig-name descname"><span class="pre">negative_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.negative_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum">
+<span class="sig-name descname"><span class="pre">operation_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_str">
+<span class="sig-name descname"><span class="pre">process_constant_column_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst_col_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_float">
+<span class="sig-name descname"><span class="pre">process_constant_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_float" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_int">
+<span class="sig-name descname"><span class="pre">process_constant_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_str">
+<span class="sig-name descname"><span class="pre">process_constant_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.translatable_numpy_operation">
+<span class="sig-name descname"><span class="pre">translatable_numpy_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.translatable_numpy_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">UnaryRelationalAlgebraOperation</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type" title="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Union">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Union.type" title="neurolang.relational_algebra.relational_algebra.Union.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Union.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Union.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.get_expression_columns">
+<span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">get_expression_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.get_expression_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.int2columnint_constant">
+<span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">int2columnint_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.int2columnint_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.is_arithmetic_operation">
+<span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">is_arithmetic_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.is_arithmetic_operation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the expression is an arithmetic operation function application.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>exp</strong><span class="classifier">Expression</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.is_translatable_operation">
+<span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">is_translatable_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.is_translatable_operation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.str2columnstr_constant">
+<span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">str2columnstr_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.str2columnstr_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.relational_algebra.relational_algebra.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
