@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>neurolang.probabilistic.small_dichotomy_theorem_based_solver module &#8212; neurolang 0.1a11 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+          neurolang</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../tutorial.html">Tutorial</a></li>
+                <li><a href="../auto_examples/index.html">Gallery</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing Neurolang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Get Started with NeuroLang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples of the NeuroLang language environment.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_logic_programming.html">NeuroLang for Logic Programmers</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.small_dichotomy_theorem_based_solver module</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">neurolang.probabilistic.small_dichotomy_theorem_based_solver module</a></li>
+</ul>
+
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <section id="module-neurolang.probabilistic.small_dichotomy_theorem_based_solver">
+<span id="neurolang-probabilistic-small-dichotomy-theorem-based-solver-module"></span><h1>neurolang.probabilistic.small_dichotomy_theorem_based_solver module<a class="headerlink" href="#module-neurolang.probabilistic.small_dichotomy_theorem_based_solver" title="Permalink to this headline">¶</a></h1>
+<p>Implentation of probabilistic query resolution for
+hierarchical queries [^1]. Using this we apply the small dichotomy
+theorem [^1, ^2]:
+Let Q be a conjunctive query without self-joins or a non-repeating relational
+algebra expression. Then:
+* If Q is hierarchical, then P(Q) is in polynomial time, and can be computed
+using only the lifted inference rules for join, negation, union, and
+existential quantifier.</p>
+<ul class="simple">
+<li><p>If Q is not hierarchical, then P(Q) is #P-hard in the size of the database.</p></li>
+</ul>
+<p>[^1]: Robert Fink and Dan Olteanu. A dichotomy for non-repeating queries with
+negation in probabilistic databases. In Proceedings of the 33rd ACM
+SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems, PODS ’14,
+pages 144–155, New York, NY, USA, 2014. ACM.</p>
+<p>[^2]: Nilesh N. Dalvi and Dan Suciu. Efficient query evaluation on
+probabilistic databases. VLDB J., 16(4):523–544, 2007.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.small_dichotomy_theorem_based_solver.extract_atom_sets_and_detect_self_joins">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.small_dichotomy_theorem_based_solver.</span></span><span class="sig-name descname"><span class="pre">extract_atom_sets_and_detect_self_joins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.small_dichotomy_theorem_based_solver.extract_atom_sets_and_detect_self_joins" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.small_dichotomy_theorem_based_solver.is_hierarchical_without_self_joins">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.small_dichotomy_theorem_based_solver.</span></span><span class="sig-name descname"><span class="pre">is_hierarchical_without_self_joins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.small_dichotomy_theorem_based_solver.is_hierarchical_without_self_joins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Let Q be first-order formula. For each variable x denote at(x) the
+set of atoms that contain the variable x. We say that Q is hierarchical
+if forall x, y one of the following holds:
+at(x) ⊆ at(y) or at(x) ⊇ at(y) or at(x) ∩ at(y) = ∅.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.small_dichotomy_theorem_based_solver.solve_marg_query">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.small_dichotomy_theorem_based_solver.</span></span><span class="sig-name descname"><span class="pre">solve_marg_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpl</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.small_dichotomy_theorem_based_solver.solve_marg_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a MARG query on a CP-Logic program.
+Parameters
+———-
+query : Implication</p>
+<blockquote>
+<div><p>Consequent must be of type <cite>Condition</cite>.
+MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>cpl_program<span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.probabilistic.small_dichotomy_theorem_based_solver.solve_succ_query">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.small_dichotomy_theorem_based_solver.</span></span><span class="sig-name descname"><span class="pre">solve_succ_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpl_program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_relational_algebra_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.small_dichotomy_theorem_based_solver.solve_succ_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve a SUCC query on a CP-Logic program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>SUCC query of the form <cite>ans(x) :- P(x)</cite>.</p>
+</dd>
+<dt><strong>cpl_program</strong><span class="classifier">CPLogicProgram</span></dt><dd><p>CP-Logic program on which the query should be solved.</p>
+</dd>
+<dt><strong>run_relational_algebra_solver: bool, default True</strong></dt><dd><p>When true the result’s <cite>relation</cite> attribute is a NamedRelationalAlgebraFrozenSet,
+when false the attribute is the relational algebra expression that
+produces the such set.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
+set.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/gen_api/neurolang.probabilistic.small_dichotomy_theorem_based_solver.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Demian Wassermann et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

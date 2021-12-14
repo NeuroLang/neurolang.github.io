@@ -3,15 +3,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>neurolang.frontend.neurosynth_utils module &#8212; neurolang 0.1a10 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>neurolang.frontend.neurosynth_utils module &#8212; neurolang 0.1a11 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -21,9 +22,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -39,7 +40,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a10</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -121,108 +122,12 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="module-neurolang.frontend.neurosynth_utils">
+  <section id="module-neurolang.frontend.neurosynth_utils">
 <span id="neurolang-frontend-neurosynth-utils-module"></span><h1>neurolang.frontend.neurosynth_utils module<a class="headerlink" href="#module-neurolang.frontend.neurosynth_utils" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.neurosynth_utils.</code><code class="sig-name descname">NeuroSynthHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ns_dataset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Class for the management of data provided by neurosynth.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dataset</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_reported_activations" title="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_reported_activations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ns_reported_activations</span></code></a>()</p></td>
-<td><p>Load a 2d numpy array containing each reported activation in the database.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_term_study_associations" title="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_term_study_associations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ns_term_study_associations</span></code></a>([threshold, …])</p></td>
-<td><p>Load a 2d numpy array containing association between terms and studies based on thresholded tf-idf features in the database.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 78%" />
-<col style="width: 22%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>download_ns_dataset</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>ns_load_dataset</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>ns_study_id_set_from_term</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>ns_study_ids</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>ns_study_tfidf_feature_for_terms</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.dataset">
-<em class="property">property </em><code class="sig-name descname">dataset</code><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.dataset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.download_ns_dataset">
-<em class="property">static </em><code class="sig-name descname">download_ns_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.download_ns_dataset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_load_dataset">
-<code class="sig-name descname">ns_load_dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_load_dataset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_reported_activations">
-<code class="sig-name descname">ns_reported_activations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_reported_activations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a 2d numpy array containing each reported activation in the
-database.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_id_set_from_term">
-<code class="sig-name descname">ns_study_id_set_from_term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">terms</span></em>, <em class="sig-param"><span class="n">frequency_threshold</span><span class="o">=</span><span class="default_value">0.05</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_id_set_from_term" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_ids">
-<code class="sig-name descname">ns_study_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_ids" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_tfidf_feature_for_terms">
-<code class="sig-name descname">ns_study_tfidf_feature_for_terms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">terms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_study_tfidf_feature_for_terms" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_term_study_associations">
-<code class="sig-name descname">ns_term_study_associations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">study_ids</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.NeuroSynthHandler.ns_term_study_associations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a 2d numpy array containing association between terms and studies
-based on thresholded tf-idf features in the database.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="neurolang.frontend.neurosynth_utils.StudyID">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.neurosynth_utils.</code><code class="sig-name descname">StudyID</code><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.StudyID" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.StudyID">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">StudyID</span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.StudyID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -370,9 +275,9 @@ based on thresholded tf-idf features in the database.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="neurolang.frontend.neurosynth_utils.TfIDf">
-<em class="property">class </em><code class="sig-prename descclassname">neurolang.frontend.neurosynth_utils.</code><code class="sig-name descname">TfIDf</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.TfIDf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.TfIDf">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">TfIDf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.TfIDf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
@@ -409,7 +314,205 @@ based on thresholded tf-idf features in the database.</p>
 </table>
 </dd></dl>
 
-</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.fetch_feature_data">
+<span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">fetch_feature_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_study_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.fetch_feature_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download if needed the <cite>tfidf_features.npz</cite> file from Neurosynth and
+load it into a pandas Dataframe. The <cite>tfidf_features</cite> contains feature
+values for different types of “vocabularies”.</p>
+<p>The features dataframe is stored as a compressed, sparse matrix.
+Once loaded and reconstructed into a dense matrix, it contains one row
+per study and one column per label. The associated labels are loaded,
+as well as the study ids, to reconstruct a dataframe of size N x P,
+where N is the number of studies in the Neurosynth dataset, and P is
+the number of words in the vocabulary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_dir</strong><span class="classifier">Path</span></dt><dd><p>the path for the directory where downloaded data should be saved.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier">int, optional</span></dt><dd><p>the neurosynth data version, by default 7</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int, optional</span></dt><dd><p>verbose param for nilearn’s <cite>_fetch_files</cite>, by default 1</p>
+</dd>
+<dt><strong>convert_study_ids</strong><span class="classifier">bool, optional</span></dt><dd><p>if True, cast study ids as <cite>StudyID</cite>, by default False</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>the features dataframe</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.fetch_neurosynth_peak_data">
+<span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">fetch_neurosynth_peak_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_study_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.fetch_neurosynth_peak_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download if needed the <cite>coordinates.tsv.gz</cite> file from Neurosynth and
+load it into a pandas DataFrame.</p>
+<p>The <cite>coordinates.tsv.gz</cite> contains the coordinates for the peaks
+reported by studies in the Neurosynth dataset. It contains one row per
+coordinate reported.</p>
+<p>The metadata for each study is also loaded to include the space in
+which the coordinates are reported. The peak_data dataframe therefore
+has PR rows, PR being the number of reported peaks in the Neurosynth
+dataset.</p>
+<dl class="simple">
+<dt>The columns (for version 7) are:</dt><dd><ul class="simple">
+<li><p>id</p></li>
+<li><p>table_id</p></li>
+<li><p>table_num</p></li>
+<li><p>peak_id</p></li>
+<li><p>space</p></li>
+<li><p>x</p></li>
+<li><p>y</p></li>
+<li><p>z</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_dir</strong><span class="classifier">Path</span></dt><dd><p>the path for the directory where downloaded data should be saved.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier">int, optional</span></dt><dd><p>the neurosynth data version, by default 7</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int, optional</span></dt><dd><p>verbose param for nilearn’s <cite>_fetch_files</cite>, by default 1</p>
+</dd>
+<dt><strong>convert_study_ids</strong><span class="classifier">bool, optional</span></dt><dd><p>if True, cast study ids as <cite>StudyID</cite>, by default False</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>the peak dataframe</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.fetch_study_metadata">
+<span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">fetch_study_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.fetch_study_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download if needed the <cite>metadata.tsv.gz</cite> file from Neurosynth and load
+it into a pandas DataFrame.</p>
+<p>The metadata table contains the metadata for each study. Each study (ID)
+is stored on its own line. These IDs are in the same order as the id
+column of the associated <cite>coordinates.tsv.gz</cite> file, but the rows will
+differ because the coordinates file will contain multiple rows per
+study. They are also in the same order as the rows in the
+<cite>features.npz</cite> files for the same version.</p>
+<p>The metadata will therefore have N rows, N being the number of studies
+in the Neurosynth dataset. The columns (for version 7) are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>id</p></li>
+<li><p>doi</p></li>
+<li><p>space</p></li>
+<li><p>title</p></li>
+<li><p>authors</p></li>
+<li><p>year</p></li>
+<li><p>journal</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_dir</strong><span class="classifier">Path</span></dt><dd><p>the path for the directory where downloaded data should be saved.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier">int, optional</span></dt><dd><p>the neurosynth data version, by default 7</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int, optional</span></dt><dd><p>verbose param for nilearn’s <cite>_fetch_files</cite>, by default 1</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>the study metadata dataframe</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.get_ns_mni_peaks_reported">
+<span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">get_ns_mni_peaks_reported</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_study_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.get_ns_mni_peaks_reported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a dataframe containing the coordinates for the peaks reported by
+studies in the Neurosynth dataset. Coordinates for the peaks are in
+MNI space, with coordinates that are reported in Talaraich space
+converted.</p>
+<p>The resulting dataframe contains one row for each peak reported. Each
+row has 4 columns:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>id</p></li>
+<li><p>x</p></li>
+<li><p>y</p></li>
+<li><p>z</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_dir</strong><span class="classifier">Path</span></dt><dd><p>the path for the directory where downloaded data should be saved.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier">int, optional</span></dt><dd><p>the neurosynth data version, by default 7</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int, optional</span></dt><dd><p>verbose param for nilearn’s <cite>_fetch_files</cite>, by default 1</p>
+</dd>
+<dt><strong>convert_study_ids</strong><span class="classifier">bool, optional</span></dt><dd><p>if True, cast study ids as <cite>StudyID</cite>, by default False</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>the peak dataframe</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.frontend.neurosynth_utils.get_ns_term_study_associations">
+<span class="sig-prename descclassname"><span class="pre">neurolang.frontend.neurosynth_utils.</span></span><span class="sig-name descname"><span class="pre">get_ns_term_study_associations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">pathlib.Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_study_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tfidf_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#neurolang.frontend.neurosynth_utils.get_ns_term_study_associations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a dataframe containing associations between term and studies.
+The dataframe contains one row for each term and study pair from the
+features table in the Neurosynth dataset. With each (term, study) pair
+comes the tfidf value for the term in the study.
+If a tfidf threshold value is passed, only (term, study) associations
+with a tfidf value &gt; tfidf_threshold will be kept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data_dir</strong><span class="classifier">Path</span></dt><dd><p>the path for the directory where downloaded data should be saved.</p>
+</dd>
+<dt><strong>version</strong><span class="classifier">int, optional</span></dt><dd><p>the neurosynth data version, by default 7</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int, optional</span></dt><dd><p>verbose param for nilearn’s <cite>_fetch_files</cite>, by default 1</p>
+</dd>
+<dt><strong>convert_study_ids</strong><span class="classifier">bool, optional</span></dt><dd><p>if True, cast study ids as <cite>StudyID</cite>, by default False</p>
+</dd>
+<dt><strong>tfidf_threshold</strong><span class="classifier">Optional[float], optional</span></dt><dd><p>the minimum tfidf value for the (term, study) associations,
+by default None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>the term association dataframe</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 
 
     </div>
@@ -431,7 +534,7 @@ based on thresholded tf-idf features in the database.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
     </p>
   </div>
 </footer>

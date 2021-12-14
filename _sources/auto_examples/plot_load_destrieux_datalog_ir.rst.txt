@@ -25,10 +25,14 @@ Datalog Intermediate Representation Example based on the Destrieux Atlas
 Uploading the Destrieux left sulci into NeuroLang and
 executing some simple queries.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-23
+.. GENERATED FROM PYTHON SOURCE LINES 10-27
 
 .. code-block:: default
 
+
+    import warnings
+
+    warnings.filterwarnings("ignore")
 
     import nilearn
     import numpy as np
@@ -49,11 +53,11 @@ executing some simple queries.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
 Set up IR shortcuts
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-33
+.. GENERATED FROM PYTHON SOURCE LINES 29-37
 
 .. code-block:: default
 
@@ -72,12 +76,12 @@ Set up IR shortcuts
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-36
+.. GENERATED FROM PYTHON SOURCE LINES 38-40
 
 Load the Destrieux example from nilearn as a fact list
 ------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-42
+.. GENERATED FROM PYTHON SOURCE LINES 40-46
 
 .. code-block:: default
 
@@ -91,28 +95,14 @@ Load the Destrieux example from nilearn as a fact list
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/repo/venv/lib/python3.7/site-packages/numpy/lib/npyio.py:2349: VisibleDeprecationWarning: Reading unicode strings without specifying the encoding argument is deprecated. Set the encoding, use None for the system default.
-      output = genfromtxt(fname, **kwargs)
-    /home/circleci/repo/examples/plot_load_destrieux_datalog_ir.py:39: DeprecationWarning: get_data() is deprecated in favor of get_fdata(), which has a more predictable return type. To obtain get_data() behavior going forward, use numpy.asanyarray(img.dataobj).
-
-    * deprecated from version: 3.0
-    * Will raise <class 'nibabel.deprecator.ExpiredDeprecationError'> as of version: 5.0
-      image_data = image.get_data()
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Load the regions into Voxel-style regions
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-62
+.. GENERATED FROM PYTHON SOURCE LINES 48-66
 
 .. code-block:: default
 
@@ -137,9 +127,10 @@ Load the regions into Voxel-style regions
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_001.png
-    :alt: plot load destrieux datalog ir
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_001.png
+   :alt: plot load destrieux datalog ir
+   :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -149,15 +140,15 @@ Load the regions into Voxel-style regions
  .. code-block:: none
 
 
-    <nilearn.plotting.displays.OrthoSlicer object at 0x7f90c44b88d0>
+    <nilearn.plotting.displays.OrthoSlicer object at 0x7f8b416c4bd0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-64
+.. GENERATED FROM PYTHON SOURCE LINES 67-68
 
 Make the fact list
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-74
+.. GENERATED FROM PYTHON SOURCE LINES 68-78
 
 .. code-block:: default
 
@@ -178,12 +169,12 @@ Make the fact list
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-77
+.. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 Set the datalog interpreter with Region-managing builtins and adding lh, lr
 -----------------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-92
+.. GENERATED FROM PYTHON SOURCE LINES 81-96
 
 .. code-block:: default
 
@@ -209,7 +200,7 @@ Set the datalog interpreter with Region-managing builtins and adding lh, lr
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-98
+.. GENERATED FROM PYTHON SOURCE LINES 97-102
 
 Construct a query
 -----------------------------------------------------------------------------
@@ -217,14 +208,14 @@ superior_sts_l(name, r) :- destrieux('L S_temporal_sup', superior_sts_l),
                      anatomical_superior_of(r, superior_sts_l),
                      lh(name), destrieux(name, r)
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-120
+.. GENERATED FROM PYTHON SOURCE LINES 102-124
 
 .. code-block:: default
 
 
     superior_sts_l = S_('region_l_sts')
     r = S_('r')
-    name = S_('name')
+    name = S_('name_')
 
     r1 = Imp_(
         S_('superior_sts_l')(name, r),
@@ -253,17 +244,17 @@ superior_sts_l(name, r) :- destrieux('L S_temporal_sup', superior_sts_l),
 
  .. code-block:: none
 
-    Implication{λ{S{superior_sts_l: Unknown}: Unknown}(S{name: Unknown}, S{r: Unknown}) ← λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}: Unknown}(λ{S{Destrieux: Unknown}: Unknown}(C{'L S_temporal_sup': str}, S{region_l_sts: Unknown}), λ{S{anatomical_superior_of: Unknown}: Unknown}(S{r: Unknown}, S{region_l_sts: Unknown})), λ{S{lh: Unknown}: Unknown}(S{name: Unknown})), λ{S{Destrieux: Unknown}: Unknown}(S{name: Unknown}, S{r: Unknown}))}
+    Implication{λ{S{superior_sts_l: Unknown}}(S{name_: Unknown}, S{r: Unknown}) ← λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}}(λ{C{and_: typing.Callable[[neurolang.type_system.Unknown, neurolang.type_system.Unknown], neurolang.type_system.Unknown]}}(λ{S{Destrieux: Unknown}}(C{'L S_temporal_sup': str}, S{region_l_sts: Unknown}), λ{S{anatomical_superior_of: Unknown}}(S{r: Unknown}, S{region_l_sts: Unknown})), λ{S{lh: Unknown}}(S{name_: Unknown})), λ{S{Destrieux: Unknown}}(S{name_: Unknown}, S{r: Unknown}))}
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-123
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 Interpreting and running the query
 -----------------------------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-130
+.. GENERATED FROM PYTHON SOURCE LINES 127-134
 
 .. code-block:: default
 
@@ -281,12 +272,12 @@ Interpreting and running the query
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-133
+.. GENERATED FROM PYTHON SOURCE LINES 135-137
 
 Extracting the results from the intermediate representation to a python set
 and plotting the first element of the result
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-141
+.. GENERATED FROM PYTHON SOURCE LINES 137-145
 
 .. code-block:: default
 
@@ -306,313 +297,354 @@ and plotting the first element of the result
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_002.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_002.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_002.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_003.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_003.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_003.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_004.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_004.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_004.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_005.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_005.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_005.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_006.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_006.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_006.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_007.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_007.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_007.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_008.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_008.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_008.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_009.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_009.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_009.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_010.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_010.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_010.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_011.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_011.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_011.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_012.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_012.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_012.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_013.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_013.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_013.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_014.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_014.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_014.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_015.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_015.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_015.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_016.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_016.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_016.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_017.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_017.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_017.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_018.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_018.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_018.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_019.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_019.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_019.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_020.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_020.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_020.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_021.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_021.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_021.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_022.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_022.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_022.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_023.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_023.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_023.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_024.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_024.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_024.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_025.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_025.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_025.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_026.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_026.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_026.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_027.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_027.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_027.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_028.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_028.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_028.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_029.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_029.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_029.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_030.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_030.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_030.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_031.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_031.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_031.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_032.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_032.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_032.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_033.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_033.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_033.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_034.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_034.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_034.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_035.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_035.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_035.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_036.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_036.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_036.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_037.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_037.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_037.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_038.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_038.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_038.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_039.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_039.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_039.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_040.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_040.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_040.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_041.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_041.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_041.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_042.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_042.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_042.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_043.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_043.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_043.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_044.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_044.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_044.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_045.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_045.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_045.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_046.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_046.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_046.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_047.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_047.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_047.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_048.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_048.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_048.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_049.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_049.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_049.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_050.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_050.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_050.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_051.png
-          :alt: plot load destrieux datalog ir
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_051.png
+         :alt: plot load destrieux datalog ir
+         :srcset: /auto_examples/images/sphx_glr_plot_load_destrieux_datalog_ir_051.png
+         :class: sphx-glr-multi-img
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/repo/examples/plot_load_destrieux_datalog_ir.py:139: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
-      plt.figure()
 
 
 
@@ -620,7 +652,7 @@ and plotting the first element of the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  52.537 seconds)
+   **Total running time of the script:** ( 1 minutes  23.152 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_load_destrieux_datalog_ir.py:
