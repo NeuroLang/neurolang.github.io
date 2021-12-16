@@ -256,9 +256,9 @@ remain. We identify the precentral sulcus (PC) as:
 * its principal direction is along the superior-inferior
   axis.
 * no other sulcus satisfying the same conditions is
-  anterior to the PC.
+  posterior to the PC.
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-186
+.. GENERATED FROM PYTHON SOURCE LINES 160-187
 
 .. code-block:: default
 
@@ -271,6 +271,7 @@ remain. We identify the precentral sulcus (PC) as:
             & ~nl.exists(
                 e.other_region,
                 e.left_frontal_lobe_sulcus(e.other_region)
+                & e.principal_direction(e.other_region, "SI")
                 & (e.region != e.other_region)
                 & e.anatomical_posterior_of(e.other_region, e.region),
             )
@@ -300,7 +301,7 @@ remain. We identify the precentral sulcus (PC) as:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-200
+.. GENERATED FROM PYTHON SOURCE LINES 188-201
 
 Example 3: Query the Superior Frontal Sulcus
 ............................................
@@ -316,7 +317,7 @@ as a sulcus which:
 * no other sulcus satisfying the same conditions is
   superior to the SFS.
 
-.. GENERATED FROM PYTHON SOURCE LINES 200-223
+.. GENERATED FROM PYTHON SOURCE LINES 201-224
 
 .. code-block:: default
 
@@ -358,7 +359,7 @@ as a sulcus which:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.505 seconds)
+   **Total running time of the script:** ( 0 minutes  13.667 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_sulcal_queries.py:

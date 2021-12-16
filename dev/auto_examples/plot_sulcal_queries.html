@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sulcal Identification Query Example in Neurolang &#8212; neurolang 0.1a12.dev1+g2cd7108 documentation</title>
+    <title>Sulcal Identification Query Example in Neurolang &#8212; neurolang 0.1a12.dev2+g282457a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -42,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev1+g2cd7108</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev2+g282457a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -301,7 +301,7 @@ remain. We identify the precentral sulcus (PC) as:</p>
 <li><p>its principal direction is along the superior-inferior
 axis.</p></li>
 <li><p>no other sulcus satisfying the same conditions is
-anterior to the PC.</p></li>
+posterior to the PC.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">named_sulcus</span><span class="p">[</span><span class="s2">&quot;L precentral sulcus&quot;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
@@ -310,6 +310,7 @@ anterior to the PC.</p></li>
         <span class="o">&amp;</span> <span class="o">~</span><span class="n">nl</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span>
             <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span>
             <span class="n">e</span><span class="o">.</span><span class="n">left_frontal_lobe_sulcus</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
+            <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">principal_direction</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span> <span class="s2">&quot;SI&quot;</span><span class="p">)</span>
             <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">region</span> <span class="o">!=</span> <span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">)</span>
             <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">anatomical_posterior_of</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">other_region</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">),</span>
         <span class="p">)</span>
@@ -366,7 +367,7 @@ superior to the SFS.</p></li>
     <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_sulcal_queries_002.png" srcset="../_images/sphx_glr_plot_sulcal_queries_002.png" alt="plot sulcal queries" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.505 seconds)</p>
+<img src="../_images/sphx_glr_plot_sulcal_queries_002.png" srcset="../_images/sphx_glr_plot_sulcal_queries_002.png" alt="plot sulcal queries" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.667 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-sulcal-queries-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/dd9b7c027b1df0b4a2d3fba1892c35c0/plot_sulcal_queries.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sulcal_queries.py</span></code></a></p>
@@ -404,7 +405,7 @@ superior to the SFS.</p></li>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 16 Dec 2021, 16:47:57</p>
+    <p style="margin-top: -10px;">on 16 Dec 2021, 16:49:23</p>
 </div>
   </body>
 </html>
