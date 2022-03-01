@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.relational_algebra.relational_algebra module &#8212; neurolang 0.1a12.dev10+g5132a6e documentation</title>
+    <title>neurolang.relational_algebra.relational_algebra module &#8212; neurolang 0.1a12.dev11+ga4c14ba documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -40,7 +40,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev10+g5132a6e</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev11+ga4c14ba</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -1784,32 +1784,40 @@ as objects with the same interface as <code class="xref py py-obj docutils liter
 <col style="width: 20%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>column_str</strong></p></td>
+<tr class="row-odd"><td><p><strong>column_int</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>column_str</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
+<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_int">
+<span class="sig-name descname"><span class="pre">column_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str">
 <span class="sig-name descname"><span class="pre">column_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str" title="Permalink to this definition">¶</a></dt>
@@ -1987,22 +1995,25 @@ length of an other constant relation.</p>
 <tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>process_constant_column_str</strong></p></td>
+<tr class="row-even"><td><p><strong>process_constant_column_int</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>process_constant_float</strong></p></td>
+<tr class="row-odd"><td><p><strong>process_constant_column_str</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>process_constant_int</strong></p></td>
+<tr class="row-even"><td><p><strong>process_constant_float</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>process_constant_str</strong></p></td>
+<tr class="row-odd"><td><p><strong>process_constant_int</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>translatable_numpy_operation</strong></p></td>
+<tr class="row-even"><td><p><strong>process_constant_str</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>translatable_numpy_operation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -2020,6 +2031,11 @@ length of an other constant relation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum">
 <span class="sig-name descname"><span class="pre">operation_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_int">
+<span class="sig-name descname"><span class="pre">process_constant_column_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cst_col_int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_int" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2228,7 +2244,7 @@ length of an other constant relation.</p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 24 Feb 2022, 20:10:26</p>
+    <p style="margin-top: -10px;">on 01 Mar 2022, 19:47:48</p>
 </div>
   </body>
 </html>

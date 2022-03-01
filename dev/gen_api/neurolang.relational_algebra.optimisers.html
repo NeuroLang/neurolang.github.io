@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.relational_algebra.optimisers module &#8212; neurolang 0.1a12.dev10+g5132a6e documentation</title>
+    <title>neurolang.relational_algebra.optimisers module &#8212; neurolang 0.1a12.dev11+ga4c14ba documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -40,7 +40,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev10+g5132a6e</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev11+ga4c14ba</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -431,9 +431,101 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.optimisers.</span></span><span class="sig-name descname"><span class="pre">PushUnnamedSelectionsUp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>invert_selection_order</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_above_name_columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_above_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>standardize_projected_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.invert_selection_order">
+<span class="sig-name descname"><span class="pre">invert_selection_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.invert_selection_order" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_name_columns">
+<span class="sig-name descname"><span class="pre">push_selection_above_name_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_name_columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_projection">
+<span class="sig-name descname"><span class="pre">push_selection_above_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_projection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.standardize_projected_column">
+<span class="sig-name descname"><span class="pre">standardize_projected_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.standardize_projected_column" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.optimisers.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections" title="neurolang.relational_algebra.optimisers.RewriteSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.RewriteSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification" title="neurolang.relational_algebra.optimisers.ProductSimplification"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.ProductSimplification</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.PushInSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.RenameOptimizations</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections" title="neurolang.relational_algebra.optimisers.RewriteSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.RewriteSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification" title="neurolang.relational_algebra.optimisers.ProductSimplification"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.ProductSimplification</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.PushInSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.RenameOptimizations</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
 <p>Mixing that optimises through relational algebra expressions by
 rewriting.
 equi-selection/product compositions into equijoins.</p>
@@ -499,112 +591,124 @@ equi-selection/product compositions into equijoins.</p>
 <tr class="row-even"><td><p><strong>get_arity</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>merge_nested_rename_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>invert_selection_order</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>merge_rename_column_group_by</strong></p></td>
+<tr class="row-even"><td><p><strong>merge_nested_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>merge_rename_columns_extended_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>merge_rename_column_group_by</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>merge_selections</strong></p></td>
+<tr class="row-even"><td><p><strong>merge_rename_columns_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-odd"><td><p><strong>merge_selections</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>process_expression</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
+<tr class="row-even"><td><p><strong>process_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_rename_past_groupby</strong></p></td>
+<tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_rename_past_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_rename_past_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_rename_past_selection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_rename_past_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_rename_past_selection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_groupby</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_above_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_left</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_above_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>remove_trivial_rename</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_between_columns_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_by_constant_on_product</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_on_equijoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>remove_trivial_rename</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_on_equijoin_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_between_columns_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_push_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_by_constant_on_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_selection_swap</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_on_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_shorten_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_on_equijoin_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>simplify_projection_extended_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_push_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>simplify_renames_name</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_selection_swap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>single_product</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_shorten_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>sort_formula_args</strong></p></td>
+<tr class="row-odd"><td><p><strong>simplify_projection_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>split_relations_column</strong></p></td>
+<tr class="row-even"><td><p><strong>simplify_renames_name</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>single_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>sort_formula_args</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split_relations_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>standardize_projected_column</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>swap_formula_args</strong></p></td>
@@ -1146,7 +1250,7 @@ equi-selection/product compositions into equijoins.</p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 24 Feb 2022, 20:10:26</p>
+    <p style="margin-top: -10px;">on 01 Mar 2022, 19:47:48</p>
 </div>
   </body>
 </html>
