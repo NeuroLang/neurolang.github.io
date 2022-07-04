@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.solver module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.solver module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.solver">
-<span id="neurolang-solver-module"></span><h1>neurolang.solver module<a class="headerlink" href="#module-neurolang.solver" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-solver-module"></span><h1>neurolang.solver module<a class="headerlink" href="#module-neurolang.solver" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.solver.BooleanOperationsSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">BooleanOperationsSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanOperationsSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -137,11 +138,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -155,10 +152,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -243,9 +236,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.solver.BooleanRewriteSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">BooleanRewriteSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.BooleanRewriteSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -253,11 +246,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -274,10 +263,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>bring_constants_up_left</strong></p></td>
 <td></td>
@@ -370,13 +355,13 @@
 non-constant arguments by giving priority to the evaluation of
 the first argument.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">FunctionApplication</span></dt><dd><p>A OR or AND binary operator application.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>FunctionApplication</dt><dd><p>Same expression passed as parameter where the first
 argument was walked on and the second argument was
@@ -403,11 +388,11 @@ did not modify its expression.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.solver.FirstOrderLogicSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">FirstOrderLogicSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.FirstOrderLogicSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver" title="neurolang.solver.BooleanRewriteSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.BooleanRewriteSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver" title="neurolang.solver.BooleanOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.BooleanOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.GenericSolver" title="neurolang.solver.GenericSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.solver.GenericSolver</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.solver.BooleanRewriteSolver" title="neurolang.solver.BooleanRewriteSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanRewriteSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.BooleanOperationsSolver" title="neurolang.solver.BooleanOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.NumericOperationsSolver" title="neurolang.solver.NumericOperationsSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">NumericOperationsSolver</span></code></a>, <a class="reference internal" href="#neurolang.solver.GenericSolver" title="neurolang.solver.GenericSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">GenericSolver</span></code></a></p>
 <p>WIP non-recursive first order logic query solver.
 For now predicates work only on constants on the symbols table</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
@@ -418,11 +403,7 @@ For now predicates work only on constants on the symbols table</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -439,10 +420,6 @@ For now predicates work only on constants on the symbols table</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
 <td></td>
@@ -595,9 +572,9 @@ as keys and the active domain for each symbol as value.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.solver.GenericSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">GenericSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.GenericSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.TypedSymbolTableEvaluator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionBasicEvaluator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TypedSymbolTableEvaluator</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
@@ -608,11 +585,7 @@ as keys and the active domain for each symbol as value.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -626,10 +599,6 @@ as keys and the active domain for each symbol as value.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
 <td></td>
@@ -704,15 +673,15 @@ as keys and the active domain for each symbol as value.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="neurolang.solver.NeuroLangPredicateException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">NeuroLangPredicateException</span></span><a class="headerlink" href="#neurolang.solver.NeuroLangPredicateException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.solver.NumericOperationsSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.solver.</span></span><span class="sig-name descname"><span class="pre">NumericOperationsSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.solver.NumericOperationsSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -720,11 +689,7 @@ as keys and the active domain for each symbol as value.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -735,10 +700,6 @@ as keys and the active domain for each symbol as value.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast_binary</strong></p></td>
 <td></td>
@@ -803,12 +764,12 @@ as keys and the active domain for each symbol as value.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

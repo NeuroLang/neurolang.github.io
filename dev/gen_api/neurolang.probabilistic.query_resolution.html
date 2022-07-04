@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.query_resolution module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.probabilistic.query_resolution module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.probabilistic.query_resolution">
-<span id="neurolang-probabilistic-query-resolution-module"></span><h1>neurolang.probabilistic.query_resolution module<a class="headerlink" href="#module-neurolang.probabilistic.query_resolution" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-probabilistic-query-resolution-module"></span><h1>neurolang.probabilistic.query_resolution module<a class="headerlink" href="#module-neurolang.probabilistic.query_resolution" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">FloatArithmeticSimplifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -137,11 +138,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -155,10 +152,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -203,7 +196,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.QueryBasedProbFactToDetRule">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">QueryBasedProbFactToDetRule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.QueryBasedProbFactToDetRule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <p>Translate a query-based probabilistic fact to two rules. A deterministic
 rule that takes care of inferring the set of probabilistic tuples and their
 probabilities and a probabilistic rule that transforms the result from the
@@ -218,7 +211,7 @@ P(x) : _f2_ :- _f1_(_f2_, x)</p>
 expose the resulting <cite>_f1_</cite> relation to the user, as it is not part of
 her program.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -226,11 +219,7 @@ her program.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -244,10 +233,6 @@ her program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -292,9 +277,9 @@ her program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.RAQueryOptimiser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">RAQueryOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.RAQueryOptimiser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.PushInSelections</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.RenameOptimizations</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants" title="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants</span></code></a>, <a class="reference internal" href="#neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier" title="neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushInSelections</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">RenameOptimizations</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants" title="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants</span></code></a>, <a class="reference internal" href="#neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier" title="neurolang.probabilistic.query_resolution.FloatArithmeticSimplifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">FloatArithmeticSimplifier</span></code></a>, <a class="reference internal" href="neurolang.relational_algebra.optimisers.html#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -302,11 +287,7 @@ her program.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -320,10 +301,6 @@ her program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>convert_extended_projection_2_projection</strong></p></td>
 <td></td>
@@ -500,7 +477,7 @@ her program.</p>
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">generate_provenance_query_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_relational_algebra_solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ProbSemiringToRelationalAlgebraSolver[typing.Any]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.generate_provenance_query_solver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a walker that solves a RAP query.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>symbol_table</strong><span class="classifier">Mapping</span></dt><dd><p>Mapping from symbols to probabilistic or deterministic sets to
 solve the query.</p>
@@ -522,7 +499,7 @@ Default is <cite>ProbSemiringToRelationalAlgebraSolver</cite>.</p>
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">lift_solve_marg_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">succ_solver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.lift_solve_marg_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve a MARG query on a CP-Logic program.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>Consequent must be of type <cite>Condition</cite>.
 MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
@@ -531,7 +508,7 @@ MARG query of the form <cite>ans(x) :- P(x)</cite>.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>ProvenanceAlgebraSet</dt><dd><p>Provenance set labelled with probabilities for each tuple in the result
 set.</p>
@@ -543,7 +520,7 @@ set.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.query_resolution.reintroduce_unified_head_terms">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">reintroduce_unified_head_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.relational_algebra.relational_algebra.html#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><span class="pre">neurolang.logic.Implication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unified_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><span class="pre">neurolang.logic.Implication</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="neurolang.relational_algebra.relational_algebra.html#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><span class="pre">neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.reintroduce_unified_head_terms" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.query_resolution.</span></span><span class="sig-name descname"><span class="pre">reintroduce_unified_head_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.relational_algebra.relational_algebra.html#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><span class="pre">RelationalAlgebraOperation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><span class="pre">Implication</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unified_query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><span class="pre">Implication</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="neurolang.relational_algebra.relational_algebra.html#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><span class="pre">RelationalAlgebraOperation</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.query_resolution.reintroduce_unified_head_terms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reintroduce terms that have been removed through unification of the query.</p>
 <p>There are two such cases:</p>
 <p>1. A head variable was repeated, such as in <cite>ans(y, y)</cite> and the extensional
@@ -576,12 +553,12 @@ case a constant column is added to the solution set.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

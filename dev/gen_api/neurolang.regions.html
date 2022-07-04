@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.regions module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.regions module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.regions">
-<span id="neurolang-regions-module"></span><h1>neurolang.regions module<a class="headerlink" href="#module-neurolang.regions" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-regions-module"></span><h1>neurolang.regions module<a class="headerlink" href="#module-neurolang.regions" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.ExplicitVBR">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">ExplicitVBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prebuild_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">VolumetricBrainRegion</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>aabb_tree</strong></dt><dd></dd>
 <dt><strong>bounding_box</strong></dt><dd></dd>
@@ -139,11 +140,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.ExplicitVBR.to_ijk" title="neurolang.regions.ExplicitVBR.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -154,10 +151,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
 <td></td>
@@ -229,9 +222,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.ExplicitVBROverlay">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">ExplicitVBROverlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prebuild_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ExplicitVBROverlay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ExplicitVBR" title="neurolang.regions.ExplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ExplicitVBR</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ExplicitVBR" title="neurolang.regions.ExplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExplicitVBR</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>aabb_tree</strong></dt><dd></dd>
 <dt><strong>bounding_box</strong></dt><dd></dd>
@@ -241,11 +234,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -256,10 +245,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
 <td></td>
@@ -297,9 +282,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.ImplicitVBR">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">ImplicitVBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.ImplicitVBR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">VolumetricBrainRegion</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bounding_box</strong></dt><dd></dd>
 <dt><strong>center</strong></dt><dd></dd>
@@ -308,11 +293,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.ImplicitVBR.to_ijk" title="neurolang.regions.ImplicitVBR.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -323,10 +304,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
 <td></td>
@@ -364,9 +341,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.PlanarVolume">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">PlanarVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PlanarVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ImplicitVBR</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImplicitVBR</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bounding_box</strong></dt><dd></dd>
 <dt><strong>center</strong></dt><dd></dd>
@@ -375,11 +352,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.PlanarVolume.to_ijk" title="neurolang.regions.PlanarVolume.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -390,10 +363,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
 <td></td>
@@ -437,9 +406,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.PointSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">PointSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_ijk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prebuild_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.PointSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">VolumetricBrainRegion</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>aabb_tree</strong></dt><dd></dd>
 <dt><strong>bounding_box</strong></dt><dd></dd>
@@ -449,11 +418,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.PointSet.to_ijk" title="neurolang.regions.PointSet.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -464,10 +429,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
 <td></td>
@@ -541,7 +502,7 @@ corresponding to the affine matrix transform</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">Region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.Region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bounding_box</strong></dt><dd></dd>
 <dt><strong>center</strong></dt><dd></dd>
@@ -551,10 +512,6 @@ corresponding to the affine matrix transform</p>
 </dl>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 74%" />
-<col style="width: 26%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
 <td></td>
@@ -586,9 +543,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.SphericalVolume">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">SphericalVolume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.SphericalVolume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ImplicitVBR</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.ImplicitVBR" title="neurolang.regions.ImplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImplicitVBR</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bounding_box</strong></dt><dd></dd>
 <dt><strong>center</strong></dt><dd></dd>
@@ -598,11 +555,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.SphericalVolume.to_ijk" title="neurolang.regions.SphericalVolume.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -613,10 +566,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
 <td></td>
@@ -662,9 +611,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.regions.VolumetricBrainRegion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.regions.</span></span><span class="sig-name descname"><span class="pre">VolumetricBrainRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.regions.VolumetricBrainRegion" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.Region" title="neurolang.regions.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.Region</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.regions.Region" title="neurolang.regions.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bounding_box</strong></dt><dd></dd>
 <dt><strong>center</strong></dt><dd></dd>
@@ -673,11 +622,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.regions.VolumetricBrainRegion.to_ijk" title="neurolang.regions.VolumetricBrainRegion.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -688,10 +633,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>from_spatial_image_label</strong></p></td>
 <td></td>
@@ -793,12 +734,12 @@ corresponding to the affine matrix transform</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

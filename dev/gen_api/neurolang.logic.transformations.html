@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.logic.transformations module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.logic.transformations module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.logic.transformations">
-<span id="neurolang-logic-transformations-module"></span><h1>neurolang.logic.transformations module<a class="headerlink" href="#module-neurolang.logic.transformations" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-logic-transformations-module"></span><h1>neurolang.logic.transformations module<a class="headerlink" href="#module-neurolang.logic.transformations" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.CheckConjunctiveQueryWithNegation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">CheckConjunctiveQueryWithNegation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.CheckConjunctiveQueryWithNegation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -137,11 +138,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -155,10 +152,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -245,9 +238,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.CollapseConjunctions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">CollapseConjunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.CollapseConjunctions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseConjunctionsMixin" title="neurolang.logic.transformations.CollapseConjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.CollapseConjunctionsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseConjunctionsMixin" title="neurolang.logic.transformations.CollapseConjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollapseConjunctionsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -255,11 +248,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -273,10 +262,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -314,9 +299,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.CollapseConjunctionsMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">CollapseConjunctionsMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.CollapseConjunctionsMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -324,11 +309,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -342,10 +323,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -382,9 +359,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.CollapseDisjunctions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">CollapseDisjunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.CollapseDisjunctions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseDisjunctionsMixin" title="neurolang.logic.transformations.CollapseDisjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.CollapseDisjunctionsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseDisjunctionsMixin" title="neurolang.logic.transformations.CollapseDisjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollapseDisjunctionsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -392,11 +369,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -410,10 +383,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>disjunction</strong></p></td>
 <td></td>
@@ -451,9 +420,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.CollapseDisjunctionsMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">CollapseDisjunctionsMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.CollapseDisjunctionsMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -461,11 +430,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -479,10 +444,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>disjunction</strong></p></td>
 <td></td>
@@ -519,10 +480,10 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DesambiguateQuantifiedVariables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DesambiguateQuantifiedVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DesambiguateQuantifiedVariables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Replaces each quantified variale to a fresh one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -530,11 +491,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -548,10 +505,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>implication</strong></p></td>
 <td></td>
@@ -622,9 +575,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeConjunctions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DistributeConjunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeConjunctions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -632,11 +585,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -650,10 +599,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>distribute</strong></p></td>
 <td></td>
@@ -724,9 +669,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeDisjunctions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DistributeDisjunctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeDisjunctions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -734,11 +679,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -752,10 +693,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>distribute</strong></p></td>
 <td></td>
@@ -826,9 +763,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DistributeImplicationsWithConjunctiveHeads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -836,11 +773,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -854,10 +787,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 83%" />
-<col style="width: 17%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>distribute_implication_with_conjunctive_head</strong></p></td>
 <td></td>
@@ -894,9 +823,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.DistributeUniversalQuantifiers">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">DistributeUniversalQuantifiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.DistributeUniversalQuantifiers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -904,11 +833,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -922,10 +847,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>distribute_universal_quantifier</strong></p></td>
 <td></td>
@@ -962,10 +883,10 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.EliminateImplications">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">EliminateImplications</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.EliminateImplications" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Removes the implication ocurrences of an expression.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -973,11 +894,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -991,10 +908,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -1049,9 +962,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.ExtractBoundVariables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">ExtractBoundVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.ExtractBoundVariables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1059,11 +972,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1077,10 +986,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -1148,9 +1053,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.ExtractConjunctiveQueryWithNegation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">ExtractConjunctiveQueryWithNegation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.ExtractConjunctiveQueryWithNegation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1158,11 +1063,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1176,10 +1077,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -1263,9 +1160,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.ExtractFOLFreeVariables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">ExtractFOLFreeVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.ExtractFOLFreeVariables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.ExtractFreeVariablesWalker" title="neurolang.logic.expression_processing.ExtractFreeVariablesWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.ExtractFreeVariablesWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.ExtractFreeVariablesWalker" title="neurolang.logic.expression_processing.ExtractFreeVariablesWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1273,11 +1170,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1291,10 +1184,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -1358,11 +1247,11 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.FONegELogicExpression">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">FONegELogicExpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.FONegELogicExpression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Walk a logic expression verifying that it is only in
 FO Neg Existential.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1370,11 +1259,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1388,10 +1273,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>abort_implication</strong></p></td>
 <td></td>
@@ -1454,10 +1335,10 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.FactorQuantifiersMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">FactorQuantifiersMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.FactorQuantifiersMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <p>Factor quantifiers up on conjunctions and disjunctions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1465,11 +1346,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1483,10 +1360,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction_with_quantifiers</strong></p></td>
 <td></td>
@@ -1531,9 +1404,9 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.FreshenVariablesWhenQuantified">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">FreshenVariablesWhenQuantified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">free_variables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.FreshenVariablesWhenQuantified" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1541,11 +1414,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1559,10 +1428,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -1625,9 +1490,9 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeConjunction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">GuaranteeConjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeConjunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.IdentityWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IdentityWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1635,11 +1500,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1653,10 +1514,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>guarantee_conjunction</strong></p></td>
 <td></td>
@@ -1693,9 +1550,9 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.GuaranteeDisjunction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">GuaranteeDisjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.GuaranteeDisjunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.IdentityWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">IdentityWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1703,11 +1560,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1721,10 +1574,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>guarantee_conjunction</strong></p></td>
 <td></td>
@@ -1761,9 +1610,9 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.LogicExpressionWalker">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">LogicExpressionWalker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.LogicExpressionWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1771,11 +1620,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1789,10 +1634,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -1869,9 +1710,9 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MakeExistentialsImplicit">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MakeExistentialsImplicit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MakeExistentialsImplicit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1879,11 +1720,7 @@ FO Neg Existential.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1897,10 +1734,6 @@ FO Neg Existential.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>existential</strong></p></td>
 <td></td>
@@ -1955,11 +1788,11 @@ FO Neg Existential.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveNegationsToAtoms">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MoveNegationsToAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MoveNegationsToAtoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin" title="neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin" title="neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveNegationsToAtomsSimpleOperationsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Moves the negations the furthest possible to the atoms.
 Assumes that there are no implications in the expression.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -1967,11 +1800,7 @@ Assumes that there are no implications in the expression.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -1985,10 +1814,6 @@ Assumes that there are no implications in the expression.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>negated_conjunction</strong></p></td>
 <td></td>
@@ -2060,13 +1885,13 @@ Assumes that there are no implications in the expression.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveNegationsToAtomsInFONegE">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MoveNegationsToAtomsInFONegE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MoveNegationsToAtomsInFONegE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin" title="neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.FONegELogicExpression" title="neurolang.logic.transformations.FONegELogicExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.FONegELogicExpression</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin" title="neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveNegationsToAtomsSimpleOperationsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.FONegELogicExpression" title="neurolang.logic.transformations.FONegELogicExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">FONegELogicExpression</span></code></a></p>
 <p>Moves the negations the furthest possible to the atoms.
 Assumes that there are no implications in the expression.
 Expressions assumed to be in FO with existential and negation
 only.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2074,11 +1899,7 @@ only.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2092,10 +1913,6 @@ only.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>abort_implication</strong></p></td>
 <td></td>
@@ -2165,11 +1982,11 @@ only.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MoveNegationsToAtomsSimpleOperationsMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MoveNegationsToAtomsSimpleOperationsMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <p>Moves the negations the furthest possible to the atoms. On
 conjunction, disjunction, and negation operations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2177,11 +1994,7 @@ conjunction, disjunction, and negation operations.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2195,10 +2008,6 @@ conjunction, disjunction, and negation operations.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>negated_conjunction</strong></p></td>
 <td></td>
@@ -2251,12 +2060,12 @@ conjunction, disjunction, and negation operations.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveQuantifiersUp">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MoveQuantifiersUp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MoveQuantifiersUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.FactorQuantifiersMixin" title="neurolang.logic.transformations.FactorQuantifiersMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.FactorQuantifiersMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.FactorQuantifiersMixin" title="neurolang.logic.transformations.FactorQuantifiersMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FactorQuantifiersMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Moves the quantifiers up in order to format the expression
 in prenex normal form. Assumes the expression contains no implications
 and the variables of the quantifiers are not repeated.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2264,11 +2073,7 @@ and the variables of the quantifiers are not repeated.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2282,10 +2087,6 @@ and the variables of the quantifiers are not repeated.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction_with_quantifiers</strong></p></td>
 <td></td>
@@ -2354,13 +2155,13 @@ and the variables of the quantifiers are not repeated.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.MoveQuantifiersUpFONegE">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">MoveQuantifiersUpFONegE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.MoveQuantifiersUpFONegE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.FactorQuantifiersMixin" title="neurolang.logic.transformations.FactorQuantifiersMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.FactorQuantifiersMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.FONegELogicExpression" title="neurolang.logic.transformations.FONegELogicExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.FONegELogicExpression</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.FactorQuantifiersMixin" title="neurolang.logic.transformations.FactorQuantifiersMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">FactorQuantifiersMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.FONegELogicExpression" title="neurolang.logic.transformations.FONegELogicExpression"><code class="xref py py-class docutils literal notranslate"><span class="pre">FONegELogicExpression</span></code></a></p>
 <p>Moves the quantifiers up in order to format the expression
 in prenex normal form. Assumes the expression contains no implications,
 that the variables of the quantifiers are not repeated, and that
 the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2368,11 +2169,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2386,10 +2183,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>abort_implication</strong></p></td>
 <td></td>
@@ -2448,9 +2241,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.Noop">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">Noop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.Noop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2458,11 +2251,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2476,10 +2265,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -2582,9 +2367,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.PushExistentialsDown">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">PushExistentialsDown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.PushExistentialsDown" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseConjunctionsMixin" title="neurolang.logic.transformations.CollapseConjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.CollapseConjunctionsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.CollapseDisjunctionsMixin" title="neurolang.logic.transformations.CollapseDisjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.CollapseDisjunctionsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.CollapseConjunctionsMixin" title="neurolang.logic.transformations.CollapseConjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollapseConjunctionsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.CollapseDisjunctionsMixin" title="neurolang.logic.transformations.CollapseDisjunctionsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollapseDisjunctionsMixin</span></code></a>, <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2592,11 +2377,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2610,10 +2391,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -2706,9 +2483,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveDuplicatedConjunctsDisjuncts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2716,11 +2493,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2734,10 +2507,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -2782,12 +2551,12 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.conjunction">
-<span class="sig-name descname"><span class="pre">conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conjunction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Conjunction" title="neurolang.logic.Conjunction"><span class="pre">neurolang.logic.Conjunction</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Conjunction" title="neurolang.logic.Conjunction"><span class="pre">neurolang.logic.Conjunction</span></a></span></span><a class="headerlink" href="#neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.conjunction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conjunction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Conjunction" title="neurolang.logic.Conjunction"><span class="pre">Conjunction</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.Conjunction" title="neurolang.logic.Conjunction"><span class="pre">Conjunction</span></a></span></span><a class="headerlink" href="#neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.conjunction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.disjunction">
-<span class="sig-name descname"><span class="pre">disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disjunction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">neurolang.logic.Disjunction</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">neurolang.logic.Disjunction</span></span></span><a class="headerlink" href="#neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.disjunction" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">disjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disjunction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Disjunction</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Disjunction</span></span></span><a class="headerlink" href="#neurolang.logic.transformations.RemoveDuplicatedConjunctsDisjuncts.disjunction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -2800,9 +2569,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveExistentialOnVariables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveExistentialOnVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables_to_eliminate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveExistentialOnVariables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2810,11 +2579,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2828,10 +2593,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>existential</strong></p></td>
 <td></td>
@@ -2886,9 +2647,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveExistentialPredicates">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveExistentialPredicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveExistentialPredicates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2896,11 +2657,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -2914,10 +2671,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>existential_predicate</strong></p></td>
 <td></td>
@@ -2972,9 +2725,9 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveTrivialOperations">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveTrivialOperations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveTrivialOperations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -2982,11 +2735,7 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -3000,10 +2749,6 @@ the query is in FO with Negation Existential as only quantifier.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>implication</strong></p></td>
 <td></td>
@@ -3074,11 +2819,11 @@ the query is in FO with Negation Existential as only quantifier.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.RemoveUniversalPredicates">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">RemoveUniversalPredicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.RemoveUniversalPredicates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <p>Changes the universal predicates by equivalent expressions
 using existential quantifiers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -3086,11 +2831,7 @@ using existential quantifiers.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -3104,10 +2845,6 @@ using existential quantifiers.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -3162,9 +2899,9 @@ using existential quantifiers.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.ReplaceFreeSymbolWalker">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">ReplaceFreeSymbolWalker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_replacements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.ReplaceFreeSymbolWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ReplaceSymbolWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ReplaceSymbolWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -3172,11 +2909,7 @@ using existential quantifiers.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -3190,10 +2923,6 @@ using existential quantifiers.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -3239,9 +2968,9 @@ using existential quantifiers.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.UsedQuantifiers">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">UsedQuantifiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.transformations.UsedQuantifiers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -3249,11 +2978,7 @@ using existential quantifiers.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -3267,10 +2992,6 @@ using existential quantifiers.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -3364,7 +3085,7 @@ using existential quantifiers.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.logic.transformations.nary_op_has_duplicated_formulas">
-<span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">nary_op_has_duplicated_formulas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nary_op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">neurolang.logic.NaryLogicOperator</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.logic.transformations.nary_op_has_duplicated_formulas" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.logic.transformations.</span></span><span class="sig-name descname"><span class="pre">nary_op_has_duplicated_formulas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nary_op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NaryLogicOperator</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.logic.transformations.nary_op_has_duplicated_formulas" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -3389,12 +3110,12 @@ using existential quantifiers.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

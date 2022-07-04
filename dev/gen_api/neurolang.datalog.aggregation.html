@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.datalog.aggregation module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.datalog.aggregation module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,29 +124,26 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.aggregation">
-<span id="neurolang-datalog-aggregation-module"></span><h1>neurolang.datalog.aggregation module<a class="headerlink" href="#module-neurolang.datalog.aggregation" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-aggregation-module"></span><h1>neurolang.datalog.aggregation module<a class="headerlink" href="#module-neurolang.datalog.aggregation" title="Permalink to this heading">¶</a></h1>
 <p>Support for aggregations according to <a class="reference internal" href="#rcbb4831e31d9-1" id="id1">[1]</a>. For instance
 the encoding of <code class="docutils literal notranslate"><span class="pre">P(x,</span> <span class="pre">count&lt;y&gt;):-Q(x,</span> <span class="pre">y)</span></code> in intermediate
 representation <code class="docutils literal notranslate"><span class="pre">Implication(P(x,</span> <span class="pre">AggregationApplication(count,</span> <span class="pre">y),</span> <span class="pre">Q(x,</span> <span class="pre">y))</span></code>
 produces the set <code class="docutils literal notranslate"><span class="pre">P(x,</span> <span class="pre">z)</span></code> where <code class="docutils literal notranslate"><span class="pre">z</span></code> is the number of tuples <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">...)</span></code>
 in the set <code class="docutils literal notranslate"><span class="pre">Q</span></code>.</p>
-<dl class="citation">
-<dt class="label" id="rcbb4831e31d9-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>T. J. Green, S. S. Huang, B. T. Loo, W. Zhou,
+<div role="list" class="citation-list">
+<div class="citation" id="rcbb4831e31d9-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>T. J. Green, S. S. Huang, B. T. Loo, W. Zhou,
 Datalog and Recursive Query Processing.
 FNT in Databases. 5, 105–195 (2012).</p>
-</dd>
-</dl>
+</div>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.aggregation.BuiltinAggregationMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></span><span class="sig-name descname"><span class="pre">BuiltinAggregationMixin</span></span><a class="headerlink" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_max" title="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_max</span></code></a></p></td>
 <td><p></p></td>
@@ -153,16 +151,15 @@ FNT in Databases. 5, 105–195 (2012).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_mean" title="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_mean</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_sum" title="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_sum</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_std" title="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_std</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_sum" title="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_sum</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 64%" />
-<col style="width: 36%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>function_count</strong></p></td>
 <td></td>
@@ -177,6 +174,11 @@ FNT in Databases. 5, 105–195 (2012).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_mean">
 <span class="sig-name descname"><span class="pre">constant_mean</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">C{mean:</span> <span class="pre">typing.Callable[[neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown],</span> <span class="pre">neurolang.type_system.Unknown]}</span></em><a class="headerlink" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_mean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_std">
+<span class="sig-name descname"><span class="pre">constant_std</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">C{std:</span> <span class="pre">typing.Callable[[neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown,</span> <span class="pre">neurolang.type_system.Unknown],</span> <span class="pre">neurolang.type_system.Unknown]}</span></em><a class="headerlink" href="#neurolang.datalog.aggregation.BuiltinAggregationMixin.constant_std" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -199,10 +201,6 @@ FNT in Databases. 5, 105–195 (2012).</p>
 class. Can be used with StratifiedChase.</p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
 <td></td>
@@ -235,9 +233,9 @@ class. Can be used with StratifiedChase.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.aggregation.DatalogWithAggregationMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></span><span class="sig-name descname"><span class="pre">DatalogWithAggregationMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.DatalogWithAggregationMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -245,11 +243,7 @@ class. Can be used with StratifiedChase.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -263,10 +257,6 @@ class. Can be used with StratifiedChase.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -303,9 +293,9 @@ class. Can be used with StratifiedChase.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.aggregation.TranslateToLogicWithAggregation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.aggregation.</span></span><span class="sig-name descname"><span class="pre">TranslateToLogicWithAggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.aggregation.TranslateToLogicWithAggregation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.TranslateToLogic" title="neurolang.datalog.expressions.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.expressions.TranslateToLogic</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.expressions.html#neurolang.datalog.expressions.TranslateToLogic" title="neurolang.datalog.expressions.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -313,11 +303,7 @@ class. Can be used with StratifiedChase.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -331,10 +317,6 @@ class. Can be used with StratifiedChase.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 86%" />
-<col style="width: 14%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_conjunction</strong></p></td>
 <td></td>
@@ -413,12 +395,12 @@ class. Can be used with StratifiedChase.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

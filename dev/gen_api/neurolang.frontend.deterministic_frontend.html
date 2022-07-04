@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.frontend.deterministic_frontend module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.frontend.deterministic_frontend module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.frontend.deterministic_frontend">
-<span id="neurolang-frontend-deterministic-frontend-module"></span><h1>neurolang.frontend.deterministic_frontend module<a class="headerlink" href="#module-neurolang.frontend.deterministic_frontend" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-frontend-deterministic-frontend-module"></span><h1>neurolang.frontend.deterministic_frontend module<a class="headerlink" href="#module-neurolang.frontend.deterministic_frontend" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.ExplicitVBR">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.deterministic_frontend.</span></span><span class="sig-name descname"><span class="pre">ExplicitVBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prebuild_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.ExplicitVBR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.regions.html#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.VolumetricBrainRegion</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.regions.html#neurolang.regions.VolumetricBrainRegion" title="neurolang.regions.VolumetricBrainRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">VolumetricBrainRegion</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>aabb_tree</strong></dt><dd></dd>
 <dt><strong>bounding_box</strong></dt><dd></dd>
@@ -139,11 +140,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.deterministic_frontend.ExplicitVBR.to_ijk" title="neurolang.frontend.deterministic_frontend.ExplicitVBR.to_ijk"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code></a>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -154,10 +151,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
 <td></td>
@@ -229,9 +222,9 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.ExplicitVBROverlay">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.deterministic_frontend.</span></span><span class="sig-name descname"><span class="pre">ExplicitVBROverlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voxels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affine_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prebuild_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.ExplicitVBROverlay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.regions.html#neurolang.regions.ExplicitVBR" title="neurolang.regions.ExplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.regions.ExplicitVBR</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.regions.html#neurolang.regions.ExplicitVBR" title="neurolang.regions.ExplicitVBR"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExplicitVBR</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>aabb_tree</strong></dt><dd></dd>
 <dt><strong>bounding_box</strong></dt><dd></dd>
@@ -241,11 +234,7 @@ corresponding to the affine matrix transform</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_ijk</span></code>(affine)</p></td>
 <td><p>return ijk voxels coordinates corresponding to the affine matrix transform</p></td>
@@ -256,10 +245,6 @@ corresponding to the affine matrix transform</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 76%" />
-<col style="width: 24%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_tree</strong></p></td>
 <td></td>
@@ -297,12 +282,12 @@ corresponding to the affine matrix transform</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.NeurolangDL">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.deterministic_frontend.</span></span><span class="sig-name descname"><span class="pre">NeurolangDL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program_ir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.NeurolangDL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryBuilderDatalog</span></code></a></p>
 <p>Deterministic Datalog Frontend for Neurolang.
 QueryBuilderDatalog with a RegionFrontendDatalogSolver program
 intermediate representation</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_program</span></code></dt><dd><p>Returns the list of expressions that have currently been</p>
 </dd>
@@ -326,11 +311,7 @@ intermediate representation</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_atlas_set</span></code>(name, atlas_labels, spatial_image)</p></td>
 <td><p>Creates an atlas set: 1- for each region specified by a label and name in atlas_labels, creates associated ExplicitVBR and symbols Tuple[region_name: str, Region] 2- groups regions in an AbstractSet[Tuple[str, Region]] symbol with specified name</p></td>
@@ -407,10 +388,6 @@ intermediate representation</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>magic_sets_rewrite_program</strong></p></td>
 <td></td>
@@ -422,11 +399,11 @@ intermediate representation</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.Symbol">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.deterministic_frontend.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.query_resolution_expressions.Expression</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
 <p>A Symbol represents an atomic Expression. Its is
 the most recurrent element of queries</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><a class="reference internal" href="#neurolang.frontend.deterministic_frontend.Symbol.expression" title="neurolang.frontend.deterministic_frontend.Symbol.expression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expression</span></code></a></dt><dd><p>Projects to symbol property</p>
 </dd>
@@ -442,11 +419,7 @@ the most recurrent element of queries</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Returns a FunctionApplication expression, applied to the <a href="#id1"><span class="problematic" id="id2">*</span></a>args cast as Constant if not Symbol or Expression <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs are ignored</p></td>
@@ -457,10 +430,6 @@ the most recurrent element of queries</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 63%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>do</strong></p></td>
 <td></td>
@@ -469,34 +438,34 @@ the most recurrent element of queries</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.Symbol.expression">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">neurolang.expressions.Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.expression" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">expression</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.expression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Projects to symbol property</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.Symbol.neurolang_symbol">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neurolang_symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">neurolang.expressions.Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.neurolang_symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neurolang_symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.neurolang_symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns backend symbol</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.Symbol.symbol">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">neurolang.expressions.Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Symbol</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns backend symbol from symbol_table</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.deterministic_frontend.Symbol.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.value" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></em><a class="headerlink" href="#neurolang.frontend.deterministic_frontend.Symbol.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any, returns value corresponding to the symbol</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt>Any</dt><dd><p>see description</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>ValueError</dt><dd><p>if Symbol doesn’t have a python value</p>
 </dd>
@@ -529,12 +498,12 @@ the most recurrent element of queries</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>neurolang.probabilistic.expression_processing module &#8212; neurolang 0.1a12.dev16+g252feaf documentation</title>
+    <title>neurolang.probabilistic.expression_processing module &#8212; neurolang 0.1a12.dev17+g205f97c documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -15,6 +15,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev16+g252feaf</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev17+g205f97c</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -123,13 +124,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.probabilistic.expression_processing">
-<span id="neurolang-probabilistic-expression-processing-module"></span><h1>neurolang.probabilistic.expression_processing module<a class="headerlink" href="#module-neurolang.probabilistic.expression_processing" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-probabilistic-expression-processing-module"></span><h1>neurolang.probabilistic.expression_processing module<a class="headerlink" href="#module-neurolang.probabilistic.expression_processing" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.expression_processing.add_to_union">
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">add_to_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_add</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expression_processing.add_to_union" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extend <cite>Union</cite> with another <cite>Union</cite> or an iterable of <cite>Expression</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>union: Union</strong></dt><dd><p>The initial <cite>Union</cite> to which expressions will be added.</p>
 </dd>
@@ -137,7 +138,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>new_union: Union</dt><dd><p>A new <cite>Union</cite> containing the new expressions.</p>
 </dd>
@@ -171,7 +172,7 @@
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">get_probchoice_variable_equalities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pchoice_pred_symbs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expression_processing.get_probchoice_variable_equalities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infer variable equalities from repeated probabilistic choice predicates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>predicates</strong><span class="classifier">iterable of predicates</span></dt><dd><p>Predicates that are part of a conjunction.</p>
 </dd>
@@ -179,7 +180,7 @@
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>set of pairs of symbol variables</dt><dd><p>Each pair in the set represents the equality between two variables.
 Variables within the pair are sorted in lexicographical order.</p>
@@ -205,7 +206,7 @@ P(y)</cite> can only be true if <cite>x == y</cite>.</p>
 <p>An optional filter set of functors can be passed to only return the ones in
 the set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>predicates</strong><span class="classifier">iterable of predicates</span></dt><dd><p>Predicates that should be grouped.</p>
 </dd>
@@ -213,7 +214,7 @@ the set.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>dict of functors to set of predicates</dt><dd></dd>
 </dl>
@@ -241,14 +242,15 @@ the set.</p>
 <p><img src="../_images/math/9c68b0efe467b7d2b6f85395c8a971bd1f1e8832.png" alt="\left( \alpha \text{P}(x_1, \dots, x_n)  \right) \gets \top"/></p>
 </div><p>with a single atom in its head which is true with probability
 <img class="math" src="../_images/math/2f5aa019312e1bbc969deab8dca8b00f76025404.png" alt="\alpha"/>.</p>
-<dl class="citation">
-<dt class="label" id="r274d26717fef-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Vennekens, Joost, Marc Denecker, and Maurice Bruynooghe. “CP-Logic:
+<div role="list" class="citation-list">
+<div class="citation" id="r274d26717fef-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Vennekens, Joost, Marc Denecker, and Maurice Bruynooghe. “CP-Logic:
 A Language of Causal Probabilistic Events and Its Relation to Logic
 Programming.” Theory and Practice of Logic Programming 9, no. 3 (May
 2009): 245–308. <a class="reference external" href="https://doi.org/10.1017/S1471068409003767">https://doi.org/10.1017/S1471068409003767</a>.</p>
-</dd>
-</dl>
+</div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -273,7 +275,7 @@ Programming.” Theory and Practice of Logic Programming 9, no. 3 (May
 single instances enforncing the definition that the probability
 that two different grounded choice predicates are mutually exclusive.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">predicate or conjunction of predicates</span></dt><dd><p>The query for which the conjunction is constructed.</p>
 </dd>
@@ -282,7 +284,7 @@ conjunction corresponding to the given query.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Conjunctive query</dt><dd><p>conjunctive query rewritten for choice predicate implementation.</p>
 </dd>
@@ -328,12 +330,12 @@ conjunction corresponding to the given query.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 05 May 2022, 12:44:41</p>
+    <p style="margin-top: -10px;">on 04 Jul 2022, 14:21:35</p>
 </div>
   </body>
 </html>
