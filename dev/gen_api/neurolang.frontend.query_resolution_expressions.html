@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.frontend.query_resolution_expressions module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.frontend.query_resolution_expressions module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -81,6 +82,45 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend.query_resolution_expressions module</a><ul>
 <li><a class="reference internal" href="#query-resolution-expression">Query Resolution Expression</a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.All"><code class="docutils literal notranslate"><span class="pre">All</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Exists"><code class="docutils literal notranslate"><span class="pre">Exists</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression"><code class="docutils literal notranslate"><span class="pre">Expression</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.do"><code class="docutils literal notranslate"><span class="pre">Expression.do()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.help"><code class="docutils literal notranslate"><span class="pre">Expression.help()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.type"><code class="docutils literal notranslate"><span class="pre">Expression.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Implication"><code class="docutils literal notranslate"><span class="pre">Implication</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Operation"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Operation.operator_repr"><code class="docutils literal notranslate"><span class="pre">Operation.operator_repr</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Query"><code class="docutils literal notranslate"><span class="pre">Query</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.RightImplication"><code class="docutils literal notranslate"><span class="pre">RightImplication</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.exists"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.exists()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.fact"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.forall"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.forall()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.negation"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.right_implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.right_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.symbol"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.type"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.walk_function_application()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.op_bind"><code class="docutils literal notranslate"><span class="pre">op_bind()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.rop_bind"><code class="docutils literal notranslate"><span class="pre">rop_bind()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -114,6 +154,45 @@
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend.query_resolution_expressions module</a><ul>
 <li><a class="reference internal" href="#query-resolution-expression">Query Resolution Expression</a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.All"><code class="docutils literal notranslate"><span class="pre">All</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Exists"><code class="docutils literal notranslate"><span class="pre">Exists</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression"><code class="docutils literal notranslate"><span class="pre">Expression</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.do"><code class="docutils literal notranslate"><span class="pre">Expression.do()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.help"><code class="docutils literal notranslate"><span class="pre">Expression.help()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression.type"><code class="docutils literal notranslate"><span class="pre">Expression.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Implication"><code class="docutils literal notranslate"><span class="pre">Implication</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Operation"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Operation.operator_repr"><code class="docutils literal notranslate"><span class="pre">Operation.operator_repr</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Query"><code class="docutils literal notranslate"><span class="pre">Query</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.RightImplication"><code class="docutils literal notranslate"><span class="pre">RightImplication</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.exists"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.exists()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.fact"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.forall"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.forall()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.negation"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.right_implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.right_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.symbol"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.type"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.walk_function_application()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.op_bind"><code class="docutils literal notranslate"><span class="pre">op_bind()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.rop_bind"><code class="docutils literal notranslate"><span class="pre">rop_bind()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -136,6 +215,7 @@
 <p>Declares FrontEnd Expression class and subclasses.
 Those classes are used to build Datalog programs
 in an ergonomic manner, and attention is paid to their representation</p>
+</section>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.All">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">All</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol"><span class="pre">Symbol</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.All" title="Permalink to this definition">¶</a></dt>
@@ -146,7 +226,7 @@ enunciates a truth</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -181,7 +261,7 @@ enunciates a truth</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -209,7 +289,7 @@ enunciates a truth</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Expression">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">Expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Expression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Generic class representing expressions in the front end
 An expression can be anything, from a symbol to an operation
 to a query</p>
@@ -246,13 +326,13 @@ to a query</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Expression.help">
-<span class="sig-name descname"><span class="pre">help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Expression.help" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">help</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Expression.help" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns help based on Expression’s subclass</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Expression.type">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.10)"><span class="pre">Type</span></a></em><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Expression.type" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.11)"><span class="pre">Type</span></a></em><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Expression.type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns expression’s type</p>
 </dd></dl>
 
@@ -268,7 +348,7 @@ fact ← True, e.g. Even(2) ← True</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -304,7 +384,7 @@ consequent if antecedent</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -331,14 +411,14 @@ consequent if antecedent</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Operation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">Operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.10)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Operation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">Operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.11)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
 <p>An Operation is an Expression representing the
 application of an operator to a tuple of arguments</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -379,7 +459,7 @@ with x an int represents even numbers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -416,7 +496,7 @@ In the logic context, used to denote a constraint</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 </dl>
 </dd>
@@ -443,7 +523,7 @@ In the logic context, used to denote a constraint</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Symbol">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
 <p>A Symbol represents an atomic Expression. Its is
 the most recurrent element of queries</p>
@@ -456,7 +536,7 @@ the most recurrent element of queries</p>
 </dd>
 <dt><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.symbol" title="neurolang.frontend.query_resolution_expressions.Symbol.symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbol</span></code></a></dt><dd><p>Returns backend symbol from symbol_table</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 <dt><a class="reference internal" href="#neurolang.frontend.query_resolution_expressions.Symbol.value" title="neurolang.frontend.query_resolution_expressions.Symbol.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a></dt><dd><p>If any, returns value corresponding to the symbol</p>
 </dd>
@@ -501,7 +581,7 @@ the most recurrent element of queries</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.Symbol.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></em><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Symbol.value" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a></em><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.Symbol.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any, returns value corresponding to the symbol</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -611,7 +691,7 @@ frontend Expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant">
-<span class="sig-name descname"><span class="pre">constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -656,7 +736,7 @@ frontend Expression</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application">
-<span class="sig-name descname"><span class="pre">walk_function_application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">walk_function_application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -671,7 +751,6 @@ frontend Expression</p>
 <span class="sig-prename descclassname"><span class="pre">neurolang.frontend.query_resolution_expressions.</span></span><span class="sig-name descname"><span class="pre">rop_bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.query_resolution_expressions.rop_bind" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </section>
 
 
@@ -694,12 +773,12 @@ frontend Expression</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

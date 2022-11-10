@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.frontend.datalog.sugar package &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.frontend.datalog.sugar package &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -80,6 +81,65 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend.datalog.sugar package</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.Column.type"><code class="docutils literal notranslate"><span class="pre">Column.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn.conversion"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn.conversion()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn.type"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.constant"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.others"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.others()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.s_sugar"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.s_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.symbol"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.type"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.SelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">SelectByFirstColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.SelectByFirstColumn.type"><code class="docutils literal notranslate"><span class="pre">SelectByFirstColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.application_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.application_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.conjunction_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.conjunction_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.implication_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.implication_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.type"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities.head_constants_to_equalities"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities.head_constants_to_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities.type"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.conditional_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.conditional_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.rewrite_conditional_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.rewrite_conditional_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.type"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.within_language_prob_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.within_language_prob_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.type"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn.replace_s_getattr_by_first_column"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn.replace_s_getattr_by_first_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn.type"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.application_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.application_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.conjunction_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.conjunction_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.implication_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.implication_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.implication_select_by_left_head"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.implication_select_by_left_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.type"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.type</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -114,6 +174,65 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend.datalog.sugar package</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.Column.type"><code class="docutils literal notranslate"><span class="pre">Column.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn.conversion"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn.conversion()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn.type"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.constant"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.others"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.others()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.s_sugar"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.s_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.symbol"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.RecogniseSSugar.type"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.SelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">SelectByFirstColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.SelectByFirstColumn.type"><code class="docutils literal notranslate"><span class="pre">SelectByFirstColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.application_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.application_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.conjunction_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.conjunction_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.implication_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.implication_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms.type"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities.head_constants_to_equalities"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities.head_constants_to_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities.type"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.conditional_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.conditional_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.rewrite_conditional_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.rewrite_conditional_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.type"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin.within_language_prob_query"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin.within_language_prob_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.type"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn.replace_s_getattr_by_first_column"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn.replace_s_getattr_by_first_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn.type"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.application_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.application_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.conjunction_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.conjunction_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.implication_column_sugar"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.implication_column_sugar()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.implication_select_by_left_head"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.implication_select_by_left_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn.type"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn.type</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -661,14 +780,22 @@ sugar syntax <cite>(P &#64; y)[x] = Q[x]</cite>.</p>
 <tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>query_based_probfact_wannabe</strong></p></td>
+<tr class="row-odd"><td><p><strong>query_based_probchoice_wannabe</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>query_based_probfact_wannabe</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe">
+<span class="sig-name descname"><span class="pre">query_based_probchoice_wannabe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probchoice_wannabe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe">
 <span class="sig-name descname"><span class="pre">query_based_probfact_wannabe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impl</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin.query_based_probfact_wannabe" title="Permalink to this definition">¶</a></dt>
@@ -855,7 +982,26 @@ where first argument is the sugared element.</p>
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html">neurolang.frontend.datalog.sugar.spatial module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html">neurolang.frontend.datalog.sugar.spatial module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.any_other_expression"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.any_other_expression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.get_distance_upper_bound"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.get_distance_upper_bound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.get_range_pred_for_coord"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.get_range_pred_for_coord()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.get_var_to_euclidean_equality"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.get_var_to_euclidean_equality()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.implication"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.implication()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.DetectEuclideanDistanceBoundMatrix.type"><code class="docutils literal notranslate"><span class="pre">DetectEuclideanDistanceBoundMatrix.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin.euclidean_spatial_bound"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin.euclidean_spatial_bound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin.safe_range_pred_to_coord_set"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin.safe_range_pred_to_coord_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin.solve_spatial_bound"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin.solve_spatial_bound()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin.type"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.spatial.html#neurolang.frontend.datalog.sugar.spatial.TranslateEuclideanDistanceBoundMatrixMixin.upper_bound_to_max_dist"><code class="docutils literal notranslate"><span class="pre">TranslateEuclideanDistanceBoundMatrixMixin.upper_bound_to_max_dist()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -881,12 +1027,12 @@ where first argument is the sugared element.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

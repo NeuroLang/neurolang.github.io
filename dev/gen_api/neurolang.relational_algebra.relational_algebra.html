@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.relational_algebra.relational_algebra module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.relational_algebra.relational_algebra module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,172 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a></li>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ColumnInt"><code class="docutils literal notranslate"><span class="pre">ColumnInt</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ColumnStr"><code class="docutils literal notranslate"><span class="pre">ColumnStr</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.columns"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Destroy"><code class="docutils literal notranslate"><span class="pre">Destroy</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Destroy.type"><code class="docutils literal notranslate"><span class="pre">Destroy.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Difference"><code class="docutils literal notranslate"><span class="pre">Difference</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Difference.type"><code class="docutils literal notranslate"><span class="pre">Difference.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.EquiJoin"><code class="docutils literal notranslate"><span class="pre">EquiJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.EquiJoin.type"><code class="docutils literal notranslate"><span class="pre">EquiJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.columns"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.type"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin"><code class="docutils literal notranslate"><span class="pre">FullOuterNaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">FullOuterNaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember"><code class="docutils literal notranslate"><span class="pre">FunctionApplicationListMember</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type"><code class="docutils literal notranslate"><span class="pre">FunctionApplicationListMember.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.columns"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.type"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Intersection"><code class="docutils literal notranslate"><span class="pre">Intersection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Intersection.type"><code class="docutils literal notranslate"><span class="pre">Intersection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin"><code class="docutils literal notranslate"><span class="pre">LeftNaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">LeftNaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns"><code class="docutils literal notranslate"><span class="pre">NameColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns.columns"><code class="docutils literal notranslate"><span class="pre">NameColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns.type"><code class="docutils literal notranslate"><span class="pre">NameColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin"><code class="docutils literal notranslate"><span class="pre">NaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">NaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns"><code class="docutils literal notranslate"><span class="pre">NumberColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns.columns"><code class="docutils literal notranslate"><span class="pre">NumberColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns.type"><code class="docutils literal notranslate"><span class="pre">NumberColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Product"><code class="docutils literal notranslate"><span class="pre">Product</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Product.type"><code class="docutils literal notranslate"><span class="pre">Product.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Projection"><code class="docutils literal notranslate"><span class="pre">Projection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Projection.type"><code class="docutils literal notranslate"><span class="pre">Projection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.aggregate"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.aggregate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.arithmetic_string_expression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.arithmetic_string_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.concatenate_constant_column"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.concatenate_constant_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.extended_projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.prov_arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.prov_arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_difference"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_difference()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_full_outer_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_full_outer_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_intersection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_intersection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_name_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_name_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_number_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_product"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_column"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_symbol"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_union"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.replace_null"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_between_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_between_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_by_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_by_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_general_selection_by_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_general_selection_by_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.set_destroy"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.set_destroy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn"><code class="docutils literal notranslate"><span class="pre">RenameColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.columns"><code class="docutils literal notranslate"><span class="pre">RenameColumn.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.type"><code class="docutils literal notranslate"><span class="pre">RenameColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns"><code class="docutils literal notranslate"><span class="pre">RenameColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.columns"><code class="docutils literal notranslate"><span class="pre">RenameColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.type"><code class="docutils literal notranslate"><span class="pre">RenameColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_int"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.column_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.column_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull"><code class="docutils literal notranslate"><span class="pre">ReplaceNull</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull.type"><code class="docutils literal notranslate"><span class="pre">ReplaceNull.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Selection"><code class="docutils literal notranslate"><span class="pre">Selection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Selection.type"><code class="docutils literal notranslate"><span class="pre">Selection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.negative_value"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.negative_value()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.operation_sum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_int"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_column_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_str"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_column_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_float"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_float()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_int"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_str"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.translatable_numpy_operation"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.translatable_numpy_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Union"><code class="docutils literal notranslate"><span class="pre">Union</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Union.type"><code class="docutils literal notranslate"><span class="pre">Union.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.get_expression_columns"><code class="docutils literal notranslate"><span class="pre">get_expression_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.int2columnint_constant"><code class="docutils literal notranslate"><span class="pre">int2columnint_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.is_arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">is_arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.is_translatable_operation"><code class="docutils literal notranslate"><span class="pre">is_translatable_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.str2columnstr_constant"><code class="docutils literal notranslate"><span class="pre">str2columnstr_constant()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +275,172 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a></li>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.relational_algebra module</a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ColumnInt"><code class="docutils literal notranslate"><span class="pre">ColumnInt</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ColumnStr"><code class="docutils literal notranslate"><span class="pre">ColumnStr</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.columns"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ConcatenateConstantColumn.type"><code class="docutils literal notranslate"><span class="pre">ConcatenateConstantColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Destroy"><code class="docutils literal notranslate"><span class="pre">Destroy</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Destroy.type"><code class="docutils literal notranslate"><span class="pre">Destroy.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Difference"><code class="docutils literal notranslate"><span class="pre">Difference</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Difference.type"><code class="docutils literal notranslate"><span class="pre">Difference.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.EquiJoin"><code class="docutils literal notranslate"><span class="pre">EquiJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.EquiJoin.type"><code class="docutils literal notranslate"><span class="pre">EquiJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.columns"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.type"><code class="docutils literal notranslate"><span class="pre">ExtendedProjection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin"><code class="docutils literal notranslate"><span class="pre">FullOuterNaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">FullOuterNaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember"><code class="docutils literal notranslate"><span class="pre">FunctionApplicationListMember</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FunctionApplicationListMember.type"><code class="docutils literal notranslate"><span class="pre">FunctionApplicationListMember.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.columns"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.GroupByAggregation.type"><code class="docutils literal notranslate"><span class="pre">GroupByAggregation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Intersection"><code class="docutils literal notranslate"><span class="pre">Intersection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Intersection.type"><code class="docutils literal notranslate"><span class="pre">Intersection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin"><code class="docutils literal notranslate"><span class="pre">LeftNaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.LeftNaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">LeftNaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NAryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">NAryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns"><code class="docutils literal notranslate"><span class="pre">NameColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns.columns"><code class="docutils literal notranslate"><span class="pre">NameColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NameColumns.type"><code class="docutils literal notranslate"><span class="pre">NameColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin"><code class="docutils literal notranslate"><span class="pre">NaturalJoin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NaturalJoin.type"><code class="docutils literal notranslate"><span class="pre">NaturalJoin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns"><code class="docutils literal notranslate"><span class="pre">NumberColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns.columns"><code class="docutils literal notranslate"><span class="pre">NumberColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.NumberColumns.type"><code class="docutils literal notranslate"><span class="pre">NumberColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Product"><code class="docutils literal notranslate"><span class="pre">Product</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Product.type"><code class="docutils literal notranslate"><span class="pre">Product.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Projection"><code class="docutils literal notranslate"><span class="pre">Projection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Projection.type"><code class="docutils literal notranslate"><span class="pre">Projection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.aggregate"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.aggregate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.arithmetic_string_expression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.arithmetic_string_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.concatenate_constant_column"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.concatenate_constant_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.extended_projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.prov_arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.prov_arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_difference"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_difference()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_full_outer_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_full_outer_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_intersection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_intersection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_name_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_name_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_number_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_product"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_column"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_rename_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_symbol"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_union"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.ra_union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.replace_null"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_between_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_between_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_by_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_by_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.selection_general_selection_by_constant"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.selection_general_selection_by_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.set_destroy"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.set_destroy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn"><code class="docutils literal notranslate"><span class="pre">RenameColumn</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.columns"><code class="docutils literal notranslate"><span class="pre">RenameColumn.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumn.type"><code class="docutils literal notranslate"><span class="pre">RenameColumn.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns"><code class="docutils literal notranslate"><span class="pre">RenameColumns</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.columns"><code class="docutils literal notranslate"><span class="pre">RenameColumns.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RenameColumns.type"><code class="docutils literal notranslate"><span class="pre">RenameColumns.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_int"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.column_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.column_str"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.column_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceConstantColumnStrBySymbol.type"><code class="docutils literal notranslate"><span class="pre">ReplaceConstantColumnStrBySymbol.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull"><code class="docutils literal notranslate"><span class="pre">ReplaceNull</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.ReplaceNull.type"><code class="docutils literal notranslate"><span class="pre">ReplaceNull.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Selection"><code class="docutils literal notranslate"><span class="pre">Selection</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Selection.type"><code class="docutils literal notranslate"><span class="pre">Selection.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.negative_value"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.negative_value()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.operation_sum"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.operation_sum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_int"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_column_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_column_str"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_column_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_float"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_float()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_int"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_int()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.process_constant_str"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.process_constant_str()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.translatable_numpy_operation"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.translatable_numpy_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.StringArithmeticWalker.type"><code class="docutils literal notranslate"><span class="pre">StringArithmeticWalker.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.columns"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation.columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.UnaryRelationalAlgebraOperation.type"><code class="docutils literal notranslate"><span class="pre">UnaryRelationalAlgebraOperation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Union"><code class="docutils literal notranslate"><span class="pre">Union</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Union.type"><code class="docutils literal notranslate"><span class="pre">Union.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.get_expression_columns"><code class="docutils literal notranslate"><span class="pre">get_expression_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.int2columnint_constant"><code class="docutils literal notranslate"><span class="pre">int2columnint_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.is_arithmetic_operation"><code class="docutils literal notranslate"><span class="pre">is_arithmetic_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.is_translatable_operation"><code class="docutils literal notranslate"><span class="pre">is_translatable_operation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.str2columnstr_constant"><code class="docutils literal notranslate"><span class="pre">str2columnstr_constant()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -127,7 +458,7 @@
 <span id="neurolang-relational-algebra-relational-algebra-module"></span><h1>neurolang.relational_algebra.relational_algebra module<a class="headerlink" href="#module-neurolang.relational_algebra.relational_algebra" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">BinaryRelationalAlgebraOperation</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">BinaryRelationalAlgebraOperation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.RelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraOperation</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -177,13 +508,13 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.Column">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.Column" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ColumnInt">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ColumnInt</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ColumnInt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
 <p>Refer to a relational algebra set’s column by its index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
@@ -224,7 +555,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ColumnStr">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">ColumnStr</span></span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ColumnStr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.Column" title="neurolang.relational_algebra.relational_algebra.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
 <p>Refer to a named relational algebra set’s column by its name.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -653,6 +984,50 @@ of <a class="reference internal" href="#r249225d65f38-1" id="id2">[1]</a>.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.ExtendedProjection.type">
 <span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.ExtendedProjection.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.relational_algebra.</span></span><span class="sig-name descname"><span class="pre">FullOuterNaturalJoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relation_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation" title="neurolang.relational_algebra.relational_algebra.BinaryRelationalAlgebraOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">BinaryRelationalAlgebraOperation</span></code></a></p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code>(*args)</p></td>
+<td><p>Builds a new expression using a tuple of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type" title="neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unapply</span></code>()</p></td>
+<td><p>Returns a tuple of parameters used to build the expression.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>cast</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>change_type</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>columns</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_wrapped_attribute</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.FullOuterNaturalJoin.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1295,55 +1670,58 @@ as objects with the same interface as <code class="xref py py-obj docutils liter
 <tr class="row-even"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_full_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_number_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_number_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>replace_null</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1386,6 +1764,11 @@ as objects with the same interface as <code class="xref py py-obj docutils liter
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin">
 <span class="sig-name descname"><span class="pre">ra_equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">equijoin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_equijoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_full_outer_naturaljoin">
+<span class="sig-name descname"><span class="pre">ra_full_outer_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">naturaljoin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.relational_algebra.RelationalAlgebraSolver.ra_full_outer_naturaljoin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2027,12 +2410,12 @@ length of an other constant relation.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

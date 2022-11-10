@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.probabilistic.shattering module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.probabilistic.shattering module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,29 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.shattering module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.shattering module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals.flip_ne_arguments"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals.flip_ne_arguments()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals.type"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction.selection_conjunction"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction.selection_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.shatter_inequalities"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.shatter_inequalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.shatter_symbol"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.shatter_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.type"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.atom_to_constant_to_RA_conditions"><code class="docutils literal notranslate"><span class="pre">atom_to_constant_to_RA_conditions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.conditions_per_symbol"><code class="docutils literal notranslate"><span class="pre">conditions_per_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.sets_per_symbol"><code class="docutils literal notranslate"><span class="pre">sets_per_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.shatter_constants"><code class="docutils literal notranslate"><span class="pre">shatter_constants()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +132,29 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.shattering module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.shattering module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals.flip_ne_arguments"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals.flip_ne_arguments()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.NormalizeNotEquals.type"><code class="docutils literal notranslate"><span class="pre">NormalizeNotEquals.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction.selection_conjunction"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction.selection_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.RelationalAlgebraSelectionConjunction.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSelectionConjunction.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.shatter_inequalities"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.shatter_inequalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.shatter_symbol"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.shatter_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.ShatterEqualities.type"><code class="docutils literal notranslate"><span class="pre">ShatterEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.atom_to_constant_to_RA_conditions"><code class="docutils literal notranslate"><span class="pre">atom_to_constant_to_RA_conditions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.conditions_per_symbol"><code class="docutils literal notranslate"><span class="pre">conditions_per_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.sets_per_symbol"><code class="docutils literal notranslate"><span class="pre">sets_per_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.shattering.shatter_constants"><code class="docutils literal notranslate"><span class="pre">shatter_constants()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -348,7 +393,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.shattering.atom_to_constant_to_RA_conditions">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">atom_to_constant_to_RA_conditions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionApplication</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.10)"><span class="pre">set</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.shattering.atom_to_constant_to_RA_conditions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.shattering.</span></span><span class="sig-name descname"><span class="pre">atom_to_constant_to_RA_conditions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionApplication</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.11)"><span class="pre">set</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.shattering.atom_to_constant_to_RA_conditions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -388,12 +433,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

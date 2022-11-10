@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.utils.server.engines module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.utils.server.engines module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,37 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.engines module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.engines module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.atlas"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.create"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.key"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.atlas"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.create"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.key"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet.add_engine"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet.add_engine()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet.engine"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet.engine()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.atlas"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.brain_mask"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.brain_mask</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.create"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.key"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.add_ploting_functions"><code class="docutils literal notranslate"><span class="pre">add_ploting_functions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.init_frontend"><code class="docutils literal notranslate"><span class="pre">init_frontend()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.load_destrieux_atlas"><code class="docutils literal notranslate"><span class="pre">load_destrieux_atlas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.load_neurosynth_data"><code class="docutils literal notranslate"><span class="pre">load_neurosynth_data()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +140,37 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.engines module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.engines module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.atlas"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.create"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.DestrieuxEngineConf.key"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.atlas"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.create"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.key"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet.add_engine"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet.add_engine()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineSet.engine"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet.engine()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.atlas"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.atlas</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.brain_mask"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.brain_mask</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.create"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.create()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.NeurosynthEngineConf.key"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf.key</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.add_ploting_functions"><code class="docutils literal notranslate"><span class="pre">add_ploting_functions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.init_frontend"><code class="docutils literal notranslate"><span class="pre">init_frontend()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.load_destrieux_atlas"><code class="docutils literal notranslate"><span class="pre">load_destrieux_atlas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.engines.load_neurosynth_data"><code class="docutils literal notranslate"><span class="pre">load_neurosynth_data()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -127,7 +188,7 @@
 <span id="neurolang-utils-server-engines-module"></span><h1>neurolang.utils.server.engines module<a class="headerlink" href="#module-neurolang.utils.server.engines" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.DestrieuxEngineConf">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">DestrieuxEngineConf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.DestrieuxEngineConf" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">DestrieuxEngineConf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.11)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.DestrieuxEngineConf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration" title="neurolang.utils.server.engines.NeurolangEngineConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
@@ -165,7 +226,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurolangEngineConfiguration">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">NeurolangEngineConfiguration</span></span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A NeurolangEngineConfiguration is a combination of an id key and
 a method which returns a Neurolang instance.</p>
 <dl class="field-list simple">
@@ -191,7 +252,7 @@ a method which returns a Neurolang instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurolangEngineConfiguration.create">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.create" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration.create" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -203,8 +264,8 @@ a method which returns a Neurolang instance.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurolangEngineSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">NeurolangEngineSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">NeurolangEngineSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Utility class to hold a set of Neurolang engines (either NeurolangDL
 or NeurolangPDL). It keeps track of the total number of engines added
 to the set, as well as a semaphore to manage acquiring and releasing the
@@ -222,7 +283,7 @@ engines in a safe concurrent manner.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurolangEngineSet.add_engine">
-<span class="sig-name descname"><span class="pre">add_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet.add_engine" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet.add_engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an engine to the set and increase the total number of engines
 in the set.</p>
 <dl class="field-list simple">
@@ -237,7 +298,7 @@ in the set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurolangEngineSet.engine">
-<span class="sig-name descname"><span class="pre">engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet.engine" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurolangEngineSet.engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>ContextManager to safely acquire an engine from the set.
 This method will block on the semaphore until an engine can be
 safely used from this set, and then yield it.
@@ -264,7 +325,7 @@ at most timeout seconds.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.NeurosynthEngineConf">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">NeurosynthEngineConf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurosynthEngineConf" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">NeurosynthEngineConf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.NeurosynthEngineConf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.utils.server.engines.NeurolangEngineConfiguration" title="neurolang.utils.server.engines.NeurolangEngineConfiguration"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
@@ -307,7 +368,7 @@ at most timeout seconds.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.add_ploting_functions">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">add_ploting_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.add_ploting_functions" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">add_ploting_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL" title="neurolang.frontend.deterministic_frontend.NeurolangDL"><span class="pre">NeurolangDL</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL" title="neurolang.frontend.probabilistic_frontend.NeurolangPDL"><span class="pre">NeurolangPDL</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.add_ploting_functions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -331,7 +392,7 @@ at most timeout seconds.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.engines.load_neurosynth_data">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">load_neurosynth_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mni_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Nifti1Image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.load_neurosynth_data" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.engines.</span></span><span class="sig-name descname"><span class="pre">load_neurosynth_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mni_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Nifti1Image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.engines.load_neurosynth_data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -356,12 +417,12 @@ at most timeout seconds.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

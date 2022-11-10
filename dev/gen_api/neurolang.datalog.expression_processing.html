@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.datalog.expression_processing module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,95 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.expression_processing module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.expression_processing module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.implication_with_collapsable_conjunctive_antecedent"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents.implication_with_collapsable_conjunctive_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.type"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.reverse_equality"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.reverse_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.sort_antecedent_equalities"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.sort_antecedent_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.type"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.builtin_application"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.builtin_application()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.conjunction"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation_function_application"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.negation_function_application()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.query_predicate"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.query_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.type"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables.implication_with_free_variables"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables.implication_with_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables.type"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality.implication_with_constant_term_in_head"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality.implication_with_constant_term_in_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality.type"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality.implication_with_repeated_variable_in_head"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality.implication_with_repeated_variable_in_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality.type"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates.implication_with_duplicated_antecedent_predicate"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates.implication_with_duplicated_antecedent_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates.type"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.TranslateToDatalogSemantics"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalogSemantics</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.TranslateToDatalogSemantics.type"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalogSemantics.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualities.type"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_constant"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.add_equality_with_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_symbol"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.add_equality_with_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.build_substitutions_from_equalities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.build_substitutions_from_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_variable_equalities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.extract_variable_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.type"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.all_body_preds_in_set"><code class="docutils literal notranslate"><span class="pre">all_body_preds_in_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.any_body_preds_in_set"><code class="docutils literal notranslate"><span class="pre">any_body_preds_in_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.conjunct_formulas"><code class="docutils literal notranslate"><span class="pre">conjunct_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.conjunct_if_needed"><code class="docutils literal notranslate"><span class="pre">conjunct_if_needed()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.dependency_matrix"><code class="docutils literal notranslate"><span class="pre">dependency_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.enforce_conjunctive_antecedent"><code class="docutils literal notranslate"><span class="pre">enforce_conjunctive_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_atoms"><code class="docutils literal notranslate"><span class="pre">extract_logic_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_free_variables"><code class="docutils literal notranslate"><span class="pre">extract_logic_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_predicates"><code class="docutils literal notranslate"><span class="pre">extract_logic_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.flatten_query"><code class="docutils literal notranslate"><span class="pre">flatten_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.implication_has_existential_variable_in_antecedent"><code class="docutils literal notranslate"><span class="pre">implication_has_existential_variable_in_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_aggregation_predicate"><code class="docutils literal notranslate"><span class="pre">is_aggregation_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_aggregation_rule"><code class="docutils literal notranslate"><span class="pre">is_aggregation_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_conjunctive_expression"><code class="docutils literal notranslate"><span class="pre">is_conjunctive_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_conjunctive_expression_with_nested_predicates"><code class="docutils literal notranslate"><span class="pre">is_conjunctive_expression_with_nested_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_ground_predicate"><code class="docutils literal notranslate"><span class="pre">is_ground_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_linear_rule"><code class="docutils literal notranslate"><span class="pre">is_linear_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_rule_with_builtin"><code class="docutils literal notranslate"><span class="pre">is_rule_with_builtin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_symb_to_const_equality"><code class="docutils literal notranslate"><span class="pre">is_symb_to_const_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_to_be_sorted_equality"><code class="docutils literal notranslate"><span class="pre">is_to_be_sorted_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_var_equality_to_var_or_const"><code class="docutils literal notranslate"><span class="pre">is_var_equality_to_var_or_const()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.maybe_deconjunct_single_pred"><code class="docutils literal notranslate"><span class="pre">maybe_deconjunct_single_pred()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.maybe_disjunct"><code class="docutils literal notranslate"><span class="pre">maybe_disjunct()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.program_has_loops"><code class="docutils literal notranslate"><span class="pre">program_has_loops()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.reachable_code"><code class="docutils literal notranslate"><span class="pre">reachable_code()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.remove_conjunction_duplicates"><code class="docutils literal notranslate"><span class="pre">remove_conjunction_duplicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify"><code class="docutils literal notranslate"><span class="pre">stratify()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify_obtain_facts_stratum"><code class="docutils literal notranslate"><span class="pre">stratify_obtain_facts_stratum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify_obtain_new_stratum"><code class="docutils literal notranslate"><span class="pre">stratify_obtain_new_stratum()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +198,95 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.expression_processing module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.expression_processing module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.implication_with_collapsable_conjunctive_antecedent"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents.implication_with_collapsable_conjunctive_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.CollapseConjunctiveAntecedents.type"><code class="docutils literal notranslate"><span class="pre">CollapseConjunctiveAntecedents.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.reverse_equality"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.reverse_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.sort_antecedent_equalities"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.sort_antecedent_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.EqualitySymbolLeftHandSideNormaliseMixin.type"><code class="docutils literal notranslate"><span class="pre">EqualitySymbolLeftHandSideNormaliseMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.builtin_application"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.builtin_application()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.conjunction"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.negation_function_application"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.negation_function_application()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.query_predicate"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.query_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FlattenQueryInNonRecursiveUCQ.type"><code class="docutils literal notranslate"><span class="pre">FlattenQueryInNonRecursiveUCQ.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables.implication_with_free_variables"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables.implication_with_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.FreshenFreeVariables.type"><code class="docutils literal notranslate"><span class="pre">FreshenFreeVariables.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality.implication_with_constant_term_in_head"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality.implication_with_constant_term_in_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadConstantToBodyEquality.type"><code class="docutils literal notranslate"><span class="pre">HeadConstantToBodyEquality.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality.implication_with_repeated_variable_in_head"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality.implication_with_repeated_variable_in_head()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.HeadRepeatedVariableToBodyEquality.type"><code class="docutils literal notranslate"><span class="pre">HeadRepeatedVariableToBodyEquality.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates.implication_with_duplicated_antecedent_predicate"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates.implication_with_duplicated_antecedent_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.RemoveDuplicatedAntecedentPredicates.type"><code class="docutils literal notranslate"><span class="pre">RemoveDuplicatedAntecedentPredicates.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.TranslateToDatalogSemantics"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalogSemantics</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.TranslateToDatalogSemantics.type"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalogSemantics.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualities</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualities.type"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualities.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_constant"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.add_equality_with_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.add_equality_with_symbol"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.add_equality_with_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.build_substitutions_from_equalities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.build_substitutions_from_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.extract_and_unify_var_eqs_in_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.extract_variable_equalities"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.extract_variable_equalities()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.UnifyVariableEqualitiesMixin.type"><code class="docutils literal notranslate"><span class="pre">UnifyVariableEqualitiesMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.all_body_preds_in_set"><code class="docutils literal notranslate"><span class="pre">all_body_preds_in_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.any_body_preds_in_set"><code class="docutils literal notranslate"><span class="pre">any_body_preds_in_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.conjunct_formulas"><code class="docutils literal notranslate"><span class="pre">conjunct_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.conjunct_if_needed"><code class="docutils literal notranslate"><span class="pre">conjunct_if_needed()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.dependency_matrix"><code class="docutils literal notranslate"><span class="pre">dependency_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.enforce_conjunctive_antecedent"><code class="docutils literal notranslate"><span class="pre">enforce_conjunctive_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_atoms"><code class="docutils literal notranslate"><span class="pre">extract_logic_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_free_variables"><code class="docutils literal notranslate"><span class="pre">extract_logic_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.extract_logic_predicates"><code class="docutils literal notranslate"><span class="pre">extract_logic_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.flatten_query"><code class="docutils literal notranslate"><span class="pre">flatten_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.implication_has_existential_variable_in_antecedent"><code class="docutils literal notranslate"><span class="pre">implication_has_existential_variable_in_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_aggregation_predicate"><code class="docutils literal notranslate"><span class="pre">is_aggregation_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_aggregation_rule"><code class="docutils literal notranslate"><span class="pre">is_aggregation_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_conjunctive_expression"><code class="docutils literal notranslate"><span class="pre">is_conjunctive_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_conjunctive_expression_with_nested_predicates"><code class="docutils literal notranslate"><span class="pre">is_conjunctive_expression_with_nested_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_ground_predicate"><code class="docutils literal notranslate"><span class="pre">is_ground_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_linear_rule"><code class="docutils literal notranslate"><span class="pre">is_linear_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_rule_with_builtin"><code class="docutils literal notranslate"><span class="pre">is_rule_with_builtin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_symb_to_const_equality"><code class="docutils literal notranslate"><span class="pre">is_symb_to_const_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_to_be_sorted_equality"><code class="docutils literal notranslate"><span class="pre">is_to_be_sorted_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.is_var_equality_to_var_or_const"><code class="docutils literal notranslate"><span class="pre">is_var_equality_to_var_or_const()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.maybe_deconjunct_single_pred"><code class="docutils literal notranslate"><span class="pre">maybe_deconjunct_single_pred()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.maybe_disjunct"><code class="docutils literal notranslate"><span class="pre">maybe_disjunct()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.program_has_loops"><code class="docutils literal notranslate"><span class="pre">program_has_loops()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.reachable_code"><code class="docutils literal notranslate"><span class="pre">reachable_code()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.remove_conjunction_duplicates"><code class="docutils literal notranslate"><span class="pre">remove_conjunction_duplicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify"><code class="docutils literal notranslate"><span class="pre">stratify()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify_obtain_facts_stratum"><code class="docutils literal notranslate"><span class="pre">stratify_obtain_facts_stratum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expression_processing.stratify_obtain_new_stratum"><code class="docutils literal notranslate"><span class="pre">stratify_obtain_new_stratum()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -1132,7 +1309,7 @@ already is a single predicate.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.datalog.expression_processing.maybe_disjunct">
-<span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expression_processing.</span></span><span class="sig-name descname"><span class="pre">maybe_disjunct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formulas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.10)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Expression</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Disjunction</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.datalog.expression_processing.maybe_disjunct" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expression_processing.</span></span><span class="sig-name descname"><span class="pre">maybe_disjunct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formulas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.11)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Expression</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Disjunction</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.datalog.expression_processing.maybe_disjunct" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -1227,12 +1404,12 @@ will be in the last strata.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

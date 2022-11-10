@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.probabilistic.probabilistic_ra_utils module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.probabilistic.probabilistic_ra_utils module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,37 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_ra_utils module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_ra_utils module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.DeterministicFactSet"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.DeterministicFactSet.type"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.default"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.default()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.projection"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.resolve_symbol"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.resolve_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.type"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.NonLiftable"><code class="docutils literal notranslate"><span class="pre">NonLiftable</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.NonLiftable.type"><code class="docutils literal notranslate"><span class="pre">NonLiftable.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticChoiceSet"><code class="docutils literal notranslate"><span class="pre">ProbabilisticChoiceSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticChoiceSet.type"><code class="docutils literal notranslate"><span class="pre">ProbabilisticChoiceSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticFactSet"><code class="docutils literal notranslate"><span class="pre">ProbabilisticFactSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticFactSet.type"><code class="docutils literal notranslate"><span class="pre">ProbabilisticFactSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.classify_and_wrap_symbols"><code class="docutils literal notranslate"><span class="pre">classify_and_wrap_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.generate_probabilistic_symbol_table_for_query"><code class="docutils literal notranslate"><span class="pre">generate_probabilistic_symbol_table_for_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_deterministic_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_deterministic_relation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_choice_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_probabilistic_choice_relation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_fact_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_probabilistic_fact_relation()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +140,37 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_ra_utils module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_ra_utils module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.DeterministicFactSet"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.DeterministicFactSet.type"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.default"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.default()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.projection"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.resolve_symbol"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.resolve_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.GetProbabilisticSetAtom.type"><code class="docutils literal notranslate"><span class="pre">GetProbabilisticSetAtom.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.NonLiftable"><code class="docutils literal notranslate"><span class="pre">NonLiftable</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.NonLiftable.type"><code class="docutils literal notranslate"><span class="pre">NonLiftable.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticChoiceSet"><code class="docutils literal notranslate"><span class="pre">ProbabilisticChoiceSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticChoiceSet.type"><code class="docutils literal notranslate"><span class="pre">ProbabilisticChoiceSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticFactSet"><code class="docutils literal notranslate"><span class="pre">ProbabilisticFactSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.ProbabilisticFactSet.type"><code class="docutils literal notranslate"><span class="pre">ProbabilisticFactSet.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.classify_and_wrap_symbols"><code class="docutils literal notranslate"><span class="pre">classify_and_wrap_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.generate_probabilistic_symbol_table_for_query"><code class="docutils literal notranslate"><span class="pre">generate_probabilistic_symbol_table_for_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_deterministic_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_deterministic_relation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_choice_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_probabilistic_choice_relation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_fact_relation"><code class="docutils literal notranslate"><span class="pre">is_atom_a_probabilistic_fact_relation()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -414,7 +475,7 @@ relational algebra representations as values</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_deterministic_relation">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_deterministic_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.10)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_deterministic_relation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_deterministic_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.11)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_deterministic_relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if a particular expression is a deterministic relation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -437,7 +498,7 @@ containing a single deterministic relation.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_choice_relation">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_probabilistic_choice_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.10)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_choice_relation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_probabilistic_choice_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.11)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_choice_relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if a particular expression is a choice
 relation</p>
 <dl class="field-list simple">
@@ -461,7 +522,7 @@ containing a single choice relation.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_fact_relation">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_probabilistic_fact_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.10)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_fact_relation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.probabilistic_ra_utils.</span></span><span class="sig-name descname"><span class="pre">is_atom_a_probabilistic_fact_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.11)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Expression</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.probabilistic.probabilistic_ra_utils.is_atom_a_probabilistic_fact_relation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if a particular expression is a tuple independent
 fact set relation</p>
 <dl class="field-list simple">
@@ -505,12 +566,12 @@ containing a single independent fact set relation.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

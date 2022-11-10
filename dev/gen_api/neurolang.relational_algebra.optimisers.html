@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.relational_algebra.optimisers module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.relational_algebra.optimisers module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,110 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.relational_algebra.optimisers module</a></li>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.optimisers module</a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_left"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.commute_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_right"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.commute_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.convert_extended_projection_2_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.convert_extended_projection_2_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.convert_extended_projection_2_rename"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.convert_extended_projection_2_rename()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_nested_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_nested_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_nested_unnamed_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_nested_unnamed_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.simplify_projection_extended_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.simplify_projection_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.type"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification"><code class="docutils literal notranslate"><span class="pre">ProductSimplification</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification.single_product"><code class="docutils literal notranslate"><span class="pre">ProductSimplification.single_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification.type"><code class="docutils literal notranslate"><span class="pre">ProductSimplification.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections"><code class="docutils literal notranslate"><span class="pre">PushInSelections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_and_rename_in_naturaljoin"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_and_rename_in_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_extended_projection"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_groupby"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_leftnaturaljoin_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_leftnaturaljoin_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_outernaturaljoin_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_outernaturaljoin_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_projection"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_replace_null"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.type"><code class="docutils literal notranslate"><span class="pre">PushInSelections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.invert_selection_order"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.invert_selection_order()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_name_columns"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.push_selection_above_name_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_projection"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.push_selection_above_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.standardize_projected_column"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.standardize_projected_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOptimiser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOptimiser.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.convert_rename_column"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.convert_rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_projection_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_projection_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_selection_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_selection_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_nested_rename_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_nested_rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_rename_column_group_by"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_rename_column_group_by()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_rename_columns_extended_projection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_rename_columns_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_groupby"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_projection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_selection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_selection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.remove_trivial_rename"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.remove_trivial_rename()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.simplify_renames_name"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.simplify_renames_name()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_outer_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_outer_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.switch_rename_replace_null"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.switch_rename_replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.type"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections"><code class="docutils literal notranslate"><span class="pre">RewriteSelections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.get_arity"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.get_arity()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.merge_selections"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.merge_selections()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_between_columns_product"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_between_columns_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_by_constant_on_product"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_by_constant_on_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_on_equijoin"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_on_equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_on_equijoin_columns"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_on_equijoin_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_push_right"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_push_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_selection_swap"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_selection_swap()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_shorten_right"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_shorten_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.sort_formula_args"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.sort_formula_args()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.split_relations_column"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.split_relations_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.swap_formula_args"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.swap_formula_args()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.type"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constant_l"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constant_l()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_flip"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_flip()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_replace_null_in_ext_proj"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_replace_null_in_ext_proj()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.replace_trivial_agg_groupby"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.replace_trivial_agg_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.type"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +213,110 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.relational_algebra.optimisers module</a></li>
+<li><a class="reference internal" href="#">neurolang.relational_algebra.optimisers module</a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_left"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.commute_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_right"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.commute_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type"><code class="docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.convert_extended_projection_2_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.convert_extended_projection_2_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.convert_extended_projection_2_rename"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.convert_extended_projection_2_rename()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_nested_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_nested_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_nested_unnamed_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_nested_unnamed_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.eliminate_trivial_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.eliminate_trivial_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.simplify_projection_extended_projection"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.simplify_projection_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections.type"><code class="docutils literal notranslate"><span class="pre">EliminateTrivialProjections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification"><code class="docutils literal notranslate"><span class="pre">ProductSimplification</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification.single_product"><code class="docutils literal notranslate"><span class="pre">ProductSimplification.single_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification.type"><code class="docutils literal notranslate"><span class="pre">ProductSimplification.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections"><code class="docutils literal notranslate"><span class="pre">PushInSelections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_and_rename_in_naturaljoin"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_and_rename_in_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_extended_projection"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_groupby"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_leftnaturaljoin_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_leftnaturaljoin_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_left"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_outernaturaljoin_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_outernaturaljoin_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_projection"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_replace_null"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_right"><code class="docutils literal notranslate"><span class="pre">PushInSelections.push_selection_in_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections.type"><code class="docutils literal notranslate"><span class="pre">PushInSelections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.invert_selection_order"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.invert_selection_order()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_name_columns"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.push_selection_above_name_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.push_selection_above_projection"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.push_selection_above_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.standardize_projected_column"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.standardize_projected_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp.type"><code class="docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOptimiser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser.type"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraOptimiser.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.convert_rename_column"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.convert_rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_projection_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_projection_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.eliminate_trivial_selection_number_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.eliminate_trivial_selection_number_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_nested_rename_columns"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_nested_rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_rename_column_group_by"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_rename_column_group_by()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.merge_rename_columns_extended_projection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.merge_rename_columns_extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_groupby"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_projection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.push_rename_past_selection"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.push_rename_past_selection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.remove_trivial_rename"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.remove_trivial_rename()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.simplify_renames_name"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.simplify_renames_name()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_outer_naturaljoin"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.split_rename_outer_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.switch_rename_replace_null"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.switch_rename_replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.type"><code class="docutils literal notranslate"><span class="pre">RenameOptimizations.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections"><code class="docutils literal notranslate"><span class="pre">RewriteSelections</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.get_arity"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.get_arity()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.merge_selections"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.merge_selections()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_between_columns_product"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_between_columns_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_by_constant_on_product"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_by_constant_on_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_on_equijoin"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_on_equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_on_equijoin_columns"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_on_equijoin_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_push_right"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_push_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_selection_swap"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_selection_swap()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.selection_shorten_right"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.selection_shorten_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.sort_formula_args"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.sort_formula_args()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.split_relations_column"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.split_relations_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.swap_formula_args"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.swap_formula_args()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections.type"><code class="docutils literal notranslate"><span class="pre">RewriteSelections.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_leftnaturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constant_l"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constant_l()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_naturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_flip"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_flip()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_replace_null_in_ext_proj"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.push_replace_null_in_ext_proj()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.replace_trivial_agg_groupby"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.replace_trivial_agg_groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.type"><code class="docutils literal notranslate"><span class="pre">SimplifyExtendedProjectionsWithConstants.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -125,6 +332,74 @@
       
   <section id="module-neurolang.relational_algebra.optimisers">
 <span id="neurolang-relational-algebra-optimisers-module"></span><h1>neurolang.relational_algebra.optimisers module<a class="headerlink" href="#module-neurolang.relational_algebra.optimisers" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.optimisers.</span></span><span class="sig-name descname"><span class="pre">CommuteJoinsAvoidCrossProducts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
+<td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
+<td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type" title="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>commute_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>commute_right</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_left">
+<span class="sig-name descname"><span class="pre">commute_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_right">
+<span class="sig-name descname"><span class="pre">commute_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.commute_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">typing.Any</span></em><a class="headerlink" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.EliminateTrivialProjections">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.optimisers.</span></span><span class="sig-name descname"><span class="pre">EliminateTrivialProjections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="Permalink to this definition">¶</a></dt>
@@ -331,35 +606,49 @@
 <tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_and_rename_in_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_left</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_outernaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_right</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_outernaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_in_right</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushInSelections.push_and_rename_in_naturaljoin">
+<span class="sig-name descname"><span class="pre">push_and_rename_in_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_and_rename_in_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_extended_projection">
 <span class="sig-name descname"><span class="pre">push_selection_in_extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_extended_projection" title="Permalink to this definition">¶</a></dt>
@@ -383,6 +672,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_right">
 <span class="sig-name descname"><span class="pre">push_selection_in_leftnaturaljoin_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_leftnaturaljoin_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_left">
+<span class="sig-name descname"><span class="pre">push_selection_in_outernaturaljoin_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_right">
+<span class="sig-name descname"><span class="pre">push_selection_in_outernaturaljoin_right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.PushInSelections.push_selection_in_outernaturaljoin_right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -494,7 +793,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.relational_algebra.optimisers.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraOptimiser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.RelationalAlgebraOptimiser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections" title="neurolang.relational_algebra.optimisers.RewriteSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewriteSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification" title="neurolang.relational_algebra.optimisers.ProductSimplification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProductSimplification</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushInSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">RenameOptimizations</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RewriteSelections" title="neurolang.relational_algebra.optimisers.RewriteSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewriteSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.ProductSimplification" title="neurolang.relational_algebra.optimisers.ProductSimplification"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProductSimplification</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.EliminateTrivialProjections" title="neurolang.relational_algebra.optimisers.EliminateTrivialProjections"><code class="xref py py-class docutils literal notranslate"><span class="pre">EliminateTrivialProjections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushInSelections" title="neurolang.relational_algebra.optimisers.PushInSelections"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushInSelections</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.RenameOptimizations" title="neurolang.relational_algebra.optimisers.RenameOptimizations"><code class="xref py py-class docutils literal notranslate"><span class="pre">RenameOptimizations</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp" title="neurolang.relational_algebra.optimisers.PushUnnamedSelectionsUp"><code class="xref py py-class docutils literal notranslate"><span class="pre">PushUnnamedSelectionsUp</span></code></a>, <a class="reference internal" href="#neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts" title="neurolang.relational_algebra.optimisers.CommuteJoinsAvoidCrossProducts"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommuteJoinsAvoidCrossProducts</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <p>Mixing that optimises through relational algebra expressions by
 rewriting.
 equi-selection/product compositions into equijoins.</p>
@@ -522,6 +821,12 @@ equi-selection/product compositions into equijoins.</p>
 </table>
 <table class="docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><strong>commute_left</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>commute_right</strong></p></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p><strong>convert_extended_projection_2_projection</strong></p></td>
 <td></td>
 </tr>
@@ -585,88 +890,100 @@ equi-selection/product compositions into equijoins.</p>
 <tr class="row-odd"><td><p><strong>process_iterable_argument</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_rename_past_groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>push_and_rename_in_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_rename_past_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_rename_past_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_rename_past_selection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_rename_past_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_above_name_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_rename_past_selection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_above_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_above_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_above_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_left</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_outernaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_right</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_outernaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>remove_trivial_rename</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_between_columns_product</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_by_constant_on_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_on_equijoin</strong></p></td>
+<tr class="row-even"><td><p><strong>remove_trivial_rename</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_on_equijoin_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_between_columns_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_push_right</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_by_constant_on_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_selection_swap</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_on_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_shorten_right</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_on_equijoin_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>simplify_projection_extended_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_push_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>simplify_renames_name</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_selection_swap</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>single_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_shorten_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sort_formula_args</strong></p></td>
+<tr class="row-even"><td><p><strong>simplify_projection_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>split_relations_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>simplify_renames_name</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>single_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>sort_formula_args</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>split_relations_column</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split_rename_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>standardize_projected_column</strong></p></td>
@@ -772,10 +1089,13 @@ equi-selection/product compositions into equijoins.</p>
 <tr class="row-even"><td><p><strong>split_rename_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>switch_rename_replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>split_rename_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>switch_rename_replace_null</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -848,6 +1168,11 @@ equi-selection/product compositions into equijoins.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_naturaljoin">
 <span class="sig-name descname"><span class="pre">split_rename_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_outer_naturaljoin">
+<span class="sig-name descname"><span class="pre">split_rename_outer_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.RenameOptimizations.split_rename_outer_naturaljoin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1063,6 +1388,12 @@ equi-selection/product compositions into equijoins.</p>
 <tr class="row-odd"><td><p><strong>nested_extended_projection_naturaljoin_constantr</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p><strong>nested_extended_projection_outernaturaljoin_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nested_extended_projection_outernaturaljoin_constantr</strong></p></td>
+<td></td>
+</tr>
 <tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
@@ -1084,13 +1415,16 @@ equi-selection/product compositions into equijoins.</p>
 <tr class="row-even"><td><p><strong>push_computed_columns_up_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_replace_null_in_ext_proj</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_computed_columns_up_outer</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>replace_trivial_agg_groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>push_replace_null_in_ext_proj</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>replace_trivial_agg_groupby</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1121,6 +1455,16 @@ equi-selection/product compositions into equijoins.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant">
+<span class="sig-name descname"><span class="pre">nested_extended_projection_outernaturaljoin_constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr">
+<span class="sig-name descname"><span class="pre">nested_extended_projection_outernaturaljoin_constantr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.nested_extended_projection_outernaturaljoin_constantr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up">
 <span class="sig-name descname"><span class="pre">push_computed_columns_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1133,6 +1477,11 @@ equi-selection/product compositions into equijoins.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left">
 <span class="sig-name descname"><span class="pre">push_computed_columns_up_left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer">
+<span class="sig-name descname"><span class="pre">push_computed_columns_up_outer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.relational_algebra.optimisers.SimplifyExtendedProjectionsWithConstants.push_computed_columns_up_outer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1174,12 +1523,12 @@ equi-selection/product compositions into equijoins.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

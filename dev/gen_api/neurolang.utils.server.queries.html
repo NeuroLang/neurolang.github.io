@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.utils.server.queries module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.utils.server.queries module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,18 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.queries module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.queries module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.LRUCacheDict"><code class="docutils literal notranslate"><span class="pre">LRUCacheDict</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.cancel"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.cancel()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_atlas"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_atlas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_result"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_symbols"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.submit_query"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.submit_query()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +121,18 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.queries module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.queries module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.LRUCacheDict"><code class="docutils literal notranslate"><span class="pre">LRUCacheDict</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.cancel"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.cancel()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_atlas"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_atlas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_result"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_result()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_symbols"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.get_symbols()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.queries.NeurolangQueryManager.submit_query"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager.submit_query()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -127,8 +150,8 @@
 <span id="neurolang-utils-server-queries-module"></span><h1>neurolang.utils.server.queries module<a class="headerlink" href="#module-neurolang.utils.server.queries" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.LRUCacheDict">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.queries.</span></span><span class="sig-name descname"><span class="pre">LRUCacheDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.queries.LRUCacheDict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.queries.</span></span><span class="sig-name descname"><span class="pre">LRUCacheDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cache_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.queries.LRUCacheDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></a></p>
 <p>Dict with a limited length, ejecting LRUs as needed.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -175,8 +198,8 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.queries.</span></span><span class="sig-name descname"><span class="pre">NeurolangQueryManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.10)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.NeurolangEngineConfiguration" title="neurolang.utils.server.engines.NeurolangEngineConfiguration"><span class="pre">NeurolangEngineConfiguration</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.queries.</span></span><span class="sig-name descname"><span class="pre">NeurolangQueryManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.NeurolangEngineConfiguration" title="neurolang.utils.server.engines.NeurolangEngineConfiguration"><span class="pre">NeurolangEngineConfiguration</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_len</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Class to manage execution of queries and keep track of results.</p>
 <p>This class is initialized with a dict of <cite>NeurolangEngineConfiguration</cite>
 that defines which Neurolang engine to create and how many.
@@ -206,7 +229,7 @@ dict of uuid -&gt; Future.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager.cancel">
-<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.cancel" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.cancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to cancel the execution. If the call is currently being
 executed or finished running and cannot be cancelled then the method
 will return False, otherwise the call will be cancelled and the
@@ -229,7 +252,7 @@ method will return True.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager.get_atlas">
-<span class="sig-name descname"><span class="pre">get_atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Nifti1Image</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_atlas" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_atlas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Nifti1Image</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_atlas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the atlas for a given engine type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -249,7 +272,7 @@ method will return True.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager.get_result">
-<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_result" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_result" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetch the results for a query execution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -269,7 +292,7 @@ method will return True.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager.get_symbols">
-<span class="sig-name descname"><span class="pre">get_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_symbols" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.get_symbols" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request the symbols table for a given engine. If the symbols table for
 this engine type is present in cache, then this is returned, otherwise
 a job to fetch the symbols table is dispatched to the threadpool
@@ -292,7 +315,7 @@ executor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.queries.NeurolangQueryManager.submit_query">
-<span class="sig-name descname"><span class="pre">submit_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.submit_query" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">submit_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Future</span></span></span><a class="headerlink" href="#neurolang.utils.server.queries.NeurolangQueryManager.submit_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Submit a query to one of the available engines / workers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -338,12 +361,12 @@ executor.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

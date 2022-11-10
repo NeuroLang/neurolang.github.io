@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.interval_algebra module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.interval_algebra module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,26 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.interval_algebra module</a></li>
+<li><a class="reference internal" href="#">neurolang.interval_algebra module</a><ul>
+<li><a class="reference internal" href="#neurolang.interval_algebra.before"><code class="docutils literal notranslate"><span class="pre">before()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.converse"><code class="docutils literal notranslate"><span class="pre">converse()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.during"><code class="docutils literal notranslate"><span class="pre">during()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.equals"><code class="docutils literal notranslate"><span class="pre">equals()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.finishes"><code class="docutils literal notranslate"><span class="pre">finishes()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.get_intervals_relations"><code class="docutils literal notranslate"><span class="pre">get_intervals_relations()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.meets"><code class="docutils literal notranslate"><span class="pre">meets()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.negate"><code class="docutils literal notranslate"><span class="pre">negate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.overlaps"><code class="docutils literal notranslate"><span class="pre">overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.starts"><code class="docutils literal notranslate"><span class="pre">starts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_before"><code class="docutils literal notranslate"><span class="pre">v_before()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_during"><code class="docutils literal notranslate"><span class="pre">v_during()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_equals"><code class="docutils literal notranslate"><span class="pre">v_equals()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_finishes"><code class="docutils literal notranslate"><span class="pre">v_finishes()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_meets"><code class="docutils literal notranslate"><span class="pre">v_meets()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_overlaps"><code class="docutils literal notranslate"><span class="pre">v_overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_starts"><code class="docutils literal notranslate"><span class="pre">v_starts()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +129,26 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.interval_algebra module</a></li>
+<li><a class="reference internal" href="#">neurolang.interval_algebra module</a><ul>
+<li><a class="reference internal" href="#neurolang.interval_algebra.before"><code class="docutils literal notranslate"><span class="pre">before()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.converse"><code class="docutils literal notranslate"><span class="pre">converse()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.during"><code class="docutils literal notranslate"><span class="pre">during()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.equals"><code class="docutils literal notranslate"><span class="pre">equals()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.finishes"><code class="docutils literal notranslate"><span class="pre">finishes()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.get_intervals_relations"><code class="docutils literal notranslate"><span class="pre">get_intervals_relations()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.meets"><code class="docutils literal notranslate"><span class="pre">meets()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.negate"><code class="docutils literal notranslate"><span class="pre">negate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.overlaps"><code class="docutils literal notranslate"><span class="pre">overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.starts"><code class="docutils literal notranslate"><span class="pre">starts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_before"><code class="docutils literal notranslate"><span class="pre">v_before()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_during"><code class="docutils literal notranslate"><span class="pre">v_during()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_equals"><code class="docutils literal notranslate"><span class="pre">v_equals()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_finishes"><code class="docutils literal notranslate"><span class="pre">v_finishes()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_meets"><code class="docutils literal notranslate"><span class="pre">v_meets()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_overlaps"><code class="docutils literal notranslate"><span class="pre">v_overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.interval_algebra.v_starts"><code class="docutils literal notranslate"><span class="pre">v_starts()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -127,7 +166,7 @@
 <span id="neurolang-interval-algebra-module"></span><h1>neurolang.interval_algebra module<a class="headerlink" href="#module-neurolang.interval_algebra" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.before">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">before</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.before" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">before</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.before" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -137,17 +176,17 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.during">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">during</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.during" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">during</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.during" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.equals">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.equals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">equals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.equals" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.finishes">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">finishes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.finishes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">finishes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.finishes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -157,7 +196,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.meets">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">meets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.meets" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">meets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.meets" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -167,12 +206,12 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.overlaps">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.overlaps" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.overlaps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.interval_algebra.starts">
-<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">starts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.starts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.interval_algebra.</span></span><span class="sig-name descname"><span class="pre">starts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#neurolang.interval_algebra.starts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -232,12 +271,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

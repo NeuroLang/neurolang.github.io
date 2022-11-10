@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.frontend package &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.frontend package &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -80,6 +81,37 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend package</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.aabb_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.aabb_tree</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.bounding_box</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.build_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.build_tree()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.generate_bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.generate_bounding_box()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.spatial_image()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.to_ijk"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_ijk()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.to_xyz"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_xyz()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBROverlay"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBROverlay.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay.spatial_image()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangDL"><code class="docutils literal notranslate"><span class="pre">NeurolangDL</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_probabilistic_choice_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_choice_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_probabilistic_facts_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_facts_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_uniform_probabilistic_choice_over_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.current_program"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.current_program</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.load_ontology"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.load_ontology()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.solve_all"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.solve_all()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -114,6 +146,37 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">neurolang.frontend package</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.aabb_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.aabb_tree</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.bounding_box</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.build_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.build_tree()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.generate_bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.generate_bounding_box()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.spatial_image()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.to_ijk"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_ijk()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBR.to_xyz"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_xyz()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBROverlay"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.ExplicitVBROverlay.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay.spatial_image()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangDL"><code class="docutils literal notranslate"><span class="pre">NeurolangDL</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_probabilistic_choice_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_choice_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_probabilistic_facts_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_facts_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_uniform_probabilistic_choice_over_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.current_program"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.current_program</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.load_ontology"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.load_ontology()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.NeurolangPDL.solve_all"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.solve_all()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -313,7 +376,7 @@ intermediate representation</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbols</span></code></dt><dd><p>Iterator through the symbol’s names</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/types.html#module-types" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">types</span></code></a></dt><dd><p>Returns a list of the types of the symbols currently</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/types.html#module-types" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">types</span></code></a></dt><dd><p>Returns a list of the types of the symbols currently</p>
 </dd>
 </dl>
 </dd>
@@ -430,7 +493,7 @@ intermediate representation</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbols</span></code></dt><dd><p>Iterator through the symbol’s names</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/types.html#module-types" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">types</span></code></a></dt><dd><p>Returns a list of the types of the symbols currently</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/types.html#module-types" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">types</span></code></a></dt><dd><p>Returns a list of the types of the symbols currently</p>
 </dd>
 </dl>
 </dd>
@@ -642,7 +705,7 @@ will be fresh, by default None</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.NeurolangPDL.current_program">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_program</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.current_program" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_program</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><span class="pre">Expression</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.current_program" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the list of Front End Expressions that have
 currently been declared in the program, or through
 the program’s constraints</p>
@@ -658,7 +721,7 @@ the program’s constraints</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.NeurolangPDL.load_ontology">
-<span class="sig-name descname"><span class="pre">load_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.10)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.10)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connector_symbol_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.load_ontology" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">load_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.11)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.11)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connector_symbol_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.load_ontology" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads and parses ontology stored at the specified paths, and
 store them into attributes</p>
 <dl class="field-list simple">
@@ -683,7 +746,7 @@ the query program.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.frontend.NeurolangPDL.solve_all">
-<span class="sig-name descname"><span class="pre">solve_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.10)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet"><span class="pre">NamedRelationalAlgebraFrozenSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.solve_all" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">solve_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.11)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet"><span class="pre">NamedRelationalAlgebraFrozenSet</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.frontend.NeurolangPDL.solve_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a dictionary of “predicate_name”: “Content”
 for all elements in the solution of the Datalog program.
 Typically, probabilities are abstracted and processed similar
@@ -703,7 +766,7 @@ through the current program, optionally with probabilities</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.Symbol">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.Symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.</span></span><span class="sig-name descname"><span class="pre">Symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_builder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase" title="neurolang.frontend.query_resolution.QueryBuilderBase"><span class="pre">QueryBuilderBase</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.Symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression" title="neurolang.frontend.query_resolution_expressions.Expression"><code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></a></p>
 <p>A Symbol represents an atomic Expression. Its is
 the most recurrent element of queries</p>
@@ -716,7 +779,7 @@ the most recurrent element of queries</p>
 </dd>
 <dt><a class="reference internal" href="#neurolang.frontend.Symbol.symbol" title="neurolang.frontend.Symbol.symbol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symbol</span></code></a></dt><dd><p>Returns backend symbol from symbol_table</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></dt><dd><p>Returns expression’s type</p>
 </dd>
 <dt><a class="reference internal" href="#neurolang.frontend.Symbol.value" title="neurolang.frontend.Symbol.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a></dt><dd><p>If any, returns value corresponding to the symbol</p>
 </dd>
@@ -761,7 +824,7 @@ the most recurrent element of queries</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.frontend.Symbol.value">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.10)"><span class="pre">Any</span></a></em><a class="headerlink" href="#neurolang.frontend.Symbol.value" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.11)"><span class="pre">Any</span></a></em><a class="headerlink" href="#neurolang.frontend.Symbol.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any, returns value corresponding to the symbol</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -788,6 +851,16 @@ the most recurrent element of queries</p>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.datalog.html">neurolang.frontend.datalog package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.datalog.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html">neurolang.frontend.datalog.sugar package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.ConvertAttrSToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">ConvertAttrSToSelectByColumn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.RecogniseSSugar"><code class="docutils literal notranslate"><span class="pre">RecogniseSSugar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.SelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">SelectByFirstColumn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateColumnsToAtoms"><code class="docutils literal notranslate"><span class="pre">TranslateColumnsToAtoms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateHeadConstantsToEqualities"><code class="docutils literal notranslate"><span class="pre">TranslateHeadConstantsToEqualities</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateProbabilisticQueryMixin"><code class="docutils literal notranslate"><span class="pre">TranslateProbabilisticQueryMixin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateQueryBasedProbabilisticFactMixin"><code class="docutils literal notranslate"><span class="pre">TranslateQueryBasedProbabilisticFactMixin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateSSugarToSelectByColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSSugarToSelectByColumn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#neurolang.frontend.datalog.sugar.TranslateSelectByFirstColumn"><code class="docutils literal notranslate"><span class="pre">TranslateSelectByFirstColumn</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.sugar.html#submodules">Submodules</a></li>
 </ul>
@@ -795,9 +868,21 @@ the most recurrent element of queries</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.datalog.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.natural_syntax.html">neurolang.frontend.datalog.natural_syntax module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.standard_syntax.html">neurolang.frontend.datalog.standard_syntax module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.syntax_preprocessing.html">neurolang.frontend.datalog.syntax_preprocessing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.natural_syntax.html">neurolang.frontend.datalog.natural_syntax module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.natural_syntax.html#neurolang.frontend.datalog.natural_syntax.DatalogSemantics"><code class="docutils literal notranslate"><span class="pre">DatalogSemantics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.natural_syntax.html#neurolang.frontend.datalog.natural_syntax.parser"><code class="docutils literal notranslate"><span class="pre">parser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.standard_syntax.html">neurolang.frontend.datalog.standard_syntax module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.standard_syntax.html#neurolang.frontend.datalog.standard_syntax.DatalogSemantics"><code class="docutils literal notranslate"><span class="pre">DatalogSemantics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.standard_syntax.html#neurolang.frontend.datalog.standard_syntax.ExternalSymbol"><code class="docutils literal notranslate"><span class="pre">ExternalSymbol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.standard_syntax.html#neurolang.frontend.datalog.standard_syntax.parser"><code class="docutils literal notranslate"><span class="pre">parser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.datalog.syntax_preprocessing.html">neurolang.frontend.datalog.syntax_preprocessing module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.datalog.syntax_preprocessing.html#neurolang.frontend.datalog.syntax_preprocessing.ProbFol2DatalogMixin"><code class="docutils literal notranslate"><span class="pre">ProbFol2DatalogMixin</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -807,11 +892,46 @@ the most recurrent element of queries</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.drs.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html">neurolang.frontend.drs.chart_parser module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html">neurolang.frontend.drs.drs_builder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html">neurolang.frontend.drs.english_grammar module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html">neurolang.frontend.drs.exceptions module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.translate_to_dl.html">neurolang.frontend.drs.translate_to_dl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html">neurolang.frontend.drs.chart_parser module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.Chart"><code class="docutils literal notranslate"><span class="pre">Chart</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.ChartParser"><code class="docutils literal notranslate"><span class="pre">ChartParser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.DictLexicon"><code class="docutils literal notranslate"><span class="pre">DictLexicon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.Grammar"><code class="docutils literal notranslate"><span class="pre">Grammar</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.Lexicon"><code class="docutils literal notranslate"><span class="pre">Lexicon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.RootRule"><code class="docutils literal notranslate"><span class="pre">RootRule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.Rule"><code class="docutils literal notranslate"><span class="pre">Rule</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.chart_parser.html#neurolang.frontend.drs.chart_parser.Tokenizer"><code class="docutils literal notranslate"><span class="pre">Tokenizer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html">neurolang.frontend.drs.drs_builder module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html#neurolang.frontend.drs.drs_builder.DRS"><code class="docutils literal notranslate"><span class="pre">DRS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html#neurolang.frontend.drs.drs_builder.DRS2FOL"><code class="docutils literal notranslate"><span class="pre">DRS2FOL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html#neurolang.frontend.drs.drs_builder.DRSBuilder"><code class="docutils literal notranslate"><span class="pre">DRSBuilder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.drs_builder.html#neurolang.frontend.drs.drs_builder.indent"><code class="docutils literal notranslate"><span class="pre">indent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html">neurolang.frontend.drs.english_grammar module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html#neurolang.frontend.drs.english_grammar.EnglishBaseLexicon"><code class="docutils literal notranslate"><span class="pre">EnglishBaseLexicon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html#neurolang.frontend.drs.english_grammar.case"><code class="docutils literal notranslate"><span class="pre">case</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html#neurolang.frontend.drs.english_grammar.gen"><code class="docutils literal notranslate"><span class="pre">gen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.english_grammar.html#neurolang.frontend.drs.english_grammar.num"><code class="docutils literal notranslate"><span class="pre">num</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html">neurolang.frontend.drs.exceptions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.AmbiguousSentenceException"><code class="docutils literal notranslate"><span class="pre">AmbiguousSentenceException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.CouldNotParseException"><code class="docutils literal notranslate"><span class="pre">CouldNotParseException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.GrammarException"><code class="docutils literal notranslate"><span class="pre">GrammarException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.ParseDatalogPredicateException"><code class="docutils literal notranslate"><span class="pre">ParseDatalogPredicateException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.ParseException"><code class="docutils literal notranslate"><span class="pre">ParseException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.TokenizeException"><code class="docutils literal notranslate"><span class="pre">TokenizeException</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.exceptions.html#neurolang.frontend.drs.exceptions.TranslateToDatalogException"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalogException</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.drs.translate_to_dl.html">neurolang.frontend.drs.translate_to_dl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.translate_to_dl.html#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences"><code class="docutils literal notranslate"><span class="pre">TransformIntoConjunctionOfDatalogSentences</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.frontend.drs.translate_to_dl.html#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -823,26 +943,239 @@ the most recurrent element of queries</p>
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.ast.html">neurolang.frontend.ast module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.ast_tatsu.html">neurolang.frontend.ast_tatsu module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html">neurolang.frontend.deterministic_frontend module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html">neurolang.frontend.frontend_extensions module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.neurolang.html">neurolang.frontend.neurolang module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html">neurolang.frontend.neurosynth_utils module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.ast.html">neurolang.frontend.ast module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.ast.html#neurolang.frontend.ast.ASTNode"><code class="docutils literal notranslate"><span class="pre">ASTNode</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.ast.html#neurolang.frontend.ast.ASTWalker"><code class="docutils literal notranslate"><span class="pre">ASTWalker</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.ast.html#neurolang.frontend.ast.ASTWalker.evaluate"><code class="docutils literal notranslate"><span class="pre">ASTWalker.evaluate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.ast_tatsu.html">neurolang.frontend.ast_tatsu module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.ast_tatsu.html#neurolang.frontend.ast_tatsu.TatsuASTConverter"><code class="docutils literal notranslate"><span class="pre">TatsuASTConverter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html">neurolang.frontend.deterministic_frontend module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.aabb_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.aabb_tree</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.bounding_box</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.build_tree"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.build_tree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.generate_bounding_box"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.generate_bounding_box()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.spatial_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.to_ijk"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_ijk()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBR.to_xyz"><code class="docutils literal notranslate"><span class="pre">ExplicitVBR.to_xyz()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBROverlay"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.ExplicitVBROverlay.spatial_image"><code class="docutils literal notranslate"><span class="pre">ExplicitVBROverlay.spatial_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.NeurolangDL"><code class="docutils literal notranslate"><span class="pre">NeurolangDL</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.deterministic_frontend.html#neurolang.frontend.deterministic_frontend.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html">neurolang.frontend.frontend_extensions module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_cos"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_cos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_exp"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_exp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_log"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_log</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_log10"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_log10</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_sin"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_sin</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.frontend_extensions.html#neurolang.frontend.frontend_extensions.NumpyFunctionsMixin.constant_tan"><code class="docutils literal notranslate"><span class="pre">NumpyFunctionsMixin.constant_tan</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.neurolang.html">neurolang.frontend.neurolang module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.ExistentialPredicate"><code class="docutils literal notranslate"><span class="pre">ExistentialPredicate</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.ExistentialPredicate.type"><code class="docutils literal notranslate"><span class="pre">ExistentialPredicate.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException"><code class="docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.and_test"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.and_test()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.assignment"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.assignment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.comparison"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.comparison()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.dotted_identifier"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.dotted_identifier()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.function_application"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.function_application()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.integer"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.integer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.negated_argument"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.negated_argument()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.point_float"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.point_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.power"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.power()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.predicate"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.predicate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.product"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.projection"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.query"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.statement"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.statement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.string"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.sum"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.sum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.tuple"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.tuple()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentation.value"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentation.value()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentationCompiler"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentationCompiler</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentationCompiler.compile"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentationCompiler.compile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentationCompiler.get_intermediate_representation"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentationCompiler.get_intermediate_representation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangIntermediateRepresentationCompiler.type"><code class="docutils literal notranslate"><span class="pre">NeuroLangIntermediateRepresentationCompiler.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher"><code class="docutils literal notranslate"><span class="pre">PatternMatcher</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.match"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.match()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.pattern_match"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.pattern_match_expression"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match_expression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.pattern_match_expression_parameters"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match_expression_parameters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.pattern_match_expression_tuple"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match_expression_tuple()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.pattern_match_tuple"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.pattern_match_tuple()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.patterns"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.patterns</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.PatternMatcher.type"><code class="docutils literal notranslate"><span class="pre">PatternMatcher.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.add_match"><code class="docutils literal notranslate"><span class="pre">add_match()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.parser"><code class="docutils literal notranslate"><span class="pre">parser()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html">neurolang.frontend.neurosynth_utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.StudyID"><code class="docutils literal notranslate"><span class="pre">StudyID</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.TfIDf"><code class="docutils literal notranslate"><span class="pre">TfIDf</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.fetch_feature_data"><code class="docutils literal notranslate"><span class="pre">fetch_feature_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.fetch_neurosynth_peak_data"><code class="docutils literal notranslate"><span class="pre">fetch_neurosynth_peak_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.fetch_study_metadata"><code class="docutils literal notranslate"><span class="pre">fetch_study_metadata()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.get_ns_mni_peaks_reported"><code class="docutils literal notranslate"><span class="pre">get_ns_mni_peaks_reported()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.neurosynth_utils.html#neurolang.frontend.neurosynth_utils.get_ns_term_study_associations"><code class="docutils literal notranslate"><span class="pre">get_ns_term_study_associations()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html">neurolang.frontend.probabilistic_frontend module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#probabilistic-frontend">Probabilistic Frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_choice_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_choice_from_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_probabilistic_facts_from_tuples"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_probabilistic_facts_from_tuples()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.add_uniform_probabilistic_choice_over_set"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.add_uniform_probabilistic_choice_over_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.current_program"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.current_program</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.load_ontology"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.load_ontology()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.NeurolangPDL.solve_all"><code class="docutils literal notranslate"><span class="pre">NeurolangPDL.solve_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_anterior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_anatomical_anterior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_inferior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_anatomical_inferior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_posterior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_anatomical_posterior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anatomical_superior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_anatomical_superior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_anterior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_anterior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_inferior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_inferior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_left_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_left_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_overlapping"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_overlapping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_posterior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_posterior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_right_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_right_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.function_superior_of"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.function_superior_of()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.protected_keywords"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.protected_keywords</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.probabilistic_frontend.html#neurolang.frontend.probabilistic_frontend.RegionFrontendCPLogicSolver.type"><code class="docutils literal notranslate"><span class="pre">RegionFrontendCPLogicSolver.type</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.query_resolution.html">neurolang.frontend.query_resolution module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution.html#query-builder-base-region-and-neurosynth-mixins">Query Builder Base, Region and Neurosynth Mixins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.NeuroSynthMixin"><code class="docutils literal notranslate"><span class="pre">NeuroSynthMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.NeuroSynthMixin.load_neurosynth_mni_peaks_reported"><code class="docutils literal notranslate"><span class="pre">NeuroSynthMixin.load_neurosynth_mni_peaks_reported()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.NeuroSynthMixin.load_neurosynth_study_ids"><code class="docutils literal notranslate"><span class="pre">NeuroSynthMixin.load_neurosynth_study_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.NeuroSynthMixin.load_neurosynth_term_study_associations"><code class="docutils literal notranslate"><span class="pre">NeuroSynthMixin.load_neurosynth_term_study_associations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.add_symbol"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.add_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.add_tuple_set"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.add_tuple_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.all"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.del_symbol"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.del_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.environment"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.environment</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.exists"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.functions"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.functions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.get_symbol"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.get_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.new_symbol"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.new_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.scope"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.scope</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.symbol_table"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.symbol_table</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.symbols"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.symbols</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QueryBuilderBase.types"><code class="docutils literal notranslate"><span class="pre">QueryBuilderBase.types</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.QuerySymbolsProxy"><code class="docutils literal notranslate"><span class="pre">QuerySymbolsProxy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin"><code class="docutils literal notranslate"><span class="pre">RegionMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.add_atlas_set"><code class="docutils literal notranslate"><span class="pre">RegionMixin.add_atlas_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.add_region"><code class="docutils literal notranslate"><span class="pre">RegionMixin.add_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.add_region_set"><code class="docutils literal notranslate"><span class="pre">RegionMixin.add_region_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.create_region"><code class="docutils literal notranslate"><span class="pre">RegionMixin.create_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.make_implicit_regions_explicit"><code class="docutils literal notranslate"><span class="pre">RegionMixin.make_implicit_regions_explicit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.new_region_symbol"><code class="docutils literal notranslate"><span class="pre">RegionMixin.new_region_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.region_names"><code class="docutils literal notranslate"><span class="pre">RegionMixin.region_names</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.region_set_names"><code class="docutils literal notranslate"><span class="pre">RegionMixin.region_set_names</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution.html#neurolang.frontend.query_resolution.RegionMixin.sphere"><code class="docutils literal notranslate"><span class="pre">RegionMixin.sphere()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html">neurolang.frontend.query_resolution_datalog module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#query-builder-datalog">Query Builder Datalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_constraint"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_constraint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_tuple_set"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_tuple_set()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.current_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.current_program</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.execute_datalog_program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_nat_datalog_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.execute_nat_datalog_program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.magic_sets_rewrite_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.magic_sets_rewrite_program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.predicate_parameter_names"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.predicate_parameter_names()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.query"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.reset_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.reset_program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_datalog.html#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.solve_all"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.solve_all()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html">neurolang.frontend.query_resolution_expressions module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#query-resolution-expression">Query Resolution Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.All"><code class="docutils literal notranslate"><span class="pre">All</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Exists"><code class="docutils literal notranslate"><span class="pre">Exists</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression"><code class="docutils literal notranslate"><span class="pre">Expression</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression.do"><code class="docutils literal notranslate"><span class="pre">Expression.do()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression.help"><code class="docutils literal notranslate"><span class="pre">Expression.help()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Expression.type"><code class="docutils literal notranslate"><span class="pre">Expression.type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Implication"><code class="docutils literal notranslate"><span class="pre">Implication</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Operation"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Operation.operator_repr"><code class="docutils literal notranslate"><span class="pre">Operation.operator_repr</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Query"><code class="docutils literal notranslate"><span class="pre">Query</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.RightImplication"><code class="docutils literal notranslate"><span class="pre">RightImplication</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol"><code class="docutils literal notranslate"><span class="pre">Symbol</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol.expression"><code class="docutils literal notranslate"><span class="pre">Symbol.expression</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol.neurolang_symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.neurolang_symbol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol.symbol"><code class="docutils literal notranslate"><span class="pre">Symbol.symbol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol.value"><code class="docutils literal notranslate"><span class="pre">Symbol.value</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.conjunction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.constant"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.constant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.exists"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.exists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.fact"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.fact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.forall"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.forall()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.implication()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.negation"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.negation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.right_implication"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.right_implication()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.symbol"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.type"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.TranslateExpressionToFrontEndExpression.walk_function_application"><code class="docutils literal notranslate"><span class="pre">TranslateExpressionToFrontEndExpression.walk_function_application()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.op_bind"><code class="docutils literal notranslate"><span class="pre">op_bind()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.rop_bind"><code class="docutils literal notranslate"><span class="pre">rop_bind()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -870,12 +1203,12 @@ the most recurrent element of queries</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

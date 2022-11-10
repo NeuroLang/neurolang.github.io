@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.probabilistic.probabilistic_semiring_solver module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.probabilistic.probabilistic_semiring_solver module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,30 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_semiring_solver module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_semiring_solver module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolver"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolver.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.deterministic_fact_set_general"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.deterministic_fact_set_general()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.eliminate_superfluous_projection"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.eliminate_superfluous_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.empty_deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.empty_deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_choice_set_to_symbol"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_choice_set_to_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.push_projection_in_deterministic"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.push_projection_in_deterministic()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringToRelationalAlgebraSolver"><code class="docutils literal notranslate"><span class="pre">ProbSemiringToRelationalAlgebraSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringToRelationalAlgebraSolver.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringToRelationalAlgebraSolver.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +133,30 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_semiring_solver module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.probabilistic_semiring_solver module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolver"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolver.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.deterministic_fact_set_general"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.deterministic_fact_set_general()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.eliminate_superfluous_projection"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.eliminate_superfluous_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.empty_deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.empty_deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_choice_set_to_symbol"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_choice_set_to_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.push_projection_in_deterministic"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.push_projection_in_deterministic()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringSolverMixin.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringSolverMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringToRelationalAlgebraSolver"><code class="docutils literal notranslate"><span class="pre">ProbSemiringToRelationalAlgebraSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.probabilistic_semiring_solver.ProbSemiringToRelationalAlgebraSolver.type"><code class="docutils literal notranslate"><span class="pre">ProbSemiringToRelationalAlgebraSolver.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -270,64 +317,67 @@
 <tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_full_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_number_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_number_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_provenance_set</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_provenance_set</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -687,12 +737,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>

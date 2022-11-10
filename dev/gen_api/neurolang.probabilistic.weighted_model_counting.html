@@ -3,9 +3,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>neurolang.probabilistic.weighted_model_counting module &#8212; neurolang 0.1a12.dev19+g641efed documentation</title>
+    <title>neurolang.probabilistic.weighted_model_counting module &#8212; neurolang 0.1a12.dev27+g7d3c67a documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -17,6 +17,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -41,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev19+g641efed</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev27+g7d3c67a</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,7 +80,67 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation.deterministic_fact_set_constant"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation.deterministic_fact_set_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation.type"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin.eliminate_superfluous_projection"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin.eliminate_superfluous_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin.type"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser"><code class="docutils literal notranslate"><span class="pre">RAQueryOptimiser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type"><code class="docutils literal notranslate"><span class="pre">RAQueryOptimiser.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.generate_sdd_expression"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.generate_sdd_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.get_new_bernoulli_variable"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.get_new_bernoulli_variable()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.wmc_weights"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.wmc_weights()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.add"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.eq"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.eq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.expression_block"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.expression_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.mul"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.mul()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.neg"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.neg()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.or_"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.or_()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.symbol"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.build_global_sdd_model_rows"><code class="docutils literal notranslate"><span class="pre">build_global_sdd_model_rows()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.generate_probability_table"><code class="docutils literal notranslate"><span class="pre">generate_probability_table()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.generate_weights"><code class="docutils literal notranslate"><span class="pre">generate_weights()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.model_count_and_per_row_probability"><code class="docutils literal notranslate"><span class="pre">model_count_and_per_row_probability()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.perform_wmc"><code class="docutils literal notranslate"><span class="pre">perform_wmc()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.prepare_initial_query"><code class="docutils literal notranslate"><span class="pre">prepare_initial_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation"><code class="docutils literal notranslate"><span class="pre">sdd_compilation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation_and_wmc"><code class="docutils literal notranslate"><span class="pre">sdd_compilation_and_wmc()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_global_model"><code class="docutils literal notranslate"><span class="pre">sdd_solver_global_model()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_per_individual_row"><code class="docutils literal notranslate"><span class="pre">sdd_solver_per_individual_row()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_marg_query"><code class="docutils literal notranslate"><span class="pre">solve_marg_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query"><code class="docutils literal notranslate"><span class="pre">solve_succ_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_boolean_diagram"><code class="docutils literal notranslate"><span class="pre">solve_succ_query_boolean_diagram()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_sdd_direct"><code class="docutils literal notranslate"><span class="pre">solve_succ_query_sdd_direct()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -109,7 +170,67 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.weighted_model_counting module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation.deterministic_fact_set_constant"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation.deterministic_fact_set_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.DeterministicFactSetTranslation.type"><code class="docutils literal notranslate"><span class="pre">DeterministicFactSetTranslation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin.eliminate_superfluous_projection"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin.eliminate_superfluous_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.EliminateSuperfluousProjectionMixin.type"><code class="docutils literal notranslate"><span class="pre">EliminateSuperfluousProjectionMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser"><code class="docutils literal notranslate"><span class="pre">RAQueryOptimiser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.RAQueryOptimiser.type"><code class="docutils literal notranslate"><span class="pre">RAQueryOptimiser.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.generate_sdd_expression"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.generate_sdd_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.get_new_bernoulli_variable"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.get_new_bernoulli_variable()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.type"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SDDWMCSemiRingSolver.wmc_weights"><code class="docutils literal notranslate"><span class="pre">SDDWMCSemiRingSolver.wmc_weights()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.add"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.eq"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.eq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.expression_block"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.expression_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.mul"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.mul()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.neg"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.neg()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.or_"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.or_()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.symbol"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.SemiRingRAPToSDD.type"><code class="docutils literal notranslate"><span class="pre">SemiRingRAPToSDD.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.deterministic_fact_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.deterministic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_choice_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_choice_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_fact_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.probabilistic_fact_set_invalid"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.probabilistic_fact_set_invalid()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.WMCSemiRingSolver.type"><code class="docutils literal notranslate"><span class="pre">WMCSemiRingSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.build_global_sdd_model_rows"><code class="docutils literal notranslate"><span class="pre">build_global_sdd_model_rows()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.generate_probability_table"><code class="docutils literal notranslate"><span class="pre">generate_probability_table()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.generate_weights"><code class="docutils literal notranslate"><span class="pre">generate_weights()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.model_count_and_per_row_probability"><code class="docutils literal notranslate"><span class="pre">model_count_and_per_row_probability()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.perform_wmc"><code class="docutils literal notranslate"><span class="pre">perform_wmc()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.prepare_initial_query"><code class="docutils literal notranslate"><span class="pre">prepare_initial_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation"><code class="docutils literal notranslate"><span class="pre">sdd_compilation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_compilation_and_wmc"><code class="docutils literal notranslate"><span class="pre">sdd_compilation_and_wmc()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_global_model"><code class="docutils literal notranslate"><span class="pre">sdd_solver_global_model()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.sdd_solver_per_individual_row"><code class="docutils literal notranslate"><span class="pre">sdd_solver_per_individual_row()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_marg_query"><code class="docutils literal notranslate"><span class="pre">solve_marg_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query"><code class="docutils literal notranslate"><span class="pre">solve_succ_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_boolean_diagram"><code class="docutils literal notranslate"><span class="pre">solve_succ_query_boolean_diagram()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.weighted_model_counting.solve_succ_query_sdd_direct"><code class="docutils literal notranslate"><span class="pre">solve_succ_query_sdd_direct()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -293,31 +414,40 @@ compilation.</p>
 <tr class="row-even"><td><p><strong>process_iterable_argument</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_and_rename_in_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_extended_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_left</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_leftnaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_leftnaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_outernaturaljoin_left</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>push_selection_in_right</strong></p></td>
+<tr class="row-even"><td><p><strong>push_selection_in_outernaturaljoin_right</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>push_selection_in_projection</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>push_selection_in_replace_null</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>push_selection_in_right</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -498,73 +628,79 @@ compilation.</p>
 <tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_full_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_number_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_number_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>remove_trivial_rename</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>replace_null</strong></p></td>
+<tr class="row-even"><td><p><strong>remove_trivial_rename</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-odd"><td><p><strong>replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_provenance_set</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_provenance_set</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>simplify_renames_name</strong></p></td>
+<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>simplify_renames_name</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<tr class="row-even"><td><p><strong>split_rename_left_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>split_rename_naturaljoin</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>split_rename_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>switch_rename_replace_null</strong></p></td>
@@ -861,64 +997,67 @@ compilation.</p>
 <tr class="row-odd"><td><p><strong>ra_equijoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_intersection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_full_outer_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_left_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_intersection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_name_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_left_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_naturaljoin</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_name_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_number_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_naturaljoin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_product</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_number_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_projection</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_rename_column</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_projection</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_rename_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_rename_column</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>ra_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_rename_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>ra_union</strong></p></td>
+<tr class="row-even"><td><p><strong>ra_symbol</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>replace_null</strong></p></td>
+<tr class="row-odd"><td><p><strong>ra_union</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_between_columns</strong></p></td>
+<tr class="row-even"><td><p><strong>replace_null</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_by_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_between_columns</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_provenance_set</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_general_selection_by_constant</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_provenance_set</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
+<tr class="row-odd"><td><p><strong>selection_rap_eq_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>set_destroy</strong></p></td>
+<tr class="row-even"><td><p><strong>selection_rap_eq_columnint_columnint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>set_destroy</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1076,12 +1215,12 @@ set.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 19 Jul 2022, 10:24:37</p>
+    <p style="margin-top: -10px;">on 10 Nov 2022, 16:28:47</p>
 </div>
   </body>
 </html>
