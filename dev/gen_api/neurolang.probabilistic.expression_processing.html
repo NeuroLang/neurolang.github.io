@@ -3,21 +3,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.probabilistic.expression_processing module &#8212; neurolang 0.1a12.dev26+gcc7e113 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <title>neurolang.probabilistic.expression_processing module &#8212; neurolang 0.1a13.dev2+g8acac30 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a18caea1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -40,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a12.dev26+gcc7e113</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a13.dev2+g8acac30</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -93,7 +90,7 @@
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_builtin"><code class="docutils literal notranslate"><span class="pre">is_builtin()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">is_probabilistic_fact()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_probabilistic_predicate_symbol"><code class="docutils literal notranslate"><span class="pre">is_probabilistic_predicate_symbol()</span></code></a></li>
-<li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_query_based_probfact"><code class="docutils literal notranslate"><span class="pre">is_query_based_probfact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_query_based_probpredicate"><code class="docutils literal notranslate"><span class="pre">is_query_based_probpredicate()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_within_language_prob_query"><code class="docutils literal notranslate"><span class="pre">is_within_language_prob_query()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.lift_optimization_for_choice_predicates"><code class="docutils literal notranslate"><span class="pre">lift_optimization_for_choice_predicates()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.separate_deterministic_probabilistic_code"><code class="docutils literal notranslate"><span class="pre">separate_deterministic_probabilistic_code()</span></code></a></li>
@@ -143,7 +140,7 @@
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_builtin"><code class="docutils literal notranslate"><span class="pre">is_builtin()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">is_probabilistic_fact()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_probabilistic_predicate_symbol"><code class="docutils literal notranslate"><span class="pre">is_probabilistic_predicate_symbol()</span></code></a></li>
-<li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_query_based_probfact"><code class="docutils literal notranslate"><span class="pre">is_query_based_probfact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_query_based_probpredicate"><code class="docutils literal notranslate"><span class="pre">is_query_based_probpredicate()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.is_within_language_prob_query"><code class="docutils literal notranslate"><span class="pre">is_within_language_prob_query()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.lift_optimization_for_choice_predicates"><code class="docutils literal notranslate"><span class="pre">lift_optimization_for_choice_predicates()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.probabilistic.expression_processing.separate_deterministic_probabilistic_code"><code class="docutils literal notranslate"><span class="pre">separate_deterministic_probabilistic_code()</span></code></a></li>
@@ -280,9 +277,9 @@ the set.</p>
 <p class="rubric">Notes</p>
 <p>In CP-Logic <a class="reference internal" href="#r274d26717fef-1" id="id1">[1]</a>, a probabilistic fact is seen as a CP-event</p>
 <div class="math">
-<p><img src="_images/math/9c68b0efe467b7d2b6f85395c8a971bd1f1e8832.png" alt="\left( \alpha \text{P}(x_1, \dots, x_n)  \right) \gets \top"/></p>
+<p><img src="../_images/math/9c68b0efe467b7d2b6f85395c8a971bd1f1e8832.png" alt="\left( \alpha \text{P}(x_1, \dots, x_n)  \right) \gets \top"/></p>
 </div><p>with a single atom in its head which is true with probability
-<img class="math" src="_images/math/2f5aa019312e1bbc969deab8dca8b00f76025404.png" alt="\alpha"/>.</p>
+<img class="math" src="../_images/math/2f5aa019312e1bbc969deab8dca8b00f76025404.png" alt="\alpha"/>.</p>
 <div role="list" class="citation-list">
 <div class="citation" id="r274d26717fef-1" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -300,8 +297,8 @@ Programming.” Theory and Practice of Logic Programming 9, no. 3 (May
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="neurolang.probabilistic.expression_processing.is_query_based_probfact">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">is_query_based_probfact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expression_processing.is_query_based_probfact" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.expression_processing.is_query_based_probpredicate">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">is_query_based_probpredicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.expression_processing.is_query_based_probpredicate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -371,12 +368,12 @@ conjunction corresponding to the given query.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 10 Nov 2022, 16:29:04</p>
+    <p style="margin-top: -10px;">on 12 Sep 2023, 14:23:23</p>
 </div>
   </body>
 </html>
