@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.logic.expression_processing module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.logic.expression_processing module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,77 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.logic.expression_processing module</a></li>
+<li><a class="reference internal" href="#">neurolang.logic.expression_processing module</a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_fa"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_q"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_q()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_s"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_symbol"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.type"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.constant"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.extract_predicates_fa"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.extract_predicates_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.symbol"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.type"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.constant"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.extract_predicates_fa"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.extract_predicates_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.negation"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.symbol"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.type"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.existential_predicate"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.existential_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.nary"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.nary()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.operator"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.type"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.walk_function_application"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.walk_function_application()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver"><code class="docutils literal notranslate"><span class="pre">LogicSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_conjunction"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_disjunction"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_false_antecedent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_false_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_false_consequent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_false_consequent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_true_antecedent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_true_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_true_consequent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_true_consequent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_negation"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.type"><code class="docutils literal notranslate"><span class="pre">LogicSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_disjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_negation"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.translate_logic_operator"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.translate_logic_operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.type"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.conjunction"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.disjunction"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.logic_operator"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.logic_operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.negation"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.quantifier"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.quantifier()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.type"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.union"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_binary_logic_expression"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.walk_binary_logic_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_nary"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.walk_nary()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_atoms"><code class="docutils literal notranslate"><span class="pre">extract_logic_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_free_variables"><code class="docutils literal notranslate"><span class="pre">extract_logic_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_predicates"><code class="docutils literal notranslate"><span class="pre">extract_logic_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.has_existential_quantifiers"><code class="docutils literal notranslate"><span class="pre">has_existential_quantifiers()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.is_logic_function_application"><code class="docutils literal notranslate"><span class="pre">is_logic_function_application()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +177,77 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.logic.expression_processing module</a></li>
+<li><a class="reference internal" href="#">neurolang.logic.expression_processing module</a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_fa"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_q"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_q()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_s"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.extract_variables_symbol"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.extract_variables_symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker.type"><code class="docutils literal notranslate"><span class="pre">ExtractFreeVariablesWalker.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.constant"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.extract_predicates_fa"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.extract_predicates_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.symbol"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicAtoms.type"><code class="docutils literal notranslate"><span class="pre">ExtractLogicAtoms.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.constant"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.extract_predicates_fa"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.extract_predicates_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.negation"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.symbol"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.symbol()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.ExtractLogicPredicates.type"><code class="docutils literal notranslate"><span class="pre">ExtractLogicPredicates.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.existential_predicate"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.existential_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.nary"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.nary()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.operator"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.type"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.HasExistentialPredicates.walk_function_application"><code class="docutils literal notranslate"><span class="pre">HasExistentialPredicates.walk_function_application()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver"><code class="docutils literal notranslate"><span class="pre">LogicSolver</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_conjunction"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_disjunction"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_false_antecedent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_false_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_false_consequent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_false_consequent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_true_antecedent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_true_antecedent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_implication_true_consequent"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_implication_true_consequent()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.evaluate_negation"><code class="docutils literal notranslate"><span class="pre">LogicSolver.evaluate_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.LogicSolver.type"><code class="docutils literal notranslate"><span class="pre">LogicSolver.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_disjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.build_negation"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.translate_logic_operator"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.translate_logic_operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.TranslateToLogic.type"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.conjunction"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.disjunction"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.logic_operator"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.logic_operator()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.negation"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.quantifier"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.quantifier()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.type"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.union"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_binary_logic_expression"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.walk_binary_logic_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_nary"><code class="docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets.walk_nary()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_atoms"><code class="docutils literal notranslate"><span class="pre">extract_logic_atoms()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_free_variables"><code class="docutils literal notranslate"><span class="pre">extract_logic_free_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.extract_logic_predicates"><code class="docutils literal notranslate"><span class="pre">extract_logic_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.has_existential_quantifiers"><code class="docutils literal notranslate"><span class="pre">has_existential_quantifiers()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.expression_processing.is_logic_function_application"><code class="docutils literal notranslate"><span class="pre">is_logic_function_application()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,13 +262,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.logic.expression_processing">
-<span id="neurolang-logic-expression-processing-module"></span><h1>neurolang.logic.expression_processing module<a class="headerlink" href="#module-neurolang.logic.expression_processing" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-logic-expression-processing-module"></span><h1>neurolang.logic.expression_processing module<a class="headerlink" href="#module-neurolang.logic.expression_processing" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.ExtractFreeVariablesWalker">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">ExtractFreeVariablesWalker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractFreeVariablesWalker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -137,11 +276,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -155,10 +290,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -205,6 +336,12 @@
 <tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p><strong>walk_binary_logic_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <dl class="py method">
@@ -237,9 +374,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.ExtractLogicAtoms">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">ExtractLogicAtoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicAtoms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -247,11 +384,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -265,10 +398,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -310,6 +439,12 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_binary_logic_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -339,9 +474,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.ExtractLogicPredicates">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">ExtractLogicPredicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.ExtractLogicPredicates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -349,11 +484,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -367,10 +498,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -412,6 +539,12 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_binary_logic_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -446,9 +579,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.HasExistentialPredicates">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">HasExistentialPredicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.HasExistentialPredicates" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -456,11 +589,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -474,10 +603,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>existential_predicate</strong></p></td>
 <td></td>
@@ -538,9 +663,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.LogicSolver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">LogicSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.LogicSolver" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -548,11 +673,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -566,10 +687,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>evaluate_conjunction</strong></p></td>
 <td></td>
@@ -662,9 +779,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.TranslateToLogic">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">TranslateToLogic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.TranslateToLogic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -672,11 +789,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -690,10 +803,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_conjunction</strong></p></td>
 <td></td>
@@ -754,9 +863,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">WalkLogicProgramAggregatingSets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -764,11 +873,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -782,10 +887,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -818,6 +919,12 @@
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_binary_logic_expression</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -857,6 +964,16 @@
 <span class="sig-name descname"><span class="pre">union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.union" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_binary_logic_expression">
+<span class="sig-name descname"><span class="pre">walk_binary_logic_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_binary_logic_expression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_nary">
+<span class="sig-name descname"><span class="pre">walk_nary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets.walk_nary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py function">
@@ -865,13 +982,13 @@
 <dd><p>Extract atoms from expression
 knowing that it’s in logic format</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">Expression</span></dt><dd><p>expression to extract predicates from</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>OrderedSet</dt><dd><p>set of all atoms in the expression in lexicographical
 order.</p>
@@ -886,12 +1003,12 @@ order.</p>
 <span class="sig-prename descclassname"><span class="pre">neurolang.logic.expression_processing.</span></span><span class="sig-name descname"><span class="pre">extract_logic_free_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.expression_processing.extract_logic_free_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract variables from expression assuming it’s in logic format.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">Expression</span></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>OrderedSet</dt><dd><p>set of all free variables in the expression.</p>
 </dd>
@@ -908,13 +1025,13 @@ knowing that it’s in logic format, if
 predicates are negated then (not predicate)
 will be the result.ormat</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">Expression</span></dt><dd><p>expression to extract predicates from</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>OrderedSet</dt><dd><p>set of all predicates in the expression in lexicographical
 order.</p>
@@ -930,14 +1047,14 @@ order.</p>
 <dd><p>Check if the logic expression has
 existentially-quantified variables</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">LogicExpression</span></dt><dd><p>Logic expression to check wether existential
 quantifiers exists inside.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>bool</dt><dd><p>True if and only if there is an existentially-quantified variable
 in the expression.</p>
@@ -958,7 +1075,7 @@ in the expression.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -974,9 +1091,12 @@ in the expression.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.aabb_tree module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.aabb_tree module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,41 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.aabb_tree module</a></li>
+<li><a class="reference internal" href="#">neurolang.aabb_tree module</a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB"><code class="docutils literal notranslate"><span class="pre">AABB</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.center"><code class="docutils literal notranslate"><span class="pre">AABB.center</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.contains"><code class="docutils literal notranslate"><span class="pre">AABB.contains()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.dim"><code class="docutils literal notranslate"><span class="pre">AABB.dim</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.lb"><code class="docutils literal notranslate"><span class="pre">AABB.lb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.limits"><code class="docutils literal notranslate"><span class="pre">AABB.limits</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.overlaps"><code class="docutils literal notranslate"><span class="pre">AABB.overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.ub"><code class="docutils literal notranslate"><span class="pre">AABB.ub</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.union"><code class="docutils literal notranslate"><span class="pre">AABB.union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.volume"><code class="docutils literal notranslate"><span class="pre">AABB.volume</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.width"><code class="docutils literal notranslate"><span class="pre">AABB.width</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.children"><code class="docutils literal notranslate"><span class="pre">Node.children</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.is_leaf"><code class="docutils literal notranslate"><span class="pre">Node.is_leaf</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.left"><code class="docutils literal notranslate"><span class="pre">Node.left</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.right"><code class="docutils literal notranslate"><span class="pre">Node.right</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree"><code class="docutils literal notranslate"><span class="pre">Tree</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add"><code class="docutils literal notranslate"><span class="pre">Tree.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_in_direction"><code class="docutils literal notranslate"><span class="pre">Tree.add_in_direction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_left"><code class="docutils literal notranslate"><span class="pre">Tree.add_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_right"><code class="docutils literal notranslate"><span class="pre">Tree.add_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.expand_region_box"><code class="docutils literal notranslate"><span class="pre">Tree.expand_region_box()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_overlapping_regions"><code class="docutils literal notranslate"><span class="pre">Tree.query_overlapping_regions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_regions_axdir"><code class="docutils literal notranslate"><span class="pre">Tree.query_regions_axdir()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_regions_contained_in_box"><code class="docutils literal notranslate"><span class="pre">Tree.query_regions_contained_in_box()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.aabb_from_vertices"><code class="docutils literal notranslate"><span class="pre">aabb_from_vertices()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +141,41 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.aabb_tree module</a></li>
+<li><a class="reference internal" href="#">neurolang.aabb_tree module</a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB"><code class="docutils literal notranslate"><span class="pre">AABB</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.center"><code class="docutils literal notranslate"><span class="pre">AABB.center</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.contains"><code class="docutils literal notranslate"><span class="pre">AABB.contains()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.dim"><code class="docutils literal notranslate"><span class="pre">AABB.dim</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.lb"><code class="docutils literal notranslate"><span class="pre">AABB.lb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.limits"><code class="docutils literal notranslate"><span class="pre">AABB.limits</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.overlaps"><code class="docutils literal notranslate"><span class="pre">AABB.overlaps()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.ub"><code class="docutils literal notranslate"><span class="pre">AABB.ub</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.union"><code class="docutils literal notranslate"><span class="pre">AABB.union()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.volume"><code class="docutils literal notranslate"><span class="pre">AABB.volume</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.AABB.width"><code class="docutils literal notranslate"><span class="pre">AABB.width</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.children"><code class="docutils literal notranslate"><span class="pre">Node.children</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.is_leaf"><code class="docutils literal notranslate"><span class="pre">Node.is_leaf</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.left"><code class="docutils literal notranslate"><span class="pre">Node.left</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Node.right"><code class="docutils literal notranslate"><span class="pre">Node.right</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree"><code class="docutils literal notranslate"><span class="pre">Tree</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add"><code class="docutils literal notranslate"><span class="pre">Tree.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_in_direction"><code class="docutils literal notranslate"><span class="pre">Tree.add_in_direction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_left"><code class="docutils literal notranslate"><span class="pre">Tree.add_left()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.add_right"><code class="docutils literal notranslate"><span class="pre">Tree.add_right()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.expand_region_box"><code class="docutils literal notranslate"><span class="pre">Tree.expand_region_box()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_overlapping_regions"><code class="docutils literal notranslate"><span class="pre">Tree.query_overlapping_regions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_regions_axdir"><code class="docutils literal notranslate"><span class="pre">Tree.query_regions_axdir()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.Tree.query_regions_contained_in_box"><code class="docutils literal notranslate"><span class="pre">Tree.query_regions_contained_in_box()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.aabb_tree.aabb_from_vertices"><code class="docutils literal notranslate"><span class="pre">aabb_from_vertices()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,13 +190,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.aabb_tree">
-<span id="neurolang-aabb-tree-module"></span><h1>neurolang.aabb_tree module<a class="headerlink" href="#module-neurolang.aabb_tree" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-aabb-tree-module"></span><h1>neurolang.aabb_tree module<a class="headerlink" href="#module-neurolang.aabb_tree" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.aabb_tree.AABB">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.aabb_tree.</span></span><span class="sig-name descname"><span class="pre">AABB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.aabb_tree.AABB" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>center</strong></dt><dd></dd>
 <dt><strong>dim</strong></dt><dd></dd>
@@ -143,10 +210,6 @@
 </dl>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>contains</strong></p></td>
 <td></td>
@@ -214,9 +277,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.aabb_tree.Node">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.aabb_tree.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.aabb_tree.Node" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>children</strong></dt><dd></dd>
 <dt><strong>is_leaf</strong></dt><dd></dd>
@@ -250,13 +313,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.aabb_tree.Tree">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.aabb_tree.</span></span><span class="sig-name descname"><span class="pre">Tree</span></span><a class="headerlink" href="#neurolang.aabb_tree.Tree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 77%" />
-<col style="width: 23%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add</strong></p></td>
 <td></td>
@@ -337,7 +396,7 @@
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -353,9 +412,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

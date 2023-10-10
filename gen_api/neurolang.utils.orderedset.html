@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.utils.orderedset module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.utils.orderedset module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,19 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.orderedset module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.orderedset module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet"><code class="docutils literal notranslate"><span class="pre">OrderedSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.add"><code class="docutils literal notranslate"><span class="pre">OrderedSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.copy"><code class="docutils literal notranslate"><span class="pre">OrderedSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.discard"><code class="docutils literal notranslate"><span class="pre">OrderedSet.discard()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.index"><code class="docutils literal notranslate"><span class="pre">OrderedSet.index()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.issubset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issubset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.issuperset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issuperset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.replace"><code class="docutils literal notranslate"><span class="pre">OrderedSet.replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +119,19 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.orderedset module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.orderedset module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet"><code class="docutils literal notranslate"><span class="pre">OrderedSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.add"><code class="docutils literal notranslate"><span class="pre">OrderedSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.copy"><code class="docutils literal notranslate"><span class="pre">OrderedSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.discard"><code class="docutils literal notranslate"><span class="pre">OrderedSet.discard()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.index"><code class="docutils literal notranslate"><span class="pre">OrderedSet.index()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.issubset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issubset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.issuperset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issuperset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.replace"><code class="docutils literal notranslate"><span class="pre">OrderedSet.replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,17 +146,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.utils.orderedset">
-<span id="neurolang-utils-orderedset-module"></span><h1>neurolang.utils.orderedset module<a class="headerlink" href="#module-neurolang.utils.orderedset" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-utils-orderedset-module"></span><h1>neurolang.utils.orderedset module<a class="headerlink" href="#module-neurolang.utils.orderedset" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.orderedset.OrderedSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.orderedset.</span></span><span class="sig-name descname"><span class="pre">OrderedSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.orderedset.OrderedSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSet" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableSet</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSet" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableSet</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.orderedset.OrderedSet.add" title="neurolang.utils.orderedset.OrderedSet.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(value)</p></td>
 <td><p>Add an element.</p></td>
@@ -162,10 +181,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>copy</strong></p></td>
 <td></td>
@@ -229,7 +244,7 @@ recommended.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -245,9 +260,12 @@ recommended.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

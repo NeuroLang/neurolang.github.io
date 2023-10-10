@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.datalog.chase.negation module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.datalog.chase.negation module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,32 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegation"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegation</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.chase_step"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.chase_step()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_non_linear"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.check_non_linear()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_negative_builtins"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.evaluate_negative_builtins()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_rule_predicates"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.extract_rule_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.get_args_to_project"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.get_args_to_project()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_negative_builtin_substitution"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.unify_negative_builtin_substitution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_negative_substitutions"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin.obtain_negative_substitutions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_negative_substitution"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin.unify_negative_substitution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationRelationalAlgebraMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints"><code class="docutils literal notranslate"><span class="pre">NegativeFactConstraints</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints.check_constraints"><code class="docutils literal notranslate"><span class="pre">NegativeFactConstraints.check_constraints()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +132,32 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.chase.negation module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegation"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegation</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.chase_step"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.chase_step()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.check_non_linear"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.check_non_linear()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.evaluate_negative_builtins"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.evaluate_negative_builtins()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.extract_rule_predicates"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.extract_rule_predicates()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.get_args_to_project"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.get_args_to_project()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral.unify_negative_builtin_substitution"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral.unify_negative_builtin_substitution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.obtain_negative_substitutions"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin.obtain_negative_substitutions()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin.unify_negative_substitution"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin.unify_negative_substitution()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationRelationalAlgebraMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions"><code class="docutils literal notranslate"><span class="pre">DatalogChaseNegationRelationalAlgebraMixin.obtain_negative_substitutions()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints"><code class="docutils literal notranslate"><span class="pre">NegativeFactConstraints</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints.check_constraints"><code class="docutils literal notranslate"><span class="pre">NegativeFactConstraints.check_constraints()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,17 +172,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.chase.negation">
-<span id="neurolang-datalog-chase-negation-module"></span><h1>neurolang.datalog.chase.negation module<a class="headerlink" href="#module-neurolang.datalog.chase.negation" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-chase-negation-module"></span><h1>neurolang.datalog.chase.negation module<a class="headerlink" href="#module-neurolang.datalog.chase.negation" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.chase.negation.DatalogChaseNegation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.chase.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogChaseNegation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datalog_program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral" title="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.DatalogChaseNegationGeneral</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin" title="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral" title="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogChaseNegationGeneral</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin" title="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogChaseNegationMGUMixin</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 81%" />
-<col style="width: 19%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
 <td></td>
@@ -241,13 +286,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.chase.negation.DatalogChaseNegationGeneral">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.chase.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogChaseNegationGeneral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datalog_program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationGeneral" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseGeneral" title="neurolang.datalog.chase.general.ChaseGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseGeneral</span></code></a>, <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseSemiNaive" title="neurolang.datalog.chase.general.ChaseSemiNaive"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.general.ChaseSemiNaive</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints" title="neurolang.datalog.chase.negation.NegativeFactConstraints"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.negation.NegativeFactConstraints</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseGeneral" title="neurolang.datalog.chase.general.ChaseGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChaseGeneral</span></code></a>, <a class="reference internal" href="neurolang.datalog.chase.general.html#neurolang.datalog.chase.general.ChaseSemiNaive" title="neurolang.datalog.chase.general.ChaseSemiNaive"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChaseSemiNaive</span></code></a>, <a class="reference internal" href="#neurolang.datalog.chase.negation.NegativeFactConstraints" title="neurolang.datalog.chase.negation.NegativeFactConstraints"><code class="xref py py-class docutils literal notranslate"><span class="pre">NegativeFactConstraints</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 81%" />
-<col style="width: 19%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>aggregate_tuple_type_into_row_type</strong></p></td>
 <td></td>
@@ -373,13 +414,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.chase.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogChaseNegationMGUMixin</span></span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationMGUMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.mgu.html#neurolang.datalog.chase.mgu.ChaseMGUMixin" title="neurolang.datalog.chase.mgu.ChaseMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.mgu.ChaseMGUMixin</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.mgu.html#neurolang.datalog.chase.mgu.ChaseMGUMixin" title="neurolang.datalog.chase.mgu.ChaseMGUMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChaseMGUMixin</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 77%" />
-<col style="width: 23%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>obtain_negative_substitutions</strong></p></td>
 <td></td>
@@ -410,13 +447,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.chase.negation.</span></span><span class="sig-name descname"><span class="pre">DatalogChaseNegationRelationalAlgebraMixin</span></span><a class="headerlink" href="#neurolang.datalog.chase.negation.DatalogChaseNegationRelationalAlgebraMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.relational_algebra.html#neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin" title="neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.datalog.chase.relational_algebra.html#neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin" title="neurolang.datalog.chase.relational_algebra.ChaseRelationalAlgebraPlusCeriMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChaseRelationalAlgebraPlusCeriMixin</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 82%" />
-<col style="width: 18%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>compute_substitutions</strong></p></td>
 <td></td>
@@ -451,13 +484,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.chase.negation.NegativeFactConstraints">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.chase.negation.</span></span><span class="sig-name descname"><span class="pre">NegativeFactConstraints</span></span><a class="headerlink" href="#neurolang.datalog.chase.negation.NegativeFactConstraints" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 68%" />
-<col style="width: 32%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>check_constraints</strong></p></td>
 <td></td>
@@ -477,7 +506,7 @@
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -493,9 +522,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

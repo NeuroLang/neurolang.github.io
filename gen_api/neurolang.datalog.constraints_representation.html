@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.datalog.constraints_representation module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.datalog.constraints_representation module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,31 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.constraints_representation module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.constraints_representation module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_existential_rules"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.add_existential_rules()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_logic_constraint"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.add_logic_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.categorized_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.categorized_constraints</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.existential_rules"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.existential_rules</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.get_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.protected_keywords"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.set_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.protected_keywords"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.RightImplication"><code class="docutils literal notranslate"><span class="pre">RightImplication</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.RightImplication.type"><code class="docutils literal notranslate"><span class="pre">RightImplication.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.reachable_code"><code class="docutils literal notranslate"><span class="pre">reachable_code()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +131,31 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.constraints_representation module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.constraints_representation module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_existential_rules"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.add_existential_rules()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_logic_constraint"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.add_logic_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.categorized_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.categorized_constraints</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.existential_rules"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.existential_rules</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.get_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.protected_keywords"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.set_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.protected_keywords"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type"><code class="docutils literal notranslate"><span class="pre">DatalogConstraintsProgram.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.RightImplication"><code class="docutils literal notranslate"><span class="pre">RightImplication</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.RightImplication.type"><code class="docutils literal notranslate"><span class="pre">RightImplication.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.constraints_representation.reachable_code"><code class="docutils literal notranslate"><span class="pre">reachable_code()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,7 +170,7 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.constraints_representation">
-<span id="neurolang-datalog-constraints-representation-module"></span><h1>neurolang.datalog.constraints_representation module<a class="headerlink" href="#module-neurolang.datalog.constraints_representation" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-constraints-representation-module"></span><h1>neurolang.datalog.constraints_representation module<a class="headerlink" href="#module-neurolang.datalog.constraints_representation" title="Permalink to this heading">¶</a></h1>
 <p>Compiler for the intermediate representation of a Datalog program.
 The <code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogProgram</span></code> class processes the
 intermediate representation of a program and extracts
@@ -132,9 +179,9 @@ sets and has support for constraints.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.constraints_representation.</span></span><span class="sig-name descname"><span class="pre">DatalogConstraintsMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -142,33 +189,34 @@ sets and has support for constraints.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constraints</span></code></a>()</p></td>
+<td><p>Function that returns the constraints contained in the Datalog program.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_constraints</span></code></a>()</p></td>
+<td><p>Returns the contraints in a dictionary, where the key is the functor of the consequent of each of the rules.</p></td>
+</tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_constraints</span></code></a>(categorized_constraints)</p></td>
+<td><p>This function receives a dictionary with the contraints organized according to the functor of its consequent and is in charge of setting it both in the symbol table and in the global variable <cite>categorized_contraints</cite>, useful for XRewriter optimizations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>add_logic_constraint</strong></p></td>
+<tr class="row-odd"><td><p><strong>add_existential_rules</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>constraints</strong></p></td>
+<tr class="row-even"><td><p><strong>add_logic_constraint</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
@@ -189,19 +237,78 @@ sets and has support for constraints.</p>
 </tbody>
 </table>
 <dl class="py method">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_existential_rules">
+<span class="sig-name descname"><span class="pre">add_existential_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_existential_rules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_logic_constraint">
 <span class="sig-name descname"><span class="pre">add_logic_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.add_logic_constraint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.categorized_constraints">
+<span class="sig-name descname"><span class="pre">categorized_constraints</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.categorized_constraints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints">
 <span class="sig-name descname"><span class="pre">constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns the constraints contained
+in the Datalog program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Union of formulas containing all constraints loaded into the program.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.existential_rules">
+<span class="sig-name descname"><span class="pre">existential_rules</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.existential_rules" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints">
+<span class="sig-name descname"><span class="pre">get_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.get_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contraints in a dictionary, where the key is the functor
+of the consequent of each of the rules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Dictionary containing all constraints loaded in the datalog program,</dt><dd></dd>
+<dt>indexed according to the functor of the rule consequent.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.protected_keywords">
 <span class="sig-name descname"><span class="pre">protected_keywords</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'__constraints__'}</span></em><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.protected_keywords" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints">
+<span class="sig-name descname"><span class="pre">set_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categorized_constraints</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin.set_constraints" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function receives a dictionary with the contraints organized
+according to the functor of its consequent and is in charge of setting
+it both in the symbol table and in the global variable
+<cite>categorized_contraints</cite>, useful for XRewriter optimizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>categorized_constraints</strong><span class="classifier">dict</span></dt><dd><p>Dictionary of constraints where each key is
+the functor of the consequent of the rules
+and the values are lists of contraints with
+each rule associated to the corresponding functor.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsMixin.type">
@@ -213,9 +320,9 @@ sets and has support for constraints.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.DatalogConstraintsProgram">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.constraints_representation.</span></span><span class="sig-name descname"><span class="pre">DatalogConstraintsProgram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.constraints_representation.DatalogConstraintsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgramMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsMixin" title="neurolang.datalog.constraints_representation.DatalogConstraintsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogConstraintsMixin</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogProgramMixin</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
@@ -225,14 +332,16 @@ sets and has support for constraints.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">constant_equals</span></code></p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">constraints</span></code>()</p></td>
+<td><p>Function that returns the constraints contained in the Datalog program.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_constraints</span></code>()</p></td>
+<td><p>Returns the contraints in a dictionary, where the key is the functor of the consequent of each of the rules.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_iterable_type</span></code>(iterable)</p></td>
 <td><p>Infer the type of iterable elements without modifying the iterable.</p></td>
@@ -243,33 +352,32 @@ sets and has support for constraints.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pattern_match</span></code>(pattern, expression)</p></td>
 <td><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> matches <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type" title="neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_constraints</span></code>(categorized_constraints)</p></td>
+<td><p>This function receives a dictionary with the contraints organized according to the functor of its consequent and is in charge of setting it both in the symbol table and in the global variable <cite>categorized_contraints</cite>, useful for XRewriter optimizations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type" title="neurolang.datalog.constraints_representation.DatalogConstraintsProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">union_of_cq</span></code>(expression)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">union_of_cq</span></code>(expression)</p></td>
 <td><p>This pattern is here to avoid processing the full program when one rule is rewritten.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
+<tr class="row-odd"><td><p><strong>add_existential_rules</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
+<tr class="row-even"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>add_logic_constraint</strong></p></td>
+<tr class="row-odd"><td><p><strong>add_included_constants_and_functions_to_symbol_table</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>builtins</strong></p></td>
+<tr class="row-even"><td><p><strong>add_logic_constraint</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>constraints</strong></p></td>
+<tr class="row-odd"><td><p><strong>builtins</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>extensional_database</strong></p></td>
@@ -337,16 +445,12 @@ sets and has support for constraints.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.RightImplication">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.constraints_representation.</span></span><span class="sig-name descname"><span class="pre">RightImplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.RightImplication" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LogicOperator</span></code></p>
 <p>This class defines implications to the right. They are used to define
 constraints in datalog programs. The functionality is the same as
 that of an implication, but with body and head inverted in position.</p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -363,10 +467,6 @@ that of an implication, but with body and head inverted in position.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -386,13 +486,35 @@ that of an implication, but with body and head inverted in position.</p>
 
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.datalog.constraints_representation.reachable_code">
+<span class="sig-prename descclassname"><span class="pre">neurolang.datalog.constraints_representation.</span></span><span class="sig-name descname"><span class="pre">reachable_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datalog</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.constraints_representation.reachable_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produces the code reachable by a query</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>query</strong><span class="classifier">Implication</span></dt><dd><p>Rule to figure out the reachable program from</p>
+</dd>
+<dt><strong>datalog</strong><span class="classifier">DatalogProgram</span></dt><dd><p>datalog instance containing the EDB and IDB.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ExpressionBlock</dt><dd><p>Code needed to solve the query.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -408,9 +530,12 @@ that of an implication, but with body and head inverted in position.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

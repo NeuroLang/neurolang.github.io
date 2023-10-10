@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.probabilistic.cplogic.program module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,39 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.program module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.program module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.add_probabilistic_choice_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.add_probabilistic_facts_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.extensional_database"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.extensional_database()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.marg_implication"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.marg_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pchoice_pred_symb_set_symb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symbs"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pchoice_pred_symbs</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pfact_pred_symb_set_symb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symbs"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pfact_pred_symbs</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.predicate_symbols"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.predicate_symbols</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_choices()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_facts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_predicate_symbols"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_predicate_symbols</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.protected_keywords"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_choice()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.union_with_probabilistic_facts"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.union_with_probabilistic_facts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_marg_query"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_marg_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_prob_queries"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_prob_queries()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_query"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_succ_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +139,39 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.program module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.cplogic.program module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.add_probabilistic_choice_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_facts_from_tuples"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.add_probabilistic_facts_from_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.extensional_database"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.extensional_database()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.marg_implication"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.marg_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symb_set_symb"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pchoice_pred_symb_set_symb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pchoice_pred_symbs"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pchoice_pred_symbs</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symb_set_symb"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pfact_pred_symb_set_symb</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.pfact_pred_symbs"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.pfact_pred_symbs</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.predicate_symbols"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.predicate_symbols</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_choices"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_choices()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_facts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_predicate_symbols"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.probabilistic_predicate_symbols</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.protected_keywords"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_choice()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.query_based_probabilistic_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.union_with_probabilistic_facts"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.union_with_probabilistic_facts()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_marg_query"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_marg_query()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_prob_queries"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_prob_queries()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.within_language_succ_query"><code class="docutils literal notranslate"><span class="pre">CPLogicMixin.within_language_succ_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.protected_keywords"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram.protected_keywords</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="docutils literal notranslate"><span class="pre">CPLogicProgram.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,18 +186,18 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.probabilistic.cplogic.program">
-<span id="neurolang-probabilistic-cplogic-program-module"></span><h1>neurolang.probabilistic.cplogic.program module<a class="headerlink" href="#module-neurolang.probabilistic.cplogic.program" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-probabilistic-cplogic-program-module"></span><h1>neurolang.probabilistic.cplogic.program module<a class="headerlink" href="#module-neurolang.probabilistic.cplogic.program" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.cplogic.program.CPLogicMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.cplogic.program.</span></span><span class="sig-name descname"><span class="pre">CPLogicMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <p>Datalog extended with probabilistic facts semantics from ProbLog.</p>
 <p>It adds a probabilistic database which is a set of probabilistic facts.</p>
 <p>Probabilistic facts are stored in the symbol table of the program such that
 the key in the symbol table is the symbol of the predicate of the
 probabilsitic fact and the value is the probabilistic fact itself.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -146,11 +209,7 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.add_probabilistic_choice_from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code></a>(symbol, ...)</p></td>
 <td><p>Add a probabilistic choice from a predicate symbol and a set of tuples where the first element is the probability label attached to a head predicate and the other elements are the constant terms of the head predicate.</p></td>
@@ -176,8 +235,14 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.probabilistic_facts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code></a>()</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code></a>(implication)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_choice</span></code></a>(implication)</p></td>
+<td><p>Construct probabilistic choices from deterministic queries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code></a>(implication)</p></td>
 <td><p>Construct probabilistic facts from deterministic queries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_predicate</span></code></a>(implication)</p></td>
+<td><p>Left for backward compatibility.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.type" title="neurolang.probabilistic.cplogic.program.CPLogicMixin.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
@@ -185,10 +250,6 @@ probabilsitic fact and the value is the probabilistic fact itself.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>extensional_database</strong></p></td>
 <td></td>
@@ -332,6 +393,25 @@ P(b) : 0.8  &lt;-  T</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice">
+<span class="sig-name descname"><span class="pre">query_based_probabilistic_choice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">implication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct probabilistic choices from deterministic queries.</p>
+<p>This extends the syntax with rules such as</p>
+<blockquote>
+<div><p>Or_x P(x) : f(x) :- Q(x)</p>
+</div></blockquote>
+<p>where x is a set of variables, f(x) is an arithmetic expression
+yielding a probability between [0, 1] that may use built-ins, and where
+Q(x) is a conjunction of predicates. The sum of f(x) for all x must be
+lower than 1.</p>
+<p>Only deterministic antecedents are allowed. Declarativity makes it
+impossible to enforce that at declaration time. Thus, if a query-based
+probabilistic fact has a dependency on a probabilistic predicate, this
+will be discovered at query-resolution time, after the program has been
+fully declared.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact">
 <span class="sig-name descname"><span class="pre">query_based_probabilistic_fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">implication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_fact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct probabilistic facts from deterministic queries.</p>
@@ -347,6 +427,13 @@ impossible to enforce that at declaration time. Thus, if a query-based
 probabilistic fact has a dependency on a probabilistic predicate, this
 will be discovered at query-resolution time, after the program has been
 fully declared.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate">
+<span class="sig-name descname"><span class="pre">query_based_probabilistic_predicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">implication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin.query_based_probabilistic_predicate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Left for backward compatibility. Should be referred to the
+ProbabilisticFact case</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -379,9 +466,9 @@ fully declared.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.probabilistic.cplogic.program.CPLogicProgram">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.cplogic.program.</span></span><span class="sig-name descname"><span class="pre">CPLogicProgram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.probabilistic.cplogic.program.CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.negation.html#neurolang.datalog.negation.DatalogProgramNegationMixin" title="neurolang.datalog.negation.DatalogProgramNegationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.negation.DatalogProgramNegationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.datalog.basic_representation.DatalogProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicMixin" title="neurolang.probabilistic.cplogic.program.CPLogicMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">CPLogicMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.negation.html#neurolang.datalog.negation.DatalogProgramNegationMixin" title="neurolang.datalog.negation.DatalogProgramNegationMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogProgramNegationMixin</span></code></a>, <a class="reference internal" href="neurolang.datalog.basic_representation.html#neurolang.datalog.basic_representation.DatalogProgram" title="neurolang.datalog.basic_representation.DatalogProgram"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatalogProgram</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>included_constants</strong></dt><dd></dd>
 <dt><strong>included_functions</strong></dt><dd></dd>
@@ -395,11 +482,7 @@ fully declared.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code>(symbol, ...)</p></td>
 <td><p>Add a probabilistic choice from a predicate symbol and a set of tuples where the first element is the probability label attached to a head predicate and the other elements are the constant terms of the head predicate.</p></td>
@@ -431,8 +514,14 @@ fully declared.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">probabilistic_facts</span></code>()</p></td>
 <td><p>Return probabilistic facts of the symbol table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code>(implication)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_choice</span></code>(implication)</p></td>
+<td><p>Construct probabilistic choices from deterministic queries.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_fact</span></code>(implication)</p></td>
 <td><p>Construct probabilistic facts from deterministic queries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_based_probabilistic_predicate</span></code>(implication)</p></td>
+<td><p>Left for backward compatibility.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#neurolang.probabilistic.cplogic.program.CPLogicProgram.type" title="neurolang.probabilistic.cplogic.program.CPLogicProgram.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
 <td><p></p></td>
@@ -443,10 +532,6 @@ fully declared.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>add_extensional_predicate_from_tuples</strong></p></td>
 <td></td>
@@ -549,7 +634,7 @@ fully declared.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -565,9 +650,12 @@ fully declared.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

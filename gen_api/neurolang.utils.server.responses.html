@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.utils.server.responses module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.utils.server.responses module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,27 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.responses module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.responses module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder"><code class="docutils literal notranslate"><span class="pre">CustomQueryResultsEncoder</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder.default"><code class="docutils literal notranslate"><span class="pre">CustomQueryResultsEncoder.default()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults"><code class="docutils literal notranslate"><span class="pre">QueryResults</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_function_metadata"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_function_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item_columns"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item_values"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item_values()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.set_error_details"><code class="docutils literal notranslate"><span class="pre">QueryResults.set_error_details()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.set_results_details"><code class="docutils literal notranslate"><span class="pre">QueryResults.set_results_details()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.base64_encode_nifti"><code class="docutils literal notranslate"><span class="pre">base64_encode_nifti()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.base64_encode_spatial"><code class="docutils literal notranslate"><span class="pre">base64_encode_spatial()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.calculate_image_center"><code class="docutils literal notranslate"><span class="pre">calculate_image_center()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.serializeVBR"><code class="docutils literal notranslate"><span class="pre">serializeVBR()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.serialize_mplt_thumbnails"><code class="docutils literal notranslate"><span class="pre">serialize_mplt_thumbnails()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +127,27 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.utils.server.responses module</a></li>
+<li><a class="reference internal" href="#">neurolang.utils.server.responses module</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder"><code class="docutils literal notranslate"><span class="pre">CustomQueryResultsEncoder</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder.default"><code class="docutils literal notranslate"><span class="pre">CustomQueryResultsEncoder.default()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults"><code class="docutils literal notranslate"><span class="pre">QueryResults</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_function_metadata"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_function_metadata()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item_columns"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item_values"><code class="docutils literal notranslate"><span class="pre">QueryResults.get_result_item_values()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.set_error_details"><code class="docutils literal notranslate"><span class="pre">QueryResults.set_error_details()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.set_results_details"><code class="docutils literal notranslate"><span class="pre">QueryResults.set_results_details()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.base64_encode_nifti"><code class="docutils literal notranslate"><span class="pre">base64_encode_nifti()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.base64_encode_spatial"><code class="docutils literal notranslate"><span class="pre">base64_encode_spatial()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.calculate_image_center"><code class="docutils literal notranslate"><span class="pre">calculate_image_center()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.serializeVBR"><code class="docutils literal notranslate"><span class="pre">serializeVBR()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.server.responses.serialize_mplt_thumbnails"><code class="docutils literal notranslate"><span class="pre">serialize_mplt_thumbnails()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,17 +162,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.utils.server.responses">
-<span id="neurolang-utils-server-responses-module"></span><h1>neurolang.utils.server.responses module<a class="headerlink" href="#module-neurolang.utils.server.responses" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-utils-server-responses-module"></span><h1>neurolang.utils.server.responses module<a class="headerlink" href="#module-neurolang.utils.server.responses" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.CustomQueryResultsEncoder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">CustomQueryResultsEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipkeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_circular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">json.encoder.JSONEncoder</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">JSONEncoder</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder.default" title="neurolang.utils.server.responses.CustomQueryResultsEncoder.default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code></a>(obj)</p></td>
 <td><p>Implement this method in a subclass such that it returns a serializable object for <code class="docutils literal notranslate"><span class="pre">o</span></code>, or calls the base implementation (to raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p></td>
@@ -148,7 +183,7 @@
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.CustomQueryResultsEncoder.default">
-<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder.default" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.responses.CustomQueryResultsEncoder.default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implement this method in a subclass such that it returns
 a serializable object for <code class="docutils literal notranslate"><span class="pre">o</span></code>, or calls the base implementation
 (to raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p>
@@ -171,8 +206,8 @@ implement default like this:</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.QueryResults">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">QueryResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">concurrent.futures._base.Future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">QueryResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Future</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">asc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A representation of query results. This class is returned by
 the tornado application as a JSON serialized string.</p>
 <dl class="simple">
@@ -205,11 +240,7 @@ the tornado application as a JSON serialized string.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.server.responses.QueryResults.get_result_item" title="neurolang.utils.server.responses.QueryResults.get_result_item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_result_item</span></code></a>(symbol[, get_item_values])</p></td>
 <td><p>Serialize a symbol into a dict of result values and metadata.</p></td>
@@ -220,10 +251,6 @@ the tornado application as a JSON serialized string.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 73%" />
-<col style="width: 27%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>get_function_metadata</strong></p></td>
 <td></td>
@@ -241,15 +268,15 @@ the tornado application as a JSON serialized string.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.QueryResults.get_function_metadata">
-<span class="sig-name descname"><span class="pre">get_function_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol"><span class="pre">neurolang.frontend.query_resolution_expressions.Symbol</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_function_metadata" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_function_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol"><span class="pre">Symbol</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_function_metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.QueryResults.get_result_item">
-<span class="sig-name descname"><span class="pre">get_result_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol"><span class="pre">neurolang.frontend.query_resolution_expressions.Symbol</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_item_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_result_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><span class="pre">RelationalAlgebraFrozenSet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="neurolang.frontend.query_resolution_expressions.html#neurolang.frontend.query_resolution_expressions.Symbol" title="neurolang.frontend.query_resolution_expressions.Symbol"><span class="pre">Symbol</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_item_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialize a symbol into a dict of result values and metadata.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>symbol</strong><span class="classifier">Union[RelationalAlgebraFrozenSet, Symbol]</span></dt><dd><p>the symbol to parse</p>
 </dd>
@@ -257,7 +284,7 @@ the tornado application as a JSON serialized string.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Dict</dt><dd><p>the parsed result values</p>
 </dd>
@@ -268,16 +295,16 @@ the tornado application as a JSON serialized string.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.QueryResults.get_result_item_columns">
-<span class="sig-name descname"><span class="pre">get_result_item_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_result_item_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><span class="pre">RelationalAlgebraFrozenSet</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item_columns" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.QueryResults.get_result_item_values">
-<span class="sig-name descname"><span class="pre">get_result_item_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item_values" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_result_item_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.12)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.12)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurolang.utils.server.responses.QueryResults.get_result_item_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the rows of the dataframe corresponding to the requested slice
 (as specified by start, length &amp; sort values) in a json compatible form.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>row_type</strong><span class="classifier">Union[Any, Type[Tuple],  None]</span></dt><dd><p>the row_type.</p>
 </dd>
@@ -285,7 +312,7 @@ the tornado application as a JSON serialized string.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>List[List]</dt><dd><p>the values.</p>
 </dd>
@@ -311,13 +338,13 @@ the tornado application as a JSON serialized string.</p>
 <span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">base64_encode_nifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.base64_encode_nifti" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns base64 encoded string of the specified image.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>image</strong><span class="classifier">nibabel.Nifti2Image</span></dt><dd><p>image to be encoded.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>str</dt><dd><p>base64 encoded string of the image.</p>
 </dd>
@@ -328,16 +355,16 @@ the tornado application as a JSON serialized string.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.base64_encode_spatial">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">base64_encode_spatial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nibabel.spatialimages.SpatialImage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.base64_encode_spatial" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">base64_encode_spatial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SpatialImage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.base64_encode_spatial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns base64 encoded string of a spatial image</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>image</strong><span class="classifier">nibabel.spatialimages.SpatialImage</span></dt><dd><p>spatial image to be encoded.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>str</dt><dd><p>base64 encoded string of the vbr.</p>
 </dd>
@@ -348,22 +375,22 @@ the tornado application as a JSON serialized string.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.calculate_image_center">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">calculate_image_center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">nibabel.spatialimages.SpatialImage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.calculate_image_center" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">calculate_image_center</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SpatialImage</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.calculate_image_center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates center coordinates for the specified image.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.serializeVBR">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">serializeVBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.core.series.Series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.serializeVBR" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">serializeVBR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.serializeVBR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialize a Volumetric Brain Region object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>vbr</strong><span class="classifier">Union[ExplicitVBR, ExplicitVBROverlay]</span></dt><dd><p>the volumetric brain region to serialize</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Dict</dt><dd><p>a dict containing the base64 encoded image, as well as min and max
 values, and a hash of the image.</p>
@@ -375,19 +402,19 @@ values, and a hash of the image.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.server.responses.serialize_mplt_thumbnails">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">serialize_mplt_thumbnails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">matplotlib.figure.Figure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.serialize_mplt_thumbnails" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.server.responses.</span></span><span class="sig-name descname"><span class="pre">serialize_mplt_thumbnails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Figure</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.server.responses.serialize_mplt_thumbnails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialize a figure by creating a base64 encoded thumbnail.
 This is used only to display the figure as a thumbnail in the list of
 results. The full size figure will be displayed when the user clicks on
 the thumbnail. See <cite>app.MpltFigureHandler</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>figure</strong><span class="classifier">matplotlib.figure.Figure</span></dt><dd><p>the figure to serialize</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>str</dt><dd><p>base64 encoded thumbnail of the figure</p>
 </dd>
@@ -402,7 +429,7 @@ the thumbnail. See <cite>app.MpltFigureHandler</cite>.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -418,9 +445,12 @@ the thumbnail. See <cite>app.MpltFigureHandler</cite>.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

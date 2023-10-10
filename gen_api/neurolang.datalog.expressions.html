@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.datalog.expressions module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.datalog.expressions module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,40 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.expressions module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.expressions module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Conjunction"><code class="docutils literal notranslate"><span class="pre">Conjunction</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Conjunction.type"><code class="docutils literal notranslate"><span class="pre">Conjunction.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact.fact"><code class="docutils literal notranslate"><span class="pre">Fact.fact</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact.type"><code class="docutils literal notranslate"><span class="pre">Fact.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Implication"><code class="docutils literal notranslate"><span class="pre">Implication</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Implication.type"><code class="docutils literal notranslate"><span class="pre">Implication.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Negation"><code class="docutils literal notranslate"><span class="pre">Negation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Negation.type"><code class="docutils literal notranslate"><span class="pre">Negation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.build_conjunction_from_expression_block"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_conjunction_from_expression_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.translate_true_implication"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.translate_true_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.type"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator"><code class="docutils literal notranslate"><span class="pre">UnaryLogicOperator</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator.type"><code class="docutils literal notranslate"><span class="pre">UnaryLogicOperator.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Union"><code class="docutils literal notranslate"><span class="pre">Union</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Union.type"><code class="docutils literal notranslate"><span class="pre">Union.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +140,40 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.expressions module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.expressions module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Conjunction"><code class="docutils literal notranslate"><span class="pre">Conjunction</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Conjunction.type"><code class="docutils literal notranslate"><span class="pre">Conjunction.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact.fact"><code class="docutils literal notranslate"><span class="pre">Fact.fact</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Fact.type"><code class="docutils literal notranslate"><span class="pre">Fact.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Implication"><code class="docutils literal notranslate"><span class="pre">Implication</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Implication.type"><code class="docutils literal notranslate"><span class="pre">Implication.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Negation"><code class="docutils literal notranslate"><span class="pre">Negation</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Negation.type"><code class="docutils literal notranslate"><span class="pre">Negation.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.build_conjunction_from_expression_block"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.build_conjunction_from_expression_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.translate_true_implication"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.translate_true_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.TranslateToLogic.type"><code class="docutils literal notranslate"><span class="pre">TranslateToLogic.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator"><code class="docutils literal notranslate"><span class="pre">UnaryLogicOperator</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator.type"><code class="docutils literal notranslate"><span class="pre">UnaryLogicOperator.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Union"><code class="docutils literal notranslate"><span class="pre">Union</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.expressions.Union.type"><code class="docutils literal notranslate"><span class="pre">Union.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,19 +188,15 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.expressions">
-<span id="neurolang-datalog-expressions-module"></span><h1>neurolang.datalog.expressions module<a class="headerlink" href="#module-neurolang.datalog.expressions" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-expressions-module"></span><h1>neurolang.datalog.expressions module<a class="headerlink" href="#module-neurolang.datalog.expressions" title="Permalink to this heading">¶</a></h1>
 <p>Expressions for the intermediate representation of a
 Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.Conjunction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">Conjunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formulas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.Conjunction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.NaryLogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NaryLogicOperator</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -152,10 +213,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -178,20 +235,16 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.Fact">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">Fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.Fact" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.Implication</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.expressions.Implication" title="neurolang.logic.Implication"><code class="xref py py-class docutils literal notranslate"><span class="pre">Implication</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>fact</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -208,10 +261,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -239,14 +288,10 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.Implication">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">Implication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consequent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">antecedent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.Implication" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LogicOperator</span></code></p>
 <p>Expression of the form <cite>P(x) ← Q(x)</cite></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -263,10 +308,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -289,13 +330,9 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.Negation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">Negation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.Negation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator" title="neurolang.logic.UnaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.UnaryLogicOperator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.datalog.expressions.UnaryLogicOperator" title="neurolang.logic.UnaryLogicOperator"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnaryLogicOperator</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -312,10 +349,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -338,9 +371,9 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.TranslateToLogic">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">TranslateToLogic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.TranslateToLogic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.TranslateToLogic" title="neurolang.logic.expression_processing.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.expression_processing.TranslateToLogic</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.TranslateToLogic" title="neurolang.logic.expression_processing.TranslateToLogic"><code class="xref py py-class docutils literal notranslate"><span class="pre">TranslateToLogic</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -348,11 +381,7 @@ Datalog program.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -366,10 +395,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 81%" />
-<col style="width: 19%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>build_conjunction</strong></p></td>
 <td></td>
@@ -426,13 +451,9 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.UnaryLogicOperator">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">UnaryLogicOperator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.UnaryLogicOperator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LogicOperator</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -449,10 +470,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -475,13 +492,9 @@ Datalog program.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.expressions.Union">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.expressions.</span></span><span class="sig-name descname"><span class="pre">Union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formulas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.expressions.Union" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.NaryLogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NaryLogicOperator</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -498,10 +511,6 @@ Datalog program.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -527,7 +536,7 @@ Datalog program.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -543,9 +552,12 @@ Datalog program.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

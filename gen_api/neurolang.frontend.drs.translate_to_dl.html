@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.frontend.drs.translate_to_dl module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.frontend.drs.translate_to_dl module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,19 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.translate_to_dl module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.translate_to_dl module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences"><code class="docutils literal notranslate"><span class="pre">TransformIntoConjunctionOfDatalogSentences</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences.type"><code class="docutils literal notranslate"><span class="pre">TransformIntoConjunctionOfDatalogSentences.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_block"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_logical_sentence"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_logical_sentence()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_sentence"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_sentence()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +119,19 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.translate_to_dl module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.translate_to_dl module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences"><code class="docutils literal notranslate"><span class="pre">TransformIntoConjunctionOfDatalogSentences</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences.type"><code class="docutils literal notranslate"><span class="pre">TransformIntoConjunctionOfDatalogSentences.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_block"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_block()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_logical_sentence"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_logical_sentence()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog.translate_sentence"><code class="docutils literal notranslate"><span class="pre">TranslateToDatalog.translate_sentence()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,18 +146,18 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.frontend.drs.translate_to_dl">
-<span id="neurolang-frontend-drs-translate-to-dl-module"></span><h1>neurolang.frontend.drs.translate_to_dl module<a class="headerlink" href="#module-neurolang.frontend.drs.translate_to_dl" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-frontend-drs-translate-to-dl-module"></span><h1>neurolang.frontend.drs.translate_to_dl module<a class="headerlink" href="#module-neurolang.frontend.drs.translate_to_dl" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.translate_to_dl.</span></span><span class="sig-name descname"><span class="pre">TransformIntoConjunctionOfDatalogSentences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.translate_to_dl.TransformIntoConjunctionOfDatalogSentences" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads" title="neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads</span></code></a>, <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.DistributeUniversalQuantifiers" title="neurolang.logic.transformations.DistributeUniversalQuantifiers"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.DistributeUniversalQuantifiers</span></code></a>, <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.CollapseConjunctions" title="neurolang.logic.transformations.CollapseConjunctions"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.CollapseConjunctions</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads" title="neurolang.logic.transformations.DistributeImplicationsWithConjunctiveHeads"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributeImplicationsWithConjunctiveHeads</span></code></a>, <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.DistributeUniversalQuantifiers" title="neurolang.logic.transformations.DistributeUniversalQuantifiers"><code class="xref py py-class docutils literal notranslate"><span class="pre">DistributeUniversalQuantifiers</span></code></a>, <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.CollapseConjunctions" title="neurolang.logic.transformations.CollapseConjunctions"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollapseConjunctions</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <p>A datalog-sentence in this case is a logical sentence which can be
 interpreted as datalog. The only 2 types of sentences supported are facts
 and rules. This rewrite allows to use conjunctions in a more flexible way,
 allowing to use them between facts and in implication heads, because then
 they will be properly distributed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -142,11 +165,7 @@ they will be properly distributed.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -160,10 +179,6 @@ they will be properly distributed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 83%" />
-<col style="width: 17%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -207,13 +222,9 @@ they will be properly distributed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.translate_to_dl.TranslateToDatalog">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.translate_to_dl.</span></span><span class="sig-name descname"><span class="pre">TranslateToDatalog</span></span><a class="headerlink" href="#neurolang.frontend.drs.translate_to_dl.TranslateToDatalog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 75%" />
-<col style="width: 25%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>translate_block</strong></p></td>
 <td></td>
@@ -249,7 +260,7 @@ they will be properly distributed.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -265,9 +276,12 @@ they will be properly distributed.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

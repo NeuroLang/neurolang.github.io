@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.utils package &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.utils package &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -79,6 +78,67 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">neurolang.utils package</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.aggregate"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.aggregate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.explode"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.explode()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.extended_projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection_to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection_to_unnamed()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.replace_null"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.to_unnamed()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet"><code class="docutils literal notranslate"><span class="pre">OrderedSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.add"><code class="docutils literal notranslate"><span class="pre">OrderedSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.copy"><code class="docutils literal notranslate"><span class="pre">OrderedSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.discard"><code class="docutils literal notranslate"><span class="pre">OrderedSet.discard()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.index"><code class="docutils literal notranslate"><span class="pre">OrderedSet.index()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.issubset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issubset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.issuperset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issuperset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.replace"><code class="docutils literal notranslate"><span class="pre">OrderedSet.replace()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_numpy_array"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_numpy_array()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_pandas_dataframe"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_pandas_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.copy"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet.add"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet.discard"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.discard()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraStringExpression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraStringExpression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.log_performance"><code class="docutils literal notranslate"><span class="pre">log_performance()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.powerset"><code class="docutils literal notranslate"><span class="pre">powerset()</span></code></a></li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -113,6 +173,67 @@
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">neurolang.utils package</a><ul>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.aggregate"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.aggregate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.explode"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.explode()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.extended_projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.extended_projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.left_naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.naturaljoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection_to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection_to_unnamed()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_column()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.replace_null"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.replace_null()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.to_unnamed()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet"><code class="docutils literal notranslate"><span class="pre">OrderedSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.add"><code class="docutils literal notranslate"><span class="pre">OrderedSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.copy"><code class="docutils literal notranslate"><span class="pre">OrderedSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.discard"><code class="docutils literal notranslate"><span class="pre">OrderedSet.discard()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.index"><code class="docutils literal notranslate"><span class="pre">OrderedSet.index()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.issubset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issubset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.issuperset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issuperset()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.OrderedSet.replace"><code class="docutils literal notranslate"><span class="pre">OrderedSet.replace()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_numpy_array"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_numpy_array()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_pandas_dataframe"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_pandas_dataframe()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.copy"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.copy()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet.add"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.add()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet.discard"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.discard()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraStringExpression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraStringExpression</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.log_performance"><code class="docutils literal notranslate"><span class="pre">log_performance()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.powerset"><code class="docutils literal notranslate"><span class="pre">powerset()</span></code></a></li>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
 </ul>
@@ -131,13 +252,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.utils">
-<span id="neurolang-utils-package"></span><h1>neurolang.utils package<a class="headerlink" href="#module-neurolang.utils" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-utils-package"></span><h1>neurolang.utils package<a class="headerlink" href="#module-neurolang.utils" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">NamedRelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
@@ -145,11 +266,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
@@ -166,10 +283,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>aggregate</strong></p></td>
 <td></td>
@@ -370,13 +483,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">OrderedSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSet" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableSet</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSet" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableSet</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.OrderedSet.add" title="neurolang.utils.OrderedSet.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(value)</p></td>
 <td><p>Add an element.</p></td>
@@ -405,10 +514,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>copy</strong></p></td>
 <td></td>
@@ -469,11 +574,11 @@ recommended.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a></p>
 <p>RelationalAlgebraFrozenSet implementation using in-memory pandas.DataFrame
 as container for the elements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
@@ -481,11 +586,7 @@ as container for the elements.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdisjoint</span></code>(other)</p></td>
 <td><p>Return True if two sets have a null intersection.</p></td>
@@ -502,10 +603,6 @@ as container for the elements.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 70%" />
-<col style="width: 30%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>as_numpy_array</strong></p></td>
 <td></td>
@@ -648,19 +745,19 @@ as container for the elements.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.selection">
-<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">RelationalAlgebraStringExpression</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select the elements based on the given selet_criteria.
 The select_criteria may be a callable function, a string expression
 or a Dict of columns -&gt; value</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>select_criteria</strong><span class="classifier">Union[Callable, RelationalAlgebraStringExpression,</span></dt><dd></dd>
 <dt><strong>Dict[int, Union[int, Callable]]]</strong></dt><dd><p>selection criteria</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>RelationalAlgebraFrozenSet</dt><dd><p>A RelationalAlgebraFrozenSet with elements matching the criteria.</p>
 </dd>
@@ -671,18 +768,18 @@ or a Dict of columns -&gt; value</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.selection_columns">
-<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select the elements where column pairs indicated as key, value
 items of the select_criteria are equal.
 The select_criteria must be a Dict of Int -&gt; Int.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>select_criteria</strong><span class="classifier">Dict [Int, Int]</span></dt><dd><p>selection criteria</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>RelationalAlgebraFrozenSet</dt><dd><p>A RelationalAlgebraFrozenSet with elements matching the criteria.</p>
 </dd>
@@ -707,9 +804,9 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraSet">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
@@ -717,11 +814,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.RelationalAlgebraSet.add" title="neurolang.utils.RelationalAlgebraSet.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(value)</p></td>
 <td><p>Add an element.</p></td>
@@ -753,10 +846,6 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 70%" />
-<col style="width: 30%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>as_numpy_array</strong></p></td>
 <td></td>
@@ -819,13 +908,9 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraStringExpression">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraStringExpression</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraStringExpression" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">capitalize</span></code>(/)</p></td>
 <td><p>Return a capitalized version of the string.</p></td>
@@ -858,7 +943,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <td><p>Return a formatted version of S, using substitutions from mapping.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code>(sub[, start[, end]])</p></td>
-<td><p>Return the lowest index in S where substring sub is found,  such that sub is contained within S[start:end].</p></td>
+<td><p>Return the lowest index in S where substring sub is found, such that sub is contained within S[start:end].</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code>(/)</p></td>
 <td><p>Return True if the string is an alpha-numeric string, False otherwise.</p></td>
@@ -972,7 +1057,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <dd><p>Context manager to log the performance
 of executed commands in the context.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>logger</strong><span class="classifier">logging.Logger</span></dt><dd><p>Logger to use for the message</p>
 </dd>
@@ -996,16 +1081,86 @@ by default None</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.powerset">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">powerset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.powerset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html">neurolang.utils.relational_algebra_set package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.aggregate"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.aggregate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.explode"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.explode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.extended_projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.extended_projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.left_naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.left_naturaljoin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.naturaljoin"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.naturaljoin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.projection_to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.projection_to_unnamed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.rename_column"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_column()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.rename_columns"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.rename_columns()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.replace_null"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.replace_null()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.NamedRelationalAlgebraFrozenSet.to_unnamed"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet.to_unnamed()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraColumnInt"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraColumnInt</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraColumnStr"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraColumnStr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.arity"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.arity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.as_numpy_array"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_numpy_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.as_pandas_dataframe"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.as_pandas_dataframe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.columns</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.copy"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.copy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.create_view_from"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.create_view_from()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.cross_product"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.cross_product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.dee"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dee()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.dum"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.dum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.equijoin"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.equijoin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.fetch_one"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.fetch_one()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraSet.add"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraSet.discard"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet.discard()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraStringExpression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraStringExpression</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html">neurolang.utils.relational_algebra_set.abstract module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html">neurolang.utils.relational_algebra_set.abstract module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraColumn"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraColumn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraColumnInt"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraColumnInt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraColumnStr"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraColumnStr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.dask_helpers.html">neurolang.utils.relational_algebra_set.dask_helpers module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.dask_sql.html">neurolang.utils.relational_algebra_set.dask_sql module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html">neurolang.utils.relational_algebra_set.pandas module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html">neurolang.utils.relational_algebra_set.pandas module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraStringExpression</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1016,9 +1171,32 @@ by default None</p>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.utils.server.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.app.html">neurolang.utils.server.app module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.engines.html">neurolang.utils.server.engines module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.queries.html">neurolang.utils.server.queries module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.responses.html">neurolang.utils.server.responses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.engines.html">neurolang.utils.server.engines module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.DestrieuxEngineConf"><code class="docutils literal notranslate"><span class="pre">DestrieuxEngineConf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.NeurolangEngineConfiguration"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineConfiguration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.NeurolangEngineSet"><code class="docutils literal notranslate"><span class="pre">NeurolangEngineSet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.NeurosynthEngineConf"><code class="docutils literal notranslate"><span class="pre">NeurosynthEngineConf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.add_ploting_functions"><code class="docutils literal notranslate"><span class="pre">add_ploting_functions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.init_frontend"><code class="docutils literal notranslate"><span class="pre">init_frontend()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.load_destrieux_atlas"><code class="docutils literal notranslate"><span class="pre">load_destrieux_atlas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.engines.html#neurolang.utils.server.engines.load_neurosynth_data"><code class="docutils literal notranslate"><span class="pre">load_neurosynth_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.queries.html">neurolang.utils.server.queries module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.queries.html#neurolang.utils.server.queries.LRUCacheDict"><code class="docutils literal notranslate"><span class="pre">LRUCacheDict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.queries.html#neurolang.utils.server.queries.NeurolangQueryManager"><code class="docutils literal notranslate"><span class="pre">NeurolangQueryManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.server.responses.html">neurolang.utils.server.responses module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.CustomQueryResultsEncoder"><code class="docutils literal notranslate"><span class="pre">CustomQueryResultsEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.QueryResults"><code class="docutils literal notranslate"><span class="pre">QueryResults</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.base64_encode_nifti"><code class="docutils literal notranslate"><span class="pre">base64_encode_nifti()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.base64_encode_spatial"><code class="docutils literal notranslate"><span class="pre">base64_encode_spatial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.calculate_image_center"><code class="docutils literal notranslate"><span class="pre">calculate_image_center()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.serializeVBR"><code class="docutils literal notranslate"><span class="pre">serializeVBR()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.server.responses.html#neurolang.utils.server.responses.serialize_mplt_thumbnails"><code class="docutils literal notranslate"><span class="pre">serialize_mplt_thumbnails()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1028,7 +1206,10 @@ by default None</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="neurolang.utils.testing.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.testing.logic.html">neurolang.utils.testing.logic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.testing.logic.html">neurolang.utils.testing.logic module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="neurolang.utils.testing.logic.html#neurolang.utils.testing.logic.logic_exp_commutative_equal"><code class="docutils literal notranslate"><span class="pre">logic_exp_commutative_equal()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1037,12 +1218,31 @@ by default None</p>
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.data_manipulation.html">neurolang.utils.data_manipulation module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.orderedset.html">neurolang.utils.orderedset module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.various.html">neurolang.utils.various module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.data_manipulation.html">neurolang.utils.data_manipulation module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.data_manipulation.html#neurolang.utils.data_manipulation.parse_region_label_map"><code class="docutils literal notranslate"><span class="pre">parse_region_label_map()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.orderedset.html">neurolang.utils.orderedset module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet"><code class="docutils literal notranslate"><span class="pre">OrderedSet</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.add"><code class="docutils literal notranslate"><span class="pre">OrderedSet.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.copy"><code class="docutils literal notranslate"><span class="pre">OrderedSet.copy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.discard"><code class="docutils literal notranslate"><span class="pre">OrderedSet.discard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.index"><code class="docutils literal notranslate"><span class="pre">OrderedSet.index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.issubset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issubset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.issuperset"><code class="docutils literal notranslate"><span class="pre">OrderedSet.issuperset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.orderedset.html#neurolang.utils.orderedset.OrderedSet.replace"><code class="docutils literal notranslate"><span class="pre">OrderedSet.replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.various.html">neurolang.utils.various module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.various.html#neurolang.utils.various.log_performance"><code class="docutils literal notranslate"><span class="pre">log_performance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="neurolang.utils.various.html#neurolang.utils.various.powerset"><code class="docutils literal notranslate"><span class="pre">powerset()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -1052,7 +1252,7 @@ by default None</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -1068,9 +1268,12 @@ by default None</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

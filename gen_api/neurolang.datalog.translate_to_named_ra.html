@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.datalog.translate_to_named_ra module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.datalog.translate_to_named_ra module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,40 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.translate_to_named_ra module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.translate_to_named_ra module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.classify_formulas_obtain_named_function_applications"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.classify_formulas_obtain_named_function_applications()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.classify_formulas_obtain_names"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.classify_formulas_obtain_names()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.generate_ra_expression"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.generate_ra_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.is_col_to_const_equality"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.is_col_to_const_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.obtain_negative_columns"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.obtain_negative_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_destroy_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_destroy_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formula"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formula()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas_as_extended_projections"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas_as_extended_projections()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas_constant"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_extended_projection_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_extended_projection_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_negative_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_negative_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_positive_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_positive_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_selection_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_selection_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_builtin_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_builtin_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_builtin_fa_constants"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_builtin_fa_constants()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_disjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_c"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_c()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_s"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_fa_s"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_fa_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_s_c"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_s_c()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_existential_predicate"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_existential_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_negation"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.type"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +140,40 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.translate_to_named_ra module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.translate_to_named_ra module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.classify_formulas_obtain_named_function_applications"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.classify_formulas_obtain_named_function_applications()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.classify_formulas_obtain_names"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.classify_formulas_obtain_names()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.generate_ra_expression"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.generate_ra_expression()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.is_col_to_const_equality"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.is_col_to_const_equality()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.obtain_negative_columns"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.obtain_negative_columns()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_destroy_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_destroy_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formula"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formula()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas_as_extended_projections"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas_as_extended_projections()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_equality_formulas_constant"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_equality_formulas_constant()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_extended_projection_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_extended_projection_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_negative_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_negative_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_positive_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_positive_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.process_selection_formulas"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.process_selection_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_builtin_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_builtin_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_builtin_fa_constants"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_builtin_fa_constants()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_conjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_disjunction"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_c"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_c()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_c_s"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_c_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_fa_s"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_fa_s()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_eq_s_c"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_eq_s_c()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_existential_predicate"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_existential_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_fa"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_fa()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_negation"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.translate_negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.type"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRA.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,20 +188,21 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.translate_to_named_ra">
-<span id="neurolang-datalog-translate-to-named-ra-module"></span><h1>neurolang.datalog.translate_to_named_ra module<a class="headerlink" href="#module-neurolang.datalog.translate_to_named_ra" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-translate-to-named-ra-module"></span><h1>neurolang.datalog.translate_to_named_ra module<a class="headerlink" href="#module-neurolang.datalog.translate_to_named_ra" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.translate_to_named_ra.TranslateToNamedRA">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.translate_to_named_ra.</span></span><span class="sig-name descname"><span class="pre">TranslateToNamedRA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionBasicEvaluator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionBasicEvaluator</span></code></p>
 <p>Partial implementation of algorithm 5.4.8 from <a class="reference internal" href="#rbed7c70f6088-1" id="id1">[1]</a>.</p>
-<dl class="citation">
-<dt class="label" id="rbed7c70f6088-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>S. Abiteboul, R. Hull, V. Vianu, Foundations of databases
+<div role="list" class="citation-list">
+<div class="citation" id="rbed7c70f6088-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>S. Abiteboul, R. Hull, V. Vianu, Foundations of databases
 (Addison Wesley, 1995), Addison-Wesley.</p>
-</dd>
-</dl>
+</div>
+</div>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -144,11 +210,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -162,10 +224,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 85%" />
-<col style="width: 15%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>classify_formulas_obtain_named_function_applications</strong></p></td>
 <td></td>
@@ -269,13 +327,16 @@
 <tr class="row-even"><td><p><strong>translate_eq_s_c</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>translate_fa</strong></p></td>
+<tr class="row-odd"><td><p><strong>translate_existential_predicate</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>translate_negation</strong></p></td>
+<tr class="row-even"><td><p><strong>translate_fa</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<tr class="row-odd"><td><p><strong>translate_negation</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -401,6 +462,11 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_existential_predicate">
+<span class="sig-name descname"><span class="pre">translate_existential_predicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_existential_predicate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_fa">
 <span class="sig-name descname"><span class="pre">translate_fa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.translate_to_named_ra.TranslateToNamedRA.translate_fa" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -423,7 +489,7 @@
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -439,9 +505,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.frontend.drs.drs_builder module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.frontend.drs.drs_builder module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,40 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.drs_builder module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.drs_builder module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS"><code class="docutils literal notranslate"><span class="pre">DRS</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.type"><code class="docutils literal notranslate"><span class="pre">DRS.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL"><code class="docutils literal notranslate"><span class="pre">DRS2FOL</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.drs"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.implication"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.unary_conjunction"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.unary_conjunction()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder"><code class="docutils literal notranslate"><span class="pre">DRSBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.comma_and"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.comma_and()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.conditional"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.conditional()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.float_drs"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.float_drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.implication"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.indefinite_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.indefinite_noun_phrase()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.join_drs"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.join_drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.lit_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.lit_noun_phrase()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.predicate"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.proper_names"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.proper_names()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.quoted_predicate"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.quoted_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.sentence_list"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.sentence_list()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.simple_and"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.simple_and()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.single_sentence_list"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.single_sentence_list()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_apposition"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.var_apposition()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.var_noun_phrase()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.indent"><code class="docutils literal notranslate"><span class="pre">indent()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +140,40 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.drs_builder module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.drs_builder module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS"><code class="docutils literal notranslate"><span class="pre">DRS</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS.type"><code class="docutils literal notranslate"><span class="pre">DRS.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL"><code class="docutils literal notranslate"><span class="pre">DRS2FOL</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.drs"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.implication"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.type"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRS2FOL.unary_conjunction"><code class="docutils literal notranslate"><span class="pre">DRS2FOL.unary_conjunction()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder"><code class="docutils literal notranslate"><span class="pre">DRSBuilder</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.comma_and"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.comma_and()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.conditional"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.conditional()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.float_drs"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.float_drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.implication"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.indefinite_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.indefinite_noun_phrase()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.join_drs"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.join_drs()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.lit_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.lit_noun_phrase()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.predicate"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.proper_names"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.proper_names()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.quoted_predicate"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.quoted_predicate()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.sentence_list"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.sentence_list()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.simple_and"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.simple_and()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.single_sentence_list"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.single_sentence_list()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.type"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_apposition"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.var_apposition()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.DRSBuilder.var_noun_phrase"><code class="docutils literal notranslate"><span class="pre">DRSBuilder.var_noun_phrase()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.drs_builder.indent"><code class="docutils literal notranslate"><span class="pre">indent()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,17 +188,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.frontend.drs.drs_builder">
-<span id="neurolang-frontend-drs-drs-builder-module"></span><h1>neurolang.frontend.drs.drs_builder module<a class="headerlink" href="#module-neurolang.frontend.drs.drs_builder" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-frontend-drs-drs-builder-module"></span><h1>neurolang.frontend.drs.drs_builder module<a class="headerlink" href="#module-neurolang.frontend.drs.drs_builder" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.drs_builder.DRS">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.drs_builder.</span></span><span class="sig-name descname"><span class="pre">DRS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">referents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expressions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Expression</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -150,10 +211,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -176,9 +233,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.drs_builder.DRS2FOL">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.drs_builder.</span></span><span class="sig-name descname"><span class="pre">DRS2FOL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRS2FOL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -186,11 +243,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -204,10 +257,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>drs</strong></p></td>
 <td></td>
@@ -266,9 +315,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.drs_builder.DRSBuilder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.drs_builder.</span></span><span class="sig-name descname"><span class="pre">DRSBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grammar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.drs_builder.DRSBuilder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.ExpressionWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ExpressionWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -276,11 +325,7 @@
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -294,10 +339,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>comma_and</strong></p></td>
 <td></td>
@@ -460,7 +501,7 @@
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -476,9 +517,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

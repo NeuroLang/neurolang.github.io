@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.probabilistic.transforms module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.probabilistic.transforms module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,20 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.add_existentials_except"><code class="docutils literal notranslate"><span class="pre">add_existentials_except()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_rule_to_ucq"><code class="docutils literal notranslate"><span class="pre">convert_rule_to_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_to_cnf_existential_ucq"><code class="docutils literal notranslate"><span class="pre">convert_to_cnf_existential_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_to_dnf_existential_ucq"><code class="docutils literal notranslate"><span class="pre">convert_to_dnf_existential_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimise_formulas_containment"><code class="docutils literal notranslate"><span class="pre">minimise_formulas_containment()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_component_conjunction"><code class="docutils literal notranslate"><span class="pre">minimize_component_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_component_disjunction"><code class="docutils literal notranslate"><span class="pre">minimize_component_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_ucq_in_cnf"><code class="docutils literal notranslate"><span class="pre">minimize_ucq_in_cnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_ucq_in_dnf"><code class="docutils literal notranslate"><span class="pre">minimize_ucq_in_dnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.split_positive_negative_formulas"><code class="docutils literal notranslate"><span class="pre">split_positive_negative_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.unify_existential_variables"><code class="docutils literal notranslate"><span class="pre">unify_existential_variables()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +120,20 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a></li>
+<li><a class="reference internal" href="#">neurolang.probabilistic.transforms module</a><ul>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.add_existentials_except"><code class="docutils literal notranslate"><span class="pre">add_existentials_except()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_rule_to_ucq"><code class="docutils literal notranslate"><span class="pre">convert_rule_to_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_to_cnf_existential_ucq"><code class="docutils literal notranslate"><span class="pre">convert_to_cnf_existential_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.convert_to_dnf_existential_ucq"><code class="docutils literal notranslate"><span class="pre">convert_to_dnf_existential_ucq()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimise_formulas_containment"><code class="docutils literal notranslate"><span class="pre">minimise_formulas_containment()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_component_conjunction"><code class="docutils literal notranslate"><span class="pre">minimize_component_conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_component_disjunction"><code class="docutils literal notranslate"><span class="pre">minimize_component_disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_ucq_in_cnf"><code class="docutils literal notranslate"><span class="pre">minimize_ucq_in_cnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.minimize_ucq_in_dnf"><code class="docutils literal notranslate"><span class="pre">minimize_ucq_in_dnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.split_positive_negative_formulas"><code class="docutils literal notranslate"><span class="pre">split_positive_negative_formulas()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.probabilistic.transforms.unify_existential_variables"><code class="docutils literal notranslate"><span class="pre">unify_existential_variables()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,14 +148,14 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.probabilistic.transforms">
-<span id="neurolang-probabilistic-transforms-module"></span><h1>neurolang.probabilistic.transforms module<a class="headerlink" href="#module-neurolang.probabilistic.transforms" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-probabilistic-transforms-module"></span><h1>neurolang.probabilistic.transforms module<a class="headerlink" href="#module-neurolang.probabilistic.transforms" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.probabilistic.transforms.add_existentials_except">
 <span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">add_existentials_except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.add_existentials_except" title="Permalink to this definition">¶</a></dt>
 <dd><p>Existentially-quantify each free variable in query
 except for those in variables</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">LogicExpression</span></dt><dd><p>logic expression to add the existential quantifiers to.</p>
 </dd>
@@ -138,7 +163,7 @@ except for those in variables</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>logic expression with existentially-quantified variables
 added.</p>
@@ -155,13 +180,13 @@ added.</p>
 A UCQ is defined by a logic expression in
 where the only quantifier is existential.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">Implication</span></dt><dd><p>Datalog rule.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>UCQ with the same ground set as the
 input datalog rule.</p>
@@ -172,18 +197,19 @@ input datalog rule.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_cnf_ucq">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_cnf_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_cnf_ucq" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_cnf_existential_ucq">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_cnf_existential_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_cnf_existential_ucq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert logic UCQ to
-conjunctive normal from (CNF).</p>
+conjunctive normal from (CNF)
+with only existential quantifiers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>equivalent UCQ in CNF form.</p>
 </dd>
@@ -193,18 +219,19 @@ conjunctive normal from (CNF).</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_dnf_ucq">
-<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_dnf_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_dnf_ucq" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="neurolang.probabilistic.transforms.convert_to_dnf_existential_ucq">
+<span class="sig-prename descclassname"><span class="pre">neurolang.probabilistic.transforms.</span></span><span class="sig-name descname"><span class="pre">convert_to_dnf_existential_ucq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.probabilistic.transforms.convert_to_dnf_existential_ucq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert logic UCQ to
-disjunctive normal from (DNF).</p>
+disjunctive normal from (DNF)
+with only existential quantifiers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>expression</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>equivalent UCQ in DNF form.</p>
 </dd>
@@ -225,7 +252,7 @@ disjunctive normal from (DNF).</p>
 remove each query Qi such that exists Qj and
 Qj → Qi.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>conjunction</strong><span class="classifier">Conjunction</span></dt><dd><p>conjunction of logical formulas to minimise.</p>
 </dd>
@@ -233,7 +260,7 @@ Qj → Qi.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Conjunction</dt><dd><p>minimised conjunction.</p>
 </dd>
@@ -249,7 +276,7 @@ Qj → Qi.</p>
 remove each query Qi such that exists Qj and
 Qi → Qj.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>disjunction</strong><span class="classifier">Disjunction</span></dt><dd><p>Disjunction of logical formulas to minimise.</p>
 </dd>
@@ -257,7 +284,7 @@ Qi → Qj.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>Disjunction</dt><dd><p>Minimised disjunction.</p>
 </dd>
@@ -272,13 +299,13 @@ Qi → Qj.</p>
 <dd><p>Convert UCQ to CNF form
 and minimise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">LogicExpression.</span></dt><dd><p>query in UCQ semantics.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>minimised query in UCQ semantics.</p>
 </dd>
@@ -293,13 +320,13 @@ and minimise.</p>
 <dd><p>Convert UCQ to DNF form
 and minimise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">LogicExpression.</span></dt><dd><p>query in UCQ semantics.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>minimised query in UCQ semantics.</p>
 </dd>
@@ -314,13 +341,13 @@ and minimise.</p>
 <dd><p>Split formulas of the n_ary_logic operation in those
 containing a negated predicate and those not.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>nary_logic_operation</strong><span class="classifier">NAryLogicOperation</span></dt><dd><p>Operation whose formulas are going to be split</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>positive, negative</dt><dd><p>two Iterable[Union[LogicOperation, FunctionApplication]] objects
 containing the positive and negative formulas</p>
@@ -339,13 +366,13 @@ Q = ∃x.Q1 ∨ ∃y.Q2 and x in Q1 unifies with y in
 Q2, then Q is transformed to Q = ∃f.(Q1[f/x] ∨ Q2[f/y])
 where f is possibly a fresh variable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>query</strong><span class="classifier">LogicExpression</span></dt><dd><p>UCQ expression to unify existential variables if possible.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt>LogicExpression</dt><dd><p>logic expression with existential variables unifies</p>
 </dd>
@@ -360,7 +387,7 @@ where f is possibly a fresh variable.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -376,9 +403,12 @@ where f is possibly a fresh variable.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.datalog.ontologies_parser module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.datalog.ontologies_parser module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,13 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.ontologies_parser module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.ontologies_parser module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.ontologies_parser.OntologyParser"><code class="docutils literal notranslate"><span class="pre">OntologyParser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology"><code class="docutils literal notranslate"><span class="pre">OntologyParser.parse_ontology()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +113,13 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.datalog.ontologies_parser module</a></li>
+<li><a class="reference internal" href="#">neurolang.datalog.ontologies_parser module</a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.ontologies_parser.OntologyParser"><code class="docutils literal notranslate"><span class="pre">OntologyParser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology"><code class="docutils literal notranslate"><span class="pre">OntologyParser.parse_ontology()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,61 +134,37 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.datalog.ontologies_parser">
-<span id="neurolang-datalog-ontologies-parser-module"></span><h1>neurolang.datalog.ontologies_parser module<a class="headerlink" href="#module-neurolang.datalog.ontologies_parser" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-datalog-ontologies-parser-module"></span><h1>neurolang.datalog.ontologies_parser module<a class="headerlink" href="#module-neurolang.datalog.ontologies_parser" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.ontologies_parser.</span></span><span class="sig-name descname"><span class="pre">OntologyParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.datalog.ontologies_parser.</span></span><span class="sig-name descname"><span class="pre">OntologyParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connector_symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'xml'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>This class is in charge of generating the rules that can be derived
 from an ontology, both at entity and constraint levels.</p>
 <p class="rubric">Methods</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 70%" />
-<col style="width: 30%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><strong>get_domain_symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>get_pointers_symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>get_triples</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>get_triples_symbol</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>parse_ontology</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology" title="neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_ontology</span></code></a>()</p></td>
+<td><p>Main function to be called for ontology processing.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser.get_domain_symbol">
-<span class="sig-name descname"><span class="pre">get_domain_symbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser.get_domain_symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser.get_pointers_symbol">
-<span class="sig-name descname"><span class="pre">get_pointers_symbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser.get_pointers_symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser.get_triples">
-<span class="sig-name descname"><span class="pre">get_triples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser.get_triples" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser.get_triples_symbol">
-<span class="sig-name descname"><span class="pre">get_triples_symbol</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser.get_triples_symbol" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology">
 <span class="sig-name descname"><span class="pre">parse_ontology</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.datalog.ontologies_parser.OntologyParser.parse_ontology" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Main function to be called for ontology processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Two dictionaries. One with contraints, for example, rules derived</dt><dd></dd>
+<dt>from restrictions of type someValuesFrom. The other one, with the</dt><dd></dd>
+<dt>implications derived from the rest of the ontological information,</dt><dd></dd>
+<dt>for example, the label property. Both dictionaries index lists of</dt><dd></dd>
+<dt>rules using the rule consequent functor.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -187,7 +174,7 @@ from an ontology, both at entity and constraint levels.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -203,9 +190,12 @@ from an ontology, both at entity and constraint levels.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.logic.horn_clauses module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.logic.horn_clauses module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,63 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.logic.horn_clauses module</a></li>
+<li><a class="reference internal" href="#">neurolang.logic.horn_clauses module</a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.atom"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.atom()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.conjunction"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.disjunction"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.existential"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_atom"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.negated_atom()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_existential"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.negated_existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.type"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.unknown"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.unknown()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin.translate_implication"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin.translate_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin.type"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogTranslationException"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogTranslationException</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause"><code class="docutils literal notranslate"><span class="pre">HornClause</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause.type"><code class="docutils literal notranslate"><span class="pre">HornClause.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornFact"><code class="docutils literal notranslate"><span class="pre">HornFact</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornFact.type"><code class="docutils literal notranslate"><span class="pre">HornFact.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers.negated_existential"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers.negated_existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers.type"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.NeuroLangTranslateToHornClauseException"><code class="docutils literal notranslate"><span class="pre">NeuroLangTranslateToHornClauseException</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.conjunction"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.disjunction"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.existential"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.function"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.function()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.negation"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.type"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.horn_fact"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.horn_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.horn_rule"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.horn_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.quantifier"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.quantifier()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.type"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.union"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.union()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.convert_srnf_to_horn_clauses"><code class="docutils literal notranslate"><span class="pre">convert_srnf_to_horn_clauses()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.convert_to_srnf"><code class="docutils literal notranslate"><span class="pre">convert_to_srnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.fol_query_to_datalog_program"><code class="docutils literal notranslate"><span class="pre">fol_query_to_datalog_program()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.is_safe_range"><code class="docutils literal notranslate"><span class="pre">is_safe_range()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.range_restricted_variables"><code class="docutils literal notranslate"><span class="pre">range_restricted_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.translate_horn_clauses_to_datalog"><code class="docutils literal notranslate"><span class="pre">translate_horn_clauses_to_datalog()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +163,63 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.logic.horn_clauses module</a></li>
+<li><a class="reference internal" href="#">neurolang.logic.horn_clauses module</a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.atom"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.atom()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.conjunction"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.disjunction"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.existential"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_atom"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.negated_atom()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.negated_existential"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.negated_existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.type"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause.unknown"><code class="docutils literal notranslate"><span class="pre">ConvertSRNFToHornClause.unknown()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin.translate_implication"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin.translate_implication()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin.type"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogMixin.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.Fol2DatalogTranslationException"><code class="docutils literal notranslate"><span class="pre">Fol2DatalogTranslationException</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause"><code class="docutils literal notranslate"><span class="pre">HornClause</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause.type"><code class="docutils literal notranslate"><span class="pre">HornClause.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornFact"><code class="docutils literal notranslate"><span class="pre">HornFact</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.HornFact.type"><code class="docutils literal notranslate"><span class="pre">HornFact.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers.negated_existential"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers.negated_existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers.type"><code class="docutils literal notranslate"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.NeuroLangTranslateToHornClauseException"><code class="docutils literal notranslate"><span class="pre">NeuroLangTranslateToHornClauseException</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.conjunction"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.conjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.disjunction"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.disjunction()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.existential"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.existential()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.function"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.function()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.negation"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.negation()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables.type"><code class="docutils literal notranslate"><span class="pre">RangeRestrictedVariables.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.horn_fact"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.horn_fact()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.horn_rule"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.horn_rule()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.quantifier"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.quantifier()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.type"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.type</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog.union"><code class="docutils literal notranslate"><span class="pre">TranslateHornClausesToDatalog.union()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.convert_srnf_to_horn_clauses"><code class="docutils literal notranslate"><span class="pre">convert_srnf_to_horn_clauses()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.convert_to_srnf"><code class="docutils literal notranslate"><span class="pre">convert_to_srnf()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.fol_query_to_datalog_program"><code class="docutils literal notranslate"><span class="pre">fol_query_to_datalog_program()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.is_safe_range"><code class="docutils literal notranslate"><span class="pre">is_safe_range()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.range_restricted_variables"><code class="docutils literal notranslate"><span class="pre">range_restricted_variables()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.logic.horn_clauses.translate_horn_clauses_to_datalog"><code class="docutils literal notranslate"><span class="pre">translate_horn_clauses_to_datalog()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,7 +234,7 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.logic.horn_clauses">
-<span id="neurolang-logic-horn-clauses-module"></span><h1>neurolang.logic.horn_clauses module<a class="headerlink" href="#module-neurolang.logic.horn_clauses" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-logic-horn-clauses-module"></span><h1>neurolang.logic.horn_clauses module<a class="headerlink" href="#module-neurolang.logic.horn_clauses" title="Permalink to this heading">¶</a></h1>
 <p>Translation from First Order Logic to Horn clauses.</p>
 <p>This module defines the HornClause expression class and algorithms to translate
 First Order Logic expressions to a union of Horn clauses.  Between the
@@ -134,20 +245,21 @@ range and, if so, how to translate the expression to a union of horn clauses.
 Furthermore the resulting horn clauses can be translated to a datalog
 expression block to use in a solver. The theory behind this is mostly taken
 from the chapter 4 of <a class="reference internal" href="#r4fc70895fefb-1" id="id1">[1]</a>.</p>
-<dl class="citation">
-<dt class="label" id="r4fc70895fefb-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Abiteboul, Hull, and Vianu, Foundations of Databases: The Logical Level.</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="r4fc70895fefb-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Abiteboul, Hull, and Vianu, Foundations of Databases: The Logical Level.</p>
+</div>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.ConvertSRNFToHornClause">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">ConvertSRNFToHornClause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.ConvertSRNFToHornClause" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <p>Converts a expression in safe range normal form into the atoms of a horn
 clause and a list of auxiliar queries remaining to be processed.</p>
 <p>See <cite>convert_srnf_to_horn_clauses</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -155,11 +267,7 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -173,10 +281,6 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>atom</strong></p></td>
 <td></td>
@@ -261,9 +365,9 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.Fol2DatalogMixin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">Fol2DatalogMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.Fol2DatalogMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expression_walker.PatternWalker</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PatternWalker</span></code></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -271,11 +375,7 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -289,10 +389,6 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
@@ -329,20 +425,16 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.Fol2DatalogTranslationException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">Fol2DatalogTranslationException</span></span><a class="headerlink" href="#neurolang.logic.horn_clauses.Fol2DatalogTranslationException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.HornClause">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">HornClause</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.HornClause" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.LogicOperator</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">LogicOperator</span></code></p>
 <p>Expression of the form <cite>P(X) ← (Q(X) ⋀ … ⋀ S(X))</cite></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -359,10 +451,6 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -385,14 +473,10 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.HornFact">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">HornFact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.HornFact" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause" title="neurolang.logic.horn_clauses.HornClause"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.horn_clauses.HornClause</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.logic.horn_clauses.HornClause" title="neurolang.logic.horn_clauses.HornClause"><code class="xref py py-class docutils literal notranslate"><span class="pre">HornClause</span></code></a></p>
 <p>Expression of the form <cite>P(X) ← TRUE</cite></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -409,10 +493,6 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -435,9 +515,9 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">MoveNegationsToAtomsOrExistentialQuantifiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.MoveNegationsToAtomsOrExistentialQuantifiers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms" title="neurolang.logic.transformations.MoveNegationsToAtoms"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.MoveNegationsToAtoms</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.MoveNegationsToAtoms" title="neurolang.logic.transformations.MoveNegationsToAtoms"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveNegationsToAtoms</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -445,11 +525,7 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -463,10 +539,6 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>negated_conjunction</strong></p></td>
 <td></td>
@@ -477,31 +549,37 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <tr class="row-odd"><td><p><strong>negated_existential</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>negated_negation</strong></p></td>
+<tr class="row-even"><td><p><strong>negated_universal</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>negated_universal</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>remove_double_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>remove_single</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_function</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_constant</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk_function</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_implication</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
@@ -533,13 +611,13 @@ clause and a list of auxiliar queries remaining to be processed.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.NeuroLangTranslateToHornClauseException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">NeuroLangTranslateToHornClauseException</span></span><a class="headerlink" href="#neurolang.logic.horn_clauses.NeuroLangTranslateToHornClauseException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.exceptions.NeuroLangException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.frontend.neurolang.html#neurolang.frontend.neurolang.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.RangeRestrictedVariables">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">RangeRestrictedVariables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.RangeRestrictedVariables" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.expression_processing.html#neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets" title="neurolang.logic.expression_processing.WalkLogicProgramAggregatingSets"><code class="xref py py-class docutils literal notranslate"><span class="pre">WalkLogicProgramAggregatingSets</span></code></a></p>
 <p>The set of variables which are range restricted in a expression.</p>
 <p>The range restricted variables are defined recursively as follows:
 - For atoms: The variables occurring in the arguments.
@@ -558,7 +636,7 @@ involved expressions.</p></li>
 of its predicate then the expression does not have a restricted range. This
 also counts for existentials inside negations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -566,11 +644,7 @@ also counts for existentials inside negations.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -584,10 +658,6 @@ also counts for existentials inside negations.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>conjunction</strong></p></td>
 <td></td>
@@ -601,40 +671,37 @@ also counts for existentials inside negations.</p>
 <tr class="row-even"><td><p><strong>function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>logic_operator</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression</strong></p></td>
+<tr class="row-even"><td><p><strong>negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_expression_parameters</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pattern_match_tuple</strong></p></td>
+<tr class="row-odd"><td><p><strong>pattern_match_expression_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk</strong></p></td>
+<tr class="row-even"><td><p><strong>pattern_match_tuple</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_constant</strong></p></td>
+<tr class="row-odd"><td><p><strong>quantifier</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_function</strong></p></td>
+<tr class="row-even"><td><p><strong>union</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>walk</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_binary_logic_expression</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -674,9 +741,9 @@ also counts for existentials inside negations.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.logic.horn_clauses.TranslateHornClausesToDatalog">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.logic.horn_clauses.</span></span><span class="sig-name descname"><span class="pre">TranslateHornClausesToDatalog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.logic.horn_clauses.TranslateHornClausesToDatalog" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.logic.transformations.LogicExpressionWalker</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="neurolang.logic.transformations.html#neurolang.logic.transformations.LogicExpressionWalker" title="neurolang.logic.transformations.LogicExpressionWalker"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogicExpressionWalker</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">patterns</span></code></dt><dd><p>Property holding an iterator of triplets <code class="docutils literal notranslate"><span class="pre">(pattern,</span> <span class="pre">guard,</span> <span class="pre">action)</span></code>.</p>
 </dd>
@@ -684,11 +751,7 @@ also counts for existentials inside negations.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code>(expression)</p></td>
 <td><p>Find the action for a given expression by going through the <code class="docutils literal notranslate"><span class="pre">patterns</span></code>.</p></td>
@@ -702,10 +765,6 @@ also counts for existentials inside negations.</p>
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 80%" />
-<col style="width: 20%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>horn_fact</strong></p></td>
 <td></td>
@@ -740,16 +799,19 @@ also counts for existentials inside negations.</p>
 <tr class="row-odd"><td><p><strong>walk_function</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_nary</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_implication</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_negation</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_nary</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>walk_quantifier</strong></p></td>
+<tr class="row-even"><td><p><strong>walk_negation</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>walk_symbol</strong></p></td>
+<tr class="row-odd"><td><p><strong>walk_quantifier</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>walk_symbol</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -857,7 +919,7 @@ are range restricted.</p>
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -873,9 +935,12 @@ are range restricted.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>

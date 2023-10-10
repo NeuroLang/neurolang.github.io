@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.frontend.drs.chart_parser module &#8212; neurolang 0.1a11 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <title>neurolang.frontend.drs.chart_parser module &#8212; neurolang 0.1a15 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=35f6a86f"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
 
   </head><body>
 
@@ -38,9 +37,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logo.png"></span>
+        <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a11</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a15</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -78,7 +77,52 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.chart_parser module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.chart_parser module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Chart"><code class="docutils literal notranslate"><span class="pre">Chart</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser"><code class="docutils literal notranslate"><span class="pre">ChartParser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.completed</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.head"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.head</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.remaining</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.rule</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.unification</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.used_edges</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.parse"><code class="docutils literal notranslate"><span class="pre">ChartParser.parse()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.recognize"><code class="docutils literal notranslate"><span class="pre">ChartParser.recognize()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.DictLexicon"><code class="docutils literal notranslate"><span class="pre">DictLexicon</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.DictLexicon.get_meanings"><code class="docutils literal notranslate"><span class="pre">DictLexicon.get_meanings()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Grammar"><code class="docutils literal notranslate"><span class="pre">Grammar</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Grammar.type"><code class="docutils literal notranslate"><span class="pre">Grammar.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon"><code class="docutils literal notranslate"><span class="pre">Lexicon</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon.get_meanings"><code class="docutils literal notranslate"><span class="pre">Lexicon.get_meanings()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.RootRule"><code class="docutils literal notranslate"><span class="pre">RootRule</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.RootRule.type"><code class="docutils literal notranslate"><span class="pre">RootRule.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule"><code class="docutils literal notranslate"><span class="pre">Rule</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule.type"><code class="docutils literal notranslate"><span class="pre">Rule.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer"><code class="docutils literal notranslate"><span class="pre">Tokenizer</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.next_token"><code class="docutils literal notranslate"><span class="pre">Tokenizer.next_token()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.tokenize"><code class="docutils literal notranslate"><span class="pre">Tokenizer.tokenize()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_comma"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_comma()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_quote"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_quote()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_word"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_word()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -108,7 +152,52 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">neurolang.frontend.drs.chart_parser module</a></li>
+<li><a class="reference internal" href="#">neurolang.frontend.drs.chart_parser module</a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Chart"><code class="docutils literal notranslate"><span class="pre">Chart</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser"><code class="docutils literal notranslate"><span class="pre">ChartParser</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.completed</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.head"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.head</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.remaining</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.rule</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.unification</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges"><code class="docutils literal notranslate"><span class="pre">ChartParser.Edge.used_edges</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.parse"><code class="docutils literal notranslate"><span class="pre">ChartParser.parse()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.recognize"><code class="docutils literal notranslate"><span class="pre">ChartParser.recognize()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.DictLexicon"><code class="docutils literal notranslate"><span class="pre">DictLexicon</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.DictLexicon.get_meanings"><code class="docutils literal notranslate"><span class="pre">DictLexicon.get_meanings()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Grammar"><code class="docutils literal notranslate"><span class="pre">Grammar</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Grammar.type"><code class="docutils literal notranslate"><span class="pre">Grammar.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon"><code class="docutils literal notranslate"><span class="pre">Lexicon</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon.get_meanings"><code class="docutils literal notranslate"><span class="pre">Lexicon.get_meanings()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.RootRule"><code class="docutils literal notranslate"><span class="pre">RootRule</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.RootRule.type"><code class="docutils literal notranslate"><span class="pre">RootRule.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule"><code class="docutils literal notranslate"><span class="pre">Rule</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule.type"><code class="docutils literal notranslate"><span class="pre">Rule.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer"><code class="docutils literal notranslate"><span class="pre">Tokenizer</span></code></a><ul>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.next_token"><code class="docutils literal notranslate"><span class="pre">Tokenizer.next_token()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.tokenize"><code class="docutils literal notranslate"><span class="pre">Tokenizer.tokenize()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_comma"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_comma()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_quote"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_quote()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Tokenizer.yield_word"><code class="docutils literal notranslate"><span class="pre">Tokenizer.yield_word()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 <form action="../search.html" method="get">
@@ -123,17 +212,13 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.frontend.drs.chart_parser">
-<span id="neurolang-frontend-drs-chart-parser-module"></span><h1>neurolang.frontend.drs.chart_parser module<a class="headerlink" href="#module-neurolang.frontend.drs.chart_parser" title="Permalink to this headline">¶</a></h1>
+<span id="neurolang-frontend-drs-chart-parser-module"></span><h1>neurolang.frontend.drs.chart_parser module<a class="headerlink" href="#module-neurolang.frontend.drs.chart_parser" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.Chart">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable=()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Chart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Chart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Chart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code>(object, /)</p></td>
 <td><p>Append object to the end of the list.</p></td>
@@ -166,7 +251,7 @@
 <td><p>Reverse <em>IN PLACE</em>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code>(*[, key, reverse])</p></td>
-<td><p>Stable sort <em>IN PLACE</em>.</p></td>
+<td><p>Sort the list in ascending order and return None.</p></td>
 </tr>
 </tbody>
 </table>
@@ -175,17 +260,13 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">ChartParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grammar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lexicon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Edge</span></code></a>(head, rule, completed, remaining, ...)</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
@@ -193,10 +274,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 57%" />
-<col style="width: 43%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>parse</strong></p></td>
 <td></td>
@@ -209,31 +286,27 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">completed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remaining</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unification</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
 <dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">completed</span></code></a></dt><dd><p>Alias for field number 2</p>
+<dt><strong>completed</strong></dt><dd><p>Alias for field number 2</p>
 </dd>
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.head" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a></dt><dd><p>Alias for field number 0</p>
+<dt><strong>head</strong></dt><dd><p>Alias for field number 0</p>
 </dd>
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remaining</span></code></a></dt><dd><p>Alias for field number 3</p>
+<dt><strong>remaining</strong></dt><dd><p>Alias for field number 3</p>
 </dd>
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rule</span></code></a></dt><dd><p>Alias for field number 1</p>
+<dt><strong>rule</strong></dt><dd><p>Alias for field number 1</p>
 </dd>
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unification</span></code></a></dt><dd><p>Alias for field number 5</p>
+<dt><strong>unification</strong></dt><dd><p>Alias for field number 5</p>
 </dd>
-<dt><a class="reference internal" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges" title="neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">used_edges</span></code></a></dt><dd><p>Alias for field number 4</p>
+<dt><strong>used_edges</strong></dt><dd><p>Alias for field number 4</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>(value, /)</p></td>
 <td><p>Return number of occurrences of value.</p></td>
@@ -243,39 +316,39 @@
 </tr>
 </tbody>
 </table>
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">completed</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">completed</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.completed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 2</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.head">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">head</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.head" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">head</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.head" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 0</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remaining</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remaining</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.remaining" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 3</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rule</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rule</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 1</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unification</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unification</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.unification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 5</p>
 </dd></dl>
 
-<dl class="py property">
+<dl class="py attribute">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">used_edges</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">used_edges</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.ChartParser.Edge.used_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for field number 4</p>
 </dd></dl>
 
@@ -296,14 +369,10 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.DictLexicon">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">DictLexicon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.DictLexicon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon" title="neurolang.frontend.drs.chart_parser.Lexicon"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.drs.chart_parser.Lexicon</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Lexicon" title="neurolang.frontend.drs.chart_parser.Lexicon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Lexicon</span></code></a></p>
 <p>Convenience implementation of lexicon over dict</p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 62%" />
-<col style="width: 38%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>get_meanings</strong></p></td>
 <td></td>
@@ -320,13 +389,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.Grammar">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Grammar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rules</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Grammar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Expression</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -343,10 +408,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -369,13 +430,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.Lexicon">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Lexicon</span></span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Lexicon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 62%" />
-<col style="width: 38%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>get_meanings</strong></p></td>
 <td></td>
@@ -392,13 +449,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.RootRule">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">RootRule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constituents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.RootRule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule" title="neurolang.frontend.drs.chart_parser.Rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.frontend.drs.chart_parser.Rule</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#neurolang.frontend.drs.chart_parser.Rule" title="neurolang.frontend.drs.chart_parser.Rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Rule</span></code></a></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -415,10 +468,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -441,13 +490,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.Rule">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constituents</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Rule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurolang.expressions.Expression</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Expression</span></code></p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(*args, **kwargs)</p></td>
 <td><p>Call self as a function.</p></td>
@@ -464,10 +509,6 @@
 </tbody>
 </table>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 71%" />
-<col style="width: 29%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>cast</strong></p></td>
 <td></td>
@@ -490,13 +531,9 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.frontend.drs.chart_parser.Tokenizer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.frontend.drs.chart_parser.</span></span><span class="sig-name descname"><span class="pre">Tokenizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grammar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quotes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['`',</span> <span class="pre">'&quot;']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.frontend.drs.chart_parser.Tokenizer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 60%" />
-<col style="width: 40%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>next_token</strong></p></td>
 <td></td>
@@ -548,7 +585,7 @@
     </div>
       
   </div>
-</div>
+</div> 
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
@@ -564,9 +601,12 @@
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
     </p>
   </div>
 </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on 10 Oct 2023, 05:49:32</p>
+</div>
   </body>
 </html>
