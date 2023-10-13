@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.utils package &#8212; neurolang 0.1a20.dev1+gafc455d documentation</title>
+    <title>neurolang.utils package &#8212; neurolang 0.1a20.dev4+g0fa2d74 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=75ada8ae"></script>
+    <script src="../_static/documentation_options.js?v=8c006356"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev1+gafc455d</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev4+g0fa2d74</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -126,6 +126,7 @@
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.might_have_duplicates</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
@@ -221,6 +222,7 @@
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.might_have_duplicates</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
@@ -252,16 +254,18 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.utils">
-<span id="neurolang-utils-package"></span><h1>neurolang.utils package<a class="headerlink" href="#module-neurolang.utils" title="Permalink to this heading">¶</a></h1>
+<span id="neurolang-utils-package"></span><h1>neurolang.utils package<a class="headerlink" href="#module-neurolang.utils" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">NamedRelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">NamedRelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -360,77 +364,77 @@
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.aggregate">
-<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.aggregate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.aggregate" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.arity">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.arity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.arity" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.columns">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.columns" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.create_view_from">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.create_view_from" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.create_view_from" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.cross_product">
-<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.cross_product" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.cross_product" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.dee">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dee" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dee" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.dum">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.dum" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.equijoin">
-<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.equijoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.equijoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.explode">
-<span class="sig-name descname"><span class="pre">explode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.explode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">explode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.explode" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.extended_projection">
-<span class="sig-name descname"><span class="pre">extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_expressions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.extended_projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_expressions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.extended_projection" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one">
-<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.fetch_one" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.groupby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.groupby" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.left_naturaljoin">
-<span class="sig-name descname"><span class="pre">left_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.left_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">left_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.left_naturaljoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.naturaljoin">
-<span class="sig-name descname"><span class="pre">naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.naturaljoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.naturaljoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.projection">
-<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection" title="Link to this definition">¶</a></dt>
 <dd><p>Projects the set on the given list of columns.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
@@ -455,34 +459,34 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.projection_to_unnamed">
-<span class="sig-name descname"><span class="pre">projection_to_unnamed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection_to_unnamed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection_to_unnamed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.projection_to_unnamed" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column">
-<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_column" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_columns">
-<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.rename_columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.replace_null">
-<span class="sig-name descname"><span class="pre">replace_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.replace_null" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.replace_null" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.NamedRelationalAlgebraFrozenSet.to_unnamed">
-<span class="sig-name descname"><span class="pre">to_unnamed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.to_unnamed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_unnamed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.NamedRelationalAlgebraFrozenSet.to_unnamed" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">OrderedSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">OrderedSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSet" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableSet</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -531,24 +535,24 @@
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.add" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.add" title="Link to this definition">¶</a></dt>
 <dd><p>Add an element.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.copy" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.discard">
-<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.discard" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.discard" title="Link to this definition">¶</a></dt>
 <dd><p>Remove an element.  Do not raise an exception if absent.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">first</span> <span class="pre">index</span> <span class="pre">of</span> <span class="pre">value.</span></span></span><a class="headerlink" href="#neurolang.utils.OrderedSet.index" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">first</span> <span class="pre">index</span> <span class="pre">of</span> <span class="pre">value.</span></span></span><a class="headerlink" href="#neurolang.utils.OrderedSet.index" title="Link to this definition">¶</a></dt>
 <dd><p>Raises ValueError if the value is not present.</p>
 <p>Supporting start and stop arguments is optional, but
 recommended.</p>
@@ -556,24 +560,24 @@ recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.issubset">
-<span class="sig-name descname"><span class="pre">issubset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.issubset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">issubset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.issubset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.issuperset">
-<span class="sig-name descname"><span class="pre">issuperset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.issuperset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">issuperset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.issuperset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.OrderedSet.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.replace" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.OrderedSet.replace" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a></p>
 <p>RelationalAlgebraFrozenSet implementation using in-memory pandas.DataFrame
 as container for the elements.</p>
@@ -582,6 +586,8 @@ as container for the elements.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><a class="reference internal" href="#neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates" title="neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></a></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -650,77 +656,93 @@ as container for the elements.</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.arity">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.arity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.arity" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.as_numpy_array">
-<span class="sig-name descname"><span class="pre">as_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_numpy_array" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_numpy_array" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.as_pandas_dataframe">
-<span class="sig-name descname"><span class="pre">as_pandas_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_pandas_dataframe" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_pandas_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.as_pandas_dataframe" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.columns">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.columns" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.copy" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.create_view_from">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.create_view_from" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.create_view_from" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.cross_product">
-<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.cross_product" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.cross_product" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.dee">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.dee" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.dee" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.dum">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.dum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.dum" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.equijoin">
-<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.equijoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.equijoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.fetch_one">
-<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.fetch_one" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.fetch_one" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.groupby" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.is_empty">
-<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.is_empty" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.itervalues">
-<span class="sig-name descname"><span class="pre">itervalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">itervalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.itervalues" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">might_have_duplicates</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.might_have_duplicates" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the flag manually on whether the set might have duplicates.
+Careful, if you set it to False and it’s not, then the semantics of
+the queries will break.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>returns whether the set might have duplicates.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.projection">
-<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.projection" title="Link to this definition">¶</a></dt>
 <dd><p>Projects the set on the given list of columns.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
@@ -745,7 +767,7 @@ as container for the elements.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.selection">
-<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">RelationalAlgebraStringExpression</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">RelationalAlgebraStringExpression</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection" title="Link to this definition">¶</a></dt>
 <dd><p>Select the elements based on the given selet_criteria.
 The select_criteria may be a callable function, a string expression
 or a Dict of columns -&gt; value</p>
@@ -768,7 +790,7 @@ or a Dict of columns -&gt; value</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraFrozenSet.selection_columns">
-<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraFrozenSet.selection_columns" title="Link to this definition">¶</a></dt>
 <dd><p>Select the elements where column pairs indicated as key, value
 items of the select_criteria are equal.
 The select_criteria must be a Dict of Int -&gt; Int.</p>
@@ -803,13 +825,15 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.pandas.html#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -893,13 +917,13 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraSet.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet.add" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet.add" title="Link to this definition">¶</a></dt>
 <dd><p>Add an element.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraSet.discard">
-<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet.discard" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraSet.discard" title="Link to this definition">¶</a></dt>
 <dd><p>Remove an element.  Do not raise an exception if absent.</p>
 </dd></dl>
 
@@ -907,7 +931,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.RelationalAlgebraStringExpression">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraStringExpression</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraStringExpression" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraStringExpression</span></span><a class="headerlink" href="#neurolang.utils.RelationalAlgebraStringExpression" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -999,6 +1023,12 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code>(sep, /)</p></td>
 <td><p>Partition the string into three parts using the given separator.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeprefix</span></code>(prefix, /)</p></td>
+<td><p>Return a str with the given prefix string removed if present.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">removesuffix</span></code>(suffix, /)</p></td>
+<td><p>Return a str with the given suffix string removed if present.</p></td>
+</tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code>(old, new[, count])</p></td>
 <td><p>Return a copy with all occurrences of substring old replaced by new.</p></td>
 </tr>
@@ -1053,7 +1083,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.log_performance">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">log_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.log_performance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">log_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.log_performance" title="Link to this definition">¶</a></dt>
 <dd><p>Context manager to log the performance
 of executed commands in the context.</p>
 <dl class="field-list simple">
@@ -1083,11 +1113,11 @@ by default None</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="neurolang.utils.powerset">
-<span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">powerset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.powerset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.</span></span><span class="sig-name descname"><span class="pre">powerset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.powerset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html">neurolang.utils.relational_algebra_set package</a><ul>
@@ -1131,6 +1161,7 @@ by default None</p>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.might_have_duplicates</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="neurolang.utils.relational_algebra_set.html#neurolang.utils.relational_algebra_set.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
@@ -1237,7 +1268,7 @@ by default None</p>
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="neurolang.utils.data_manipulation.html">neurolang.utils.data_manipulation module</a><ul>
@@ -1287,12 +1318,12 @@ by default None</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 12 Oct 2023, 16:32:53</p>
+    <p style="margin-top: -10px;">on 13 Oct 2023, 18:37:47</p>
 </div>
   </body>
 </html>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>NeuroLang Example based Implementing a NeuroSynth Query &#8212; neurolang 0.1a20.dev1+gafc455d documentation</title>
+    <title>NeuroLang Example based Implementing a NeuroSynth Query &#8212; neurolang 0.1a20.dev4+g0fa2d74 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=75ada8ae"></script>
+    <script src="../_static/documentation_options.js?v=8c006356"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Example where a spatial prior is defined based on the distance between voxels and foci in a coordinate-based meta-analysis database" href="plot_cbma_spatial_prior.html" />
@@ -41,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev1+gafc455d</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev4+g0fa2d74</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -137,7 +137,7 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="neurolang-example-based-implementing-a-neurosynth-query">
-<span id="sphx-glr-auto-examples-plot-neurosynth-implementation-py"></span><h1>NeuroLang Example based Implementing a NeuroSynth Query<a class="headerlink" href="#neurolang-example-based-implementing-a-neurosynth-query" title="Permalink to this heading">¶</a></h1>
+<span id="sphx-glr-auto-examples-plot-neurosynth-implementation-py"></span><h1>NeuroLang Example based Implementing a NeuroSynth Query<a class="headerlink" href="#neurolang-example-based-implementing-a-neurosynth-query" title="Link to this heading">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
@@ -156,7 +156,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <section id="data-preparation">
-<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Permalink to this heading">¶</a></h2>
+<h2>Data preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;neurolang_data&quot;</span>
 </pre></div>
 </div>
@@ -171,13 +171,13 @@ to download the full example code</p>
 
 Downloading data from https://osf.io/7pj92/download ...
 
-Downloaded 59269120 of 63027871 bytes (94.0%,    0.1s remaining) ...done. (2 seconds, 0 min)
+Downloaded 32555008 of 63027871 bytes (51.7%,    0.9s remaining) ...done. (4 seconds, 0 min)
 Extracting data from /home/circleci/neurolang_data/icbm/icbm152_2009/e05b733c275cab0eec856067143c9dc9/download..... done.
 </pre></div>
 </div>
 </section>
 <section id="probabilistic-logic-programming-in-neurolang">
-<h2>Probabilistic Logic Programming in NeuroLang<a class="headerlink" href="#probabilistic-logic-programming-in-neurolang" title="Permalink to this heading">¶</a></h2>
+<h2>Probabilistic Logic Programming in NeuroLang<a class="headerlink" href="#probabilistic-logic-programming-in-neurolang" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -216,7 +216,7 @@ Extracting data from /home/circleci/neurolang_data/icbm/icbm152_2009/e05b733c275
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_coordinates.tsv.gz ...
- ...done. (0 seconds, 0 min)
+ ...done. (1 seconds, 0 min)
 Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_metadata.tsv.gz ...
  ...done. (0 seconds, 0 min)
 Downloading data from https://github.com/neurosynth/neurosynth-data/raw/master/data-neurosynth_version-7_vocab-terms_source-abstract_type-tfidf_features.npz ...
@@ -252,7 +252,7 @@ TermInStudyTFIDF: typing.AbstractSet[typing.Tuple[str, str, float]] = (9862924, 
 <span class="n">nilearn</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_neurosynth_implementation_001.png" srcset="../_images/sphx_glr_plot_neurosynth_implementation_001.png" alt="plot neurosynth implementation" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.349 seconds)</p>
+<img src="../_images/sphx_glr_plot_neurosynth_implementation_001.png" srcset="../_images/sphx_glr_plot_neurosynth_implementation_001.png" alt="plot neurosynth implementation" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 13.721 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-neurosynth-implementation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/733a5c7f76bb887e873a5401d64fa7b6/plot_neurosynth_implementation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_neurosynth_implementation.py</span></code></a></p>
@@ -285,12 +285,12 @@ TermInStudyTFIDF: typing.AbstractSet[typing.Tuple[str, str, float]] = (9862924, 
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 12 Oct 2023, 16:32:53</p>
+    <p style="margin-top: -10px;">on 13 Oct 2023, 18:37:47</p>
 </div>
   </body>
 </html>

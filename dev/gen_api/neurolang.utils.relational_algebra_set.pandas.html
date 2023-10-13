@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.utils.relational_algebra_set.pandas module &#8212; neurolang 0.1a20.dev1+gafc455d documentation</title>
+    <title>neurolang.utils.relational_algebra_set.pandas module &#8212; neurolang 0.1a20.dev4+g0fa2d74 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=75ada8ae"></script>
+    <script src="../_static/documentation_options.js?v=8c006356"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev1+gafc455d</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev4+g0fa2d74</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -116,6 +116,7 @@
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.might_have_duplicates</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
@@ -197,6 +198,7 @@
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.groupby"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.groupby()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.is_empty"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.is_empty()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.itervalues"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.itervalues()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.might_have_duplicates</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.projection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.projection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection_columns"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet.selection_columns()</span></code></a></li>
@@ -224,16 +226,18 @@
     <div class="body col-md-9 content" role="main">
       
   <section id="module-neurolang.utils.relational_algebra_set.pandas">
-<span id="neurolang-utils-relational-algebra-set-pandas-module"></span><h1>neurolang.utils.relational_algebra_set.pandas module<a class="headerlink" href="#module-neurolang.utils.relational_algebra_set.pandas" title="Permalink to this heading">¶</a></h1>
+<span id="neurolang-utils-relational-algebra-set-pandas-module"></span><h1>neurolang.utils.relational_algebra_set.pandas module<a class="headerlink" href="#module-neurolang.utils.relational_algebra_set.pandas" title="Link to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">NamedRelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">NamedRelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.NamedRelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">NamedRelationalAlgebraFrozenSet</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -332,77 +336,77 @@
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.aggregate">
-<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.aggregate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregate_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.aggregate" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.arity">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.arity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.arity" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.columns">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.columns" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.create_view_from">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.create_view_from" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.create_view_from" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.cross_product">
-<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.cross_product" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.cross_product" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dee">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dee" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dee" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dum">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.dum" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.equijoin">
-<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.equijoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.equijoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.explode">
-<span class="sig-name descname"><span class="pre">explode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.explode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">explode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.explode" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.extended_projection">
-<span class="sig-name descname"><span class="pre">extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_expressions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.extended_projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extended_projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_expressions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.extended_projection" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.fetch_one">
-<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.fetch_one" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.fetch_one" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.groupby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.groupby" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.left_naturaljoin">
-<span class="sig-name descname"><span class="pre">left_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.left_naturaljoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">left_naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.left_naturaljoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.naturaljoin">
-<span class="sig-name descname"><span class="pre">naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.naturaljoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">naturaljoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.naturaljoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection">
-<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection" title="Link to this definition">¶</a></dt>
 <dd><p>Projects the set on the given list of columns.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
@@ -427,34 +431,34 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection_to_unnamed">
-<span class="sig-name descname"><span class="pre">projection_to_unnamed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection_to_unnamed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection_to_unnamed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.projection_to_unnamed" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_column">
-<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_column" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_columns">
-<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">renames</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.rename_columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.replace_null">
-<span class="sig-name descname"><span class="pre">replace_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.replace_null" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.replace_null" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.to_unnamed">
-<span class="sig-name descname"><span class="pre">to_unnamed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.to_unnamed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_unnamed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.NamedRelationalAlgebraFrozenSet.to_unnamed" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraFrozenSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a></p>
 <p>RelationalAlgebraFrozenSet implementation using in-memory pandas.DataFrame
 as container for the elements.</p>
@@ -463,6 +467,8 @@ as container for the elements.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></a></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -531,77 +537,93 @@ as container for the elements.</p>
 </table>
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.arity">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.arity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arity</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.arity" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_numpy_array">
-<span class="sig-name descname"><span class="pre">as_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_numpy_array" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_numpy_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_numpy_array" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_pandas_dataframe">
-<span class="sig-name descname"><span class="pre">as_pandas_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_pandas_dataframe" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_pandas_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.as_pandas_dataframe" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.columns">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.columns" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.columns" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.copy" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.create_view_from">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.create_view_from" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_view_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.create_view_from" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.cross_product">
-<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.cross_product" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cross_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.cross_product" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dee">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dee" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dee</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dee" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dum">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.dum" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.equijoin">
-<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.equijoin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">equijoin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.equijoin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.fetch_one">
-<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.fetch_one" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fetch_one</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.fetch_one" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.groupby">
-<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.groupby" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">groupby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.groupby" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.is_empty">
-<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.is_empty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.is_empty" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.itervalues">
-<span class="sig-name descname"><span class="pre">itervalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.itervalues" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">itervalues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.itervalues" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">might_have_duplicates</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.might_have_duplicates" title="Link to this definition">¶</a></dt>
+<dd><p>Sets the flag manually on whether the set might have duplicates.
+Careful, if you set it to False and it’s not, then the semantics of
+the queries will break.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>returns whether the set might have duplicates.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.projection">
-<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.projection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">projection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">columns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.projection" title="Link to this definition">¶</a></dt>
 <dd><p>Projects the set on the given list of columns.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ras</span> <span class="o">=</span> <span class="n">RelationalAlgebraFrozenSet</span><span class="p">(</span>
@@ -626,7 +648,7 @@ as container for the elements.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection">
-<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">RelationalAlgebraStringExpression</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression"><span class="pre">RelationalAlgebraStringExpression</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.12)"><span class="pre">Callable</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection" title="Link to this definition">¶</a></dt>
 <dd><p>Select the elements based on the given selet_criteria.
 The select_criteria may be a callable function, a string expression
 or a Dict of columns -&gt; value</p>
@@ -649,7 +671,7 @@ or a Dict of columns -&gt; value</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection_columns">
-<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">selection_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">select_criteria</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet.selection_columns" title="Link to this definition">¶</a></dt>
 <dd><p>Select the elements where column pairs indicated as key, value
 items of the select_criteria are equal.
 The select_criteria must be a Dict of Int -&gt; Int.</p>
@@ -684,13 +706,15 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet" title="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraFrozenSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code></a>, <a class="reference internal" href="neurolang.utils.relational_algebra_set.abstract.html#neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet" title="neurolang.utils.relational_algebra_set.abstract.RelationalAlgebraSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationalAlgebraSet</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>arity</strong></dt><dd></dd>
 <dt><strong>columns</strong></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">might_have_duplicates</span></code></dt><dd><p>Sets the flag manually on whether the set might have duplicates.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -774,13 +798,13 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.add" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.add" title="Link to this definition">¶</a></dt>
 <dd><p>Add an element.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.discard">
-<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.discard" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraSet.discard" title="Link to this definition">¶</a></dt>
 <dd><p>Remove an element.  Do not raise an exception if absent.</p>
 </dd></dl>
 
@@ -788,7 +812,7 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraStringExpression</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurolang.utils.relational_algebra_set.pandas.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraStringExpression</span></span><a class="headerlink" href="#neurolang.utils.relational_algebra_set.pandas.RelationalAlgebraStringExpression" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
@@ -880,6 +904,12 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code>(sep, /)</p></td>
 <td><p>Partition the string into three parts using the given separator.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">removeprefix</span></code>(prefix, /)</p></td>
+<td><p>Return a str with the given prefix string removed if present.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">removesuffix</span></code>(suffix, /)</p></td>
+<td><p>Return a str with the given suffix string removed if present.</p></td>
+</tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code>(old, new[, count])</p></td>
 <td><p>Return a copy with all occurrences of substring old replaced by new.</p></td>
 </tr>
@@ -954,12 +984,12 @@ The select_criteria must be a Dict of Int -&gt; Int.</p>
     </p>
     <p>
         &copy; Copyright 2017, Demian Wassermann et al.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.2.6.<br/>
     </p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 12 Oct 2023, 16:32:53</p>
+    <p style="margin-top: -10px;">on 13 Oct 2023, 18:37:47</p>
 </div>
   </body>
 </html>
