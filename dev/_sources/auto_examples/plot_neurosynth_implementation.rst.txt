@@ -23,7 +23,7 @@ NeuroLang Example based Implementing a NeuroSynth Query
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-25
 
-.. code-block:: default
+.. code-block:: Python
 
     import warnings
 
@@ -55,7 +55,7 @@ Data preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-31
 
-.. code-block:: default
+.. code-block:: Python
 
 
     data_dir = Path.home() / "neurolang_data"
@@ -73,7 +73,7 @@ Load the MNI atlas and resample it to 4mm voxels
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-39
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mni_t1 = nibabel.load(
@@ -93,7 +93,7 @@ Load the MNI atlas and resample it to 4mm voxels
     Dataset created in /home/circleci/neurolang_data/icbm/icbm152_2009
 
     Downloading data from https://osf.io/7pj92/download ...
-    Downloaded 8626176 of 63027871 bytes (13.7%,    6.4s remaining)    Downloaded 18292736 of 63027871 bytes (29.0%,    5.0s remaining) ...done. (4 seconds, 0 min)
+     ...done. (2 seconds, 0 min)
     Extracting data from /home/circleci/neurolang_data/icbm/icbm152_2009/e05b733c275cab0eec856067143c9dc9/download..... done.
 
 
@@ -106,7 +106,7 @@ Probabilistic Logic Programming in NeuroLang
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-46
 
-.. code-block:: default
+.. code-block:: Python
 
 
     nl = NeurolangPDL()
@@ -125,7 +125,7 @@ Adding new aggregation function to build a region overlay
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-60
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -152,7 +152,7 @@ Load the NeuroSynth database
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-85
 
-.. code-block:: default
+.. code-block:: Python
 
 
     peak_data = get_ns_mni_peaks_reported(data_dir)
@@ -205,7 +205,7 @@ Load the NeuroSynth database
 
 .. GENERATED FROM PYTHON SOURCE LINES 88-106
 
-.. code-block:: default
+.. code-block:: Python
 
 
     with nl.scope as e:
@@ -240,7 +240,7 @@ Load the NeuroSynth database
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-117
 
-.. code-block:: default
+.. code-block:: Python
 
 
     result_image = img_query.fetch_one()[0].spatial_image()
@@ -264,7 +264,7 @@ Load the NeuroSynth database
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 19.532 seconds)
+   **Total running time of the script:** (0 minutes 14.672 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_neurosynth_implementation.py:
@@ -273,16 +273,13 @@ Load the NeuroSynth database
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_neurosynth_implementation.ipynb <plot_neurosynth_implementation.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_neurosynth_implementation.py <plot_neurosynth_implementation.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: plot_neurosynth_implementation.ipynb <plot_neurosynth_implementation.ipynb>`
 
 
 .. only:: html

@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Loading and Querying the Destrieux et al. Atlas’ Left Hemisphere &#8212; neurolang 0.1a20.dev7+g4fece48 documentation</title>
+    <title>Loading and Querying the Destrieux et al. Atlas’ Left Hemisphere &#8212; neurolang 0.1a20.dev8+g758554d documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script src="../_static/documentation_options.js?v=47745bb7"></script>
+    <script src="../_static/documentation_options.js?v=d582f2cf"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -41,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev7+g4fece48</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev8+g758554d</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -132,7 +132,7 @@ to download the full example code</p>
 <span id="sphx-glr-auto-examples-plot-load-destrieux-left-hemisphere-gyri-py"></span><h1>Loading and Querying the Destrieux et al. Atlas’ Left Hemisphere<a class="headerlink" href="#loading-and-querying-the-destrieux-et-al-atlas-left-hemisphere" title="Link to this heading">¶</a></h1>
 <p>Uploading the Destrieux regions NeuroLang and
 executing a simple query.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
@@ -144,11 +144,11 @@ executing a simple query.</p>
 </pre></div>
 </div>
 <p>Initialise the NeuroLang probabilistic engine.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangDL</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangDL</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Load the Destrieux example from nilearn as a fact list</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_destrieux</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_destrieux</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_atlas_destrieux_2009</span><span class="p">()</span>
 <span class="n">atlas_labels</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">atlas_destrieux</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>
@@ -177,14 +177,14 @@ destrieux_atlas: typing.AbstractSet[typing.Tuple[str, neurolang.regions.Explicit
 </pre></div>
 </div>
 <p>Add utility function</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
 <span class="k">def</span> <span class="nf">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Query all left hemisphere regions superior to the temporal superior sulucs
 and anterior to the central sulcus</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">scope</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="n">e</span><span class="o">.</span><span class="n">on_left_hemisphere</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">e</span><span class="o">.</span><span class="n">destrieux_atlas</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;L S&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">l</span><span class="p">)</span>
     <span class="p">)</span>
@@ -193,7 +193,7 @@ and anterior to the central sulcus</p>
 </pre></div>
 </div>
 <p>Visualise results</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subplots</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">subplots</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
     <span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 <span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
@@ -203,13 +203,13 @@ and anterior to the central sulcus</p>
     <span class="n">plotting</span><span class="o">.</span><span class="n">plot_roi</span><span class="p">(</span><span class="n">region</span><span class="o">.</span><span class="n">spatial_image</span><span class="p">(),</span> <span class="n">axes</span><span class="o">=</span><span class="n">subplot</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_load_destrieux_left_hemisphere_gyri_001.png" srcset="../_images/sphx_glr_plot_load_destrieux_left_hemisphere_gyri_001.png" alt="plot load destrieux left hemisphere gyri" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 49.187 seconds)</p>
+<img src="../_images/sphx_glr_plot_load_destrieux_left_hemisphere_gyri_001.png" srcset="../_images/sphx_glr_plot_load_destrieux_left_hemisphere_gyri_001.png" alt="plot load destrieux left hemisphere gyri" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 53.469 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-load-destrieux-left-hemisphere-gyri-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/b6ab5aca2ecec53f0e7bb9c0c8b8ccd3/plot_load_destrieux_left_hemisphere_gyri.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux_left_hemisphere_gyri.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/4dce24470ce509ed4160268b2ec14c7c/plot_load_destrieux_left_hemisphere_gyri.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_load_destrieux_left_hemisphere_gyri.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/b6ab5aca2ecec53f0e7bb9c0c8b8ccd3/plot_load_destrieux_left_hemisphere_gyri.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_load_destrieux_left_hemisphere_gyri.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -240,7 +240,7 @@ and anterior to the central sulcus</p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 30 Nov 2023, 09:30:23</p>
+    <p style="margin-top: -10px;">on 08 Feb 2024, 10:18:18</p>
 </div>
   </body>
 </html>
