@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>neurolang.frontend.query_resolution_datalog module &#8212; neurolang 0.1a20.dev9+g552932e documentation</title>
+    <title>neurolang.frontend.query_resolution_datalog module &#8212; neurolang 0.1a20.dev10+g22eeefc documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css?v=284a2d1d" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script src="../_static/documentation_options.js?v=dfca62fb"></script>
+    <script src="../_static/documentation_options.js?v=285d495d"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           neurolang</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev9+g552932e</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1a20.dev10+g22eeefc</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -82,6 +82,7 @@
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog</span></code></a><ul>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_constraint"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_constraint()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_tuple_set"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_tuple_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.compute_datalog_program_for_autocompletion()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.current_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.current_program</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.execute_datalog_program()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.magic_sets_rewrite_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.magic_sets_rewrite_program()</span></code></a></li>
@@ -127,6 +128,7 @@
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog</span></code></a><ul>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_constraint"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_constraint()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.add_tuple_set"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.add_tuple_set()</span></code></a></li>
+<li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.compute_datalog_program_for_autocompletion()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.current_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.current_program</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.execute_datalog_program()</span></code></a></li>
 <li><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.magic_sets_rewrite_program"><code class="docutils literal notranslate"><span class="pre">QueryBuilderDatalog.magic_sets_rewrite_program()</span></code></a></li>
@@ -212,52 +214,55 @@ as well as Region and Neurosynth capabilities</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code>(quantified_variable, body)</p></td>
 <td><p>Universal predicate on the body.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_region</span></code>(spatial_image[, label, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_datalog_program_for_autocompletion</span></code></a>(...)</p></td>
+<td><p>Computes a Datalog program in classical syntax.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_region</span></code>(spatial_image[, label, ...])</p></td>
 <td><p>Creates an ExplicitVBR out of the voxels of a dense spatial_image with specified label</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_symbol</span></code>(name)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_symbol</span></code>(name)</p></td>
 <td><p>Deletes the symbol with parameter name from the symbol_table</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute_datalog_program</span></code></a>(code)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.execute_datalog_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute_datalog_program</span></code></a>(code)</p></td>
 <td><p>Execute a Datalog program in classical syntax.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">exists</span></code>(quantified_variable, body)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">exists</span></code>(quantified_variable, body)</p></td>
 <td><p>Existential predicate on the body.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_symbol</span></code>(symbol_name)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_symbol</span></code>(symbol_name)</p></td>
 <td><p>Retrieves symbol via its name, either providing a fe.Expression with the correct name or the name itself</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_mni_peaks_reported</span></code>(data_dir)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_mni_peaks_reported</span></code>(data_dir)</p></td>
 <td><p>Load the coordinates for the peaks reported by studies in the Neurosynth dataset.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_study_ids</span></code>(data_dir[, name, ...])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_study_ids</span></code>(data_dir[, name, ...])</p></td>
 <td><p>Load all study ids (PMIDs) that are part of the Neurosynth database.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_term_study_associations</span></code>(data_dir)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_neurosynth_term_study_associations</span></code>(data_dir)</p></td>
 <td><p>Load TF-IDF values for each (term, study) association within the Neurosynth database.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_implicit_regions_explicit</span></code>(affine, dim)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_implicit_regions_explicit</span></code>(affine, dim)</p></td>
 <td><p>Raises NotImplementedError for now</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_region_symbol</span></code>([name])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_region_symbol</span></code>([name])</p></td>
 <td><p>Returns symbol with type Region</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_symbol</span></code>([type_, name])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_symbol</span></code>([type_, name])</p></td>
 <td><p>Creates a symbol and associated expression, optionally specifying it's type and/or name</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.predicate_parameter_names" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.predicate_parameter_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predicate_parameter_names</span></code></a>(predicate_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.predicate_parameter_names" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.predicate_parameter_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predicate_parameter_names</span></code></a>(predicate_name)</p></td>
 <td><p>Get the names of the parameters for the given predicate</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.query" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(*args)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.query" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(*args)</p></td>
 <td><p>Performs an inferential query on the database.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.reset_program" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.reset_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_program</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.reset_program" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.reset_program"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_program</span></code></a>()</p></td>
 <td><p>Clears current symbol table</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.solve_all" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.solve_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_all</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.solve_all" title="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.solve_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve_all</span></code></a>()</p></td>
 <td><p>Returns a dictionary of &quot;predicate_name&quot;: &quot;Content&quot; for all elements in the solution of the Datalog program.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sphere</span></code>(center, radius[, name])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sphere</span></code>(center, radius[, name])</p></td>
 <td><p>Creates a Region symbol associated with the spherical volume described by its center and volume</p></td>
 </tr>
 </tbody>
@@ -332,6 +337,47 @@ will be inferred from the first element, by default Unknown</p>
 <span class="go">l2: typing.AbstractSet[typing.Tuple[int, int, float]] =             [(1, 2, 3.0), (3, 4, nan)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;l3&quot;</span><span class="p">)</span>
 <span class="go">l3: typing.AbstractSet[typing.Tuple[int]] =             [(1,), (2,), (3,)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion">
+<span class="sig-name descname"><span class="pre">compute_datalog_program_for_autocompletion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">autocompletion_code</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a></span></span><a class="headerlink" href="#neurolang.frontend.query_resolution_datalog.QueryBuilderDatalog.compute_datalog_program_for_autocompletion" title="Link to this definition">¶</a></dt>
+<dd><p>Computes a Datalog program in classical syntax.
+Returns the next accepted tokens of the program.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>code</strong><span class="classifier">string</span></dt><dd><p>Datalog program.</p>
+</dd>
+<dt><strong>autocompletion_code</strong><span class="classifier">str</span></dt><dd><p>Datalog program for autocompletion.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p_ir</span> <span class="o">=</span> <span class="n">DatalogProgram</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">QueryBuilderDatalog</span><span class="p">(</span><span class="n">program_ir</span><span class="o">=</span><span class="n">p_ir</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prog_complete</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">       l2(x, y) :- l(x, y), (x == y)</span>
+<span class="gp">... </span><span class="s1">       ans(x) :- l2(x, y)</span>
+<span class="gp">... </span><span class="s1">       &#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prog</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="gp">... </span><span class="s1">       l2(x, y) :- l(x, y), (x == y)</span>
+<span class="gp">... </span><span class="s1">       ans(x) :-</span>
+<span class="gp">... </span><span class="s1">       &#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">q</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">compute_datalog_program_for_autocompletion</span><span class="p">(</span><span class="n">prog_complete</span><span class="p">,</span> <span class="n">prog</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="gp">... </span><span class="p">{</span>
+<span class="gp">... </span>    <span class="s1">&#39;Signs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="s1">&#39;∃&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">},</span> <span class="s1">&#39;Numbers&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;Text&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;Operators&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;¬&#39;</span><span class="p">,</span> <span class="s1">&#39;~&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="s1">&#39;Cmd_identifier&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;Functions&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lambda&#39;</span><span class="p">},</span> <span class="s1">&#39;Identifier_regexp&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span>
+<span class="gp">... </span>    <span class="s1">&#39;Reserved words&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;exists&#39;</span><span class="p">,</span> <span class="s1">&#39;EXISTS&#39;</span><span class="p">},</span> <span class="s1">&#39;Boleans&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;⊤&#39;</span><span class="p">,</span> <span class="s1">&#39;⊥&#39;</span><span class="p">,</span> <span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="s1">&#39;Expression symbols&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;Python string&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span>
+<span class="gp">... </span>    <span class="s1">&#39;Strings&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;&lt;identifier regular expression&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;command identifier&gt;&#39;</span><span class="p">},</span> <span class="s1">&#39;commands&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span>
+<span class="gp">... </span>    <span class="s1">&#39;functions&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;base symbols&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">(),</span> <span class="s1">&#39;query symbols&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">}</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -482,7 +528,7 @@ through the current program</p>
   </div>
 </footer>
 <div class="container neurolang-timestamp">
-    <p style="margin-top: -10px;">on 12 Mar 2024, 12:36:05</p>
+    <p style="margin-top: -10px;">on 12 Mar 2024, 12:37:48</p>
 </div>
   </body>
 </html>
