@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concepts &#8212; NeuroLang 0.1a21.dev9+ge3a421f02 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=1bfb7717" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=a2a134a6"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples of the NeuroLang language environment." href="auto_examples/index.html" />
+    <link rel="prev" title="Datalog: A Rule-Based Query Language for NeuroLang" href="tutorial_datalog.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a21" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroLang</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    NSQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Concepts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    NSQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-programming-datalog">Logic Programming &amp; Datalog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-reasoning">Probabilistic Reasoning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroimaging-integration">Neuroimaging Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declarative-engine-registry-cli">Declarative Engine Registry &amp; CLI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Concepts</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="concepts">
+<span id="id1"></span><h1>Concepts<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h1>
+<p>This page explains the core ideas behind NeuroLang. You do not need to read
+this before the <a class="reference internal" href="tutorial.html"><span class="doc">Get Started with NeuroLang</span></a> — it is here as a reference once you want to
+understand <em>why</em> things work the way they do.</p>
+<section id="logic-programming-datalog">
+<h2>Logic Programming &amp; Datalog<a class="headerlink" href="#logic-programming-datalog" title="Link to this heading">#</a></h2>
+<p>Logic programming is a style of programming where you declare <em>what</em> is true,
+not <em>how</em> to compute it. A <strong>Datalog</strong> program consists of two kinds of
+statements:</p>
+<p><strong>Facts</strong> — ground truths about the world:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;V1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">region</span><span class="p">[</span><span class="s2">&quot;V2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">adjacent</span><span class="p">[</span><span class="s2">&quot;V1&quot;</span><span class="p">,</span> <span class="s2">&quot;V2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p><strong>Rules</strong> — derived truths (if A and B are true, then C is true):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># x is reachable from y if x is adjacent to y</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">adjacent</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+    <span class="c1"># x is reachable from y if x is adjacent to z and z is reachable from y</span>
+    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">adjacent</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The Datalog <em>engine</em> (the solver) computes all facts that can be derived from
+the rules. NeuroLang extends standard Datalog with:</p>
+<ul class="simple">
+<li><p><strong>Aggregations</strong> — <code class="docutils literal notranslate"><span class="pre">COUNT</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX</span></code>, <code class="docutils literal notranslate"><span class="pre">SUM</span></code> over sets of tuples</p></li>
+<li><p><strong>Built-in functions</strong> — register any Python callable as a Datalog symbol</p></li>
+<li><p><strong>Tuple-generating dependencies (TGDs)</strong> — open-world reasoning rules</p></li>
+</ul>
+</section>
+<section id="probabilistic-reasoning">
+<h2>Probabilistic Reasoning<a class="headerlink" href="#probabilistic-reasoning" title="Link to this heading">#</a></h2>
+<p>Standard Datalog is deterministic: a fact is either derived or it is not. In
+many neuroimaging applications we need to reason about <em>uncertain</em> data — for
+example, whether a brain region is functionally connected to another region
+given noisy fMRI data.</p>
+<p>NeuroLang adds <strong>independent probabilistic facts</strong>: each tuple in a
+probabilistic relation is an independent Bernoulli random variable with an
+associated probability. For example, a term-to-region mapping derived from
+meta-analysis might state that the term “memory” is associated with region
+“hippocampus” with probability 0.87.</p>
+<p>Queries over probabilistic data use <strong>possible worlds semantics</strong>: the answer
+to a query is the probability that the query holds in a randomly sampled world.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The probabilistic extensions are implemented in
+<a class="reference internal" href="gen_api/neurolang.probabilistic.html#neurolang.probabilistic" title="neurolang.probabilistic"><code class="xref py py-mod docutils literal notranslate"><span class="pre">neurolang.probabilistic</span></code></a>. See the example gallery for concrete
+neuroimaging use cases.</p>
+</div>
+</section>
+<section id="neuroimaging-integration">
+<h2>Neuroimaging Integration<a class="headerlink" href="#neuroimaging-integration" title="Link to this heading">#</a></h2>
+<p>NeuroLang treats neuroimaging data as relational data:</p>
+<ul class="simple">
+<li><p><strong>Volumetric images</strong> (NIfTI, loaded via nibabel) are represented as sets of
+<code class="docutils literal notranslate"><span class="pre">(voxel_id,</span> <span class="pre">intensity)</span></code> or <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">intensity)</span></code> tuples.</p></li>
+<li><p><strong>Atlas labels</strong> (e.g., Destrieux, AAL) become <code class="docutils literal notranslate"><span class="pre">(label,</span> <span class="pre">region_id)</span></code>
+relations.</p></li>
+<li><p><strong>Ontologies</strong> (OWL/RDF via rdflib) are loaded as triple stores and
+queried with Datalog rules.</p></li>
+<li><p><strong>Coordinate activations</strong> (NeuroSynth) become <code class="docutils literal notranslate"><span class="pre">(pmid,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>
+probabilistic relations.</p></li>
+</ul>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangDL</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> frontends expose helper methods
+such as <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_tuple_set()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_atlas_set()</span></code> to load these
+data sources.</p>
+</section>
+<section id="declarative-engine-registry-cli">
+<h2>Declarative Engine Registry &amp; CLI<a class="headerlink" href="#declarative-engine-registry-cli" title="Link to this heading">#</a></h2>
+<p>NeuroLang ships a command-line interface, <code class="docutils literal notranslate"><span class="pre">neurolang-query</span></code>, that provides
+a quick way to run Datalog queries against pre-configured datasets without
+writing Python:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List available dataset engines</span>
+neurolang-query<span class="w"> </span>--list-engines
+
+<span class="c1"># List predicates for the NeuroSynth engine</span>
+neurolang-query<span class="w"> </span>--engine<span class="w"> </span>neurosynth<span class="w"> </span>--list-predicates
+
+<span class="c1"># Run a Datalog query</span>
+neurolang-query<span class="w"> </span><span class="s2">&quot;ans(t) :- term_in_study_tfidf(t, w, s)&quot;</span>
+
+<span class="c1"># Use the Destrieux atlas engine</span>
+neurolang-query<span class="w"> </span>--engine<span class="w"> </span>destrieux<span class="w"> </span><span class="s2">&quot;ans(name) :- destrieux(name, region)&quot;</span>
+</pre></div>
+</div>
+<p>Engines are declared declaratively in <code class="file docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">engines</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">neurosynth</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Neurosynth</span><span class="nv"> </span><span class="s">database</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">forward</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">reverse</span><span class="nv"> </span><span class="s">inference&quot;</span>
+<span class="w">    </span><span class="nt">requires_mni_mask</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">python_init</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;neurolang.utils.engines.neurosynth.init&quot;</span>
+<span class="w">    </span><span class="nt">datalog_init</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">study_with_peaks(S) :- peak_reported(I, J, K, S)</span>
+<span class="w">    </span><span class="nt">relations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">extra_data</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared/my_data.csv&quot;</span>
+<span class="w">    </span><span class="nt">predicates</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">peak_reported</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">arity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="w">        </span><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">i</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">j</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">k</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">study_id</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Reported</span><span class="nv"> </span><span class="s">activation</span><span class="nv"> </span><span class="s">peaks</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">voxel</span><span class="nv"> </span><span class="s">coordinates&quot;</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>Each engine references a Python module that exports
+<code class="docutils literal notranslate"><span class="pre">init_engine(nl,</span> <span class="pre">mask,</span> <span class="pre">data_dir)</span></code>.  The <code class="xref py py-mod docutils literal notranslate"><span class="pre">neurolang.utils.engine_registry</span></code>
+module handles YAML loading, MNI mask retrieval, and delegating to the
+engine’s init script.</p>
+<p><strong>Init phases.</strong>  When <code class="xref py py-func docutils literal notranslate"><span class="pre">build_engine()</span></code>
+builds an engine, it runs up to nine phases in order:</p>
+<ol class="arabic">
+<li><p><strong>Builtins</strong> (<code class="docutils literal notranslate"><span class="pre">builtins</span></code>) — registers known functions (<code class="docutils literal notranslate"><span class="pre">exp</span></code>,
+<code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">startswith</span></code>) as callable symbols.  Simple list in YAML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builtins</span><span class="p">:</span> <span class="p">[</span><span class="n">exp</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">startswith</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Base symbols</strong> (<code class="docutils literal notranslate"><span class="pre">use_base_symbols</span></code>) — when <code class="docutils literal notranslate"><span class="pre">use_base_symbols:</span> <span class="pre">true</span></code>
+is set (and <code class="docutils literal notranslate"><span class="pre">requires_mni_mask</span></code> is also true), the engine registry
+automatically registers common neuroimaging symbols (<code class="docutils literal notranslate"><span class="pre">agg_count</span></code>,
+<code class="docutils literal notranslate"><span class="pre">agg_create_region</span></code>, <code class="docutils literal notranslate"><span class="pre">agg_create_region_overlay</span></code>,
+<code class="docutils literal notranslate"><span class="pre">principal_direction</span></code>, <code class="docutils literal notranslate"><span class="pre">region_union</span></code>) without needing a custom
+Python init script.  This replaces calling
+<code class="docutils literal notranslate"><span class="pre">init_base_engine()</span></code> from within a Python init module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">use_base_symbols</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Python init</strong> (<code class="docutils literal notranslate"><span class="pre">python_init</span></code>) — imports the module and calls
+<code class="docutils literal notranslate"><span class="pre">init_engine(nl,</span> <span class="pre">mask,</span> <span class="pre">data_dir)</span></code>.  Use this for downloading data,
+registering complex symbols, or loading neuroimaging atlases.  If
+<code class="docutils literal notranslate"><span class="pre">use_base_symbols</span></code> already covers your needs, this phase can be
+omitted entirely — see the <code class="docutils literal notranslate"><span class="pre">destrieux</span></code> engine entry for an example.</p></li>
+<li><p><strong>Downloads</strong> (<code class="docutils literal notranslate"><span class="pre">downloads</span></code>) — fetches files from URLs before the
+other phases.  Supports archive extraction:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">downloads</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">url</span><span class="p">:</span> <span class="s2">&quot;https://example.com/data.tar.gz&quot;</span>
+    <span class="n">dest</span><span class="p">:</span> <span class="n">my_engine</span><span class="o">/</span>
+    <span class="n">extract</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Templates</strong> (<code class="docutils literal notranslate"><span class="pre">templates</span></code>) — downloads neuroimaging templates via
+<strong>nilearn</strong> or <strong>TemplateFlow</strong> (if the <code class="docutils literal notranslate"><span class="pre">templateflow</span></code> package is
+installed).  Each template can optionally register a
+<code class="docutils literal notranslate"><span class="pre">voxel(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> predicate from its non-zero mask:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">templates</span><span class="p">:</span>
+  <span class="c1"># Nilearn brain mask → voxel(i, j, k) predicate</span>
+  <span class="n">mni_brain</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">nilearn</span>
+    <span class="n">variant</span><span class="p">:</span> <span class="n">brain_mask</span>
+    <span class="n">predicate</span><span class="p">:</span> <span class="n">voxel</span>
+  <span class="c1"># Nilearn T1 template (2 mm) — just download, no predicate</span>
+  <span class="n">mni_t1</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">nilearn</span>
+    <span class="n">variant</span><span class="p">:</span> <span class="n">template</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="c1"># TemplateFlow T1 template at 1 mm</span>
+  <span class="n">t1_highres</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">templateflow</span>
+    <span class="n">template</span><span class="p">:</span> <span class="n">MNI152NLin2009cAsym</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">suffix</span><span class="p">:</span> <span class="n">T1w</span>
+</pre></div>
+</div>
+<p>Supported <strong>nilearn</strong> variants:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">brain_mask</span></code> — MNI152 brain mask (<code class="docutils literal notranslate"><span class="pre">load_mni152_brain_mask</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gm_mask</span></code> — grey-matter mask (<code class="docutils literal notranslate"><span class="pre">load_mni152_gm_mask</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wm_mask</span></code> — white-matter mask (<code class="docutils literal notranslate"><span class="pre">load_mni152_wm_mask</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">template</span></code> — MNI152 T1 template (<code class="docutils literal notranslate"><span class="pre">load_mni152_template</span></code>;
+pass <code class="docutils literal notranslate"><span class="pre">resolution:</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">resolution:</span> <span class="pre">2</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gm_template</span></code> — grey-matter template</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wm_template</span></code> — white-matter template</p></li>
+</ul>
+<p><strong>TemplateFlow</strong> templates require <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">templateflow</span></code> and
+are identified by a <code class="docutils literal notranslate"><span class="pre">template</span></code> name from the
+<a class="reference external" href="https://www.templateflow.org/">TemplateFlow repository</a>
+(e.g. <code class="docutils literal notranslate"><span class="pre">MNI152NLin2009cAsym</span></code>, <code class="docutils literal notranslate"><span class="pre">MNIInfant</span></code>).  The <code class="docutils literal notranslate"><span class="pre">suffix</span></code>
+and <code class="docutils literal notranslate"><span class="pre">resolution</span></code> fields select the specific image variant.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">predicate</span></code> is set, the template is loaded as a NIfTI image
+and all non-zero voxels are registered as a
+<code class="docutils literal notranslate"><span class="pre">predicate(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> tuple set — useful as a coordinate-space
+reference in Datalog queries.</p>
+</li>
+<li><p><strong>Atlases</strong> (<code class="docutils literal notranslate"><span class="pre">atlases</span></code>) — downloads brain atlases via nilearn and
+registers each region as a predicate with
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ExplicitVBR</span></code> geometry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlases</span><span class="p">:</span>
+  <span class="n">destrieux</span><span class="p">:</span>
+    <span class="n">predicate_name</span><span class="p">:</span> <span class="n">destrieux</span>
+  <span class="n">schaefer</span><span class="p">:</span>
+    <span class="n">n_rois</span><span class="p">:</span> <span class="mi">400</span>
+    <span class="n">yeo_networks</span><span class="p">:</span> <span class="mi">7</span>
+    <span class="n">resolution_mm</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">predicate_name</span><span class="p">:</span> <span class="n">schaefer_400</span>
+  <span class="n">difumo</span><span class="p">:</span>
+    <span class="n">dimension</span><span class="p">:</span> <span class="mi">64</span>
+    <span class="n">threshold</span><span class="p">:</span> <span class="mf">0.5</span>
+    <span class="n">predicate_name</span><span class="p">:</span> <span class="n">difumo_64</span>
+</pre></div>
+</div>
+<p>For probabilistic atlases (<code class="docutils literal notranslate"><span class="pre">difumo</span></code>) a second predicate is registered
+automatically — <code class="docutils literal notranslate"><span class="pre">{name}_prob(component,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">prob)</span></code> — with the raw
+probability value at each voxel for each component (filtered by
+<code class="docutils literal notranslate"><span class="pre">prob_threshold</span></code>, default 0.01):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atlases</span><span class="p">:</span>
+  <span class="n">difumo</span><span class="p">:</span>
+    <span class="n">dimension</span><span class="p">:</span> <span class="mi">64</span>
+    <span class="n">threshold</span><span class="p">:</span> <span class="mf">0.5</span>
+    <span class="n">prob_threshold</span><span class="p">:</span> <span class="mf">0.01</span>
+    <span class="n">predicate_name</span><span class="p">:</span> <span class="n">difumo_64</span>
+    <span class="n">prob_predicate_name</span><span class="p">:</span> <span class="n">difumo_64_prob</span>
+</pre></div>
+</div>
+<p>Supported atlases: <code class="docutils literal notranslate"><span class="pre">destrieux</span></code> (deterministic), <code class="docutils literal notranslate"><span class="pre">schaefer</span></code>
+(deterministic), <code class="docutils literal notranslate"><span class="pre">difumo</span></code> (probabilistic).</p>
+</li>
+<li><p><strong>Datalog init</strong> (<code class="docutils literal notranslate"><span class="pre">datalog_init</span></code>) — an optional YAML multiline string
+of Datalog rules.  These are evaluated after templates and atlases
+so they can reference template-derived voxel predicates and atlas
+predicates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">datalog_init</span><span class="p">:</span> <span class="o">|</span>
+  <span class="n">left_region</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">destrieux</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> <span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+  <span class="n">right_region</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">destrieux</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">),</span> <span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;rh&#39;</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Relations</strong> (<code class="docutils literal notranslate"><span class="pre">relations</span></code>) — loads CSV/TSV files as extensional
+predicates.  Each entry maps a relation name to a file path relative to
+the <code class="file docutils literal notranslate"><span class="pre">engines/</span></code> directory.  The <code class="docutils literal notranslate"><span class="pre">file</span></code> value may be a URL for
+automatic download:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">relations</span><span class="p">:</span>
+  <span class="n">my_table</span><span class="p">:</span> <span class="s2">&quot;my_engine/data.csv&quot;</span>
+  <span class="n">extra_refs</span><span class="p">:</span> <span class="s2">&quot;shared/references.tsv&quot;</span>
+</pre></div>
+</div>
+<p>For richer metadata that appears in <code class="docutils literal notranslate"><span class="pre">--list-predicates</span></code> output, use a
+dict with an optional <code class="docutils literal notranslate"><span class="pre">description</span></code> field:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">relations</span><span class="p">:</span>
+  <span class="n">my_table</span><span class="p">:</span>
+    <span class="n">file</span><span class="p">:</span> <span class="s2">&quot;https://example.com/data.csv&quot;</span>
+    <span class="n">description</span><span class="p">:</span> <span class="s2">&quot;Experiment metadata loaded from CSV&quot;</span>
+</pre></div>
+</div>
+<p>Supported formats: <code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>, <code class="docutils literal notranslate"><span class="pre">.csv.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.tsv.gz</span></code>.  The
+file is read with <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> and registered via
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">add_tuple_set()</span></code>.
+Because relations are loaded after the Datalog init, your derived rules
+can already reference them.</p>
+</li>
+<li><p><strong>Probabilistic choices</strong> (<code class="docutils literal notranslate"><span class="pre">probabilistic_choice</span></code>) — declares uniform
+probabilistic choices over existing predicates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">probabilistic_choice</span><span class="p">:</span>
+  <span class="n">selected_study</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">study</span>
+    <span class="n">description</span><span class="p">:</span> <span class="s2">&quot;Uniform choice over studies&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Ontologies</strong> (<code class="docutils literal notranslate"><span class="pre">ontologies</span></code>) — loads OWL/RDF ontologies from URLs
+or local paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ontologies</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">url</span><span class="p">:</span> <span class="s2">&quot;https://example.com/ontology.owl&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>All phases are optional — include only what your engine needs.
+If <code class="docutils literal notranslate"><span class="pre">use_base_symbols</span></code> and the declarative YAML fields (<code class="docutils literal notranslate"><span class="pre">atlases</span></code>,
+<code class="docutils literal notranslate"><span class="pre">templates</span></code>, <code class="docutils literal notranslate"><span class="pre">relations</span></code>, <code class="docutils literal notranslate"><span class="pre">datalog_init</span></code>, <code class="docutils literal notranslate"><span class="pre">probabilistic_choice</span></code>)
+cover your engine, you can omit <code class="docutils literal notranslate"><span class="pre">python_init</span></code> entirely — the
+<code class="docutils literal notranslate"><span class="pre">destrieux</span></code> engine is a complete example of this pattern.</p>
+<p>To add a new engine, create a YAML entry.  If you need a custom Python
+init script, add a corresponding <code class="xref py py-mod docutils literal notranslate"><span class="pre">init</span></code> module under
+<code class="file docutils literal notranslate"><span class="pre">neurolang/utils/engines/</span></code>.  See
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">neurolang.utils.engines.neurosynth.init</span></code> for a complete Python init
+example, and the <code class="docutils literal notranslate"><span class="pre">destrieux</span></code> engine entry for a purely YAML-driven
+example.</p>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
+<p>NeuroLang is structured in three layers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌─────────────────────────────────────────────────────────┐
+│                    User / Python                        │
+│     NeurolangDL  /  NeurolangPDL  frontend              │
+│           (neurolang/frontend/)                         │
+└───────────────────────┬─────────────────────────────────┘
+                        │  Datalog/probabilistic program
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│          Intermediate Representation (IR)               │
+│   Expressions, symbol table, type system                │
+│   (neurolang/expressions.py, neurolang/logic/)          │
+└───────────────────────┬─────────────────────────────────┘
+                        │  Relational algebra plan
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│                     Solver                              │
+│   Chase algorithm, relational algebra, SDD/WMC          │
+│   (neurolang/datalog/, neurolang/probabilistic/)        │
+└─────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>The <strong>frontend</strong> layer translates Python expressions into an internal IR. The
+<strong>IR layer</strong> performs type inference and expression normalisation. The
+<strong>solver</strong> executes the query using a chase-based fixpoint algorithm (for
+deterministic queries) or a weighted model counter (for probabilistic queries).</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_datalog.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Datalog: A Rule-Based Query Language for NeuroLang</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="auto_examples/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Examples of the NeuroLang language environment.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann et al..
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>

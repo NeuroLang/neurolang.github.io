@@ -1,0 +1,1430 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Datalog: A Rule-Based Query Language for NeuroLang &#8212; NeuroLang 0.1a21.dev9+ge3a421f02 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=0790524f97105ba85085" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=fd6457a4" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=1bfb7717" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=0790524f97105ba85085"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=0790524f97105ba85085" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085" />
+
+    <script src="_static/documentation_options.js?v=a2a134a6"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial_datalog';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concepts" href="concepts.html" />
+    <link rel="prev" title="NSQUALL: Controlled English for NeuroLang" href="tutorial_squall.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a21" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroLang</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    NSQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    NSQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Datalog: A Rule-Based Query Language for NeuroLang</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-the-bayes-factor-problem">Part 1: The Bayes Factor Problem</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-are-computing">1.1 What We Are Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-data">1.2 The Data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-datalog-preliminaries">Part 2: Datalog Preliminaries</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicates-as-relations">2.1 Predicates as Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-and-the-operator">2.2 Rules and the <code class="docutils literal notranslate"><span class="pre">:-</span></code> Operator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-query-predicate-ans">2.3 The Query Predicate — <code class="docutils literal notranslate"><span class="pre">ans(...)</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">2.4 Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants-and-strings">2.5 Constants and Strings</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-predicates-and-simple-rules">Part 3: Predicates and Simple Rules</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bayes-factor-relations">3.1 The Bayes Factor Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-unary-rules">3.2 Simple Unary Rules</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-multi-variable-rules">Part 4: Multi-Variable Rules</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-rules-with-multiple-variables">4.1 Compound Rules with Multiple Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction-in-the-body">4.2 Conjunction in the Body</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-probabilistic-queries">Part 5: Probabilistic Queries</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probabilistic-choice">5.1 The Probabilistic Choice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prob-marginal-probability">5.2 PROB — Marginal Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marg-conditional-probability">5.3 MARG — Conditional Probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#succ-success-probability">5.4 SUCC — Success Probability</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-connectives">Part 6: Connectives</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunction">6.1 Conjunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disjunction">6.2 Disjunction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negation">6.3 Negation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-7-the-bayes-factor-formula">Part 7: The Bayes Factor Formula</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-expressions">7.1 Arithmetic Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-complete-bayes-factor-rule">7.2 The Complete Bayes Factor Rule</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-8-querying-and-optimization">Part 8: Querying and Optimization</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ans-query-predicate">8.1 The <code class="docutils literal notranslate"><span class="pre">ans</span></code> Query Predicate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-comparisons">8.2 Filtering with Comparisons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-sets-optimization">8.3 Magic-Sets Optimization</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-9-the-complete-program">Part 9: The Complete Program</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-10-advanced-features">Part 10: Advanced Features</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation">10.1 Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existential-predicates">10.2 Existential Predicates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparisons">10.3 Comparisons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commands-and-directives">10.4 Commands and Directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-facts">10.5 Probabilistic Facts</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-a-running-datalog-from-python">Appendix A: Running Datalog from Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#registering-facts-and-running-a-simple-rule">Registering facts and running a simple rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-with-ans-direct-return">Querying with <code class="docutils literal notranslate"><span class="pre">ans</span></code> (direct return)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-rules">Multiple rules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-predicates">Binary predicates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Negation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Filtering with comparisons</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-query-prob">Probabilistic query (PROB)</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Datalog: A Rule-Based Query Language for NeuroLang</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="datalog-a-rule-based-query-language-for-neurolang">
+<h1>Datalog: A Rule-Based Query Language for NeuroLang<a class="headerlink" href="#datalog-a-rule-based-query-language-for-neurolang" title="Link to this heading">#</a></h1>
+<p>In addition to NSQUALL’s controlled-English frontend, NeuroLang accepts a
+standard text Datalog syntax parsed by the <code class="docutils literal notranslate"><span class="pre">standard_syntax.py</span></code> module.
+This syntax is closer to the logical core of the system — it uses rule-based
+notation with <code class="docutils literal notranslate"><span class="pre">:-</span></code> (implication) instead of English sentences.</p>
+<p>This tutorial mirrors the Bayes Factor decoding example from the
+<a class="reference internal" href="tutorial_squall.html"><span class="doc">NSQUALL: Controlled English for NeuroLang</span></a> tutorial, showing the same problem expressed in text
+Datalog.  Read the two side by side to see how NSQUALL sentences map to
+Datalog rules.</p>
+<p>The full program we will build:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>active_region(r) :- region(r), selected_study(s), activates(s, r).
+
+region_probability(r, p_r) :- PROB[active_region(r)] = p_r.
+
+mentioned_term(t) :- term(t), selected_study(s), mentions(s, t).
+
+term_probability(t, p_t) :- PROB[mentioned_term(t)] = p_t.
+
+cooccurrence(r, t) :-
+    region(r), term(t), selected_study(s),
+    activates(s, r), mentions(s, t).
+
+joint_probability(r, t, p_rt) :- PROB[cooccurrence(r, t)] = p_rt.
+
+bayes_factor(r, t, bf) :-
+    joint_probability(r, t, p_rt),
+    region_probability(r, p_r),
+    term_probability(t, p_t),
+    bf == (p_rt / p_r) / ((p_t - p_rt) / (1.0 - p_r)).
+
+ans(r, t, bf) :- bayes_factor(r, t, bf), r == &#39;right fusiform gyrus&#39;.
+</pre></div>
+</div>
+</section>
+<section id="part-1-the-bayes-factor-problem">
+<h1>Part 1: The Bayes Factor Problem<a class="headerlink" href="#part-1-the-bayes-factor-problem" title="Link to this heading">#</a></h1>
+<section id="what-we-are-computing">
+<h2>1.1 What We Are Computing<a class="headerlink" href="#what-we-are-computing" title="Link to this heading">#</a></h2>
+<p>Given a set of brain-imaging studies, each reporting activation peaks in some
+anatomical region and associated with cognitive terms, we want to find which
+terms are specifically associated with the <strong>right fusiform gyrus</strong>.</p>
+<p>The Bayes Factor quantifies the evidence:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{BF}(r, t) =
+\frac{P(T{=}t \mid R{=}r)}{P(T{=}t \mid R{\neq}r)}
+=
+\frac{P(R,T)/P(R)}{(P(T) - P(R,T))/(1 - P(R))}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(R,T)\)</span> is the joint probability that a randomly chosen study
+activates region <span class="math notranslate nohighlight">\(R\)</span> and mentions term <span class="math notranslate nohighlight">\(T\)</span>,
+<span class="math notranslate nohighlight">\(P(R)\)</span> is the marginal probability of activating <span class="math notranslate nohighlight">\(R\)</span>, and
+<span class="math notranslate nohighlight">\(P(T)\)</span> of mentioning <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>We will compute all three probability distributions as Datalog rules, then
+combine them with arithmetic to produce <span class="math notranslate nohighlight">\(\mathrm{BF}\)</span> — all inside
+NeuroLang with zero post-hoc pandas computation.</p>
+</section>
+<section id="the-data">
+<h2>1.2 The Data<a class="headerlink" href="#the-data" title="Link to this heading">#</a></h2>
+<p>The Datalog program works with six relations:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">study(study_id)</span></code></dt><dd><p>The set of all study identifiers.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">activates(study_id,</span> <span class="pre">region)</span></code></dt><dd><p>Activation foci from Neurosynth peaks, mapped to anatomical regions via
+the Julich-Brain atlas.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mentions(study_id,</span> <span class="pre">term)</span></code></dt><dd><p>TF-IDF term associations from Neurosynth.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">region(region)</span></code></dt><dd><p>The set of all anatomical region names.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">term(term)</span></code></dt><dd><p>The set of all cognitive term names.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">selected_study(study_id)</span></code></dt><dd><p>A probabilistic uniform choice over all studies (registered from Python,
+see Part 5).</p>
+</dd>
+</dl>
+<p>These are registered in Python before running Datalog:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">neurolang.frontend</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeurolangPDL</span>
+
+<span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">study_ids_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;study&quot;</span><span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">study_activates_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;activates&quot;</span><span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">study_mentions_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mentions&quot;</span><span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">region_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;region&quot;</span><span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span><span class="n">term_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;term&quot;</span><span class="p">)</span>
+<span class="c1"># selected_study is registered separately (see Part 5)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="part-2-datalog-preliminaries">
+<h1>Part 2: Datalog Preliminaries<a class="headerlink" href="#part-2-datalog-preliminaries" title="Link to this heading">#</a></h1>
+<section id="predicates-as-relations">
+<h2>2.1 Predicates as Relations<a class="headerlink" href="#predicates-as-relations" title="Link to this heading">#</a></h2>
+<p>A <strong>predicate</strong> in Datalog names a relation — it is the equivalent of a table
+name in SQL or a noun in NSQUALL.  A predicate is written as an identifier
+followed by parenthesised arguments:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region(x)
+study(s)
+activates(s, r)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">region(x)</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">region</span></code> EDB (extensional database) relation.
+Arguments are <strong>variables</strong> — they bind to columns of the relation.</p>
+</section>
+<section id="rules-and-the-operator">
+<h2>2.2 Rules and the <code class="docutils literal notranslate"><span class="pre">:-</span></code> Operator<a class="headerlink" href="#rules-and-the-operator" title="Link to this heading">#</a></h2>
+<p>A Datalog <strong>rule</strong> has the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>head(x, y, ...) :- body1(x, z), body2(z, y), ...
+</pre></div>
+</div>
+<p>which reads <strong>“head holds if body1, body2, … all hold”</strong>.  The <code class="docutils literal notranslate"><span class="pre">:-</span></code>
+operator is logical implication — it is Datalog’s only means of defining
+new predicates.</p>
+<p>Variables that appear in the head must also appear in the body (the
+<em>range-restriction</em> property).  Variables used only in the body are
+existentially quantified.</p>
+</section>
+<section id="the-query-predicate-ans">
+<h2>2.3 The Query Predicate — <code class="docutils literal notranslate"><span class="pre">ans(...)</span></code><a class="headerlink" href="#the-query-predicate-ans" title="Link to this heading">#</a></h2>
+<p>The special predicate <code class="docutils literal notranslate"><span class="pre">ans(...)</span></code> marks a <strong>query</strong> in a Datalog program.
+When <code class="docutils literal notranslate"><span class="pre">execute_datalog_program</span></code> encounters an <code class="docutils literal notranslate"><span class="pre">ans</span></code> rule, it runs the
+query immediately and returns the result as a <code class="docutils literal notranslate"><span class="pre">RelationalAlgebraFrozenSet</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prog</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    ans(x) :- region(x).</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span>
+<span class="c1"># result is a RelationalAlgebraFrozenSet with all region names</span>
+</pre></div>
+</div>
+<p>If the program contains multiple rules without an <code class="docutils literal notranslate"><span class="pre">ans</span></code> rule, you can
+retrieve results later with <code class="docutils literal notranslate"><span class="pre">nl.solve_all()</span></code>.</p>
+</section>
+<section id="variables">
+<h2>2.4 Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Variables are written as identifiers (letters, digits, underscores).  Unlike
+Prolog, NeuroLang’s text Datalog does <strong>not</strong> distinguish variables from
+constants by case — the same identifier can be used in predicate position
+(functor) or argument position (variable) and context determines its role:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region(r)        % r is a variable in argument position
+term(t)          % t is a variable in argument position
+bigger(x, y) :- x &gt; y.
+</pre></div>
+</div>
+<p>For clarity, convention uses short lowercase names for variables that
+correspond to columns (<code class="docutils literal notranslate"><span class="pre">r</span></code> for region, <code class="docutils literal notranslate"><span class="pre">t</span></code> for term, <code class="docutils literal notranslate"><span class="pre">s</span></code> for study).</p>
+<p>To ignore a column, use a variable name that appears only once (the engine
+creates a fresh anonymous variable for each unique name):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, t) :- cooccurrence(r, t, _study).
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">_study</span></code> appears only once and is treated as a wildcard.</p>
+</section>
+<section id="constants-and-strings">
+<h2>2.5 Constants and Strings<a class="headerlink" href="#constants-and-strings" title="Link to this heading">#</a></h2>
+<p>Constants are written inline:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(x) :- region(x), x == &#39;right fusiform gyrus&#39;.
+</pre></div>
+</div>
+<p>String literals use single quotes <code class="docutils literal notranslate"><span class="pre">'...'</span></code>.  Numeric constants are written
+directly: <code class="docutils literal notranslate"><span class="pre">42</span></code>, <code class="docutils literal notranslate"><span class="pre">3.14</span></code>.  The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator tests equality and works for
+both strings and numbers (see Part 8 for more comparisons).</p>
+</section>
+</section>
+<section id="part-3-predicates-and-simple-rules">
+<h1>Part 3: Predicates and Simple Rules<a class="headerlink" href="#part-3-predicates-and-simple-rules" title="Link to this heading">#</a></h1>
+<section id="the-bayes-factor-relations">
+<h2>3.1 The Bayes Factor Relations<a class="headerlink" href="#the-bayes-factor-relations" title="Link to this heading">#</a></h2>
+<p>The Bayes Factor problem needs three binary EDB relations and three unary
+EDB relations:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>study(s)                % s is a study identifier
+region(r)               % r is an anatomical region name
+term(t)                 % t is a cognitive term name
+activates(s, r)         % study s activates region r
+mentions(s, t)          % study s mentions term t
+selected_study(s)       % s is a probabilistically chosen study
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">selected_study</span></code> is a <strong>probabilistic predicate</strong> — it is not a regular
+EDB set but a uniform probabilistic choice over studies (registered from
+Python, see Part 5).</p>
+</section>
+<section id="simple-unary-rules">
+<h2>3.2 Simple Unary Rules<a class="headerlink" href="#simple-unary-rules" title="Link to this heading">#</a></h2>
+<p>The first step in the Bayes Factor program defines intermediate unary
+predicates that flatten the existential study quantifier:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>active_region(r) :- region(r), selected_study(s), activates(s, r).
+</pre></div>
+</div>
+<p>This reads: <em>r is an active region if there exists a study s such that s is
+selected and s activates r</em>.  The variable <code class="docutils literal notranslate"><span class="pre">s</span></code> appears only in the body —
+it is existentially quantified away.</p>
+<p>In Datalog notation:</p>
+<div class="math notranslate nohighlight">
+\[\mathtt{active\_region}(r) \leftarrow
+    \mathtt{region}(r) \land
+    \mathtt{selected\_study}(s) \land
+    \mathtt{activates}(s, r)\]</div>
+<p>Similarly for terms:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mentioned_term(t) :- term(t), selected_study(s), mentions(s, t).
+</pre></div>
+</div>
+</section>
+</section>
+<section id="part-4-multi-variable-rules">
+<h1>Part 4: Multi-Variable Rules<a class="headerlink" href="#part-4-multi-variable-rules" title="Link to this heading">#</a></h1>
+<section id="compound-rules-with-multiple-variables">
+<h2>4.1 Compound Rules with Multiple Variables<a class="headerlink" href="#compound-rules-with-multiple-variables" title="Link to this heading">#</a></h2>
+<p>To compute the joint distribution we need a <strong>binary</strong> relation —
+<code class="docutils literal notranslate"><span class="pre">cooccurrence(region,</span> <span class="pre">term)</span></code> — that links each study’s region and term:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cooccurrence(r, t) :-
+    region(r), term(t), selected_study(s),
+    activates(s, r), mentions(s, t).
+</pre></div>
+</div>
+<p>This creates:</p>
+<div class="math notranslate nohighlight">
+\[\mathtt{cooccurrence}(r, t) \leftarrow
+    \mathtt{region}(r) \land \mathtt{term}(t) \land
+    \mathtt{selected\_study}(s) \land
+    \mathtt{activates}(s, r) \land \mathtt{mentions}(s, t).\]</div>
+<p>The head variables <code class="docutils literal notranslate"><span class="pre">r</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code> are bound by the first two body
+predicates.  <code class="docutils literal notranslate"><span class="pre">s</span></code> appears only in the body and is existentially quantified.</p>
+</section>
+<section id="conjunction-in-the-body">
+<h2>4.2 Conjunction in the Body<a class="headerlink" href="#conjunction-in-the-body" title="Link to this heading">#</a></h2>
+<p>Multiple conditions in a rule body are joined with commas <code class="docutils literal notranslate"><span class="pre">,</span></code> (or the
+<code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator, which is a synonym):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cooccurrence(r, t) :-
+    region(r) &amp; term(t) &amp; selected_study(s) &amp;
+    activates(s, r) &amp; mentions(s, t).
+</pre></div>
+</div>
+<p>Both forms are equivalent.  The comma form is more common in Datalog
+literature.</p>
+<p>In the Bayes Factor program, all five intermediate deterministic rules
+are passed as a single program string:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>active_region(r) :- region(r), selected_study(s), activates(s, r).
+mentioned_term(t) :- term(t), selected_study(s), mentions(s, t).
+cooccurrence(r, t) :-
+    region(r), term(t), selected_study(s),
+    activates(s, r), mentions(s, t).
+</pre></div>
+</div>
+</section>
+</section>
+<section id="part-5-probabilistic-queries">
+<h1>Part 5: Probabilistic Queries<a class="headerlink" href="#part-5-probabilistic-queries" title="Link to this heading">#</a></h1>
+<p>Now we introduce probability — the core of the Bayes Factor computation.</p>
+<section id="the-probabilistic-choice">
+<h2>5.1 The Probabilistic Choice<a class="headerlink" href="#the-probabilistic-choice" title="Link to this heading">#</a></h2>
+<p>Before probabilistic queries work, the engine needs to know which predicate
+represents a probabilistic choice over studies.  This is registered from
+Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
+    <span class="n">study_ids_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;selected_study&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This registers <code class="docutils literal notranslate"><span class="pre">selected_study</span></code> as a predicate where each study has equal
+probability <span class="math notranslate nohighlight">\(1/N\)</span>.  Once registered, <code class="docutils literal notranslate"><span class="pre">selected_study(s)</span></code> can appear
+in rule bodies, and the PROB/MARG constructs can compute probabilities over
+it.</p>
+</section>
+<section id="prob-marginal-probability">
+<h2>5.2 PROB — Marginal Probability<a class="headerlink" href="#prob-marginal-probability" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">PROB[pred(x,</span> <span class="pre">...)]</span> <span class="pre">=</span> <span class="pre">p</span></code> body predicate computes the marginal
+probability of a predicate after marginalising over all unbound variables:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region_probability(r, p_r) :- PROB[active_region(r)] = p_r.
+</pre></div>
+</div>
+<p>This binds <code class="docutils literal notranslate"><span class="pre">p_r</span></code> to <span class="math notranslate nohighlight">\(P(\mathtt{active\_region}(r))\)</span> —
+the fraction of selected studies that activate region <code class="docutils literal notranslate"><span class="pre">r</span></code>.</p>
+<p>The equivalent in the Bayes Factor program:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region_probability(r, p_r) :- PROB[active_region(r)] = p_r.
+term_probability(t, p_t) :- PROB[mentioned_term(t)] = p_t.
+joint_probability(r, t, p_rt) :- PROB[cooccurrence(r, t)] = p_rt.
+</pre></div>
+</div>
+<p>A conditioning filter can be added with <code class="docutils literal notranslate"><span class="pre">//</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, p) :- PROB[activates(s, r) // filter(s)] = p.
+</pre></div>
+</div>
+<p>This computes <span class="math notranslate nohighlight">\(P(\mathtt{activates} \mid \mathtt{filter})\)</span>.</p>
+</section>
+<section id="marg-conditional-probability">
+<h2>5.3 MARG — Conditional Probability<a class="headerlink" href="#marg-conditional-probability" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">MARG[pred(x)]</span> <span class="pre">=</span> <span class="pre">p</span></code> computes the marginal (unconditional) probability,
+identical to PROB when no condition is supplied:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, p) :- MARG[active_region(r)] = p.
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">//</span></code> it computes the conditional probability:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, p) :- MARG[activates(s, r) // selected_study(s)] = p.
+</pre></div>
+</div>
+<p>This computes <span class="math notranslate nohighlight">\(P(\mathtt{activates} \mid \mathtt{selected\_study})\)</span>.
+The engine solves it as two PROB queries and a division.</p>
+</section>
+<section id="succ-success-probability">
+<h2>5.4 SUCC — Success Probability<a class="headerlink" href="#succ-success-probability" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SUCC[pred(x)]</span> <span class="pre">=</span> <span class="pre">p</span></code> is a synonym for PROB.  For positive CP-Logic
+programs, success probability (the probability that a query has at least
+one proof) equals the marginal probability:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, p) :- SUCC[active_region(r)] = p.
+</pre></div>
+</div>
+<p>It supports the same <code class="docutils literal notranslate"><span class="pre">//</span></code> conditional syntax as PROB and MARG.</p>
+</section>
+</section>
+<section id="part-6-connectives">
+<h1>Part 6: Connectives<a class="headerlink" href="#part-6-connectives" title="Link to this heading">#</a></h1>
+<section id="conjunction">
+<h2>6.1 Conjunction<a class="headerlink" href="#conjunction" title="Link to this heading">#</a></h2>
+<p>Multiple body atoms are joined with <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p(x, y) :- a(x), b(x, y).
+p(x, y) :- a(x) &amp; b(x, y).
+</pre></div>
+</div>
+<p>Both are equivalent.  The comma is the standard Datalog convention.</p>
+</section>
+<section id="disjunction">
+<h2>6.2 Disjunction<a class="headerlink" href="#disjunction" title="Link to this heading">#</a></h2>
+<p>Datalog expresses disjunction through multiple rules with the same head:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p(x) :- a(x).
+p(x) :- b(x).
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">p</span></code> holds if either <code class="docutils literal notranslate"><span class="pre">a</span></code> holds or <code class="docutils literal notranslate"><span class="pre">b</span></code> holds (or both).</p>
+</section>
+<section id="negation">
+<h2>6.3 Negation<a class="headerlink" href="#negation" title="Link to this heading">#</a></h2>
+<p>Negation-as-failure uses the <code class="docutils literal notranslate"><span class="pre">~</span></code> prefix (or the Unicode <code class="docutils literal notranslate"><span class="pre">\u00AC</span></code>):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>not_playing(x) :- person(x), ~plays(x).
+</pre></div>
+</div>
+<p>This reads: <em>x is not playing if x is a person and there is no proof that
+x plays</em> — standard negation-as-failure semantics.</p>
+</section>
+</section>
+<section id="part-7-the-bayes-factor-formula">
+<h1>Part 7: The Bayes Factor Formula<a class="headerlink" href="#part-7-the-bayes-factor-formula" title="Link to this heading">#</a></h1>
+<section id="arithmetic-expressions">
+<h2>7.1 Arithmetic Expressions<a class="headerlink" href="#arithmetic-expressions" title="Link to this heading">#</a></h2>
+<p>Datalog rules support arithmetic expressions with <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/</span></code>, and <code class="docutils literal notranslate"><span class="pre">**</span></code> (exponentiation), with standard operator precedence:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bf == (p_rt / p_r) / ((p_t - p_rt) / (1.0 - p_r))
+</pre></div>
+</div>
+<p>Parentheses control grouping.  The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator binds the result of the
+expression to the variable on the left.</p>
+</section>
+<section id="the-complete-bayes-factor-rule">
+<h2>7.2 The Complete Bayes Factor Rule<a class="headerlink" href="#the-complete-bayes-factor-rule" title="Link to this heading">#</a></h2>
+<p>The BF formula combines the three probability distributions with arithmetic:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bayes_factor(r, t, bf) :-
+    joint_probability(r, t, p_rt),
+    region_probability(r, p_r),
+    term_probability(t, p_t),
+    bf == (p_rt / p_r) / ((p_t - p_rt) / (1.0 - p_r)).
+</pre></div>
+</div>
+<p>Each <code class="docutils literal notranslate"><span class="pre">probability</span></code> atom provides a probability column (<code class="docutils literal notranslate"><span class="pre">p_rt</span></code>, <code class="docutils literal notranslate"><span class="pre">p_r</span></code>,
+<code class="docutils literal notranslate"><span class="pre">p_t</span></code>) that was created by the PROB construct in Part 5.  The last line
+evaluates the Bayes Factor formula inline using arithmetic.</p>
+</section>
+</section>
+<section id="part-8-querying-and-optimization">
+<h1>Part 8: Querying and Optimization<a class="headerlink" href="#part-8-querying-and-optimization" title="Link to this heading">#</a></h1>
+<section id="the-ans-query-predicate">
+<h2>8.1 The <code class="docutils literal notranslate"><span class="pre">ans</span></code> Query Predicate<a class="headerlink" href="#the-ans-query-predicate" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ans</span></code> predicate marks a query.  When the Datalog program is executed
+via <code class="docutils literal notranslate"><span class="pre">nl.execute_datalog_program()</span></code>, any <code class="docutils literal notranslate"><span class="pre">ans</span></code> rule is evaluated
+immediately and its result returned:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r, t, bf) :-
+    bayes_factor(r, t, bf),
+    r == &#39;right fusiform gyrus&#39;.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">,</span> <span class="s2">&quot;term&quot;</span><span class="p">,</span> <span class="s2">&quot;bf&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;bf&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="filtering-with-comparisons">
+<h2>8.2 Filtering with Comparisons<a class="headerlink" href="#filtering-with-comparisons" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">'right</span> <span class="pre">fusiform</span> <span class="pre">gyrus'</span></code> filter uses the equality comparison
+operator.  Text Datalog supports the full comparison suite:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td><p>equal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>not equal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td><p>less than</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td><p>less or equal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>greater than</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td><p>greater or equal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Comparisons work on both numeric and string arguments.</p>
+</section>
+<section id="magic-sets-optimization">
+<h2>8.3 Magic-Sets Optimization<a class="headerlink" href="#magic-sets-optimization" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">==</span> <span class="pre">'right</span> <span class="pre">fusiform</span> <span class="pre">gyrus'</span></code> filter does more than just post-process
+— NeuroLang’s <strong>magic-sets</strong> optimisation pushes the constant backwards
+through all the rules in the chain:</p>
+<ol class="arabic simple">
+<li><p>The constant <code class="docutils literal notranslate"><span class="pre">'right</span> <span class="pre">fusiform</span> <span class="pre">gyrus'</span></code> is inlined into the
+<code class="docutils literal notranslate"><span class="pre">bayes_factor</span></code> predicate before the SIPS (Sideways Information Passing
+Strategy) pass.</p></li>
+<li><p>The SIPS creates an adorned predicate with the first argument marked as
+<em>bound</em>.</p></li>
+<li><p>Magic rules propagate the bound value down the dependency chain:
+<code class="docutils literal notranslate"><span class="pre">magic_joint_probability(r)</span></code>, <code class="docutils literal notranslate"><span class="pre">magic_region_probability(r)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">magic_cooccurrence(r)</span></code>, <code class="docutils literal notranslate"><span class="pre">magic_active_region(r)</span></code>.</p></li>
+<li><p>Each adorned rule filters its body with a magic predicate, so only rows
+where <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">'right</span> <span class="pre">fusiform</span> <span class="pre">gyrus'</span></code> are evaluated.</p></li>
+</ol>
+<p>The result: with 12 000+ studies and 1 million term-study pairs, the query
+completes in approximately 30 seconds because only 4 298 studies activating
+the right fusiform gyrus are evaluated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Magic-sets works when the constant appears on an IDB (rule-defined)
+predicate, as it does here (<code class="docutils literal notranslate"><span class="pre">bayes_factor</span></code> is defined by a rule).
+For EDB predicates the optimisation does not apply.</p>
+</div>
+</section>
+</section>
+<section id="part-9-the-complete-program">
+<h1>Part 9: The Complete Program<a class="headerlink" href="#part-9-the-complete-program" title="Link to this heading">#</a></h1>
+<p>Putting it all together:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% Deterministic intermediate rules
+active_region(r) :- region(r), selected_study(s), activates(s, r).
+mentioned_term(t) :- term(t), selected_study(s), mentions(s, t).
+
+cooccurrence(r, t) :-
+    region(r), term(t), selected_study(s),
+    activates(s, r), mentions(s, t).
+
+% Probabilistic rules — marginal probabilities
+region_probability(r, p_r) :- PROB[active_region(r)] = p_r.
+term_probability(t, p_t) :- PROB[mentioned_term(t)] = p_t.
+joint_probability(r, t, p_rt) :- PROB[cooccurrence(r, t)] = p_rt.
+
+% Bayes Factor formula
+bayes_factor(r, t, bf) :-
+    joint_probability(r, t, p_rt),
+    region_probability(r, p_r),
+    term_probability(t, p_t),
+    bf == (p_rt / p_r) / ((p_t - p_rt) / (1.0 - p_r)).
+
+% Query — filter for the target region
+ans(r, t, bf) :- bayes_factor(r, t, bf), r == &#39;right fusiform gyrus&#39;.
+</pre></div>
+</div>
+<p>Running this on real Neurosynth data produces the same results shown in
+<a class="reference internal" href="tutorial_squall.html"><span class="doc">NSQUALL: Controlled English for NeuroLang</span></a> (Part 9):</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id4">
+<caption><span class="caption-text">Top terms by Bayes Factor for the right fusiform gyrus</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Term</p></th>
+<th class="head"><p>Bayes Factor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ffa</p></td>
+<td><p>11.69</p></td>
+</tr>
+<tr class="row-odd"><td><p>face ffa</p></td>
+<td><p>11.06</p></td>
+</tr>
+<tr class="row-even"><td><p>fusiform face</p></td>
+<td><p>11.02</p></td>
+</tr>
+<tr class="row-odd"><td><p>fusiform gyri</p></td>
+<td><p>7.04</p></td>
+</tr>
+<tr class="row-even"><td><p>fusiform</p></td>
+<td><p>6.43</p></td>
+</tr>
+<tr class="row-odd"><td><p>fusiform gyrus</p></td>
+<td><p>6.39</p></td>
+</tr>
+<tr class="row-even"><td><p>word form</p></td>
+<td><p>6.20</p></td>
+</tr>
+<tr class="row-odd"><td><p>visual word</p></td>
+<td><p>5.99</p></td>
+</tr>
+<tr class="row-even"><td><p>occipito temporal</p></td>
+<td><p>5.87</p></td>
+</tr>
+<tr class="row-odd"><td><p>visual stream</p></td>
+<td><p>5.22</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All terms exceed the Jeffreys “substantial evidence” threshold of
+<span class="math notranslate nohighlight">\(\sqrt{10} \approx 3.16\)</span>.  The top cluster — FFA, face, fusiform
+face — is exactly what the right fusiform gyrus is known for.</p>
+</section>
+<section id="part-10-advanced-features">
+<h1>Part 10: Advanced Features<a class="headerlink" href="#part-10-advanced-features" title="Link to this heading">#</a></h1>
+<p>This section documents features not used directly in the Bayes Factor
+example but available in the text Datalog syntax.</p>
+<section id="aggregation">
+<h2>10.1 Aggregation<a class="headerlink" href="#aggregation" title="Link to this heading">#</a></h2>
+<p>Aggregations summarise a set of values into a single result per group using
+the <code class="docutils literal notranslate"><span class="pre">AGGREGATE</span></code> construct:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(x, cnt) :- AGGREGATE[x](body(x, y) @ count(y)) = cnt.
+</pre></div>
+</div>
+<p>The group-by variables appear in square brackets.  The <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> sign separates
+the body from the aggregation function call.</p>
+<p>Supported functions: <code class="docutils literal notranslate"><span class="pre">count</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>,
+<code class="docutils literal notranslate"><span class="pre">avg</span></code>, <code class="docutils literal notranslate"><span class="pre">std</span></code>.</p>
+<p>Example — count studies per region:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>study_count(r, cnt) :-
+    AGGREGATE[r](activates(s, r) @ count(s)) = cnt.
+</pre></div>
+</div>
+<p>Global aggregation (no group-by) uses empty brackets:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>total_studies(cnt) :-
+    AGGREGATE[](study(s) @ count(s)) = cnt.
+</pre></div>
+</div>
+</section>
+<section id="existential-predicates">
+<h2>10.2 Existential Predicates<a class="headerlink" href="#existential-predicates" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">exists</span></code> construct asserts that there exists a tuple satisfying a set
+of conditions, without binding the existential variable in the rule head:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>has_activations(r) :- region(r), exists(s; activates(s, r)).
+</pre></div>
+</div>
+<p>This is equivalent to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>has_activations(r) :- region(r), activates(s, r).
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">;</span></code> separates the existential variable from the body predicates.
+Multiple existential variables can be stacked:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ans(r) :- exists(s, t; activates(s, r), mentions(s, t)).
+</pre></div>
+</div>
+</section>
+<section id="comparisons">
+<h2>10.3 Comparisons<a class="headerlink" href="#comparisons" title="Link to this heading">#</a></h2>
+<p>Besides equality (<code class="docutils literal notranslate"><span class="pre">==</span></code>), the full comparison suite is available:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>large_items(x) :- item(x), item_count(x, c), c &gt;= 2.
+not_empty(x) :- item_count(x, c), c != 0.
+small(x) :- item(x), item_count(x, c), c &lt; 10.
+</pre></div>
+</div>
+<p>Comparisons can be combined with conjunction in the same rule body.</p>
+</section>
+<section id="commands-and-directives">
+<h2>10.4 Commands and Directives<a class="headerlink" href="#commands-and-directives" title="Link to this heading">#</a></h2>
+<p>Commands use the <code class="docutils literal notranslate"><span class="pre">.</span></code> prefix and follow the Prolog convention:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.set_backend(&#39;pandas&#39;)
+</pre></div>
+</div>
+<p>This switches the relational algebra backend at runtime.  Currently
+supported backends are <code class="docutils literal notranslate"><span class="pre">'pandas'</span></code>, <code class="docutils literal notranslate"><span class="pre">'dask'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'duckdb'</span></code>.</p>
+<p>Commands are processed before rule evaluation and unknown commands are
+silently ignored.</p>
+</section>
+<section id="probabilistic-facts">
+<h2>10.5 Probabilistic Facts<a class="headerlink" href="#probabilistic-facts" title="Link to this heading">#</a></h2>
+<p>Explicit probabilistic facts can be written inline:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.9 :: noisy_region(&#39;fusiform&#39;).
+</pre></div>
+</div>
+<p>This creates a probabilistic fact with probability 0.9.</p>
+<p>Probabilistic rules (with a probability expression instead of a fixed
+probability) also exist:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>p(x) :: exp(-d / 5.0) :- a(x, d), d &lt; 0.8.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="appendix-a-running-datalog-from-python">
+<span id="appendix-a-datalog"></span><h1>Appendix A: Running Datalog from Python<a class="headerlink" href="#appendix-a-running-datalog-from-python" title="Link to this heading">#</a></h1>
+<p>All of the Datalog syntax shown in this tutorial can be executed from Python
+using the <code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> frontend.  The general workflow follows the same
+pattern as NSQUALL (see <a class="reference internal" href="tutorial_squall.html#part-9-appendix-a"><span class="std std-ref">Appendix A: Running NSQUALL from Python</span></a>), but using
+<code class="docutils literal notranslate"><span class="pre">execute_datalog_program</span></code> instead of <code class="docutils literal notranslate"><span class="pre">execute_squall_program</span></code>.</p>
+<p>The steps are:</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> engine.</p></li>
+<li><p>Register EDB facts with <code class="docutils literal notranslate"><span class="pre">add_tuple_set</span></code>.</p></li>
+<li><p>Optionally register probabilistic choices with
+<code class="docutils literal notranslate"><span class="pre">add_uniform_probabilistic_choice_over_set</span></code>.</p></li>
+<li><p>Execute a Datalog program string with <code class="docutils literal notranslate"><span class="pre">execute_datalog_program</span></code>.</p></li>
+<li><p>Inspect results from the direct return value (when <code class="docutils literal notranslate"><span class="pre">ans</span></code> is used) or
+with <code class="docutils literal notranslate"><span class="pre">solve_all()</span></code>.</p></li>
+</ol>
+<section id="registering-facts-and-running-a-simple-rule">
+<h2>Registering facts and running a simple rule<a class="headerlink" href="#registering-facts-and-running-a-simple-rule" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;alice&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;bob&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;carol&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;person&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;alice&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;carol&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plays&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;active(x) :- person(x), plays(x).&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">solution</span><span class="p">[</span><span class="s2">&quot;active&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[&#39;alice&#39;, &#39;carol&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="querying-with-ans-direct-return">
+<h2>Querying with <code class="docutils literal notranslate"><span class="pre">ans</span></code> (direct return)<a class="headerlink" href="#querying-with-ans-direct-return" title="Link to this heading">#</a></h2>
+<p>When the program contains an <code class="docutils literal notranslate"><span class="pre">ans</span></code> rule, <code class="docutils literal notranslate"><span class="pre">execute_datalog_program</span></code>
+returns the result directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;ans(x) :- person(x), plays(x).&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">[&#39;alice&#39;, &#39;carol&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-rules">
+<h2>Multiple rules<a class="headerlink" href="#multiple-rules" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;player(x) :- person(x), plays(x). &quot;</span>
+<span class="gp">... </span>    <span class="s2">&quot;runner(x) :- person(x), runs(x). &quot;</span>
+<span class="gp">... </span>    <span class="s2">&quot;ans(x) :- player(x).&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># or: nl.solve_all()[&quot;player&quot;]</span>
+</pre></div>
+</div>
+</section>
+<section id="binary-predicates">
+<h2>Binary predicates<a class="headerlink" href="#binary-predicates" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;alice&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;bob&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;person&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;jazz&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;genre&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;jazz&quot;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sings&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;performer(x) :- person(x), sings(x, g).&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">&quot;performer&quot;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[&#39;alice&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Negation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;alice&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;bob&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;person&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;alice&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;plays&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;not_playing(x) :- person(x), ~plays(x).&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">&quot;not_playing&quot;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[&#39;bob&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Filtering with comparisons<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;a&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;item&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;item_count&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;large(x) :- item(x), item_count(x, c), c &gt;= 2.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">&quot;large&quot;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[&#39;b&#39;, &#39;c&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Aggregation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;a&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;item&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;item_count&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;ans(x, m) :- AGGREGATE[x](item_count(x, c) @ max(c)) = m.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[(&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;c&#39;, 3)]</span>
+</pre></div>
+</div>
+</section>
+<section id="probabilistic-query-prob">
+<h2>Probabilistic query (PROB)<a class="headerlink" href="#probabilistic-query-prob" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">&quot;s1&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;s2&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;study&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;s1&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;s2&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;activates&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">&quot;s1&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;s2&quot;</span><span class="p">,),</span> <span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;selected_study&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;ans(r, p) :- PROB[selected_study(s), activates(s, r)] = p.&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+<span class="go">[(&#39;A&#39;, 0.666...), (&#39;B&#39;, 0.333...)]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Conjunctions inside <code class="docutils literal notranslate"><span class="pre">PROB[...]</span></code> use <code class="docutils literal notranslate"><span class="pre">,</span></code> as separator (same as Datalog
+rule bodies).  The more common pattern in the Bayes Factor program is to
+define an intermediate rule first and then query <code class="docutils literal notranslate"><span class="pre">PROB[pred(x)]</span> <span class="pre">=</span> <span class="pre">p</span></code>
+on the single predicate.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_squall.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NSQUALL: Controlled English for NeuroLang</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=0790524f97105ba85085"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=0790524f97105ba85085"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann et al..
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>
