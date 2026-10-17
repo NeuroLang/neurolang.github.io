@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Neurosynth’s Association and Uniformity Tests as Probability Ratios &#8212; NeuroLang 0.1a21.dev102+gdfb460953 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=1bfb7717" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=614722ee"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial_neurosynth_tests';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concepts" href="concepts.html" />
+    <link rel="prev" title="Semantic Search Over Study Abstracts" href="tutorial_text_embeddings.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a21" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroLang</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#" aria-current="page">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ratios">The ratios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-the-repl">In the REPL</a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="neurosynth-s-association-and-uniformity-tests-as-probability-ratios">
+<span id="tutorial-neurosynth-tests"></span><h1>Neurosynth’s Association and Uniformity Tests as Probability Ratios<a class="headerlink" href="#neurosynth-s-association-and-uniformity-tests-as-probability-ratios" title="Link to this heading">#</a></h1>
+<p>Neurosynth <a class="reference internal" href="#yarkoni2011" id="id1"><span>[yarkoni2011]</span></a> maps each term with two tests on the counts of
+studies activating each voxel:</p>
+<ul class="simple">
+<li><p>the <em>uniformity test</em> (formerly “forward inference”): is the
+proportion of the studies of the term activating the voxel different
+from its average over the brain?</p></li>
+<li><p>the <em>association test</em> (formerly “reverse inference”): are the term and
+the activation of the voxel independent?  The map comes with the
+posterior probability of the term given the activation, for a uniform
+prior of 0.5.</p></li>
+</ul>
+<p>Both are <span class="math notranslate nohighlight">\(\chi^2\)</span> tests, and both reduce to a ratio of probabilities
+which is 1 when there is no effect.  With <code class="docutils literal notranslate"><span class="pre">selected_study</span></code> the uniform
+choice over the <span class="math notranslate nohighlight">\(N\)</span> studies of the <code class="docutils literal notranslate"><span class="pre">neurosynth</span></code> engine, every
+probability of a query is a count of studies divided by <span class="math notranslate nohighlight">\(N\)</span>, so
+these ratios are queries of the engine.</p>
+<section id="the-ratios">
+<h2>The ratios<a class="headerlink" href="#the-ratios" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(T\)</span> be the event that the selected study has the term and
+<span class="math notranslate nohighlight">\(A_v\)</span> that it activates the voxel <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p><strong>Association.</strong>  <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(A_v\)</span> are independent if and only
+if the <em>lift</em></p>
+<div class="math notranslate nohighlight">
+\[L_v = \frac{P(A_v \mid T)}{P(A_v)} = \frac{P(T \mid A_v)}{P(T)}
+    = \frac{P(A_v \land T)}{P(A_v)\, P(T)}\]</div>
+<p>is 1, and the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic of the test is <span class="math notranslate nohighlight">\(N\)</span> times the
+squared distance of the lift to 1:</p>
+<div class="math notranslate nohighlight">
+\[\chi^2_\text{association} = N\, (L_v - 1)^2\,
+    \frac{P(A_v)\, P(T)}{P(\lnot A_v)\, P(\lnot T)}.\]</div>
+<p>The <em>relative risk</em> <span class="math notranslate nohighlight">\(RR_v = P(A_v \mid T) / P(A_v \mid \lnot T)\)</span> is
+also 1 under independence, and Neurosynth’s posterior for a prior of 0.5
+is <span class="math notranslate nohighlight">\(RR_v / (1 + RR_v)\)</span>.</p>
+<p><strong>Uniformity.</strong>  The average over the <span class="math notranslate nohighlight">\(M\)</span> voxels of the mask of
+<span class="math notranslate nohighlight">\(P(A_v \mid T)\)</span> is itself a probability: with <code class="docutils literal notranslate"><span class="pre">selected_voxel</span></code> a
+uniform choice over the voxels and <span class="math notranslate nohighlight">\(V\)</span> the voxel it selects, it is
+<span class="math notranslate nohighlight">\(\bar p = P(A_V \mid T)\)</span>, the probability that the selected study
+activates the selected voxel, given the term.  The ratio</p>
+<div class="math notranslate nohighlight">
+\[U_v = \frac{P(A_v \mid T)}{P(A_V \mid T)} = M\, P(V = v \mid A_V, T)\]</div>
+<p>is 1 under uniformity, and, with <span class="math notranslate nohighlight">\(N\, P(T)\)</span> the number of studies
+of the term,</p>
+<div class="math notranslate nohighlight">
+\[\chi^2_\text{uniformity} = N\, P(T)\, (U_v - 1)^2\,
+    \frac{\bar p}{1 - \bar p}.\]</div>
+</section>
+<section id="in-the-repl">
+<h2>In the REPL<a class="headerlink" href="#in-the-repl" title="Link to this heading">#</a></h2>
+<p>Neurosynth works on the 2 mm MNI grid, a study activating the voxels
+within 6 mm of its peaks, and a term being in the studies with a TF-IDF
+above 0.001.  Start the REPL of the <code class="docutils literal notranslate"><span class="pre">neurosynth</span></code> engine on the 2 mm
+grid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">neurolang</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cli</span> <span class="o">-</span><span class="n">e</span> <span class="n">neurosynth</span> <span class="o">-</span><span class="n">d</span> <span class="n">neurolang_data</span> <span class="o">-</span><span class="n">r</span> <span class="mi">2</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+<p>and paste this block at the prompt.  It computes the lift and the
+uniformity ratio of the term <code class="docutils literal notranslate"><span class="pre">pain</span></code> over the voxels of
+<code class="docutils literal notranslate"><span class="pre">cortical_mask</span></code>, shows the five voxels of the largest uniformity
+ratios, and opens both maps in the viewer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">term_of_interest</span><span class="p">(</span><span class="s1">'pain'</span><span class="p">)</span>
+<span class="n">term_in_study</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">term_in_study_tfidf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">w</span> <span class="o">&gt;</span> <span class="mf">0.001</span><span class="p">)</span>
+<span class="n">activation</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">cortical_mask</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">peak_reported</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">j1</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">EUCLIDEAN</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">j1</span><span class="p">,</span> <span class="n">k1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">n_voxels</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span> <span class="p">:</span><span class="o">-</span> <span class="n">cortical_mask</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">selected_voxel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">m</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">cortical_mask</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">n_voxels</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">p_a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">PROB</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">activation</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">p_term</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">PROB</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">term_of_interest</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">term_in_study</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">p_a_given_t</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">PROB</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="p">(</span><span class="n">activation</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">//</span> <span class="p">(</span><span class="n">term_of_interest</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">term_in_study</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">p_any_voxel_given_t</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">PROB</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="p">(</span><span class="n">activation</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_voxel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">//</span> <span class="p">(</span><span class="n">term_of_interest</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">term_in_study</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">selected_study</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+<span class="n">ratios</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">lift</span><span class="p">,</span> <span class="n">relative_risk</span><span class="p">,</span> <span class="n">uniformity</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">p_a_given_t</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">pat</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">p_a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">pa</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">p_term</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pt</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">p_any_voxel_given_t</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pbar</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lift</span> <span class="o">==</span> <span class="n">pat</span> <span class="o">/</span> <span class="n">pa</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">relative_risk</span> <span class="o">==</span> <span class="n">pat</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pt</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">pa</span> <span class="o">-</span> <span class="n">pat</span> <span class="o">*</span> <span class="n">pt</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">uniformity</span> <span class="o">==</span> <span class="n">pat</span> <span class="o">/</span> <span class="n">pbar</span><span class="p">)</span>
+<span class="o">.</span><span class="n">sort</span> <span class="n">uniformity</span><span class="p">:</span><span class="n">desc</span>
+<span class="o">.</span><span class="n">head</span> <span class="mi">5</span>
+<span class="n">ans</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">lift</span><span class="p">,</span> <span class="n">uniformity</span><span class="p">)</span> <span class="p">:</span><span class="o">-</span> <span class="n">ratios</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">lift</span><span class="p">,</span> <span class="n">relative_risk</span><span class="p">,</span> <span class="n">uniformity</span><span class="p">)</span>
+<span class="o">.</span><span class="n">view</span>
+</pre></div>
+</div>
+<p>The REPL runs the rules as one submission, then each dot-command and the
+query in turn, and prints the following; on a terminal, it opens the
+viewer in the browser rather than telling to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>defined term_of_interest/1
+defined term_in_study/2
+defined activation/4
+defined n_voxels/1
+defined selected_voxel/3
+defined p_a/4
+defined p_term/2
+defined p_a_given_t/5
+defined p_any_voxel_given_t/2
+defined ratios/7
+Running query...
+╭────┬────┬────┬────────────────────┬───────────────────╮
+│ i  │ j  │ k  │ lift               │ uniformity        │
+├────┼────┼────┼────────────────────┼───────────────────┤
+│ 32 │ 76 │ 38 │ 2.226988767904886  │ 8.429294107164303 │
+│ 68 │ 77 │ 36 │ 1.8881881487320984 │ 8.124620826182461 │
+│ 68 │ 78 │ 35 │ 1.6834056926626453 │ 8.02306306585518  │
+│ 68 │ 78 │ 36 │ 1.7016328231323106 │ 8.02306306585518  │
+│ 32 │ 78 │ 36 │ 1.5440078879368966 │ 8.02306306585518  │
+╰────┴────┴────┴────────────────────┴───────────────────╯
+128248 rows · showing 1–5 · .more for next
+Query completed in 13.67 s
+Saved NIfTI image to: /var/folders/m_/9f8m55cs45g8_36d1wx67_jc0000gr/T/neurolang_view_iqj9l527.nii.gz (128248 voxels of the 99×117×95 template grid, value: the max of 'lift' per voxel)
+Saved NIfTI image to: /var/folders/m_/9f8m55cs45g8_36d1wx67_jc0000gr/T/neurolang_view_iiwq4x8r.nii.gz (128248 voxels of the 99×117×95 template grid, value: the max of 'uniformity' per voxel)
+Colormap of 'lift': one-sided, the image has no negative values (--symmetric for a symmetric one).
+Colormap of 'uniformity': one-sided, the image has no negative values (--symmetric for a symmetric one).
+Saved the viewer to: /var/folders/m_/9f8m55cs45g8_36d1wx67_jc0000gr/T/neurolang_view_k39mctvq.html
+Open it in a browser to see the image.
+</pre></div>
+</div>
+<p>The rules, in order:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">term_of_interest</span></code> names the term.  It is joined in the probabilistic
+rules, so that they are only computed for this term; change it to map
+another one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">activation</span></code> holds the voxels within 6 mm, 3 voxels of the grid, of a
+peak of each study, the <code class="docutils literal notranslate"><span class="pre">EUCLIDEAN</span></code> distance being in voxels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selected_voxel</span></code> is a uniform choice over the voxels of the mask,
+each of probability <span class="math notranslate nohighlight">\(1/M\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p_a</span></code>, <code class="docutils literal notranslate"><span class="pre">p_term</span></code> and <code class="docutils literal notranslate"><span class="pre">p_a_given_t</span></code> are <span class="math notranslate nohighlight">\(P(A_v)\)</span>, <span class="math notranslate nohighlight">\(P(T)\)</span>
+and <span class="math notranslate nohighlight">\(P(A_v \mid T)\)</span>; <code class="docutils literal notranslate"><span class="pre">p_any_voxel_given_t</span></code> is
+<span class="math notranslate nohighlight">\(\bar p = P(A_V \mid T)\)</span>, a single probability per term.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ratios</span></code> divides them.  The relative risk is computed from these
+probabilities, as <span class="math notranslate nohighlight">\(P(A_v \mid \lnot T) = (P(A_v) - P(A_v \mid T)
+P(T)) / (1 - P(T))\)</span>, rather than with a query conditioned on
+<code class="docutils literal notranslate"><span class="pre">~term_in_study(s,</span> <span class="pre">t)</span></code>, which is slower.</p></li>
+</ul>
+<p>The voxels of the largest uniformity ratios, <code class="docutils literal notranslate"><span class="pre">(32,</span> <span class="pre">76,</span> <span class="pre">38)</span></code> and
+<code class="docutils literal notranslate"><span class="pre">(68,</span> <span class="pre">77,</span> <span class="pre">36)</span></code> of the grid, are at <span class="math notranslate nohighlight">\((-34, 18, 4)\)</span> and
+<span class="math notranslate nohighlight">\((38, 20, 0)\)</span> mm in MNI space, in the left and right anterior
+insula: the studies of pain activate them 8 times more often than the
+average voxel of the cortex.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.view</span></code> shows each value column of the result as an overlay, here
+<code class="docutils literal notranslate"><span class="pre">lift</span></code> and <code class="docutils literal notranslate"><span class="pre">uniformity</span></code>, each from the 95th percentile of its
+values, with its colormap and colour bar; the read-out gives both values
+at the cursor, here at the left anterior insula:</p>
+<img alt="The lift and uniformity maps of pain in the viewer" src="_images/neurosynth_pain_view.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">Overlay</span></code> list chooses the map the controls apply to, and
+<code class="docutils literal notranslate"><span class="pre">shown</span></code> hides it; <code class="docutils literal notranslate"><span class="pre">uniformity</span></code>, drawn over <code class="docutils literal notranslate"><span class="pre">lift</span></code>, covers it where
+both pass their threshold, until ▼ draws it under <code class="docutils literal notranslate"><span class="pre">lift</span></code>.  The voxels without a value, those that no
+study of the term activates, are 0 and not drawn; <code class="docutils literal notranslate"><span class="pre">.view</span> <span class="pre">--fill</span> <span class="pre">1</span></code>
+gives them the ratio of no effect instead.  Add <code class="docutils literal notranslate"><span class="pre">relative_risk</span></code> to the
+head of <code class="docutils literal notranslate"><span class="pre">ans</span></code> for a third overlay, its infinite values being drawn as
+its largest finite one.</p>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>The mask is that of <code class="docutils literal notranslate"><span class="pre">cortical_mask</span></code>: the average of the uniformity
+test is over the cortex, whereas Neurosynth’s is over the whole brain.</p></li>
+<li><p>A voxel which no study of the term activates is not in the result: its
+ratios are 0.  The relative risk is infinite at a voxel which only the
+studies of the term activate.</p></li>
+<li><p>The lift and the relative risk are largest at voxels which few studies
+activate, where they are the least stable: weigh them with
+<span class="math notranslate nohighlight">\(P(A_v)\)</span>, or with the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic above.</p></li>
+</ul>
+<div role="list" class="citation-list">
+<div class="citation" id="yarkoni2011" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">yarkoni2011</a><span class="fn-bracket">]</span></span>
+<p>T. Yarkoni, R. A. Poldrack, T. E. Nichols, D. C. Van
+Essen and T. D. Wager. Large-scale automated synthesis of human
+functional neuroimaging data. <em>Nature Methods</em> 8(8):665–670, 2011.</p>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_text_embeddings.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Semantic Search Over Study Abstracts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>

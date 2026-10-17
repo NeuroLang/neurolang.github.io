@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>neurolang.exceptions &#8212; NeuroLang 0.1a21.dev102+gdfb460953 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/neurolang.css?v=1bfb7717" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../_static/documentation_options.js?v=614722ee"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gen_api/neurolang.exceptions';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.logic" href="neurolang.logic.html" />
+    <link rel="prev" title="neurolang.expression_walker" href="neurolang.expression_walker.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a21" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroLang</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.NeurolangDL.html">neurolang.NeurolangDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.NeurolangPDL.html">neurolang.NeurolangPDL</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expressions.html">neurolang.expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expression_pattern_matching.html">neurolang.expression_pattern_matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expression_walker.html">neurolang.expression_walker</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">neurolang.exceptions</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.html">neurolang.logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.datalog.html">neurolang.datalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.probabilistic.html">neurolang.probabilistic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.relational_algebra.html">neurolang.relational_algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.relational_algebra_provenance.html">neurolang.relational_algebra_provenance</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.cli.html">neurolang.utils.cli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.engine_registry.html">neurolang.utils.engine_registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.engines.base.html">neurolang.utils.engines.base</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.CouldNotTranslateConjunctionException"><code class="docutils literal notranslate"><span class="pre">CouldNotTranslateConjunctionException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.add_note"><code class="docutils literal notranslate"><span class="pre">CouldNotTranslateConjunctionException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.suggestion"><code class="docutils literal notranslate"><span class="pre">CouldNotTranslateConjunctionException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.with_traceback"><code class="docutils literal notranslate"><span class="pre">CouldNotTranslateConjunctionException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenBuiltinError"><code class="docutils literal notranslate"><span class="pre">ForbiddenBuiltinError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenBuiltinError.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenBuiltinError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenBuiltinError.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenBuiltinError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenBuiltinError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenBuiltinError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenDisjunctionError"><code class="docutils literal notranslate"><span class="pre">ForbiddenDisjunctionError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenDisjunctionError.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenDisjunctionError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenDisjunctionError.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenDisjunctionError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenDisjunctionError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenDisjunctionError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExistentialError"><code class="docutils literal notranslate"><span class="pre">ForbiddenExistentialError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExistentialError.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenExistentialError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExistentialError.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenExistentialError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExistentialError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenExistentialError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExpressionError"><code class="docutils literal notranslate"><span class="pre">ForbiddenExpressionError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExpressionError.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenExpressionError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExpressionError.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenExpressionError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenExpressionError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenExpressionError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenRecursivityError"><code class="docutils literal notranslate"><span class="pre">ForbiddenRecursivityError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenRecursivityError.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenRecursivityError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenRecursivityError.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenRecursivityError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenRecursivityError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenRecursivityError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation"><code class="docutils literal notranslate"><span class="pre">ForbiddenUnstratifiedAggregation</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.add_note"><code class="docutils literal notranslate"><span class="pre">ForbiddenUnstratifiedAggregation.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.suggestion"><code class="docutils literal notranslate"><span class="pre">ForbiddenUnstratifiedAggregation.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.with_traceback"><code class="docutils literal notranslate"><span class="pre">ForbiddenUnstratifiedAggregation.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.InvalidCommandExpression"><code class="docutils literal notranslate"><span class="pre">InvalidCommandExpression</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.InvalidCommandExpression.add_note"><code class="docutils literal notranslate"><span class="pre">InvalidCommandExpression.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.InvalidCommandExpression.suggestion"><code class="docutils literal notranslate"><span class="pre">InvalidCommandExpression.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.InvalidCommandExpression.with_traceback"><code class="docutils literal notranslate"><span class="pre">InvalidCommandExpression.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotNamedRelationException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.add_note"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotNamedRelationException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.suggestion"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotNamedRelationException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotNamedRelationException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotSafeRangeException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.add_note"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotSafeRangeException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.suggestion"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotSafeRangeException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NegativeFormulaNotSafeRangeException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangException"><code class="docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangException.add_note"><code class="docutils literal notranslate"><span class="pre">NeuroLangException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangException.suggestion"><code class="docutils literal notranslate"><span class="pre">NeuroLangException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NeuroLangException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangFrontendException"><code class="docutils literal notranslate"><span class="pre">NeuroLangFrontendException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangFrontendException.add_note"><code class="docutils literal notranslate"><span class="pre">NeuroLangFrontendException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangFrontendException.suggestion"><code class="docutils literal notranslate"><span class="pre">NeuroLangFrontendException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangFrontendException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NeuroLangFrontendException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangNotImplementedError"><code class="docutils literal notranslate"><span class="pre">NeuroLangNotImplementedError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangNotImplementedError.add_note"><code class="docutils literal notranslate"><span class="pre">NeuroLangNotImplementedError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangNotImplementedError.suggestion"><code class="docutils literal notranslate"><span class="pre">NeuroLangNotImplementedError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NeuroLangNotImplementedError.with_traceback"><code class="docutils literal notranslate"><span class="pre">NeuroLangNotImplementedError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NoValidChaseClassForStratumException"><code class="docutils literal notranslate"><span class="pre">NoValidChaseClassForStratumException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NoValidChaseClassForStratumException.add_note"><code class="docutils literal notranslate"><span class="pre">NoValidChaseClassForStratumException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NoValidChaseClassForStratumException.suggestion"><code class="docutils literal notranslate"><span class="pre">NoValidChaseClassForStratumException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NoValidChaseClassForStratumException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NoValidChaseClassForStratumException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NonLiftableException"><code class="docutils literal notranslate"><span class="pre">NonLiftableException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NonLiftableException.add_note"><code class="docutils literal notranslate"><span class="pre">NonLiftableException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NonLiftableException.suggestion"><code class="docutils literal notranslate"><span class="pre">NonLiftableException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NonLiftableException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NonLiftableException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpression"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpression</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpression.add_note"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpression.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpression.suggestion"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpression.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpression.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpression.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNegation"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNegation</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.add_note"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNegation.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.suggestion"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNegation.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNegation.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNestedPredicates</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.add_note"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNestedPredicates.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.suggestion"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNestedPredicates.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNestedPredicates.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotInFONegE"><code class="docutils literal notranslate"><span class="pre">NotInFONegE</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotInFONegE.add_note"><code class="docutils literal notranslate"><span class="pre">NotInFONegE.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotInFONegE.suggestion"><code class="docutils literal notranslate"><span class="pre">NotInFONegE.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotInFONegE.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotInFONegE.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotRankedException"><code class="docutils literal notranslate"><span class="pre">NotRankedException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotRankedException.add_note"><code class="docutils literal notranslate"><span class="pre">NotRankedException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotRankedException.suggestion"><code class="docutils literal notranslate"><span class="pre">NotRankedException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotRankedException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotRankedException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotUnateException"><code class="docutils literal notranslate"><span class="pre">NotUnateException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotUnateException.add_note"><code class="docutils literal notranslate"><span class="pre">NotUnateException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotUnateException.suggestion"><code class="docutils literal notranslate"><span class="pre">NotUnateException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.NotUnateException.with_traceback"><code class="docutils literal notranslate"><span class="pre">NotUnateException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ParserError"><code class="docutils literal notranslate"><span class="pre">ParserError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ParserError.add_note"><code class="docutils literal notranslate"><span class="pre">ParserError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ParserError.suggestion"><code class="docutils literal notranslate"><span class="pre">ParserError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ParserError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ParserError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.PredicateArityError"><code class="docutils literal notranslate"><span class="pre">PredicateArityError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.PredicateArityError.add_note"><code class="docutils literal notranslate"><span class="pre">PredicateArityError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.PredicateArityError.suggestion"><code class="docutils literal notranslate"><span class="pre">PredicateArityError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.PredicateArityError.with_traceback"><code class="docutils literal notranslate"><span class="pre">PredicateArityError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProjectionOverMissingColumnsError"><code class="docutils literal notranslate"><span class="pre">ProjectionOverMissingColumnsError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.add_note"><code class="docutils literal notranslate"><span class="pre">ProjectionOverMissingColumnsError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.suggestion"><code class="docutils literal notranslate"><span class="pre">ProjectionOverMissingColumnsError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ProjectionOverMissingColumnsError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProtectedKeywordError"><code class="docutils literal notranslate"><span class="pre">ProtectedKeywordError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProtectedKeywordError.add_note"><code class="docutils literal notranslate"><span class="pre">ProtectedKeywordError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProtectedKeywordError.suggestion"><code class="docutils literal notranslate"><span class="pre">ProtectedKeywordError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.ProtectedKeywordError.with_traceback"><code class="docutils literal notranslate"><span class="pre">ProtectedKeywordError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraError"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraError.add_note"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraError.suggestion"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraError.with_traceback"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraNotImplementedError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.add_note"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraNotImplementedError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.suggestion"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraNotImplementedError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.with_traceback"><code class="docutils literal notranslate"><span class="pre">RelationalAlgebraNotImplementedError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RuleNotFoundError"><code class="docutils literal notranslate"><span class="pre">RuleNotFoundError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RuleNotFoundError.add_note"><code class="docutils literal notranslate"><span class="pre">RuleNotFoundError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RuleNotFoundError.suggestion"><code class="docutils literal notranslate"><span class="pre">RuleNotFoundError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.RuleNotFoundError.with_traceback"><code class="docutils literal notranslate"><span class="pre">RuleNotFoundError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SquallSemanticError"><code class="docutils literal notranslate"><span class="pre">SquallSemanticError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SquallSemanticError.add_note"><code class="docutils literal notranslate"><span class="pre">SquallSemanticError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SquallSemanticError.suggestion"><code class="docutils literal notranslate"><span class="pre">SquallSemanticError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SquallSemanticError.with_traceback"><code class="docutils literal notranslate"><span class="pre">SquallSemanticError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SymbolNotFoundError"><code class="docutils literal notranslate"><span class="pre">SymbolNotFoundError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SymbolNotFoundError.add_note"><code class="docutils literal notranslate"><span class="pre">SymbolNotFoundError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SymbolNotFoundError.suggestion"><code class="docutils literal notranslate"><span class="pre">SymbolNotFoundError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.SymbolNotFoundError.with_traceback"><code class="docutils literal notranslate"><span class="pre">SymbolNotFoundError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.TranslateToNamedRAException"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRAException</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.TranslateToNamedRAException.add_note"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRAException.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.TranslateToNamedRAException.suggestion"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRAException.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.TranslateToNamedRAException.with_traceback"><code class="docutils literal notranslate"><span class="pre">TranslateToNamedRAException.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnboundVariablesError"><code class="docutils literal notranslate"><span class="pre">UnboundVariablesError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnboundVariablesError.add_note"><code class="docutils literal notranslate"><span class="pre">UnboundVariablesError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnboundVariablesError.located"><code class="docutils literal notranslate"><span class="pre">UnboundVariablesError.located()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnboundVariablesError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnboundVariablesError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnboundVariablesError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnboundVariablesError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedCharactersError"><code class="docutils literal notranslate"><span class="pre">UnexpectedCharactersError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedCharactersError.add_note"><code class="docutils literal notranslate"><span class="pre">UnexpectedCharactersError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedCharactersError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnexpectedCharactersError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedCharactersError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnexpectedCharactersError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedExpressionError"><code class="docutils literal notranslate"><span class="pre">UnexpectedExpressionError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedExpressionError.add_note"><code class="docutils literal notranslate"><span class="pre">UnexpectedExpressionError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedExpressionError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnexpectedExpressionError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedExpressionError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnexpectedExpressionError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedTokenError"><code class="docutils literal notranslate"><span class="pre">UnexpectedTokenError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedTokenError.add_note"><code class="docutils literal notranslate"><span class="pre">UnexpectedTokenError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedTokenError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnexpectedTokenError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnexpectedTokenError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnexpectedTokenError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedProgramError"><code class="docutils literal notranslate"><span class="pre">UnsupportedProgramError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedProgramError.add_note"><code class="docutils literal notranslate"><span class="pre">UnsupportedProgramError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedProgramError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnsupportedProgramError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedProgramError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnsupportedProgramError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedQueryError"><code class="docutils literal notranslate"><span class="pre">UnsupportedQueryError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedQueryError.add_note"><code class="docutils literal notranslate"><span class="pre">UnsupportedQueryError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedQueryError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnsupportedQueryError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedQueryError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnsupportedQueryError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedSolverError"><code class="docutils literal notranslate"><span class="pre">UnsupportedSolverError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedSolverError.add_note"><code class="docutils literal notranslate"><span class="pre">UnsupportedSolverError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedSolverError.suggestion"><code class="docutils literal notranslate"><span class="pre">UnsupportedSolverError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.UnsupportedSolverError.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnsupportedSolverError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.WrongArgumentsInPredicateError"><code class="docutils literal notranslate"><span class="pre">WrongArgumentsInPredicateError</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.WrongArgumentsInPredicateError.add_note"><code class="docutils literal notranslate"><span class="pre">WrongArgumentsInPredicateError.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.WrongArgumentsInPredicateError.suggestion"><code class="docutils literal notranslate"><span class="pre">WrongArgumentsInPredicateError.suggestion</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.exceptions.WrongArgumentsInPredicateError.with_traceback"><code class="docutils literal notranslate"><span class="pre">WrongArgumentsInPredicateError.with_traceback()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">neurolang.exceptions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-neurolang.exceptions">
+<span id="neurolang-exceptions"></span><h1>neurolang.exceptions<a class="headerlink" href="#module-neurolang.exceptions" title="Link to this heading">#</a></h1>
+<p class="rubric">Exceptions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.CouldNotTranslateConjunctionException" title="neurolang.exceptions.CouldNotTranslateConjunctionException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CouldNotTranslateConjunctionException</span></code></a>(output)</p></td>
+<td><p>This conjunctive formula could not be translated into an equivalent relational algebra representation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenBuiltinError" title="neurolang.exceptions.ForbiddenBuiltinError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenBuiltinError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenDisjunctionError" title="neurolang.exceptions.ForbiddenDisjunctionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenDisjunctionError</span></code></a></p></td>
+<td><p>Probabilistic queries do not support disjunctions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenExistentialError" title="neurolang.exceptions.ForbiddenExistentialError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenExistentialError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenExpressionError" title="neurolang.exceptions.ForbiddenExpressionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenExpressionError</span></code></a></p></td>
+<td><p>Generic exception specifying an error in the program.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenRecursivityError" title="neurolang.exceptions.ForbiddenRecursivityError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenRecursivityError</span></code></a></p></td>
+<td><p>The given program cannot be stratified due to recursivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation" title="neurolang.exceptions.ForbiddenUnstratifiedAggregation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForbiddenUnstratifiedAggregation</span></code></a></p></td>
+<td><p>The given Datalog program is not valid for aggregation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.InvalidCommandExpression" title="neurolang.exceptions.InvalidCommandExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InvalidCommandExpression</span></code></a></p></td>
+<td><p>Invalid Command statement.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException" title="neurolang.exceptions.NegativeFormulaNotNamedRelationException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NegativeFormulaNotNamedRelationException</span></code></a>(formula)</p></td>
+<td><p>This rule contains a negative literal R(v) which was not previously defined as a non-negated relation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException" title="neurolang.exceptions.NegativeFormulaNotSafeRangeException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NegativeFormulaNotSafeRangeException</span></code></a>(formula)</p></td>
+<td><p>This rule is not <em>range restricted</em> and cannot be solved in <em>nonrecursive datalog with negation</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NeuroLangException" title="neurolang.exceptions.NeuroLangException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuroLangException</span></code></a></p></td>
+<td><p>Base class for NeuroLang Exceptions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NeuroLangFrontendException" title="neurolang.exceptions.NeuroLangFrontendException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuroLangFrontendException</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NeuroLangNotImplementedError" title="neurolang.exceptions.NeuroLangNotImplementedError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeuroLangNotImplementedError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NoValidChaseClassForStratumException" title="neurolang.exceptions.NoValidChaseClassForStratumException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NoValidChaseClassForStratumException</span></code></a></p></td>
+<td><p>Neurolang implements stratified datalog which splits a datalog program into several independent strata that can each be solved by a specific chase algorithm based on the properties of the rules in the stratum (using negation, aggregation and/or recursion).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NonLiftableException" title="neurolang.exceptions.NonLiftableException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NonLiftableException</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NotConjunctiveExpression" title="neurolang.exceptions.NotConjunctiveExpression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotConjunctiveExpression</span></code></a></p></td>
+<td><p>This expression is not conjunctive.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NotConjunctiveExpressionNegation" title="neurolang.exceptions.NotConjunctiveExpressionNegation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNegation</span></code></a></p></td>
+<td><p>This expression is not conjunctive.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates" title="neurolang.exceptions.NotConjunctiveExpressionNestedPredicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotConjunctiveExpressionNestedPredicates</span></code></a></p></td>
+<td><p>This expression is not conjunctive.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NotInFONegE" title="neurolang.exceptions.NotInFONegE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotInFONegE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.NotRankedException" title="neurolang.exceptions.NotRankedException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotRankedException</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.NotUnateException" title="neurolang.exceptions.NotUnateException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotUnateException</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.ParserError" title="neurolang.exceptions.ParserError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParserError</span></code></a>(message[, line, column])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.PredicateArityError" title="neurolang.exceptions.PredicateArityError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PredicateArityError</span></code></a>(predicate, arity, used)</p></td>
+<td><p>A predicate is used with a number of arguments other than its columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.ProjectionOverMissingColumnsError" title="neurolang.exceptions.ProjectionOverMissingColumnsError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProjectionOverMissingColumnsError</span></code></a></p></td>
+<td><p>One of the predicates in the program has wrong arguments.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.ProtectedKeywordError" title="neurolang.exceptions.ProtectedKeywordError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProtectedKeywordError</span></code></a></p></td>
+<td><p>One of the predicates in the program uses a reserved keyword.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.RelationalAlgebraError" title="neurolang.exceptions.RelationalAlgebraError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelationalAlgebraError</span></code></a></p></td>
+<td><p>Base class for Relational Algebra provenance exceptions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError" title="neurolang.exceptions.RelationalAlgebraNotImplementedError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelationalAlgebraNotImplementedError</span></code></a></p></td>
+<td><p>Neurolang was unable to match one of the relational algebra operations defined in the program.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.RuleNotFoundError" title="neurolang.exceptions.RuleNotFoundError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RuleNotFoundError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.SquallSemanticError" title="neurolang.exceptions.SquallSemanticError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SquallSemanticError</span></code></a>(message, *[, line, ...])</p></td>
+<td><p>Semantic error in a SQUALL program — parse succeeded but semantics invalid.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.SymbolNotFoundError" title="neurolang.exceptions.SymbolNotFoundError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SymbolNotFoundError</span></code></a></p></td>
+<td><p>A symbol is being used in a rule without having been previously defined.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.TranslateToNamedRAException" title="neurolang.exceptions.TranslateToNamedRAException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TranslateToNamedRAException</span></code></a></p></td>
+<td><p>Base exception for errors translating Datalog to Named Relational Algebra.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.UnboundVariablesError" title="neurolang.exceptions.UnboundVariablesError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnboundVariablesError</span></code></a>(rule, variables, ...)</p></td>
+<td><p>This rule is not <em>range restricted</em>: some of its variables do not appear in any positive atom of its body.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.UnexpectedCharactersError" title="neurolang.exceptions.UnexpectedCharactersError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnexpectedCharactersError</span></code></a>(message[, line, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.UnexpectedExpressionError" title="neurolang.exceptions.UnexpectedExpressionError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnexpectedExpressionError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.UnexpectedTokenError" title="neurolang.exceptions.UnexpectedTokenError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnexpectedTokenError</span></code></a>(message[, line, column])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.UnsupportedProgramError" title="neurolang.exceptions.UnsupportedProgramError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnsupportedProgramError</span></code></a></p></td>
+<td><p>Some parts of the datalog program are (currently) unsupported.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.UnsupportedQueryError" title="neurolang.exceptions.UnsupportedQueryError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnsupportedQueryError</span></code></a></p></td>
+<td><p>Queries on probabilistic predicates are unsupported.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.exceptions.UnsupportedSolverError" title="neurolang.exceptions.UnsupportedSolverError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnsupportedSolverError</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.exceptions.WrongArgumentsInPredicateError" title="neurolang.exceptions.WrongArgumentsInPredicateError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WrongArgumentsInPredicateError</span></code></a></p></td>
+<td><p>One of the predicates in the query has the wrong number of arguments.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.CouldNotTranslateConjunctionException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">CouldNotTranslateConjunctionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.CouldNotTranslateConjunctionException" title="Link to this definition">#</a></dt>
+<dd><p>This conjunctive formula could not be translated into an equivalent
+relational algebra representation. This is probably because the
+formula is not in <em>modified relational algebra normal form</em>.</p>
+<p>Generally speaking, the formula must be expressed in <em>conjunctive normal
+form</em> (CNF) or <em>disjunctive normal form</em> (DNF): as either a conjunction of
+disjunctions or disjunction of conjunctions.</p>
+<p>A conjunction with variables that are not bound by any of its positive
+atoms raises <a class="reference internal" href="#neurolang.exceptions.UnboundVariablesError" title="neurolang.exceptions.UnboundVariablesError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnboundVariablesError</span></code></a> instead.</p>
+<p>See 5.4.7 from <a class="reference internal" href="#r66ae528294df-1" id="id1">[1]</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PositiveReverseInferenceSegregationQuery(
+    t, n, PROB(t, n)
+) :- (TopicAssociation(t, s) // SelectedStudy(s)) // (
+    StudyMatchingNetworkQuery(s, n) &amp; SelectedStudy(s)
+)
+</pre></div>
+</div>
+<p>This formula is not in DNF since it is a disjunction of a disjunction
+(TopicAssociation(t, s) // SelectedStudy(s)) and a conjunction
+(StudyMatchingNetworkQuery(s, n) &amp; SelectedStudy(s)).
+A valid query would be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PositiveReverseInferenceSegregationQuery(
+    t, n, PROB(t, n)
+) :- (TopicAssociation(t, s) &amp; SelectedStudy(s)) // (
+    StudyMatchingNetworkQuery(s, n) &amp; SelectedStudy(s)
+)
+</pre></div>
+</div>
+<div role="list" class="citation-list">
+<div class="citation" id="r66ae528294df-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>S. Abiteboul, R. Hull, V. Vianu, Foundations of databases
+(Addison Wesley, 1995), Addison-Wesley.</p>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.CouldNotTranslateConjunctionException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.CouldNotTranslateConjunctionException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Rewrite</span> <span class="pre">the</span> <span class="pre">formula</span> <span class="pre">in</span> <span class="pre">conjunctive</span> <span class="pre">or</span> <span class="pre">disjunctive</span> <span class="pre">normal</span> <span class="pre">form</span> <span class="pre">(CNF</span> <span class="pre">or</span> <span class="pre">DNF).'</span></span><a class="headerlink" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.CouldNotTranslateConjunctionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.CouldNotTranslateConjunctionException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenBuiltinError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenBuiltinError</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenBuiltinError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenBuiltinError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenBuiltinError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenBuiltinError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenDisjunctionError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenDisjunctionError</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError" title="Link to this definition">#</a></dt>
+<dd><p>Probabilistic queries do not support disjunctions.</p>
+<p>A probabilistic choice can be added for a predicate symbol by using the
+<cite>add_probabilistic_choice_from_tuples</cite> method of a probabilistic Neurolang
+engine. But you cannot add multiple probabilistic facts or rule for the
+same
+predicate.</p>
+<p class="rubric">Examples</p>
+<p>ProbActivation(r, PROB(r)) :- RegionReported(r, s) &amp; SelectedStudy(s)
+ProbActivation(r, PROB(r)) :- ~RegionReported(r, s) &amp; SelectedStudy(s)</p>
+<p>This example program adds a disjunction of probabilistic queries which is
+not allowed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenDisjunctionError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenDisjunctionError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'A</span> <span class="pre">probabilistic</span> <span class="pre">predicate</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">defined</span> <span class="pre">by</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">rule</span> <span class="pre">or</span> <span class="pre">set</span> <span class="pre">of</span> <span class="pre">facts:</span> <span class="pre">give</span> <span class="pre">each</span> <span class="pre">probabilistic</span> <span class="pre">rule</span> <span class="pre">its</span> <span class="pre">own</span> <span class="pre">head</span> <span class="pre">predicate.'</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenDisjunctionError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenDisjunctionError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExistentialError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenExistentialError</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExistentialError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExistentialError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExistentialError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExistentialError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExpressionError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenExpressionError</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError" title="Link to this definition">#</a></dt>
+<dd><p>Generic exception specifying an error in the program.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExpressionError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExpressionError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenExpressionError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenExpressionError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenRecursivityError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenRecursivityError</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError" title="Link to this definition">#</a></dt>
+<dd><p>The given program cannot be stratified due to recursivity.</p>
+<p>When using probabilistic queries, a query can
+be solved through stratification if the probabilistic and deterministic
+parts are well separated. In case there exists one within-language
+probabilistic query dependency, no probabilistic predicate should appear
+in the stratum that depends on the query.
+The same holds for aggregate or negated queries. If a rule contains an
+aggregate or negated term, all the predicates in the body of the rule
+must be computed in a previous stratum.</p>
+<p class="rubric">Examples</p>
+<p>B(x) :- A(x), C(x)
+A(x) :- B(x)</p>
+<p>This program cannot be stratified because it contains a loop in
+the dependencies of each rule. Rule <cite>B(x) :- A(x), C(x)</cite> depends
+on the second rule through its occurrence of the predicate <cite>A(x)</cite>.
+But rule <cite>A(x) :- B(x)</cite> in turn depends on the first rule through
+the <cite>B(x)</cite> predicate.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenRecursivityError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenRecursivityError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Break</span> <span class="pre">the</span> <span class="pre">dependency</span> <span class="pre">cycle:</span> <span class="pre">predicates</span> <span class="pre">used</span> <span class="pre">under</span> <span class="pre">negation,</span> <span class="pre">aggregation</span> <span class="pre">or</span> <span class="pre">probabilistic</span> <span class="pre">queries</span> <span class="pre">must</span> <span class="pre">not</span> <span class="pre">depend</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">head</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">rule</span> <span class="pre">using</span> <span class="pre">them.'</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenRecursivityError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenRecursivityError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenUnstratifiedAggregation">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ForbiddenUnstratifiedAggregation</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation" title="Link to this definition">#</a></dt>
+<dd><p>The given Datalog program is not valid for aggregation. Support for
+aggregation is done according to section 2.4.1 of <a class="reference internal" href="#r65a2c5be063b-1" id="id2">[1]</a>.</p>
+<p>A program is valid for aggregation if it can be stratified into
+strata P1, … , Pn such that, if A :- …,B,… is a rule in P such
+that A contains an aggregate term, and A is in stratum Pi while B is in
+stratum Pj, <strong>then i &gt; j</strong>.</p>
+<p>In other terms, all the predicates in the body of a rule containing an
+aggregate function must be computed in a previous stratum. Recursion
+through aggregation is therefore not allowed in the same stratum.</p>
+<p class="rubric">Examples</p>
+<p>The following datalog program is invalid for stratified aggregation
+p(X) :- q(X).
+p(sum&lt;X&gt;) :- p(X).</p>
+<div role="list" class="citation-list">
+<div class="citation" id="r65a2c5be063b-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>T. J. Green, S. S. Huang, B. T. Loo, W. Zhou,
+Datalog and Recursive Query Processing.
+FNT in Databases. 5, 105–195 (2012).</p>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenUnstratifiedAggregation.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenUnstratifiedAggregation.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'The</span> <span class="pre">predicates</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">body</span> <span class="pre">of</span> <span class="pre">an</span> <span class="pre">aggregation</span> <span class="pre">rule</span> <span class="pre">must</span> <span class="pre">not</span> <span class="pre">depend</span> <span class="pre">on</span> <span class="pre">its</span> <span class="pre">head</span> <span class="pre">(no</span> <span class="pre">recursion</span> <span class="pre">through</span> <span class="pre">aggregation).'</span></span><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ForbiddenUnstratifiedAggregation.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ForbiddenUnstratifiedAggregation.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.InvalidCommandExpression">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidCommandExpression</span></span><a class="headerlink" href="#neurolang.exceptions.InvalidCommandExpression" title="Link to this definition">#</a></dt>
+<dd><p>Invalid Command statement.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.InvalidCommandExpression.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.InvalidCommandExpression.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.InvalidCommandExpression.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.InvalidCommandExpression.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.InvalidCommandExpression.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.InvalidCommandExpression.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotNamedRelationException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NegativeFormulaNotNamedRelationException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException" title="Link to this definition">#</a></dt>
+<dd><p>This rule contains a negative literal R(v) which was not previously
+defined as a non-negated relation.</p>
+<p class="rubric">Examples</p>
+<p>t(x, y) :- r(x, y) &amp; q(y, z)
+s(x, y, prob(x, y)) :- ~t(x, x) &amp; q(x, y)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotNamedRelationException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotNamedRelationException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Negate</span> <span class="pre">only</span> <span class="pre">named</span> <span class="pre">predicates:</span> <span class="pre">define</span> <span class="pre">the</span> <span class="pre">negated</span> <span class="pre">formula</span> <span class="pre">as</span> <span class="pre">its</span> <span class="pre">own</span> <span class="pre">rule</span> <span class="pre">first.'</span></span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotNamedRelationException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotNamedRelationException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotSafeRangeException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NegativeFormulaNotSafeRangeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">formula</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException" title="Link to this definition">#</a></dt>
+<dd><p>This rule is not <em>range restricted</em> and cannot be solved in
+<em>nonrecursive datalog with negation</em>. One of the variables in this rule
+appears in a negated literal without also appearing in a non-negated
+literal.</p>
+<p>A datalog rule composed of literals of the form R(v) or ¬R(v) is
+<em>range restricted</em> if each variable x occurring in the rule occurs in at
+least one literal of the form R(v) (non-negated literal) in the rule body.
+See 5.2 from <a class="reference internal" href="#rabfd1efe83a1-1" id="id3">[1]</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>StudyNotMatchingSegregationQuery(s, n) :- (
+    ~StudyMatchingNetworkQuery(s, n)
+    &amp; Network(n)
+)
+</pre></div>
+</div>
+<p>Variable <code class="docutils literal notranslate"><span class="pre">s</span></code> is present in the negated <code class="docutils literal notranslate"><span class="pre">StudyMatchingNetworkQuery</span></code>
+literal but is not present in a non-negated literal. A valid query body
+would be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>StudyNotMatchingSegregationQuery(s, n) :- (
+    ~StudyMatchingNetworkQuery(s, n)
+    &amp; Study(s) &amp; Network(n)
+)
+</pre></div>
+</div>
+<div role="list" class="citation-list">
+<div class="citation" id="rabfd1efe83a1-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>S. Abiteboul, R. Hull, V. Vianu, Foundations of databases
+(Addison Wesley, 1995), Addison-Wesley.</p>
+</div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotSafeRangeException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotSafeRangeException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Every</span> <span class="pre">variable</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">negated</span> <span class="pre">predicate</span> <span class="pre">must</span> <span class="pre">also</span> <span class="pre">appear</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">non-negated</span> <span class="pre">predicate</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">rule</span> <span class="pre">body.'</span></span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NegativeFormulaNotSafeRangeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NegativeFormulaNotSafeRangeException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NeuroLangException</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangException" title="Link to this definition">#</a></dt>
+<dd><p>Base class for NeuroLang Exceptions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangFrontendException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NeuroLangFrontendException</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangFrontendException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangFrontendException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangFrontendException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangFrontendException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangNotImplementedError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NeuroLangNotImplementedError</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangNotImplementedError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangNotImplementedError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NeuroLangNotImplementedError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NeuroLangNotImplementedError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NoValidChaseClassForStratumException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NoValidChaseClassForStratumException</span></span><a class="headerlink" href="#neurolang.exceptions.NoValidChaseClassForStratumException" title="Link to this definition">#</a></dt>
+<dd><p>Neurolang implements stratified datalog which splits a datalog program
+into several independent strata that can each be solved by a specific
+chase algorithm based on the properties of the rules in the stratum
+(using negation, aggregation and/or recursion).</p>
+<p>This exception is raised if there is no valid algorithm available to
+solve a specific stratum; e.g. no recursive compatible algorithm was
+provided to solve a recursive stratum.</p>
+<p>See <cite>neurolang.datalog.chase.__init__.py</cite> for available chase
+implementations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NoValidChaseClassForStratumException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NoValidChaseClassForStratumException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NoValidChaseClassForStratumException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NoValidChaseClassForStratumException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NoValidChaseClassForStratumException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NoValidChaseClassForStratumException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NonLiftableException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NonLiftableException</span></span><a class="headerlink" href="#neurolang.exceptions.NonLiftableException" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NonLiftableException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NonLiftableException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NonLiftableException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NonLiftableException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NonLiftableException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NonLiftableException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpression">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotConjunctiveExpression</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpression" title="Link to this definition">#</a></dt>
+<dd><p>This expression is not conjunctive. In this case, an expression is
+conjunctive if it is a conjunction of:</p>
+<ul class="simple">
+<li><p>Constant</p></li>
+<li><p>A function or predicate of constants</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpression.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpression.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpression.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpression.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpression.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpression.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNegation">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotConjunctiveExpressionNegation</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNegation" title="Link to this definition">#</a></dt>
+<dd><p>This expression is not conjunctive. In this case, an expression is
+conjunctive if it is a conjunction of:</p>
+<ul class="simple">
+<li><p>Constant</p></li>
+<li><p>A function or predicate of conjunctive arguments</p></li>
+<li><p>A negated predicate of conjunctive arguments</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNegation.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNegation.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNegation.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNegation.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNestedPredicates">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotConjunctiveExpressionNestedPredicates</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates" title="Link to this definition">#</a></dt>
+<dd><p>This expression is not conjunctive. In this case, an expression is
+conjunctive if it is a conjunction of:</p>
+<ul class="simple">
+<li><p>Constant</p></li>
+<li><p>A function or predicate of conjunctive arguments</p></li>
+<li><p>A quantifier of conjunctive arguments</p></li>
+</ul>
+<p>Note that in this case, negated predicates are not valid (negation and
+aggregation cannot be used in the same rule).</p>
+<p class="rubric">Examples</p>
+<dl class="simple">
+<dt>StudyMatchingRegionSegregationQuery(count(s), r) :-</dt><dd><p>RegionReported(r, s) &amp; ~RegionReported(r2, s)
+&amp; RegionLabel(r2) &amp; (r2 != r)</p>
+</dd>
+</dl>
+<p>The above expression is not conjunctive since it uses an aggregate
+function <cite>count</cite> in combination with a negated predicate
+<cite>~RegionReported</cite>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Negation</span> <span class="pre">and</span> <span class="pre">aggregation</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">rule:</span> <span class="pre">compute</span> <span class="pre">the</span> <span class="pre">negated</span> <span class="pre">part</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">separate</span> <span class="pre">rule</span> <span class="pre">first.'</span></span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotConjunctiveExpressionNestedPredicates.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotInFONegE">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotInFONegE</span></span><a class="headerlink" href="#neurolang.exceptions.NotInFONegE" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotInFONegE.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotInFONegE.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotInFONegE.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NotInFONegE.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotInFONegE.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotInFONegE.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotRankedException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotRankedException</span></span><a class="headerlink" href="#neurolang.exceptions.NotRankedException" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotRankedException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotRankedException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotRankedException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NotRankedException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotRankedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotRankedException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotUnateException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">NotUnateException</span></span><a class="headerlink" href="#neurolang.exceptions.NotUnateException" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotUnateException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotUnateException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotUnateException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.NotUnateException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.NotUnateException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.NotUnateException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ParserError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ParserError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ParserError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ParserError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ParserError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ParserError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.ParserError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ParserError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ParserError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.PredicateArityError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">PredicateArityError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.PredicateArityError" title="Link to this definition">#</a></dt>
+<dd><p>A predicate is used with a number of arguments other than its columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>predicate</strong><span class="classifier">str</span></dt><dd><p>Name of the predicate.</p>
+</dd>
+<dt><strong>arity</strong><span class="classifier">int</span></dt><dd><p>Number of columns of the predicate.</p>
+</dd>
+<dt><strong>used</strong><span class="classifier">int</span></dt><dd><p>Number of arguments the predicate is used with.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The message only states the counts. When a single argument is used for
+a predicate with several columns, as a SQUALL noun without <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">ND</span></code>
+does, <cite>suggestion</cite> tells how to use all its columns; when more
+arguments than columns are used, as a SQUALL verb with too many
+objects does, it points to a tuple subject on the relation storing
+the extra value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.PredicateArityError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.PredicateArityError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.PredicateArityError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Use</span> <span class="pre">every</span> <span class="pre">predicate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">arguments</span> <span class="pre">as</span> <span class="pre">in</span> <span class="pre">its</span> <span class="pre">definition.'</span></span><a class="headerlink" href="#neurolang.exceptions.PredicateArityError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.PredicateArityError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.PredicateArityError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProjectionOverMissingColumnsError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ProjectionOverMissingColumnsError</span></span><a class="headerlink" href="#neurolang.exceptions.ProjectionOverMissingColumnsError" title="Link to this definition">#</a></dt>
+<dd><p>One of the predicates in the program has wrong arguments.
+See <cite>WrongArgumentsInPredicateError</cite></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProjectionOverMissingColumnsError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProjectionOverMissingColumnsError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProjectionOverMissingColumnsError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ProjectionOverMissingColumnsError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProtectedKeywordError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">ProtectedKeywordError</span></span><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError" title="Link to this definition">#</a></dt>
+<dd><p>One of the predicates in the program uses a reserved keyword.
+Reserved keywords include : {PROB, with, exists}</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProtectedKeywordError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProtectedKeywordError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Rename</span> <span class="pre">the</span> <span class="pre">predicate:</span> <span class="pre">PROB,</span> <span class="pre">with</span> <span class="pre">and</span> <span class="pre">exists</span> <span class="pre">are</span> <span class="pre">reserved</span> <span class="pre">keywords.'</span></span><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.ProtectedKeywordError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.ProtectedKeywordError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraError</span></span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError" title="Link to this definition">#</a></dt>
+<dd><p>Base class for Relational Algebra provenance exceptions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraNotImplementedError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">RelationalAlgebraNotImplementedError</span></span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError" title="Link to this definition">#</a></dt>
+<dd><p>Neurolang was unable to match one of the relational algebra operations
+defined in the program. This is probably due to a malformed query.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraNotImplementedError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraNotImplementedError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RelationalAlgebraNotImplementedError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RelationalAlgebraNotImplementedError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.RuleNotFoundError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">RuleNotFoundError</span></span><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RuleNotFoundError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.RuleNotFoundError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.RuleNotFoundError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.RuleNotFoundError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.SquallSemanticError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">SquallSemanticError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SquallSemanticError" title="Link to this definition">#</a></dt>
+<dd><p>Semantic error in a SQUALL program — parse succeeded but semantics invalid.</p>
+<p>Raised when the SQUALL transformer encounters a valid parse tree that
+represents a logically invalid or unsupported construction, such as:
+- a rule with an empty body
+- an anaphoric <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">Noun</span></code> with no matching <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">every</span> <span class="pre">Noun</span></code> in scope
+- an unrecognised comparison or aggregation function
+- a missing determiner or noun group in a rule body</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>message</strong><span class="classifier">str</span></dt><dd><p>Human-readable description of the error.</p>
+</dd>
+<dt><strong>line</strong><span class="classifier">int, optional</span></dt><dd><p>1-based source line number where the error was detected.</p>
+</dd>
+<dt><strong>column</strong><span class="classifier">int, optional</span></dt><dd><p>1-based source column number where the error was detected.</p>
+</dd>
+<dt><strong>source_line</strong><span class="classifier">str, optional</span></dt><dd><p>The full source line text for context display.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.SquallSemanticError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SquallSemanticError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.SquallSemanticError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.SquallSemanticError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.SquallSemanticError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SquallSemanticError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.SymbolNotFoundError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">SymbolNotFoundError</span></span><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError" title="Link to this definition">#</a></dt>
+<dd><p>A symbol is being used in a rule without having been previously
+defined.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.SymbolNotFoundError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.SymbolNotFoundError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Check</span> <span class="pre">the</span> <span class="pre">spelling,</span> <span class="pre">or</span> <span class="pre">define</span> <span class="pre">the</span> <span class="pre">symbol</span> <span class="pre">before</span> <span class="pre">using</span> <span class="pre">it</span> <span class="pre">(e.g.</span> <span class="pre">with</span> <span class="pre">nl.add_tuple_set).'</span></span><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.SymbolNotFoundError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.SymbolNotFoundError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.TranslateToNamedRAException">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">TranslateToNamedRAException</span></span><a class="headerlink" href="#neurolang.exceptions.TranslateToNamedRAException" title="Link to this definition">#</a></dt>
+<dd><p>Base exception for errors translating Datalog to Named Relational Algebra.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.TranslateToNamedRAException.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.TranslateToNamedRAException.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.TranslateToNamedRAException.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.TranslateToNamedRAException.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.TranslateToNamedRAException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.TranslateToNamedRAException.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnboundVariablesError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnboundVariablesError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">occurrences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnboundVariablesError" title="Link to this definition">#</a></dt>
+<dd><p>This rule is not <em>range restricted</em>: some of its variables do not
+appear in any positive atom of its body.</p>
+<p>Every variable of a rule must occur in a non-negated predicate of the
+body, or be defined by an equality <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">expression</span></code> whose
+expression only uses such variables. Functions, comparisons and
+negated predicates can only filter the values of bound variables,
+they cannot enumerate them. See 5.2 from <a href="#id5"><span class="problematic" id="id4">[1]_</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>rule</strong><span class="classifier">str or None</span></dt><dd><p>Name of the head predicate of the rule, None for a query or when
+the rule is unknown.</p>
+</dd>
+<dt><strong>variables</strong><span class="classifier">tuple of str</span></dt><dd><p>Names of the unbound variables.</p>
+</dd>
+<dt><strong>occurrences</strong><span class="classifier">tuple of str</span></dt><dd><p>The formulas of the body where the unbound variables appear.</p>
+</dd>
+<dt><strong>example</strong><span class="classifier">str, optional</span></dt><dd><p>A predicate that would bind the variables in the body.</p>
+</dd>
+<dt><strong>query</strong><span class="classifier">bool</span></dt><dd><p>Whether the body is the body of a query.</p>
+</dd>
+<dt><strong>.. [1] S. Abiteboul, R. Hull, V. Vianu, Foundations of databases</strong></dt><dd><p>(Addison Wesley, 1995), Addison-Wesley.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>reports_close(i, j, k, s) :- (
+    (euclidean(i, j, k, i1, j1, k1) &lt; 2.)
+    &amp; voxel(i, j, k) &amp; peak_reported(i, j, k, s)
+)
+</pre></div>
+</div>
+<p>Variables <code class="docutils literal notranslate"><span class="pre">i1</span></code>, <code class="docutils literal notranslate"><span class="pre">j1</span></code> and <code class="docutils literal notranslate"><span class="pre">k1</span></code> appear only as arguments of the
+function <code class="docutils literal notranslate"><span class="pre">euclidean</span></code>. A valid rule binds them with a predicate:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>reports_close(i, j, k, s) :- (
+    (euclidean(i, j, k, i1, j1, k1) &lt; 2.)
+    &amp; voxel(i, j, k) &amp; peak_reported(i1, j1, k1, s)
+)
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnboundVariablesError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnboundVariablesError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnboundVariablesError.located">
+<span class="sig-name descname"><span class="pre">located</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnboundVariablesError.located" title="Link to this definition">#</a></dt>
+<dd><p>Return this error, reported for the rule named <em>rule</em>, or for a
+query.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnboundVariablesError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnboundVariablesError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnboundVariablesError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnboundVariablesError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedCharactersError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnexpectedCharactersError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedCharactersError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedCharactersError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedCharactersError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedCharactersError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnexpectedCharactersError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedCharactersError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedCharactersError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedExpressionError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnexpectedExpressionError</span></span><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedExpressionError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedExpressionError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedExpressionError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedExpressionError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedTokenError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnexpectedTokenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedTokenError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedTokenError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedTokenError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedTokenError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnexpectedTokenError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnexpectedTokenError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnexpectedTokenError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedProgramError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnsupportedProgramError</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError" title="Link to this definition">#</a></dt>
+<dd><p>Some parts of the datalog program are (currently) unsupported.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedProgramError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedProgramError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedProgramError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedProgramError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedQueryError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnsupportedQueryError</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError" title="Link to this definition">#</a></dt>
+<dd><p>Queries on probabilistic predicates are unsupported.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedQueryError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedQueryError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedQueryError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedQueryError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedSolverError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">UnsupportedSolverError</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedSolverError" title="Link to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedSolverError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedSolverError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedSolverError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#neurolang.exceptions.UnsupportedSolverError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.UnsupportedSolverError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.UnsupportedSolverError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.exceptions.WrongArgumentsInPredicateError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.exceptions.</span></span><span class="sig-name descname"><span class="pre">WrongArgumentsInPredicateError</span></span><a class="headerlink" href="#neurolang.exceptions.WrongArgumentsInPredicateError" title="Link to this definition">#</a></dt>
+<dd><p>One of the predicates in the query has the wrong number of arguments.</p>
+<p class="rubric">Examples</p>
+<p>NetworkReported is defined with two variables but used with three
+in the second rule:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>NetworkReported(n, s) :- RegionReported(
+    r, s
+) &amp; RegionInNetwork(r, n)
+StudyMatchingNetworkQuery(s, n) :- (
+    RegionReported("VWFA", s)
+    &amp; NetworkReported(n, s, r)
+)
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.WrongArgumentsInPredicateError.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.WrongArgumentsInPredicateError.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.exceptions.WrongArgumentsInPredicateError.suggestion">
+<span class="sig-name descname"><span class="pre">suggestion</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Use</span> <span class="pre">every</span> <span class="pre">predicate</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">same</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">arguments</span> <span class="pre">as</span> <span class="pre">in</span> <span class="pre">its</span> <span class="pre">definition.'</span></span><a class="headerlink" href="#neurolang.exceptions.WrongArgumentsInPredicateError.suggestion" title="Link to this definition">#</a></dt>
+<dd><p>Actionable hint shown to users by the error formatter, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.exceptions.WrongArgumentsInPredicateError.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.exceptions.WrongArgumentsInPredicateError.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="neurolang.expression_walker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">neurolang.expression_walker</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="neurolang.logic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">neurolang.logic</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>

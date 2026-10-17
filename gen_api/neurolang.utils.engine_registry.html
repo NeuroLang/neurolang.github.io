@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>neurolang.utils.engine_registry &#8212; NeuroLang 0.1a21.dev102+gdfb460953 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/neurolang.css?v=1bfb7717" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../_static/documentation_options.js?v=614722ee"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/sg-tags.js?v=d80f6fa4"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gen_api/neurolang.utils.engine_registry';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="neurolang.utils.engines.base" href="neurolang.utils.engines.base.html" />
+    <link rel="prev" title="neurolang.utils.cli" href="neurolang.utils.cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a21" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">NeuroLang</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorial_logic_programming.html">
+    NeuroLang for Logic Programmers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.NeurolangDL.html">neurolang.NeurolangDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.NeurolangPDL.html">neurolang.NeurolangPDL</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expressions.html">neurolang.expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expression_pattern_matching.html">neurolang.expression_pattern_matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.expression_walker.html">neurolang.expression_walker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.exceptions.html">neurolang.exceptions</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.logic.html">neurolang.logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.datalog.html">neurolang.datalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.probabilistic.html">neurolang.probabilistic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.relational_algebra.html">neurolang.relational_algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.relational_algebra_provenance.html">neurolang.relational_algebra_provenance</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.cli.html">neurolang.utils.cli</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">neurolang.utils.engine_registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="neurolang.utils.engines.base.html">neurolang.utils.engines.base</a></li>
+</ul>
+</div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Argument"><code class="docutils literal notranslate"><span class="pre">Argument</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Argument.columns"><code class="docutils literal notranslate"><span class="pre">Argument.columns</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Argument.sort"><code class="docutils literal notranslate"><span class="pre">Argument.sort</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Argument.type"><code class="docutils literal notranslate"><span class="pre">Argument.type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort"><code class="docutils literal notranslate"><span class="pre">Sort</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.columns"><code class="docutils literal notranslate"><span class="pre">Sort.columns</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.description"><code class="docutils literal notranslate"><span class="pre">Sort.description</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.grid"><code class="docutils literal notranslate"><span class="pre">Sort.grid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.name"><code class="docutils literal notranslate"><span class="pre">Sort.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.space"><code class="docutils literal notranslate"><span class="pre">Sort.space</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.Sort.type"><code class="docutils literal notranslate"><span class="pre">Sort.type</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.UnsupportedRelationFile"><code class="docutils literal notranslate"><span class="pre">UnsupportedRelationFile</span></code></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.UnsupportedRelationFile.add_note"><code class="docutils literal notranslate"><span class="pre">UnsupportedRelationFile.add_note()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.UnsupportedRelationFile.with_traceback"><code class="docutils literal notranslate"><span class="pre">UnsupportedRelationFile.with_traceback()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.build_engine"><code class="docutils literal notranslate"><span class="pre">build_engine()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.engine_grid_names"><code class="docutils literal notranslate"><span class="pre">engine_grid_names()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_engine_config"><code class="docutils literal notranslate"><span class="pre">get_engine_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_hidden_predicates"><code class="docutils literal notranslate"><span class="pre">get_hidden_predicates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_predicates"><code class="docutils literal notranslate"><span class="pre">get_predicates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_probabilistic_predicates"><code class="docutils literal notranslate"><span class="pre">get_probabilistic_predicates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_signatures"><code class="docutils literal notranslate"><span class="pre">get_signatures()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.get_sorts"><code class="docutils literal notranslate"><span class="pre">get_sorts()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.list_engine_names"><code class="docutils literal notranslate"><span class="pre">list_engine_names()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.read_relation_file"><code class="docutils literal notranslate"><span class="pre">read_relation_file()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.relation_file_separator"><code class="docutils literal notranslate"><span class="pre">relation_file_separator()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurolang.utils.engine_registry.show_engines"><code class="docutils literal notranslate"><span class="pre">show_engines()</span></code></a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">neurolang.utils.engine_registry</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-neurolang.utils.engine_registry">
+<span id="neurolang-utils-engine-registry"></span><h1>neurolang.utils.engine_registry<a class="headerlink" href="#module-neurolang.utils.engine_registry" title="Link to this heading">#</a></h1>
+<p>Declarative engine registry for the neurolang-query CLI.</p>
+<p>Engines are declared in <code class="file docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.  Each engine may
+define:</p>
+<ul>
+<li><p>a <strong>Python initialisation script</strong> (<code class="docutils literal notranslate"><span class="pre">python_init</span></code>);</p></li>
+<li><p>optional <strong>Datalog initialisation code</strong> (<code class="docutils literal notranslate"><span class="pre">datalog_init</span></code>) evaluated
+after the Python script;</p></li>
+<li><p>optional <strong>CSV/TSV relations</strong> (<code class="docutils literal notranslate"><span class="pre">relations</span></code>) loaded as extensional
+predicates after the Datalog init.  Each relation entry may carry
+optional <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">description</span></code> fields for predicate metadata
+used by the <code class="docutils literal notranslate"><span class="pre">--list-predicates</span></code> command.  The <code class="docutils literal notranslate"><span class="pre">file</span></code> value may be
+a URL (<code class="docutils literal notranslate"><span class="pre">http://</span></code> / <code class="docutils literal notranslate"><span class="pre">https://</span></code>) for automatic download;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">downloads</span></code> — files to fetch (with optional archive extraction);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">templates</span></code> — neuroimaging templates (brain masks, anatomical
+templates) downloaded via <strong>nilearn</strong> or <strong>TemplateFlow</strong> (if the
+<code class="docutils literal notranslate"><span class="pre">templateflow</span></code> package is installed).  Each template may optionally
+register a <code class="docutils literal notranslate"><span class="pre">voxel(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> predicate from its non-zero mask:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">templates</span><span class="p">:</span>
+  <span class="n">mni_brain</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">nilearn</span>
+    <span class="n">variant</span><span class="p">:</span> <span class="n">brain_mask</span>
+    <span class="n">predicate</span><span class="p">:</span> <span class="n">voxel</span>
+  <span class="n">t1_ref</span><span class="p">:</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">templateflow</span>
+    <span class="n">template</span><span class="p">:</span> <span class="n">MNI152NLin2009cAsym</span>
+    <span class="n">resolution</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ontologies</span></code> — OWL/RDF ontologies to load from URLs or local paths;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">builtins</span></code> — list of known function names (<code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>,
+<code class="docutils literal notranslate"><span class="pre">startswith</span></code>, etc.) to register as callable symbols;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">probabilistic_choice</span></code> — uniform probabilistic choices declared as
+<code class="docutils literal notranslate"><span class="pre">name:</span> <span class="pre">{source:</span> <span class="pre">other_predicate}</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atlases</span></code> — brain atlases downloaded via nilearn (e.g. <code class="docutils literal notranslate"><span class="pre">destrieux</span></code>,
+<code class="docutils literal notranslate"><span class="pre">schaefer</span></code>, <code class="docutils literal notranslate"><span class="pre">difumo</span></code>) and registered as predicates with
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ExplicitVBR</span></code> regions.  Deterministic atlases
+use <code class="docutils literal notranslate"><span class="pre">ExplicitVBR.from_spatial_image_label</span></code>; probabilistic atlases
+are thresholded (default 0.5) to create binary region masks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text_embeddings</span></code> — semantic search over document texts (e.g. PubMed
+abstracts) with SPECTER2, registered as a function
+<code class="docutils literal notranslate"><span class="pre">f(query,</span> <span class="pre">doc)</span> <span class="pre">-&gt;</span> <span class="pre">similarity</span></code>; see
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">neurolang.utils.text_embeddings</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_embeddings</span><span class="p">:</span>
+  <span class="n">study_abstracts</span><span class="p">:</span>
+    <span class="n">ids_from</span><span class="p">:</span> <span class="n">study</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">pubmed</span>
+    <span class="n">function</span><span class="p">:</span> <span class="n">query_similarity</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">neurolang.utils.engine_registry</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">build_engine</span><span class="p">,</span>
+    <span class="n">show_engines</span><span class="p">,</span>
+    <span class="n">list_engine_names</span><span class="p">,</span>
+    <span class="n">get_engine_config</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Load engine from the built-in YAML</span>
+<span class="n">nl</span> <span class="o">=</span> <span class="n">build_engine</span><span class="p">(</span><span class="s2">"neurosynth"</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"data"</span><span class="p">))</span>
+
+<span class="c1"># Load engine from a custom YAML file</span>
+<span class="n">nl</span> <span class="o">=</span> <span class="n">build_engine</span><span class="p">(</span><span class="s2">"my_engine"</span><span class="p">,</span> <span class="n">yaml_path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"my_engines.yaml"</span><span class="p">),</span>
+                  <span class="n">data_dir</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"data"</span><span class="p">))</span>
+
+<span class="c1"># Print available engines with descriptions</span>
+<span class="n">show_engines</span><span class="p">()</span>
+
+<span class="c1"># List engine names from a custom YAML</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">list_engine_names</span><span class="p">(</span><span class="n">yaml_path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"my_engines.yaml"</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.build_engine" title="neurolang.utils.engine_registry.build_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_engine</span></code></a>(name, data_dir[, resolution, ...])</p></td>
+<td><p>Create and populate a <code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> engine from its declarative YAML config.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.engine_grid_names" title="neurolang.utils.engine_registry.engine_grid_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">engine_grid_names</span></code></a>(cfg)</p></td>
+<td><p>Return the names of the grids of the engine <em>cfg</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_engine_config" title="neurolang.utils.engine_registry.get_engine_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_engine_config</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the YAML configuration dict for a single engine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_hidden_predicates" title="neurolang.utils.engine_registry.get_hidden_predicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_hidden_predicates</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the predicates of an engine its SQUALL completion withholds.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_predicates" title="neurolang.utils.engine_registry.get_predicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_predicates</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the predicate metadata dict for an engine from its YAML config.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_probabilistic_predicates" title="neurolang.utils.engine_registry.get_probabilistic_predicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_probabilistic_predicates</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the predicates of an engine declared with a probability.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_signatures" title="neurolang.utils.engine_registry.get_signatures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_signatures</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the arguments of the predicates of an engine, by predicate.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.get_sorts" title="neurolang.utils.engine_registry.get_sorts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sorts</span></code></a>(name[, yaml_path])</p></td>
+<td><p>Return the sorts an engine declares, by name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.list_engine_names" title="neurolang.utils.engine_registry.list_engine_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_engine_names</span></code></a>([yaml_path])</p></td>
+<td><p>Return the names of all registered engines.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.read_relation_file" title="neurolang.utils.engine_registry.read_relation_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_relation_file</span></code></a>(path)</p></td>
+<td><p>Return the rows of the CSV or TSV file <em>path</em> as a DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.relation_file_separator" title="neurolang.utils.engine_registry.relation_file_separator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relation_file_separator</span></code></a>(path)</p></td>
+<td><p>Return the column separator of the relation file <em>path</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.show_engines" title="neurolang.utils.engine_registry.show_engines"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_engines</span></code></a>([yaml_path])</p></td>
+<td><p>Print a formatted description of all available engines.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.Argument" title="neurolang.utils.engine_registry.Argument"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Argument</span></code></a>(sort, columns[, type])</p></td>
+<td><p>An argument of a predicate: an entity of a <em>sort</em> over <em>columns</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.Sort" title="neurolang.utils.engine_registry.Sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sort</span></code></a>(name, columns[, type, description, ...])</p></td>
+<td><p>A sort of entities an engine declares once, in its <code class="docutils literal notranslate"><span class="pre">sorts</span></code> section.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Exceptions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#neurolang.utils.engine_registry.UnsupportedRelationFile" title="neurolang.utils.engine_registry.UnsupportedRelationFile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UnsupportedRelationFile</span></code></a></p></td>
+<td><p>Raised for a relation file whose extension is not supported.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Argument">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">Argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.Argument" title="Link to this definition">#</a></dt>
+<dd><p>An argument of a predicate: an entity of a <em>sort</em> over <em>columns</em>.</p>
+<p>A voxel is one argument of sort <code class="docutils literal notranslate"><span class="pre">voxel</span></code> over the columns <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">j,</span>
+<span class="pre">k</span></code>; <em>type</em> names the type of the values of its columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Argument.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#neurolang.utils.engine_registry.Argument.columns" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Argument.sort">
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Argument.sort" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Argument.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Argument.type" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">Sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort" title="Link to this definition">#</a></dt>
+<dd><p>A sort of entities an engine declares once, in its <code class="docutils literal notranslate"><span class="pre">sorts</span></code> section.</p>
+<p>Its entities span <em>columns</em>, whose values are of the <em>type</em>; a sort of
+N &gt; 1 columns reads <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">ND</span></code> in SQUALL (<code class="docutils literal notranslate"><span class="pre">every</span> <span class="pre">Voxel</span> <span class="pre">in</span> <span class="pre">3D</span></code>).</p>
+<p>The <em>space</em> of a sort of points tells what its columns are: <code class="docutils literal notranslate"><span class="pre">voxel</span></code>
+for the indices <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> of a grid, <code class="docutils literal notranslate"><span class="pre">mm</span></code> for coordinates
+<code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> in millimetres in the space of the engine’s template,
+<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> otherwise. The <em>grid</em> of a sort of voxels is the grid it
+indexes: that of the engine’s template (see <a class="reference internal" href="#neurolang.utils.engine_registry.build_engine" title="neurolang.utils.engine_registry.build_engine"><code class="xref py py-func docutils literal notranslate"><span class="pre">build_engine()</span></code></a>)
+when <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">template</span></code>, else that of the atlas of this name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><em>Tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a><em>, </em><em>...</em><em>]</em>)</p></li>
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>space</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>grid</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.columns" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.description">
+<span class="sig-name descname"><span class="pre">description</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.description" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.grid">
+<span class="sig-name descname"><span class="pre">grid</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.grid" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.name" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.space">
+<span class="sig-name descname"><span class="pre">space</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.space" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.Sort.type">
+<span class="sig-name descname"><span class="pre">type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#neurolang.utils.engine_registry.Sort.type" title="Link to this definition">#</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.UnsupportedRelationFile">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">UnsupportedRelationFile</span></span><a class="headerlink" href="#neurolang.utils.engine_registry.UnsupportedRelationFile" title="Link to this definition">#</a></dt>
+<dd><p>Raised for a relation file whose extension is not supported.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.UnsupportedRelationFile.add_note">
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.UnsupportedRelationFile.add_note" title="Link to this definition">#</a></dt>
+<dd><p>Exception.add_note(note) –
+add a note to the exception</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.UnsupportedRelationFile.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.UnsupportedRelationFile.with_traceback" title="Link to this definition">#</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.build_engine">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">build_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.build_engine" title="Link to this definition">#</a></dt>
+<dd><p>Create and populate a <code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> engine from its
+declarative YAML config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong></dt><dd><p>Registered engine name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;neurosynth&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;destrieux&quot;</span></code>).</p>
+</dd>
+<dt><strong>data_dir</strong></dt><dd><p>Directory under which downloaded data is cached.</p>
+</dd>
+<dt><strong>resolution</strong></dt><dd><p>If set, resample the MNI mask to the given isotropic resolution (mm).</p>
+</dd>
+<dt><strong>yaml_path</strong></dt><dd><p>Path to an engine YAML file.  Defaults to the built-in
+<code class="docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>NeurolangPDL</dt><dd><p>A fully initialised engine ready for query execution. Its
+<code class="docutils literal notranslate"><span class="pre">template</span></code> attribute is the MNI image whose grid the voxel
+indices of the engine refer to (the sorts of <code class="docutils literal notranslate"><span class="pre">space:</span> <span class="pre">voxel</span></code>),
+resampled to <em>resolution</em> if given, or None if the engine does
+not require the MNI mask. Its <code class="docutils literal notranslate"><span class="pre">grids</span></code> attribute holds the
+images of the grids voxel indices may index, by name: the
+template, as <code class="docutils literal notranslate"><span class="pre">template</span></code>, and each atlas, under its name (the
+sorts naming a <code class="docutils literal notranslate"><span class="pre">grid</span></code>).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <em>name</em> is not a registered engine.</p>
+</dd>
+<dt>ImportError</dt><dd><p>If the engine’s Python init module cannot be loaded.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>data_dir</strong> (<em>Path</em>)</p></li>
+<li><p><strong>resolution</strong> (<em>Optional</em><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><em>float</em></a><em>]</em>)</p></li>
+<li><p><strong>yaml_path</strong> (<em>Optional</em><em>[</em><em>Path</em><em>]</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="neurolang.NeurolangPDL.html#neurolang.NeurolangPDL" title="neurolang.NeurolangPDL">NeurolangPDL</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.engine_grid_names">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">engine_grid_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.engine_grid_names" title="Link to this definition">#</a></dt>
+<dd><p>Return the names of the grids of the engine <em>cfg</em>.</p>
+<p>They are the template’s and those of the atlases it loads.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cfg</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><em>Any</em></a><em>]</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_engine_config">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_engine_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_engine_config" title="Link to this definition">#</a></dt>
+<dd><p>Return the YAML configuration dict for a single engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong></dt><dd><p>Engine name (key in the YAML <code class="docutils literal notranslate"><span class="pre">engines</span></code> dict).</p>
+</dd>
+<dt><strong>yaml_path</strong></dt><dd><p>Path to an engine YAML file.  Defaults to the built-in
+<code class="docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <em>name</em> is not a registered engine.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><em>Any</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_hidden_predicates">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_hidden_predicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_hidden_predicates" title="Link to this definition">#</a></dt>
+<dd><p>Return the predicates of an engine its SQUALL completion withholds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#frozenset" title="(in Python v3.15)">frozenset</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_predicates">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_predicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_predicates" title="Link to this definition">#</a></dt>
+<dd><p>Return the predicate metadata dict for an engine from its YAML config.</p>
+<p>Combines the <code class="docutils literal notranslate"><span class="pre">predicates</span></code> section with metadata harvested from the
+<code class="docutils literal notranslate"><span class="pre">relations</span></code> section (each relation entry may carry <code class="docutils literal notranslate"><span class="pre">name</span></code> and
+<code class="docutils literal notranslate"><span class="pre">description</span></code> fields).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong></dt><dd><p>Engine name.</p>
+</dd>
+<dt><strong>yaml_path</strong></dt><dd><p>Path to an engine YAML file.  Defaults to the built-in
+<code class="docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><em>Any</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_probabilistic_predicates">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_probabilistic_predicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_probabilistic_predicates" title="Link to this definition">#</a></dt>
+<dd><p>Return the predicates of an engine declared with a probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#frozenset" title="(in Python v3.15)">frozenset</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_signatures">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_signatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_signatures" title="Link to this definition">#</a></dt>
+<dd><p>Return the arguments of the predicates of an engine, by predicate.</p>
+<p>Only the predicates declaring their <code class="docutils literal notranslate"><span class="pre">arguments</span></code> are returned. A
+sort spans the same number of columns wherever it appears, and as
+many as the engine declares for it, or a <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a> is
+raised.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.15)"><em>Tuple</em></a>[<a class="reference internal" href="#neurolang.utils.engine_registry.Argument" title="neurolang.utils.engine_registry.Argument"><em>Argument</em></a>, …]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.get_sorts">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">get_sorts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.get_sorts" title="Link to this definition">#</a></dt>
+<dd><p>Return the sorts an engine declares, by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><em>str</em></a>)</p></li>
+<li><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.15)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>, <a class="reference internal" href="#neurolang.utils.engine_registry.Sort" title="neurolang.utils.engine_registry.Sort"><em>Sort</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.list_engine_names">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">list_engine_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.list_engine_names" title="Link to this definition">#</a></dt>
+<dd><p>Return the names of all registered engines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>yaml_path</strong></dt><dd><p>Path to an engine YAML file.  Defaults to the built-in
+<code class="docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.15)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.read_relation_file">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">read_relation_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.read_relation_file" title="Link to this definition">#</a></dt>
+<dd><p>Return the rows of the CSV or TSV file <em>path</em> as a DataFrame.</p>
+<p>The first line of the file is the header. <code class="docutils literal notranslate"><span class="pre">~</span></code> in <em>path</em> is
+expanded and the separator follows from the extension (see
+<a class="reference internal" href="#neurolang.utils.engine_registry.relation_file_separator" title="neurolang.utils.engine_registry.relation_file_separator"><code class="xref py py-func docutils literal notranslate"><span class="pre">relation_file_separator()</span></code></a>); gzipped files are decompressed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.relation_file_separator">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">relation_file_separator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.relation_file_separator" title="Link to this definition">#</a></dt>
+<dd><p>Return the column separator of the relation file <em>path</em>.</p>
+<p>It follows from the extension: <code class="docutils literal notranslate"><span class="pre">.csv</span></code> or <code class="docutils literal notranslate"><span class="pre">.tsv</span></code>, optionally
+followed by <code class="docutils literal notranslate"><span class="pre">.gz</span></code>. Other extensions raise
+<a class="reference internal" href="#neurolang.utils.engine_registry.UnsupportedRelationFile" title="neurolang.utils.engine_registry.UnsupportedRelationFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnsupportedRelationFile</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="neurolang.utils.engine_registry.show_engines">
+<span class="sig-prename descclassname"><span class="pre">neurolang.utils.engine_registry.</span></span><span class="sig-name descname"><span class="pre">show_engines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurolang.utils.engine_registry.show_engines" title="Link to this definition">#</a></dt>
+<dd><p>Print a formatted description of all available engines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>yaml_path</strong></dt><dd><p>Path to an engine YAML file.  Defaults to the built-in
+<code class="docutils literal notranslate"><span class="pre">engines/engines.yaml</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>yaml_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><em>Path</em></a><em> | </em><em>None</em>)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="neurolang.utils.cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">neurolang.utils.cli</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="neurolang.utils.engines.base.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">neurolang.utils.engines.base</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>
