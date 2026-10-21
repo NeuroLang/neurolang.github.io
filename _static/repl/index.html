@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeuroLang interactive query REPL, in your browser</title>
+<meta name="description" content="NeuroLang's interactive query REPL, neurolang-query -i, running entirely in your browser: Datalog and probabilistic logic programming over the Neurosynth database, with nothing to install.">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:title" content="NeuroLang interactive query REPL, in your browser">
+<meta property="og:description" content="Datalog and probabilistic logic programming over the Neurosynth database, running entirely in your browser.">
+<link rel="icon" href="../logo/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../logo/favicon/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="../logo/favicon/apple-touch-icon.png">
+<style>
+  :root { color-scheme: dark; --bg: #0b1220; --panel: #0d1117; --raised: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #5aa3f6; --ok: #3fb950; --bad: #f85149;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 var(--sans); }
+  a { color: var(--accent); text-decoration: none; }
+  main { max-width: 60rem; margin: 0 auto; padding: 1rem; display: grid; gap: .75rem; }
+  header { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  header img { height: 2rem; display: block; }
+  header nav { margin-left: auto; display: flex; gap: 1rem; }
+  #status { display: flex; align-items: center; gap: .5rem; color: var(--muted); font-size: .85rem; }
+  #status::before { content: ""; width: .6rem; height: .6rem; border-radius: 50%; background: var(--ok); }
+  #status.busy::before { background: none; border: 2px solid var(--border); border-top-color: var(--accent); animation: spin .8s linear infinite; }
+  #status.error { color: var(--bad); }
+  #status.error::before { background: var(--bad); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { #status.busy::before { animation: none; } }
+  .row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+  input, select, textarea { background: var(--raised); color: inherit; border: 1px solid var(--border); border-radius: 6px; padding: .4rem .6rem; font: 13px var(--mono); }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  textarea { width: 100%; min-height: 7rem; resize: vertical; }
+  #question { flex: 1; min-width: 12rem; font-family: var(--sans); font-size: 14px; }
+  button { background: var(--ok); color: #04120a; border: 0; border-radius: 6px; padding: .4rem .9rem; font: inherit; font-weight: 600; cursor: pointer; }
+  button.ghost { background: var(--raised); color: var(--text); border: 1px solid var(--border); font-weight: 400; }
+  button:disabled, textarea:disabled, input:disabled { opacity: .5; cursor: default; }
+  details { color: var(--muted); }
+  summary { cursor: pointer; width: fit-content; }
+  details > :not(summary) { margin-top: .5rem; }
+  #llm { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+  #llm label { display: flex; gap: .4rem; align-items: center; }
+  #llm-error { color: var(--bad); margin: 0; }
+  .note { margin: 0; font-size: .85rem; max-width: 46rem; }
+  #out { overflow-x: auto; }
+  #out pre { margin: 0; font-size: 13px; }
+  #results { display: none; }
+  #results.has { display: block; }
+  #tabs { display: flex; gap: .25rem; margin-bottom: .5rem; }
+  #tabs button { background: none; color: var(--muted); border: 0; border-bottom: 2px solid transparent; border-radius: 0; font-weight: 400; }
+  #results[data-tab=table] #tab-table, #results[data-tab=brain] #tab-brain { color: var(--text); border-bottom-color: var(--accent); }
+  #results[data-tab=table] #brain, #results[data-tab=brain] #table { display: none; }
+  #table { display: grid; gap: .75rem; }
+  iframe { width: 100%; height: 34rem; border: 1px solid var(--border); border-radius: 6px; background: #000; }
+  kbd { border: 1px solid var(--border); border-radius: 4px; padding: 0 .3rem; font: .8em var(--mono); }
+  #version input { width: 12rem; }
+  .rt { border: 1px solid #30363d; border-radius: 6px; background: #0d1117; }
+  .rt-bar { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; padding: .4rem .6rem; border-bottom: 1px solid #30363d; font-family: system-ui, sans-serif; }
+  .rt-count, .rt-range { color: #8b949e; }
+  .rt-filter { flex: 1 1 14rem; min-width: 10rem; background: #161b22; color: inherit; border: 1px solid #30363d; border-radius: 6px; padding: .25rem .5rem; font: 13px ui-monospace, Menlo, monospace; }
+  .rt-bar select, .rt-bar button { background: #21262d; color: inherit; border: 1px solid #30363d; border-radius: 6px; padding: .2rem .6rem; font: inherit; cursor: pointer; }
+  .rt-bar button:disabled { opacity: .4; cursor: default; }
+  .rt-scroll { max-height: 32rem; overflow: auto; }
+  .rt-table { border-collapse: collapse; width: 100%; font: 13px ui-monospace, Menlo, monospace; }
+  .rt-table th { position: sticky; top: 0; background: #161b22; text-align: left; padding: 0; border-bottom: 1px solid #30363d; white-space: nowrap; }
+  .rt-table th button { all: unset; display: block; padding: .3rem .6rem; cursor: pointer; font-weight: 600; color: #7ee787; }
+  .rt-table th.rt-num button { text-align: right; }
+  .rt-table th button:hover { background: #21262d; }
+  .rt-table td { padding: .15rem .6rem; max-width: 28rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .rt-table tbody tr:nth-child(even) { background: #11161d; }
+  .rt-table tbody tr:hover { background: #1c2430; }
+  .rt-num { text-align: right; }
+  .rt-number { color: #6e7681; text-align: right; user-select: none; width: 1%; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <a href="https://neurolang.github.io/" aria-label="NeuroLang"><img src="../logo/svg/neurolang-lockup-dark.svg" alt="NeuroLang"></a>
+    <span id="status" class="busy" role="status">Starting…</span>
+    <nav><a href="https://neurolang.github.io/">Docs</a><a href="https://github.com/NeuroLang/NeuroLang">GitHub</a></nav>
+  </header>
+
+  <form id="ask" class="row">
+    <input id="question" placeholder="Ask in English, e.g. which studies mention pain?" aria-label="Question for the AI assistant" disabled>
+    <button id="ask-run" disabled>Ask</button>
+    <button id="key" type="button" class="ghost" title="Your API key">API key</button>
+  </form>
+  <details id="llm-details">
+    <summary id="llm-summary">bring your own API key</summary>
+    <form id="llm">
+      <select name="provider" aria-label="Provider" disabled></select>
+      <input name="model" placeholder="model" spellcheck="false" autocomplete="off" aria-label="Model">
+      <input name="baseUrl" id="llm-base" placeholder="https://…/v1" spellcheck="false" autocomplete="off" aria-label="Address of the API" hidden>
+      <input name="key" type="password" placeholder="API key" autocomplete="off" spellcheck="false" required aria-label="API key">
+      <label><input type="checkbox" name="remember"> remember on this device</label>
+      <button class="ghost" disabled>Use</button>
+      <button id="llm-forget" type="button" class="ghost">Forget</button>
+      <p id="llm-error" role="alert" hidden></p>
+      <p class="note">The key stays in this tab (or on this device, if you ask) and goes only to the provider, with your question, the engine's relations and previews of query rows. <code>.ask</code> puts the query it writes in the box below.</p>
+    </form>
+  </details>
+
+  <form id="code">
+    <div class="row">
+      <select id="mode" aria-label="Language"><option value="datalog">Datalog</option><option value="squall">SQUALL</option></select>
+      <select id="history" aria-label="History"><option value="">History</option></select>
+    </div>
+    <textarea id="input" spellcheck="false" disabled placeholder="ans(s) :- mentions(s, &quot;pain&quot;)" style="margin-top:.5rem"></textarea>
+    <div class="row" style="margin-top:.5rem">
+      <button id="run" disabled>Run</button>
+      <button id="view" type="button" class="ghost" disabled title="Show the last result in the brain viewer">Brain</button>
+      <button id="restart" type="button" class="ghost">Restart</button>
+      <span class="note"><kbd>Ctrl</kbd>+<kbd>Enter</kbd> runs</span>
+    </div>
+  </form>
+
+  <div id="out" aria-live="polite"></div>
+  <section id="results" data-tab="table">
+    <div id="tabs"><button id="tab-table" type="button">Table</button><button id="tab-brain" type="button">Brain</button></div>
+    <div id="table"></div>
+    <div id="brain"></div>
+  </section>
+
+  <details>
+    <summary>Engine and version</summary>
+    <div id="banner"></div>
+    <form id="version" class="row">
+      NeuroLang from <input name="repo" value="NeuroLang/NeuroLang" aria-label="GitHub repository" spellcheck="false">
+      at <input name="ref" placeholder="branch, tag or commit" aria-label="Branch, tag or commit" spellcheck="false">
+      <button class="ghost">Run this version</button>
+      <span id="version-summary" class="note"></span>
+    </form>
+  </details>
+</main>
+<script type="module" src="repl.js"></script>
+</body>
+</html>
