@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NeuroLang in Python &#8212; NeuroLang 0.1a23.dev52+g5dc1c0a4f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=2f92f2b1" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="_static/documentation_options.js?v=bcbbcfc3"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial_python';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performance and Configuration" href="performance.html" />
+    <link rel="prev" title="Serving the REPL" href="repl_server.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a23" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/neurolang-lockup.svg" class="logo__image only-light" alt="NeuroLang"/>
+    <img src="_static/neurolang-lockup-dark.svg" class="logo__image only-dark pst-js-only" alt="NeuroLang"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="repl_server.html">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#" aria-current="page">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl_server.html">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-engine-of-the-registry">An engine of the registry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datalog-text">Datalog text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-own-relations-and-probabilistic-choices">Your own relations and probabilistic choices</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-ontology">An ontology</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#squall-from-python">SQUALL from Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#registering-facts-and-running-a-simple-rule">Registering facts and running a simple rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-with-obtain-direct-return">Querying with <code class="docutils literal notranslate"><span class="pre">obtain</span></code> (direct return)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-rules-and-an-obtain-clause-in-one-program">Multiple rules and an obtain clause in one program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transitive-verbs-and-binary-predicates">Transitive verbs and binary predicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantifiers-every-a-no">Quantifiers: every, a, no</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-clauses-and-negation">Relative clauses and negation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-multi-dimensional-subjects">Tuple (multi-dimensional) subjects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compound-quantifiers-and-anaphora">Compound quantifiers and anaphora</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-n-ary-rules">Probabilistic n-ary rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probabilistic-choice-squall">Probabilistic choice (SQUALL)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-comparisons">Filtering with comparisons</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-connectives">Boolean connectives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-syntax-embedded-in-python">The syntax embedded in Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-your-own">Functions of your own</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-and-open-knowledge">Constraints and open knowledge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-repl-s-commands-in-python">The REPL’s commands in Python</a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">NeuroLang in Python</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="neurolang-in-python">
+<span id="tutorial-python"></span><h1>NeuroLang in Python<a class="headerlink" href="#neurolang-in-python" title="Link to this heading">#</a></h1>
+<p>The rest of this documentation types queries into the REPL (<a class="reference internal" href="repl.html"><span class="doc">Using the REPL</span></a>).
+The same engine is a Python object, for scripts and notebooks, for data
+that is not in an engine, and for functions of your own. This page shows how,
+in this order: an engine of the registry, Datalog text, your own relations
+and probabilistic choices, SQUALL text, the syntax embedded in Python, and
+what the REPL’s dot-commands do in Python.</p>
+<p>The examples with a <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> prompt run on small relations they build, and
+are tested; they import:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">neurolang.frontend</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeurolangDL</span><span class="p">,</span> <span class="n">NeurolangPDL</span>
+</pre></div>
+</div>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#an-engine-of-the-registry" id="id1">An engine of the registry</a></p></li>
+<li><p><a class="reference internal" href="#datalog-text" id="id2">Datalog text</a></p></li>
+<li><p><a class="reference internal" href="#your-own-relations-and-probabilistic-choices" id="id3">Your own relations and probabilistic choices</a></p></li>
+<li><p><a class="reference internal" href="#squall-from-python" id="id4">SQUALL from Python</a></p></li>
+<li><p><a class="reference internal" href="#the-syntax-embedded-in-python" id="id5">The syntax embedded in Python</a></p></li>
+<li><p><a class="reference internal" href="#the-repl-s-commands-in-python" id="id6">The REPL’s commands in Python</a></p></li>
+</ul>
+</nav>
+<section id="an-engine-of-the-registry">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">An engine of the registry</a><a class="headerlink" href="#an-engine-of-the-registry" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">neurolang-query</span> <span class="pre">--engine</span> <span class="pre">neurosynth</span></code> builds its engine with
+<code class="xref py py-func docutils literal notranslate"><span class="pre">build_engine()</span></code>, which a script
+calls too (it needs the <code class="docutils literal notranslate"><span class="pre">apps</span></code> extra, and downloads the data the first
+time):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">neurolang_apps.utils.engine_registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_engine</span>
+
+<span class="n">nl</span> <span class="o">=</span> <span class="n">build_engine</span><span class="p">(</span><span class="s2">"neurosynth"</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"neurolang_data"</span><span class="p">),</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span><span class="s2">"ans(s) :- mentions(s, 'pain')"</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>          <span class="c1"># the 516 studies that mention pain</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">nl</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">NeurolangPDL</span></code>: every query of the
+tutorials runs on it as a program text, as below.</p>
+</section>
+<section id="datalog-text">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Datalog text</a><a class="headerlink" href="#datalog-text" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">execute_datalog_program</span></code> runs a program, the statements a REPL session
+would take. A program with a query, an <code class="docutils literal notranslate"><span class="pre">ans</span></code> rule, returns its answer;
+without one, the rules are added to the engine and <code class="docutils literal notranslate"><span class="pre">solve_all()</span></code> computes
+every relation:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span><span class="s2">"active(x) :- person(x), plays(x)."</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">solution</span><span class="p">[</span><span class="s2">"active"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="go">['alice', 'carol']</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""</span>
+<span class="gp">... </span><span class="sd">    player(x) :- person(x), plays(x).</span>
+<span class="gp">... </span><span class="sd">    non_player(x) :- person(x), ~plays(x).</span>
+<span class="gp">... </span><span class="sd">    ans(x) :- non_player(x).</span>
+<span class="gp">... </span><span class="sd">    """</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">['bob']</span>
+</pre></div>
+</div>
+<p>An answer is a set of tuples; <code class="docutils literal notranslate"><span class="pre">.as_pandas_dataframe()</span></code> turns it into a
+data frame. A program with several named queries, <code class="docutils literal notranslate"><span class="pre">ans[name](...)</span></code>,
+returns a dictionary from their names to their answers:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""</span>
+<span class="gp">... </span><span class="sd">    ans[players](x) :- plays(x).</span>
+<span class="gp">... </span><span class="sd">    ans[others](x) :- person(x), ~plays(x).</span>
+<span class="gp">... </span><span class="sd">    """</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="go">['others', 'players']</span>
+</pre></div>
+</div>
+<p>Comparisons, aggregations and every construct of <a class="reference internal" href="tutorial_datalog.html"><span class="doc">Datalog: A Rule-Based Query Language for NeuroLang</span></a>
+are written as in the REPL:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item_count"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""</span>
+<span class="gp">... </span><span class="sd">    max_count(x, m) :- AGGREGATE[x](item_count(x, c) @ max(c)) = m.</span>
+<span class="gp">... </span><span class="sd">    ans(x, m) :- max_count(x, m), (m &gt;= 1).</span>
+<span class="gp">... </span><span class="sd">    """</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+<span class="go">[('a', 1), ('b', 2), ('c', 3)]</span>
+</pre></div>
+</div>
+<p>The rules of a program stay in the engine, as in a REPL session; within
+<code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">nl.scope:</span></code> they are forgotten at the end of the block. <code class="docutils literal notranslate"><span class="pre">show_ra=True</span></code>
+prints the relational algebra plans of a program’s queries instead of running
+them (see <a class="reference internal" href="tutorial_datalog.html#appendix-b-datalog"><span class="std std-ref">Appendix B: Querying from the Command Line</span></a>).</p>
+</section>
+<section id="your-own-relations-and-probabilistic-choices">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Your own relations and probabilistic choices</a><a class="headerlink" href="#your-own-relations-and-probabilistic-choices" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">add_tuple_set</span></code> adds a relation from an iterable of tuples, a NumPy array
+or a pandas data frame. <code class="docutils literal notranslate"><span class="pre">add_uniform_probabilistic_choice_over_set</span></code> adds a
+probabilistic choice where each tuple is the chosen one with the same
+probability, as the engine’s <code class="docutils literal notranslate"><span class="pre">selected_study</span></code>, over which <code class="docutils literal notranslate"><span class="pre">PROB</span></code> computes
+probabilities:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"activates"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_uniform_probabilistic_choice_over_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"s1"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"selected_study"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"ans(r, p) :- PROB[selected_study(s), activates(s, r)] = p."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+<span class="go">[('A', 0.666...), ('B', 0.333...)]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_resampling</span></code> declares replicates of such a choice, for the confidence
+intervals of <a class="reference internal" href="tutorial_datalog.html"><span class="doc">Datalog: A Rule-Based Query Language for NeuroLang</span></a> (10.7), as an engine’s configuration
+does:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_resampling</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"boot_studies"</span><span class="p">,</span> <span class="n">choice</span><span class="o">=</span><span class="s2">"selected_study"</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">"bayesian"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+<span class="gp">... </span><span class="w">    </span><span class="sd">"""</span>
+<span class="gp">... </span><span class="sd">    p_a(p) :- PROB[selected_study(s), activates(s, 'A')] = p.</span>
+<span class="gp">... </span><span class="sd">    rep(b, p) :- RESAMPLE[boot_studies](p_a(p)) = b.</span>
+<span class="gp">... </span><span class="sd">    ans(percentile(p, 2.5), percentile(p, 97.5)) :- rep(b, p).</span>
+<span class="gp">... </span><span class="sd">    """</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="n">high</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">add_probabilistic_facts_from_tuples</span></code> and
+<code class="docutils literal notranslate"><span class="pre">add_probabilistic_choice_from_tuples</span></code> add probabilistic facts and choices
+with probabilities of their own, the first column holding the probability.</p>
+<section id="an-ontology">
+<span id="python-ontology"></span><h3>An ontology<a class="headerlink" href="#an-ontology" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">load_ontology</span></code> reads an OWL or RDF ontology into relations, as the
+<code class="docutils literal notranslate"><span class="pre">ontologies</span></code> of an engine (<a class="reference internal" href="tutorial_cognitive_atlas.html"><span class="doc">Querying the Cognitive Atlas Ontology</span></a>); the queries of
+that page then run on any frontend:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">neurolang.frontend</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeurolangPDL</span>
+
+<span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">load_ontology</span><span class="p">(</span>
+    <span class="s2">"cogat.v2.owl"</span><span class="p">,</span> <span class="n">individuals</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s2">"prefixed"</span>
+<span class="p">)</span>
+<span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">    cogat_subclass_of(x, y) :- neurolang:subClassOf(x, y)</span>
+<span class="s2">    cogat_subclass_of(x, z) :-</span>
+<span class="s2">        cogat_subclass_of(x, y), neurolang:subClassOf(y, z)</span>
+<span class="s2">"""</span><span class="p">)</span>
+<span class="n">below</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_datalog_program</span><span class="p">(</span>
+    <span class="s2">"ans(l) :- rdfs:label(c, 'Working memory'),"</span>
+    <span class="s2">" cogat_subclass_of(x, c), rdfs:label(x, l)"</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="squall-from-python">
+<span id="part-9-appendix-a"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">SQUALL from Python</a><a class="headerlink" href="#squall-from-python" title="Link to this heading">#</a></h2>
+<p>All of the SQUALL syntax of <a class="reference internal" href="tutorial_squall.html"><span class="doc">SQUALL: Controlled English for NeuroLang</span></a> can be executed from
+Python, as the text of <code class="docutils literal notranslate"><span class="pre">execute_squall_program</span></code>.  The general workflow is:</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">NeurolangPDL</span></code> engine.</p></li>
+<li><p>Register EDB facts with <code class="docutils literal notranslate"><span class="pre">add_tuple_set</span></code>.</p></li>
+<li><p>Execute a SQUALL program string with <code class="docutils literal notranslate"><span class="pre">execute_squall_program</span></code>.</p></li>
+<li><p>Inspect results via the direct return from <code class="docutils literal notranslate"><span class="pre">obtain</span></code> queries or with
+<code class="docutils literal notranslate"><span class="pre">solve_all()</span></code>.</p></li>
+</ol>
+<section id="registering-facts-and-running-a-simple-rule">
+<h3>Registering facts and running a simple rule<a class="headerlink" href="#registering-facts-and-running-a-simple-rule" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Active every person that plays."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"active"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">['alice', 'carol']</span>
+</pre></div>
+</div>
+</section>
+<section id="querying-with-obtain-direct-return">
+<h3>Querying with <code class="docutils literal notranslate"><span class="pre">obtain</span></code> (direct return)<a class="headerlink" href="#querying-with-obtain-direct-return" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"obtain every person that plays."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice', 'carol']</span>
+</pre></div>
+</div>
+</section>
+<section id="multiple-rules-and-an-obtain-clause-in-one-program">
+<h3>Multiple rules and an obtain clause in one program<a class="headerlink" href="#multiple-rules-and-an-obtain-clause-in-one-program" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Player every person that plays. "</span>
+<span class="gp">... </span>    <span class="s2">"define as Runner every person that runs. "</span>
+<span class="gp">... </span>    <span class="s2">"obtain every Player."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice', 'carol']</span>
+</pre></div>
+</div>
+</section>
+<section id="transitive-verbs-and-binary-predicates">
+<h3>Transitive verbs and binary predicates<a class="headerlink" href="#transitive-verbs-and-binary-predicates" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"jazz"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"genre"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,</span> <span class="s2">"jazz"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"sings"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Performer every person that sings a Genre."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"performer"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice']</span>
+</pre></div>
+</div>
+</section>
+<section id="quantifiers-every-a-no">
+<h3>Quantifiers: every, a, no<a class="headerlink" href="#quantifiers-every-a-no" title="Link to this heading">#</a></h3>
+<p><strong>Every</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span><span class="s2">"define as Active every person that plays."</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"active"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice']</span>
+</pre></div>
+</div>
+<p><strong>A / an / some</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"a"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item_count"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"obtain every item ?i that has an item_count ?c."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['a', 'b']</span>
+</pre></div>
+</div>
+<p><strong>No</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"a"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item_count"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"obtain every item ?i that has no item_count ?c."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['c']</span>
+</pre></div>
+</div>
+</section>
+<section id="relative-clauses-and-negation">
+<h3>Relative clauses and negation<a class="headerlink" href="#relative-clauses-and-negation" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as NotPlaying every person that does not plays."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"notplaying"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['bob']</span>
+</pre></div>
+</div>
+</section>
+<section id="tuple-multi-dimensional-subjects">
+<h3>Tuple (multi-dimensional) subjects<a class="headerlink" href="#tuple-multi-dimensional-subjects" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"v1"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"v2"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"voxel"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as active every voxel (?v; ?x; ?y; ?z)."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">solution</span><span class="p">[</span><span class="s2">"active"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">[('v1', 0, 0, 1), ('v2', 1, 2, 3)]</span>
+</pre></div>
+</div>
+<p>Anonymous wildcard <code class="docutils literal notranslate"><span class="pre">_</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"s1"</span><span class="p">),</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="s2">"s2"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"peak_reported"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Activation every Peak_reported (?i; ?j; ?k; _)."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">solution</span><span class="p">[</span><span class="s2">"activation"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">[(10, 20, 30), (11, 21, 31)]</span>
+</pre></div>
+</div>
+</section>
+<section id="compound-quantifiers-and-anaphora">
+<h3>Compound quantifiers and anaphora<a class="headerlink" href="#compound-quantifiers-and-anaphora" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"A"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"B"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"region"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"x"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"y"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"term"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"s1"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"selected_study"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"activates"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"mentions"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Cooccurrence "</span>
+<span class="gp">... </span>    <span class="s2">"for every Region and for every Term "</span>
+<span class="gp">... </span>    <span class="s2">"where a Selected_study activates the Region and mentions the Term."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"cooccurrence"</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[('A', 'x'), ('A', 'y'), ('B', 'x')]</span>
+</pre></div>
+</div>
+</section>
+<section id="probabilistic-n-ary-rules">
+<h3>Probabilistic n-ary rules<a class="headerlink" href="#probabilistic-n-ary-rules" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"A"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"B"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"region"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"x"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"y"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"term"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"s1"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s4"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"study"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"activates"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"s1"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"mentions"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Selected_study as an equiprobable choice over every Study. "</span>
+<span class="gp">... </span>    <span class="s2">"define as Cooccurrence "</span>
+<span class="gp">... </span>    <span class="s2">"for every Region and for every Term "</span>
+<span class="gp">... </span>    <span class="s2">"where a Selected_study activates the Region and mentions the Term. "</span>
+<span class="gp">... </span>    <span class="s2">"define as Joint_prob with inferred probability "</span>
+<span class="gp">... </span>    <span class="s2">"every Cooccurrence (?r; ?t). "</span>
+<span class="gp">... </span>    <span class="s2">"obtain every Joint_prob (?r; ?t; ?p) as P."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"r"</span><span class="p">,</span> <span class="s2">"t"</span><span class="p">,</span> <span class="s2">"p"</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+<span class="go">[('A', 'x', 0.25), ('A', 'y', 0.25), ('B', 'x', 0.25)]</span>
+</pre></div>
+</div>
+<p>Each region–term pair co-occurs in exactly one of the four equiprobable
+studies, hence the probability 1/4.</p>
+</section>
+<section id="probabilistic-choice-squall">
+<h3>Probabilistic choice (SQUALL)<a class="headerlink" href="#probabilistic-choice-squall" title="Link to this heading">#</a></h3>
+<p>An equiprobable choice can be defined directly in SQUALL, avoiding the
+need for <code class="docutils literal notranslate"><span class="pre">add_uniform_probabilistic_choice_over_set</span></code> in Python:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">neurolang.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"s1"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s2"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"s3"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"study"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Selected_study "</span>
+<span class="gp">... </span>    <span class="s2">"as an equiprobable choice over every Study."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sym</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s2">"selected_study"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sym</span> <span class="ow">in</span> <span class="n">nl</span><span class="o">.</span><span class="n">program_ir</span><span class="o">.</span><span class="n">pchoice_pred_symbs</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="filtering-with-comparisons">
+<h3>Filtering with comparisons<a class="headerlink" href="#filtering-with-comparisons" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"a"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"d"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item_count"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Large every Item "</span>
+<span class="gp">... </span>    <span class="s2">"that has an item_count greater equal than 2."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"large"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['b', 'c']</span>
+</pre></div>
+</div>
+</section>
+<section id="aggregations">
+<h3>Aggregations<a class="headerlink" href="#aggregations" title="Link to this heading">#</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"a"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"d"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"item_count"</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="n">i</span><span class="p">,)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"quantity"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as max_items for every Item ?i ;"</span>
+<span class="gp">... </span>    <span class="s2">" where every Max of the Quantity where ?i item_count per ?i."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">solution</span><span class="p">[</span><span class="s2">"max_items"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">[('a', 1), ('b', 2), ('c', 3)]</span>
+</pre></div>
+</div>
+</section>
+<section id="boolean-connectives">
+<h3>Boolean connectives<a class="headerlink" href="#boolean-connectives" title="Link to this heading">#</a></h3>
+<p><strong>Conjunction (and)</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"runs"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as Player every person that plays. "</span>
+<span class="gp">... </span>    <span class="s2">"define as PlayAndRun every Player that runs."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"playandrun"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice']</span>
+</pre></div>
+</div>
+<p><strong>Disjunction (or)</strong></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"bob"</span><span class="p">,),</span> <span class="p">(</span><span class="s2">"carol"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"person"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"alice"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"plays"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="s2">"bob"</span><span class="p">,)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"runs"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">execute_squall_program</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">"define as PlayOrRun every person that plays or runs."</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">solve_all</span><span class="p">()[</span><span class="s2">"playorrun"</span><span class="p">]</span><span class="o">.</span><span class="n">as_pandas_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="go">['alice', 'bob']</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="the-syntax-embedded-in-python">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">The syntax embedded in Python</a><a class="headerlink" href="#the-syntax-embedded-in-python" title="Link to this heading">#</a></h2>
+<p>Rules can also be written as Python expressions, without a program text.
+<code class="docutils literal notranslate"><span class="pre">nl.environment</span></code> creates symbols as they are named: <code class="docutils literal notranslate"><span class="pre">e.x</span></code> is a variable,
+<code class="docutils literal notranslate"><span class="pre">e.connected[...]</span> <span class="pre">=</span> <span class="pre">...</span></code> a fact or a rule:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The program is in memory, to be explored:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nl</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">'connected'</span><span class="p">])</span>
+<span class="go">connected: typing.AbstractSet[typing.Tuple[int, int]] = (0, 1) ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">nl</span><span class="o">.</span><span class="n">current_program</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">rule</span><span class="p">)</span>
+<span class="go">reachable(x, y) ← connected(x, y)</span>
+<span class="go">reachable(x, y) ← ( reachable(x, z) ) ∧ ( connected(z, y) )</span>
+</pre></div>
+</div>
+<p>and queried:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">res</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="go">   x  y</span>
+<span class="go">0  0  1</span>
+<span class="go">1  0  2</span>
+<span class="go">2  0  3</span>
+<span class="go">3  1  2</span>
+<span class="go">4  1  3</span>
+<span class="go">5  2  3</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code> is a conjunction, <code class="docutils literal notranslate"><span class="pre">|</span></code> a disjunction and <code class="docutils literal notranslate"><span class="pre">~</span></code> a negation, as in the
+text syntax; <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">nl.scope</span> <span class="pre">as</span> <span class="pre">e:</span></code> writes rules that are forgotten at the
+end of the block.</p>
+<section id="functions-of-your-own">
+<h3>Functions of your own<a class="headerlink" href="#functions-of-your-own" title="Link to this heading">#</a></h3>
+<p>A Python function added with <code class="docutils literal notranslate"><span class="pre">add_symbol</span></code> is a function of the language,
+or an aggregation when it takes an iterable:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span><span class="o">.</span><span class="n">add_tuple_set</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'connected'</span><span class="p">)</span>
+<span class="go">connected: typing.AbstractSet[typing.Tuple[int, int]] = (0, 1) ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@nl</span><span class="o">.</span><span class="n">add_symbol</span>
+<span class="gp">... </span><span class="k">def</span><span class="w"> </span><span class="nf">agg_count</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">connected</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">count_arrivals</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">agg_count</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">reachable</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">counts</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">count_arrivals</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">c</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+<span class="go">   x  c</span>
+<span class="go">0  0  3</span>
+<span class="go">1  1  2</span>
+</pre></div>
+</div>
+</section>
+<section id="constraints-and-open-knowledge">
+<h3>Constraints and open knowledge<a class="headerlink" href="#constraints-and-open-knowledge" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">add_constraint(antecedent,</span> <span class="pre">consequent)</span></code> adds a tuple-generating
+dependency: the variables of the consequent only are existentially
+quantified. Every person has a parent, even if the data does not name it,
+<span class="math notranslate nohighlight">\(\forall x\, \mathrm{person}(x) \rightarrow \exists y\,
+\mathrm{parent}(y, x)\)</span>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nl</span> <span class="o">=</span> <span class="n">NeurolangPDL</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">nl</span><span class="o">.</span><span class="n">environment</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">person</span><span class="p">[</span><span class="s1">'Pat'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">person</span><span class="p">[</span><span class="s1">'Chris'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">... </span>    <span class="n">_</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">add_constraint</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">person</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">],</span> <span class="n">e</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="n">e</span><span class="o">.</span><span class="n">has_parent</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">person</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">e</span><span class="o">.</span><span class="n">parent</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">res</span> <span class="o">=</span> <span class="n">nl</span><span class="o">.</span><span class="n">query</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">,),</span> <span class="n">e</span><span class="o">.</span><span class="n">has_parent</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="go">       x</span>
+<span class="go">0    Pat</span>
+<span class="go">1  Chris</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="the-repl-s-commands-in-python">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">The REPL’s commands in Python</a><a class="headerlink" href="#the-repl-s-commands-in-python" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>In the REPL</p></th>
+<th class="head"><p>In Python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.load</span> <span class="pre">PATH</span> <span class="pre">NAME</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nl.add_tuple_set(pandas.read_csv(PATH),</span> <span class="pre">name=NAME)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%%</span></code> documentation, <code class="docutils literal notranslate"><span class="pre">.predicates</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nl.document_predicate(name,</span> <span class="pre">description,</span> <span class="pre">arguments)</span></code>,
+<code class="docutils literal notranslate"><span class="pre">nl.predicate_documentation()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.import(&quot;m.dl&quot;)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nl.import_datalog_module(&quot;m.dl&quot;)</span></code>; <code class="docutils literal notranslate"><span class="pre">with</span>
+<span class="pre">nl.program_ir.importing_from(&quot;main.dl&quot;):</span></code> runs a program read from
+<code class="docutils literal notranslate"><span class="pre">main.dl</span></code> with its imports relative to the file</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">.clear</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">nl.scope:</span></code> around the rules to forget</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.ra</span> <span class="pre">on</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nl.execute_datalog_program(program,</span> <span class="pre">show_ra=True)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>the relational algebra backend</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">neurolang.config.config.set_query_backend(&quot;polars&quot;)</span></code>
+(<a class="reference internal" href="performance.html"><span class="doc">Performance and Configuration</span></a>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The gallery’s examples (<a class="reference internal" href="auto_examples/index.html"><span class="doc">Examples of the NeuroLang language environment.</span></a>) are complete Python
+scripts: atlases, Neurosynth meta-analyses, SQUALL programs, text
+embeddings.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="repl_server.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Serving the REPL</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="performance.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Performance and Configuration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>

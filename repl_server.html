@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Serving the REPL &#8212; NeuroLang 0.1a23.dev52+g5dc1c0a4f documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=2f92f2b1" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="_static/documentation_options.js?v=bcbbcfc3"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'repl_server';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="NeuroLang in Python" href="tutorial_python.html" />
+    <link rel="prev" title="LLM Query Assistant" href="query_assistant.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a23" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/neurolang-lockup.svg" class="logo__image only-light" alt="NeuroLang"/>
+    <img src="_static/neurolang-lockup-dark.svg" class="logo__image only-dark pst-js-only" alt="NeuroLang"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#" aria-current="page">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_python.html">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_python.html">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command">The command</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serving">Serving</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#https">HTTPS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#who-may-use-it">Who may use it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration">Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ai-assistant">The AI assistant</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storing-the-ratings">Storing the ratings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-as-a-service">Running as a service</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-the-users">Managing the users</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-files">Configuration files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#users-and-groups">Users and groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ai-assistant-s-keys">The AI assistant’s keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-admin-console">The admin console</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-in">Logging in</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signing-in-with-orcid">Signing in with ORCID</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guests">Guests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accounts">Accounts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-users">Managing users</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sessions">Sessions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-and-usage">Activity and usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-activity-page">The activity page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-data-and-sql">Raw data and SQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uptime">Uptime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback">Feedback</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-service">The service</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#behind-a-reverse-proxy">Behind a reverse proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Serving the REPL</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="serving-the-repl">
+<span id="repl-server"></span><h1>Serving the REPL<a class="headerlink" href="#serving-the-repl" title="Link to this heading">#</a></h1>
+<p>The REPL page (<code class="file docutils literal notranslate"><span class="pre">doc/_static/repl</span></code>) runs in a browser.  NeuroLang
+answers it in one of two places:</p>
+<ul class="simple">
+<li><p><strong>in the browser</strong>, on Pyodide, from a bundle of NeuroLang’s wheels and
+an engine’s data: the page of the documentation, or
+<code class="docutils literal notranslate"><span class="pre">neurolang-repl-serve</span></code> without <code class="docutils literal notranslate"><span class="pre">--local</span></code>;</p></li>
+<li><p><strong>on a server</strong>, in its Python, with <code class="docutils literal notranslate"><span class="pre">neurolang-repl-serve</span> <span class="pre">--local</span></code>:
+the engines with all their analyses, as fast as the machine, and, with a
+users file, a session of its own for each tab of each user, the AI
+assistant’s keys kept on the server, an admin console and the ratings
+stored with the user who rates.</p></li>
+</ul>
+<p>This page is about the second: how to set up such a server for a group of
+people.  <a class="reference internal" href="contributing.html"><span class="doc">Contributing to NeuroLang</span></a> tells how to run the page of a checkout for
+development.</p>
+<nav class="contents local" id="on-this-page">
+<p class="topic-title">On this page</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#quick-start" id="id1">Quick start</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#the-command" id="id3">The command</a></p></li>
+<li><p><a class="reference internal" href="#configuration-files" id="id4">Configuration files</a></p></li>
+<li><p><a class="reference internal" href="#users-and-groups" id="id5">Users and groups</a></p></li>
+<li><p><a class="reference internal" href="#the-ai-assistant-s-keys" id="id6">The AI assistant’s keys</a></p></li>
+<li><p><a class="reference internal" href="#the-admin-console" id="id7">The admin console</a></p></li>
+<li><p><a class="reference internal" href="#logging-in" id="id8">Logging in</a></p></li>
+<li><p><a class="reference internal" href="#signing-in-with-orcid" id="id9">Signing in with ORCID</a></p></li>
+<li><p><a class="reference internal" href="#guests" id="id10">Guests</a></p></li>
+<li><p><a class="reference internal" href="#accounts" id="id11">Accounts</a></p></li>
+<li><p><a class="reference internal" href="#managing-users" id="id12">Managing users</a></p></li>
+<li><p><a class="reference internal" href="#sessions" id="id13">Sessions</a></p></li>
+<li><p><a class="reference internal" href="#activity-and-usage" id="id14">Activity and usage</a></p></li>
+<li><p><a class="reference internal" href="#the-activity-page" id="id15">The activity page</a></p></li>
+<li><p><a class="reference internal" href="#raw-data-and-sql" id="id16">Raw data and SQL</a></p></li>
+<li><p><a class="reference internal" href="#uptime" id="id17">Uptime</a></p></li>
+<li><p><a class="reference internal" href="#feedback" id="id18">Feedback</a></p></li>
+<li><p><a class="reference internal" href="#the-service" id="id19">The service</a></p></li>
+<li><p><a class="reference internal" href="#security" id="id20">Security</a></p></li>
+<li><p><a class="reference internal" href="#behind-a-reverse-proxy" id="id21">Behind a reverse proxy</a></p></li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id22">Troubleshooting</a></p></li>
+</ul>
+</nav>
+<section id="quick-start">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Quick start</a><a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<p>On a Linux server, from a checkout of NeuroLang, with <a class="reference external" href="https://docs.astral.sh/uv/">uv</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NeuroLang/NeuroLang &amp;&amp; cd NeuroLang
+uv sync --extra apps --extra tui --extra llm
+
+# the first user, an admin (asks their password; makes users.yaml)
+uv run --extra apps neurolang-repl-serve --users users.yaml --add-user ann --groups admin
+
+# its options in server.yaml, its secrets in secrets.yaml (chmod 600):
+# see "Configuration files" below
+cat &gt; server.yaml &lt;&lt;EOF
+local: true
+host: 0.0.0.0
+port: 8443
+cert: cert.pem
+key: key.pem
+users: users.yaml
+feedback_db: feedback.sqlite
+activity_db: activity.sqlite
+data_dir: /srv/neurolang_data
+secrets: secrets.yaml
+EOF
+
+# serve it, as a service of this user, over HTTPS
+uv run --extra apps --extra tui --extra llm neurolang-repl-serve \
+    --daemon install --config server.yaml
+
+loginctl enable-linger $USER   # keep it running after you log out
+</pre></div>
+</div>
+<p>Then open <code class="docutils literal notranslate"><span class="pre">https://SERVER:8443/</span></code>, log in as <code class="docutils literal notranslate"><span class="pre">ann</span></code>, and open the admin
+console at <code class="docutils literal notranslate"><span class="pre">https://SERVER:8443/admin</span></code> to add the other users.  Before
+serving, the server prepares each engine: it downloads its data into
+<code class="docutils literal notranslate"><span class="pre">--data-dir</span></code> and finds the tables it takes long to find, kept there, which
+takes a few minutes the first time and is quicker after; an engine it
+cannot prepare (a source down) is told in the log, and its first session
+tries again.  A session then starts from the data kept, without the
+network: the first one of an engine takes the time of a build (about a
+minute for Neurosynth with <code class="docutils literal notranslate"><span class="pre">--light</span></code>), the next ones under a second.</p>
+</section>
+<section id="requirements">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python 3.12 or later, and the workspace’s extras <code class="docutils literal notranslate"><span class="pre">apps</span></code>, <code class="docutils literal notranslate"><span class="pre">tui</span></code> (the
+REPL) and <code class="docutils literal notranslate"><span class="pre">llm</span></code> (the AI assistant): <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span> <span class="pre">--extra</span> <span class="pre">apps</span> <span class="pre">--extra</span> <span class="pre">tui</span>
+<span class="pre">--extra</span> <span class="pre">llm</span></code>.  Use the same extras with every <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> in that
+checkout: one without them removes their packages from its environment,
+which the service runs, and the service then fails to start (<code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span></code>
+without them leaves the packages there: it installs what it lacks, and
+removes nothing).</p></li>
+<li><p>Memory for the engines: several GB for Neurosynth with all its analyses
+(<code class="docutils literal notranslate"><span class="pre">lift</span></code>, <code class="docutils literal notranslate"><span class="pre">relative_risk</span></code>…; <code class="docutils literal notranslate"><span class="pre">--light</span></code> leaves them out, as the page
+in the browser does).  The sessions of the users share the memory of the
+engine’s data (see <a class="reference internal" href="#sessions">Sessions</a>).</p></li>
+<li><p>On Linux, forking the sessions (<code class="docutils literal notranslate"><span class="pre">--users</span></code>); macOS works too.</p></li>
+<li><p>Access to the internet from the server, for the first download of the
+data and for the AI providers.</p></li>
+</ul>
+</section>
+<section id="the-command">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">The command</a><a class="headerlink" href="#the-command" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">neurolang-repl-serve</span></code> is the command of the workspace’s root project
+(<code class="file docutils literal notranslate"><span class="pre">tools/serve_repl</span></code>); <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">serve_repl</span></code> is the same.  Its
+options, by what they do:</p>
+<section id="serving">
+<h3>Serving<a class="headerlink" href="#serving" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--local</span></code></dt><dd><p>NeuroLang runs in this server’s Python; the page’s worker sends what it
+is asked to the server (<code class="docutils literal notranslate"><span class="pre">/api/...</span></code>).  Without it, the server serves the
+page and a bundle for the browser (see <a class="reference internal" href="contributing.html"><span class="doc">Contributing to NeuroLang</span></a>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--data-dir</span> <span class="pre">DIR</span></code></dt><dd><p>The engines’ data directory (default <code class="docutils literal notranslate"><span class="pre">neurolang_data</span></code>, relative to
+where the command runs; give an absolute path for a service).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--no-prepare</span></code></dt><dd><p>Do not prepare the engines before serving; the first session of each
+downloads what it lacks.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--no-preload-embeddings</span></code></dt><dd><p>Do not load an engine’s text embeddings when it is built (with
+<code class="docutils literal notranslate"><span class="pre">--users</span></code>, before forking its sessions): its first query of them
+does; see <a class="reference internal" href="#sessions">Sessions</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--resolution</span> <span class="pre">MM</span></code></dt><dd><p>The resolution of the engines’ MNI grid (default 2).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--light</span></code></dt><dd><p>Leave out the analyses a browser cannot hold, as the page does.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--engine</span> <span class="pre">NAME</span></code></dt><dd><p>The engines the page offers (repeat it; default: all of them).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--host</span> <span class="pre">HOST</span></code>, <code class="docutils literal notranslate"><span class="pre">--port</span> <span class="pre">PORT</span></code></dt><dd><p>Where it listens: <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> by default, this machine only; <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code>
+for the network.  A port below 1024 needs root, which the service does
+not have: use a port above, or a reverse proxy.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--server-name</span> <span class="pre">NAME</span></code></dt><dd><p>Without <code class="docutils literal notranslate"><span class="pre">--users</span></code> nor <code class="docutils literal notranslate"><span class="pre">--password-file</span></code>, the server answers only the
+requests sent to (whose <code class="docutils literal notranslate"><span class="pre">Host</span></code> is) <code class="docutils literal notranslate"><span class="pre">localhost</span></code>, <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">::1</span></code>, <code class="docutils literal notranslate"><span class="pre">--host</span></code> (unless <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code> or <code class="docutils literal notranslate"><span class="pre">::</span></code>) and the names of
+<code class="docutils literal notranslate"><span class="pre">--server-name</span></code> (repeat it): another site whose name it made lead here
+(DNS rebinding) would otherwise use it.  Give the name, or the address,
+by which the other machines reach it.  With users or a password, any
+name is answered.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--site</span> <span class="pre">DIR</span></code></dt><dd><p>Where the page is put (default <code class="file docutils literal notranslate"><span class="pre">~/.cache/neurolang/repl-site</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--no-browser</span></code></dt><dd><p>Do not open the page in a browser (the service never does).</p>
+</dd>
+</dl>
+</section>
+<section id="https">
+<h3>HTTPS<a class="headerlink" href="#https" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--cert</span> <span class="pre">CERT.pem</span></code>, <code class="docutils literal notranslate"><span class="pre">--key</span> <span class="pre">KEY.pem</span></code></dt><dd><p>Serve HTTPS with this certificate (its chain after it) and its private
+key, which may be in the certificate’s file.  Without a certificate, a
+password is refused unless the server listens on this machine only, as
+it would go in clear.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--key-password-file</span> <span class="pre">FILE</span></code></dt><dd><p>The passphrase of the key, if it has one, on the first line of FILE
+(readable by you only); without it, the passphrase is asked in the
+terminal, which a service has not.</p>
+</dd>
+</dl>
+<p>If they cannot serve, the server says why: the certificate’s file has no
+key (give <code class="docutils literal notranslate"><span class="pre">--key</span></code>), the key is not that of the certificate, the passphrase
+is not that one, a file is missing, or they are not PEM.  Without users nor
+a password, give the name of the certificate with <code class="docutils literal notranslate"><span class="pre">--server-name</span></code> too
+(see <a class="reference internal" href="#serving">Serving</a>).  To check them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="mi">1</span> <span class="n">cert</span><span class="o">.</span><span class="n">pem</span>    <span class="c1"># -----BEGIN CERTIFICATE-----</span>
+<span class="n">head</span> <span class="o">-</span><span class="mi">1</span> <span class="n">key</span><span class="o">.</span><span class="n">pem</span>     <span class="c1"># -----BEGIN PRIVATE KEY----- (or RSA / EC PRIVATE KEY);</span>
+                    <span class="c1"># -----BEGIN ENCRYPTED PRIVATE KEY-----: it has a passphrase</span>
+<span class="n">openssl</span> <span class="n">x509</span> <span class="o">-</span><span class="ow">in</span> <span class="n">cert</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">noout</span> <span class="o">-</span><span class="n">subject</span> <span class="o">-</span><span class="n">enddate</span>
+<span class="n">openssl</span> <span class="n">pkey</span> <span class="o">-</span><span class="ow">in</span> <span class="n">key</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">noout</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="s2">"the key reads"</span>
+<span class="c1"># the key is the certificate's if these two are the same:</span>
+<span class="n">openssl</span> <span class="n">x509</span> <span class="o">-</span><span class="ow">in</span> <span class="n">cert</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">noout</span> <span class="o">-</span><span class="n">pubkey</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">sha256</span>
+<span class="n">openssl</span> <span class="n">pkey</span> <span class="o">-</span><span class="ow">in</span> <span class="n">key</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">pubout</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">sha256</span>
+</pre></div>
+</div>
+<p>A binary (DER) file converts to PEM with <code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">x509</span> <span class="pre">-inform</span> <span class="pre">DER</span> <span class="pre">-in</span>
+<span class="pre">cert.der</span> <span class="pre">-out</span> <span class="pre">cert.pem</span></code> (<code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">pkey</span> <span class="pre">-inform</span> <span class="pre">DER</span></code> for the key); a
+<code class="docutils literal notranslate"><span class="pre">.p12</span></code> or <code class="docutils literal notranslate"><span class="pre">.pfx</span></code> bundle with <code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">pkcs12</span> <span class="pre">-in</span> <span class="pre">bundle.p12</span> <span class="pre">-clcerts</span>
+<span class="pre">-nokeys</span> <span class="pre">-out</span> <span class="pre">cert.pem</span></code> and <code class="docutils literal notranslate"><span class="pre">openssl</span> <span class="pre">pkcs12</span> <span class="pre">-in</span> <span class="pre">bundle.p12</span> <span class="pre">-nocerts</span> <span class="pre">-out</span>
+<span class="pre">key.pem</span></code>.</p>
+<p>A certificate of <a class="reference external" href="https://letsencrypt.org/">Let’s Encrypt</a> (<code class="docutils literal notranslate"><span class="pre">certbot</span>
+<span class="pre">certonly</span> <span class="pre">--standalone</span> <span class="pre">-d</span> <span class="pre">SERVER</span></code>) works:
+<code class="docutils literal notranslate"><span class="pre">--cert</span> <span class="pre">/etc/letsencrypt/live/SERVER/fullchain.pem</span> <span class="pre">--key</span>
+<span class="pre">/etc/letsencrypt/live/SERVER/privkey.pem</span></code>, readable by the user of the
+service.  The server reads them when it starts: restart it after a renewal
+(<code class="docutils literal notranslate"><span class="pre">--daemon</span> <span class="pre">reinstall</span></code>, or <code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">--user</span> <span class="pre">restart</span> <span class="pre">neurolang-repl</span></code>).</p>
+</section>
+<section id="who-may-use-it">
+<h3>Who may use it<a class="headerlink" href="#who-may-use-it" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--users</span> <span class="pre">users.yaml</span></code></dt><dd><p>The users, each with a name and a password, their groups, and their
+assistants (see <a class="reference internal" href="#users-and-groups">Users and groups</a>); with <code class="docutils literal notranslate"><span class="pre">--local</span></code>, each tab of each
+user has a session of its own.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--password-file</span> <span class="pre">FILE</span></code></dt><dd><p>Instead of users, one password (the first line of FILE), with any user
+name; the visitors share one session.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--max-sessions</span> <span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">--idle-minutes</span> <span class="pre">M</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code> and <code class="docutils literal notranslate"><span class="pre">--local</span></code>: the sessions at most at once (8, at
+least 1), and the minutes after which an unused one ends (120, above 0).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--max-running</span> <span class="pre">N</span></code>, <code class="docutils literal notranslate"><span class="pre">--query-minutes</span> <span class="pre">M</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code> and <code class="docutils literal notranslate"><span class="pre">--local</span></code>: the queries running at once, of all
+the sessions (the machine’s CPUs, at least 1), and the minutes after
+which a query is stopped (60; 0, never); see <a class="reference internal" href="#sessions">Sessions</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--guests</span></code>, <code class="docutils literal notranslate"><span class="pre">--max-guest-sessions</span> <span class="pre">N</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code> and <code class="docutils literal notranslate"><span class="pre">--local</span></code>: let visitors in as guests, without an
+account, at most N sessions of guests at once (2); see <a class="reference internal" href="#guests">Guests</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--secure-cookie</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code> behind a reverse proxy of HTTPS (no <code class="docutils literal notranslate"><span class="pre">--cert</span></code>): the
+login cookie goes over HTTPS only, as it does with <code class="docutils literal notranslate"><span class="pre">--cert</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--orcid</span> <span class="pre">orcid.yaml</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code>: the users named by an ORCID iD sign in with ORCID, and
+an iD of no user may ask for an account (see <a class="reference internal" href="#signing-in-with-orcid">Signing in with ORCID</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">server.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">--secrets</span> <span class="pre">secrets.yaml</span></code></dt><dd><p>The options, and the secrets, in YAML files (see <a class="reference internal" href="#configuration-files">Configuration files</a>).</p>
+</dd>
+</dl>
+<p>Without either, anyone who reaches the server uses it.</p>
+</section>
+<section id="the-ai-assistant">
+<h3>The AI assistant<a class="headerlink" href="#the-ai-assistant" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--env-file</span> <span class="pre">llm.env</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">NAME=VALUE</span></code> lines put in the server’s environment: the key of the
+provider of the server’s AI configuration (see <a class="reference internal" href="#the-ai-assistant-s-keys">The AI assistant’s
+keys</a>), the default of those who log in.  It needs <code class="docutils literal notranslate"><span class="pre">--local</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">--users</span></code> or <code class="docutils literal notranslate"><span class="pre">--password-file</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="storing-the-ratings">
+<h3>Storing the ratings<a class="headerlink" href="#storing-the-ratings" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--feedback-db</span> <span class="pre">feedback.sqlite</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--local</span></code>, store the ratings of the page on the server (see
+<a class="reference internal" href="#feedback">Feedback</a>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--activity-db</span> <span class="pre">activity.sqlite</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--local</span></code> and <code class="docutils literal notranslate"><span class="pre">--users</span></code>, log what each user runs, its result
+and the resources it took (see <a class="reference internal" href="#activity-and-usage">Activity and usage</a>), which the admins
+read at <code class="docutils literal notranslate"><span class="pre">/admin/activity</span></code> (see <a class="reference internal" href="#the-activity-page">The activity page</a>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--dashboard</span></code></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>, Datasette on the log and the ratings, for the
+admins, at <code class="docutils literal notranslate"><span class="pre">/admin/logs/</span></code>: every table and any read-only SQL (see
+<a class="reference internal" href="#raw-data-and-sql">Raw data and SQL</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="running-as-a-service">
+<h3>Running as a service<a class="headerlink" href="#running-as-a-service" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--daemon</span> <span class="pre">install|reinstall|remove|status</span></code>, <code class="docutils literal notranslate"><span class="pre">--python</span> <span class="pre">PATH</span></code></dt><dd><p>Install the server as a service of this user, or tell how it runs (see
+<a class="reference internal" href="#the-service">The service</a> and <a class="reference internal" href="#uptime">Uptime</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="managing-the-users">
+<h3>Managing the users<a class="headerlink" href="#managing-the-users" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">--list-users</span></code>, <code class="docutils literal notranslate"><span class="pre">--add-user</span></code>, <code class="docutils literal notranslate"><span class="pre">--set-password</span></code>, <code class="docutils literal notranslate"><span class="pre">--set-groups</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--set-llm</span></code>, <code class="docutils literal notranslate"><span class="pre">--set-group-llm</span></code>, <code class="docutils literal notranslate"><span class="pre">--own-key</span></code>, <code class="docutils literal notranslate"><span class="pre">--set-key</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--set-group-key</span></code>, <code class="docutils literal notranslate"><span class="pre">--remove-user</span></code> and <code class="docutils literal notranslate"><span class="pre">--hash-password</span></code> change the
+users file from the command line (see <a class="reference internal" href="#managing-users">Managing users</a>).</p>
+</section>
+</section>
+<section id="configuration-files">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Configuration files</a><a class="headerlink" href="#configuration-files" title="Link to this heading">#</a></h2>
+<p>The server’s options go in a YAML file, <code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">server.yaml</span></code>, each
+by its name (<code class="docutils literal notranslate"><span class="pre">data_dir</span></code>, or <code class="docutils literal notranslate"><span class="pre">data-dir</span></code> as the option is written), a list
+for an option given several times (<code class="docutils literal notranslate"><span class="pre">engines:</span> <span class="pre">[neurosynth,</span> <span class="pre">neurostore]</span></code>),
+<code class="docutils literal notranslate"><span class="pre">true</span></code> for a flag; a relative path is relative to the file.  An option
+given on the command line replaces the file’s.  The service installed with
+<code class="docutils literal notranslate"><span class="pre">--config</span></code> runs that file as it is, so that a change of it is the
+service’s at its next start (<code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">--user</span> <span class="pre">restart</span> <span class="pre">neurolang-repl</span></code>).
+The users, their groups and their assistants stay in their own file
+(<code class="docutils literal notranslate"><span class="pre">users</span></code>), which the console writes.  The options of the sessions, their
+log and the dashboard go there too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max_sessions</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">idle_minutes</span><span class="p">:</span> <span class="mi">120</span>
+<span class="n">max_running</span><span class="p">:</span> <span class="mi">4</span>              <span class="c1"># queries at once (the machine's CPUs)</span>
+<span class="n">query_minutes</span><span class="p">:</span> <span class="mi">60</span>           <span class="c1"># 0: no limit</span>
+<span class="n">activity_db</span><span class="p">:</span> <span class="n">activity</span><span class="o">.</span><span class="n">sqlite</span>
+<span class="n">dashboard</span><span class="p">:</span> <span class="n">true</span>             <span class="c1"># needs the dashboard extra</span>
+</pre></div>
+</div>
+<p>Its secrets go in a second YAML file, readable by you only (the server
+refuses it otherwise: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">600</span> <span class="pre">secrets.yaml</span></code>), which <code class="docutils literal notranslate"><span class="pre">server.yaml</span></code>
+names (<code class="docutils literal notranslate"><span class="pre">secrets:</span> <span class="pre">secrets.yaml</span></code>), or <code class="docutils literal notranslate"><span class="pre">--secrets</span> <span class="pre">FILE</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">orcid</span><span class="p">:</span>                      <span class="c1"># the client of ORCID (see Signing in with ORCID)</span>
+  <span class="n">client_id</span><span class="p">:</span> <span class="n">APP</span><span class="o">-</span><span class="n">XXXXXXXXXXXXXXXX</span>
+  <span class="n">client_secret</span><span class="p">:</span> <span class="o">...</span>
+<span class="n">env</span><span class="p">:</span>                        <span class="c1"># the server's variables (--env-file)</span>
+  <span class="n">ALBERT_API_KEY</span><span class="p">:</span> <span class="o">...</span>
+<span class="n">password</span><span class="p">:</span> <span class="o">...</span>               <span class="c1"># the one password of all (--password-file)</span>
+<span class="n">key_password</span><span class="p">:</span> <span class="o">...</span>           <span class="c1"># the passphrase of the key of cert (--key-password-file)</span>
+</pre></div>
+</div>
+<p>so that <code class="docutils literal notranslate"><span class="pre">server.yaml</span></code> holds no secret and may be shared or versioned.
+Each secret may still be given in a file of its own, as before
+(<code class="docutils literal notranslate"><span class="pre">--orcid</span></code>, <code class="docutils literal notranslate"><span class="pre">--env-file</span></code>, <code class="docutils literal notranslate"><span class="pre">--password-file</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--key-password-file</span></code>), but not both ways at once.</p>
+</section>
+<section id="users-and-groups">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Users and groups</a><a class="headerlink" href="#users-and-groups" title="Link to this heading">#</a></h2>
+<p>The users file is YAML, readable by its owner only (<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">600</span></code>; the
+server and the console keep it so):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>users:
+  ann:
+    password: scrypt$16384$8$1$...    # made by --add-user, --set-password
+    groups: [admin, lab]
+  bob:
+    password: scrypt$16384$8$1$...
+    groups: [lab]
+    llm:                              # bob's own assistant
+      provider: anthropic
+      model: claude-sonnet-5-5
+      key: sk-ant-...
+  eve:
+    password: scrypt$16384$8$1$...
+    groups: [guest]
+    own_key: true                     # eve may give her own key
+groups:
+  lab:
+    llm:                              # the assistant of the lab's users
+      provider: openrouter
+      model: anthropic/claude-sonnet-5.5
+      key: sk-or-...
+    own_key: false                    # the lab's users may not give theirs
+  guest: {}
+</pre></div>
+</div>
+<p>A user has:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">password</span></code></dt><dd><p>The scrypt hash of their password (never the password).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">groups</span></code></dt><dd><p>Labels.  Those of <code class="docutils literal notranslate"><span class="pre">admin</span></code> have the admin console; the others are for
+the assistants (below) and are recorded with each rating.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">llm</span></code></dt><dd><p>Their own assistant: a <code class="docutils literal notranslate"><span class="pre">provider</span></code> of the page’s form (<code class="docutils literal notranslate"><span class="pre">anthropic</span></code>,
+<code class="docutils literal notranslate"><span class="pre">openai</span></code>, <code class="docutils literal notranslate"><span class="pre">openrouter</span></code>, or <code class="docutils literal notranslate"><span class="pre">custom</span></code>, an OpenAI-compatible API at
+<code class="docutils literal notranslate"><span class="pre">base_url</span></code>, which it needs), its <code class="docutils literal notranslate"><span class="pre">model</span></code> (the provider’s by default)
+and its <code class="docutils literal notranslate"><span class="pre">key</span></code>.  A change that gives no key keeps the one before, for
+the same provider and <code class="docutils literal notranslate"><span class="pre">base_url</span></code> only.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">own_key</span></code></dt><dd><p>Whether they may give their own key, in the page and on their account
+page.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">env</span></code></dt><dd><p>Variables of their sessions: a key for the server’s AI configuration
+(see <a class="reference internal" href="#the-ai-assistant-s-keys">The AI assistant’s keys</a>).</p>
+</dd>
+</dl>
+<p>A group has <code class="docutils literal notranslate"><span class="pre">llm</span></code>, <code class="docutils literal notranslate"><span class="pre">own_key</span></code> and <code class="docutils literal notranslate"><span class="pre">env</span></code> too, which its users have.</p>
+<p>The server reads the file again when it changes: an edit by hand, or by the
+command line, reaches it without a restart, and the open pages of a user
+take a new assistant at their next start (the console’s and the account
+page’s changes reach them at once).  The console and the command line write
+the file anew (its comments are lost), holding a lock of it
+(<code class="file docutils literal notranslate"><span class="pre">users.yaml.lock</span></code>), so that their changes all stay; they refuse to
+write over a file edited by hand that the server cannot read (it says
+why), and keep a user in it.  A file of the users alone, without <code class="docutils literal notranslate"><span class="pre">users:</span></code> and
+<code class="docutils literal notranslate"><span class="pre">groups:</span></code>, as an older server wrote it, is read as well.</p>
+</section>
+<section id="the-ai-assistant-s-keys">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">The AI assistant’s keys</a><a class="headerlink" href="#the-ai-assistant-s-keys" title="Link to this heading">#</a></h2>
+<p>The assistant of a session answers with, in order:</p>
+<ol class="arabic simple">
+<li><p>the key the user gives in the page (the <em>API key</em> button), if they may
+give their own;</p></li>
+<li><p>their own <code class="docutils literal notranslate"><span class="pre">llm</span></code>;</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">llm</span></code> of their groups: the first, by name, that has one;</p></li>
+<li><p>the server’s AI configuration, <code class="file docutils literal notranslate"><span class="pre">~/.config/neurolang/llm.yaml</span></code>
+(see <a class="reference internal" href="query_assistant.html"><span class="doc">LLM Query Assistant</span></a>), with the key in the variable its provider
+names (<code class="docutils literal notranslate"><span class="pre">api_key_env</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">ALBERT_API_KEY</span></code>), taken from the user’s
+<code class="docutils literal notranslate"><span class="pre">env</span></code>, else their groups’, else the server’s <code class="docutils literal notranslate"><span class="pre">--env-file</span></code>;</p></li>
+<li><p>none: the page asks the user for a key.</p></li>
+</ol>
+<p>A user may give their own key (1, and saving their <code class="docutils literal notranslate"><span class="pre">llm</span></code> on their account
+page) as their <code class="docutils literal notranslate"><span class="pre">own_key</span></code> says, else not if one of their groups says
+<code class="docutils literal notranslate"><span class="pre">own_key:</span> <span class="pre">false</span></code>, else they may.  When they may not, the page hides its
+<em>API key</em> button and the server refuses a key from it.</p>
+<p>The keys stay on the server: the page, the console and the account page
+never show one; a session has its user’s key in the environment of its own
+process only.  An admin who wants to know which key a user has looks at the
+console’s <em>AI assistant</em> column: theirs, their group’s (which group), the
+server’s, or none.</p>
+</section>
+<section id="the-admin-console">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">The admin console</a><a class="headerlink" href="#the-admin-console" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">/admin</span></code> is for the users of the group <code class="docutils literal notranslate"><span class="pre">admin</span></code>; anyone else gets a
+refusal (403).  It shows:</p>
+<ul class="simple">
+<li><p><strong>Users</strong>: their groups, their assistant (whose key: their own, their
+group’s, the server’s or none; its provider and model), their variables’
+names, whether they may give their own key.  It adds a user, changes their
+password, groups or own key, sets or removes their assistant, and removes
+them (ending their sessions).  The last admin cannot be removed.</p></li>
+<li><p><strong>Groups</strong>: their members, assistant, variables and own key; it sets or
+removes a group’s assistant and own key.</p></li>
+<li><p><strong>Sessions</strong>: the user, tab and engine of each, how long it has been
+unused, whether it works, the CPU seconds and the memory of its process
+(see <a class="reference internal" href="#activity-and-usage">Activity and usage</a>); it ends one.  Above them, the memory of the
+builder, which the sessions share.</p></li>
+<li><p><strong>Usage by user</strong>: with <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>, each user’s inputs run and
+failed, their time and CPU seconds, the most memory of their sessions,
+and a link to their log.</p></li>
+<li><p><strong>Feedback</strong>: the latest 200 rated answers, with the user and their
+groups, and a link for each engine exporting the rated answers of its
+assistant as its examples, in YAML.</p></li>
+</ul>
+<p>A change applies at once to the file and to the open pages of the users
+it changes.  A password has 8 characters at least, here, on the account
+page and from the command line.</p>
+</section>
+<section id="logging-in">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Logging in</a><a class="headerlink" href="#logging-in" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code>, the server has a login page, <code class="docutils literal notranslate"><span class="pre">/login</span></code>: a page opened
+without a login leads there, and back once logged in (to a page of the
+server only).  A login is a cookie signed by the server (HttpOnly,
+SameSite=Lax, Secure over HTTPS or with <code class="docutils literal notranslate"><span class="pre">--secure-cookie</span></code>), good for 7
+days; it ends when the user logs out (<em>Log out</em>, at the top of the REPL
+with <code class="docutils literal notranslate"><span class="pre">--local</span></code>, <code class="docutils literal notranslate"><span class="pre">/logout</span></code>), in every browser where they logged in
+before (every copy of the cookie),
+when their password changes (the browser that changed it stays logged in),
+when they are removed, and when the server restarts (it signs with a key
+made at its start).  Logging out, and opening the login page, forget the
+API keys the REPL kept in the browser.  A page whose login expired opens
+the login page.  Scripts may still give a user’s name
+and password with HTTP Basic (<code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-u</span> <span class="pre">ann:...</span></code>).  With
+<code class="docutils literal notranslate"><span class="pre">--password-file</span></code>, the browser asks the password itself, and cannot log
+out.</p>
+</section>
+<section id="signing-in-with-orcid">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">Signing in with ORCID</a><a class="headerlink" href="#signing-in-with-orcid" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--orcid</span> <span class="pre">orcid.yaml</span></code>, the login page offers <em>Sign in with ORCID</em>.
+The server sends the visitor to ORCID’s page, where they sign in, and ORCID
+sends them back with a code, which the server exchanges for their ORCID iD
+and their name (OAuth 2.0 with the scope <code class="docutils literal notranslate"><span class="pre">/authenticate</span></code>: who they are,
+nothing else of their record).</p>
+<ul>
+<li><p>A user whose name is that iD logs in, as with a password.  Such a user
+needs no password (<code class="docutils literal notranslate"><span class="pre">password</span></code> is left out of their entry), and their
+name at ORCID is kept as their <code class="docutils literal notranslate"><span class="pre">orcid_name</span></code>, which the REPL, the console
+and their account page show:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">users</span><span class="p">:</span>
+  <span class="mi">0000</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="mi">1825</span><span class="o">-</span><span class="mi">0097</span><span class="p">:</span>
+    <span class="n">groups</span><span class="p">:</span> <span class="p">[</span><span class="n">lab</span><span class="p">]</span>
+    <span class="n">orcid_name</span><span class="p">:</span> <span class="n">Josiah</span> <span class="n">Carberry</span>
+</pre></div>
+</div>
+</li>
+<li><p>An iD of no user may <strong>ask for an account</strong>, with a message for the
+admins.  The requests wait in <code class="file docutils literal notranslate"><span class="pre">users.yaml.requests.json</span></code>, next to the
+users file; the console lists them under <em>Account requests</em>, where an
+admin approves one, adding the user named by the iD to the groups given,
+or declines it.  Until then, the iD has no access.</p></li>
+</ul>
+<p>The client is ORCID’s: register one at <a class="reference external" href="https://orcid.org/developer-tools">ORCID’s developer tools</a> (its <em>Public API</em> is enough), with the
+redirect URI <code class="docutils literal notranslate"><span class="pre">https://SERVER:PORT/login/orcid/callback</span></code>, and give its id
+and secret as the <code class="docutils literal notranslate"><span class="pre">orcid</span></code> of the secrets (see <a class="reference internal" href="#configuration-files">Configuration files</a>), or
+in a YAML file of its own, <code class="docutils literal notranslate"><span class="pre">--orcid</span> <span class="pre">orcid.yaml</span></code> (readable by you only):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">client_id</span><span class="p">:</span> <span class="n">APP</span><span class="o">-</span><span class="n">XXXXXXXXXXXXXXXX</span>
+<span class="n">client_secret</span><span class="p">:</span> <span class="o">...</span>
+<span class="c1"># when the server is reached at another address than its requests name</span>
+<span class="c1"># (behind a proxy), the redirect URI registered:</span>
+<span class="n">redirect_uri</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repl</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">login</span><span class="o">/</span><span class="n">orcid</span><span class="o">/</span><span class="n">callback</span>
+<span class="c1"># a client of ORCID's sandbox, for testing:</span>
+<span class="n">sandbox</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>From the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">user</span> <span class="mi">0000</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="mi">1825</span><span class="o">-</span><span class="mi">0097</span> <span class="o">--</span><span class="n">groups</span> <span class="n">lab</span>  <span class="c1"># no password</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">requests</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">approve</span><span class="o">-</span><span class="n">request</span> <span class="mi">0000</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="mi">1694</span><span class="o">-</span><span class="mi">233</span><span class="n">X</span> <span class="o">--</span><span class="n">groups</span> <span class="n">lab</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">decline</span><span class="o">-</span><span class="n">request</span> <span class="mi">0000</span><span class="o">-</span><span class="mi">0002</span><span class="o">-</span><span class="mi">1694</span><span class="o">-</span><span class="mi">233</span><span class="n">X</span>
+</pre></div>
+</div>
+<p>In the console, <em>Add</em> with an iD as the user’s name and no password adds a
+user who signs in with ORCID.</p>
+<p><strong>Merging and separating.</strong>  A user of a name of their own may sign in with
+an ORCID iD too: merging the ORCID user named by the iD into them (the
+console’s <em>merge into…</em>, or <code class="docutils literal notranslate"><span class="pre">--merge-orcid</span> <span class="pre">ID</span> <span class="pre">USER</span></code>) gives them
+<code class="docutils literal notranslate"><span class="pre">orcid:</span> <span class="pre">ID</span></code>, the groups of both, and the ORCID user’s assistant,
+variables and own key where they have none; the ORCID user is no more, and
+their sessions end.  They then log in with their password, or with ORCID:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>users:
+  bob:
+    password: scrypt$16384$8$1$...
+    groups: [imaging, lab]
+    orcid: 0000-0002-1694-233X
+    orcid_name: Sofia Garcia
+</pre></div>
+</div>
+<p>Users do it themselves on their account page too:</p>
+<ul class="simple">
+<li><p>a user with a password links their iD (<em>Link my ORCID iD</em>): they sign in
+at ORCID, which proves the iD theirs, and log in with either then; an
+iD with an account of its own is merged into theirs, as above.  They
+unlink it there (<em>Unlink it</em>), and log in with their password only.</p></li>
+<li><p>a user who signs in with ORCID only merges their account into one of
+theirs with a password (<em>Merge into it</em>, giving its name and password):
+they are logged in as it then.</p></li>
+</ul>
+<p>An iD that signs in another user is not linked: an admin decides.</p>
+<p>Separating it (<em>Separate ORCID</em>, or <code class="docutils literal notranslate"><span class="pre">--separate-orcid</span> <span class="pre">USER</span></code>) makes the iD a
+user of its own again, named by it, in the user’s groups but <code class="docutils literal notranslate"><span class="pre">admin</span></code>,
+which an admin gives again if it is theirs.  An iD signs in one user only:
+the server refuses a users file where it names a user and is another’s
+<code class="docutils literal notranslate"><span class="pre">orcid</span></code>.</p>
+</section>
+<section id="guests">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Guests</a><a class="headerlink" href="#guests" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--guests</span></code>, the login page offers <em>Continue as a guest</em>: a visitor
+comes in without an account, as a guest of a name of its own (<code class="docutils literal notranslate"><span class="pre">guest:</span></code>
+and a random id, shown as <em>guest</em>), with sessions of their own, in the group
+<code class="docutils literal notranslate"><span class="pre">guest</span></code>.  A guest’s AI assistant answers only with a key they give in the
+page: their sessions have no key of the server, of a group or of a user
+(the server’s keys are not even in their processes’ environment).  A guest
+has no account page, no console, and their ratings are signed by their
+guest’s name and the group <code class="docutils literal notranslate"><span class="pre">guest</span></code>.  The guests have at most
+<code class="docutils literal notranslate"><span class="pre">--max-guest-sessions</span></code> sessions at once (2), so that they cannot take
+those of the users.  A guest’s login ends when they log out, after 7
+days, and when the server restarts; a guest who logs in again is another
+guest, with sessions of their own.</p>
+</section>
+<section id="accounts">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Accounts</a><a class="headerlink" href="#accounts" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--local</span></code>, the REPL shows the name of the user logged in at its top,
+linked to their account page, <code class="docutils literal notranslate"><span class="pre">/account</span></code>: their name and groups, whose
+assistant they have, a form that saves their own (provider, model, its
+address for <code class="docutils literal notranslate"><span class="pre">custom</span></code>, key; the key kept on the server and never shown
+again; it answers in their open pages at once), if they may give their own,
+and a form that changes their password (the current one first; the new one
+of 8 characters at least).  A forgotten password is reset by an admin, in
+the console or with <code class="docutils literal notranslate"><span class="pre">--set-password</span></code>.</p>
+</section>
+<section id="managing-users">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Managing users</a><a class="headerlink" href="#managing-users" title="Link to this heading">#</a></h2>
+<p>The same changes as the console, from the command line, on the file of
+<code class="docutils literal notranslate"><span class="pre">--users</span></code>; each asks a password or a key without echoing it (prefix them
+with <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">--extra</span> <span class="pre">apps</span></code> in a checkout):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">user</span> <span class="n">ann</span> <span class="o">--</span><span class="n">groups</span> <span class="n">admin</span><span class="p">,</span><span class="n">lab</span>   <span class="c1"># makes the file</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">password</span> <span class="n">ann</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">groups</span> <span class="n">bob</span> <span class="o">--</span><span class="n">groups</span> <span class="n">lab</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">llm</span> <span class="n">bob</span> <span class="n">anthropic</span> <span class="n">claude</span><span class="o">-</span><span class="n">sonnet</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">5</span>   <span class="c1"># empty key: removes it</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">llm</span> <span class="n">lab</span> <span class="n">openrouter</span> <span class="n">anthropic</span><span class="o">/</span><span class="n">claude</span><span class="o">-</span><span class="n">sonnet</span><span class="o">-</span><span class="mf">5.5</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">own</span><span class="o">-</span><span class="n">key</span> <span class="n">group</span><span class="p">:</span><span class="n">lab</span> <span class="n">no</span>       <span class="c1"># or NAME yes|no|inherit</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">key</span> <span class="n">bob</span> <span class="n">ALBERT_API_KEY</span> <span class="c1"># a variable of env</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">key</span> <span class="n">lab</span> <span class="n">ALBERT_API_KEY</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">user</span> <span class="n">bob</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">users</span> <span class="n">users</span><span class="o">.</span><span class="n">yaml</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">users</span>                 <span class="c1"># no secrets</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--hash-password</span></code> prints the hash of a password, for a file written by
+hand.</p>
+</section>
+<section id="sessions">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Sessions</a><a class="headerlink" href="#sessions" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--users</span></code> and <code class="docutils literal notranslate"><span class="pre">--local</span></code>, each tab of each user has a session of its
+own, in a process of its own (<code class="docutils literal notranslate"><span class="pre">neurolang_apps.utils.tui.sessions</span></code>):</p>
+<ul class="simple">
+<li><p>A <em>builder</em> process, started anew before the server answers, builds each
+engine once (the first start of an engine takes the time of a build; the
+next start in another tab takes under a second), then forks a process per
+session from it.  The sessions share the memory of the engine’s data, as
+forked processes do until they write it.</p></li>
+<li><p>Before its first fork, the builder loads the engine’s text embeddings
+(those of its documents, from their cache, and the query model), which
+its sessions then share, rather than each load them, in memory of its
+own, at its first <code class="docutils literal notranslate"><span class="pre">query_similarity</span></code> (unless
+<code class="docutils literal notranslate"><span class="pre">--no-preload-embeddings</span></code>, or <code class="docutils literal notranslate"><span class="pre">preload_embeddings:</span> <span class="pre">false</span></code>; the
+single-user <code class="docutils literal notranslate"><span class="pre">--local</span></code> server loads them when it builds an engine, and
+preparing the engines writes their cache).  The query model is the numpy one
+(<code class="docutils literal notranslate"><span class="pre">specter2_numpy</span></code>) when its weights are next to the model’s copies,
+<code class="docutils literal notranslate"><span class="pre">{data_dir}/{engine}/embeddings/models/*.npz</span></code> (for an engine extending</p></li>
+</ul>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">neurosynth</span></code> or <code class="docutils literal notranslate"><span class="pre">neurostore</span></code>, those of the engine it extends): it loads in half a</dt><dd><p>second, without torch.  Otherwise it is torch’s, on the CPU, which needs
+the <code class="docutils literal notranslate"><span class="pre">embeddings</span></code> extra, as computing the documents’ embeddings does
+when their cache is missing (hours on a CPU: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span>
+<span class="pre">neurolang.utils.text_embeddings</span> <span class="pre">--engine</span> <span class="pre">NAME</span></code> does it ahead of time,
+best on a GPU).  What cannot be loaded is logged, and loaded by each
+session at its first query, as before.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Each session has its own rules, assistant, queries (which run at the same
+time as those of the others) and files; <em>Stop</em> and <em>Restart</em> end that
+session’s process only, and the page starts it again.</p></li>
+<li><p>A session is that of a user and a tab: another user cannot reach it.  A
+reload keeps the tab’s session; a duplicated tab has one of its own.</p></li>
+<li><p>At most <code class="docutils literal notranslate"><span class="pre">--max-sessions</span></code> run at once: past them, the one unused the
+longest ends, unless it is at work or was used in the last minute (then
+the new tab is told to wait).  One unused for <code class="docutils literal notranslate"><span class="pre">--idle-minutes</span></code> ends.</p></li>
+<li><p>A session the server ended (unused, made room for another, its query ran
+too long) comes back at the next input of its page: the page starts it
+again, runs again the rules the session defined (as after <em>Stop</em>, which
+the page keeps; not its queries, nor the questions to the assistant),
+then that input.  If it ends again while its rules come back, or at once
+after, the page says so rather than try again.  A restart of the server
+ends the logins too: the page opens the login page, then starts anew,
+without the rules of the session.  With <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>, the rules run
+again are logged again, as inputs.</p></li>
+<li><p>At most <code class="docutils literal notranslate"><span class="pre">--max-running</span></code> queries (and downloads of results) run at once,
+of all the sessions: one more waits its turn, its page saying so, so that
+the queries of many users share the machine’s CPUs rather than slow each
+other down.  A session that is not running a query costs no CPU, only its
+memory.</p></li>
+<li><p>A query running longer than <code class="docutils literal notranslate"><span class="pre">--query-minutes</span></code> is stopped: its session’s
+process ends (which frees its CPU and memory at once, as no thread of
+Python can be stopped otherwise), and its page says so; its rules come
+back at the next input.</p></li>
+</ul>
+<p>Without <code class="docutils literal notranslate"><span class="pre">--users</span></code>, one session serves everyone, in the server’s process.</p>
+</section>
+<section id="activity-and-usage">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Activity and usage</a><a class="headerlink" href="#activity-and-usage" title="Link to this heading">#</a></h2>
+<p>The server takes, every 10 seconds, the CPU seconds and the memory of each
+session’s process and of the builder, which the console shows.  A
+session’s memory is its own, <em>private</em> memory: what it adds to the
+machine’s beyond the engine’s data, which it shares with the builder (its
+resident memory, <code class="docutils literal notranslate"><span class="pre">rss</span></code>, counts those shared pages, and so overstates it).
+The builder’s resident memory is that of the engines’ data.  This is read
+from <code class="file docutils literal notranslate"><span class="pre">/proc</span></code> and so on Linux only; elsewhere the console shows <code class="docutils literal notranslate"><span class="pre">-</span></code>.
+Together they tell how many sessions a machine holds: about (its memory −
+the builder’s) / a session’s own, at its most.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">--activity-db</span> <span class="pre">activity.sqlite</span></code>, the server also logs, in that
+SQLite database (in WAL mode, as the feedback’s), for each user: the start
+of each session and its engine; each input they run, with its result as
+text (its output and the first 50 rows of each table, 20,000 characters at
+most), whether it failed, how long it took, for a question to the assistant
+(<code class="docutils literal notranslate"><span class="pre">.ask</span></code>) the tokens it sent and received, its provider and model and
+whose key paid (<code class="docutils literal notranslate"><span class="pre">page</span></code>: the key the user gave in the page; <code class="docutils literal notranslate"><span class="pre">server</span></code>:
+one of the server, of their group or saved in their account), the CPU
+seconds and the private
+memory of its process after it; and the end of each session, and why
+(stopped, restarted, idle, made room for another, ended by an admin, the
+server stopped), with the CPU seconds of its process in all and the most
+memory of the session, from the samples.  The page tells its users that what they run is logged.  A question to
+the assistant (<code class="docutils literal notranslate"><span class="pre">.ask</span></code>) is an input too, logged with its answer; the keys
+are never logged.  The console shows the totals
+of each user and gives their log as JSON lines (<code class="docutils literal notranslate"><span class="pre">/admin/activity.jsonl?user=NAME</span></code>);
+SQLite reads it too:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sqlite3</span> <span class="n">activity</span><span class="o">.</span><span class="n">sqlite</span> <span class="s2">"SELECT created, kind, text, seconds, cpu, memory FROM activity WHERE user = 'bob'"</span>
+</pre></div>
+</div>
+</section>
+<section id="the-activity-page">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">The activity page</a><a class="headerlink" href="#the-activity-page" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>, the admins have <code class="docutils literal notranslate"><span class="pre">/admin/activity</span></code> (<em>Activity</em>,
+linked from the console): what the users ran and what it took, read at a
+glance.</p>
+<ul class="simple">
+<li><p><strong>Filters</strong>, one row above everything they scope: the period (24 hours,
+7 days, 30 days, all), a user, an engine.  The view is in the page’s
+address, so that it can be kept and shared; times are in the browser’s
+time zone.</p></li>
+<li><p><strong>Figures</strong> of the period: the uptime, the users and the sessions they
+started, the inputs and the share that failed, the CPU time, the LLM
+tokens and the share spent on the server’s keys, the most memory of one
+session.</p></li>
+<li><p><strong>Uptime</strong>: a strip of the runs of the server over the period (a gap, a
+time it was down; a tick, a run that ended without stopping), and the
+latest runs.  A period starts when the log began, if later: nothing is
+known before, which is not a time the server was down.</p></li>
+<li><p><strong>Over time</strong>: the inputs, the CPU time, the LLM tokens and the active
+users, by hour over 2 days at most, else by day, each in a chart of its
+own on the same time axis, with its table.</p></li>
+<li><p><strong>Users</strong>: each user’s inputs, failures, time, CPU, tokens, most memory
+and last input, sortable; choosing one shows only theirs, and a link to
+their whole log.</p></li>
+<li><p><strong>Inputs</strong>: the latest, slowest, or those that took the most CPU or
+tokens, searched by their text, the failed ones only if asked; each
+opens on its result, its memory and the assistant’s model and key.</p></li>
+<li><p><strong>Why sessions ended</strong>.</p></li>
+</ul>
+<p>The charts are drawn with <a class="reference external" href="https://www.chartjs.org">Chart.js</a> (MIT),
+which the server serves itself (<code class="docutils literal notranslate"><span class="pre">tools/serve_repl/vendor/chartjs</span></code>): the
+page needs nothing from another site.  It follows the computer’s light or
+dark theme, or the one chosen at its foot.</p>
+</section>
+<section id="raw-data-and-sql">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Raw data and SQL</a><a class="headerlink" href="#raw-data-and-sql" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--dashboard</span></code> (and <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>), the admins also explore the
+log at <code class="docutils literal notranslate"><span class="pre">/admin/logs/</span></code> (<em>Raw data and SQL</em>, linked from the console):
+<a class="reference external" href="https://datasette.io/">Datasette</a> on the activity log and the ratings
+(<code class="docutils literal notranslate"><span class="pre">--feedback-db</span></code>), with its charts (<a class="reference external" href="https://github.com/simonw/datasette-vega">datasette-vega</a>).  Install them with the
+<code class="docutils literal notranslate"><span class="pre">dashboard</span></code> extra:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uv</span> <span class="n">run</span> <span class="o">--</span><span class="n">extra</span> <span class="n">apps</span> <span class="o">--</span><span class="n">extra</span> <span class="n">tui</span> <span class="o">--</span><span class="n">extra</span> <span class="n">llm</span> <span class="o">--</span><span class="n">extra</span> <span class="n">dashboard</span> <span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> \
+    <span class="o">--</span><span class="n">daemon</span> <span class="n">reinstall</span> <span class="o">...</span> <span class="o">--</span><span class="n">activity</span><span class="o">-</span><span class="n">db</span> <span class="n">activity</span><span class="o">.</span><span class="n">sqlite</span> <span class="o">--</span><span class="n">dashboard</span>
+</pre></div>
+</div>
+<p>Datasette browses, filters, sorts and searches every table (<code class="docutils literal notranslate"><span class="pre">activity</span></code>,
+<code class="docutils literal notranslate"><span class="pre">runs</span></code>, the ratings’ <code class="docutils literal notranslate"><span class="pre">answers</span></code> and <code class="docutils literal notranslate"><span class="pre">feedback</span></code>), exports any view as
+CSV or JSON, and runs any read-only SQL.  Its queries, on the page of the
+activity database, each over the last <code class="docutils literal notranslate"><span class="pre">days</span></code> (empty: all):</p>
+<ul class="simple">
+<li><p><em>What the users ran, by hour</em> and <em>by day</em>: the inputs, failures, users,
+CPU seconds and the most memory;</p></li>
+<li><p><em>What each user ran</em>, <em>What ran on each engine</em>;</p></li>
+<li><p><em>The tokens of the assistant, by user, model and key</em>, to tell what the
+keys of the server spend;</p></li>
+<li><p><em>The slowest inputs</em>, <em>The inputs that failed</em> (with their result);</p></li>
+<li><p><em>Why the sessions ended</em>;</p></li>
+<li><p><em>The uptime of the server</em> (in percent, over 30 days by default) and
+<em>The runs of the server</em> (see <a class="reference internal" href="#uptime">Uptime</a>).</p></li>
+</ul>
+<p><em>Show charting options</em>, above a result, draws it (a line of the inputs
+by hour, a bar of the CPU by user…); the queries by time and by user link
+to their charts.</p>
+<p>Datasette runs in a process of its own, started and ended with the
+server, listening on a unix socket in a directory only the server’s user
+reads, not on a port; the server passes it the GET requests of the admins
+only (the dashboard is read only).</p>
+</section>
+<section id="uptime">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Uptime</a><a class="headerlink" href="#uptime" title="Link to this heading">#</a></h2>
+<p>Whether the server is up, and since when:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/health</span></code>, open without a login, for a monitor: <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">{&quot;ok&quot;:</span>
+<span class="pre">true,</span> <span class="pre">&quot;uptime_seconds&quot;:</span> <span class="pre">N}</span></code>, or <code class="docutils literal notranslate"><span class="pre">503</span></code> if the sessions can no longer
+start (their builder ended); no answer if the server is down.  Point an
+external monitor at it (<a class="reference external" href="https://github.com/louislam/uptime-kuma">Uptime Kuma</a>,
+UptimeRobot, healthchecks.io…), or a cron job of another machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*/</span><span class="mi">5</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">curl</span> <span class="o">-</span><span class="n">fsS</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">time</span> <span class="mi">20</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">SERVER</span><span class="p">:</span><span class="mi">8443</span><span class="o">/</span><span class="n">health</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">"the REPL is down"</span> <span class="o">|</span> <span class="n">mail</span> <span class="o">-</span><span class="n">s</span> <span class="n">REPL</span> <span class="n">you</span><span class="nd">@example</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">neurolang-repl-serve</span> <span class="pre">--daemon</span> <span class="pre">status</span></code>: what the service manager says,
+whether it runs, since when, how many times it restarted (systemd starts
+it again 5 seconds after it fails) and how its last run ended.</p></li>
+<li><p>With <code class="docutils literal notranslate"><span class="pre">--activity-db</span></code>, each run of the server is logged in its table
+<code class="docutils literal notranslate"><span class="pre">runs</span></code>: its start, the last minute it was alive and its stop.  A run
+without a stop ended otherwise (killed, crashed, the machine stopped).
+The dashboard’s <em>The uptime of the server</em> gives the share of the last
+days the runs cover, and <em>The runs of the server</em> lists them.  A stop by
+the service manager (<code class="docutils literal notranslate"><span class="pre">systemctl</span> <span class="pre">--user</span> <span class="pre">stop</span></code>/<code class="docutils literal notranslate"><span class="pre">restart</span></code>) is a stop.</p></li>
+</ul>
+</section>
+<section id="feedback">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Feedback</a><a class="headerlink" href="#feedback" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">--feedback-db</span> <span class="pre">feedback.sqlite</span></code>, a rating given in the page (<em>Did
+this query do what you wanted?</em>) is stored on the server, with the query and
+its first rows or its error, and, for an answer of the assistant, the
+question and its steps, signed by the user’s name and groups.  The database
+is that of <code class="docutils literal notranslate"><span class="pre">neurolang-feedback-server</span></code> (SQLite, in WAL mode, which
+sessions write at once): keep it on a local disk, not a network one.  The
+console shows the latest ratings and exports, for each engine, the rated
+answers of the assistant as YAML, in the form of its examples
+(<a class="reference internal" href="query_assistant.html"><span class="doc">LLM Query Assistant</span></a>): one per question, the query approved by most
+ratings.  Without it,
+the page sends its ratings where its <code class="docutils literal notranslate"><span class="pre">feedback.json</span></code> says, if anywhere.</p>
+</section>
+<section id="the-service">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">The service</a><a class="headerlink" href="#the-service" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">--daemon</span> <span class="pre">install</span></code> installs the server as a service of the user who runs
+it, started now and at each login (or boot, with linger), serving with the
+other options given:</p>
+<ul class="simple">
+<li><p>on Linux, a unit of systemd’s user manager,
+<code class="file docutils literal notranslate"><span class="pre">~/.config/systemd/user/neurolang-repl.service</span></code>; <code class="docutils literal notranslate"><span class="pre">loginctl</span>
+<span class="pre">enable-linger</span> <span class="pre">$USER</span></code> keeps it running when you are logged out;</p></li>
+<li><p>on macOS, a launchd agent,
+<code class="file docutils literal notranslate"><span class="pre">~/Library/LaunchAgents/org.neurolang.repl.plist</span></code>.</p></li>
+</ul>
+<p>It runs the Python of the environment that installs it (that of <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span></code>,
+the checkout’s <code class="file docutils literal notranslate"><span class="pre">.venv/bin/python</span></code>; <code class="docutils literal notranslate"><span class="pre">--python</span> <span class="pre">PATH</span></code> for another),
+with that environment’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code>, the paths of the options made absolute,
+<code class="docutils literal notranslate"><span class="pre">--no-browser</span></code>, and nothing built again.  <code class="docutils literal notranslate"><span class="pre">install</span></code> first checks that
+this Python can import what it serves with (it says which extras to add),
+checks the certificate, the password file and the keys, and builds the
+bundle (without <code class="docutils literal notranslate"><span class="pre">--local</span></code>), here, where you see the errors; <code class="docutils literal notranslate"><span class="pre">reinstall</span></code>
+does all that before it removes the service installed, which a failure
+leaves as it was.  It does not
+copy your shell’s other variables: an API key in your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> does not
+reach it; put it in <code class="docutils literal notranslate"><span class="pre">--env-file</span></code> or the users file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">daemon</span> <span class="n">install</span>   <span class="n">OPTIONS</span>   <span class="c1"># refuses if one is installed</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">daemon</span> <span class="n">reinstall</span> <span class="n">OPTIONS</span>   <span class="c1"># replaces it, with these options,</span>
+                                                  <span class="c1"># once they are checked and built</span>
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">daemon</span> <span class="n">remove</span>              <span class="c1"># stops and removes it</span>
+
+<span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">-</span><span class="n">serve</span> <span class="o">--</span><span class="n">daemon</span> <span class="n">status</span>              <span class="c1"># runs? since when? restarts?</span>
+<span class="n">systemctl</span> <span class="o">--</span><span class="n">user</span> <span class="n">status</span> <span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span>            <span class="c1"># Linux</span>
+<span class="n">systemctl</span> <span class="o">--</span><span class="n">user</span> <span class="n">restart</span> <span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span>
+<span class="n">journalctl</span> <span class="o">--</span><span class="n">user</span> <span class="o">-</span><span class="n">u</span> <span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span> <span class="o">-</span><span class="n">n</span> <span class="mi">80</span>         <span class="c1"># its log</span>
+<span class="n">tail</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">Logs</span><span class="o">/</span><span class="n">neurolang</span><span class="o">-</span><span class="n">repl</span><span class="o">.</span><span class="n">log</span>            <span class="c1"># macOS</span>
+</pre></div>
+</div>
+</section>
+<section id="security">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Security</a><a class="headerlink" href="#security" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Anyone who logs in runs queries and commands with the server’s account,
+in its Python: they can read what it can read (the users file included)
+and write files in the data directory, which the sessions share.  Give
+the accounts to people you trust, and run the server as a user of its own.</p></li>
+<li><p>Use HTTPS (<code class="docutils literal notranslate"><span class="pre">--cert</span></code>) whenever the server listens on the network: the
+password and the login cookie go over it.</p></li>
+<li><p>The server takes a POST only from its own page (in JSON, from its origin),
+so that another site cannot make a logged-in browser change anything.</p></li>
+<li><p>There is no limit on the attempts to log in: give long passwords, or put
+the server behind a reverse proxy that limits them.</p></li>
+<li><p>Keep the users file, <code class="docutils literal notranslate"><span class="pre">--env-file</span></code>, the key and the feedback database
+readable by the service’s user only.</p></li>
+</ul>
+</section>
+<section id="behind-a-reverse-proxy">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Behind a reverse proxy</a><a class="headerlink" href="#behind-a-reverse-proxy" title="Link to this heading">#</a></h2>
+<p>The server is the standard library’s HTTP server, threaded: enough for a
+group, and the queries run in the sessions’ processes.  For rate limits,
+certificates renewed by the proxy, or a port below 1024, put a proxy in
+front, e.g. Caddy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repl</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span> <span class="p">{</span>
+    <span class="n">reverse_proxy</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8766</span> <span class="p">{</span>
+        <span class="n">flush_interval</span> <span class="o">-</span><span class="mi">1</span>        <span class="c1"># the events of the REPL stream</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>with the server on <code class="docutils literal notranslate"><span class="pre">--host</span> <span class="pre">127.0.0.1</span> <span class="pre">--port</span> <span class="pre">8766</span></code> (no <code class="docutils literal notranslate"><span class="pre">--cert</span></code>: the
+proxy has it) and <code class="docutils literal notranslate"><span class="pre">--secure-cookie</span></code>, so that the login cookie goes over
+HTTPS only.  The proxy must pass the <code class="docutils literal notranslate"><span class="pre">Authorization</span></code>, <code class="docutils literal notranslate"><span class="pre">Cookie</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Origin</span></code> and <code class="docutils literal notranslate"><span class="pre">Host</span></code> headers unchanged (a POST whose <code class="docutils literal notranslate"><span class="pre">Origin</span></code> is not
+the <code class="docutils literal notranslate"><span class="pre">Host</span></code> is refused), and not buffer <code class="docutils literal notranslate"><span class="pre">/api/events</span></code> (a stream of
+server-sent events).  Without <code class="docutils literal notranslate"><span class="pre">--users</span></code> nor <code class="docutils literal notranslate"><span class="pre">--password-file</span></code>, give
+the proxy’s name with <code class="docutils literal notranslate"><span class="pre">--server-name</span> <span class="pre">repl.example.org</span></code>: the server
+answers only the names it knows (see <a class="reference internal" href="#serving">Serving</a>).</p>
+</section>
+<section id="troubleshooting">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>The service does not start</dt><dd><p><code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">--user</span> <span class="pre">-u</span> <span class="pre">neurolang-repl</span> <span class="pre">-n</span> <span class="pre">80</span></code>.  <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span>
+<span class="pre">'rich'</span></code> (or another): the environment lacks an extra; <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span> <span class="pre">--extra</span>
+<span class="pre">apps</span> <span class="pre">--extra</span> <span class="pre">tui</span> <span class="pre">--extra</span> <span class="pre">llm</span></code> and <code class="docutils literal notranslate"><span class="pre">--daemon</span> <span class="pre">reinstall</span></code>.</p>
+</dd>
+<dt>The page says <em>The engine could not start</em></dt><dd><p>Open <em>Technical details</em> on the page; the full traceback is in the
+service’s log.  The log tells, before <em>The REPL is at</em>, whether each
+engine was prepared; one that was not downloads its data into
+<code class="docutils literal notranslate"><span class="pre">--data-dir</span></code> at its first session: check that the server reaches the
+internet (and its sources, OSF and GitHub, are up) and has room.</p>
+</dd>
+<dt><em>The builder of the engines ended</em></dt><dd><p>The process building the engines died (out of memory, most often): see
+the log, and give the server more memory or <code class="docutils literal notranslate"><span class="pre">--light</span></code>.</p>
+</dd>
+<dt>The assistant does not answer</dt><dd><p>The console’s <em>AI assistant</em> column says whose key a user has; <em>none</em>
+means that they give theirs in the page.  A key saved on the account
+page or in the console answers at once in the user’s open pages, which
+say whose assistant answers under the question’s box.</p>
+</dd>
+<dt>Too many sessions</dt><dd><p>Raise <code class="docutils literal notranslate"><span class="pre">--max-sessions</span></code>, or lower <code class="docutils literal notranslate"><span class="pre">--idle-minutes</span></code>.</p>
+</dd>
+<dt>Queries wait for long</dt><dd><p>The console’s <em>Sessions</em> show which are at work: raise <code class="docutils literal notranslate"><span class="pre">--max-running</span></code>
+if the machine’s CPUs are not all busy, or lower <code class="docutils literal notranslate"><span class="pre">--query-minutes</span></code>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="query_assistant.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">LLM Query Assistant</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tutorial_python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">NeuroLang in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>
