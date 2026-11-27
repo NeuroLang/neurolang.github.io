@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Decoding a brain image &#8212; NeuroLang 0.1a24.dev85+g2658dd89d documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=c83e6b79" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="_static/neurolang.css?v=2f92f2b1" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="_static/documentation_options.js?v=9f6c6bbf"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/sg-tags.js?v=d80f6fa4"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial_decoding';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/favicon.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concepts" href="concepts.html" />
+    <link rel="prev" title="Querying the Cognitive Atlas Ontology" href="tutorial_cognitive_atlas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1a24" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/neurolang-lockup.svg" class="logo__image only-light" alt="NeuroLang"/>
+    <img src="_static/neurolang-lockup-dark.svg" class="logo__image only-dark pst-js-only" alt="NeuroLang"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="similarity_calibration.html">
+    Calibrating the similarity gate of similar_study
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#" aria-current="page">
+    Decoding a brain image
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="repl_server.html">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="tutorial_python.html">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="install.html">
+    Installing NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl.html">
+    Using the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial.html">
+    Get Started with NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_datalog.html">
+    Datalog: A Rule-Based Query Language for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_squall.html">
+    SQUALL: Controlled English for NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_text_embeddings.html">
+    Semantic Search Over Study Abstracts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="similarity_calibration.html">
+    Calibrating the similarity gate of similar_study
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_neurosynth_tests.html">
+    Neurosynth’s Association and Uniformity Tests as Probability Ratios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_cognitive_atlas.html">
+    Querying the Cognitive Atlas Ontology
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Decoding a brain image
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ontologies.html">
+    Ontologies
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="probabilistic_lifting.html">
+    Lifted probabilistic inference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="inclusion_exclusion.html">
+    Inclusion–exclusion with an incomplete containment test
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="engine_configuration.html">
+    Engine Configuration (engines.yaml)
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="query_assistant.html">
+    LLM Query Assistant
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="repl_server.html">
+    Serving the REPL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorial_python.html">
+    NeuroLang in Python
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    Performance and Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="auto_examples/index.html">
+    Examples of the NeuroLang language environment.
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="contributing.html">
+    Contributing to NeuroLang
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    People
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/NeuroLang/NeuroLang" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+        <div class="sidebar-primary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image">Loading an image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-score-the-lift-of-a-term">The score: the lift of a term</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-query-the-voxels-as-facts-one-of-them-chosen">The query: the voxels as facts, one of them chosen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-overlap-the-voxels-as-facts-none-chosen">The overlap: the voxels as facts, none chosen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-mask-the-amygdala">A mask: the amygdala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-statistical-map-pressing-a-button">A statistical map: pressing a button</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tractogram-the-ends-of-its-streamlines">A tractogram: the ends of its streamlines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-decoding-does-not-say">What the decoding does not say</a></li>
+</ul>
+  </nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Decoding a brain image</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="decoding-a-brain-image">
+<h1>Decoding a brain image<a class="headerlink" href="#decoding-a-brain-image" title="Link to this heading">#</a></h1>
+<p>A map of activations, the result of an experiment of yours, says <em>where</em>
+the brain responds.  Decoding asks the reverse question: which mental
+processes do the studies that activate the same places study?  NeuroLang
+decodes an image towards the terms of a meta-analysis engine, Neurosynth’s
+or NeuroStore’s, with the probabilistic model those engines already use
+for their maps (<a class="reference internal" href="tutorial_neurosynth_tests.html"><span class="doc">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></a>), in a query of plain
+Datalog over the image as a relation of voxels and values.  This page
+loads an image, explains the query, and decodes two images, a mask of the
+amygdala and a statistical map of a motor task, and three bundles of white
+matter by the ends of their streamlines.</p>
+<section id="loading-an-image">
+<h2>Loading an image<a class="headerlink" href="#loading-an-image" title="Link to this heading">#</a></h2>
+<p>In the REPL in a terminal, <code class="docutils literal notranslate"><span class="pre">.image</span></code> loads a NIfTI image, gzipped or not:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nl(neurosynth:datalog)&gt; .image doc/_static/decoding/amygdala_mask.nii.gz
+</pre></div>
+</div>
+<p>as a relation named after its file, <code class="docutils literal notranslate"><span class="pre">amygdala_mask(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">value)</span></code> here
+(<code class="docutils literal notranslate"><span class="pre">--name</span></code> gives another): the voxels of the brain where the image is not
+0, with their value, on the grid of the engine.  The image
+is resampled to that grid if it has another, a mask (an image of one value
+other than 0) to the nearest voxel so that it stays a mask, and its first
+volume is kept if it has several.  It loads, too,
+<code class="docutils literal notranslate"><span class="pre">amygdala_mask_probability(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">p)</span></code>, the probability that each voxel is
+active, which the decoding weighs the voxels by (see <a class="reference internal" href="#the-score-the-lift-of-a-term">The score: the lift
+of a term</a>).  Two decodings are offered:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--mask</span></code>, masked decoding</dt><dd><p>1 for each voxel of a binary mask, which needs no flag, or of a map of
+values from 3.1 (<code class="docutils literal notranslate"><span class="pre">image.threshold</span></code>): its voxels weigh the same.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--zscore</span></code>, from z-scores</dt><dd><p>for a map of z-scores, the probability that the z-score of each voxel
+is that of an active voxel: its voxels weigh their probability.</p>
+</dd>
+</dl>
+<p>A map loaded without either has none, and is not decoded until it is
+loaded again with one.
+<code class="docutils literal notranslate"><span class="pre">.image</span></code> shows the image in the brain viewer, and prints the query
+decoding it.  <code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">NAME</span></code> names the relations <code class="docutils literal notranslate"><span class="pre">NAME</span></code> and
+<code class="docutils literal notranslate"><span class="pre">NAME_probability</span></code> instead, to load several images; <code class="docutils literal notranslate"><span class="pre">.image</span> <span class="pre">PATH</span> <span class="pre">--name</span>
+<span class="pre">image</span></code> replaces the image loaded first.</p>
+<p>In the browser, and on a server, <em>Upload data</em> (in the toolbar) takes the
+<code class="docutils literal notranslate"><span class="pre">.nii</span></code> or <code class="docutils literal notranslate"><span class="pre">.nii.gz</span></code> file: the page keeps it with the session, runs
+<code class="docutils literal notranslate"><span class="pre">.image</span></code> on it, and asks whether to decode it (<em>Run the decoding query</em>,
+or <em>Not now</em>): the decoding query, a comment explaining each of its lines,
+goes in the box and runs.  It replaces what is there, which <em>Bring back
+the query before</em> puts back until the next run.  For a map of values, the
+page offers the two decodings, <em>Decode as z-scores</em> and <em>Decode as a mask
+(from 3.1)</em>, loads it again with <code class="docutils literal notranslate"><span class="pre">--zscore</span></code> or <code class="docutils literal notranslate"><span class="pre">--mask</span></code>, then runs the
+query.  <em>Only the cortex</em>, checked,
+decodes the cortex of the image alone (<code class="docutils literal notranslate"><span class="pre">--cortex</span></code>, below).  A
+server reads none of its own files for its users, so an image must be
+uploaded there.  The engine of the page in the browser leaves out the peaks
+of the studies’ activations (<code class="docutils literal notranslate"><span class="pre">activated</span></code>) to fit in a tab: it loads and
+shows the image, and decodes it with <code class="docutils literal notranslate"><span class="pre">?engine=full</span></code> added to the address.</p>
+<p>The largest image taken, 256 MB uncompressed, is <code class="docutils literal notranslate"><span class="pre">image.max_mb</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">viewer.yaml</span></code> of <code class="docutils literal notranslate"><span class="pre">neurolang_apps.utils.tui</span></code>.</p>
+</section>
+<section id="the-score-the-lift-of-a-term">
+<h2>The score: the lift of a term<a class="headerlink" href="#the-score-the-lift-of-a-term" title="Link to this heading">#</a></h2>
+<p>The meta-analysis engines choose a study at random, <code class="docutils literal notranslate"><span class="pre">selected_study(s)</span></code>,
+and say that it activates the voxel <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(A_v\)</span>, if one of its
+peaks is within 6 mm of it.  A term <span class="math notranslate nohighlight">\(T\)</span> holds when the study mentions
+it (<code class="docutils literal notranslate"><span class="pre">term_in_study</span></code>).  Decoding chooses, besides, a voxel <span class="math notranslate nohighlight">\(V\)</span> of the
+image, independently of the study, the more likely the more probably
+active: of the probability <span class="math notranslate nohighlight">\(p_v\)</span> that the voxel <span class="math notranslate nohighlight">\(v\)</span> is active,</p>
+<div class="math notranslate nohighlight">
+\[P(V = v) = \frac{p_v}{\sum_u p_u}.\]</div>
+<p>Every voxel of a mask is active, <span class="math notranslate nohighlight">\(p_v = 1\)</span>, and equally likely.  A
+voxel of a map of z-scores is active, or of the null, its z-score drawn
+from the one or the other distribution; the probability that it is active
+is 1 minus its <em>local false discovery rate</em> (Efron 2004),</p>
+<div class="math notranslate nohighlight">
+\[p_v = 1 - \frac{\pi_0 \, f_0(z_v)}{f(z_v)},\]</div>
+<p><span class="math notranslate nohighlight">\(f\)</span> the density of the z-scores of the map, a Gaussian kernel
+estimate, <span class="math notranslate nohighlight">\(f_0\)</span> that of the null, the normal of the median and the
+median absolute deviation of the map (its <em>empirical</em> null, which the
+smoothness of a map makes wider or narrower than <span class="math notranslate nohighlight">\(N(0, 1)\)</span>), and
+<span class="math notranslate nohighlight">\(\pi_0 = 1\)</span>, the share of null voxels at its most.  A z-score below
+the median, a deactivation, is never active, nor are the voxels of a
+probability below 0.01 kept (<code class="docutils literal notranslate"><span class="pre">image.min_probability</span></code> in
+<code class="docutils literal notranslate"><span class="pre">viewer.yaml</span></code>).  On the motor map below, z = 2 gives p = 0.16, z = 3 gives
+0.92 and z = 4 or more 1: no threshold is chosen, the map says where its
+activations start.</p>
+<p>The event <span class="math notranslate nohighlight">\(A_V\)</span>, that the chosen study activates the chosen voxel,
+has the probability</p>
+<div class="math notranslate nohighlight">
+\[P(A_V) = \sum_v P(V = v) \, P(A_v),
+\qquad
+P(A_V \mid T) = \sum_v P(V = v) \, P(A_v \mid T),\]</div>
+<p>the activation of the image averaged over its voxels, by all the studies
+and by those of the term.  The <em>lift</em> of the term, the score of the
+decoding, is their ratio,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{lift}(T) = \frac{P(A_V \mid T)}{P(A_V)}:\]</div>
+<p>the studies of <span class="math notranslate nohighlight">\(T\)</span> activate the image <code class="docutils literal notranslate"><span class="pre">lift</span></code> times as often as the
+average study.  A lift above 1 associates the term with the image; the
+terms of the largest lifts decode it.  It is the <code class="docutils literal notranslate"><span class="pre">uniformity</span></code> of
+<a class="reference internal" href="tutorial_neurosynth_tests.html"><span class="doc">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></a> with the voxels of the image, weighted,
+in place of those of the whole brain.</p>
+</section>
+<section id="the-query-the-voxels-as-facts-one-of-them-chosen">
+<h2>The query: the voxels as facts, one of them chosen<a class="headerlink" href="#the-query-the-voxels-as-facts-one-of-them-chosen" title="Link to this heading">#</a></h2>
+<p>The decoding query of the engines (<code class="docutils literal notranslate"><span class="pre">image_decoding_query</span></code> in
+<code class="docutils literal notranslate"><span class="pre">engines.yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">{image}</span></code> being the name of the image and <code class="docutils literal notranslate"><span class="pre">{voxel}</span></code>
+the voxels chosen, <code class="docutils literal notranslate"><span class="pre">selected_voxel(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> of its
+<code class="docutils literal notranslate"><span class="pre">image_decoding_voxels</span></code>) says this as a
+probabilistic program: each voxel of the image is a fact, active with its
+probability, a voxel of the brain is chosen uniformly, the engine’s
+<code class="docutils literal notranslate"><span class="pre">selected_voxel</span></code> (that of <code class="docutils literal notranslate"><span class="pre">uniformity</span></code>, <a class="reference internal" href="tutorial_neurosynth_tests.html"><span class="doc">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></a>),
+and a study hits the image when it activates the chosen voxel and that
+voxel is active:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>% Each voxel of the image is active with its
+% probability, independently: a probabilistic fact.
+{image}_active(i, j, k) :: p :- {image}_probability(i, j, k, p)
+% A study s hits the image when a voxel chosen at
+% random in the brain (selected_voxel), or in its
+% cortex (cortical_mask), is active and s activates
+% it (a peak within the kernel of the voxel).
+{image}_hit(s) :- {voxel}, {image}_active(i, j, k), activated(i, j, k, s)
+% For each term t, the probability that a study of t,
+% chosen at random, hits the image.
+p_{image}_given_term(t, PROB) :- ({image}_hit(s) &amp; selected_study(s)) // (term_in_study(s, t) &amp; selected_study(s))
+% The probability that any study, chosen at random,
+% hits the image.
+p_{image}(PROB) :- {image}_hit(s) &amp; selected_study(s)
+% The lift of each concept of the Cognitive Atlas of
+% 30 studies or more: how many times more often its
+% studies hit the image than the average study does.
+% The larger, the more the concept decodes the image.
+ans(term, lift, studies) :- p_{image}_given_term(term, a), p_{image}(b), term_studies(term, studies), (studies &gt;= 30), cogat_term(concept, term), (lift == a / b)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">image_active(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> is a probabilistic fact of each voxel, of its
+probability <span class="math notranslate nohighlight">\(p_v\)</span>; <code class="docutils literal notranslate"><span class="pre">selected_voxel(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code> a choice of one of
+the <span class="math notranslate nohighlight">\(N\)</span> voxels of the brain mask, each of probability <span class="math notranslate nohighlight">\(1/N\)</span>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image_hit(s)</span></code> holds when the study <code class="docutils literal notranslate"><span class="pre">s</span></code> activates the chosen voxel,
+which is active;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p_image_given_term(t,</span> <span class="pre">p)</span></code> conditions it on the studies of each term,
+for every term at once, and <code class="docutils literal notranslate"><span class="pre">p_image(q)</span></code> is its probability over all
+the studies;</p></li>
+<li><p>the answer keeps the terms of 30 studies or more, the engine’s
+<code class="docutils literal notranslate"><span class="pre">term_studies(t,</span> <span class="pre">n)</span></code> (the number of studies of each term, solved
+when the engine is built: its <code class="docutils literal notranslate"><span class="pre">materialised</span></code>), since one study of a
+rare term activating the image makes its lift
+large, and the concepts of the Cognitive Atlas
+(<a class="reference internal" href="tutorial_cognitive_atlas.html"><span class="doc">Querying the Cognitive Atlas Ontology</span></a>) rather than every word of the
+abstracts.  Drop <code class="docutils literal notranslate"><span class="pre">cogat_term</span></code> to rank every term of the engine.</p></li>
+</ul>
+<p>The voxel is chosen independently of the study, and the facts of the
+voxels are independent of it too, so that</p>
+<div class="math notranslate nohighlight">
+\[P(\mathrm{hit} \mid s) = \frac{1}{N} \sum_{v \,:\, A_v(s)} p_v,\]</div>
+<p>the voxels of the image outside the brain mask, which no study activates
+(<code class="docutils literal notranslate"><span class="pre">activated</span></code> is in the mask), adding nothing; averaged over the studies
+of <span class="math notranslate nohighlight">\(T\)</span>, or over all of them, <span class="math notranslate nohighlight">\(\frac{1}{N} \sum_v p_v P(A_v
+\mid T)\)</span> and <span class="math notranslate nohighlight">\(\frac{1}{N} \sum_v p_v P(A_v)\)</span>.  These are
+<span class="math notranslate nohighlight">\(P(A_V \mid T)\)</span> and <span class="math notranslate nohighlight">\(P(A_V)\)</span> above times the same constant
+<span class="math notranslate nohighlight">\(\sum_u p_u / N\)</span>, so their ratio, <code class="docutils literal notranslate"><span class="pre">lift</span></code>, is the lift of the term:
+the voxel chosen in the image alone, uniformly
+(<code class="docutils literal notranslate"><span class="pre">image_voxel(i,</span> <span class="pre">j,</span> <span class="pre">k)</span> <span class="pre">^</span> <span class="pre">q</span> <span class="pre">:-</span> <span class="pre">image_probability(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">p),</span>
+<span class="pre">image_size(n),</span> <span class="pre">(q</span> <span class="pre">==</span> <span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">n)</span></code>), gives the same lifts.</p>
+<p>Choosing the voxel in the cortex instead decodes the cortical part of the
+image only, its subcortical and cerebellar voxels left out (<code class="docutils literal notranslate"><span class="pre">.image</span>
+<span class="pre">--cortex</span></code>, the page’s <em>Only the cortex</em>, <code class="docutils literal notranslate"><span class="pre">{voxel}</span></code> being then
+<code class="docutils literal notranslate"><span class="pre">selected_voxel(i,</span> <span class="pre">j,</span> <span class="pre">k),</span> <span class="pre">cortical_mask(i,</span> <span class="pre">j,</span> <span class="pre">k)</span></code>):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>image_hit(s) :- selected_voxel(i, j, k), cortical_mask(i, j, k), image_active(i, j, k), activated(i, j, k, s)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">cortical_mask</span></code> being the voxels of the Harvard–Oxford cortical atlas.
+For the motor map below the lifts move by 0.08 at most (<em>planning</em> enters
+the first six); a map with subcortical activations changes more.</p>
+<p>The engine solves the program exactly (<a class="reference internal" href="probabilistic_lifting.html"><span class="doc">Lifted probabilistic inference</span></a>): the
+choice of the voxel makes the probability a sum over the voxels, which it
+computes for each study, the image joined with <code class="docutils literal notranslate"><span class="pre">activated</span></code> first, before
+the terms of the studies.  It is the weighted query one would write by
+hand,</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>image_score(s, sum(p)) :- image_probability(i, j, k, p), activated(i, j, k, s)
+image_total(sum(p)) :- image_probability(i, j, k, p)
+image_hit(s) :: q :- image_score(s, x), image_total(y), (q == x / y)
+</pre></div>
+</div>
+<p>of the same lifts, for the motor map below 13 s and 6 GB where this one
+takes 7 s and 5 GB.</p>
+<p>The query reads the image as any relation of voxels and probabilities: a
+map of yours loaded with <code class="docutils literal notranslate"><span class="pre">.load</span></code>, <code class="docutils literal notranslate"><span class="pre">my_map_probability(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">p)</span></code>, is
+decoded by the same query with <code class="docutils literal notranslate"><span class="pre">my_map</span></code> in place of <code class="docutils literal notranslate"><span class="pre">image</span></code>.  A term
+none of whose studies activates the image has a probability of 0, and is
+no answer.</p>
+<p>The same lift is <span class="math notranslate nohighlight">\(\sum_v p_v P(A_v \mid T) / \sum_v p_v P(A_v)\)</span>,
+the image joined with the engine’s <code class="docutils literal notranslate"><span class="pre">p_a_given_t(t,</span> <span class="pre">i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">p)</span></code> and
+<code class="docutils literal notranslate"><span class="pre">p_a(i,</span> <span class="pre">j,</span> <span class="pre">k,</span> <span class="pre">p)</span></code>; but the engine computes those for every term at every
+voxel before the join, more than 40 GB for the amygdala below, where the
+query above reads only the studies.</p>
+</section>
+<section id="the-overlap-the-voxels-as-facts-none-chosen">
+<h2>The overlap: the voxels as facts, none chosen<a class="headerlink" href="#the-overlap-the-voxels-as-facts-none-chosen" title="Link to this heading">#</a></h2>
+<p>Without the choice of a voxel, a study hits the image if it activates
+any active voxel of it,</p>
+<div class="math notranslate nohighlight">
+\[P(\mathrm{hit} \mid s) = 1 - \prod_{v \,:\, A_v(s)} (1 - p_v),\]</div>
+<p>which NeuroLang writes as it is said:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>image_active(i, j, k) :: p :- image_probability(i, j, k, p)
+image_hit(s) :- activated(i, j, k, s), image_active(i, j, k)
+</pre></div>
+</div>
+<p>the rest of the program as above.  For a mask or a small region, it is how
+much more often the studies of a term report a peak in it: fear 2.92,
+valence 2.50, emotion 2.32 for the amygdala below.  On a whole map, nearly
+every study activates some active voxel of it, 98% of them for the motor
+map, and the lifts of all the terms are near 1: the choice of a voxel
+above tells them apart.</p>
+</section>
+<section id="a-mask-the-amygdala">
+<h2>A mask: the amygdala<a class="headerlink" href="#a-mask-the-amygdala" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">amygdala_mask.nii.gz</span></code> (<a class="reference download internal" download="" href="_downloads/634b42ce2a440477c3a2a03708793c44/amygdala_mask.nii.gz"><code class="xref download docutils literal notranslate"><span class="pre">download</span></code></a>) is a sphere of 8 mm around the
+right amygdala, at (24, -2, -20) mm in MNI space, on the grid of 2 mm:</p>
+<img alt="The mask of the right amygdala on the MNI template" src="_images/amygdala_image.png" />
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nl(neurosynth:datalog)&gt; .image doc/_static/decoding/amygdala_mask.nii.gz
+loaded amygdala_mask(i, j, k, value): 257 voxels from
+doc/_static/decoding/amygdala_mask.nii.gz, a mask
+loaded amygdala_mask_probability(i, j, k, p): 257 voxels, the probability
+that each is active: 1 for each voxel of the mask
+Decode it with this query:
+% Each voxel of the image is active with its
+...
+</pre></div>
+</div>
+<p>The 118 concepts of the Cognitive Atlas among the terms of Neurosynth with
+30 studies or more get a lift; the largest ten are those of emotion and
+faces.  The studies of <em>fear</em> activate the right amygdala four times as
+often as the average study:</p>
+<img alt="The ten concepts of the largest lift for the amygdala" class="only-light" src="_images/amygdala_decoding_light.png" />
+<img alt="The ten concepts of the largest lift for the amygdala" class="only-dark" src="_images/amygdala_decoding_dark.png" />
+</section>
+<section id="a-statistical-map-pressing-a-button">
+<h2>A statistical map: pressing a button<a class="headerlink" href="#a-statistical-map-pressing-a-button" title="Link to this heading">#</a></h2>
+<p>The statistical map of pressing a button with the left hand against the
+right, NeuroVault’s <a class="reference external" href="https://neurovault.org/images/10426/">image 10426</a>,
+is the sample motor activation image of nilearn, on a grid of 3 mm, with
+values from -7.9 to 7.9; in Python,
+<code class="docutils literal notranslate"><span class="pre">nilearn.datasets.load_sample_motor_activation_image()</span></code> downloads it and
+returns its path.  Its positive values are the right motor cortex, which
+moves the left hand.  <code class="docutils literal notranslate"><span class="pre">.image</span></code> resamples it to the grid of 2 mm of the
+engine and, with <code class="docutils literal notranslate"><span class="pre">--zscore</span></code>, gives each voxel the probability that it is
+active: 38,141 voxels of 0.01 or more, the null of the map N(-0.04, 0.90).
+Shown from 3.1 (<code class="docutils literal notranslate"><span class="pre">image.threshold</span></code>):</p>
+<img alt="The motor map, from 3.1, on the MNI template" src="_images/motor_image.png" />
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nl(neurosynth:datalog)&gt; .image image_10426.nii.gz --name motor --zscore
+loaded motor(i, j, k, value): 179612 voxels from image_10426.nii.gz, a map
+of z-scores
+loaded motor_probability(i, j, k, p): 38141 voxels, the probability that
+each is active: 1 - its local false discovery rate, the null of the map
+N(-0.04, 0.90)
+Decode it with this query:
+...
+</pre></div>
+</div>
+<p>Without <code class="docutils literal notranslate"><span class="pre">--zscore</span></code> or <code class="docutils literal notranslate"><span class="pre">--mask</span></code>, <code class="docutils literal notranslate"><span class="pre">.image</span></code> says that a map of values
+needs one to be decoded; with <code class="docutils literal notranslate"><span class="pre">--mask</span></code>, its 8,219 voxels from 3.1 weigh
+the same.  The same query decodes it towards movement:
+<em>coordination</em>, <em>movement</em>, <em>imagery</em> (motor imagery activates the premotor
+cortex) and <em>motor control</em>.  <em>Pain</em> is among them because the map also
+covers the somatosensory cortex behind the motor one, and the parietal
+operculum (the second cluster at x = 38), which the studies of pain
+activate:</p>
+<img alt="The ten concepts of the largest lift for the motor map" class="only-light" src="_images/motor_decoding_light.png" />
+<img alt="The ten concepts of the largest lift for the motor map" class="only-dark" src="_images/motor_decoding_dark.png" />
+</section>
+<section id="a-tractogram-the-ends-of-its-streamlines">
+<h2>A tractogram: the ends of its streamlines<a class="headerlink" href="#a-tractogram-the-ends-of-its-streamlines" title="Link to this heading">#</a></h2>
+<p>A tractogram (<code class="docutils literal notranslate"><span class="pre">.trk</span></code> or <code class="docutils literal notranslate"><span class="pre">.tck</span></code>, in mm in the space of the engine,
+MNI152) is decoded where its streamlines end: <code class="docutils literal notranslate"><span class="pre">.image</span></code> loads it as the
+voxels of the brain whose centre is within 3 mm (<code class="docutils literal notranslate"><span class="pre">image.endpoint_radius</span></code>,
+<code class="docutils literal notranslate"><span class="pre">--radius</span> <span class="pre">MM</span></code> for another distance) of the first or the last point of
+one of its streamlines, the value of each the number of ends near it, and
+each of probability 1, as a mask; the brain viewer shows them, its
+streamlines drawn over them (evenly subsampled, as <code class="docutils literal notranslate"><span class="pre">.view</span></code> draws a
+bundle).  The decoding query is the same, and
+<em>Upload data</em> takes the file and offers it as for an image.  The voxels
+near the ends are found when the file is loaded, with a k-d tree of the
+ends, not by a rule: in Datalog, it would be a join of every voxel of the
+brain with every end, compared by their distance.</p>
+<p>The left arcuate fasciculus of the HCP842 atlas of Yeh (<code class="docutils literal notranslate"><span class="pre">AF_L.trk</span></code>, which
+<code class="docutils literal notranslate"><span class="pre">.load_tractogram(&quot;af&quot;,</span> <span class="pre">kind=&quot;hcp842&quot;,</span> <span class="pre">bundle=&quot;AF_L&quot;)</span></code> of the engines of
+tracts downloads):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nl(neurosynth:datalog)&gt; .image AF_L.trk
+loaded af_l(i, j, k, value): 2104 voxels from AF_L.trk, the voxels within
+3 mm of the ends of its 2010 streamlines, value the number of ends near
+each
+loaded af_l_probability(i, j, k, p): 2104 voxels, the probability that
+each is active: 1 for each voxel within 3 mm of an end of a streamline
+Decode it with this query:
+...
+</pre></div>
+</div>
+<p>Three bundles of the atlas, each loaded in half a second and decoded in
+about 10 s (5 GB), give terms of their function, the five of the largest
+lift:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>bundle</p></th>
+<th class="head"><p>voxels near its ends</p></th>
+<th class="head"><p>the concepts of the largest lift</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>left arcuate fasciculus (<code class="docutils literal notranslate"><span class="pre">AF_L</span></code>)</p></td>
+<td><p>2,104</p></td>
+<td><p>sentence comprehension 2.09, rehearsal 2.05, language comprehension
+1.98, reading 1.97, meaning 1.95</p></td>
+</tr>
+<tr class="row-odd"><td><p>left corticospinal tract (<code class="docutils literal notranslate"><span class="pre">CST_L</span></code>)</p></td>
+<td><p>1,895</p></td>
+<td><p>imagery 2.25, movement 2.20, rhythm 2.18, rehearsal 2.10,
+coordination 1.99</p></td>
+</tr>
+<tr class="row-even"><td><p>left uncinate fasciculus (<code class="docutils literal notranslate"><span class="pre">UF_L</span></code>)</p></td>
+<td><p>587</p></td>
+<td><p>semantic memory 2.68, autobiographical memory 2.45, morphology
+2.22, passive viewing 2.08, empathy 1.95</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A whole-brain tractogram ends nearly everywhere: the 300,000 streamlines
+of the Disconnectome7T tractogram end near 230,120 voxels, the whole brain,
+and its lifts are those of the brain, the largest 1.48; decode a bundle.
+<code class="docutils literal notranslate"><span class="pre">.image</span></code> warns when fewer than half of the ends (<code class="docutils literal notranslate"><span class="pre">image.endpoint_share</span></code>)
+are in the brain: the tractogram is likely in another space.</p>
+<p>On an engine of tractography (<code class="docutils literal notranslate"><span class="pre">neurosynth_iit</span></code>,
+<code class="docutils literal notranslate"><span class="pre">neurosynth_disconnectome7t</span></code>…), a tractogram can be queried too: the
+bundles of its rules (<code class="docutils literal notranslate"><span class="pre">uf</span></code>, <code class="docutils literal notranslate"><span class="pre">cst</span></code>, <code class="docutils literal notranslate"><span class="pre">ilf</span></code>…, <a class="reference internal" href="tutorial_datalog.html"><span class="doc">Datalog: A Rule-Based Query Language for NeuroLang</span></a>)
+select its streamlines once it is indexed by the atlas the engine indexes
+its own by.  The engine holds one tractogram at a time: the uploaded one
+takes the place of the engine’s.  <code class="docutils literal notranslate"><span class="pre">.load_tractogram</span></code> reads an uploaded
+file by its name, and <em>Index</em>, on the file’s row of the uploaded files,
+runs</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.load_tractogram("uf_l", "UF_L.trk", space="MNI152")
+.index_tracts("uf_l", "fs", replace=1)
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">replace=1</span></code> removes the tractogram indexed before (the engine’s own, or
+another upload) from the relations, with the atlases that indexed only it,
+and the REPL notes which one; the row
+of the file indexed says <em>Indexed</em>, and <em>Index</em> on another file’s row puts
+it in its place.  The engine’s own tractogram is listed first, as the
+engine’s, without <em>Download</em> or <em>Remove</em>: its <em>Index</em> puts it back.  A
+tractogram replaced stays loaded, and is indexed again by
+<code class="docutils literal notranslate"><span class="pre">.index_tracts(...,</span> <span class="pre">replace=1)</span></code> alone.  The rules then select the streamlines of the upload:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nl(neurosynth_iit:datalog)&gt; ans(x) :- uf(x, "left")
+</pre></div>
+</div>
+<p>finds 336 of the 370 streamlines of the left uncinate fasciculus of
+HCP842, in 8 s, and <code class="docutils literal notranslate"><span class="pre">.view</span></code> draws them.  The 300,000 streamlines of the
+Disconnectome7T tractogram are indexed in 3 s (0.6 GB more), and the left
+uncinate of them found in 17 s.  The arcuate fasciculus of the rules
+(tract_querier’s, <code class="docutils literal notranslate"><span class="pre">af</span></code>) leaves out the streamlines through the centrum
+semiovale, as nearly all those of HCP842’s arcuate are: it selects none of
+them.</p>
+</section>
+<section id="what-the-decoding-does-not-say">
+<h2>What the decoding does not say<a class="headerlink" href="#what-the-decoding-does-not-say" title="Link to this heading">#</a></h2>
+<p>The lift ranks the terms by how often their studies activate the image;
+it is no test.  Whether a lift is larger than chance, or than that of
+another term, is the question of <a class="reference internal" href="tutorial_neurosynth_tests.html"><span class="doc">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></a>: the
+bootstrap of the studies (<code class="docutils literal notranslate"><span class="pre">RESAMPLE[boot_studies]</span></code>) gives an interval
+for the lift of one term.  With the rules of the query, but its last line,
+the lift of <em>fear</em> for the amygdala is</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>decoding(t, lift) :- p_image_given_term(t, a), p_image(b), (lift == a / b)
+lift_replicate(r, x) :- RESAMPLE[boot_studies](decoding('fear', x)) = r
+interval(lift, percentile(x, 2.5), percentile(x, 97.5)) :-
+    decoding('fear', lift), lift_replicate(r, x)
+ans(lift, ci_low, ci_high) :- interval(lift, ci_low, ci_high)
+</pre></div>
+</div>
+<p>4.10 within [3.47, 4.64], in about 10 s: the replicates of the studies
+never bring it near 1.  Two terms are compared on the same replicate <code class="docutils literal notranslate"><span class="pre">r</span></code>, as in
+<a class="reference internal" href="tutorial_neurosynth_tests.html"><span class="doc">Neurosynth’s Association and Uniformity Tests as Probability Ratios</span></a>.</p>
+<p>On the neurosynth engine at 2 mm, each image is decoded in 6 to 11 s, the
+257 voxels of the amygdala as the 38,141 of the motor map; on the
+neurostore engine, of twice as many studies, in 35 to 40 s, with 2 GB of
+memory beyond that of the engine.  The overlap query takes three to four
+times as long.</p>
+<p>The figures of this page are made by <code class="docutils literal notranslate"><span class="pre">doc/tools/make_decoding_figures.py</span></code>
+on the neurosynth engine at 2 mm, which loads both images with <code class="docutils literal notranslate"><span class="pre">.image</span></code>
+and runs the query it prints.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial_cognitive_atlas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Querying the Cognitive Atlas Ontology</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+ 
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2017–2026, Demian Wassermann and the NeuroLang contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+<div class="container neurolang-timestamp">
+    <p style="margin-top: -10px;">on </p>
+</div>
+  </body>
+</html>
